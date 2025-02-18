@@ -59,15 +59,18 @@ This document gives a broad overview of Kola's current features and future roadm
 
 ### **AI Capabilities**
 
-* **Intelligent AI Chat**  
-   Utilize generative AI to scaffold projects, create tests, define types, and configure data mappings, accelerating the development lifecycle.
-
-* **AI-Assisted Flow Completion**  
-   Get real-time, AI-driven suggestions to complete and optimize flow diagrams.
-
-* **Prompt-Based Developer Assistant**  
-   Leverage natural language prompts for rapid code generation and integration logic, enhancing developer productivity and reducing errors.
-
+* **Scaffolding Code Generation**  
+  Kickstart your integration with a natural language prompt as our AI automatically identifies the required entry points, connectors, and libraries. Build your v0 in seconds and get straight to innovation.  
+* **Project Chat**  
+  Transform your project with our AI-powered chat that intuitively understands your entire integration—from connectors to libraries. With a single prompt, unleash rapid, context-aware modifications across all components for a truly dynamic development experience.  
+* **Test Generation**  
+  Automatically generate comprehensive tests based on your API contract to slash development time. Ensure reliable integration performance with minimal effort.  
+* **AI Datamapper**  
+  Transform your data with a single click by uploading any specifications or unstructured data, letting our AI handle the auto mapping. Enjoy seamless data transformation that simplifies your workflow.  
+* **Next Node(s) Prediction**  
+  Accelerate development as our AI implicitly suggests the next possible nodes based on your integration context. Experience a faster, more intuitive development process.  
+* **Prompt-based Inline Nodes Generation**  
+  Generate inline nodes swiftly using explicit prompts tailored to your needs. Enhance your development speed with precise, on-demand node creation.
 ---
 
 ## Road Map
@@ -82,7 +85,9 @@ This document gives a broad overview of Kola's current features and future roadm
 #### **AI Capabilities**
 
 * **Agentic AI Integration**  
-   Create autonomous AI agents that can perform tasks and orchestrate complex workflows directly within your integration flows.
+   Create autonomous AI agents that can perform tasks and orchestrate complex workflows directly within your integration flows.  
+* **RAG Integration** 
+   Leverage our Retrieval Augmented Generation (RAG) tools to transform raw data into intelligent, contextual outputs. Seamlessly integrating with your data sources, RAG enhances your app’s capability to provide precise, informed responses. 
 
 #### **Cloud Enhancements**
 
