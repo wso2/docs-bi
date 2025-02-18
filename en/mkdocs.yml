@@ -85,8 +85,8 @@ nav:
       - Build an executable JAR: build/jar.md
       - Build a Docker image : build/docker.md
   - Roadmap:
+      - Features & Roadmap : roadmap/overview.md
       - Language feature support: roadmap/language-support.md
-      - Roadmap: roadmap/roadmap.md
 
 # Markdown extensions configuration
 markdown_extensions:
