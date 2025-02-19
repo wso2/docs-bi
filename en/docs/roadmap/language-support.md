@@ -1,18 +1,18 @@
-# Ballerina Language Support in Low-Code Development
+# Ballerina language support in low-code development
 
 The Kola low-code development environment provides an opinionated representation of the Ballerina language and its ecosystem, leveraging Ballerina’s core features to create a streamlined low-code experience.
 All configurations are serialized directly into Ballerina code—there is no intermediate representation—ensuring the source code remains the single source of truth. 
 
 This document offers a high-level overview of Ballerina language features, discusses the differences and limitations between pro-code and low-code development, and outlines the roadmap for aligning more advanced pro-code capabilities with the low-code environment in future releases.
 
-## Low-Code Scope and Limitations
+## Low-code scope and limitations
 
 The Kola low-code environment is designed to streamline development by abstracting complex Ballerina features and providing an intuitive visual experience.
 However, this simplification has certain constraints.
 Some advanced language features and custom configurations are not supported in low-code mode.
 For greater flexibility and full access to Ballerina’s capabilities, developers can switch to the pro-code view when needed.
 
-## Core Language Features
+## Core language features
 
 | Language Feature           | Availability | Notes                                                                                                                                                                  |
 | -------------------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -36,7 +36,7 @@ For greater flexibility and full access to Ballerina’s capabilities, developer
       Other service types can be created in the pro-code view, though limited low-code support will be available in the service designer for these.
 
 
-## Supported Statements  
+## Supported statements  
 
 | Statement                     | Availability   | Note                                                                |
 | ----------------------------- | -------------- | ------------------------------------------------------------------- |
@@ -59,7 +59,7 @@ For greater flexibility and full access to Ballerina’s capabilities, developer
 | Worker interaction statements | September 2025 |                                                                     |
 | Query Actions                 | September 2025 |                                                                     |
 
-## Supported Expressions
+## Supported expressions
 
 Expressions are supported in the low-code view.
 Users can enter expressions in relevant fields within forms and other UI elements.
@@ -70,11 +70,11 @@ Helper tools guide users through creating valid and efficient expressions.
 Users can create custom types in the low-code view using the Type Designer.
 However, please note the following limitation:
 
-- **Table Type Creation**: Not currently supported in the low-code view. This feature will be available in the September 2025 release.
+- **Table type creation**: Not currently supported in the low-code view. This feature will be available in the September 2025 release.
 
-## Platform Features
+## Platform features
 
-### Dependency Management
+### Dependency management
 
 Ballerina uses modules to manage dependencies and relies on Ballerina Central to download them.
 In the low-code view, users can add dependencies to a project by selecting the necessary connectors, types, or constructs from the UI.
@@ -83,7 +83,7 @@ This automatically includes the required dependencies in the Ballerina project.
 For manual dependency management, users can switch to the pro-code view, open the `Ballerina.toml` file, and specify any additional dependencies.
 Enhanced support for managing dependencies within the low-code view is planned for future releases.
 
-### Bal Persistence Support
+### Bal persistence support
 
 Bal Persistence is not currently supported in the low-code view.
 To use this feature, switch to the pro-code view.
