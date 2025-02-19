@@ -72,7 +72,7 @@ This document gives a broad overview of Kola's current features and future roadm
   Generate inline nodes swiftly using explicit prompts tailored to your needs. Enhance your development speed with precise, on-demand node creation.
 ---
 
-## Road map
+## Roadmap
 
 ### **March 2025**
 
