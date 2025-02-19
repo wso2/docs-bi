@@ -1,4 +1,4 @@
-# **Features & Roadmap Overview.**
+# **Features & Roadmap**
 
 This document gives a broad overview of Kola's current features and future roadmap, emphasizing key capabilities available now and upcoming enhancements planned for future releases. Note that the roadmap might change and may not include all planned features.
 
@@ -110,8 +110,13 @@ This document gives a broad overview of Kola's current features and future roadm
 
 #### **Ballerina Features**
 
+* **Pro-Code to Low-Code Alignment**  
+   Align advanced Ballerina language features with low-code representations, ensuring seamless transition between pro-code and low-code development.
+   See [Ballerina language features](language-support.md) for more details.
 * **Dependency Management**  
    Introduce low-code editing capabilities for managing dependencies and repositories within Ballerina-based projects.
+* **Ballerina Persistence Support**  
+   Enhance low-code support for Ballerina persistence features, enabling simplified data storage and retrieval operations.
 
 #### **Low-Code Diagram Features**
 
