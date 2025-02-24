@@ -1,9 +1,9 @@
 # Data Mapping
 
-The following instructions demonstrate how to build an integration that transforms a JSON payload into a different JSON structure using Kola Data Mapper. An HTTP service with a single resource (`transform`) will be created to receive a JSON payload and return the transformed result.
+The following instructions demonstrate how to build an integration that transforms a JSON payload into a different JSON structure using Ballerina Integrator Data Mapper. An HTTP service with a single resource (`transform`) will be created to receive a JSON payload and return the transformed result.
 
 ### Step 1: Create a new integration project.
-1. Click on the Kola Integrator icon on the sidebar.
+1. Click on the Ballerina Integrator icon on the sidebar.
 2. Click on the **`Create New Integration`** button.
 3. Enter the project name as `Transformer`.
 4. Select project directory location by clicking on the **`Select Location`** button.
