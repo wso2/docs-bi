@@ -6,7 +6,7 @@ In this tutorial, you’ll create an HTTP service to add key-value pairs to a Re
 - **[Docker](https://docs.docker.com/engine/install/)** installed on your machine.
 
 ### Step 1: Create a new integration project.
-1. Click on the Kola Integrator icon on the sidebar.
+1. Click on the Ballerina Integrator icon on the sidebar.
 2. Click on the **`Create New Integration`** button.
 3. Enter the project name as `RedisService`.
 4. Select project directory location by clicking on the **`Select Location`** button.
@@ -63,15 +63,15 @@ In this tutorial, you’ll create an HTTP service to add key-value pairs to a Re
    ```shell
       curl -X POST http://localhost:8080/cache/add \
         -H "Content-Type: application/json" \
-        -d '{"key": "Kola", "value": "Kola is an AI-assisted integration platform."}' 
+        -d '{"key": "BI", "value": "Ballerina Integrator is an AI-assisted integration platform."}' 
    ```
 3. Execute the generated `curl` command to get the value of the key.
    ```shell
-      curl http://localhost:8080/cache/get?key=Kola
+      curl http://localhost:8080/cache/get?key=BI
    ```  
-4. The response will be the value of the key `Kola` stored in the Redis server.
+4. The response will be the value of the key `BI` stored in the Redis server.
    ```text
-   Kola is an AI-assisted integration platform.%
+   Ballerina Integrator is an AI-assisted integration platform.%
    ```
 
 ### Step 7: Stop the integration

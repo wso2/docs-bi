@@ -1,11 +1,11 @@
 # Message transformation
 
 ## Overview
-This guide explains how to create a simple integration to convert a JSON payload to an XML payload using Kola. An HTTP service with a single resource (`toXml`) will be created to accept a JSON payload and return the XML representation of the payload.
+This guide explains how to create a simple integration to convert a JSON payload to an XML payload using Ballerina Integrator. An HTTP service with a single resource (`toXml`) will be created to accept a JSON payload and return the XML representation of the payload.
 <a href="{{base_path}}/assets/img/message-transformation/introduction.png"><img src="{{base_path}}/assets/img/message-transformation/introduction.png" alt="JSON to XML" width="70%"></a>
 
 ### Step 1: Create a new integration project.
-1. Click on the Kola Integrator icon on the sidebar.
+1. Click on the Ballerina Integrator icon on the sidebar.
 2. Click on the **`Create Integration`** button.
 3. Enter the project name as `JsonToXml`.
 4. Select project directory location by clicking on the **`Select Location`** button.

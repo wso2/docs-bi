@@ -1,7 +1,7 @@
 # Service orchestration
 
 In this tutorial, you’ll create a service to process appointment requests for hospitals. The service will call multiple backend services sequentially, using data from each call to inform the next. This approach integrates several services into one, known as service orchestration.
-To implement this, you’ll build a REST service with a single resource in Kola extension and then run the service. The resource will receive user requests, make the necessary backend calls, and respond with the appointment details.
+To implement this, you’ll build a REST service with a single resource in Ballerina Integrator extension and then run the service. The resource will receive user requests, make the necessary backend calls, and respond with the appointment details.
 
 The flow is as follows.
 
@@ -76,7 +76,7 @@ The flow is as follows.
 Follow the steps below to implement the service orchestration.
 
 ### Step 1: Create a new integration project.
-1. Click on the Kola Integrator icon on the sidebar.
+1. Click on the Ballerina Integrator icon on the sidebar.
 2. Click on the **`Create New Integration`** button.
 3. Enter the project name as `ServiceOrchestration`.
 4. Select project directory location by clicking on the **`Select Location`** button.

@@ -1,5 +1,5 @@
 ## Overview
-In this guide, you'll build a simple integration using the Kola plugin for Visual Studio Code. You'll create an HTTP service with a single resource named `greeting` that invokes the public [Hello World API endpoint](https://apis.wso2.com/zvdz/mi-qsg/v1.0) and returns the response.
+In this guide, you'll build a simple integration using the Ballerina Integrator plugin for Visual Studio Code. You'll create an HTTP service with a single resource named `greeting` that invokes the public [Hello World API endpoint](https://apis.wso2.com/zvdz/mi-qsg/v1.0) and returns the response.
 
 <a href="{{base_path}}/assets/img/get-started/introduction.png"><img src="{{base_path}}/assets/img/get-started/introduction.png" alt="introduction" width="70%"></a>
 
@@ -10,34 +10,34 @@ Download and install the [Visual Studio Code](https://code.visualstudio.com/down
 1. Open the Visual Studio Code.
 2. Navigate to **Settings**->**Profiles**.
 3. Click on **New Profile** and select **Create Profile**.
-4. Enter the profile name as `Kola` and click **Create**.
-5. Click on the ✔️ sign in front of the `Kola` profile to select the profile.   
+4. Enter the profile name as `Ballerina Integrator` and click **Create**.
+5. Click on the ✔️ sign in front of the `Ballerina Integrator` profile to select the profile.   
    <a href="{{base_path}}/assets/img/get-started/create-profile.gif"><img src="{{base_path}}/assets/img/get-started/create-profile.gif" alt="Create Profile" width="70%"></a>
 
 ???+ info "VS Code Profile"
     To learn more about profiles, see [Visual Studio Code Profiles](https://code.visualstudio.com/docs/editor/profiles).
 
-### Step 3: Install the Kola extension
+### Step 3: Install the Ballerina Integrator extension
 1. Go to the Extensions view by clicking on the extension icon on the sidebar or pressing `Ctrl + Shift + X` on Windows and Linux, or `shift + ⌘ + X` on a Mac.
-2. Search for `Kola` in the Extensions view search box.
-3. Click on the **`Install`** button to install the `Kola` extension.
-   <a href="{{base_path}}/assets/img/get-started/kola-extension.png"><img src="{{base_path}}/assets/img/get-started/kola-extension.png" alt="Kola Extension" width="70%"></a>
-4. This will install the **Kola** and **KolaB** extensions on VS Code.
+2. Search for `Ballerina Integrator` in the Extensions view search box.
+3. Click on the **`Install`** button to install the `Ballerina Integrator` extension.
+   <a href="{{base_path}}/assets/img/get-started/bi-extension.png"><img src="{{base_path}}/assets/img/get-started/bi-extension.png" alt="Ballerina Integrator Extension" width="70%"></a>
+4. This will install the **Ballerina Integrator** and **Ballerina** extensions on VS Code.
 
-### Step 4: Set up Kola for the first time
-1. Click on the Kola icon on the sidebar.    
-   <a href="{{base_path}}/assets/img/get-started/kola-icon.png"><img src="{{base_path}}/assets/img/get-started/kola-icon.png" alt="Kola Icon" width="70%"></a>
-2. Click on the **`Set Up Kola`** button.
-3. The setup wizard will install and configure the [Ballerina](https://ballerina.io/) distribution required for Kola.
+### Step 4: Set up Ballerina Integrator for the first time
+1. Click on the Ballerina Integrator icon on the sidebar.    
+   <a href="{{base_path}}/assets/img/get-started/bi-icon.png"><img src="{{base_path}}/assets/img/get-started/bi-icon.png" alt="Ballerina Integrator Icon" width="70%"></a>
+2. Click on the **`Set Up Ballerina Integrator`** button.
+3. The setup wizard will install and configure the [Ballerina](https://ballerina.io/) distribution required for Ballerina Integrator.
 4. Click on the **`Restart VS Code`** button to complete the setup.
-   <a href="{{base_path}}/assets/img/get-started/kola-setup.gif"><img src="{{base_path}}/assets/img/get-started/kola-setup.gif" alt="Kola Setup" width="70%"></a>
+   <a href="{{base_path}}/assets/img/get-started/bi-setup.gif"><img src="{{base_path}}/assets/img/get-started/bi-setup.gif" alt="BI Setup" width="70%"></a>
 
-???+ info "Update Kola's Ballerina Distribution"
-    The setup wizard will install the Ballerina distribution required for Kola in to `<USER_HOME>/.ballerina/ballerina-home` directory.
-    Press `Ctrl + Shift + P` on Windows and Linux, or `shift + ⌘ + P` on a Mac and type `Ballerina: Update Kola` to update the installed Ballerina distribution.
+???+ info "Update Ballerina Integrator's Ballerina Distribution"
+    The setup wizard will install the Ballerina distribution required for Ballerina Integrator in to `<USER_HOME>/.ballerina/ballerina-home` directory.
+    Press `Ctrl + Shift + P` on Windows and Linux, or `shift + ⌘ + P` on a Mac and type `Ballerina: Update Ballerina Integrator` to update the installed Ballerina distribution.
 
 ### Step 5: Create a new integration project
-1. Click on the Kola Integrator icon on the sidebar.
+1. Click on the Ballerina Integrator icon on the sidebar.
 2. Click on the **`Create Integration`** button.
 3. Enter the Integration Name as `HelloWorld`.
 4. Select Project Directory by clicking on the **`Select Location`** button.

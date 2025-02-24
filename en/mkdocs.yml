@@ -15,8 +15,8 @@
 # under the License.
 
 # Project information
-site_name: Kola Documentation
-site_description: Documentation for Kola Integrator
+site_name: Ballerina Integrator Documentation
+site_description: Documentation for Ballerina Integrator
 site_author: WSO2
 # site_url: https://ballerina-integrator.docs.wso2.com/en/latest/
 
@@ -27,7 +27,7 @@ edit_uri: https://github.com/wso2/docs-ballerina-integrator/edit/main/en/docs/
 dev_addr: localhost:8000
 
 # Copyright
-copyright: WSO2 Kola - Documentation
+copyright: WSO2 Ballerina Integrator - Documentation
 
 # Configuration
 theme:
