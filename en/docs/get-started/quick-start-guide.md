@@ -54,9 +54,10 @@ Download and install the [Visual Studio Code](https://code.visualstudio.com/down
 1. In the design view, click on the **`Add Construct`** button.
 2. Select **`Service`** from the menu.
 3. Select **`HTTP Service`** from the service type.
-4. Select **`Design From Scratch`** option. 
-5. Specify the service name to be `HelloWorldService`, path as `/hello`, and `9090` as the port.
-6. Click on the **`Create Service`** button to create the new service with the specified configurations.
+4. Select the **`Create and use the default HTTP listener`** option from the **`Listener`** dropdown.
+5. Select **`Design from Scratch`** option as the **`The contract of the service`**.
+6. Specify the **`Service base path`** as `/hello`.
+7. Click on the **`Create`** button to create the new service with the specified configurations.
    <a href="{{base_path}}/assets/img/get-started/create-service.gif"><img src="{{base_path}}/assets/img/get-started/create-service.gif" alt="Create Service" width="70%"></a>
 
 ### Step 7: Design the integration
@@ -81,4 +82,3 @@ Download and install the [Visual Studio Code](https://code.visualstudio.com/down
 1. Click on the **`Run`** button at top right corner to run the integration.
 2. The integration will be compiled and started in the embedded Ballerina runtime.
 3. Once the integration is started, you can access the service by navigating to `http://localhost:9090/hello/greeting` in your web browser.
-   

@@ -1,4 +1,4 @@
-# WSO2 Kola Documentation
+# WSO2 Ballerina Integrator Documentation
 
 [![pages-build-deployment](https://github.com/wso2/docs-kola/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/wso2/docs-kola/actions/workflows/pages/pages-build-deployment)
 [![Ballerina Integrator Docs Publish](https://github.com/wso2/docs-kola/actions/workflows/publish_docs.yaml/badge.svg)](https://github.com/wso2/docs-kola/actions/workflows/publish_docs.yaml)

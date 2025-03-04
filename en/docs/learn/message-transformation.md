@@ -16,10 +16,11 @@ This guide explains how to create a simple integration to convert a JSON payload
 ### Step 2: Create a HTTP service.
 1. In the design view, click on the **`Add Construct`** button.
 2. Select **`Service`** from the menu.
-3. Select **`HTTP Service`** from the Service Type dropdown.
-4. Select **`Design From Scratch`** option.
-5. Enter the service name as `JsonToXml`, path as `/convert`, and `9090` as the port.
-6. Click on the **`Create Service`** button to create the new service with the specified configurations.
+3. Select **`HTTP Service`** from the service type.
+4. Select the **`Create and use the default HTTP listener`** option from the **`Listener`** dropdown.
+5. Select **`Design from Scratch`** option as the **`The contract of the service`**.
+6. Enter the **`Service base path`** as  `/convert`.
+7. Click on the **`Create Service`** button to create the new service with the specified configurations.
 
 ### Step 3: Update the resource method
 1. Click on three dots appear in front of the `greeting` resource and select edit to view and update the resource details.
