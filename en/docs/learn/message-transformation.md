@@ -15,12 +15,11 @@ This guide explains how to create a simple integration to convert a JSON payload
 
 ### Step 2: Create a HTTP service.
 1. In the design view, click on the **`Add Construct`** button.
-2. Select **`Service`** from the menu.
-3. Select **`HTTP Service`** from the service type.
-4. Select the **`Create and use the default HTTP listener`** option from the **`Listener`** dropdown.
-5. Select **`Design from Scratch`** option as the **`The contract of the service`**.
-6. Enter the **`Service base path`** as  `/convert`.
-7. Click on the **`Create Service`** button to create the new service with the specified configurations.
+2. Select **`HTTP Service`** from the service type.
+3. Select the **`Create and use the default HTTP listener`** option from the **`Listener`** dropdown.
+4. Select **`Design from Scratch`** option as the **`The contract of the service`**.
+5. Enter the **`Service base path`** as  `/convert`.
+6. Click on the **`Create Service`** button to create the new service with the specified configurations.
 
 ### Step 3: Update the resource method
 1. Click on three dots appear in front of the `greeting` resource and select edit to view and update the resource details.
@@ -54,7 +53,7 @@ This guide explains how to create a simple integration to convert a JSON payload
 4. Select the `xmlData` variable from the dropdown and click **`Save`**.
    <a href="{{base_path}}/assets/img/message-transformation/add-return.png"><img src="{{base_path}}/assets/img/message-transformation/add-return.png"" alt="Add Return" width="70%"></a>
 5. Click on the `If` condition `Else` path ➕ sign and add another **`Return`** from the node panel.  
-6. Enter `http:BadRequest` as the value and click **`Save`**.  
+6. Enter `http:BAD_REQUEST;` as the value and click **`Save`**.  
    <a href="{{base_path}}/assets/img/message-transformation/add-else-return.png"><img src="{{base_path}}/assets/img/message-transformation/add-else-return.png"" alt="Add Else Return" width="70%"></a>
 7. The final design will look like below.             
    <a href="{{base_path}}/assets/img/message-transformation/final-design.png"><img src="{{base_path}}/assets/img/message-transformation/final-design.png"" alt="Final Design" width="70%"></a>

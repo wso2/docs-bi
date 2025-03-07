@@ -85,25 +85,27 @@ Follow the steps below to implement the service orchestration.
 
 ### Step 2: Create a HTTP service.
 1. In the design view, click on the **`Add Construct`** button.
-2. Select **`Service`** from the menu.
-3. Select **`HTTP Service`** from the Service Type dropdown.
-4. Select **`Design From Scratch`** option.
-5. Enter the service name as `HealthCare`, path as `/healthcare`, and `8290` as the port.
-6. Click on the **`Add Service`** button.
+2. Select **`HTTP Service`** from the Service Type dropdown.
+3. Select the **`+Listner`** button to create a new listener.
+4. Enter the service **`Name`** as `healthcareService` and the **`Port`** as `8290`.
+5. Select **`Design from Scratch`** option as the **`The contract of the service`**.
+6. Enter the **`Service base path`** as  `/healthcare`, and `8290` as the port.
+7. Click on the **`Add Service`** button.
 
 ### Step 3: Define types
-1. Click on the **`Add Construct`** button and select **`Type`**.
-2. Select **`Import a JSON`** from the Type dropdown.
-3. Generate record types corresponding to the response from the hospital backend service by providing a sample of the expected JSON payload. The values are given below.
+1. Navigate to the design view and click on the **`Add Construct`** button.
+2. Click on **`Types`** to add types.
+3. Click on **`+Add Type`** to add a new type.
+ Generate record types corresponding to the response from the hospital backend service by providing a sample of the expected JSON payload. The values are given below.
     
-    |Record Name|Sample JSON value| Make Separate Record Definition |
-    |---|---|------------------------|
-    |ReservationRequest|```{"patient":{"name":"John Doe","dob":"1940-03-19","ssn":"234-23-525","address":"California","phone":"8770586755","email":"johndoe@gmail.com","cardNo":"7844481124110331"},"doctor":"thomas collins","hospital_id":"grandoaks","hospital":"grand oak community hospital","appointment_date":"2024-11-06"}```| ☑️                     |
-    |ReservationStatus|```{"appointmentNo":1, "doctorName":"thomas collins", "patient":"John Doe", "actualFee":7000.0, "discount":20, "discounted":5600.0, "paymentID":"e560ea82-1c42-4972-a471-af5c1ad4995f", "status":"settled"}```| ☑️                     |
-    |Appointment|```{"appointmentNumber":12345,"doctor":{"name":"Dr. Alice Carter","hospital":"Green Valley Hospital","category":"Cardiology","availability":"Mon-Fri, 9 AM - 5 PM","fee":200},"patientName":"Emma Johnson","hospital":"Green Valley Hospital","confirmed":true,"appointmentDate":"2024-11-20T10:00:00"}```| ☑️                     |
-    |Fee|```{"patientName":"Emma Johnson","doctorName":"Dr. Alice Carter","actualFee":"150.00"}```|                        |
+    |Type| Name               | Sample JSON value                                                                                                                                                                                                                                                                                             | Make Separate Record Definition |
+    |--|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|
+    |Record| ReservationRequest | ```{"patient":{"name":"John Doe","dob":"1940-03-19","ssn":"234-23-525","address":"California","phone":"8770586755","email":"johndoe@gmail.com","cardNo":"7844481124110331"},"doctor":"thomas collins","hospital_id":"grandoaks","hospital":"grand oak community hospital","appointment_date":"2024-11-06"}``` | ☑️                     |
+    |Record| ReservationStatus  | ```{"appointmentNo":1, "doctorName":"thomas collins", "patient":"John Doe", "actualFee":7000.0, "discount":20, "discounted":5600.0, "paymentID":"e560ea82-1c42-4972-a471-af5c1ad4995f", "status":"settled"}```                                                                                                | ☑️                     |
+    |Record| Appointment        | ```{"appointmentNumber":12345,"doctor":{"name":"Dr. Alice Carter","hospital":"Green Valley Hospital","category":"Cardiology","availability":"Mon-Fri, 9 AM - 5 PM","fee":200},"patientName":"Emma Johnson","hospital":"Green Valley Hospital","confirmed":true,"appointmentDate":"2024-11-20T10:00:00"}```    | ☑️                     |
+    |Record| Fee                | ```{"patientName":"Emma Johnson","doctorName":"Dr. Alice Carter","actualFee":"150.00"}```                                                                                                                                                                                                                     |                        |
      
-4. The final types will look like the following.    
+5. The final types will look like the following.    
     <a href="{{base_path}}/assets/img/service-orchestration/types.png"><img src="{{base_path}}/assets/img/service-orchestration/types.png" alt="Types" width="70%"></a>
 
 ### Step 4: Add connections
