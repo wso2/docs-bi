@@ -8,20 +8,20 @@ The flow is as follows.
 1. The user sends an appointment request to the service.
     ```json
       {
-        "patient":{
-          "name":"John Doe",
-          "dob":"1940-03-19",
-          "ssn":"234-23-525",
-          "address":"California",
-          "phone":"8770586755",
-          "email":"johndoe@gmail.com",
-          "cardNo":"7844481124110331"
+        "patient": {
+          "name": "John Doe",
+          "dob": "1940-03-19",
+          "ssn": "234-23-525",
+          "address": "California",
+          "phone": "8770586755",
+          "email": "johndoe@gmail.com",
+          "cardNo": "7844481124110331"
         },
-        "doctor":"thomas collins",
-        "hospital_id":"grandoaks",
-        "hospital":"grand oak community hospital",
-        "appointment_date":"2024-11-06"
-       }
+        "doctor": "thomas collins",
+        "hospital_id": "grandoaks",
+        "hospital": "grand oak community hospital",
+        "appointment_date": "2024-11-06"
+      }
     ```
 2. Extract necessary details from the request (e.g., hospital, patient, doctor, etc.) and make a call to the hospital backend service to request an appointment. A response similar to the following will be returned from the hospital backend service on success. 
     ```json
