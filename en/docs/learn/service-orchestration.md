@@ -175,7 +175,7 @@ Follow the steps below to implement the service orchestration.
    |Resource Path| `/[reservation.hospital_id]/categories/appointments/[appointmentNumber]/fee` |
 
    <a href="{{base_path}}/assets/img/service-orchestration/fee.png"><img src="{{base_path}}/assets/img/service-orchestration/fee.png" alt="Hospital Service Request" width="70%"></a>  
-11. Click on the ➕ sign and select **`Variable`** from the node panel. Add a variable named `actualFee` with the type **`decimal`** and expression `decimal:fromString(fee.actualFee)`.
+11. Click on the ➕ sign and select **`Variable`** from the node panel. Add a variable named `actualFee` with the type **`decimal`** and expression `decimal:fromString(fee.actualFee)`.  
 12. Create another new to prepare the payment request. Click on the ➕ sign and select **`Variable`** from the node panel. Add a variable named `paymentRequest` with the type **`json`** and expression as follows.
     ```ballerina
     {
