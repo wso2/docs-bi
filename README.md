@@ -1,13 +1,13 @@
 # WSO2 Ballerina Integrator Documentation
 
-[![pages-build-deployment](https://github.com/wso2/docs-kola/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/wso2/docs-kola/actions/workflows/pages/pages-build-deployment)
-[![Ballerina Integrator Docs Publish](https://github.com/wso2/docs-kola/actions/workflows/publish_docs.yaml/badge.svg)](https://github.com/wso2/docs-kola/actions/workflows/publish_docs.yaml)
+[![pages-build-deployment](https://github.com/wso2/docs-bi/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/wso2/docs-bi/actions/workflows/pages/pages-build-deployment)
+[![Ballerina Integrator Docs Publish](https://github.com/wso2/docs-bi/actions/workflows/publish_docs.yaml/badge.svg)](https://github.com/wso2/docs-bi/actions/workflows/publish_docs.yaml)
 
 This repository contains the source code for WSO2 Ballerina Integrator documentation.
 
 This repository is open and we welcome your contributions!
 
-[//]: # ( To access the WSO2 Ballerina Integrator documentation site, visit https://wso2.github.io/docs-kola/.)
+[//]: # ( To access the WSO2 Ballerina Integrator documentation site, visit https://wso2.github.io/docs-bi/.)
 
 Follow the below topics to learn more:
 
