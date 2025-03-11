@@ -11,8 +11,8 @@
                         </p>
                     </div>
                 </div>
-                <div  style="text-align:right">
-                    <a href="{{base_path}}/assets/img/introduction/bi.png"><img src="{{base_path}}/assets/img/introduction/bi.png" alt="Ballerina Integrator" width="95%"></a>
+                <div  style="text-align:center">
+                    <a href="{{base_path}}/assets/img/introduction/bi2.png"><img src="{{base_path}}/assets/img/introduction/bi2.png" alt="Ballerina Integrator" width="55%"></a>
                 </div>
             </div>
         </div>
@@ -21,7 +21,7 @@
     <div class="section02">
         <div class="rightContent">
                 <div class="about-home">
-                    <div  style="text-align:left">
+                    <div  style="text-align:center">
                         <a href="{{base_path}}/assets/img/introduction/low-code.gif"><img src="{{base_path}}/assets/img/introduction/low-code.gif" alt="low-code" width="90%" style="padding-top: 60px" ></a>
                     </div>
                     <div>
@@ -57,7 +57,7 @@
                             <li><b>Smart refactoring and code restructuring:</b> Ballerina Integrator’s AI suggests refactoring options, enabling a cleaner, more maintainable codebase.</li>
                         </ul>
                     </div>
-                    <div  style="text-align:right">
+                    <div  style="text-align:center">
                         <a href="{{base_path}}/assets/img/introduction/ai.gif"><img src="{{base_path}}/assets/img/introduction/ai.gif" alt="AI" width="90%" style="padding-top: 60px; padding-right: 50px" ></a>
                     </div>
                 </div>
