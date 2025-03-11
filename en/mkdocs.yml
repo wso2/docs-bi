@@ -18,12 +18,12 @@
 site_name: Ballerina Integrator Documentation
 site_description: Documentation for Ballerina Integrator
 site_author: WSO2
-# site_url: https://ballerina-integrator.docs.wso2.com/en/latest/
+# site_url: https://bi.docs.wso2.com/en/latest/
 
 # Repository information
 repo_name: wso2/docs-ballerina-integrator
-repo_url: https://github.com/wso2/docs-ballerina-integrator
-edit_uri: https://github.com/wso2/docs-ballerina-integrator/edit/main/en/docs/
+repo_url: https://github.com/wso2/docs-bi
+edit_uri: https://github.com/wso2/docs-bi/edit/main/en/docs/
 dev_addr: localhost:8000
 
 # Copyright
@@ -166,5 +166,5 @@ extra:
     - type: linkedin
       link: https://www.linkedin.com/company/wso2
   # site_version: Uncomment to specify a version
-  base_path: https://wso2.github.io/docs-kola
+  base_path: https://wso2.github.io/docs-bi
 #  base_path: http://localhost:8000

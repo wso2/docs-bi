@@ -54,9 +54,10 @@ Download and install the [Visual Studio Code](https://code.visualstudio.com/down
 1. In the design view, click on the **`Add Construct`** button.
 2. Select **`Service`** from the menu.
 3. Select **`HTTP Service`** from the service type.
-4. Select **`Design From Scratch`** option. 
-5. Specify the service name to be `HelloWorldService`, path as `/hello`, and `9090` as the port.
-6. Click on the **`Create Service`** button to create the new service with the specified configurations.
+4. Select the **`Create and use the default HTTP listener`** option from the **`Listener`** dropdown.
+5. Select **`Design from Scratch`** option as the **`The contract of the service`**.
+6. Specify the **`Service base path`** as `/hello`.
+7. Click on the **`Create`** button to create the new service with the specified configurations.
    <a href="{{base_path}}/assets/img/get-started/create-service.gif"><img src="{{base_path}}/assets/img/get-started/create-service.gif" alt="Create Service" width="70%"></a>
 
 ### Step 7: Design the integration
@@ -66,19 +67,26 @@ Download and install the [Visual Studio Code](https://code.visualstudio.com/down
 4. Select **`Add Connection`** from the node panel. 
 5. Search for `HTTP` in the search bar and select **`HTTP`** as the connection type.
 6. Change the variable name to `externalEP`.
-7. Add the URL `https://apis.wso2.com` to the connection URL field and click **`Save`**.
+7. Add the URL `"https://apis.wso2.com"` to the connection URL field and click **`Save`**.
    <a href="{{base_path}}/assets/img/get-started/create-connection.gif"><img src="{{base_path}}/assets/img/get-started/create-connection.gif" alt="Create New Connection" width="70%"></a>
 
 8. Click the ➕ button again and select **`Connections` -> `externalEP` -> `get`** from the node panel.
-9. Enter the path `/zvdz/mi\-qsg/v1\.0` in the **`Resource Path`** field and click **`Save`**.
-   <a href="{{base_path}}/assets/img/get-started/add-action.gif"><img src="{{base_path}}/assets/img/get-started/add-action.gif" alt="Add Action" width="70%"></a>
-
-10. Click on the ➕ button again and select **`Return`** from the node panel.
-11. Select the `value` variable from the dropdown and click **`Save`**. This step will return the response from the `HelloWorld` API endpoint.
+9. Fill the request details as below and click **`Save`**.
+   
+   | Field               | Value        |
+   |---------------------|--------------|
+   | **`Variable Name`** | `epResponse` |
+   | **`Variable Type`** | `string`     |
+   | **`Connection`**          | `externalEp` |
+   | **`Target Type`**         | `string`     |
+   | **`Path`**                | `"/zvdz/mi-qsg/v1.0"` |
+ 
+   <a href="{{base_path}}/assets/img/get-started/add-action.gif"><img src="{{base_path}}/assets/img/get-started/add-action.gif" alt="Add Action" width="70%"></a>   
+10. Click on the ➕ button again and select **`Return`** from the node panel.  
+11. Select the `helloWorldResponse` variable as the **`Expression`** from the dropdown and click **`Save`**. This step will return the response from the `HelloWorld` API endpoint.
    <a href="{{base_path}}/assets/img/get-started/add-return.gif"><img src="{{base_path}}/assets/img/get-started/add-return.gif" alt="Add Return" width="70%"></a>
 
 ### Step 8: Run the integration
 1. Click on the **`Run`** button at top right corner to run the integration.
 2. The integration will be compiled and started in the embedded Ballerina runtime.
 3. Once the integration is started, you can access the service by navigating to `http://localhost:9090/hello/greeting` in your web browser.
-   
