@@ -12,7 +12,7 @@
                     </div>
                 </div>
                 <div  style="text-align:center">
-                    <a href="{{base_path}}/assets/img/introduction/bi2.png"><img src="{{base_path}}/assets/img/introduction/bi2.png" alt="Ballerina Integrator" width="55%"></a>
+                    <a href="{{base_path}}/assets/img/introduction/bi.png"><img src="{{base_path}}/assets/img/introduction/bi.png" alt="Ballerina Integrator" width="55%"></a>
                 </div>
             </div>
         </div>

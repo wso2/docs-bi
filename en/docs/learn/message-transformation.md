@@ -52,7 +52,7 @@ This guide explains how to create a simple integration to convert a JSON payload
 1. Click on the **`Run`** on the run button in the top right corner to run the integration.
 2. The integration will start and the service will be available at `http://localhost:9090/convert`.
 3. Click on the **`Try it`** button to open the embedded HTTP client.
-4. Enter the JSON payload in the request body and click on the **`|>`** button to send the request.
+4. Enter the JSON payload in the request body and click on the ▶️ button to send the request.
     ```json
     {
         "name": "John",
