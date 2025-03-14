@@ -578,15 +578,8 @@ This documentation is a work in progress.
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-5-error-handling" class="md-nav__link">
-    Step 5: Error handling
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-6-run-the-integration" class="md-nav__link">
-    Step 6: Run the integration
+  <a href="#step-5-run-the-integration" class="md-nav__link">
+    Step 5: Run the integration
   </a>
   
 </li>
@@ -856,15 +849,8 @@ This documentation is a work in progress.
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-5-error-handling" class="md-nav__link">
-    Step 5: Error handling
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-6-run-the-integration" class="md-nav__link">
-    Step 6: Run the integration
+  <a href="#step-5-run-the-integration" class="md-nav__link">
+    Step 5: Run the integration
   </a>
   
 </li>
@@ -920,23 +906,23 @@ This documentation is a work in progress.
 </ol>
 <h3 id="step-2-create-a-http-service">Step 2: Create a HTTP service.<a class="headerlink" href="#step-2-create-a-http-service" title="Permanent link">&para;</a></h3>
 <ol>
-<li>In the design view, click on the <strong><code>Add Construct</code></strong> button.</li>
-<li>Select <strong><code>HTTP Service</code></strong> from the service type.</li>
+<li>In the design view, click on the <strong><code>Add Artifact</code></strong> button.</li>
+<li>Select <strong><code>HTTP Service</code></strong> under the <strong><code>Integration as API</code></strong> category.</li>
 <li>Select the <strong><code>Create and use the default HTTP listener</code></strong> option from the <strong><code>Listener</code></strong> dropdown.</li>
 <li>Select <strong><code>Design from Scratch</code></strong> option as the <strong><code>The contract of the service</code></strong>.</li>
-<li>Enter the <strong><code>Service base path</code></strong> as  <code>/convert</code>.</li>
-<li>Click on the <strong><code>Create Service</code></strong> button to create the new service with the specified configurations.</li>
+<li>Specify the <strong><code>Service base path</code></strong> as <code>/convert</code>.</li>
+<li>Click on the <strong><code>Create</code></strong> button to create the new service with the specified configurations.</li>
 </ol>
 <h3 id="step-3-update-the-resource-method">Step 3: Update the resource method<a class="headerlink" href="#step-3-update-the-resource-method" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Click on three dots appear in front of the <code>greeting</code> resource and select edit to view and update the resource details.</li>
+<li>The service will have a default resource named <code>greeting</code> with the <strong><code>GET</code></strong> method. Click on three dots appear in front of the <code>greeting</code> resource and select edit to view and update the resource details.
+    <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/edit-resource.gif"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/edit-resource.gif" alt="Edit Resource" width="70%"></a></li>
 <li>Change the resource HTTP method to <strong><code>POST</code></strong>.</li>
 <li>Change the resource name as <code>toXml</code>.</li>
 <li>Add a payload parameter named <code>input</code> to the resource of type <code>json</code>. </li>
 <li>Change the 201 response return type to <code>xml</code>.</li>
-<li>Add a new response of type <strong><code>http:BadRequest</code></strong> under the responses. </li>
 <li>Click on the <strong><code>Save</code></strong> button to update the resource with the specified configurations.
-    <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/update-resource.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/update-resource.png" alt="Update Resource" width="70%"></a></li>
+    <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/update-resource.gif"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/update-resource.gif" alt="Update Resource" width="70%"></a></li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Resource Method</p>
@@ -945,67 +931,43 @@ This documentation is a work in progress.
 <h3 id="step-4-add-the-transformation-logic">Step 4: Add the transformation logic<a class="headerlink" href="#step-4-add-the-transformation-logic" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Click on the <code>toXml</code> resource to navigate to the resource implementation designer view.</li>
+<li>Delete the default <code>Return</code> action from the resource.</li>
 <li>Hover to the arrow after start and click the ➕ button to add a new action to the resource.</li>
-<li>Select <strong><code>Variable</code></strong> from the node panel.</li>
-<li>Change the variable name to <code>xmlData</code>, type as <code>xml | ()</code> and expression to <code>check xmldata:fromJson(input)</code>.
-   <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-variable.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-variable.png"" alt="Add variable" width="70%"></a></li>
+<li>Select <strong><code>Function Call</code></strong> from the node panel.</li>
+<li>Search for <code>json to xml</code> and select the <strong><code>fromJson</code></strong> function from the suggestions.</li>
+<li>Change the <strong><code>Variable Name</code></strong> to <code>xmlResult</code>, <strong><code>Variable Type</code></strong> as <code>xml</code> and <strong><code>JsonValue</code></strong> to <code>input</code>.</li>
+<li>Click on the <strong><code>Save</code></strong> button to add the function call to the resource.
+    <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-variable.gif"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-variable.gif" alt="Add Function Call" width="70%"></a></li>
+<li>Add a new node after the <code>fromJson</code> function call and select <strong><code>Return</code></strong> from the node panel.</li>
+<li>Select the <code>xmlResult</code> variable from the dropdown and click <strong><code>Save</code></strong>.
+    <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-return.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-return.png" alt="Add Return" width="70%"></a></li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">JSON to XML Conversion</p>
 <p>To learn more about json to xml conversion, see <a href="https://ballerina.io/learn/by-example/xml-from-json-conversion/">Ballerina JSON to XML conversion</a>.</p>
 </div>
-<h3 id="step-5-error-handling">Step 5: Error handling<a class="headerlink" href="#step-5-error-handling" title="Permanent link">&para;</a></h3>
+<h3 id="step-5-run-the-integration">Step 5: Run the integration<a class="headerlink" href="#step-5-run-the-integration" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Click on the ➕ button again and select <strong><code>If</code></strong> from the node panel.</li>
-<li>Enter the condition as <code>xmlData is xml</code> and press <strong><code>Save</code></strong>.
-   <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-if.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-if.png"" alt="Add If" width="70%"></a></li>
-<li>Click on the <code>If</code> condition true(<code>xmlData is xml</code>)  path ➕ sign and add a <strong><code>Return</code></strong> from the node panel.</li>
-<li>Select the <code>xmlData</code> variable from the dropdown and click <strong><code>Save</code></strong>.
-   <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-return.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-return.png"" alt="Add Return" width="70%"></a></li>
-<li>Click on the <code>If</code> condition <code>Else</code> path ➕ sign and add another <strong><code>Return</code></strong> from the node panel.  </li>
-<li>Enter <code>http:BAD_REQUEST;</code> as the value and click <strong><code>Save</code></strong>.<br />
-   <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-else-return.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-else-return.png"" alt="Add Else Return" width="70%"></a></li>
-<li>The final design will look like below.           <br />
-   <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/final-design.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/final-design.png"" alt="Final Design" width="70%"></a></li>
-<li>The final code will look like below. The source view can be accessed by clicking on the <code>&lt;/&gt;</code> button in the top right corner.
-   <div class="highlight"><pre><span></span><code>import ballerina/http;
-import ballerina/xmldata;
-
-service /convert on new http:Listener(9090) {
-
-    function init() returns error? {
-    }
-
-    resource function post toXml(@http:Payload json input) returns xml|http:InternalServerError|http:BadRequest {
-        do {
-
-            xml? xmlData = check xmldata:fromJson(input);
-            if xmlData is xml {
-                return xmlData;
-            } else {
-                return http:BAD_REQUEST;
-            }
-
-        } on fail error e {
-            return http:INTERNAL_SERVER_ERROR;
-        }
-    }
-}
-</code></pre></div></li>
-</ol>
-<h3 id="step-6-run-the-integration">Step 6: Run the integration<a class="headerlink" href="#step-6-run-the-integration" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Click on the <strong><code>Run</code></strong> on the run button in the top right corner to run the integration.</li>
+<li>Click on the <strong><code>Run</code></strong> button in the top-right corner to run the integration.</li>
 <li>The integration will start and the service will be available at <code>http://localhost:9090/convert</code>.</li>
-<li>The service can be tested using a tool like <a href="https://www.postman.com/">Postman</a> or <a href="https://curl.se/">curl</a> by sending a POST request with a JSON payload to the service endpoint.
-   <div class="highlight"><pre><span></span><code>curl -X POST &quot;http://localhost:9090/convert/toXml&quot; -H &quot;Content-Type: application/json&quot; -d &#39;{&quot;name&quot;:&quot;John&quot;, &quot;age&quot;:30, &quot;car&quot;:&quot;Honda&quot;}&#39;
+<li>Click on the <strong><code>Try it</code></strong> button to open the embedded HTTP client.</li>
+<li>Enter the JSON payload in the request body and click on the ▶️ button to send the request.
+    <div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;car&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Honda&quot;</span>
+<span class="p">}</span>
 </code></pre></div></li>
 <li>The response will be an XML representation of the JSON payload.<br />
 <code>&lt;root&gt;
         &lt;name&gt;John&lt;/name&gt;
         &lt;age&gt;30&lt;/age&gt;
         &lt;car&gt;Honda&lt;/car&gt;
-    &lt;/root&gt;</code></li>
+    &lt;/root&gt;</code>
+   <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/run-integration.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/run-integration.png" alt="Run Integration" width="70%"></a></li>
+<li>Additionally, the service can be tested using tools like <a href="https://www.postman.com/">Postman</a> or <a href="https://curl.se/">curl</a> by sending a POST request with a JSON payload to the service endpoint.
+   <div class="highlight"><pre><span></span><code>curl -X POST &quot;http://localhost:9090/convert/toXml&quot; -H &quot;Content-Type: application/json&quot; -d &#39;{&quot;name&quot;:&quot;John&quot;, &quot;age&quot;:30, &quot;car&quot;:&quot;Honda&quot;}&#39;
+</code></pre></div></li>
 </ol>
 
 
