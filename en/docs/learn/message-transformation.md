@@ -14,35 +14,39 @@ This guide explains how to create a simple integration to convert a JSON payload
 
 
 ### Step 2: Create a HTTP service.
-1. In the design view, click on the **`Add Construct`** button.
-2. Select **`HTTP Service`** from the service type.
+
+1. In the design view, click on the **`Add Artifact`** button.
+2. Select **`HTTP Service`** under the **`Integration as API`** category.
 3. Select the **`Create and use the default HTTP listener`** option from the **`Listener`** dropdown.
 4. Select **`Design from Scratch`** option as the **`The contract of the service`**.
-5. Enter the **`Service base path`** as  `/convert`.
-6. Click on the **`Create Service`** button to create the new service with the specified configurations.
+5. Specify the **`Service base path`** as `/convert`.
+6. Click on the **`Create`** button to create the new service with the specified configurations.
 
 ### Step 3: Update the resource method
-1. Click on three dots appear in front of the `greeting` resource and select edit to view and update the resource details.
+1. The service will have a default resource named `greeting` with the **`GET`** method. Click on three dots appear in front of the `greeting` resource and select edit to view and update the resource details.
+    <a href="{{base_path}}/assets/img/message-transformation/edit-resource.gif"><img src="{{base_path}}/assets/img/message-transformation/edit-resource.gif" alt="Edit Resource" width="70%"></a>
 2. Change the resource HTTP method to **`POST`**.
 3. Change the resource name as `toXml`.
 4. Add a payload parameter named `input` to the resource of type `json`. 
 5. Change the 201 response return type to `xml`.
 6. Click on the **`Save`** button to update the resource with the specified configurations.
-    <a href="{{base_path}}/assets/img/message-transformation/update-resource.png"><img src="{{base_path}}/assets/img/message-transformation/update-resource.png" alt="Update Resource" width="70%"></a>
+    <a href="{{base_path}}/assets/img/message-transformation/update-resource.gif"><img src="{{base_path}}/assets/img/message-transformation/update-resource.gif" alt="Update Resource" width="70%"></a>
 
 !!! info "Resource Method"
     To learn more about resources, see [Ballerina Resources](https://ballerina.io/learn/by-example/resource-methods/).
 
 ### Step 4: Add the transformation logic
 1. Click on the `toXml` resource to navigate to the resource implementation designer view.
-2. Hover to the arrow after start and click the ➕ button to add a new action to the resource.
-3. Select **`Function Call`** from the node panel.
-4. Search for `json to xml` and select the **`fromJson`** function from the suggestions.
-5. Change the **`Variable Name`** to `xmlData`, **`Variable Type`** as `xml` and **`JsonValue`** to `input`.
-6. Click on the **`Save`** button to add the function call to the resource.
-   <a href="{{base_path}}/assets/img/message-transformation/add-variable.png"><img src="{{base_path}}/assets/img/message-transformation/add-variable.png"" alt="Add variable" width="70%"></a>
-7. Add a new node after the `fromJson` function call and select **`Return`** from the node panel.
-8. Select the `xmlData` variable from the dropdown and click **`Save`**.
+2. Delete the default `Return` action from the resource.
+3. Hover to the arrow after start and click the ➕ button to add a new action to the resource.
+4. Select **`Function Call`** from the node panel.
+5. Search for `json to xml` and select the **`fromJson`** function from the suggestions.
+6. Change the **`Variable Name`** to `xmlResult`, **`Variable Type`** as `xml` and **`JsonValue`** to `input`.
+7. Click on the **`Save`** button to add the function call to the resource.
+    <a href="{{base_path}}/assets/img/message-transformation/add-variable.gif"><img src="{{base_path}}/assets/img/message-transformation/add-variable.gif" alt="Add Function Call" width="70%"></a>
+8. Add a new node after the `fromJson` function call and select **`Return`** from the node panel.
+9. Select the `xmlResult` variable from the dropdown and click **`Save`**.
+    <a href="{{base_path}}/assets/img/message-transformation/add-return.png"><img src="{{base_path}}/assets/img/message-transformation/add-return.png" alt="Add Return" width="70%"></a>
 
 !!! info "JSON to XML Conversion"
     To learn more about json to xml conversion, see [Ballerina JSON to XML conversion](https://ballerina.io/learn/by-example/xml-from-json-conversion/).
@@ -61,13 +65,14 @@ This guide explains how to create a simple integration to convert a JSON payload
     }
     ```
 5. The response will be an XML representation of the JSON payload.  
-   ```xml
+   ```
     <root>
         <name>John</name>
         <age>30</age>
         <car>Honda</car>
     </root>
     ```
+   <a href="{{base_path}}/assets/img/message-transformation/run-integration.png"><img src="{{base_path}}/assets/img/message-transformation/run-integration.png" alt="Run Integration" width="70%"></a>
 6. Additionally, the service can be tested using tools like [Postman](https://www.postman.com/) or [curl](https://curl.se/) by sending a POST request with a JSON payload to the service endpoint.
    ```curl
    curl -X POST "http://localhost:9090/convert/toXml" -H "Content-Type: application/json" -d '{"name":"John", "age":30, "car":"Honda"}'
