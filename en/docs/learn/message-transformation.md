@@ -41,7 +41,7 @@ This guide explains how to create a simple integration to convert a JSON payload
 5. Change the **`Variable Name`** to `xmlData`, **`Variable Type`** as `xml` and **`JsonValue`** to `input`.
 6. Click on the **`Save`** button to add the function call to the resource.
    <a href="{{base_path}}/assets/img/message-transformation/add-variable.png"><img src="{{base_path}}/assets/img/message-transformation/add-variable.png"" alt="Add variable" width="70%"></a>
-7. Click on ➕ button after the `fromJson` function call and select **`Return`** from the node panel.
+7. Add a new node after the `fromJson` function call and select **`Return`** from the node panel.
 8. Select the `xmlData` variable from the dropdown and click **`Save`**.
 
 !!! info "JSON to XML Conversion"
