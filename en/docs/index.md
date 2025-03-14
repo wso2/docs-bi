@@ -34,7 +34,7 @@
                             <li><b>Pre-built connectors:</b> Ballerina Integrator offers connectors for easy integration with various systems and services.</li>
                             <li><b>Reuse components:</b> Create and share reusable components across integrations, saving time and effort.</li>
                             <li><b>Automate testing:</b> Automated testing helps identify and fix issues early.</li>
-                            <li><b>AI-assisted development:</b> Ballerina Integrator’s AI provides smart suggestions to boost coding efficiency and accuracy.</li>
+                            <li><b>Low-code and pro-code support:</b> Ballerina Integrator allows seamless switching between low-code and pro-code, enabling visual design with optional custom coding. </li>
                         </ul>
                     </div>
                 </div>

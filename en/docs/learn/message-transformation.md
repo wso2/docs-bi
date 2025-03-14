@@ -37,7 +37,7 @@ This guide explains how to create a simple integration to convert a JSON payload
 1. Click on the `toXml` resource to navigate to the resource implementation designer view.
 2. Hover to the arrow after start and click the ➕ button to add a new action to the resource.
 3. Select **`Function Call`** from the node panel.
-4. Search for `fromJson` and select the `fromJson` function from the suggestions.
+4. Search for `json to xml` and select the **`fromJson`** function from the suggestions.
 5. Change the **`Variable Name`** to `xmlData`, **`Variable Type`** as `xml` and **`JsonValue`** to `input`.
 6. Click on the **`Save`** button to add the function call to the resource.
    <a href="{{base_path}}/assets/img/message-transformation/add-variable.png"><img src="{{base_path}}/assets/img/message-transformation/add-variable.png"" alt="Add variable" width="70%"></a>
@@ -49,7 +49,7 @@ This guide explains how to create a simple integration to convert a JSON payload
 
 
 ### Step 5: Run the integration
-1. Click on the **`Run`** on the run button in the top right corner to run the integration.
+1. Click on the **`Run`** button in the top-right corner to run the integration.
 2. The integration will start and the service will be available at `http://localhost:9090/convert`.
 3. Click on the **`Try it`** button to open the embedded HTTP client.
 4. Enter the JSON payload in the request body and click on the ▶️ button to send the request.
@@ -68,7 +68,7 @@ This guide explains how to create a simple integration to convert a JSON payload
         <car>Honda</car>
     </root>
     ```
-6. Additionally the service can be tested using a tool like [Postman](https://www.postman.com/) or [curl](https://curl.se/) by sending a POST request with a JSON payload to the service endpoint.
+6. Additionally, the service can be tested using tools like [Postman](https://www.postman.com/) or [curl](https://curl.se/) by sending a POST request with a JSON payload to the service endpoint.
    ```curl
    curl -X POST "http://localhost:9090/convert/toXml" -H "Content-Type: application/json" -d '{"name":"John", "age":30, "car":"Honda"}'
    ```

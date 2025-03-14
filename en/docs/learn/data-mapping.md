@@ -156,7 +156,7 @@ service / on new http:Listener(8290) {
 ```
 
 ### Step 6: Run the integration
-1. Click on the **`Run`** on the run button in the top right corner to run the integration.
+1. Click on the **`Run`** button in the top-right corner to run the integration.
 2. The integration will start and the service will be available at `http://localhost:8290/transform`.
 3. The service can be tested using a tool like [Postman](https://www.postman.com/) or [curl](https://curl.se/) by sending a POST request with a JSON payload to the service endpoint.   
    ```curl
