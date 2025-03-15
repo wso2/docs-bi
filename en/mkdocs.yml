@@ -34,7 +34,7 @@ theme:
   name: material
   custom_dir: theme/material
   logo: images/logo.svg
-  favicon: images/favicon.png
+  favicon: images/bi-logo.svg
   features:
     - content.code.copy
     - navigation.tabs

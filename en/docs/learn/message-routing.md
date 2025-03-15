@@ -63,19 +63,17 @@ Follow the steps below to implement the message routing service.
 
 
 ### Step 2: Create an HTTP service.
-1. In the design view, click on the **`Add Construct`** button.
-2. Select **`Service`** from the menu.
-3. Select **`HTTP Service`** from the Service Type dropdown.
-4. Select **`Design From Scratch`** option.
-5. Enter the service name as `HealthCare`, path as `/healthcare`, and `8290` as the port.
-6. Click on the **`Create Service`** button to create the new service with the specified configurations.
+1. In the design view, click on the **`Add Artifact`** button.
+2. Select **`HTTP Service`** under the **`Integration as API`** category.
+3. Select the **`+ Listeners`** option from the **`Listeners`** dropdown to add a new listener.
+4. Enter the listener name as `healthListener`, `8290` as the port and click on the **`Save`** button. 
+5. Add the service base path as `/healthcare` and select the **`Design from Scratch`** option as the **`The contract of the service`**.
+6. Click on the **`Create`** button to create the new service with the specified configurations.
 
 ### Step 3: Define types
-1. Click on the **`Add Construct`** button and select **`Types`**.
-2. Click on **`Add Type`** to add a new type
-3. Select **`Import a JSON`** from the Type dropdown.    
-   <a href="{{base_path}}/assets/img/message-routing/add-type.gif"><img src="{{base_path}}/assets/img/message-routing/add-type.gif" alt="Create Type" width="70%"></a>
-4. Add the **`Record Name`** as `ReservationRequest` and paste the following JSON payload. Select **`Make Separate Record Definitions`** and click on the **`Save`** button.
+1. Click on the **`Add Artifacts`** button and select **`Type`** in the **`Other Artifacts`** section.
+2. Click on **`+ Add Type`** to add a new type
+3. Add the **`Record Name`** as `ReservationRequest` and paste the following JSON payload. Select **`Make Separate Record Definitions`** and click on the **`Save`** button.
    ```json
     {
         "patient": {
@@ -92,7 +90,7 @@ Follow the steps below to implement the message routing service.
         "appointment_date": "2023-10-02"
     }
    ```
-5. Repeat the above steps to add a new type named `ReservationResponse` with the following JSON payload.
+4. Repeat the above steps to add a new type named `ReservationResponse` with the following JSON payload.
     ```json
     {
        "appointmentNumber": 8,
@@ -109,22 +107,21 @@ Follow the steps below to implement the message routing service.
        "appointmentDate": "2023-10-02"
     }
     ```
-6. The final Type diagram will look like below.     
+5. The final Type diagram will look like below.     
 <a href="{{base_path}}/assets/img/message-routing/types.png"><img src="{{base_path}}/assets/img/message-routing/types.png" alt="Create Type" width="70%"></a>
 
 ### Step 4: Add connectors
-1. Navigate to design view and click on the **`Add Connector`** button.
-2. Search and select the **`HTTP`** connector.
-3. Enter the connector name as `grandOakEP`, URL as `http://localhost:9090/grandoak/categories`, and config as `{}`.
+1. Navigate to design view and click on the **`Connection`** button.
+2. Search and select the **`HTTP Client`** connector.
+3. Enter the connector name as `grandOakEP`, URL as `"http://localhost:9090/grandoak/categories"`.
 4. Click on the **`Create Connector`** button to create the new connector with the specified configurations.
 <a href="{{base_path}}/assets/img/message-routing/add-connector.gif"><img src="{{base_path}}/assets/img/message-routing/add-connector.gif" alt="Add Connector" width="70%"></a>
 5. Repeat the above steps to add connectors for the `clemency` and `pinevalley` hospitals with the following configurations.
 
-    |Connector Name|URL|Config|
-    |---|---|---|
-    |grandOakEP|http://localhost:9090/grandoak/categories|`{}`|
-    |clemencyEP|http://localhost:9090/clemency/categories|`{}`|
-    |pineValleyEP|http://localhost:9090/pinevalley/categories|`{}`|
+    |Connector Name|URL|
+    |---|---|
+    |clemencyEP|`"http://localhost:9090/clemency/categories"`|
+    |pineValleyEP|`"http://localhost:9090/pinevalley/categories"`|
 
 6. The final connectors will look like below.     
 <a href="{{base_path}}/assets/img/message-routing/connectors.png"><img src="{{base_path}}/assets/img/message-routing/connectors.png" alt="Connectors" width="70%"></a>
