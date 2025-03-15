@@ -19,7 +19,7 @@
       
         <link rel="next" href="../service-orchestration/">
       
-      <link rel="icon" href="../../images/favicon.png">
+      <link rel="icon" href="../../images/bi-logo.svg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
     
     
@@ -1012,19 +1012,17 @@ To accomplish this, you’ll build a REST service with a single resource in Ball
 </ol>
 <h3 id="step-2-create-an-http-service">Step 2: Create an HTTP service.<a class="headerlink" href="#step-2-create-an-http-service" title="Permanent link">&para;</a></h3>
 <ol>
-<li>In the design view, click on the <strong><code>Add Construct</code></strong> button.</li>
-<li>Select <strong><code>Service</code></strong> from the menu.</li>
-<li>Select <strong><code>HTTP Service</code></strong> from the Service Type dropdown.</li>
-<li>Select <strong><code>Design From Scratch</code></strong> option.</li>
-<li>Enter the service name as <code>HealthCare</code>, path as <code>/healthcare</code>, and <code>8290</code> as the port.</li>
-<li>Click on the <strong><code>Create Service</code></strong> button to create the new service with the specified configurations.</li>
+<li>In the design view, click on the <strong><code>Add Artifact</code></strong> button.</li>
+<li>Select <strong><code>HTTP Service</code></strong> under the <strong><code>Integration as API</code></strong> category.</li>
+<li>Select the <strong><code>+ Listeners</code></strong> option from the <strong><code>Listeners</code></strong> dropdown to add a new listener.</li>
+<li>Enter the listener name as <code>healthListener</code>, <code>8290</code> as the port and click on the <strong><code>Save</code></strong> button. </li>
+<li>Add the service base path as <code>/healthcare</code> and select the <strong><code>Design from Scratch</code></strong> option as the <strong><code>The contract of the service</code></strong>.</li>
+<li>Click on the <strong><code>Create</code></strong> button to create the new service with the specified configurations.</li>
 </ol>
 <h3 id="step-3-define-types">Step 3: Define types<a class="headerlink" href="#step-3-define-types" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Click on the <strong><code>Add Construct</code></strong> button and select <strong><code>Types</code></strong>.</li>
-<li>Click on <strong><code>Add Type</code></strong> to add a new type</li>
-<li>Select <strong><code>Import a JSON</code></strong> from the Type dropdown.  <br />
-   <a href="https://wso2.github.io/docs-bi/assets/img/message-routing/add-type.gif"><img src="https://wso2.github.io/docs-bi/assets/img/message-routing/add-type.gif" alt="Create Type" width="70%"></a></li>
+<li>Click on the <strong><code>Add Artifacts</code></strong> button and select <strong><code>Type</code></strong> in the <strong><code>Other Artifacts</code></strong> section.</li>
+<li>Click on <strong><code>+ Add Type</code></strong> to add a new type</li>
 <li>Add the <strong><code>Record Name</code></strong> as <code>ReservationRequest</code> and paste the following JSON payload. Select <strong><code>Make Separate Record Definitions</code></strong> and click on the <strong><code>Save</code></strong> button.
    <div class="highlight"><pre><span></span><code><span class="w"> </span><span class="p">{</span>
 <span class="w">     </span><span class="nt">&quot;patient&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -1062,9 +1060,9 @@ To accomplish this, you’ll build a REST service with a single resource in Ball
 </ol>
 <h3 id="step-4-add-connectors">Step 4: Add connectors<a class="headerlink" href="#step-4-add-connectors" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Navigate to design view and click on the <strong><code>Add Connector</code></strong> button.</li>
-<li>Search and select the <strong><code>HTTP</code></strong> connector.</li>
-<li>Enter the connector name as <code>grandOakEP</code>, URL as <code>http://localhost:9090/grandoak/categories</code>, and config as <code>{}</code>.</li>
+<li>Navigate to design view and click on the <strong><code>Connection</code></strong> button.</li>
+<li>Search and select the <strong><code>HTTP Client</code></strong> connector.</li>
+<li>Enter the connector name as <code>grandOakEP</code>, URL as <code>"http://localhost:9090/grandoak/categories"</code>.</li>
 <li>Click on the <strong><code>Create Connector</code></strong> button to create the new connector with the specified configurations.
 <a href="https://wso2.github.io/docs-bi/assets/img/message-routing/add-connector.gif"><img src="https://wso2.github.io/docs-bi/assets/img/message-routing/add-connector.gif" alt="Add Connector" width="70%"></a></li>
 <li>
@@ -1074,24 +1072,16 @@ To accomplish this, you’ll build a REST service with a single resource in Ball
 <tr>
 <th>Connector Name</th>
 <th>URL</th>
-<th>Config</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>grandOakEP</td>
-<td>http://localhost:9090/grandoak/categories</td>
-<td><code>{}</code></td>
-</tr>
-<tr>
 <td>clemencyEP</td>
-<td>http://localhost:9090/clemency/categories</td>
-<td><code>{}</code></td>
+<td><code>"http://localhost:9090/clemency/categories"</code></td>
 </tr>
 <tr>
 <td>pineValleyEP</td>
-<td>http://localhost:9090/pinevalley/categories</td>
-<td><code>{}</code></td>
+<td><code>"http://localhost:9090/pinevalley/categories"</code></td>
 </tr>
 </tbody>
 </table>
