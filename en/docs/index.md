@@ -22,7 +22,7 @@
         <div class="rightContent">
                 <div class="about-home">
                     <div  style="text-align:center">
-                        <a href="{{base_path}}/assets/img/introduction/low-code.gif"><img src="{{base_path}}/assets/img/introduction/low-code.gif" alt="low-code" width="90%" style="padding-top: 60px" ></a>
+                        <a href="{{base_path}}/assets/img/introduction/low-code.png"><img src="{{base_path}}/assets/img/introduction/low-code.png" alt="low-code" width="90%" style="padding-top: 60px" ></a>
                     </div>
                     <div>
                         <h3>Low-code integration development</h3>
@@ -32,9 +32,8 @@
                         <ul>
                             <li><b>Design visually:</b> Ballerina Integrator’s interface lets users design integrations visually, simplifying flow creation and management.</li>
                             <li><b>Pre-built connectors:</b> Ballerina Integrator offers connectors for easy integration with various systems and services.</li>
-                            <li><b>Reuse components:</b> Create and share reusable components across integrations, saving time and effort.</li>
-                            <li><b>Automate testing:</b> Automated testing helps identify and fix issues early.</li>
                             <li><b>Low-code and pro-code support:</b> Ballerina Integrator allows seamless switching between low-code and pro-code, enabling visual design with optional custom coding. </li>
+                            <li><b>Deploy anywhere:</b> Ballerina Integrator supports deployment to cloud or on-premises environment, ensuring flexibility and scalability.</li>
                         </ul>
                     </div>
                 </div>

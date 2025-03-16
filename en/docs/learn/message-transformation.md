@@ -23,13 +23,14 @@ This guide explains how to create a simple integration to convert a JSON payload
 6. Click on the **`Create`** button to create the new service with the specified configurations.
 
 ### Step 3: Update the resource method
-1. The service will have a default resource named `greeting` with the **`GET`** method. Click on three dots appear in front of the `greeting` resource and select edit to view and update the resource details.
+1. The service will have a default resource named `greeting` with the **`GET`** method. Click on three dots appear in front of the `/convert` service resource and select **`Edit`** from menu.
+2. Then click the edit button in front of `/greeting` resource.  
     <a href="{{base_path}}/assets/img/message-transformation/edit-resource.gif"><img src="{{base_path}}/assets/img/message-transformation/edit-resource.gif" alt="Edit Resource" width="70%"></a>
-2. Change the resource HTTP method to **`POST`**.
-3. Change the resource name as `toXml`.
-4. Add a payload parameter named `input` to the resource of type `json`. 
-5. Change the 201 response return type to `xml`.
-6. Click on the **`Save`** button to update the resource with the specified configurations.
+3. Change the resource HTTP method to **`POST`**.
+4. Change the resource name as `toXml`.
+5. Add a payload parameter named `input` to the resource of type `json`. 
+6. Change the 201 response return type to `xml`.
+7. Click on the **`Save`** button to update the resource with the specified configurations.
     <a href="{{base_path}}/assets/img/message-transformation/update-resource.gif"><img src="{{base_path}}/assets/img/message-transformation/update-resource.gif" alt="Update Resource" width="70%"></a>
 
 !!! info "Resource Method"

@@ -110,80 +110,80 @@ Follow the steps below to implement the message routing service.
 5. The final Type diagram will look like below.     
 <a href="{{base_path}}/assets/img/message-routing/types.png"><img src="{{base_path}}/assets/img/message-routing/types.png" alt="Create Type" width="70%"></a>
 
-### Step 4: Add connectors
-1. Navigate to design view and click on the **`Connection`** button.
+### Step 4: Add connectors s
+1. Navigate to design view and click on the **`Add Artifacts`** button and select **`Connection`** in the **`Other Artifacts`** section.
 2. Search and select the **`HTTP Client`** connector.
-3. Enter the connector name as `grandOakEP`, URL as `"http://localhost:9090/grandoak/categories"`.
-4. Click on the **`Create Connector`** button to create the new connector with the specified configurations.
+3. Enter the connector name as `grandOakEp`, URL as `"http://localhost:9090/grandoak/categories"`.
+4. Click on the **`Save`** button to create the new connector with the specified configurations.
 <a href="{{base_path}}/assets/img/message-routing/add-connector.gif"><img src="{{base_path}}/assets/img/message-routing/add-connector.gif" alt="Add Connector" width="70%"></a>
 5. Repeat the above steps to add connectors for the `clemency` and `pinevalley` hospitals with the following configurations.
 
-    |Connector Name|URL|
-    |---|---|
-    |clemencyEP|`"http://localhost:9090/clemency/categories"`|
-    |pineValleyEP|`"http://localhost:9090/pinevalley/categories"`|
+    | Connector Name |URL|
+    |----------------|---|
+    | clemencyEp     |`"http://localhost:9090/clemency/categories"`|
+    | pineValleyEp   |`"http://localhost:9090/pinevalley/categories"`|
 
 6. The final connectors will look like below.     
 <a href="{{base_path}}/assets/img/message-routing/connectors.png"><img src="{{base_path}}/assets/img/message-routing/connectors.png" alt="Connectors" width="70%"></a>
    
 ??? info "HTTP Connector"
     To learn more about HTTP client, see [Ballerina HTTP Client](https://ballerina.io/learn/by-example/http-client-send-request-receive-response/).
-    See supported client configurations in the [HTTP Client Configurations](https://central.ballerina.io/ballerina/http/2.12.2#ClientConfiguration).
+    See supported advanced client configurations in the [HTTP Client Configurations](https://central.ballerina.io/ballerina/http/2.12.2#ClientConfiguration).
 
 ### Step 5: Add a resource method
-1. The service will be generated with a default resource named `greeting`. Click on the service to view and update the resource details.
-2. Click on three dots appear in front of the `greeting` resource and select edit to view and update the resource details.
+1. The service will have a default resource named `greeting` with the **`GET`** method. Click on three dots appear in front of the `/healthCare` service resource and select **`Edit`** from menu.
+2. Then click the edit button in front of `/greeting` resource to edit the resource.
 3. Change the resource HTTP method to **`POST`**.
 4. Change the resource name as `categories/[string category]/reserve`
 5. Add a payload parameter named `reservation` to the resource of type `ReservationRequest`.
 6. Change the 201 response return type to `ReservationResponse`.
 7. Add a new response of type **`HttpNotFound`** under the responses.
 8. Click on the **`Save`** button to update the resource with the specified configurations.
-   <a href="{{base_path}}/assets/img/message-routing/update-resource.png"><img src="{{base_path}}/assets/img/message-routing/update-resource.png" alt="Update Resource" width="70%"></a>
+   <a href="{{base_path}}/assets/img/message-routing/update-resource.gif"><img src="{{base_path}}/assets/img/message-routing/update-resource.gif" alt="Update Resource" width="70%"></a>
 
 ### Step 6: Add the routing logic
 1. Click on the `categories/[string category]/reserve` resource to navigate to the resource implementation designer view.
-2. Hover to the arrow after start and click the ➕ button to add a new action to the resource.
-3. Select **`Variable`** from the node panel on the left. This variable will be used to store the request payload for the hospital service.
-4. Change the variable name to `hospitalRequset`, type as `json` and expression:
+2. Delete the default `Return` action from the resource.
+3. Hover to the arrow after start and click the ➕ button to add a new action to the resource.
+4. Select **`Declare Variable`** from the node panel on the left. This variable will be used to store the request payload for the hospital service.
+5. Change the variable name to `hospitalRequset`, type as `json` and expression as below and click **`Save`**.
     ```ballerina
-         {
-          patient: reservation.patient.toJson(),
-          doctor: reservation.doctor,
-          hospital: reservation.hospital,
-          appointment_date: reservation.appointment_date
-        }
+    {
+        patient: reservation.patient.toJson(),
+        doctor: reservation.doctor,
+        hospital: reservation.hospital,
+        appointment_date: reservation.appointment_date
+    }
     ```
-5. Click on the **`Save`** button to add the variable.   
-6. Select **`If`** from the node panel on the left.
-7. Enter the conditions as **`If`** **`Else If`** blocks as below for each hospital id and press **`Save`**.
- conditions:
+6. Add **`If`** from the node panel after `hospitalRequest` variable. Enter the conditions as **`If`** **`Else If`** blocks as below for each hospital.
     * grandOak -> `reservation.hospital_id == "grandoak"`
     * clemency -> `reservation.hospital_id == "clemency"`
     * pineValley -> `reservation.hospital_id == "pinevalley"`  
    <a href="{{base_path}}/assets/img/message-routing/add-if.png"><img src="{{base_path}}/assets/img/message-routing/add-if.png"" alt="Add If" width="70%"></a>
-8. Select the `grandOakEP` condition true path ➕ sign and select **`grandOakEP`** connector from the node panel.
+7. Select the `grandOakEP` condition true path ➕ sign and select **`grandOakEP`** connector from the node panel.
 <a href="{{base_path}}/assets/img/message-routing/add-connector-action.png"><img src="{{base_path}}/assets/img/message-routing/add-connector-action.png" alt="Add Connector Action" width="70%"></a>
-9. Select **`post`** from the dropdown. Then, fill in the required fields with the values given below and click **`Save`**.
+8. Select **`post`** from the dropdown. Then, fill in the required fields with the values given below and click **`Save`**.
 
-    |Field|Value|
-    |---|---|
-    |Variable Name|`oakEPResponse`|
-    |Variable Type|`ReserveResponse`|
-    |Resource Path|`/[category]/reserve`|
-    |message|`hospitalRequset`|
+    |Field| Value                                 |
+    |---|---------------------------------------|
+    |Variable Name| `oakEPResponse`                       |
+    |Variable Type| `ReservationResponse`                 |
+    |Resource Path| ```  string `/${category}/reserve` ``` |
+    |message| `hospitalRequset`                     |
 
-10. Click on the ➕ sign again and select **`Return`** from the node panel. Select the `epReponse` variable from the dropdown and click **`Save`**.
+9. Click on the ➕ sign again and select **`Return`** from the node panel. Select the `oakEPResponse` variable from the dropdown and click **`Save`**.
+    <a href="{{base_path}}/assets/img/message-routing/add-return.png"><img src="{{base_path}}/assets/img/message-routing/add-return.png" alt="Add Return" width="70%"></a>
+10. The steps above will add the routing logic for the `grandoak` hospital. A variable named `oakEPResponse` will store the response from the `grandoak` hospital service. The response will be returned to the client.
 11. Repeat the 7,8,9 steps for the `clemency` and `pinevalley` hospitals with the following configurations.
     
     **clemency:**
 
-    |Field| Value                 |
-     |---|-----------------------|
-    |Variable Name| `clemncyEPResponse`   |
-    |Variable Type| `ReserveResponse`     |
-    |Resource Path| `/[category]/reserve` |
-    |message| `hospitalRequset`     |
+    |Field| Value                         |
+     |---|-------------------------------|
+    |Variable Name| `clemncyEPResponse`           |
+    |Variable Type| `ReserveResponse`             |
+    |Resource Path| ```  string `/${category}/reserve` ``` |
+    |message| `hospitalRequset`             |
 
     **pinevalley:**
 
@@ -191,7 +191,7 @@ Follow the steps below to implement the message routing service.
     |---|------------------------|
     |Variable Name| `pineValleyEPResponse` |
     |Variable Type| `ReserveResponse`      |
-    |Resource Path| `/[category]/reserve`  |
+    |Resource Path| ```  string `/${category}/reserve` ``` |
     |message| `hospitalRequset`      |
 
 12. For the else condition, click on the `If` condition `Else` path ➕ sign and add a **`Return`** from the node panel. Enter `http:NOT_FOUND` as the value and click **`Save`**.             
@@ -205,7 +205,26 @@ Follow the steps below to implement the message routing service.
     ```
 2. Click on the **`Run`** on the run button in the top right corner to run the service.
 3. The service will start and the service will be available at `http://localhost:8290/healthcare/categories/[category]/reserve`.
-4. Use a tool like [Postman](https://www.postman.com/) to send a POST request to the service with the following payload.
+4. Click on the **`Try it`** button to open the embedded HTTP client.
+5. Replace the **`{category}`** with `surgery` in the resource path and enter the following JSON payload in the request body and click on the ▶️ button to send the request.
+    ```json
+    {
+      "patient":{
+      "name": "John Doe",
+      "dob": "1940-03-19",
+      "ssn": "234-23-525",
+      "address": "California",
+      "phone": "8770586755",
+      "email": "johndoe@gmail.com"
+      },
+    "doctor": "thomas collins",
+    "hospital_id": "grandoak",
+    "hospital": "grand oak community hospital",
+    "appointment_date": "2023-10-02"
+    }
+    ```
+   <a href="{{base_path}}/assets/img/message-routing/run.png"><img src="{{base_path}}/assets/img/message-routing/run.png" alt="Send Request" width="70%"></a>
+6. Use a tool like [Postman](https://www.postman.com/) or [curl](https://curl.se/) to send a POST request to the service with the following payload.
    ```bash
     curl -X POST "http://localhost:8290/healthcare/categories/surgery/reserve" \
     -H "Content-Type: application/json" \
@@ -224,30 +243,31 @@ Follow the steps below to implement the message routing service.
     "appointment_date": "2023-10-02"
     }'
    ```
- 5. The response will be similar to the following.
-    ```json
-    {
-    "appointmentNumber": 1,
-    "doctor": {
-    "name": "thomas collins",
-    "hospital": "grand oak community hospital",
-    "category": "surgery",
-    "availability": "9.00 a.m - 11.00 a.m",
-    "fee": 7000.0
-    },
-    "patient": {
-    "name": "John Doe",
-    "dob": "1940-03-19",
-    "ssn": "234-23-525",
-    "address": "California",
-    "phone": "8770586755",
-    "email": "johndoe@gmail.com"
-    },
-    "hospital": "grand oak community hospital",
-    "confirmed": false,
-    "appointmentDate": "2023-10-02"
-    }
-    ```  
+7. The response will be similar to the following.
+   ```json
+   {
+   "appointmentNumber": 1,
+   "doctor": {
+   "name": "thomas collins",
+   "hospital": "grand oak community hospital",
+   "category": "surgery",
+   "availability": "9.00 a.m - 11.00 a.m",
+   "fee": 7000.0
+   },
+   "patient": {
+   "name": "John Doe",
+   "dob": "1940-03-19",
+   "ssn": "234-23-525",
+   "address": "California",
+   "phone": "8770586755",
+   "email": "johndoe@gmail.com"
+   },
+   "hospital": "grand oak community hospital",
+   "confirmed": false,
+   "appointmentDate": "2023-10-02"
+   }
+   ```  
+
 ### Step 8: Stop the integration
 1. Click on the **`Stop`** button to stop the integration.
 2. Stop the hospital backend server by running the following command:
