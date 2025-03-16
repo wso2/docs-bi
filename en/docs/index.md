@@ -57,7 +57,7 @@
                         </ul>
                     </div>
                     <div  style="text-align:center">
-                        <a href="{{base_path}}/assets/img/introduction/ai.gif"><img src="{{base_path}}/assets/img/introduction/ai.gif" alt="AI" width="90%" style="padding-top: 60px; padding-right: 50px" ></a>
+                        <a href="{{base_path}}/assets/img/introduction/ai.png"><img src="{{base_path}}/assets/img/introduction/ai.png" alt="AI" width="90%" style="padding-top: 60px; padding-right: 50px" ></a>
                     </div>
                 </div>
         </div>

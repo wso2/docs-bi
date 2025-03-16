@@ -11,11 +11,11 @@ The following instructions demonstrate how to build an integration that transfor
     <a href="{{base_path}}/assets/img/data-mapping/create-integration.png"><img src="{{base_path}}/assets/img/data-mapping/create-integration.png" alt="Create Integration" width="70%"></a>
 
 ### Step 2: Define input and output types
-1. Click on the **`Add Construct`** button and select **`Types`**.
-2. Click on **`Add Type`** to add a new type
-3. Select **`Import a JSON`** from the Type dropdown.
-4. Generate record types corresponding to the input and output JSON payloads given below.
-5. Click on the **`Create Type`** button to create the new type with the specified configurations.
+1. Click on the **`Add Artifacts`** button and select **`Type`** in the **`Other Artifacts`** section.
+2. Click on **`+ Add Type`** to add a new type.  
+<a href="{{base_path}}/assets/img/data-mapping/add-types.png"><img src="{{base_path}}/assets/img/data-mapping/add-types.png" alt="Add Type" width="70%"></a>
+3. Generate record types corresponding to the input and output JSON payloads given below.
+4. Select **`Make Separate Record Definitions`** and click on the **`Import`** button.
 
     ###### Input
     ```json
@@ -60,15 +60,17 @@ The following instructions demonstrate how to build an integration that transfor
         "transactionDate":  "2023-10-15T14:30:00Z"
     }
     ```
+5. The final types will look like below. The source view can be accessed by clicking on the `</>` button in the top right corner.
     <a href="{{base_path}}/assets/img/data-mapping/create-types.png"><img src="{{base_path}}/assets/img/data-mapping/create-types.png" alt="Create Types" width="70%"></a>
 
 ### Step 3: Create a HTTP service.
 1. Click on `Home` button to navigate back to the design view
-2. In the design view, click on the **`Add Construct`** button.
-3. Select **`Service`** from the menu.
-4. Select **`HTTP Service`** and select **`Design From Scratch`** option.
-5. Enter the service name as `Transform`, path as `/`, and `8290` as the port.
-6. Click on the **`Create Service`** button.    
+2. In the design view, click on the **`Add Artifact`** button.
+3. Select **`HTTP Service`** under the **`Integration as API`** category.
+4. Select the **`+ Listeners`** option from the **`Listeners`** dropdown to add a new listener.
+5. Enter the listener name as `transformListner`, `8290` as the port and click on the **`Save`** button.
+6. Add the service base path as `/` and select the **`Design from Scratch`** option as the **`The contract of the service`**.
+7. Click on the **`Create`** button to create the new service with the specified configurations.
     <a href="{{base_path}}/assets/img/data-mapping/create-service.png"><img src="{{base_path}}/assets/img/data-mapping/create-service.png" alt="Create Service" width="70%"></a>
 
 
@@ -80,8 +82,7 @@ The following instructions demonstrate how to build an integration that transfor
 4. Add a payload parameter named `input` to the resource of type `Input`. 
 5. Change the response status code to `201` and the return type to `Output`.
 6. Click on the **`Save`** button to update the resource with the specified configurations. 
-
-    <a href="{{base_path}}/assets/img/data-mapping/edit-resource.png"><img src="{{base_path}}/assets/img/data-mapping/edit-resource.png" alt="Edit Resource" width="70%"></a>
+<a href="{{base_path}}/assets/img/data-mapping/edit-resource.png"><img src="{{base_path}}/assets/img/data-mapping/edit-resource.png" alt="Edit Resource" width="70%"></a>
 
 
 !!! info "Resource Method"
@@ -90,16 +91,16 @@ The following instructions demonstrate how to build an integration that transfor
 
 ### Step 5: Add Data Mapper
 1. Click on the `transform` resource to navigate to the resource implementation designer view.
-2. Hover to the arrow after start and click the ➕ button to add a new action to the resource.
-3. Select **`Data Mapper`** from the node panel.
-4. Fill in the required fields with the values given below and `Create Mapping` button to start data mapping.
+2. Delete the existing **`Return`** node in the flow diagram.
+3. Hover to the arrow after start and click the ➕ button to add a new action to the resource.
+4. Select **`Map Data`** from the node panel and click on **`Create Data Mapper`** button. 
+5. Fill in the required fields with the values given below and `Create Mapping` button to start data mapping.
 
-   | Field | Value |
-   | - | - |
-   | Variable Name | `transformed` |
-   | Function Name | `tnf` |
-   | Input | `Input input` |
-   | Output | `Output` |
+    | Field            | Value |
+    |------------------| - |
+    | Data Mapper Name | `transformed` |
+    | Input            | `Input input` |
+    | Output           | `Output` |
 
 <a href="{{base_path}}/assets/img/data-mapping/add-data-mapper.png"><img src="{{base_path}}/assets/img/data-mapping/add-data-mapper.png" alt="Add Data Mapper" width="70%"></a>
 
@@ -116,13 +117,13 @@ The following instructions demonstrate how to build an integration that transfor
 <a href="{{base_path}}/assets/img/data-mapping/auto-mapping.gif"><img src="{{base_path}}/assets/img/data-mapping/auto-mapping.gif" alt="Auto Mapping" width="70%"></a>
 
 #### Many-to-One Mapping
-<a href="{{base_path}}/assets/img/data-mapping/many-to-one-mapping.gif"><img src="{{base_path}}/assets/img/data-mapping/many-to-one-mapping.gif" alt="Many to One Mapping" width="70%"></a>
+<a href="{{base_path}}/assets/img/data-mapping/many-to-one-mapping.png"><img src="{{base_path}}/assets/img/data-mapping/many-to-one-mapping.png" alt="Many to One Mapping" width="70%"></a>
 
 #### Edit Mapping Expression
 <a href="{{base_path}}/assets/img/data-mapping/edit-mapping.gif"><img src="{{base_path}}/assets/img/data-mapping/edit-mapping.gif" alt="Edit Mapping Expression" width="70%"></a>
 
 #### Resolving Errors
-<a href="{{base_path}}/assets/img/data-mapping/error-resolving.gif"><img src="{{base_path}}/assets/img/data-mapping/error-resolving.gif" alt="Error Resolving" width="70%"></a>
+<a href="{{base_path}}/assets/img/data-mapping/error-resolving.png"><img src="{{base_path}}/assets/img/data-mapping/error-resolving.png" alt="Error Resolving" width="70%"></a>
 
 
 ### Step 7: Return the transformed payload
@@ -131,28 +132,27 @@ The following instructions demonstrate how to build an integration that transfor
 
     <a href="{{base_path}}/assets/img/data-mapping/add-return.png"><img src="{{base_path}}/assets/img/data-mapping/add-return.png" alt="Add Return" width="70%"></a>
 
-3. Provide `transformed` as the return expression.
+3. Provide `output` as the return expression.
 4. The final code will look like below. The source view can be accessed by clicking on the `</>` button in the top right corner. 
 
 ```ballerina
 import ballerina/http;
-import ballerina/log;
 
-service / on new http:Listener(8290) {
+listener http:Listener transformListner = new (port = 8290);
 
-    function init() returns error? {
-    }
-
-    resource function post transform(@http:Payload Input input) returns Output|http:InternalServerError {
+service / on transformListner {
+    resource function post transform(@http:Payload Input input) returns http:InternalServerError|Output|error {
         do {
-            Output transformed = tnf(input);
-            return transformed;
-        } on fail error e {
-            log:printError("Error: ", 'error = e);
-            return http:INTERNAL_SERVER_ERROR;
+            Output output = transform(input);
+            return output;
+
+        } on fail error err {
+            // handle error
+            return error("Not implemented", err);
         }
     }
 }
+
 ```
 
 ### Step 6: Run the integration

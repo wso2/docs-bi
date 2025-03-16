@@ -73,7 +73,7 @@ Follow the steps below to implement the message routing service.
 ### Step 3: Define types
 1. Click on the **`Add Artifacts`** button and select **`Type`** in the **`Other Artifacts`** section.
 2. Click on **`+ Add Type`** to add a new type
-3. Add the **`Record Name`** as `ReservationRequest` and paste the following JSON payload. Select **`Make Separate Record Definitions`** and click on the **`Save`** button.
+3. Add the **`Record Name`** as `ReservationRequest` and paste the following JSON payload. Select **`Make Separate Record Definitions`** and click on the **`Import`** button.
    ```json
     {
         "patient": {
