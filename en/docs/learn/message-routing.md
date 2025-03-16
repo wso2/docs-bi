@@ -134,7 +134,7 @@ Follow the steps below to implement the message routing service.
 1. The service will have a default resource named `greeting` with the **`GET`** method. Click on three dots appear in front of the `/healthCare` service resource and select **`Edit`** from menu.
 2. Then click the edit button in front of `/greeting` resource to edit the resource.
 3. Change the resource HTTP method to **`POST`**.
-4. Change the resource name as `categories/[string category]/reserve`
+4. Change the resource name as `categories/[string category]/reserve`.
 5. Add a payload parameter named `reservation` to the resource of type `ReservationRequest`.
 6. Change the 201 response return type to `ReservationResponse`.
 7. Add a new response of type **`HttpNotFound`** under the responses.
@@ -224,26 +224,7 @@ Follow the steps below to implement the message routing service.
     }
     ```
    <a href="{{base_path}}/assets/img/message-routing/run.png"><img src="{{base_path}}/assets/img/message-routing/run.png" alt="Send Request" width="70%"></a>
-6. Use a tool like [Postman](https://www.postman.com/) or [curl](https://curl.se/) to send a POST request to the service with the following payload.
-   ```bash
-    curl -X POST "http://localhost:8290/healthcare/categories/surgery/reserve" \
-    -H "Content-Type: application/json" \
-    -d '{
-    "patient": {
-    "name": "John Doe",
-    "dob": "1940-03-19",
-    "ssn": "234-23-525",
-    "address": "California",
-    "phone": "8770586755",
-    "email": "johndoe@gmail.com"
-    },
-    "doctor": "thomas collins",
-    "hospital_id": "grandoak",
-    "hospital": "grand oak community hospital",
-    "appointment_date": "2023-10-02"
-    }'
-   ```
-7. The response will be similar to the following.
+6. The response will be similar to the following.
    ```json
    {
    "appointmentNumber": 1,
@@ -266,7 +247,27 @@ Follow the steps below to implement the message routing service.
    "confirmed": false,
    "appointmentDate": "2023-10-02"
    }
-   ```  
+   ```
+7. Optionally, you can test the service using curl command as below.
+   ```bash
+    curl -X POST "http://localhost:8290/healthcare/categories/surgery/reserve" \
+    -H "Content-Type: application/json" \
+    -d '{
+    "patient": {
+    "name": "John Doe",
+    "dob": "1940-03-19",
+    "ssn": "234-23-525",
+    "address": "California",
+    "phone": "8770586755",
+    "email": "johndoe@gmail.com"
+    },
+    "doctor": "thomas collins",
+    "hospital_id": "grandoak",
+    "hospital": "grand oak community hospital",
+    "appointment_date": "2023-10-02"
+    }'
+   ```
+     
 
 ### Step 8: Stop the integration
 1. Click on the **`Stop`** button to stop the integration.
