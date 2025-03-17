@@ -178,12 +178,12 @@ Follow the steps below to implement the message routing service.
     
     **clemency:**
 
-    |Field| Value                         |
-     |---|-------------------------------|
-    |Variable Name| `clemncyEPResponse`           |
-    |Variable Type| `ReserveResponse`             |
+    |Field| Value                                  |
+     |---|----------------------------------------|
+    |Variable Name| `clemencyEPResponse`                   |
+    |Variable Type| `ReserveResponse`                      |
     |Resource Path| ```  string `/${category}/reserve` ``` |
-    |message| `hospitalRequset`             |
+    |message| `hospitalRequset`                      |
 
     **pinevalley:**
 

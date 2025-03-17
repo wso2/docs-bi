@@ -68,7 +68,7 @@ The following instructions demonstrate how to build an integration that transfor
 2. In the design view, click on the **`Add Artifact`** button.
 3. Select **`HTTP Service`** under the **`Integration as API`** category.
 4. Select the **`+ Listeners`** option from the **`Listeners`** dropdown to add a new listener.
-5. Enter the listener name as `transformListner`, `8290` as the port and click on the **`Save`** button.
+5. Enter the listener name as `transformListener`, `8290` as the port and click on the **`Save`** button.
 6. Add the service base path as `/` and select the **`Design from Scratch`** option as the **`The contract of the service`**.
 7. Click on the **`Create`** button to create the new service with the specified configurations.
     <a href="{{base_path}}/assets/img/data-mapping/create-service.png"><img src="{{base_path}}/assets/img/data-mapping/create-service.png" alt="Create Service" width="70%"></a>

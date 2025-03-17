@@ -18,7 +18,7 @@
 site_name: Ballerina Integrator Documentation
 site_description: Documentation for Ballerina Integrator
 site_author: WSO2
-# site_url: https://bi.docs.wso2.com/en/latest/
+site_url: https://bi.docs.wso2.com/
 
 # Repository information
 repo_name: wso2/docs-ballerina-integrator
@@ -84,6 +84,7 @@ nav:
   - Deploy:
       - Deploy on a VM: deploy/jar.md
       - Deploy with Docker: deploy/docker.md
+      - Deploy with Integration Control Plane: deploy/icp.md
   - Roadmap:
       - Features & Roadmap : roadmap/overview.md
       - Ballerina language features: roadmap/language-support.md
@@ -114,13 +115,13 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
   - pymdownx.snippets:
       base_path: docs
-  - pymdownx.tabbed:
-        alternate_style: true
   - attr_list
 
 # Plugins configuration

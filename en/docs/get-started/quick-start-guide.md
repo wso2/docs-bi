@@ -23,7 +23,7 @@ Download and install the [Visual Studio Code](https://code.visualstudio.com/down
 
 ???+ info "Update Ballerina Integrator's Ballerina Distribution"
     The setup wizard will install the Ballerina distribution required for Ballerina Integrator in to `<USER_HOME>/.ballerina/ballerina-home` directory.
-    Press `Ctrl + Shift + P` on Windows and Linux, or `shift + ⌘ + P` on a Mac and type `Ballerina: Update Ballerina Integrator` to update the installed Ballerina distribution.
+    Press `Ctrl + Shift + P` on Windows and Linux, or `shift + ⌘ + P` on a Mac and type `Ballerina: Update Ballerina Dev Pack` to update the installed Ballerina distribution.
 
 ### Step 4: Create a new integration project
 1. Click on the Ballerina Integrator icon on the sidebar.
