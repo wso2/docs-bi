@@ -17,7 +17,7 @@
         <link rel="prev" href="../integration-ai/">
       
       
-        <link rel="next" href="../../build/jar/">
+        <link rel="next" href="../../deploy/jar/">
       
       <link rel="icon" href="../../images/bi-logo.svg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
@@ -320,8 +320,8 @@ This documentation is a work in progress.
   
   
     <li class="md-tabs__item">
-      <a href="../../build/jar/" class="md-tabs__link">
-        Build
+      <a href="../../deploy/jar/" class="md-tabs__link">
+        Deploy
       </a>
     </li>
   
@@ -747,14 +747,14 @@ This documentation is a work in progress.
       
       
         <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-          Build
+          Deploy
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
-          Build
+          Deploy
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -764,8 +764,8 @@ This documentation is a work in progress.
   
   
     <li class="md-nav__item">
-      <a href="../../build/jar/" class="md-nav__link">
-        Build an executable JAR
+      <a href="../../deploy/jar/" class="md-nav__link">
+        Deploy on a VM
       </a>
     </li>
   
@@ -778,8 +778,8 @@ This documentation is a work in progress.
   
   
     <li class="md-nav__item">
-      <a href="../../build/docker/" class="md-nav__link">
-        Build a Docker image
+      <a href="../../deploy/docker/" class="md-nav__link">
+        Deploy with Docker
       </a>
     </li>
   
@@ -1042,12 +1042,12 @@ This documentation is a work in progress.
 </ol>
 <h3 id="step-2-define-input-and-output-types">Step 2: Define input and output types<a class="headerlink" href="#step-2-define-input-and-output-types" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Click on the <strong><code>Add Construct</code></strong> button and select <strong><code>Types</code></strong>.</li>
-<li>Click on <strong><code>Add Type</code></strong> to add a new type</li>
-<li>Select <strong><code>Import a JSON</code></strong> from the Type dropdown.</li>
+<li>Click on the <strong><code>Add Artifacts</code></strong> button and select <strong><code>Type</code></strong> in the <strong><code>Other Artifacts</code></strong> section.</li>
+<li>Click on <strong><code>+ Add Type</code></strong> to add a new type.<br />
+<a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/add-types.png"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/add-types.png" alt="Add Type" width="70%"></a></li>
 <li>Generate record types corresponding to the input and output JSON payloads given below.</li>
 <li>
-<p>Click on the <strong><code>Create Type</code></strong> button to create the new type with the specified configurations.</p>
+<p>Select <strong><code>Make Separate Record Definitions</code></strong> and click on the <strong><code>Import</code></strong> button.</p>
 <h6 id="input">Input<a class="headerlink" href="#input" title="Permanent link">&para;</a></h6>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -1089,17 +1089,19 @@ This documentation is a work in progress.
 <span class="w">    </span><span class="nt">&quot;transactionDate&quot;</span><span class="p">:</span><span class="w">  </span><span class="s2">&quot;2023-10-15T14:30:00Z&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
+5. The final types will look like below. The source view can be accessed by clicking on the <code>&lt;/&gt;</code> button in the top right corner.
 <a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/create-types.png"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/create-types.png" alt="Create Types" width="70%"></a></p>
 </li>
 </ol>
 <h3 id="step-3-create-a-http-service">Step 3: Create a HTTP service.<a class="headerlink" href="#step-3-create-a-http-service" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Click on <code>Home</code> button to navigate back to the design view</li>
-<li>In the design view, click on the <strong><code>Add Construct</code></strong> button.</li>
-<li>Select <strong><code>Service</code></strong> from the menu.</li>
-<li>Select <strong><code>HTTP Service</code></strong> and select <strong><code>Design From Scratch</code></strong> option.</li>
-<li>Enter the service name as <code>Transform</code>, path as <code>/</code>, and <code>8290</code> as the port.</li>
-<li>Click on the <strong><code>Create Service</code></strong> button.  <br />
+<li>In the design view, click on the <strong><code>Add Artifact</code></strong> button.</li>
+<li>Select <strong><code>HTTP Service</code></strong> under the <strong><code>Integration as API</code></strong> category.</li>
+<li>Select the <strong><code>+ Listeners</code></strong> option from the <strong><code>Listeners</code></strong> dropdown to add a new listener.</li>
+<li>Enter the listener name as <code>transformListner</code>, <code>8290</code> as the port and click on the <strong><code>Save</code></strong> button.</li>
+<li>Add the service base path as <code>/</code> and select the <strong><code>Design from Scratch</code></strong> option as the <strong><code>The contract of the service</code></strong>.</li>
+<li>Click on the <strong><code>Create</code></strong> button to create the new service with the specified configurations.
     <a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/create-service.png"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/create-service.png" alt="Create Service" width="70%"></a></li>
 </ol>
 <h3 id="step-4-update-the-resource-method">Step 4: Update the resource method<a class="headerlink" href="#step-4-update-the-resource-method" title="Permanent link">&para;</a></h3>
@@ -1109,10 +1111,8 @@ This documentation is a work in progress.
 <li>Change the resource name as <code>transform</code>.</li>
 <li>Add a payload parameter named <code>input</code> to the resource of type <code>Input</code>. </li>
 <li>Change the response status code to <code>201</code> and the return type to <code>Output</code>.</li>
-<li>
-<p>Click on the <strong><code>Save</code></strong> button to update the resource with the specified configurations. </p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/edit-resource.png"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/edit-resource.png" alt="Edit Resource" width="70%"></a></p>
-</li>
+<li>Click on the <strong><code>Save</code></strong> button to update the resource with the specified configurations. 
+<a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/edit-resource.png"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/edit-resource.png" alt="Edit Resource" width="70%"></a></li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Resource Method</p>
@@ -1121,10 +1121,11 @@ This documentation is a work in progress.
 <h3 id="step-5-add-data-mapper">Step 5: Add Data Mapper<a class="headerlink" href="#step-5-add-data-mapper" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Click on the <code>transform</code> resource to navigate to the resource implementation designer view.</li>
+<li>Delete the existing <strong><code>Return</code></strong> node in the flow diagram.</li>
 <li>Hover to the arrow after start and click the ➕ button to add a new action to the resource.</li>
-<li>Select <strong><code>Data Mapper</code></strong> from the node panel.</li>
-<li>Fill in the required fields with the values given below and <code>Create Mapping</code> button to start data mapping.</li>
-</ol>
+<li>Select <strong><code>Map Data</code></strong> from the node panel and click on <strong><code>Create Data Mapper</code></strong> button. </li>
+<li>
+<p>Fill in the required fields with the values given below and <code>Create Mapping</code> button to start data mapping.</p>
 <table>
 <thead>
 <tr>
@@ -1134,12 +1135,8 @@ This documentation is a work in progress.
 </thead>
 <tbody>
 <tr>
-<td>Variable Name</td>
+<td>Data Mapper Name</td>
 <td><code>transformed</code></td>
-</tr>
-<tr>
-<td>Function Name</td>
-<td><code>tnf</code></td>
 </tr>
 <tr>
 <td>Input</td>
@@ -1151,6 +1148,8 @@ This documentation is a work in progress.
 </tr>
 </tbody>
 </table>
+</li>
+</ol>
 <p><a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/add-data-mapper.png"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/add-data-mapper.png" alt="Add Data Mapper" width="70%"></a></p>
 <p><a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/data-mapper-added.png"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/data-mapper-added.png" alt="Data Mapper Added" width="70%"></a>   </p>
 <h3 id="step-6-create-mappings">Step 6: Create Mappings<a class="headerlink" href="#step-6-create-mappings" title="Permanent link">&para;</a></h3>
@@ -1163,11 +1162,11 @@ This documentation is a work in progress.
 <h4 id="auto-mapping">Auto Mapping<a class="headerlink" href="#auto-mapping" title="Permanent link">&para;</a></h4>
 <p><a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/auto-mapping.gif"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/auto-mapping.gif" alt="Auto Mapping" width="70%"></a></p>
 <h4 id="many-to-one-mapping">Many-to-One Mapping<a class="headerlink" href="#many-to-one-mapping" title="Permanent link">&para;</a></h4>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/many-to-one-mapping.gif"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/many-to-one-mapping.gif" alt="Many to One Mapping" width="70%"></a></p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/many-to-one-mapping.png"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/many-to-one-mapping.png" alt="Many to One Mapping" width="70%"></a></p>
 <h4 id="edit-mapping-expression">Edit Mapping Expression<a class="headerlink" href="#edit-mapping-expression" title="Permanent link">&para;</a></h4>
 <p><a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/edit-mapping.gif"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/edit-mapping.gif" alt="Edit Mapping Expression" width="70%"></a></p>
 <h4 id="resolving-errors">Resolving Errors<a class="headerlink" href="#resolving-errors" title="Permanent link">&para;</a></h4>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/error-resolving.gif"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/error-resolving.gif" alt="Error Resolving" width="70%"></a></p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/error-resolving.png"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/error-resolving.png" alt="Error Resolving" width="70%"></a></p>
 <h3 id="step-7-return-the-transformed-payload">Step 7: Return the transformed payload<a class="headerlink" href="#step-7-return-the-transformed-payload" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Hover to the arrow after the Data Mapper node in the flow diagram and click the ➕ button</li>
@@ -1176,25 +1175,23 @@ This documentation is a work in progress.
 <p><a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/add-return.png"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/add-return.png" alt="Add Return" width="70%"></a></p>
 </li>
 <li>
-<p>Provide <code>transformed</code> as the return expression.</p>
+<p>Provide <code>output</code> as the return expression.</p>
 </li>
 <li>The final code will look like below. The source view can be accessed by clicking on the <code>&lt;/&gt;</code> button in the top right corner. </li>
 </ol>
 <div class="highlight"><pre><span></span><code>import ballerina/http;
-import ballerina/log;
 
-service / on new http:Listener(8290) {
+listener http:Listener transformListner = new (port = 8290);
 
-    function init() returns error? {
-    }
-
-    resource function post transform(@http:Payload Input input) returns Output|http:InternalServerError {
+service / on transformListner {
+    resource function post transform(@http:Payload Input input) returns http:InternalServerError|Output|error {
         do {
-            Output transformed = tnf(input);
-            return transformed;
-        } on fail error e {
-            log:printError(&quot;Error: &quot;, &#39;error = e);
-            return http:INTERNAL_SERVER_ERROR;
+            Output output = transform(input);
+            return output;
+
+        } on fail error err {
+            // handle error
+            return error(&quot;Not implemented&quot;, err);
         }
     }
 }
@@ -1286,13 +1283,13 @@ service / on new http:Listener(8290) {
     
     
     
-    <a href="../../build/jar/" class="md-footer__link md-footer__link--next" aria-label="Next: Build an executable JAR" rel="next">
+    <a href="../../deploy/jar/" class="md-footer__link md-footer__link--next" aria-label="Next: Deploy on a VM" rel="next">
       <div class="md-footer__title">
         <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Next
                 </span>
-          Build an executable JAR
+          Deploy on a VM
         </div>
       </div>
       <div class="md-footer__button md-icon">
