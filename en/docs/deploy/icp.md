@@ -44,7 +44,7 @@ In this guide, you will learn how to enable Integration Control Plane (ICP) for 
 3. Click on the **`Run`** button to start the integration. 
 4. Click on the **`Create Config.toml`** on the prompt to create the `Config.toml` file.
 <a href="{{base_path}}/assets/img/deploy/config-toml.png"><img src="{{base_path}}/assets/img/deploy/icp/config-toml.png" alt="Create Config.toml" width="70%"></a>
-5. Replace the `Config.toml` file config with the following configurations.   
+5. Replace the `Config.toml` file content with the following configurations.   
     ```toml
       [ballerinax.wso2.controlplane.dashboard]
       url = "https://localhost:9743/dashboard/api"
@@ -52,7 +52,7 @@ In this guide, you will learn how to enable Integration Control Plane (ICP) for 
       groupId = "cluster1"
       mgtApiUrl ="https://localhost:9264/management/"
     ```
-6. Click on the **`Run`** button to start the integration.
+6. Click on the **`Run`** button to start the integration.  
 <a href="{{base_path}}/assets/img/deploy/run-integration.gif"><img src="{{base_path}}/assets/img/deploy/icp/run-integration.gif" alt="Run Integration" width="70%"></a>
 7. A log message will be displayed in the console indicating that the integration is connected to the ICP dashboard.  
 ```time=2025-03-17T15:14:59.970+05:30 level=INFO module=ballerinax/wso2.controlplane message="Connected to dashboard server https://localhost:9743/dashboard/api"```
@@ -60,4 +60,9 @@ In this guide, you will learn how to enable Integration Control Plane (ICP) for 
 ## Step 4: View the integration in the ICP dashboard
 1. Go to the ICP dashboard and log in `https://localhost:9743/dashboard`.
 2. In the dashboard, you will see the integration details.
-<img src="{{base_path}}/assets/img/deploy/icp/icp-dashboard.png" alt="ICP Dashboard" width="70%">
+3. Click on the node to view the node details.   
+<a href="{{base_path}}/assets/img/deploy/icp/icp-dashboard.png"><img src="{{base_path}}/assets/img/deploy/icp/icp-dashboard.png" alt="ICP Dashboard" width="70%"></a>
+4. Click on the **`Services`** to view the listener and resources of the service. 
+<a href="{{base_path}}/assets/img/deploy/icp/icp-service.png"><img src="{{base_path}}/assets/img/deploy/icp/icp-service.png" alt="ICP Service" width="70%"></a>
+5. Click on the **`Listeners`** to view details of the listener.  
+<a href="{{base_path}}/assets/img/deploy/icp/icp-listener.png"><img src="{{base_path}}/assets/img/deploy/icp/icp-listener.png" alt="ICP Listener" width="70%"></a>
