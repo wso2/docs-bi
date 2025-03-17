@@ -44,7 +44,7 @@ In this tutorial, you’ll create an HTTP service to add key-value pairs to a Re
 1. In the `Integrator overview`, click on the **`Configurations`**.
 2. Set `redisHost` value to `localhost`.
 3. Set `redisPort` value to `6379`.   
-<a href="{{base_path}}/assets/img/integration-ai/configurtaion.gif"><img src="{{base_path}}/assets/img/integration-ai/configuration.gif" alt="Configurations" width="70%"></a>
+<a href="{{base_path}}/assets/img/integration-ai/configuration.gif"><img src="{{base_path}}/assets/img/integration-ai/configuration.gif" alt="Configurations" width="70%"></a>
 
 ### Step 5: Generate the curl commands to test the integration
 1. Add the following prompt and press `Enter` to generate the curl command to add key-value pairs to the Redis server.:
