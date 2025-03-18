@@ -7,7 +7,7 @@ This repository contains the source code for WSO2 Ballerina Integrator documenta
 
 This repository is open and we welcome your contributions!
 
-[//]: # ( To access the WSO2 Ballerina Integrator documentation site, visit https://wso2.github.io/docs-bi/.)
+To access the WSO2 Ballerina Integrator documentation site, visit https://bi.docs.wso2.com/.
 
 Follow the below topics to learn more:
 
