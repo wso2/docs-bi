@@ -48,7 +48,7 @@ Follow the steps below to implement the integration.
 
 ### Step 4: Add a Natural Function
 1. Click on the **`Add Artifact`** button and select **`Natural Function`** under the **`Other Artifacts`** category.
-2. Add the function name as `reviewBlog`, input parameter as `blog` of type `Blog`, return type of `Review`  and click on the **`Create`** button.
+2. Add the function name as `reviewBlog`, input parameter as `blog` of type `Blog`, return type of `Review` and click on the **`Create`** button.
 <a href="{{base_path}}/assets/img/natural-functions/natural-function.png"><img src="{{base_path}}/assets/img/natural-functions/natural-function.png" alt="Natural Function" width="70%"></a>
 3. Click on the **`Edit`** button to add the function logic.
 4. Add the following prompt to the function and click on the **`Save`** button.
@@ -79,7 +79,7 @@ Follow the steps below to implement the integration.
 3. Change the resource HTTP method to **`POST`**.
 4. Change the resource name as `review`.
 5. Add a payload parameter named `blog` to the resource of type `Blog`.
-6. Change the 201 response return type to `xml`.
+6. Change the 201 response return type to `Review`.
 7. Click on the **`Save`** button to update the resource with the specified configurations.
 <a href="{{base_path}}/assets/img/natural-functions/update-resource.png"><img src="{{base_path}}/assets/img/natural-functions/update-resource.png" alt="Resource" width="70%"></a>
 
