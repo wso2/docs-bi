@@ -97,10 +97,15 @@ Follow the steps below to implement the integration.
 9. The resource implementation is now complete. The function `reviewBlog` is called with the blog content as input and the review is returned as the response.
 
 ### Step 7: Configure model for natural function
-1. Press `Ctrl + Shift + P` on Windows and Linux, or `shift + ⌘ + P` on a Mac and type `>Ballerina: Configure default model for natural functions` to configure the default model for natural functions.
+1. Press `Ctrl + Shift + P` on Windows and Linux, or `shift + ⌘ + P` on a Mac and type `>Ballerina: Configure default model for natural functions` to configure the default model for natural functions.   
 <a href="{{base_path}}/assets/img/natural-functions/configure-model.png"><img src="{{base_path}}/assets/img/natural-functions/configure-model.png" alt="Configure Model" width="70%"></a>
 
+
 ### Step 8: Run the integration
+
+!!! warning "Response May Vary"
+    Since this integration involves an LLM (Large Language Model) call, the response values may not always be identical across different executions.
+
 1. Click on the **`Run`** button in the top-right corner to run the integration.
 2. The integration will start and the service will be available at `http://localhost:9090/blogs`.
 3. Click on the **`Try it`** button to open the embedded HTTP client.
@@ -118,5 +123,5 @@ Follow the steps below to implement the integration.
         "rating": 8
     }
     ```
-6. The blog content is analyzed by the natural function to suggest a category and rate it based on predefined criteria.   
+6. The blog content is analyzed by the natural function to suggest a category and rate it based on predefined criteria.      
 <a href="{{base_path}}/assets/img/natural-functions/run-integration.png"><img src="{{base_path}}/assets/img/natural-functions/run-integration.png" alt="Run Integration" width="70%"></a>
