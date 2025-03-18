@@ -1,4 +1,4 @@
-name: Kola Docs Publish
+name: Ballerina Integrator Docs Publish
 
 on:
   push:
