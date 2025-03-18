@@ -932,14 +932,14 @@ In this guide, you will learn how to enable Integration Control Plane (ICP) for 
 <li>Click on the <strong><code>Run</code></strong> button to start the integration. </li>
 <li>Click on the <strong><code>Create Config.toml</code></strong> on the prompt to create the <code>Config.toml</code> file.
 <a href="https://wso2.github.io/docs-bi/assets/img/deploy/config-toml.png"><img src="https://wso2.github.io/docs-bi/assets/img/deploy/icp/config-toml.png" alt="Create Config.toml" width="70%"></a></li>
-<li>Replace the <code>Config.toml</code> file config with the following configurations. <br />
+<li>Replace the <code>Config.toml</code> file content with the following configurations. <br />
     <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="k">[ballerinax.wso2.controlplane.dashboard]</span>
 <span class="w">  </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://localhost:9743/dashboard/api&quot;</span>
 <span class="w">  </span><span class="n">heartbeatInterval</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">10</span>
 <span class="w">  </span><span class="n">groupId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;cluster1&quot;</span>
 <span class="w">  </span><span class="n">mgtApiUrl</span><span class="w"> </span><span class="o">=</span><span class="s">&quot;https://localhost:9264/management/&quot;</span>
 </code></pre></div></li>
-<li>Click on the <strong><code>Run</code></strong> button to start the integration.
+<li>Click on the <strong><code>Run</code></strong> button to start the integration.<br />
 <a href="https://wso2.github.io/docs-bi/assets/img/deploy/run-integration.gif"><img src="https://wso2.github.io/docs-bi/assets/img/deploy/icp/run-integration.gif" alt="Run Integration" width="70%"></a></li>
 <li>A log message will be displayed in the console indicating that the integration is connected to the ICP dashboard.<br />
 <code>time=2025-03-17T15:14:59.970+05:30 level=INFO module=ballerinax/wso2.controlplane message="Connected to dashboard server https://localhost:9743/dashboard/api"</code></li>
@@ -947,8 +947,13 @@ In this guide, you will learn how to enable Integration Control Plane (ICP) for 
 <h2 id="step-4-view-the-integration-in-the-icp-dashboard">Step 4: View the integration in the ICP dashboard<a class="headerlink" href="#step-4-view-the-integration-in-the-icp-dashboard" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Go to the ICP dashboard and log in <code>https://localhost:9743/dashboard</code>.</li>
-<li>In the dashboard, you will see the integration details.
-<img src="https://wso2.github.io/docs-bi/assets/img/deploy/icp/icp-dashboard.png" alt="ICP Dashboard" width="70%"></li>
+<li>In the dashboard, you will see the integration details.</li>
+<li>Click on the node to view the node details. <br />
+<a href="https://wso2.github.io/docs-bi/assets/img/deploy/icp/icp-dashboard.png"><img src="https://wso2.github.io/docs-bi/assets/img/deploy/icp/icp-dashboard.png" alt="ICP Dashboard" width="70%"></a></li>
+<li>Click on the <strong><code>Services</code></strong> to view the listener and resources of the service. 
+<a href="https://wso2.github.io/docs-bi/assets/img/deploy/icp/icp-service.png"><img src="https://wso2.github.io/docs-bi/assets/img/deploy/icp/icp-service.png" alt="ICP Service" width="70%"></a></li>
+<li>Click on the <strong><code>Listeners</code></strong> to view details of the listener.<br />
+<a href="https://wso2.github.io/docs-bi/assets/img/deploy/icp/icp-listener.png"><img src="https://wso2.github.io/docs-bi/assets/img/deploy/icp/icp-listener.png" alt="ICP Listener" width="70%"></a></li>
 </ol>
 
 
