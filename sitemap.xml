@@ -56,6 +56,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://bi.docs.wso2.com/learn/natural-functions/</loc>
+         <lastmod>2025-03-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://bi.docs.wso2.com/learn/service-orchestration/</loc>
          <lastmod>2025-03-18</lastmod>
          <changefreq>daily</changefreq>

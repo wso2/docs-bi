@@ -12,20 +12,20 @@
         <meta name="author" content="WSO2">
       
       
-        <link rel="canonical" href="https://bi.docs.wso2.com/learn/message-transformation/">
+        <link rel="canonical" href="https://bi.docs.wso2.com/learn/natural-functions/">
       
       
-        <link rel="prev" href="../../get-started/key-concepts/">
+        <link rel="prev" href="../data-mapping/">
       
       
-        <link rel="next" href="../message-routing/">
+        <link rel="next" href="../../deploy/jar/">
       
       <link rel="icon" href="../../images/bi-logo.svg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
     
     
       
-        <title>Message transformation - Ballerina Integrator Documentation</title>
+        <title>Natural functions - Ballerina Integrator Documentation</title>
       
     
     
@@ -105,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#message-transformation" class="md-skip">
+        <a href="#natural-functions" class="md-skip">
           Skip to content
         </a>
       
@@ -158,7 +158,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Message transformation
+              Natural functions
             
           </span>
         </div>
@@ -306,7 +306,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
+      <a href="../message-transformation/" class="md-tabs__link md-tabs__link--active">
         Learn
       </a>
     </li>
@@ -508,93 +508,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Message transformation
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../message-transformation/" class="md-nav__link">
         Message transformation
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    Overview
-  </a>
-  
-    <nav class="md-nav" aria-label="Overview">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-create-a-new-integration-project" class="md-nav__link">
-    Step 1: Create a new integration project.
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-create-a-http-service" class="md-nav__link">
-    Step 2: Create a HTTP service.
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-update-the-resource-method" class="md-nav__link">
-    Step 3: Update the resource method
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-add-the-transformation-logic" class="md-nav__link">
-    Step 4: Add the transformation logic
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-5-run-the-integration" class="md-nav__link">
-    Step 5: Run the integration
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -660,11 +578,114 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../natural-functions/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Natural functions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Natural functions
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-a-new-integration-project" class="md-nav__link">
+    Step 1: Create a new integration project.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-define-types" class="md-nav__link">
+    Step 2: Define Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-create-an-http-service" class="md-nav__link">
+    Step 3: Create an HTTP service.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-add-a-natural-function" class="md-nav__link">
+    Step 4: Add a Natural Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-update-the-resource-method" class="md-nav__link">
+    Step 5: Update the resource method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-implement-resource-logic" class="md-nav__link">
+    Step 6: Implement resource logic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-configure-model-for-natural-function" class="md-nav__link">
+    Step 7: Configure model for natural function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-run-the-integration" class="md-nav__link">
+    Step 8: Run the integration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -843,11 +864,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    Overview
+  <a href="#implementation" class="md-nav__link">
+    Implementation
   </a>
   
-    <nav class="md-nav" aria-label="Overview">
+    <nav class="md-nav" aria-label="Implementation">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -858,29 +879,50 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-create-a-http-service" class="md-nav__link">
-    Step 2: Create a HTTP service.
+  <a href="#step-2-define-types" class="md-nav__link">
+    Step 2: Define Types
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-update-the-resource-method" class="md-nav__link">
-    Step 3: Update the resource method
+  <a href="#step-3-create-an-http-service" class="md-nav__link">
+    Step 3: Create an HTTP service.
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-4-add-the-transformation-logic" class="md-nav__link">
-    Step 4: Add the transformation logic
+  <a href="#step-4-add-a-natural-function" class="md-nav__link">
+    Step 4: Add a Natural Function
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-5-run-the-integration" class="md-nav__link">
-    Step 5: Run the integration
+  <a href="#step-5-update-the-resource-method" class="md-nav__link">
+    Step 5: Update the resource method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-implement-resource-logic" class="md-nav__link">
+    Step 6: Implement resource logic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-configure-model-for-natural-function" class="md-nav__link">
+    Step 7: Configure model for natural function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-run-the-integration" class="md-nav__link">
+    Step 8: Run the integration
   </a>
   
 </li>
@@ -906,7 +948,7 @@
                   
 
   
-    <a href="https://github.com/wso2/docs-bi/edit/main/en/docs/learn/message-transformation.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/wso2/docs-bi/edit/main/en/docs/learn/natural-functions.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -915,91 +957,136 @@
     
       
     
-    <a href="https://github.com/wso2/docs-bi/raw/main/en/docs/learn/message-transformation.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/wso2/docs-bi/raw/main/en/docs/learn/natural-functions.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-<h1 id="message-transformation">Message transformation<a class="headerlink" href="#message-transformation" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>This guide explains how to create a simple integration to convert a JSON payload to an XML payload using Ballerina Integrator. An HTTP service with a single resource (<code>toXml</code>) will be created to accept a JSON payload and return the XML representation of the payload.
-<a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/introduction.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/introduction.png" alt="JSON to XML" width="70%"></a></p>
+<h1 id="natural-functions">Natural Functions<a class="headerlink" href="#natural-functions" title="Permanent link">&para;</a></h1>
+<p>In this tutorial, you will learn how to use natural functions in Ballerina Integrator, which allow the function to contain instructions in natural language. 
+Such a function is evaluated at runtime with a call to an LLM. The example uses a natural function to analyze blog content to suggest a category and rate it based on predefined criteria.</p>
+<details class="tip" open="open"><summary>Natural Programming</summary><p>To learn more about Ballerina natural programming library module, see <a href="https://central.ballerina.io/ballerinax/np">natural programming</a>.</p>
+</details>
+<h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h2>
+<p>Follow the steps below to implement the integration.</p>
 <h3 id="step-1-create-a-new-integration-project">Step 1: Create a new integration project.<a class="headerlink" href="#step-1-create-a-new-integration-project" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Click on the Ballerina Integrator icon on the sidebar.</li>
-<li>Click on the <strong><code>Create Integration</code></strong> button.</li>
-<li>Enter the project name as <code>JsonToXml</code>.</li>
-<li>Select project directory location by clicking on the <strong><code>Select Location</code></strong> button.</li>
-<li>Click on the <strong><code>Create Integration</code></strong> button to create the integration project.
-   <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/create-integration.gif"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/create-integration.gif" alt="Create Integration" width="70%"></a></li>
+<li>Click on the <strong><code>Create New Integration</code></strong> button.</li>
+<li>Enter the project name as <code>NaturalProgramming</code>.</li>
+<li>Select Project Directory and click on the <strong><code>Select Location</code></strong> button.</li>
+<li>Click on the <strong><code>Create New Integration</code></strong> button to create the integration project.</li>
 </ol>
-<h3 id="step-2-create-a-http-service">Step 2: Create a HTTP service.<a class="headerlink" href="#step-2-create-a-http-service" title="Permanent link">&para;</a></h3>
+<h3 id="step-2-define-types">Step 2: Define Types<a class="headerlink" href="#step-2-define-types" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Click on the <strong><code>Add Artifacts</code></strong> button and select <strong><code>Type</code></strong> in the <strong><code>Other Artifacts</code></strong> section.</li>
+<li>Click on <strong><code>+ Add Type</code></strong> to add a new type.</li>
+<li>Add the <strong><code>Record Name</code></strong> as <code>Blog</code> and paste the following JSON payload. Select <strong><code>Is Closed Record</code></strong> and click on the <strong><code>Import</code></strong> button.
+    <div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tips for Growing a Beautiful Garden&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Spring is the perfect time to start your garden. Begin by preparing your soil with organic compost and ensure proper drainage. Choose plants suitable for your climate zone, and remember to water them regularly. Don&#39;t forget to mulch to retain moisture and prevent weeds.&quot;</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>Add another type with the <strong><code>Record Name</code></strong> as <code>Review</code> and paste the following JSON payload. Select <strong><code>Is Closed Record</code></strong> and click on the <strong><code>Import</code></strong> button.
+    <div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Gardening&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;rating&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>The types are now available in the project. <code>Blog</code> and <code>Review</code> are the types that represent the blog content and review respectively.
+<a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/types.png"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/types.png" alt="Types" width="70%"></a></li>
+</ol>
+<h3 id="step-3-create-an-http-service">Step 3: Create an HTTP service.<a class="headerlink" href="#step-3-create-an-http-service" title="Permanent link">&para;</a></h3>
 <ol>
 <li>In the design view, click on the <strong><code>Add Artifact</code></strong> button.</li>
 <li>Select <strong><code>HTTP Service</code></strong> under the <strong><code>Integration as API</code></strong> category.</li>
 <li>Select the <strong><code>Create and use the default HTTP listener</code></strong> option from the <strong><code>Listener</code></strong> dropdown.</li>
-<li>Select <strong><code>Design from Scratch</code></strong> option as the <strong><code>The contract of the service</code></strong>.</li>
-<li>Specify the <strong><code>Service base path</code></strong> as <code>/convert</code>.</li>
-<li>Click on the <strong><code>Create</code></strong> button to create the new service with the specified configurations.</li>
+<li>Add the service base path as <code>/blogs</code> and select the <strong><code>Design from Scratch</code></strong> option as the <strong><code>The contract of the service</code></strong>.</li>
+<li>Click on the <strong><code>Create</code></strong> button to create the new service with the specified configurations.
+<a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/service.png"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/service.png" alt="HTTP Service" width="70%"></a></li>
 </ol>
-<h3 id="step-3-update-the-resource-method">Step 3: Update the resource method<a class="headerlink" href="#step-3-update-the-resource-method" title="Permanent link">&para;</a></h3>
+<h3 id="step-4-add-a-natural-function">Step 4: Add a Natural Function<a class="headerlink" href="#step-4-add-a-natural-function" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Click on the <strong><code>Add Artifact</code></strong> button and select <strong><code>Natural Function</code></strong> under the <strong><code>Other Artifacts</code></strong> category.</li>
+<li>Add the function name as <code>reviewBlog</code>, input parameter as <code>blog</code> of type <code>Blog</code>, return type of <code>Review</code> and click on the <strong><code>Create</code></strong> button.
+<a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/natural-function.png"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/natural-function.png" alt="Natural Function" width="70%"></a></li>
+<li>Click on the <strong><code>Edit</code></strong> button to add the function logic.</li>
+<li>Add the following prompt to the function and click on the <strong><code>Save</code></strong> button.
+    <div class="highlight"><pre><span></span><code>You are an expert content reviewer for a blog site that 
+    categorizes posts under the following categories: &quot;Gardening&quot;, &quot;Sports&quot;, &quot;Health&quot;, &quot;Technology&quot;, &quot;Travel&quot;
+
+    Your tasks are:
+    1. Suggest a suitable category for the blog from exactly the specified categories. 
+       If there is no match, use null.
+
+    2. Rate the blog post on a scale of 1 to 10 based on the following criteria:
+    - **Relevance**: How well the content aligns with the chosen category.
+    - **Depth**: The level of detail and insight in the content.
+    - **Clarity**: How easy it is to read and understand.
+    - **Originality**: Whether the content introduces fresh perspectives or ideas.
+    - **Language Quality**: Grammar, spelling, and overall writing quality.
+
+Here is the blog post content:
+
+    Title: ${blog.title}
+    Content: ${blog.content}
+</code></pre></div></li>
+</ol>
+<h3 id="step-5-update-the-resource-method">Step 5: Update the resource method<a class="headerlink" href="#step-5-update-the-resource-method" title="Permanent link">&para;</a></h3>
 <ol>
 <li>The service will have a default resource named <code>greeting</code> with the <strong><code>GET</code></strong> method. Click on three dots appear in front of the <code>/convert</code> service resource and select <strong><code>Edit</code></strong> from menu.</li>
-<li>Then click the edit button in front of <code>/greeting</code> resource.<br />
-    <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/edit-resource.gif"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/edit-resource.gif" alt="Edit Resource" width="70%"></a></li>
+<li>Then click the edit button in front of <code>/greeting</code> resource.</li>
 <li>Change the resource HTTP method to <strong><code>POST</code></strong>.</li>
-<li>Change the resource name as <code>toXml</code>.</li>
-<li>Add a payload parameter named <code>input</code> to the resource of type <code>json</code>. </li>
-<li>Change the 201 response return type to <code>xml</code>.</li>
+<li>Change the resource name as <code>review</code>.</li>
+<li>Add a payload parameter named <code>blog</code> to the resource of type <code>Blog</code>.</li>
+<li>Change the 201 response return type to <code>Review</code>.</li>
 <li>Click on the <strong><code>Save</code></strong> button to update the resource with the specified configurations.
-    <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/update-resource.gif"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/update-resource.gif" alt="Update Resource" width="70%"></a></li>
+<a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/update-resource.png"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/update-resource.png" alt="Resource" width="70%"></a></li>
 </ol>
-<div class="admonition info">
-<p class="admonition-title">Resource Method</p>
-<p>To learn more about resources, see <a href="https://ballerina.io/learn/by-example/resource-methods/">Ballerina Resources</a>.</p>
-</div>
-<h3 id="step-4-add-the-transformation-logic">Step 4: Add the transformation logic<a class="headerlink" href="#step-4-add-the-transformation-logic" title="Permanent link">&para;</a></h3>
+<h3 id="step-6-implement-resource-logic">Step 6: Implement resource logic<a class="headerlink" href="#step-6-implement-resource-logic" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Click on the <code>toXml</code> resource to navigate to the resource implementation designer view.</li>
+<li>Click on the <code>review</code> resource to navigate to the resource implementation designer view.</li>
 <li>Delete the default <code>Return</code> action from the resource.</li>
 <li>Hover to the arrow after start and click the ➕ button to add a new action to the resource.</li>
-<li>Select <strong><code>Function Call</code></strong> from the node panel.</li>
-<li>Search for <code>json to xml</code> and select the <strong><code>fromJson</code></strong> function from the suggestions.</li>
-<li>Change the <strong><code>Variable Name</code></strong> to <code>xmlResult</code>, <strong><code>Variable Type</code></strong> as <code>xml</code> and <strong><code>JsonValue</code></strong> to <code>input</code>.</li>
-<li>Click on the <strong><code>Save</code></strong> button to add the function call to the resource.
-    <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-variable.gif"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-variable.gif" alt="Add Function Call" width="70%"></a></li>
-<li>Add a new node after the <code>fromJson</code> function call and select <strong><code>Return</code></strong> from the node panel.</li>
-<li>Select the <code>xmlResult</code> variable from the dropdown and click <strong><code>Save</code></strong>.
-    <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-return.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-return.png" alt="Add Return" width="70%"></a></li>
+<li>Select <strong><code>Call Function Call</code></strong> from the node panel.</li>
+<li>Select the <code>reviewBlog</code> function from the suggestions.</li>
+<li>Change the <strong><code>Variable Name</code></strong> to <code>review</code>, <strong><code>Variable Type</code></strong> as <code>Review</code> and <strong><code>Blog</code></strong> to <code>blog</code> and click on the <strong><code>Save</code></strong> button.  <br />
+<a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/call-np.gif"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/call-np.gif" alt="Function Call" width="70%"></a></li>
+<li>Add a new node after the <code>reviewBlog</code> function call and select <strong><code>Return</code></strong> from the node panel.</li>
+<li>Select the <code>reviewResult</code> variable from the dropdown and click <strong><code>Save</code></strong>.
+<a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/add-return.png"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/add-return.png" alt="Add Return" width="70%"></a></li>
+<li>The resource implementation is now complete. The function <code>reviewBlog</code> is called with the blog content as input and the review is returned as the response.</li>
 </ol>
-<div class="admonition info">
-<p class="admonition-title">JSON to XML Conversion</p>
-<p>To learn more about json to xml conversion, see <a href="https://ballerina.io/learn/by-example/xml-from-json-conversion/">Ballerina JSON to XML conversion</a>.</p>
+<h3 id="step-7-configure-model-for-natural-function">Step 7: Configure model for natural function<a class="headerlink" href="#step-7-configure-model-for-natural-function" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Press <code>Ctrl + Shift + P</code> on Windows and Linux, or <code>shift + ⌘ + P</code> on a Mac and type <code>&gt;Ballerina: Configure default model for natural functions</code> to configure the default model for natural functions. <br />
+<a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/configure-model.png"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/configure-model.png" alt="Configure Model" width="70%"></a></li>
+</ol>
+<h3 id="step-8-run-the-integration">Step 8: Run the integration<a class="headerlink" href="#step-8-run-the-integration" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Response May Vary</p>
+<p>Since this integration involves an LLM (Large Language Model) call, the response values may not always be identical across different executions.</p>
 </div>
-<h3 id="step-5-run-the-integration">Step 5: Run the integration<a class="headerlink" href="#step-5-run-the-integration" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Click on the <strong><code>Run</code></strong> button in the top-right corner to run the integration.</li>
-<li>The integration will start and the service will be available at <code>http://localhost:9090/convert</code>.</li>
+<li>The integration will start and the service will be available at <code>http://localhost:9090/blogs</code>.</li>
 <li>Click on the <strong><code>Try it</code></strong> button to open the embedded HTTP client.</li>
-<li>Enter the JSON payload in the request body and click on the ▶️ button to send the request.
+<li>Enter the blog content in the request body and click on the ▶️ button to send the request.
     <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;car&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Honda&quot;</span>
+<span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The Healthy Maven&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;For those who want a 360-degree approach to self-care, with advice for betterment in the workplace, home, gym, and on the go, look no further. The Healthy Maven offers recipes for every type of meal under the sun (salads, sides, soups, and more), DIY tips (you’ll learn how to make your own yoga mat spray), and quick workouts. If you like where all this is going, there’s a supplementary podcast run by blogger Davida with guest wellness experts.&quot;</span>
 <span class="p">}</span>
 </code></pre></div></li>
-<li>The response will be an XML representation of the JSON payload.<br />
-<code>&lt;root&gt;
-        &lt;name&gt;John&lt;/name&gt;
-        &lt;age&gt;30&lt;/age&gt;
-        &lt;car&gt;Honda&lt;/car&gt;
-    &lt;/root&gt;</code>
-   <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/run-integration.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/run-integration.png" alt="Run Integration" width="70%"></a></li>
-<li>Additionally, the service can be tested using tools like <a href="https://www.postman.com/">Postman</a> or <a href="https://curl.se/">curl</a> by sending a POST request with a JSON payload to the service endpoint.
-   <div class="highlight"><pre><span></span><code>curl -X POST &quot;http://localhost:9090/convert/toXml&quot; -H &quot;Content-Type: application/json&quot; -d &#39;{&quot;name&quot;:&quot;John&quot;, &quot;age&quot;:30, &quot;car&quot;:&quot;Honda&quot;}&#39;
+<li>The response will be a review of the blog content with the category and rating.
+    <div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Health&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;rating&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span>
+<span class="p">}</span>
 </code></pre></div></li>
+<li>The blog content is analyzed by the natural function to suggest a category and rate it based on predefined criteria.    <br />
+<a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/run-integration.png"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/run-integration.png" alt="Run Integration" width="70%"></a></li>
 </ol>
 
 
@@ -1027,7 +1114,7 @@
   <nav class="md-footer__inner md-grid" aria-label="Footer" >
     
     
-    <a href="../../get-started/key-concepts/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Key concepts" rel="prev">
+    <a href="../data-mapping/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Data mapping" rel="prev">
       <div class="md-footer__button md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </div>
@@ -1036,20 +1123,20 @@
                 <span class="md-footer__direction">
                   Previous
                 </span>
-          Key concepts
+          Data mapping
         </div>
       </div>
     </a>
     
     
     
-    <a href="../message-routing/" class="md-footer__link md-footer__link--next" aria-label="Next: Message routing" rel="next">
+    <a href="../../deploy/jar/" class="md-footer__link md-footer__link--next" aria-label="Next: Deploy on a VM" rel="next">
       <div class="md-footer__title">
         <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Next
                 </span>
-          Message routing
+          Deploy on a VM
         </div>
       </div>
       <div class="md-footer__button md-icon">
