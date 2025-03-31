@@ -1,13 +1,13 @@
 # Ballerina language support in low-code development
 
-The Kola low-code development environment provides an opinionated representation of the Ballerina language and its ecosystem, leveraging Ballerina’s core features to create a streamlined low-code experience.
+The Ballerina Integrator development environment provides an opinionated representation of the Ballerina language and its ecosystem, leveraging Ballerina’s core features to create a streamlined low-code experience.
 All configurations are serialized directly into Ballerina code—there is no intermediate representation—ensuring the source code remains the single source of truth. 
 
 This document offers a high-level overview of Ballerina language features, discusses the differences and limitations between pro-code and low-code development, and outlines the roadmap for aligning more advanced pro-code capabilities with the low-code environment in future releases.
 
 ## Low-code scope and limitations
 
-The Kola low-code environment is designed to streamline development by abstracting complex Ballerina features and providing an intuitive visual experience.
+The Ballerina Integrator low-code environment is designed to streamline development by abstracting complex Ballerina features and providing an intuitive visual experience.
 However, this simplification has certain constraints.
 Some advanced language features and custom configurations are not supported in low-code mode.
 For greater flexibility and full access to Ballerina’s capabilities, developers can switch to the pro-code view when needed.

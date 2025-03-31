@@ -45,14 +45,14 @@ Follow the steps below if you need to perform a major modification (For example:
 
 2. In your forked repository, make your changes in a new Git branch.
 
-3. The `docs-kola/en/docs/` directory contains all the `.md` files with content. Find the relevant location and do the modification.
+3. The `docs-bi/en/docs/` directory contains all the `.md` files with content. Find the relevant location and do the modification.
 
    > **NOTE:**
    >
    > Refer to the [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/) for styling and formatting.
 >
 
-4. Navigate to the `docs-kola/en/` directory in the terminal and build the repository with the following command:
+4. Navigate to the `docs-bi/en/` directory in the terminal and build the repository with the following command:
 
     ```shell
     mkdocs serve
@@ -141,14 +141,14 @@ pip is already installed if you are using Python 3 >=3.4 downloaded from [python
 
 ### Step 3 - Fork the repository
 
-Fork the GitHub repository: https://github.com/wso2/docs-kola.git
+Fork the GitHub repository: https://github.com/wso2/docs-bi.git
 
 ### Step 4 - Clone the repository
 
 Navigate to the location where you want to clone the repository and clone the forked repository.
 
    ```shell
-   git clone https://github.com/<git-username>/docs-kola.git
+   git clone https://github.com/<git-username>/docs-bi.git
    ```
 
 ### Step 5 - Install the dependencies
@@ -156,7 +156,7 @@ Navigate to the location where you want to clone the repository and clone the fo
 1. Navigate to the `<language-folder>` (`en`) inside the folder containing the repository that you cloned.
 
     ```shell
-    cd docs-kola/en/
+    cd docs-bi/en/
     ```
 
 2. Install the required pip packages.
@@ -216,7 +216,7 @@ Navigate to the location where you want to clone the repository and clone the fo
    >
    > If you are adding new images or new pages to the doc space, update the base path when locally running the project.
    >
-   > 1. Open the `mkdocs.yml` file located in the `docs-kola/en/docs/` directory.
+   > 1. Open the `mkdocs.yml` file located in the `docs-bi/en/docs/` directory.
    >
    > 2. Update the `base_path` to `http://localhost:8000/en/latest` by uncommenting the entry.
    >
