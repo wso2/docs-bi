@@ -1,6 +1,6 @@
 # **Features and roadmap**
 
-This document gives a broad overview of Kola's current features and future roadmap, emphasizing key capabilities available now and upcoming enhancements planned for future releases. Note that the roadmap might change and may not include all planned features.
+This document gives a broad overview of Ballerina Integrator's current features and future roadmap, emphasizing key capabilities available now and upcoming enhancements planned for future releases. Note that the roadmap might change and may not include all planned features.
 
 ## **Current features**
 

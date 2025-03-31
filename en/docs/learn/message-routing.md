@@ -1,4 +1,4 @@
-# Message routing
+# Content-based message routing
 
 In this tutorial, you'll create a service that allows users to reserve appointments at various hospitals. Requests will be directed to the appropriate hospital based on the request payload's content.
 To accomplish this, you’ll build a REST service with a single resource in Ballerina Integrator extension. The resource will handle user requests, identify the hospital endpoint based on the hospital ID, forward the request to the specified hospital service to make the reservation, and return the reservation details.
