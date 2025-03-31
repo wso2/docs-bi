@@ -2,82 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://bi.docs.wso2.com/</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/page-not-found/</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/deploy/devant/</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/deploy/docker/</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/deploy/icp/</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/deploy/jar/</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/get-started/key-concepts/</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/get-started/quick-start-guide/</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/learn/data-mapping/</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/learn/integration-ai/</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/learn/message-routing/</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/learn/message-transformation/</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/learn/natural-functions/</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/learn/service-orchestration/</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/roadmap/language-support/</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/roadmap/overview/</loc>
-         <lastmod>2025-03-18</lastmod>
+         <lastmod>2025-03-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
