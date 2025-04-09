@@ -19,8 +19,6 @@ Functions are reusable code blocks that can be called from different parts of th
 Functions can take input parameters and return output values. 
 
 !!! tip "Ballerina Functions"
-    Ballerina functions are first-class citizens, meaning they can be passed as arguments to other functions, returned from functions, and assigned to variables. 
-    This allows for a high degree of flexibility and reusability in your code.
     To learn more, see [Ballerina Functions](https://ballerina.io/learn/by-example/functions/).
 
 ## Types
