@@ -80,6 +80,7 @@ nav:
       - Message routing: learn/message-routing.md
       - Service orchestration: learn/service-orchestration.md
       - AI-assisted integration: learn/integration-ai.md
+      - AI agent integration: learn/ai-agent-integration.md
       - Data mapping: learn/data-mapping.md
       - Natural functions: learn/natural-functions.md
       - File integration: learn/file-integration.md
