@@ -1038,7 +1038,7 @@ Such a function is evaluated at runtime with a call to an LLM. The example uses 
 <span class="p">}</span>
 </code></pre></div></li>
 <li>The types are now available in the project. <code>Blog</code> and <code>Review</code> are the types that represent the blog content and review respectively.
-<a href="http://localhost:8000/assets/img/natural-functions/types.png"><img src="http://localhost:8000/assets/img/natural-functions/types.png" alt="Types" width="70%"></a></li>
+<a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/types.png"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/types.png" alt="Types" width="70%"></a></li>
 </ol>
 <h3 id="step-3-create-an-http-service">Step 3: Create an HTTP service.<a class="headerlink" href="#step-3-create-an-http-service" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1047,13 +1047,13 @@ Such a function is evaluated at runtime with a call to an LLM. The example uses 
 <li>Select the <strong><code>Create and use the default HTTP listener</code></strong> option from the <strong><code>Listener</code></strong> dropdown.</li>
 <li>Add the service base path as <code>/blogs</code> and select the <strong><code>Design from Scratch</code></strong> option as the <strong><code>The contract of the service</code></strong>.</li>
 <li>Click on the <strong><code>Create</code></strong> button to create the new service with the specified configurations.
-<a href="http://localhost:8000/assets/img/natural-functions/service.png"><img src="http://localhost:8000/assets/img/natural-functions/service.png" alt="HTTP Service" width="70%"></a></li>
+<a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/service.png"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/service.png" alt="HTTP Service" width="70%"></a></li>
 </ol>
 <h3 id="step-4-add-a-natural-function">Step 4: Add a Natural Function<a class="headerlink" href="#step-4-add-a-natural-function" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Click on the <strong><code>Add Artifact</code></strong> button and select <strong><code>Natural Function</code></strong> under the <strong><code>Other Artifacts</code></strong> category.</li>
 <li>Add the function name as <code>reviewBlog</code>, input parameter as <code>blog</code> of type <code>Blog</code>, return type of <code>Review</code> and click on the <strong><code>Create</code></strong> button.
-<a href="http://localhost:8000/assets/img/natural-functions/natural-function.png"><img src="http://localhost:8000/assets/img/natural-functions/natural-function.png" alt="Natural Function" width="70%"></a></li>
+<a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/natural-function.png"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/natural-function.png" alt="Natural Function" width="70%"></a></li>
 <li>Click on the <strong><code>Edit</code></strong> button to add the function logic.</li>
 <li>Add the following prompt to the function and click on the <strong><code>Save</code></strong> button.
     <div class="highlight"><pre><span></span><code>You are an expert content reviewer for a blog site that 
@@ -1085,7 +1085,7 @@ Here is the blog post content:
 <li>Add a payload parameter named <code>blog</code> to the resource of type <code>Blog</code>.</li>
 <li>Change the 201 response return type to <code>Review</code>.</li>
 <li>Click on the <strong><code>Save</code></strong> button to update the resource with the specified configurations.
-<a href="http://localhost:8000/assets/img/natural-functions/update-resource.png"><img src="http://localhost:8000/assets/img/natural-functions/update-resource.png" alt="Resource" width="70%"></a></li>
+<a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/update-resource.png"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/update-resource.png" alt="Resource" width="70%"></a></li>
 </ol>
 <h3 id="step-6-implement-resource-logic">Step 6: Implement resource logic<a class="headerlink" href="#step-6-implement-resource-logic" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1095,16 +1095,16 @@ Here is the blog post content:
 <li>Select <strong><code>Call Function Call</code></strong> from the node panel.</li>
 <li>Select the <code>reviewBlog</code> function from the suggestions.</li>
 <li>Change the <strong><code>Variable Name</code></strong> to <code>review</code>, <strong><code>Variable Type</code></strong> as <code>Review</code> and <strong><code>Blog</code></strong> to <code>blog</code> and click on the <strong><code>Save</code></strong> button.  <br />
-<a href="http://localhost:8000/assets/img/natural-functions/call-np.gif"><img src="http://localhost:8000/assets/img/natural-functions/call-np.gif" alt="Function Call" width="70%"></a></li>
+<a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/call-np.gif"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/call-np.gif" alt="Function Call" width="70%"></a></li>
 <li>Add a new node after the <code>reviewBlog</code> function call and select <strong><code>Return</code></strong> from the node panel.</li>
 <li>Select the <code>reviewResult</code> variable from the dropdown and click <strong><code>Save</code></strong>.
-<a href="http://localhost:8000/assets/img/natural-functions/add-return.png"><img src="http://localhost:8000/assets/img/natural-functions/add-return.png" alt="Add Return" width="70%"></a></li>
+<a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/add-return.png"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/add-return.png" alt="Add Return" width="70%"></a></li>
 <li>The resource implementation is now complete. The function <code>reviewBlog</code> is called with the blog content as input and the review is returned as the response.</li>
 </ol>
 <h3 id="step-7-configure-model-for-natural-function">Step 7: Configure model for natural function<a class="headerlink" href="#step-7-configure-model-for-natural-function" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Press <code>Ctrl + Shift + P</code> on Windows and Linux, or <code>shift + ⌘ + P</code> on a Mac and type <code>&gt;Ballerina: Configure default model for natural functions</code> to configure the default model for natural functions. <br />
-<a href="http://localhost:8000/assets/img/natural-functions/configure-model.png"><img src="http://localhost:8000/assets/img/natural-functions/configure-model.png" alt="Configure Model" width="70%"></a></li>
+<a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/configure-model.png"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/configure-model.png" alt="Configure Model" width="70%"></a></li>
 </ol>
 <h3 id="step-8-run-the-integration">Step 8: Run the integration<a class="headerlink" href="#step-8-run-the-integration" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
@@ -1128,7 +1128,7 @@ Here is the blog post content:
 <span class="p">}</span>
 </code></pre></div></li>
 <li>The blog content is analyzed by the natural function to suggest a category and rate it based on predefined criteria.    <br />
-<a href="http://localhost:8000/assets/img/natural-functions/run-integration.png"><img src="http://localhost:8000/assets/img/natural-functions/run-integration.png" alt="Run Integration" width="70%"></a></li>
+<a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/run-integration.png"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/run-integration.png" alt="Run Integration" width="70%"></a></li>
 </ol>
 
 
