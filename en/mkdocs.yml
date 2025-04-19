@@ -80,6 +80,7 @@ nav:
       - Message routing: learn/message-routing.md
       - Service orchestration: learn/service-orchestration.md
       - AI-assisted integration: learn/integration-ai.md
+      - AI agent integration: learn/ai-agent-integration.md
       - Data mapping: learn/data-mapping.md
       - Natural functions: learn/natural-functions.md
       - File integration: learn/file-integration.md
@@ -170,5 +171,5 @@ extra:
     - type: linkedin
       link: https://www.linkedin.com/company/wso2
   # site_version: Uncomment to specify a version
-  base_path: https://wso2.github.io/docs-bi
-#  base_path: http://localhost:8000
+  # base_path: https://wso2.github.io/docs-bi
+  base_path: http://localhost:8000

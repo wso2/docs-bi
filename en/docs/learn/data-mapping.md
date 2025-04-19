@@ -1,4 +1,4 @@
-# Data Mapping
+# Data mapping
 
 The following instructions demonstrate how to build an integration that transforms a JSON payload into a different JSON structure using Ballerina Integrator Data Mapper. An HTTP service with a single resource (`transform`) will be created to receive a JSON payload and return the transformed result.
 
@@ -89,7 +89,7 @@ The following instructions demonstrate how to build an integration that transfor
     To learn more about resources, see [Ballerina Resources](https://ballerina.io/learn/by-example/resource-methods/).
 
 
-### Step 5: Add Data Mapper
+### Step 5: Add data mapper
 1. Click on the `transform` resource to navigate to the resource implementation designer view.
 2. Delete the existing **`Return`** node in the flow diagram.
 3. Hover to the arrow after start and click the ➕ button to add a new action to the resource.
@@ -106,23 +106,23 @@ The following instructions demonstrate how to build an integration that transfor
 
 <a href="{{base_path}}/assets/img/data-mapping/data-mapper-added.png"><img src="{{base_path}}/assets/img/data-mapping/data-mapper-added.png" alt="Data Mapper Added" width="70%"></a>   
 
-### Step 6: Create Mappings
+### Step 6: Create mappings
 1. First click on the input field and then click on the desired output field to create a mapping
 2. When you are done click on the **`Go Back`** Button to return to the flow diagram
 
-#### Create Simple Mapping
+#### Create simple mapping
 <a href="{{base_path}}/assets/img/data-mapping/simple-mapping.gif"><img src="{{base_path}}/assets/img/data-mapping/simple-mapping.gif" alt="Simple Mapping" width="70%"></a>
 
-#### Auto Mapping
+#### Auto mapping
 <a href="{{base_path}}/assets/img/data-mapping/auto-mapping.gif"><img src="{{base_path}}/assets/img/data-mapping/auto-mapping.gif" alt="Auto Mapping" width="70%"></a>
 
-#### Many-to-One Mapping
+#### Many-to-one mapping
 <a href="{{base_path}}/assets/img/data-mapping/many-to-one-mapping.png"><img src="{{base_path}}/assets/img/data-mapping/many-to-one-mapping.png" alt="Many to One Mapping" width="70%"></a>
 
-#### Edit Mapping Expression
+#### Edit mapping expression
 <a href="{{base_path}}/assets/img/data-mapping/edit-mapping.gif"><img src="{{base_path}}/assets/img/data-mapping/edit-mapping.gif" alt="Edit Mapping Expression" width="70%"></a>
 
-#### Resolving Errors
+#### Resolving errors
 <a href="{{base_path}}/assets/img/data-mapping/error-resolving.png"><img src="{{base_path}}/assets/img/data-mapping/error-resolving.png" alt="Error Resolving" width="70%"></a>
 
 
