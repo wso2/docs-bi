@@ -21,9 +21,9 @@ Download and install the [Visual Studio Code](https://code.visualstudio.com/down
 4. Click on the **`Restart Now`** button to complete the setup.
    <a href="{{base_path}}/assets/img/get-started/bi-setup.gif"><img src="{{base_path}}/assets/img/get-started/bi-setup.gif" alt="BI Setup" width="70%"></a>
 
-???+ info "Update Ballerina Integrator's Ballerina Distribution"
+???+ info "Update Ballerina Integrator's Ballerina distribution to nightly pack"
     The setup wizard will install the Ballerina distribution required for Ballerina Integrator in to `<USER_HOME>/.ballerina/ballerina-home` directory.
-    Press `Ctrl + Shift + P` on Windows and Linux, or `shift + ⌘ + P` on a Mac and type `Ballerina: Update Ballerina Dev Pack` to update the installed Ballerina distribution.
+    Press `Ctrl + Shift + P` on Windows and Linux, or `shift + ⌘ + P` on a Mac and type `Ballerina: Update Ballerina Nightly Build` to update the installed Ballerina distribution to nightly pack.
 
 ### Step 4: Create a new integration project
 1. Click on the Ballerina Integrator icon on the sidebar.
