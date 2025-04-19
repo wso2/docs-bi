@@ -16,7 +16,7 @@ In this tutorial, you'll create an AI-powered math tutor assistant capable of ha
 3. Enter the project name as `MathTutor`.
 4. Select the project directory location by clicking on the **`Select Location`** button.
 5. Click the **`Create New Integration`** button to generate the integration project.
-   <a href="{{base_path}}/assets/img/ai-agent/ai-agent-step1.gif"><img src="{{base_path}}/assets/img/ai-agent/ai-agent-step1.gif" alt="Create a New Integration Project" width="70%"></a>
+<a href="{{base_path}}/assets/img/ai-agent/ai-agent-step1.gif"><img src="{{base_path}}/assets/img/ai-agent/ai-agent-step1.gif" alt="Create a New Integration Project" width="70%"></a>
 
 ### Step 2: Create an agent
 
@@ -40,10 +40,10 @@ In this tutorial, you'll create an AI-powered math tutor assistant capable of ha
 3. In the **`Select Model Provider`** dropdown, choose **`OpenAiProvider`**.
 4. Next, provide the OpenAI API key in the **`API Key`** input field.  
 !!! note 
-Since the API key is sensitive it's recommended to create a configurable named `openAiApiKey` and use it as the value for the **`API Key`** field.
+    Since the API key is sensitive it's recommended to create a configurable named `openAiApiKey` and use it as the value for the **`API Key`** field.
 5. In the **`Model Type`** dropdown, select `ai:GPT_40`.
-6. Click **`Save`** to complete the LLM model configuration.
-   <a href="{{base_path}}/assets/img/ai-agent/ai-agent-step4.gif"><img src="{{base_path}}/assets/img/ai-agent/ai-agent-step4.gif" alt="Configure the Agent Model" width="70%"></a>
+6. Click **`Save`** to complete the LLM model configuration.    
+<a href="{{base_path}}/assets/img/ai-agent/ai-agent-step4.gif"><img src="{{base_path}}/assets/img/ai-agent/ai-agent-step4.gif" alt="Configure the Agent Model" width="70%"></a>
 
 ### Step 5: Configure agent memory
 
@@ -74,8 +74,7 @@ However, in this tutorial, we will create simple functions to perform arithmetic
 8. Then provide the **`Tool Name`** and **`Description`** of the tool
 
 Follow steps 1 to 3 to create functions named subtract, multiply and divide to perform subtraction, multiplication, and division operations respectively. Define the appropriate parameters and return types, and implement the corresponding logic in the flow node editor.
-
-Then repeat steps 4 to 8 to add each of these functions as tools in the agent by selecting them from the Current Integration list and providing a relevant tool name and description for each.
+Then repeat steps 4 to 8 to add each of these functions as tools in the agent by selecting them from the Current Integration list and providing a relevant tool name and description for each.    
 <a href="{{base_path}}/assets/img/ai-agent/ai-agent-step6.gif"><img src="{{base_path}}/assets/img/ai-agent/ai-agent-step6.gif" alt="Add Tools to the Agent" width="70%"></a>
 
 ### Step 7: Interact with the agent
@@ -89,5 +88,5 @@ To start chatting with the agent:
 3. Since we have created a configurable variable for `openAiApiKey` in step 4, provide it in the `Config.toml` file.
 
 !!! note
-A temporary OpenAI API key is used in the GIF below to showcase the steps.  
- <a href="{{base_path}}/assets/img/ai-agent/ai-agent-step7.gif"><img src="{{base_path}}/assets/img/ai-agent/ai-agent-step7.gif" alt="Interact With the Agent" width="70%"></a>
+    A temporary OpenAI API key is used in the GIF below to showcase the steps.  
+    <a href="{{base_path}}/assets/img/ai-agent/ai-agent-step7.gif"><img src="{{base_path}}/assets/img/ai-agent/ai-agent-step7.gif" alt="Interact With the Agent" width="70%"></a>
