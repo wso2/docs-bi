@@ -676,6 +676,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../ai-agent-integration/" class="md-nav__link">
+        AI agent integration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../data-mapping/" class="md-nav__link">
         Data mapping
       </a>
@@ -1010,7 +1024,7 @@
 <p>In this tutorial, you'll create a service that allows users to reserve appointments at various hospitals. Requests will be directed to the appropriate hospital based on the request payload's content.
 To accomplish this, you’ll build a REST service with a single resource in Ballerina Integrator extension. The resource will handle user requests, identify the hospital endpoint based on the hospital ID, forward the request to the specified hospital service to make the reservation, and return the reservation details.</p>
 <p>Here’s an overview of the process flow.</p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/message-routing/introduction.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-routing/introduction.png" alt="Message Routing" width="70%"></a></p>
+<p><a href="http://localhost:8000/assets/img/message-routing/introduction.png"><img src="http://localhost:8000/assets/img/message-routing/introduction.png" alt="Message Routing" width="70%"></a></p>
 <ol>
 <li>Receive a request with a JSON payload similar to the following.
     <div class="highlight"><span class="filename">ReservationRequest.json</span><pre><span></span><code><span class="p">{</span>
@@ -1115,7 +1129,7 @@ To accomplish this, you’ll build a REST service with a single resource in Ball
 <span class="p">}</span>
 </code></pre></div></li>
 <li>The final Type diagram will look like below.   <br />
-<a href="https://wso2.github.io/docs-bi/assets/img/message-routing/types.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-routing/types.png" alt="Create Type" width="70%"></a></li>
+<a href="http://localhost:8000/assets/img/message-routing/types.png"><img src="http://localhost:8000/assets/img/message-routing/types.png" alt="Create Type" width="70%"></a></li>
 </ol>
 <h3 id="step-4-add-connectors-s">Step 4: Add connectors s<a class="headerlink" href="#step-4-add-connectors-s" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1123,7 +1137,7 @@ To accomplish this, you’ll build a REST service with a single resource in Ball
 <li>Search and select the <strong><code>HTTP Client</code></strong> connector.</li>
 <li>Enter the connector name as <code>grandOakEp</code>, URL as <code>"http://localhost:9090/grandoak/categories"</code>.</li>
 <li>Click on the <strong><code>Save</code></strong> button to create the new connector with the specified configurations.
-<a href="https://wso2.github.io/docs-bi/assets/img/message-routing/add-connector.gif"><img src="https://wso2.github.io/docs-bi/assets/img/message-routing/add-connector.gif" alt="Add Connector" width="70%"></a></li>
+<a href="http://localhost:8000/assets/img/message-routing/add-connector.gif"><img src="http://localhost:8000/assets/img/message-routing/add-connector.gif" alt="Add Connector" width="70%"></a></li>
 <li>
 <p>Repeat the above steps to add connectors for the <code>clemency</code> and <code>pinevalley</code> hospitals with the following configurations.</p>
 <table>
@@ -1147,7 +1161,7 @@ To accomplish this, you’ll build a REST service with a single resource in Ball
 </li>
 <li>
 <p>The final connectors will look like below.   <br />
-<a href="https://wso2.github.io/docs-bi/assets/img/message-routing/connectors.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-routing/connectors.png" alt="Connectors" width="70%"></a></p>
+<a href="http://localhost:8000/assets/img/message-routing/connectors.png"><img src="http://localhost:8000/assets/img/message-routing/connectors.png" alt="Connectors" width="70%"></a></p>
 </li>
 </ol>
 <details class="info"><summary>HTTP Connector</summary><p>To learn more about HTTP client, see <a href="https://ballerina.io/learn/by-example/http-client-send-request-receive-response/">Ballerina HTTP Client</a>.
@@ -1163,7 +1177,7 @@ See supported advanced client configurations in the <a href="https://central.bal
 <li>Change the 201 response return type to <code>ReservationResponse</code>.</li>
 <li>Add a new response of type <strong><code>HttpNotFound</code></strong> under the responses.</li>
 <li>Click on the <strong><code>Save</code></strong> button to update the resource with the specified configurations.
-   <a href="https://wso2.github.io/docs-bi/assets/img/message-routing/update-resource.gif"><img src="https://wso2.github.io/docs-bi/assets/img/message-routing/update-resource.gif" alt="Update Resource" width="70%"></a></li>
+   <a href="http://localhost:8000/assets/img/message-routing/update-resource.gif"><img src="http://localhost:8000/assets/img/message-routing/update-resource.gif" alt="Update Resource" width="70%"></a></li>
 </ol>
 <h3 id="step-6-add-the-routing-logic">Step 6: Add the routing logic<a class="headerlink" href="#step-6-add-the-routing-logic" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1183,11 +1197,11 @@ See supported advanced client configurations in the <a href="https://central.bal
 <li>grandOak -&gt; <code>reservation.hospital_id == "grandoak"</code></li>
 <li>clemency -&gt; <code>reservation.hospital_id == "clemency"</code></li>
 <li>pineValley -&gt; <code>reservation.hospital_id == "pinevalley"</code><br />
-   <a href="https://wso2.github.io/docs-bi/assets/img/message-routing/add-if.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-routing/add-if.png"" alt="Add If" width="70%"></a></li>
+   <a href="http://localhost:8000/assets/img/message-routing/add-if.png"><img src="http://localhost:8000/assets/img/message-routing/add-if.png"" alt="Add If" width="70%"></a></li>
 </ul>
 </li>
 <li>Select the <code>grandOakEP</code> condition true path ➕ sign and select <strong><code>grandOakEP</code></strong> connector from the node panel.
-<a href="https://wso2.github.io/docs-bi/assets/img/message-routing/add-connector-action.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-routing/add-connector-action.png" alt="Add Connector Action" width="70%"></a></li>
+<a href="http://localhost:8000/assets/img/message-routing/add-connector-action.png"><img src="http://localhost:8000/assets/img/message-routing/add-connector-action.png" alt="Add Connector Action" width="70%"></a></li>
 <li>
 <p>Select <strong><code>post</code></strong> from the dropdown. Then, fill in the required fields with the values given below and click <strong><code>Save</code></strong>.</p>
 <table>
@@ -1219,7 +1233,7 @@ See supported advanced client configurations in the <a href="https://central.bal
 </li>
 <li>
 <p>Click on the ➕ sign again and select <strong><code>Return</code></strong> from the node panel. Select the <code>oakEPResponse</code> variable from the dropdown and click <strong><code>Save</code></strong>.
-    <a href="https://wso2.github.io/docs-bi/assets/img/message-routing/add-return.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-routing/add-return.png" alt="Add Return" width="70%"></a></p>
+    <a href="http://localhost:8000/assets/img/message-routing/add-return.png"><img src="http://localhost:8000/assets/img/message-routing/add-return.png" alt="Add Return" width="70%"></a></p>
 </li>
 <li>The steps above will add the routing logic for the <code>grandoak</code> hospital. A variable named <code>oakEPResponse</code> will store the response from the <code>grandoak</code> hospital service. The response will be returned to the client.</li>
 <li>
@@ -1283,7 +1297,7 @@ See supported advanced client configurations in the <a href="https://central.bal
 <p>For the else condition, click on the <code>If</code> condition <code>Else</code> path ➕ sign and add a <strong><code>Return</code></strong> from the node panel. Enter <code>http:NOT_FOUND</code> as the value and click <strong><code>Save</code></strong>.             </p>
 </li>
 <li>The final design will look like below.           <br />
-    <a href="https://wso2.github.io/docs-bi/assets/img/message-routing/final-design.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-routing/final-design.png"" alt="Final Design" width="70%"></a></li>
+    <a href="http://localhost:8000/assets/img/message-routing/final-design.png"><img src="http://localhost:8000/assets/img/message-routing/final-design.png"" alt="Final Design" width="70%"></a></li>
 </ol>
 <h3 id="step-7-run-the-service">Step 7: Run the service<a class="headerlink" href="#step-7-run-the-service" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1309,7 +1323,7 @@ See supported advanced client configurations in the <a href="https://central.bal
 <span class="nt">&quot;appointment_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-10-02&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-   <a href="https://wso2.github.io/docs-bi/assets/img/message-routing/run.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-routing/run.png" alt="Send Request" width="70%"></a></li>
+   <a href="http://localhost:8000/assets/img/message-routing/run.png"><img src="http://localhost:8000/assets/img/message-routing/run.png" alt="Send Request" width="70%"></a></li>
 <li>The response will be similar to the following.
    <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="nt">&quot;appointmentNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>

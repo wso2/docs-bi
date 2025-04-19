@@ -648,6 +648,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../ai-agent-integration/" class="md-nav__link">
+        AI agent integration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../data-mapping/" class="md-nav__link">
         Data mapping
       </a>
@@ -953,7 +967,7 @@
 <h1 id="message-transformation">Message transformation<a class="headerlink" href="#message-transformation" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>This guide explains how to create a simple integration to convert a JSON payload to an XML payload using Ballerina Integrator. An HTTP service with a single resource (<code>toXml</code>) will be created to accept a JSON payload and return the XML representation of the payload.
-<a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/introduction.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/introduction.png" alt="JSON to XML" width="70%"></a></p>
+<a href="http://localhost:8000/assets/img/message-transformation/introduction.png"><img src="http://localhost:8000/assets/img/message-transformation/introduction.png" alt="JSON to XML" width="70%"></a></p>
 <h3 id="step-1-create-a-new-integration-project">Step 1: Create a new integration project.<a class="headerlink" href="#step-1-create-a-new-integration-project" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Click on the Ballerina Integrator icon on the sidebar.</li>
@@ -961,7 +975,7 @@
 <li>Enter the project name as <code>JsonToXml</code>.</li>
 <li>Select project directory location by clicking on the <strong><code>Select Location</code></strong> button.</li>
 <li>Click on the <strong><code>Create Integration</code></strong> button to create the integration project.
-   <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/create-integration.gif"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/create-integration.gif" alt="Create Integration" width="70%"></a></li>
+   <a href="http://localhost:8000/assets/img/message-transformation/create-integration.gif"><img src="http://localhost:8000/assets/img/message-transformation/create-integration.gif" alt="Create Integration" width="70%"></a></li>
 </ol>
 <h3 id="step-2-create-a-http-service">Step 2: Create a HTTP service.<a class="headerlink" href="#step-2-create-a-http-service" title="Permanent link">&para;</a></h3>
 <ol>
@@ -976,13 +990,13 @@
 <ol>
 <li>The service will have a default resource named <code>greeting</code> with the <strong><code>GET</code></strong> method. Click on three dots appear in front of the <code>/convert</code> service resource and select <strong><code>Edit</code></strong> from menu.</li>
 <li>Then click the edit button in front of <code>/greeting</code> resource.<br />
-    <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/edit-resource.gif"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/edit-resource.gif" alt="Edit Resource" width="70%"></a></li>
+    <a href="http://localhost:8000/assets/img/message-transformation/edit-resource.gif"><img src="http://localhost:8000/assets/img/message-transformation/edit-resource.gif" alt="Edit Resource" width="70%"></a></li>
 <li>Change the resource HTTP method to <strong><code>POST</code></strong>.</li>
 <li>Change the resource name as <code>toXml</code>.</li>
 <li>Add a payload parameter named <code>input</code> to the resource of type <code>json</code>. </li>
 <li>Change the 201 response return type to <code>xml</code>.</li>
 <li>Click on the <strong><code>Save</code></strong> button to update the resource with the specified configurations.
-    <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/update-resource.gif"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/update-resource.gif" alt="Update Resource" width="70%"></a></li>
+    <a href="http://localhost:8000/assets/img/message-transformation/update-resource.gif"><img src="http://localhost:8000/assets/img/message-transformation/update-resource.gif" alt="Update Resource" width="70%"></a></li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Resource Method</p>
@@ -997,10 +1011,10 @@
 <li>Search for <code>json to xml</code> and select the <strong><code>fromJson</code></strong> function from the suggestions.</li>
 <li>Change the <strong><code>Variable Name</code></strong> to <code>xmlResult</code>, <strong><code>Variable Type</code></strong> as <code>xml</code> and <strong><code>JsonValue</code></strong> to <code>input</code>.</li>
 <li>Click on the <strong><code>Save</code></strong> button to add the function call to the resource.
-    <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-variable.gif"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-variable.gif" alt="Add Function Call" width="70%"></a></li>
+    <a href="http://localhost:8000/assets/img/message-transformation/add-variable.gif"><img src="http://localhost:8000/assets/img/message-transformation/add-variable.gif" alt="Add Function Call" width="70%"></a></li>
 <li>Add a new node after the <code>fromJson</code> function call and select <strong><code>Return</code></strong> from the node panel.</li>
 <li>Select the <code>xmlResult</code> variable from the dropdown and click <strong><code>Save</code></strong>.
-    <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-return.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-return.png" alt="Add Return" width="70%"></a></li>
+    <a href="http://localhost:8000/assets/img/message-transformation/add-return.png"><img src="http://localhost:8000/assets/img/message-transformation/add-return.png" alt="Add Return" width="70%"></a></li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">JSON to XML Conversion</p>
@@ -1024,7 +1038,7 @@
         &lt;age&gt;30&lt;/age&gt;
         &lt;car&gt;Honda&lt;/car&gt;
     &lt;/root&gt;</code>
-   <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/run-integration.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/run-integration.png" alt="Run Integration" width="70%"></a></li>
+   <a href="http://localhost:8000/assets/img/message-transformation/run-integration.png"><img src="http://localhost:8000/assets/img/message-transformation/run-integration.png" alt="Run Integration" width="70%"></a></li>
 <li>Additionally, the service can be tested using tools like <a href="https://www.postman.com/">Postman</a> or <a href="https://curl.se/">curl</a> by sending a POST request with a JSON payload to the service endpoint.
    <div class="highlight"><pre><span></span><code>curl -X POST &quot;http://localhost:9090/convert/toXml&quot; -H &quot;Content-Type: application/json&quot; -d &#39;{&quot;name&quot;:&quot;John&quot;, &quot;age&quot;:30, &quot;car&quot;:&quot;Honda&quot;}&#39;
 </code></pre></div></li>

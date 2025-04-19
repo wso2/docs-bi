@@ -658,6 +658,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../../learn/ai-agent-integration/" class="md-nav__link">
+        AI agent integration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../learn/data-mapping/" class="md-nav__link">
         Data mapping
       </a>
@@ -976,7 +990,7 @@
 
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <p>In this guide, you'll build a simple integration using the Ballerina Integrator plugin for Visual Studio Code. You'll create an HTTP service with a single resource named <code>greeting</code> that invokes the public <a href="https://apis.wso2.com/zvdz/mi-qsg/v1.0">Hello World API endpoint</a> and returns the response.</p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/get-started/introduction.png"><img src="https://wso2.github.io/docs-bi/assets/img/get-started/introduction.png" alt="introduction" width="70%"></a></p>
+<p><a href="http://localhost:8000/assets/img/get-started/introduction.png"><img src="http://localhost:8000/assets/img/get-started/introduction.png" alt="introduction" width="70%"></a></p>
 <h3 id="step-1-install-visual-studio-code">Step 1: Install Visual Studio Code<a class="headerlink" href="#step-1-install-visual-studio-code" title="Permanent link">&para;</a></h3>
 <p>Download and install the <a href="https://code.visualstudio.com/download">Visual Studio Code</a>.</p>
 <h3 id="step-2-install-the-wso2-ballerina-integrator-extension">Step 2: Install the WSO2 Ballerina Integrator extension<a class="headerlink" href="#step-2-install-the-wso2-ballerina-integrator-extension" title="Permanent link">&para;</a></h3>
@@ -984,17 +998,17 @@
 <li>Go to the Extensions view by clicking on the extension icon on the sidebar or pressing <code>Ctrl + Shift + X</code> on Windows and Linux, or <code>shift + ⌘ + X</code> on a Mac.</li>
 <li>Search for <code>Ballerina Integrator</code> in the Extensions view search box.</li>
 <li>Click on the <strong><code>Install</code></strong> button to install the <code>Ballerina Integrator</code> extension.
-   <a href="https://wso2.github.io/docs-bi/assets/img/get-started/bi-extension.png"><img src="https://wso2.github.io/docs-bi/assets/img/get-started/bi-extension.png" alt="Ballerina Integrator Extension" width="70%"></a></li>
+   <a href="http://localhost:8000/assets/img/get-started/bi-extension.png"><img src="http://localhost:8000/assets/img/get-started/bi-extension.png" alt="Ballerina Integrator Extension" width="70%"></a></li>
 <li>This will install the <strong>Ballerina Integrator</strong> and <strong>Ballerina</strong> extensions on VS Code.</li>
 </ol>
 <h3 id="step-3-set-up-ballerina-integrator-for-the-first-time">Step 3: Set up Ballerina Integrator for the first time<a class="headerlink" href="#step-3-set-up-ballerina-integrator-for-the-first-time" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Click on the Ballerina Integrator icon on the sidebar.  <br />
-   <a href="https://wso2.github.io/docs-bi/assets/img/get-started/bi-icon.png"><img src="https://wso2.github.io/docs-bi/assets/img/get-started/bi-icon.png" alt="Ballerina Integrator Icon" width="70%"></a></li>
+   <a href="http://localhost:8000/assets/img/get-started/bi-icon.png"><img src="http://localhost:8000/assets/img/get-started/bi-icon.png" alt="Ballerina Integrator Icon" width="70%"></a></li>
 <li>Click on the <strong><code>Set Up Ballerina Integrator</code></strong> button.</li>
 <li>The setup wizard will install and configure the <a href="https://ballerina.io/">Ballerina</a> distribution required for Ballerina Integrator.</li>
 <li>Click on the <strong><code>Restart Now</code></strong> button to complete the setup.
-   <a href="https://wso2.github.io/docs-bi/assets/img/get-started/bi-setup.gif"><img src="https://wso2.github.io/docs-bi/assets/img/get-started/bi-setup.gif" alt="BI Setup" width="70%"></a></li>
+   <a href="http://localhost:8000/assets/img/get-started/bi-setup.gif"><img src="http://localhost:8000/assets/img/get-started/bi-setup.gif" alt="BI Setup" width="70%"></a></li>
 </ol>
 <details class="info" open="open"><summary>Update Ballerina Integrator's Ballerina Distribution</summary><p>The setup wizard will install the Ballerina distribution required for Ballerina Integrator in to <code>&lt;USER_HOME&gt;/.ballerina/ballerina-home</code> directory.
 Press <code>Ctrl + Shift + P</code> on Windows and Linux, or <code>shift + ⌘ + P</code> on a Mac and type <code>Ballerina: Update Ballerina Dev Pack</code> to update the installed Ballerina distribution.</p>
@@ -1006,7 +1020,7 @@ Press <code>Ctrl + Shift + P</code> on Windows and Linux, or <code>shift + ⌘ +
 <li>Enter the Integration Name as <code>HelloWorld</code>.</li>
 <li>Select Project Directory by clicking on the <strong><code>Select Location</code></strong> button.</li>
 <li>Click on the <strong><code>Create Integration</code></strong> button to create the integration project.
-   <a href="https://wso2.github.io/docs-bi/assets/img/get-started/create-integration.gif"><img src="https://wso2.github.io/docs-bi/assets/img/get-started/create-integration.gif" alt="Create Integration" width="70%"></a></li>
+   <a href="http://localhost:8000/assets/img/get-started/create-integration.gif"><img src="http://localhost:8000/assets/img/get-started/create-integration.gif" alt="Create Integration" width="70%"></a></li>
 </ol>
 <h3 id="step-5-create-an-integration-service">Step 5: Create an integration service<a class="headerlink" href="#step-5-create-an-integration-service" title="Permanent link">&para;</a></h3>
 <details class="tip" open="open"><summary>Generate with AI</summary><p>The integration service can also be generated using the AI-assistant. Click on the <strong><code>Generate with AI</code></strong> button and enter the following prompt, then press <strong><code>Add to Integration</code></strong> to generate the integration service.</p>
@@ -1019,7 +1033,7 @@ Press <code>Ctrl + Shift + P</code> on Windows and Linux, or <code>shift + ⌘ +
 <li>Select <strong><code>Design from Scratch</code></strong> option as the <strong><code>The contract of the service</code></strong>.</li>
 <li>Specify the <strong><code>Service base path</code></strong> as <code>/hello</code>.</li>
 <li>Click on the <strong><code>Create</code></strong> button to create the new service with the specified configurations.
-   <a href="https://wso2.github.io/docs-bi/assets/img/get-started/create-service.gif"><img src="https://wso2.github.io/docs-bi/assets/img/get-started/create-service.gif" alt="Create Service" width="70%"></a></li>
+   <a href="http://localhost:8000/assets/img/get-started/create-service.gif"><img src="http://localhost:8000/assets/img/get-started/create-service.gif" alt="Create Service" width="70%"></a></li>
 </ol>
 <h3 id="step-6-design-the-integration">Step 6: Design the integration<a class="headerlink" href="#step-6-design-the-integration" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1031,7 +1045,7 @@ Press <code>Ctrl + Shift + P</code> on Windows and Linux, or <code>shift + ⌘ +
 <li>Change the variable name to <code>externalEP</code>.</li>
 <li>
 <p>Add the URL <code>"https://apis.wso2.com"</code> to the connection URL field and click <strong><code>Save</code></strong>.
-   <a href="https://wso2.github.io/docs-bi/assets/img/get-started/create-connection.gif"><img src="https://wso2.github.io/docs-bi/assets/img/get-started/create-connection.gif" alt="Create New Connection" width="70%"></a></p>
+   <a href="http://localhost:8000/assets/img/get-started/create-connection.gif"><img src="http://localhost:8000/assets/img/get-started/create-connection.gif" alt="Create New Connection" width="70%"></a></p>
 </li>
 <li>
 <p>Click the ➕ button again and select <strong><code>Connections</code> -&gt; <code>externalEP</code> -&gt; <code>get</code></strong> from the node panel.</p>
@@ -1068,23 +1082,23 @@ Press <code>Ctrl + Shift + P</code> on Windows and Linux, or <code>shift + ⌘ +
 </tr>
 </tbody>
 </table>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/get-started/add-action.gif"><img src="https://wso2.github.io/docs-bi/assets/img/get-started/add-action.gif" alt="Add Action" width="70%"></a> <br />
+<p><a href="http://localhost:8000/assets/img/get-started/add-action.gif"><img src="http://localhost:8000/assets/img/get-started/add-action.gif" alt="Add Action" width="70%"></a> <br />
 10. Click on the <strong><code>Return</code></strong> node from the design view.<br />
 11. Select the <code>epResponse</code> variable as the <strong><code>Expression</code></strong> from the dropdown and click <strong><code>Save</code></strong>. This step will return the response from the <code>HelloWorld</code> API endpoint.      <br />
-   <a href="https://wso2.github.io/docs-bi/assets/img/get-started/add-return.gif"><img src="https://wso2.github.io/docs-bi/assets/img/get-started/add-return.gif" alt="Add Return" width="70%"></a></p>
+   <a href="http://localhost:8000/assets/img/get-started/add-return.gif"><img src="http://localhost:8000/assets/img/get-started/add-return.gif" alt="Add Return" width="70%"></a></p>
 <h3 id="step-7-run-the-integration">Step 7: Run the integration<a class="headerlink" href="#step-7-run-the-integration" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Click on the <strong><code>Run</code></strong> button at top right corner to run the integration.</li>
 <li>The integration will be compiled and started in the embedded Ballerina runtime.</li>
 <li>Once the integration is started, click on the <strong><code>Test</code></strong> button to open the embedded HTTP client.</li>
 <li>Click on the <strong><code>Send</code></strong> button to invoke the <code>greeting</code> resource.
-   <a href="https://wso2.github.io/docs-bi/assets/img/get-started/run-integration.gif"><img src="https://wso2.github.io/docs-bi/assets/img/get-started/run-integration.gif" alt="Run Integration" width="70%"></a></li>
+   <a href="http://localhost:8000/assets/img/get-started/run-integration.gif"><img src="http://localhost:8000/assets/img/get-started/run-integration.gif" alt="Run Integration" width="70%"></a></li>
 <li>Additionally, you can test the integration using REST clients like <a href="https://www.postman.com/">Postman</a> or <a href="https://curl.se/">curl</a>.
    <div class="highlight"><pre><span></span><code><span class="w"> </span>curl<span class="w"> </span>http://localhost:9090/hello/greeting
 <span class="o">{</span><span class="s2">&quot;message&quot;</span>:<span class="s2">&quot;Hello World!!!&quot;</span><span class="o">}</span>%
 </code></pre></div></li>
 <li>Click on the ⏹️ button or press <code>Shift + F5</code> shortcut to stop the integration.
-   <a href="https://wso2.github.io/docs-bi/assets/img/get-started/stop.png"><img src="https://wso2.github.io/docs-bi/assets/img/get-started/stop.png" alt="Stop Integration" width="70%"></a></li>
+   <a href="http://localhost:8000/assets/img/get-started/stop.png"><img src="http://localhost:8000/assets/img/get-started/stop.png" alt="Stop Integration" width="70%"></a></li>
 </ol>
 
 

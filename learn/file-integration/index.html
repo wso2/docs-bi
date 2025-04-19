@@ -566,6 +566,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../ai-agent-integration/" class="md-nav__link">
+        AI agent integration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../data-mapping/" class="md-nav__link">
         Data mapping
       </a>
@@ -928,7 +942,7 @@
 <li>Enter the path to the directory you want to monitor. For example, <code>"/home/user/Downloads"</code>.</li>
 <li>Click on the <strong><code>Next</code></strong> button to create the directory service.</li>
 <li>Keep the default listener in the <strong><code>Listener Configuration</code></strong> window and click on the <strong><code>Create</code></strong> button to create the directory service.
-<a href="https://wso2.github.io/docs-bi/assets/img/file-integration/directory-service.gif"><img src="https://wso2.github.io/docs-bi/assets/img/file-integration/directory-service.gif" alt="Create Directory Service" width="70%"></a></li>
+<a href="http://localhost:8000/assets/img/file-integration/directory-service.gif"><img src="http://localhost:8000/assets/img/file-integration/directory-service.gif" alt="Create Directory Service" width="70%"></a></li>
 </ol>
 <h3 id="step-3-configure-file-event-resources">Step 3: Configure file event resources<a class="headerlink" href="#step-3-configure-file-event-resources" title="Permanent link">&para;</a></h3>
 <ol>
@@ -938,12 +952,12 @@
 <li>Click on <strong><code>+</code></strong> and select <strong><code>Log Info</code></strong> from the node panel under <strong><code>Logging</code></strong> category.</li>
 <li>Add the log message as <code>"File created "+ event.name</code> in the <strong><code>Msg</code></strong> field.</li>
 <li>Click on the <strong><code>Save</code></strong> button to add the log action to the function.
-<a href="https://wso2.github.io/docs-bi/assets/img/file-integration/add-resource.gif"><img src="https://wso2.github.io/docs-bi/assets/img/file-integration/add-resource.gif" alt="onCreate Function" width="70%"></a></li>
+<a href="http://localhost:8000/assets/img/file-integration/add-resource.gif"><img src="http://localhost:8000/assets/img/file-integration/add-resource.gif" alt="onCreate Function" width="70%"></a></li>
 <li>Repeat the above steps to add the <strong><code>onDelete</code></strong> and <strong><code>onModify</code></strong> functions to the service.</li>
 <li>Add the log message as <code>"File deleted "+ event.name</code> in the <strong><code>Msg</code></strong> field for the <strong><code>onDelete</code></strong> function.</li>
 <li>Add the log message as <code>"File modified "+ event.name</code> in the <strong><code>Msg</code></strong> field for the <strong><code>onModify</code></strong> function.</li>
 <li>The final service will look like this:    <br />
-<a href="https://wso2.github.io/docs-bi/assets/img/file-integration/final-service.png"><img src="https://wso2.github.io/docs-bi/assets/img/file-integration/final-service.png" alt="Final Service" width="70%"></a></li>
+<a href="http://localhost:8000/assets/img/file-integration/final-service.png"><img src="http://localhost:8000/assets/img/file-integration/final-service.png" alt="Final Service" width="70%"></a></li>
 </ol>
 <h3 id="step-4-run-the-integration">Step 4: Run the integration<a class="headerlink" href="#step-4-run-the-integration" title="Permanent link">&para;</a></h3>
 <ol>
@@ -953,7 +967,7 @@
 <li>Modify the file to trigger the <strong><code>onModify</code></strong> event.</li>
 <li>Delete the file to trigger the <strong><code>onDelete</code></strong> event.</li>
 <li>The log messages will be displayed in the console. <br />
-<a href="https://wso2.github.io/docs-bi/assets/img/file-integration/run-integration.png"><img src="https://wso2.github.io/docs-bi/assets/img/file-integration/run-integration.png" alt="Run Integration" width="70%"></a></li>
+<a href="http://localhost:8000/assets/img/file-integration/run-integration.png"><img src="http://localhost:8000/assets/img/file-integration/run-integration.png" alt="Run Integration" width="70%"></a></li>
 </ol>
 
 

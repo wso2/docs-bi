@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://bi.docs.wso2.com/learn/data-mapping/">
       
       
-        <link rel="prev" href="../integration-ai/">
+        <link rel="prev" href="../ai-agent-integration/">
       
       
         <link rel="next" href="../natural-functions/">
@@ -564,6 +564,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../ai-agent-integration/" class="md-nav__link">
+        AI agent integration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -649,50 +663,50 @@
       
         <li class="md-nav__item">
   <a href="#step-5-add-data-mapper" class="md-nav__link">
-    Step 5: Add Data Mapper
+    Step 5: Add data mapper
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#step-6-create-mappings" class="md-nav__link">
-    Step 6: Create Mappings
+    Step 6: Create mappings
   </a>
   
-    <nav class="md-nav" aria-label="Step 6: Create Mappings">
+    <nav class="md-nav" aria-label="Step 6: Create mappings">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#create-simple-mapping" class="md-nav__link">
-    Create Simple Mapping
+    Create simple mapping
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#auto-mapping" class="md-nav__link">
-    Auto Mapping
+    Auto mapping
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#many-to-one-mapping" class="md-nav__link">
-    Many-to-One Mapping
+    Many-to-one mapping
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#edit-mapping-expression" class="md-nav__link">
-    Edit Mapping Expression
+    Edit mapping expression
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#resolving-errors" class="md-nav__link">
-    Resolving Errors
+    Resolving errors
   </a>
   
 </li>
@@ -989,50 +1003,50 @@
       
         <li class="md-nav__item">
   <a href="#step-5-add-data-mapper" class="md-nav__link">
-    Step 5: Add Data Mapper
+    Step 5: Add data mapper
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#step-6-create-mappings" class="md-nav__link">
-    Step 6: Create Mappings
+    Step 6: Create mappings
   </a>
   
-    <nav class="md-nav" aria-label="Step 6: Create Mappings">
+    <nav class="md-nav" aria-label="Step 6: Create mappings">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#create-simple-mapping" class="md-nav__link">
-    Create Simple Mapping
+    Create simple mapping
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#auto-mapping" class="md-nav__link">
-    Auto Mapping
+    Auto mapping
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#many-to-one-mapping" class="md-nav__link">
-    Many-to-One Mapping
+    Many-to-one mapping
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#edit-mapping-expression" class="md-nav__link">
-    Edit Mapping Expression
+    Edit mapping expression
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#resolving-errors" class="md-nav__link">
-    Resolving Errors
+    Resolving errors
   </a>
   
 </li>
@@ -1088,7 +1102,7 @@
   
 
 
-<h1 id="data-mapping">Data Mapping<a class="headerlink" href="#data-mapping" title="Permanent link">&para;</a></h1>
+<h1 id="data-mapping">Data mapping<a class="headerlink" href="#data-mapping" title="Permanent link">&para;</a></h1>
 <p>The following instructions demonstrate how to build an integration that transforms a JSON payload into a different JSON structure using Ballerina Integrator Data Mapper. An HTTP service with a single resource (<code>transform</code>) will be created to receive a JSON payload and return the transformed result.</p>
 <h3 id="step-1-create-a-new-integration-project">Step 1: Create a new integration project.<a class="headerlink" href="#step-1-create-a-new-integration-project" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1097,13 +1111,13 @@
 <li>Enter the project name as <code>Transformer</code>.</li>
 <li>Select project directory location by clicking on the <strong><code>Select Location</code></strong> button.</li>
 <li>Click on the <strong><code>Create New Integration</code></strong> button to create the integration project.<br />
-    <a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/create-integration.png"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/create-integration.png" alt="Create Integration" width="70%"></a></li>
+    <a href="http://localhost:8000/assets/img/data-mapping/create-integration.png"><img src="http://localhost:8000/assets/img/data-mapping/create-integration.png" alt="Create Integration" width="70%"></a></li>
 </ol>
 <h3 id="step-2-define-input-and-output-types">Step 2: Define input and output types<a class="headerlink" href="#step-2-define-input-and-output-types" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Click on the <strong><code>Add Artifacts</code></strong> button and select <strong><code>Type</code></strong> in the <strong><code>Other Artifacts</code></strong> section.</li>
 <li>Click on <strong><code>+ Add Type</code></strong> to add a new type.<br />
-<a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/add-types.png"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/add-types.png" alt="Add Type" width="70%"></a></li>
+<a href="http://localhost:8000/assets/img/data-mapping/add-types.png"><img src="http://localhost:8000/assets/img/data-mapping/add-types.png" alt="Add Type" width="70%"></a></li>
 <li>Generate record types corresponding to the input and output JSON payloads given below.</li>
 <li>
 <p>Select <strong><code>Make Separate Record Definitions</code></strong> and click on the <strong><code>Import</code></strong> button.</p>
@@ -1149,7 +1163,7 @@
 <span class="p">}</span>
 </code></pre></div>
 5. The final types will look like below. The source view can be accessed by clicking on the <code>&lt;/&gt;</code> button in the top right corner.
-<a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/create-types.png"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/create-types.png" alt="Create Types" width="70%"></a></p>
+<a href="http://localhost:8000/assets/img/data-mapping/create-types.png"><img src="http://localhost:8000/assets/img/data-mapping/create-types.png" alt="Create Types" width="70%"></a></p>
 </li>
 </ol>
 <h3 id="step-3-create-a-http-service">Step 3: Create a HTTP service.<a class="headerlink" href="#step-3-create-a-http-service" title="Permanent link">&para;</a></h3>
@@ -1161,7 +1175,7 @@
 <li>Enter the listener name as <code>transformListener</code>, <code>8290</code> as the port and click on the <strong><code>Save</code></strong> button.</li>
 <li>Add the service base path as <code>/</code> and select the <strong><code>Design from Scratch</code></strong> option as the <strong><code>The contract of the service</code></strong>.</li>
 <li>Click on the <strong><code>Create</code></strong> button to create the new service with the specified configurations.
-    <a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/create-service.png"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/create-service.png" alt="Create Service" width="70%"></a></li>
+    <a href="http://localhost:8000/assets/img/data-mapping/create-service.png"><img src="http://localhost:8000/assets/img/data-mapping/create-service.png" alt="Create Service" width="70%"></a></li>
 </ol>
 <h3 id="step-4-update-the-resource-method">Step 4: Update the resource method<a class="headerlink" href="#step-4-update-the-resource-method" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1171,13 +1185,13 @@
 <li>Add a payload parameter named <code>input</code> to the resource of type <code>Input</code>. </li>
 <li>Change the response status code to <code>201</code> and the return type to <code>Output</code>.</li>
 <li>Click on the <strong><code>Save</code></strong> button to update the resource with the specified configurations. 
-<a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/edit-resource.png"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/edit-resource.png" alt="Edit Resource" width="70%"></a></li>
+<a href="http://localhost:8000/assets/img/data-mapping/edit-resource.png"><img src="http://localhost:8000/assets/img/data-mapping/edit-resource.png" alt="Edit Resource" width="70%"></a></li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Resource Method</p>
 <p>To learn more about resources, see <a href="https://ballerina.io/learn/by-example/resource-methods/">Ballerina Resources</a>.</p>
 </div>
-<h3 id="step-5-add-data-mapper">Step 5: Add Data Mapper<a class="headerlink" href="#step-5-add-data-mapper" title="Permanent link">&para;</a></h3>
+<h3 id="step-5-add-data-mapper">Step 5: Add data mapper<a class="headerlink" href="#step-5-add-data-mapper" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Click on the <code>transform</code> resource to navigate to the resource implementation designer view.</li>
 <li>Delete the existing <strong><code>Return</code></strong> node in the flow diagram.</li>
@@ -1209,29 +1223,29 @@
 </table>
 </li>
 </ol>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/add-data-mapper.png"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/add-data-mapper.png" alt="Add Data Mapper" width="70%"></a></p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/data-mapper-added.png"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/data-mapper-added.png" alt="Data Mapper Added" width="70%"></a>   </p>
-<h3 id="step-6-create-mappings">Step 6: Create Mappings<a class="headerlink" href="#step-6-create-mappings" title="Permanent link">&para;</a></h3>
+<p><a href="http://localhost:8000/assets/img/data-mapping/add-data-mapper.png"><img src="http://localhost:8000/assets/img/data-mapping/add-data-mapper.png" alt="Add Data Mapper" width="70%"></a></p>
+<p><a href="http://localhost:8000/assets/img/data-mapping/data-mapper-added.png"><img src="http://localhost:8000/assets/img/data-mapping/data-mapper-added.png" alt="Data Mapper Added" width="70%"></a>   </p>
+<h3 id="step-6-create-mappings">Step 6: Create mappings<a class="headerlink" href="#step-6-create-mappings" title="Permanent link">&para;</a></h3>
 <ol>
 <li>First click on the input field and then click on the desired output field to create a mapping</li>
 <li>When you are done click on the <strong><code>Go Back</code></strong> Button to return to the flow diagram</li>
 </ol>
-<h4 id="create-simple-mapping">Create Simple Mapping<a class="headerlink" href="#create-simple-mapping" title="Permanent link">&para;</a></h4>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/simple-mapping.gif"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/simple-mapping.gif" alt="Simple Mapping" width="70%"></a></p>
-<h4 id="auto-mapping">Auto Mapping<a class="headerlink" href="#auto-mapping" title="Permanent link">&para;</a></h4>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/auto-mapping.gif"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/auto-mapping.gif" alt="Auto Mapping" width="70%"></a></p>
-<h4 id="many-to-one-mapping">Many-to-One Mapping<a class="headerlink" href="#many-to-one-mapping" title="Permanent link">&para;</a></h4>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/many-to-one-mapping.png"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/many-to-one-mapping.png" alt="Many to One Mapping" width="70%"></a></p>
-<h4 id="edit-mapping-expression">Edit Mapping Expression<a class="headerlink" href="#edit-mapping-expression" title="Permanent link">&para;</a></h4>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/edit-mapping.gif"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/edit-mapping.gif" alt="Edit Mapping Expression" width="70%"></a></p>
-<h4 id="resolving-errors">Resolving Errors<a class="headerlink" href="#resolving-errors" title="Permanent link">&para;</a></h4>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/error-resolving.png"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/error-resolving.png" alt="Error Resolving" width="70%"></a></p>
+<h4 id="create-simple-mapping">Create simple mapping<a class="headerlink" href="#create-simple-mapping" title="Permanent link">&para;</a></h4>
+<p><a href="http://localhost:8000/assets/img/data-mapping/simple-mapping.gif"><img src="http://localhost:8000/assets/img/data-mapping/simple-mapping.gif" alt="Simple Mapping" width="70%"></a></p>
+<h4 id="auto-mapping">Auto mapping<a class="headerlink" href="#auto-mapping" title="Permanent link">&para;</a></h4>
+<p><a href="http://localhost:8000/assets/img/data-mapping/auto-mapping.gif"><img src="http://localhost:8000/assets/img/data-mapping/auto-mapping.gif" alt="Auto Mapping" width="70%"></a></p>
+<h4 id="many-to-one-mapping">Many-to-one mapping<a class="headerlink" href="#many-to-one-mapping" title="Permanent link">&para;</a></h4>
+<p><a href="http://localhost:8000/assets/img/data-mapping/many-to-one-mapping.png"><img src="http://localhost:8000/assets/img/data-mapping/many-to-one-mapping.png" alt="Many to One Mapping" width="70%"></a></p>
+<h4 id="edit-mapping-expression">Edit mapping expression<a class="headerlink" href="#edit-mapping-expression" title="Permanent link">&para;</a></h4>
+<p><a href="http://localhost:8000/assets/img/data-mapping/edit-mapping.gif"><img src="http://localhost:8000/assets/img/data-mapping/edit-mapping.gif" alt="Edit Mapping Expression" width="70%"></a></p>
+<h4 id="resolving-errors">Resolving errors<a class="headerlink" href="#resolving-errors" title="Permanent link">&para;</a></h4>
+<p><a href="http://localhost:8000/assets/img/data-mapping/error-resolving.png"><img src="http://localhost:8000/assets/img/data-mapping/error-resolving.png" alt="Error Resolving" width="70%"></a></p>
 <h3 id="step-7-return-the-transformed-payload">Step 7: Return the transformed payload<a class="headerlink" href="#step-7-return-the-transformed-payload" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Hover to the arrow after the Data Mapper node in the flow diagram and click the ➕ button</li>
 <li>
 <p>Select <strong><code>Return</code></strong> from the node panel. </p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/data-mapping/add-return.png"><img src="https://wso2.github.io/docs-bi/assets/img/data-mapping/add-return.png" alt="Add Return" width="70%"></a></p>
+<p><a href="http://localhost:8000/assets/img/data-mapping/add-return.png"><img src="http://localhost:8000/assets/img/data-mapping/add-return.png" alt="Add Return" width="70%"></a></p>
 </li>
 <li>
 <p>Provide <code>output</code> as the return expression.</p>
@@ -1331,7 +1345,7 @@ service / on transformListner {
   <nav class="md-footer__inner md-grid" aria-label="Footer" >
     
     
-    <a href="../integration-ai/" class="md-footer__link md-footer__link--prev" aria-label="Previous: AI-assisted integration" rel="prev">
+    <a href="../ai-agent-integration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: AI agent integration" rel="prev">
       <div class="md-footer__button md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </div>
@@ -1340,7 +1354,7 @@ service / on transformListner {
                 <span class="md-footer__direction">
                   Previous
                 </span>
-          AI-assisted integration
+          AI agent integration
         </div>
       </div>
     </a>

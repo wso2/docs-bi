@@ -18,7 +18,7 @@
         <link rel="prev" href="../service-orchestration/">
       
       
-        <link rel="next" href="../data-mapping/">
+        <link rel="next" href="../ai-agent-integration/">
       
       <link rel="icon" href="../../images/bi-logo.svg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
@@ -669,6 +669,20 @@
   
   
     <li class="md-nav__item">
+      <a href="../ai-agent-integration/" class="md-nav__link">
+        AI agent integration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../data-mapping/" class="md-nav__link">
         Data mapping
       </a>
@@ -1012,10 +1026,10 @@
 <li>Enter the following prompt and press <code>Enter</code>:
    <div class="highlight"><pre><span></span><code> Create an integration service with a base path of /cache and a POST resource at /add that accepts key-value pairs and adds them to Redis.
 </code></pre></div>
-   <a href="https://wso2.github.io/docs-bi/assets/img/integration-ai/prompt.gif"><img src="https://wso2.github.io/docs-bi/assets/img/integration-ai/prompt.gif" alt="AI Prompt" width="70%"></a></li>
+   <a href="http://localhost:8000/assets/img/integration-ai/prompt.gif"><img src="http://localhost:8000/assets/img/integration-ai/prompt.gif" alt="AI Prompt" width="70%"></a></li>
 <li>Click on <strong><code>+ Add to Ingeration</code></strong> button to add the generated integration to the project.</li>
 <li>The generated integration will look like below:<br />
-   <a href="https://wso2.github.io/docs-bi/assets/img/integration-ai/generated-integration.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-ai/generated-integration.png" alt="Generated integration" width="70%"></a></li>
+   <a href="http://localhost:8000/assets/img/integration-ai/generated-integration.png"><img src="http://localhost:8000/assets/img/integration-ai/generated-integration.png" alt="Generated integration" width="70%"></a></li>
 </ol>
 <h3 id="step-3-add-a-resource-to-get-value">Step 3:  Add a resource to get value<a class="headerlink" href="#step-3-add-a-resource-to-get-value" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1024,7 +1038,7 @@
 </code></pre></div></li>
 <li>Click on <strong><code>+ Add to Ingeration</code></strong> button to add the generated integration to the project.</li>
 <li>The generated integration will look like below:<br />
-   <a href="https://wso2.github.io/docs-bi/assets/img/integration-ai/get.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-ai/get.png" alt="Add get resource" width="70%"></a></li>
+   <a href="http://localhost:8000/assets/img/integration-ai/get.png"><img src="http://localhost:8000/assets/img/integration-ai/get.png" alt="Add get resource" width="70%"></a></li>
 </ol>
 <h3 id="step-4-start-the-redis-server">Step 4: Start the Redis server<a class="headerlink" href="#step-4-start-the-redis-server" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1032,21 +1046,21 @@
    <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>some-redis<span class="w"> </span>-d<span class="w"> </span>-p<span class="w"> </span><span class="m">6379</span>:6379<span class="w"> </span>redis
 </code></pre></div></li>
 <li>The redis server will start on port <code>6379</code> without password protection. 
-<a href="https://wso2.github.io/docs-bi/assets/img/integration-ai/docker.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-ai/docker.png" alt="Start Redis" width="70%"></a></li>
+<a href="http://localhost:8000/assets/img/integration-ai/docker.png"><img src="http://localhost:8000/assets/img/integration-ai/docker.png" alt="Start Redis" width="70%"></a></li>
 </ol>
 <h3 id="step-6-configure-the-redis-client">Step 6:  Configure the Redis client<a class="headerlink" href="#step-6-configure-the-redis-client" title="Permanent link">&para;</a></h3>
 <ol>
 <li>In the <code>Integrator overview</code>, click on the <strong><code>Configurations</code></strong>.</li>
 <li>Set <code>redisHost</code> value to <code>localhost</code>.</li>
 <li>Set <code>redisPort</code> value to <code>6379</code>. <br />
-<a href="https://wso2.github.io/docs-bi/assets/img/integration-ai/configuration.gif"><img src="https://wso2.github.io/docs-bi/assets/img/integration-ai/configuration.gif" alt="Configurations" width="70%"></a></li>
+<a href="http://localhost:8000/assets/img/integration-ai/configuration.gif"><img src="http://localhost:8000/assets/img/integration-ai/configuration.gif" alt="Configurations" width="70%"></a></li>
 </ol>
 <h3 id="step-5-generate-the-curl-commands-to-test-the-integration">Step 5: Generate the curl commands to test the integration<a class="headerlink" href="#step-5-generate-the-curl-commands-to-test-the-integration" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Add the following prompt and press <code>Enter</code> to generate the curl command to add key-value pairs to the Redis server.:
    <div class="highlight"><pre><span></span><code> Generate a curl command to add key-value pairs to the Redis server.
 </code></pre></div>
-   <a href="https://wso2.github.io/docs-bi/assets/img/integration-ai/post.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-ai/post.png" alt="Curl Add" width="70%"></a></li>
+   <a href="http://localhost:8000/assets/img/integration-ai/post.png"><img src="http://localhost:8000/assets/img/integration-ai/post.png" alt="Curl Add" width="70%"></a></li>
 <li>Add the following prompt and press <code>Enter</code> to generate the curl command to get the value of a key from the Redis server.:
    <div class="highlight"><pre><span></span><code> Generate a curl command to get the value of a key from the Redis server.
 </code></pre></div></li>
@@ -1115,13 +1129,13 @@
     
     
     
-    <a href="../data-mapping/" class="md-footer__link md-footer__link--next" aria-label="Next: Data mapping" rel="next">
+    <a href="../ai-agent-integration/" class="md-footer__link md-footer__link--next" aria-label="Next: AI agent integration" rel="next">
       <div class="md-footer__title">
         <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Next
                 </span>
-          Data mapping
+          AI agent integration
         </div>
       </div>
       <div class="md-footer__button md-icon">
