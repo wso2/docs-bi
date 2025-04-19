@@ -717,20 +717,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../natural-functions/" class="md-nav__link">
-        Natural functions
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../file-integration/" class="md-nav__link">
         File integration
       </a>
@@ -1061,7 +1047,7 @@
 <li>Enter the project name as <code>MathTutor</code>.</li>
 <li>Select the project directory location by clicking on the <strong><code>Select Location</code></strong> button.</li>
 <li>Click the <strong><code>Create New Integration</code></strong> button to generate the integration project.
-   <a href="https://wso2.github.io/docs-bi/assets/img/ai-agent/ai-agent-step1.gif"><img src="https://wso2.github.io/docs-bi/assets/img/ai-agent/ai-agent-step1.gif" alt="Create a New Integration Project" width="70%"></a></li>
+<a href="https://wso2.github.io/docs-bi/assets/img/ai-agent/ai-agent-step1.gif"><img src="https://wso2.github.io/docs-bi/assets/img/ai-agent/ai-agent-step1.gif" alt="Create a New Integration Project" width="70%"></a></li>
 </ol>
 <h3 id="step-2-create-an-agent">Step 2: Create an agent<a class="headerlink" href="#step-2-create-an-agent" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1081,11 +1067,13 @@
 <h3 id="step-4-configure-the-agent-model">Step 4: Configure the agent model<a class="headerlink" href="#step-4-configure-the-agent-model" title="Permanent link">&para;</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
+<p>Since the API key is sensitive it's recommended to create a configurable named <code>openAiApiKey</code> and use it as the value for the <strong><code>API Key</code></strong> field.</p>
 </div>
-<p>Since the API key is sensitive it's recommended to create a configurable named <code>openAiApiKey</code> and use it as the value for the <strong><code>API Key</code></strong> field.
-5. In the <strong><code>Model Type</code></strong> dropdown, select <code>ai:GPT_40</code>.
-6. Click <strong><code>Save</code></strong> to complete the LLM model configuration.
-   <a href="https://wso2.github.io/docs-bi/assets/img/ai-agent/ai-agent-step4.gif"><img src="https://wso2.github.io/docs-bi/assets/img/ai-agent/ai-agent-step4.gif" alt="Configure the Agent Model" width="70%"></a></p>
+<ol>
+<li>In the <strong><code>Model Type</code></strong> dropdown, select <code>ai:GPT_40</code>.</li>
+<li>Click <strong><code>Save</code></strong> to complete the LLM model configuration.  <br />
+<a href="https://wso2.github.io/docs-bi/assets/img/ai-agent/ai-agent-step4.gif"><img src="https://wso2.github.io/docs-bi/assets/img/ai-agent/ai-agent-step4.gif" alt="Configure the Agent Model" width="70%"></a></li>
+</ol>
 <h3 id="step-5-configure-agent-memory">Step 5: Configure agent memory<a class="headerlink" href="#step-5-configure-agent-memory" title="Permanent link">&para;</a></h3>
 <ol>
 <li>By default, the agent is preconfigured with memory.</li>
@@ -1111,8 +1099,8 @@
 <li>Select the created function from the <strong><code>Current Integration</code></strong> list — in this case, <code>sum</code>.</li>
 <li>Then provide the <strong><code>Tool Name</code></strong> and <strong><code>Description</code></strong> of the tool</li>
 </ol>
-<p>Follow steps 1 to 3 to create functions named subtract, multiply and divide to perform subtraction, multiplication, and division operations respectively. Define the appropriate parameters and return types, and implement the corresponding logic in the flow node editor.</p>
-<p>Then repeat steps 4 to 8 to add each of these functions as tools in the agent by selecting them from the Current Integration list and providing a relevant tool name and description for each.
+<p>Follow steps 1 to 3 to create functions named subtract, multiply and divide to perform subtraction, multiplication, and division operations respectively. Define the appropriate parameters and return types, and implement the corresponding logic in the flow node editor.
+Then repeat steps 4 to 8 to add each of these functions as tools in the agent by selecting them from the Current Integration list and providing a relevant tool name and description for each.  <br />
 <a href="https://wso2.github.io/docs-bi/assets/img/ai-agent/ai-agent-step6.gif"><img src="https://wso2.github.io/docs-bi/assets/img/ai-agent/ai-agent-step6.gif" alt="Add Tools to the Agent" width="70%"></a></p>
 <h3 id="step-7-interact-with-the-agent">Step 7: Interact with the agent<a class="headerlink" href="#step-7-interact-with-the-agent" title="Permanent link">&para;</a></h3>
 <p>After completing the above steps, your math tutor assistant is now ready to answer questions. Ballerina Integrator provides a built-in chat interface to interact with the agent.</p>
@@ -1124,9 +1112,9 @@
 </ol>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-</div>
 <p>A temporary OpenAI API key is used in the GIF below to showcase the steps.<br />
- <a href="https://wso2.github.io/docs-bi/assets/img/ai-agent/ai-agent-step7.gif"><img src="https://wso2.github.io/docs-bi/assets/img/ai-agent/ai-agent-step7.gif" alt="Interact With the Agent" width="70%"></a></p>
+<a href="https://wso2.github.io/docs-bi/assets/img/ai-agent/ai-agent-step7.gif"><img src="https://wso2.github.io/docs-bi/assets/img/ai-agent/ai-agent-step7.gif" alt="Interact With the Agent" width="70%"></a></p>
+</div>
 
 
 
