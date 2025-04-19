@@ -193,7 +193,7 @@ Follow the steps below to implement the service orchestration.
     }
    ```
    <a href="{{base_path}}/assets/img/service-orchestration/payment-request.png"><img src="{{base_path}}/assets/img/service-orchestration/payment-request.png" alt="Payment Request" width="70%"></a>  
-3. Let's add another connector action to make the payment. Click on the ➕ sign and select **`paymentEP`** connector from the node panel. Select **`post`** from the dropdown.
+3. Let's add another connector action to make the payment. Click on the ➕ sign and select **`paymentEP`** connector from the node panel. Select **`post`** from the dropdown.   
 <a href="{{base_path}}/assets/img/service-orchestration/payment.png"><img src="{{base_path}}/assets/img/service-orchestration/payment.png" alt="Payment" width="70%"></a>
 4. Then, fill in the required fields with the values given below and click **`Save`**.
 

@@ -82,7 +82,7 @@ nav:
       - AI-assisted integration: learn/integration-ai.md
       - AI agent integration: learn/ai-agent-integration.md
       - Data mapping: learn/data-mapping.md
-      - Natural functions: learn/natural-functions.md
+#      - Natural functions: learn/natural-functions.md
       - File integration: learn/file-integration.md
   - Deploy:
       - Deploy on a VM: deploy/jar.md
