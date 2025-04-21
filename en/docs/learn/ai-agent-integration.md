@@ -89,4 +89,4 @@ To start chatting with the agent:
 
 !!! note
     A temporary OpenAI API key is used in the GIF below to showcase the steps.  
-    <a href="{{base_path}}/assets/img/ai-agent/ai-agent-step7.gif"><img src="{{base_path}}/assets/img/ai-agent/ai-agent-step7.gif" alt="Interact With the Agent" width="70%"></a>
+<a href="{{base_path}}/assets/img/ai-agent/ai-agent-step7.gif"><img src="{{base_path}}/assets/img/ai-agent/ai-agent-step7.gif" alt="Interact With the Agent" width="70%"></a>
