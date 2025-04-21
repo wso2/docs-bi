@@ -1,6 +1,6 @@
 # AI agent integration
 
-In this tutorial, you'll create an AI-powered math tutor assistant capable of handling a variety of mathematical queries. The agent will be equipped with tools to perform fundamental arithmetic operations and intelligently combine and execute these tools to address user questions. By the end of this tutorial, you'll have built an interactive math assistant that can help users solve problems and provide clear, step-by-step explanations.
+In this tutorial, you'll create an AI-powered math tutor assistant capable of handling a variety of mathematical queries. The agent will be equipped with tools to perform fundamental arithmetic operations and intelligently combine and execute these tools to address user questions. Along the way, you'll become familiar with the core concepts of creating an AI agent, enabling you to later build more advanced and customized agent use cases tailored to your needs. By the end of this tutorial, you'll have built an interactive math assistant that can help users solve problems and provide clear, step-by-step explanations.
 
 ## Prerequisites
 
@@ -37,10 +37,12 @@ In this tutorial, you'll create an AI-powered math tutor assistant capable of ha
 
 1. Locate the circle connected to the **`AI Agent`** box. This circle represents the LLM model used by the agent.
 2. Click on the circle to open the model configuration options.
-3. In the **`Select Model Provider`** dropdown, choose **`OpenAiProvider`**.
-4. Next, provide the OpenAI API key in the **`API Key`** input field.  
-!!! note 
-    Since the API key is sensitive it's recommended to create a configurable named `openAiApiKey` and use it as the value for the **`API Key`** field.
+3. In the **`Select Model Provider`** dropdown, choose **`OpenAiProvider`**. By default, **`OpenAiProvider`** is selected.
+4. Next, provide the OpenAI API key in the **`API Key`** input field.
+
+    !!! note
+        Since the API key is sensitive it's recommended to create a configurable named `openAiApiKey` and use it as the value for the **`API Key`** field. To learn more, see [Configurations]({{base_path}}/get-started/key-concepts/#configurations).
+
 5. In the **`Model Type`** dropdown, select `ai:GPT_40`.
 6. Click **`Save`** to complete the LLM model configuration.    
 <a href="{{base_path}}/assets/img/ai-agent/ai-agent-step4.gif"><img src="{{base_path}}/assets/img/ai-agent/ai-agent-step4.gif" alt="Configure the Agent Model" width="70%"></a>
@@ -50,8 +52,8 @@ In this tutorial, you'll create an AI-powered math tutor assistant capable of ha
 1. By default, the agent is preconfigured with memory.
 2. For this tutorial, we will keep the default memory configuration and not make any changes.
 3. If you prefer to run the agent without memory (in a stateless fashion), follow these steps:
-   - Click on the three vertical dots in the **`Memory`** box.
-   - Select the **`Delete`** option to remove the memory.
+    - Click on the three vertical dots in the **`Memory`** box.
+    - Select the **`Delete`** option to remove the memory.
 
 ### Step 6: Add tools to the agent
 
