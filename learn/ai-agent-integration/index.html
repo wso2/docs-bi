@@ -1034,6 +1034,10 @@
 
 <h1 id="ai-agent-integration">AI agent integration<a class="headerlink" href="#ai-agent-integration" title="Permanent link">&para;</a></h1>
 <p>In this tutorial, you'll create an AI-powered math tutor assistant capable of handling a variety of mathematical queries. The agent will be equipped with tools to perform fundamental arithmetic operations and intelligently combine and execute these tools to address user questions. By the end of this tutorial, you'll have built an interactive math assistant that can help users solve problems and provide clear, step-by-step explanations.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This math tutor agent can technically be implemented using just an LLM, without any agent capabilities. However, the purpose of this tutorial is to help you understand the essential concepts required to build an AI agent using Ballerina Integrator. By following this guide, you'll gain hands-on experience with agent creation in Ballerina Integrator, setting the foundation for developing more powerful and tailored AI agents in the future.</p>
+</div>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <h3 id="obtain-openai-api-key">Obtain OpenAI API key<a class="headerlink" href="#obtain-openai-api-key" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1051,7 +1055,7 @@
 </ol>
 <h3 id="step-2-create-an-agent">Step 2: Create an agent<a class="headerlink" href="#step-2-create-an-agent" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Click the <code>+</code> button on the Ballerina Integrator side panel or navigate back to the Design screen and click on <strong><code>Add Artifact</code></strong>.</li>
+<li>Click the <code>+</code> button on the Ballerina Integrator side panel or navigate back to the design screen and click on <strong><code>Add Artifact</code></strong>.</li>
 <li>Select <strong><code>AI Chat Agent</code></strong> under the <strong><code>AI Agent</code></strong> artifacts.</li>
 <li>Provide a <strong><code>Name</code></strong> for the agent. It will take a moment to create an agent with the default configuration.</li>
 <li>After creating the agent, you can configure it with a model provider, memory, tools, roles, and instructions.
@@ -1065,12 +1069,27 @@
    <a href="https://wso2.github.io/docs-bi/assets/img/ai-agent/ai-agent-step3.gif"><img src="https://wso2.github.io/docs-bi/assets/img/ai-agent/ai-agent-step3.gif" alt="Configure the Agent Behavior" width="70%"></a></li>
 </ol>
 <h3 id="step-4-configure-the-agent-model">Step 4: Configure the agent model<a class="headerlink" href="#step-4-configure-the-agent-model" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Locate the circle with OpenAI logo which is connected to the <strong><code>AI Agent</code></strong> box. This circle represents the LLM model used by the agent.</li>
+<li>Click on the circle to open the model configuration options.</li>
+<li>In the <strong><code>Select Model Provider</code></strong> dropdown, choose <strong><code>OpenAiProvider</code></strong>. By default, <strong><code>OpenAiProvider</code></strong> is selected.</li>
+<li>
+<p>Next, provide the OpenAI API key in the <strong><code>API Key</code></strong> input field.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Since the API key is sensitive it's recommended to create a configurable named <code>openAiApiKey</code> and use it as the value for the <strong><code>API Key</code></strong> field.</p>
+<p>Since the API key is sensitive, it’s recommended to externalize it by using a configurable value. This helps prevent accidentally committing it to your version control system and ensures it’s kept secure without being exposed. To learn more, see <a href="https://wso2.github.io/docs-bi/get-started/key-concepts/#configurations">Configurations</a>.</p>
 </div>
-<ol>
-<li>In the <strong><code>Model Type</code></strong> dropdown, select <code>ai:GPT_40</code>.</li>
+<ul>
+<li>Click the <strong><code>API Key</code></strong> input field to open the <strong><code>Expression Helper</code></strong> window.  </li>
+<li>In the top bar, go to the <strong><code>Configurables</code></strong> tab (the third option).  </li>
+<li>Click <strong><code>+ Create New Configurable Variable</code></strong> to define a new configurable.  </li>
+<li>Set the <strong><code>Name</code></strong> to <code>openAiApiKey</code> and the <strong><code>Type</code></strong> to <code>string</code>.  </li>
+<li>Click <strong><code>Save</code></strong> to create the configurable.</li>
+</ul>
+</li>
+<li>
+<p>In the <strong><code>Model Type</code></strong> dropdown, select <code>ai:GPT_40</code>.</p>
+</li>
 <li>Click <strong><code>Save</code></strong> to complete the LLM model configuration.  <br />
 <a href="https://wso2.github.io/docs-bi/assets/img/ai-agent/ai-agent-step4.gif"><img src="https://wso2.github.io/docs-bi/assets/img/ai-agent/ai-agent-step4.gif" alt="Configure the Agent Model" width="70%"></a></li>
 </ol>
@@ -1078,9 +1097,11 @@
 <ol>
 <li>By default, the agent is preconfigured with memory.</li>
 <li>For this tutorial, we will keep the default memory configuration and not make any changes.</li>
-<li>If you prefer to run the agent without memory (in a stateless fashion), follow these steps:</li>
+<li>If you prefer to run the agent without memory (in a stateless fashion), follow these steps:<ul>
 <li>Click on the three vertical dots in the <strong><code>Memory</code></strong> box.</li>
 <li>Select the <strong><code>Delete</code></strong> option to remove the memory.</li>
+</ul>
+</li>
 </ol>
 <h3 id="step-6-add-tools-to-the-agent">Step 6: Add tools to the agent<a class="headerlink" href="#step-6-add-tools-to-the-agent" title="Permanent link">&para;</a></h3>
 <p>Ballerina Integrator (BI) allows you to create tools using existing functions. It also supports automatically generating tools from connector actions or OpenAPI specifications by leveraging BI’s capability to generate local connectors from an OpenAPI spec.</p>
