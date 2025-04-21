@@ -2,6 +2,9 @@
 
 In this tutorial, you'll create an AI-powered math tutor assistant capable of handling a variety of mathematical queries. The agent will be equipped with tools to perform fundamental arithmetic operations and intelligently combine and execute these tools to address user questions. By the end of this tutorial, you'll have built an interactive math assistant that can help users solve problems and provide clear, step-by-step explanations.
 
+!!! note  
+    This math tutor agent can technically be implemented using just an LLM, without any agent capabilities. However, the purpose of this tutorial is to help you understand the essential concepts required to build an AI agent using Ballerina Integrator. By following this guide, you'll gain hands-on experience with agent creation in Ballerina Integrator, setting the foundation for developing more powerful and tailored AI agents in the future.
+
 ## Prerequisites
 
 ### Obtain OpenAI API key
@@ -20,7 +23,7 @@ In this tutorial, you'll create an AI-powered math tutor assistant capable of ha
 
 ### Step 2: Create an agent
 
-1. Click the `+` button on the Ballerina Integrator side panel or navigate back to the Design screen and click on **`Add Artifact`**.
+1. Click the `+` button on the Ballerina Integrator side panel or navigate back to the design screen and click on **`Add Artifact`**.
 2. Select **`AI Chat Agent`** under the **`AI Agent`** artifacts.
 3. Provide a **`Name`** for the agent. It will take a moment to create an agent with the default configuration.
 4. After creating the agent, you can configure it with a model provider, memory, tools, roles, and instructions.
@@ -35,12 +38,20 @@ In this tutorial, you'll create an AI-powered math tutor assistant capable of ha
 
 ### Step 4: Configure the agent model
 
-1. Locate the circle connected to the **`AI Agent`** box. This circle represents the LLM model used by the agent.
+1. Locate the circle with OpenAI logo which is connected to the **`AI Agent`** box. This circle represents the LLM model used by the agent.
 2. Click on the circle to open the model configuration options.
-3. In the **`Select Model Provider`** dropdown, choose **`OpenAiProvider`**.
-4. Next, provide the OpenAI API key in the **`API Key`** input field.  
-!!! note 
-    Since the API key is sensitive it's recommended to create a configurable named `openAiApiKey` and use it as the value for the **`API Key`** field.
+3. In the **`Select Model Provider`** dropdown, choose **`OpenAiProvider`**. By default, **`OpenAiProvider`** is selected.
+4. Next, provide the OpenAI API key in the **`API Key`** input field.
+
+    !!! note
+        Since the API key is sensitive, it’s recommended to externalize it by using a configurable value. This helps prevent accidentally committing it to your version control system and ensures it’s kept secure without being exposed. To learn more, see [Configurations]({{base_path}}/get-started/key-concepts/#configurations).
+      
+    - Click the **`API Key`** input field to open the **`Expression Helper`** window.  
+    - In the top bar, go to the **`Configurables`** tab (the third option).  
+    - Click **`+ Create New Configurable Variable`** to define a new configurable.  
+    - Set the **`Name`** to `openAiApiKey` and the **`Type`** to `string`.  
+    - Click **`Save`** to create the configurable.
+
 5. In the **`Model Type`** dropdown, select `ai:GPT_40`.
 6. Click **`Save`** to complete the LLM model configuration.    
 <a href="{{base_path}}/assets/img/ai-agent/ai-agent-step4.gif"><img src="{{base_path}}/assets/img/ai-agent/ai-agent-step4.gif" alt="Configure the Agent Model" width="70%"></a>
@@ -50,8 +61,8 @@ In this tutorial, you'll create an AI-powered math tutor assistant capable of ha
 1. By default, the agent is preconfigured with memory.
 2. For this tutorial, we will keep the default memory configuration and not make any changes.
 3. If you prefer to run the agent without memory (in a stateless fashion), follow these steps:
-   - Click on the three vertical dots in the **`Memory`** box.
-   - Select the **`Delete`** option to remove the memory.
+    - Click on the three vertical dots in the **`Memory`** box.
+    - Select the **`Delete`** option to remove the memory.
 
 ### Step 6: Add tools to the agent
 
