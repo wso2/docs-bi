@@ -58,7 +58,7 @@ In this tutorial, you'll create an AI-powered math tutor assistant capable of ha
 
 ### Step 5: Configure agent memory
 
-1. By default, the agent is preconfigured with memory.
+1. By default, the agent comes preconfigured with an in-memory implementation.
 2. For this tutorial, we will keep the default memory configuration and not make any changes.
 3. If you prefer to run the agent without memory (in a stateless fashion), follow these steps:
     - Click on the three vertical dots in the **`Memory`** box.
