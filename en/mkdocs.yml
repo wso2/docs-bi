@@ -89,9 +89,6 @@ nav:
       - Deploy with Docker: deploy/docker.md
       - Deploy to Devant: deploy/devant.md
       - Deploy with Integration Control Plane: deploy/icp.md
-  - Roadmap:
-      - Features & Roadmap : roadmap/overview.md
-      - Ballerina language features: roadmap/language-support.md
 
 # Markdown extensions configuration
 markdown_extensions:
