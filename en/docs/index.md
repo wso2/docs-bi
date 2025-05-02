@@ -1,89 +1,96 @@
+{% set tiles = [
+    [{
+        "title": "Get Started",
+        "icon": "🚀",
+        "links": [
+            {"name": "Introduction", "url": "get-started/introduction/"},
+            {"name": "Key Concepts", "url": "get-started/key-concepts/"},
+            {"name": "Quick Start Guide", "url": "get-started/quick-start-guide/"}
+        ]
+    },
+    {
+        "title": "Community & Support",
+        "icon": "❓",
+        "links": [
+            {"name": "GitHub", "url": "https://github.com/wso2/product-ballerina-integrator/issues"},
+            {"name": "Discord", "url": "https://discord.com/invite/wso2"},
+            {"name": "Enterprise Support", "url": "https://wso2.com/subscription/"}
+        ]
+    }],
+    [{
+        "title": "Install & Setup",
+        "icon": "⏬",
+        "links": [
+            {"name": "Install Ballerina Integrator", "url": "install-and-setup/install-ballerina-integrator/"},
+            {"name": "Install Integration Control Plane", "url": "install-and-setup/install-integration-control-plane/"}
+        ]
+    },
+    {
+        "title": "Deployment Options",
+        "icon": "🔧",
+        "links": [
+            {"name": "Deploy to Devant", "url": "deploy/deploy-to-devant/"},
+            {"name": "Deploy as Docker image", "url": "deploy/deploy-as-docker-image/"},
+            {"name": "Deploy on VM as executable jar", "url": "deploy/deploy-on-vm-as-executable-jar/"}
+        ]
+    }
+    ],
+    [
+    {
+        "title": "Tutorials",
+        "icon": "📚",
+        "links": [
+            {"name": "Message transformation", "url": "learn/message-transformation/"},
+            {"name": "Message routing", "url": "learn/message-routing/"},
+            {"name": "Service orchestration", "url": "learn/service-orchestration"},
+            {"name": "AI-assisted integration", "url": "learn/integration-ai/"},
+            {"name": "AI agent integration", "url": "learn/ai-agent-integration/"},
+            {"name": "Data mapping", "url": "learn/data-mapping/"},
+            {"name": "File integration", "url": "learn/file-integration/"}
+        ]
+    }
+    ]
+] %}
+
 <div class="homePage">
-    <div class="section01">
-        <div class="leftContent">
-            <div class="about-home">
-                <div>
-                    <b>Ballerina Integrator</b> is a low-code integration solution built on <a href="https://ballerina.io">Ballerina</a>, enabling fast and efficient integration development with minimal coding. The Ballerina Integrator extension for Visual Studio Code (VS Code) provides a familiar, AI-assisted environment that streamlines tasks and enhances accuracy, accelerating digital transformation efforts.
-                    <div style="width: 75%" class="linkSet2" onclick="location.href='{{base_path}}/get-started/quick-start-guide';">
-                    <a href="get-started/quick-start-guide"><h3>Quick Start Guide </h3></a>
-                        <p>
-                        Get started with Ballerina Integrator by running a simple integration use case in your local environment.
-                        </p>
+    <div class="description-section">
+        <div>
+            WSO2 Ballerina Integrator</b> is a low-code integration solution built on <a href="https://ballerina.io">Ballerina</a>, enabling fast and efficient integration development with minimal coding. The Ballerina Integrator extension for Visual Studio Code (VS Code) provides a familiar, AI-assisted environment that streamlines tasks and enhances accuracy, accelerating digital transformation efforts.
+        </div>
+        <div>
+            <a href="https://wso2.com/integrator/ballerina-integrator/" class="banner-link"></a>
+        </div>
+    </div>
+    <div class="section02">
+        <div class="tiles-container">
+            {% for column in tiles %}
+            <div class="tiles-column">
+                {% for tile in column %}
+                <div class="tile">
+                    <div class="tile-header">
+                        <h3>{{ tile.title }}</h3>
+                        <span class="tile-icon">{{ tile.icon }}</span>
                     </div>
+                    <ul class="links-list">
+                        {% for link in tile.links %}
+                        <li>
+                            {% if tile.title == "Community & Support" %}
+                                <a href="{{ link.url }}" target="_blank" class="link">{{ link.name }}</a>
+                            {% else %}
+                                <a href="{{ base_path }}/{{ link.url }}" class="link">{{ link.name }}</a>
+                            {% endif %}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% if tile.more_btn %}
+                    <div class="button-container">
+                        <a href="{{base_path}}/{{ tile.more_btn.url }}" class="view-all-button">{{ tile.more_btn.name }}</a>
+                    </div>
+                    {% endif %}
                 </div>
-                <div  style="text-align:center">
-                    <a href="{{base_path}}/assets/img/introduction/bi.png"><img src="{{base_path}}/assets/img/introduction/bi.png" alt="Ballerina Integrator" width="55%"></a>
-                </div>
+                {% endfor %}
             </div>
-        </div>
-    </div>
-    <hr class="rounded">
-    <div class="section02">
-        <div class="rightContent">
-                <div class="about-home">
-                    <div  style="text-align:center">
-                        <a href="{{base_path}}/assets/img/introduction/low-code.png"><img src="{{base_path}}/assets/img/introduction/low-code.png" alt="low-code" width="90%" style="padding-top: 60px" ></a>
-                    </div>
-                    <div>
-                        <h3>Low-code integration development</h3>
-                        <p>
-                            Ballerina Integrator offers a user-friendly, streamlined environment for building integrations with minimal coding, accessible to both experienced developers and beginners. Here’s how Ballerina Integrator’s low-code features simplify integration development:
-                        </p>
-                        <ul>
-                            <li><b>Design visually:</b> Ballerina Integrator’s interface lets users design integrations visually, simplifying flow creation and management.</li>
-                            <li><b>Pre-built connectors:</b> Ballerina Integrator offers connectors for easy integration with various systems and services.</li>
-                            <li><b>Low-code and pro-code support:</b> Ballerina Integrator allows seamless switching between low-code and pro-code, enabling visual design with optional custom coding. </li>
-                            <li><b>Deploy anywhere:</b> Ballerina Integrator supports deployment to cloud or on-premises environment, ensuring flexibility and scalability.</li>
-                        </ul>
-                    </div>
-                </div>
-        </div>
-    </div>
-     <hr class="rounded">
-     <div class="section02">
-        <div class="leftContent">
-                <div class="about-home">
-                    <div>
-                        <h3>AI-assisted development</h3>
-                        <p>
-                            Ballerina Integrator leverages AI to streamline coding tasks, improve code quality, and reduce time on error-prone processes. Here’s how Ballerina Integrator’s AI capabilities make a difference:
-                        </p>
-                        <ul>
-                            <li><b>Code suggestions and autocompletion:</b> Ballerina Integrator’s AI provides context-aware suggestions, helping developers code faster with real-time prompts for methods, properties, and configurations.</li>
-                            <li><b>Error detection and fix recommendations:</b> AI identifies errors and suggests fixes early, enhancing code quality and minimizing debugging needs.</li>
-                            <li><b>Pattern recognition and code optimization:</b> Ballerina Integrator’s AI detects code patterns and suggests optimizations, boosting performance and aiding code standardization.</li>
-                            <li><b>Natural language code search and commands:</b> Developers can search for code snippets or methods using natural language, reducing documentation time and accelerating onboarding.</li>
-                            <li><b>Smart refactoring and code restructuring:</b> Ballerina Integrator’s AI suggests refactoring options, enabling a cleaner, more maintainable codebase.</li>
-                        </ul>
-                    </div>
-                    <div  style="text-align:center">
-                        <a href="{{base_path}}/assets/img/introduction/ai.png"><img src="{{base_path}}/assets/img/introduction/ai.png" alt="AI" width="90%" style="padding-top: 60px; padding-right: 50px" ></a>
-                    </div>
-                </div>
-        </div>
-    </div>
-    <hr class="rounded">
-    <div class="section02">
-        <div class="rightContent">
-                <div class="about-home">
-                    <div  style="text-align:left; display: flex; flex-direction: column;  justify-content: center">
-                        <img src="{{base_path}}/assets/img/introduction/ballerina.svg" alt="ballerina" width="80%" style="padding-right: 50px" >
-                    </div>
-                    <div>
-                        <h3>Leverage the power of Ballerina</h3>
-                        <p>
-                            Ballerina Integrator uses <a href="https://ballerina.io"><b>Ballerina</b></a>, a language designed for seamless integration development, making API-driven, cloud-native workflows simpler and more efficient. Ballerina offers:
-                        </p>
-                        <ul>
-                            <li><b>Integration-centric syntax:</b> Optimized syntax with constructs like services, data types, and data mappers for clear API orchestration.</li>
-                            <li><b>Cloud-native design:</b> Supports HTTP, WebSocket, gRPC, and Kafka for API-first, microservices-ready development.</li>
-                            <li><b>Visual flow representation:</b> Graphical views that show data flow and logic for complex workflows.</li>
-                            <li><b>Observability and resilience:</b> Built-in tracing, metrics, and logging for efficient monitoring.</li>
-                            <li><b>Unified data handling:</b> Simplifies data transformations for diverse integrations.</li>
-                            <li><b>Testing and deployment tools:</b> Integrated tools for scalable, reliable cloud deployment.</li>
-                        </ul>
-                    </div>
-                </div>
+            {% endfor %}
         </div>
     </div>
 </div>
@@ -97,7 +104,8 @@
 }
 .section02 {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    /* background: linear-gradient(100deg, #fff9ee, #ffffff); */
 }
 header.md-header .md-header__button:not([hidden]) {
     /* display: none; */
@@ -141,6 +149,78 @@ header.md-header .md-header__button:not([hidden]) {
 }
 .md-search-result__article.md-typeset h1{
     visibility: visible;
+}
+.description-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-left: 100px;
+}
+.tiles-container {
+    display: flex;
+    align-items: start;
+}
+.tile {
+    display: inline-block;
+    vertical-align: top;
+    background-color: rgba(255, 255, 255, 0.03);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0 0 25px 25px;
+}
+.tile:hover {
+    transform: scale(1.01);
+}
+.tile-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(215, 215, 215);
+}
+.tile h3 {
+    font-size: 0.9rem;
+    margin-top: 0px;
+}
+.tile-icon {
+    margin-left: 30px;
+    font-size: 1rem;
+}
+.links-list li {
+    list-style-type: none;
+}
+.link {
+    display: inline-block;
+    margin-left: -30px;
+    color: var(--text-color) !important;
+    text-decoration: none;
+}
+.link:hover {
+    color: rgb(255, 112, 67) !important;
+    text-decoration: none;
+}
+.link:before {
+    content: '→';
+    font-weight: bold;
+    margin-right: 5px;
+}
+.button-container {
+    text-align: right;
+}
+.view-all-button {
+    display: inline-block;
+    background-color: none;
+    color: var(--text-color) !important;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.view-all-button:hover {
+    color: rgb(255, 112, 67) !important;
 }
 </style>
 {% endraw %}
