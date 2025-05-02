@@ -73,8 +73,12 @@ strict: false # Set to true to break the build if there are warnings
 nav:
   - Home: index.md
   - Get started:
+      - Introduction: get-started/introduction.md
       - Quick start guide: get-started/quick-start-guide.md
       - Key concepts: get-started/key-concepts.md
+  - Install and Setup:
+      - Install Ballerina Integrator: install-and-setup/install-ballerina-integrator.md
+      - Install Integration Control Plane: install-and-setup/install-integration-control-plane.md
   - Learn:
       - Message transformation: learn/message-transformation.md
       - Message routing: learn/message-routing.md
@@ -85,10 +89,10 @@ nav:
 #      - Natural functions: learn/natural-functions.md
       - File integration: learn/file-integration.md
   - Deploy:
-      - Deploy on a VM: deploy/jar.md
-      - Deploy with Docker: deploy/docker.md
-      - Deploy to Devant: deploy/devant.md
-      - Deploy with Integration Control Plane: deploy/icp.md
+      - Deploy to Devant: deploy/deploy-to-devant.md
+      - Deploy on VM as executable JAR: deploy/deploy-on-vm-as-executable-jar.md
+      - Deploy as Docker image: deploy/deploy-as-docker-image.md
+      
 
 # Markdown extensions configuration
 markdown_extensions:
@@ -168,5 +172,5 @@ extra:
     - type: linkedin
       link: https://www.linkedin.com/company/wso2
   # site_version: Uncomment to specify a version
-  base_path: https://wso2.github.io/docs-bi
-  # base_path: http://localhost:8000
+  # base_path: https://wso2.github.io/docs-bi
+  base_path: http://localhost:8000
