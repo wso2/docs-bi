@@ -83,6 +83,7 @@ nav:
       - Data mapping: learn/data-mapping.md
       - Natural functions: learn/natural-functions.md
       - File integration: learn/file-integration.md
+      - EI patterns: learn/enterprise-integrations-patterns.md
   - Deploy:
       - Deploy on a VM: deploy/jar.md
       - Deploy with Docker: deploy/docker.md
