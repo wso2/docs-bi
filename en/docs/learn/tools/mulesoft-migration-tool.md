@@ -60,16 +60,15 @@ Use one of the following commands based on your needs:
 ### Step 3: Review migration output
 
 1. For a MuleSoft project directory input:
-
-   - A new Ballerina package is created with the same name as the input project directory, appended with a 
+    - A new Ballerina package is created with the same name as the input project directory, appended with a 
      `-ballerina` suffix.
-   - Each `.xml` file within `src/main/app` is converted to a corresponding `.bal` file with the same name.
-   - Directory structure within `src/main/app` is reflected in the corresponding `.bal` file name.
+    - Each `.xml` file within `src/main/app` is converted to a corresponding `.bal` file with the same name.
+    - Directory structure within `src/main/app` is reflected in the corresponding `.bal` file name.
 
 2. For a standalone XML file input:
 
-   - A new Ballerina package is created with the same name as the XML file, appended with a `-ballerina` suffix.
-   - A new `.bal` file is created with the same name as the input file but with a `.bal` extension.
+    - A new Ballerina package is created with the same name as the XML file, appended with a `-ballerina` suffix.
+    - A new `.bal` file is created with the same name as the input file but with a `.bal` extension.
 
 ### Step 4: Review the migration summary
 The tool displays the migration progress in command line in two stages:
