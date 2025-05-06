@@ -41,7 +41,7 @@ Use one of the following commands based on your needs:
     ```bash
     $ bal migrate-mule /path/to/mule-project --out /path/to/output-dir
     ```
-    This will create a Ballerina package at /path/to/output-dir.
+    This will create a Ballerina package at `/path/to/output-dir`.
 
 3. To convert a standalone Mule XML file:
 
@@ -55,7 +55,7 @@ Use one of the following commands based on your needs:
     ```bash
     $ bal migrate-mule /path/to/mule-flow.xml --out /path/to/output-dir
     ```
-    This will create a Ballerina package at /path/to/output-dir.
+    This will create a Ballerina package at `/path/to/output-dir`.
 
 ### Step 3: Review migration output
 
