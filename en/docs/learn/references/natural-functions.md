@@ -1,10 +1,10 @@
 # Natural Functions
 
-In this tutorial, you will learn how to use natural functions in Ballerina Integrator, which allow the function to contain instructions in natural language. 
-Such a function is evaluated at runtime with a call to an Large language Model(LLM). The example uses a natural function to analyze blog content to suggest a category and rate it based on predefined criteria.
+In this tutorial, you will learn how to use Natural Functions in Ballerina Integrator, which allow the function to contain instructions in natural language. 
+Such a function is evaluated at runtime with a call to a Large language Model(LLM). The example uses a Natural Function to analyze blog content to suggest a category and rate it based on predefined criteria.
 
 ???+ tip "Natural Programming"
-    To learn more about Ballerina natural programming library module, see [natural programming](https://central.ballerina.io/ballerina/np/latest).
+    To learn more about Ballerina Natural Programming library module, see [Natural Programming](https://central.ballerina.io/ballerina/np/latest).
 
 
 ## Implementation
@@ -48,7 +48,7 @@ Follow the steps below to implement the integration.
 
 ### Step 4: Add a Natural Function
 1. Click on the **`Add Artifact`** button and select **`Natural Function`** under the **`Other Artifacts`** category.
-2. Add the function name as `reviewBlog`. Then click **`Add Parameter`** button to add input parameters for the natural function. Add input parameter as `blog` of type `Blog`, return type of `Review` and click on the **`Create`** button.
+2. Add the function name as `reviewBlog`. Then click **`Add Parameter`** button to add input parameters for the Natural Function. Add input parameter as `blog` of type `Blog`, return type of `Review` and click on the **`Create`** button.
 <a href="{{base_path}}/assets/img/natural-functions/natural-function.png"><img src="{{base_path}}/assets/img/natural-functions/natural-function.png" alt="Natural Function" width="70%"></a>
 3. Click on the **`Edit`** button to add the function logic.
 4. Add the following prompt to the function and click on the **`Save`** button.
@@ -75,7 +75,7 @@ Follow the steps below to implement the integration.
    
 ### Step 5: Update the resource method
 1. The service will have a default resource named `greeting` with the **`GET`** method. Click on three dots appear in front of the `/blogs` service and select **`Edit`** from menu.
-2. Then click the edit button in front of `/greeting` resource.
+2. Then click the **`Edit`** button in front of `/greeting` resource.
 3. Change the resource HTTP method to **`POST`**.
 4. Change the resource name as `review`.
 5. Add a payload named `blog` to the resource of type `Blog`.
@@ -96,8 +96,8 @@ Follow the steps below to implement the integration.
 <a href="{{base_path}}/assets/img/natural-functions/add-return.png"><img src="{{base_path}}/assets/img/natural-functions/add-return.png" alt="Add Return" width="70%"></a>
 9. The resource implementation is now complete. The function `reviewBlog` is called with the `blog` content as input and the `review` is returned as the response.
 
-### Step 7: Configure model for natural function
-1. Press `Ctrl + Shift + P` on Windows and Linux, or `shift + ⌘ + P` on a Mac and type `>Ballerina: Configure default model for natural functions (Experimental)` to configure the default model for natural functions.   
+### Step 7: Configure model for Natural Function
+1. Press `Ctrl + Shift + P` on Windows and Linux, or `shift + ⌘ + P` on a Mac and type `>Ballerina: Configure default model for Natural Functions (Experimental)` to configure the default model for Natural Functions.   
 <a href="{{base_path}}/assets/img/natural-functions/configure-model.png"><img src="{{base_path}}/assets/img/natural-functions/configure-model.png" alt="Configure Model" width="70%"></a>
 
 
@@ -123,5 +123,5 @@ Follow the steps below to implement the integration.
         "rating": 8
     }
     ```
-6. The blog content is analyzed by the natural function to suggest a category and rate it based on predefined criteria.      
+6. The blog content is analyzed by the Natural Function to suggest a category and rate it based on predefined criteria.      
 <a href="{{base_path}}/assets/img/natural-functions/run-integration.png"><img src="{{base_path}}/assets/img/natural-functions/run-integration.png" alt="Run Integration" width="70%"></a>
