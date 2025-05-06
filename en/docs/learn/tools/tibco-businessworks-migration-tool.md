@@ -144,7 +144,7 @@ $ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directo
 ### Step 3
 1. Open VS Code inside the `converted` directory
     ```bash
-    $ code ./test
+    $ code ./converted
     ```
 2. Click the Ballerina Integrator icon on the left side bar to open the Ballerina package in Ballerina Integrator.
 
