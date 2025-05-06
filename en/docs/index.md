@@ -9,14 +9,15 @@
         ]
     },
     {
-        "title": "Community & Support",
-        "icon": "❓",
+        "title": "Deployment Options",
+        "icon": "⚙️",
         "links": [
-            {"name": "GitHub", "url": "https://github.com/wso2/product-ballerina-integrator/issues"},
-            {"name": "Discord", "url": "https://discord.com/invite/wso2"},
-            {"name": "Enterprise Support", "url": "https://wso2.com/subscription/"}
+            {"name": "Deploy to Devant", "url": "deploy/deploy-to-devant/"},
+            {"name": "Deploy as Docker image", "url": "deploy/deploy-as-docker-image/"},
+            {"name": "Deploy on VM as executable jar", "url": "deploy/deploy-on-vm-as-executable-jar/"}
         ]
-    }],
+    }
+    ],
     [{
         "title": "Install & Setup",
         "icon": "⏬",
@@ -26,12 +27,12 @@
         ]
     },
     {
-        "title": "Deployment Options",
-        "icon": "🔧",
+        "title": "Community & Support",
+        "icon": "❓",
         "links": [
-            {"name": "Deploy to Devant", "url": "deploy/deploy-to-devant/"},
-            {"name": "Deploy as Docker image", "url": "deploy/deploy-as-docker-image/"},
-            {"name": "Deploy on VM as executable jar", "url": "deploy/deploy-on-vm-as-executable-jar/"}
+            {"name": "GitHub", "url": "https://github.com/wso2/product-ballerina-integrator/issues"},
+            {"name": "Discord", "url": "https://discord.com/invite/wso2"},
+            {"name": "Enterprise Support", "url": "https://wso2.com/subscription/"}
         ]
     }
     ],
@@ -40,13 +41,18 @@
         "title": "Tutorials",
         "icon": "📚",
         "links": [
-            {"name": "Message transformation", "url": "learn/message-transformation/"},
-            {"name": "Message routing", "url": "learn/message-routing/"},
-            {"name": "Service orchestration", "url": "learn/service-orchestration"},
-            {"name": "AI-assisted integration", "url": "learn/integration-ai/"},
-            {"name": "AI agent integration", "url": "learn/ai-agent-integration/"},
-            {"name": "Data mapping", "url": "learn/data-mapping/"},
-            {"name": "File integration", "url": "learn/file-integration/"}
+            {"name": "Build AI Agent to Handle Mathematical Queries", "url": "learn/ai-agent/build-ai-agent-to-handle-mathematical-queries/"},
+            {"name": "Build HTTP Service With WSO2 Copilot", "url": "develop/ai-assisted-development/build-an-http-service-with-wso2-copilot/"},
+            {"name": "Message transformation", "url": "learn/samples/message-transformation/"},
+            {"name": "Message routing", "url": "learn/samples/message-routing/"},
+            {"name": "Service orchestration", "url": "learn/samples/service-orchestration"}
+        ]
+    },
+    {
+        "title": "Samples",
+        "icon": "📖",
+        "links": [
+            {"name": "Enterprise Integration Patterns", "url": "learn/enterprise-integrations-patterns/"}
         ]
     }
     ]
