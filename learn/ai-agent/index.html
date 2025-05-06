@@ -12,20 +12,16 @@
         <meta name="author" content="WSO2">
       
       
-        <link rel="canonical" href="https://bi.docs.wso2.com/learn/message-transformation/">
+        <link rel="canonical" href="https://bi.docs.wso2.com/learn/ai-agent/">
       
       
-        <link rel="prev" href="../../install-and-setup/install-integration-control-plane/">
-      
-      
-        <link rel="next" href="../message-routing/">
       
       <link rel="icon" href="../../images/bi-logo.svg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
     
     
       
-        <title>Message transformation - Ballerina Integrator Documentation</title>
+        <title>AI Agent Overview - Ballerina Integrator Documentation</title>
       
     
     
@@ -105,7 +101,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#message-transformation" class="md-skip">
+        <a href="#ai-agent-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -158,7 +154,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Message transformation
+              AI Agent Overview
             
           </span>
         </div>
@@ -314,7 +310,28 @@
         
   
   
+
+
+  
+  
+  
     
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="build-ai-agent-to-handle-mathematical-queries/" class="md-tabs__link">
+        Learn
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
   
 
 
@@ -322,8 +339,8 @@
   
   
     <li class="md-tabs__item">
-      <a href="./" class="md-tabs__link md-tabs__link--active">
-        Learn
+      <a href="../../develop/create-a-project/" class="md-tabs__link">
+        Develop
       </a>
     </li>
   
@@ -426,6 +443,14 @@
       <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
       
       
+        
+          
+        
+          
+        
+          
+        
+      
       
         <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
           Get started
@@ -503,6 +528,12 @@
       <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
       
       
+        
+          
+        
+          
+        
+      
       
         <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
           Install and Setup
@@ -556,17 +587,25 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
       
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
       
       
         <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
@@ -574,7 +613,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Learn
@@ -585,93 +624,150 @@
               
   
   
+  
     
-  
-  
-    <li class="md-nav__item md-nav__item--active">
+    <li class="md-nav__item md-nav__item--nested">
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
       
       
         
+          
+        
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Message transformation
+        <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          AI agent
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Message transformation
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          AI agent
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="build-ai-agent-to-handle-mathematical-queries/" class="md-nav__link">
+        Build AI Agent to Handle Mathematical Queries
       </a>
-      
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
   
   
   
     
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <li class="md-nav__item md-nav__item--nested">
       
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    Overview
-  </a>
-  
-    <nav class="md-nav" aria-label="Overview">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-create-a-new-integration-project" class="md-nav__link">
-    Step 1: Create a new integration project.
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-create-a-http-service" class="md-nav__link">
-    Step 2: Create a HTTP service.
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-update-the-resource-method" class="md-nav__link">
-    Step 3: Update the resource method
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-add-the-transformation-logic" class="md-nav__link">
-    Step 4: Add the transformation logic
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-5-run-the-integration" class="md-nav__link">
-    Step 5: Run the integration
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
       
-    </ul>
-  
-</nav>
       
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          References
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          References
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../references/data-mapping/" class="md-nav__link">
+        Data mapping
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          Samples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          Samples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../samples/message-transformation/" class="md-nav__link">
+        Message transformation
+      </a>
     </li>
   
 
@@ -683,7 +779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../message-routing/" class="md-nav__link">
+      <a href="../samples/message-routing/" class="md-nav__link">
         Message routing
       </a>
     </li>
@@ -697,7 +793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../service-orchestration/" class="md-nav__link">
+      <a href="../samples/service-orchestration/" class="md-nav__link">
         Service orchestration
       </a>
     </li>
@@ -705,57 +801,8 @@
 
             
           
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../integration-ai/" class="md-nav__link">
-        AI-assisted integration
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ai-agent-integration/" class="md-nav__link">
-        AI agent integration
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../data-mapping/" class="md-nav__link">
-        Data mapping
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../file-integration/" class="md-nav__link">
-        File integration
-      </a>
+        </ul>
+      </nav>
     </li>
   
 
@@ -768,7 +815,7 @@
   
     <li class="md-nav__item">
       <a href="../enterprise-integrations-patterns/" class="md-nav__link">
-        EI patterns
+        Enterprise Integration patterns
       </a>
     </li>
   
@@ -797,14 +844,145 @@
       <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
       
       
+        
+          
+        
+          
+        
+          
+        
+      
       
         <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-          Deploy
+          Develop
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Develop
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop/create-a-project/" class="md-nav__link">
+        Creat a project
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop/ballerina-integrator-artifacts/" class="md-nav__link">
+        Ballerina Integrator Artifacts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+          AI assisted integration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          AI assisted integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../develop/ai-assisted-development/build-an-http-service-with-wso2-copilot/" class="md-nav__link">
+        Build an HTTP service with WSO2 Copilot
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Deploy
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Deploy
         </label>
@@ -878,62 +1056,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
-    Overview
-  </a>
-  
-    <nav class="md-nav" aria-label="Overview">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-create-a-new-integration-project" class="md-nav__link">
-    Step 1: Create a new integration project.
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-create-a-http-service" class="md-nav__link">
-    Step 2: Create a HTTP service.
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-update-the-resource-method" class="md-nav__link">
-    Step 3: Update the resource method
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-add-the-transformation-logic" class="md-nav__link">
-    Step 4: Add the transformation logic
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-5-run-the-integration" class="md-nav__link">
-    Step 5: Run the integration
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -948,7 +1070,7 @@
                   
 
   
-    <a href="https://github.com/wso2/docs-bi/edit/main/en/docs/learn/message-transformation.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/wso2/docs-bi/edit/main/en/docs/learn/ai-agent/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -957,92 +1079,14 @@
     
       
     
-    <a href="https://github.com/wso2/docs-bi/raw/main/en/docs/learn/message-transformation.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/wso2/docs-bi/raw/main/en/docs/learn/ai-agent/index.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-<h1 id="message-transformation">Message transformation<a class="headerlink" href="#message-transformation" title="Permanent link">&para;</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>This guide explains how to create a simple integration to convert a JSON payload to an XML payload using Ballerina Integrator. An HTTP service with a single resource (<code>toXml</code>) will be created to accept a JSON payload and return the XML representation of the payload.
-<a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/introduction.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/introduction.png" alt="JSON to XML" width="70%"></a></p>
-<h3 id="step-1-create-a-new-integration-project">Step 1: Create a new integration project.<a class="headerlink" href="#step-1-create-a-new-integration-project" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Click on the Ballerina Integrator icon on the sidebar.</li>
-<li>Click on the <strong><code>Create Integration</code></strong> button.</li>
-<li>Enter the project name as <code>JsonToXml</code>.</li>
-<li>Select project directory location by clicking on the <strong><code>Select Location</code></strong> button.</li>
-<li>Click on the <strong><code>Create Integration</code></strong> button to create the integration project.
-   <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/create-integration.gif"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/create-integration.gif" alt="Create Integration" width="70%"></a></li>
-</ol>
-<h3 id="step-2-create-a-http-service">Step 2: Create a HTTP service.<a class="headerlink" href="#step-2-create-a-http-service" title="Permanent link">&para;</a></h3>
-<ol>
-<li>In the design view, click on the <strong><code>Add Artifact</code></strong> button.</li>
-<li>Select <strong><code>HTTP Service</code></strong> under the <strong><code>Integration as API</code></strong> category.</li>
-<li>Select the <strong><code>Create and use the default HTTP listener</code></strong> option from the <strong><code>Listener</code></strong> dropdown.</li>
-<li>Select <strong><code>Design from Scratch</code></strong> option as the <strong><code>The contract of the service</code></strong>.</li>
-<li>Specify the <strong><code>Service base path</code></strong> as <code>/convert</code>.</li>
-<li>Click on the <strong><code>Create</code></strong> button to create the new service with the specified configurations.</li>
-</ol>
-<h3 id="step-3-update-the-resource-method">Step 3: Update the resource method<a class="headerlink" href="#step-3-update-the-resource-method" title="Permanent link">&para;</a></h3>
-<ol>
-<li>The service will have a default resource named <code>greeting</code> with the <strong><code>GET</code></strong> method. Click on three dots appear in front of the <code>/convert</code> service resource and select <strong><code>Edit</code></strong> from menu.</li>
-<li>Then click the edit button in front of <code>/greeting</code> resource.<br />
-    <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/edit-resource.gif"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/edit-resource.gif" alt="Edit Resource" width="70%"></a></li>
-<li>Change the resource HTTP method to <strong><code>POST</code></strong>.</li>
-<li>Change the resource name as <code>toXml</code>.</li>
-<li>Add a payload parameter named <code>input</code> to the resource of type <code>json</code>. </li>
-<li>Change the 201 response return type to <code>xml</code>.</li>
-<li>Click on the <strong><code>Save</code></strong> button to update the resource with the specified configurations.
-    <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/update-resource.gif"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/update-resource.gif" alt="Update Resource" width="70%"></a></li>
-</ol>
-<div class="admonition info">
-<p class="admonition-title">Resource Method</p>
-<p>To learn more about resources, see <a href="https://ballerina.io/learn/by-example/resource-methods/">Ballerina Resources</a>.</p>
-</div>
-<h3 id="step-4-add-the-transformation-logic">Step 4: Add the transformation logic<a class="headerlink" href="#step-4-add-the-transformation-logic" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Click on the <code>toXml</code> resource to navigate to the resource implementation designer view.</li>
-<li>Delete the default <code>Return</code> action from the resource.</li>
-<li>Hover to the arrow after start and click the ➕ button to add a new action to the resource.</li>
-<li>Select <strong><code>Function Call</code></strong> from the node panel.</li>
-<li>Search for <code>json to xml</code> and select the <strong><code>fromJson</code></strong> function from the suggestions.</li>
-<li>Change the <strong><code>Variable Name</code></strong> to <code>xmlResult</code>, <strong><code>Variable Type</code></strong> as <code>xml</code> and <strong><code>JsonValue</code></strong> to <code>input</code>.</li>
-<li>Click on the <strong><code>Save</code></strong> button to add the function call to the resource.
-    <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-variable.gif"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-variable.gif" alt="Add Function Call" width="70%"></a></li>
-<li>Add a new node after the <code>fromJson</code> function call and select <strong><code>Return</code></strong> from the node panel.</li>
-<li>Select the <code>xmlResult</code> variable from the dropdown and click <strong><code>Save</code></strong>.
-    <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-return.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/add-return.png" alt="Add Return" width="70%"></a></li>
-</ol>
-<div class="admonition info">
-<p class="admonition-title">JSON to XML Conversion</p>
-<p>To learn more about json to xml conversion, see <a href="https://ballerina.io/learn/by-example/xml-from-json-conversion/">Ballerina JSON to XML conversion</a>.</p>
-</div>
-<h3 id="step-5-run-the-integration">Step 5: Run the integration<a class="headerlink" href="#step-5-run-the-integration" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Click on the <strong><code>Run</code></strong> button in the top-right corner to run the integration.</li>
-<li>The integration will start and the service will be available at <code>http://localhost:9090/convert</code>.</li>
-<li>Click on the <strong><code>Try it</code></strong> button to open the embedded HTTP client.</li>
-<li>Enter the JSON payload in the request body and click on the ▶️ button to send the request.
-    <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;car&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Honda&quot;</span>
-<span class="p">}</span>
-</code></pre></div></li>
-<li>The response will be an XML representation of the JSON payload.<br />
-<code>&lt;root&gt;
-        &lt;name&gt;John&lt;/name&gt;
-        &lt;age&gt;30&lt;/age&gt;
-        &lt;car&gt;Honda&lt;/car&gt;
-    &lt;/root&gt;</code>
-   <a href="https://wso2.github.io/docs-bi/assets/img/message-transformation/run-integration.png"><img src="https://wso2.github.io/docs-bi/assets/img/message-transformation/run-integration.png" alt="Run Integration" width="70%"></a></li>
-<li>Additionally, the service can be tested using tools like <a href="https://www.postman.com/">Postman</a> or <a href="https://curl.se/">curl</a> by sending a POST request with a JSON payload to the service endpoint.
-   <div class="highlight"><pre><span></span><code>curl -X POST &quot;http://localhost:9090/convert/toXml&quot; -H &quot;Content-Type: application/json&quot; -d &#39;{&quot;name&quot;:&quot;John&quot;, &quot;age&quot;:30, &quot;car&quot;:&quot;Honda&quot;}&#39;
-</code></pre></div></li>
-</ol>
+<h1 id="ai-agent-overview">AI Agent Overview<a class="headerlink" href="#ai-agent-overview" title="Permanent link">&para;</a></h1>
 
 
 
@@ -1064,42 +1108,6 @@
       
       
         <footer class="md-footer">
-  
-  
-  <nav class="md-footer__inner md-grid" aria-label="Footer" >
-    
-    
-    <a href="../../install-and-setup/install-integration-control-plane/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Install Integration Control Plane" rel="prev">
-      <div class="md-footer__button md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </div>
-      <div class="md-footer__title">
-        <div class="md-ellipsis">
-                <span class="md-footer__direction">
-                  Previous
-                </span>
-          Install Integration Control Plane
-        </div>
-      </div>
-    </a>
-    
-    
-    
-    <a href="../message-routing/" class="md-footer__link md-footer__link--next" aria-label="Next: Message routing" rel="next">
-      <div class="md-footer__title">
-        <div class="md-ellipsis">
-                <span class="md-footer__direction">
-                  Next
-                </span>
-          Message routing
-        </div>
-      </div>
-      <div class="md-footer__button md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-      </div>
-    </a>
-    
-  </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1136,7 +1144,7 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "content.action.edit", "content.action.view", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../assets/javascripts/bundle.fc8c2696.min.js"></script>
