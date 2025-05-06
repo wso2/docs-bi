@@ -1,10 +1,10 @@
 # Natural Functions
 
 In this tutorial, you will learn how to use natural functions in Ballerina Integrator, which allow the function to contain instructions in natural language. 
-Such a function is evaluated at runtime with a call to an LLM. The example uses a natural function to analyze blog content to suggest a category and rate it based on predefined criteria.
+Such a function is evaluated at runtime with a call to an Large language Model(LLM). The example uses a natural function to analyze blog content to suggest a category and rate it based on predefined criteria.
 
 ???+ tip "Natural Programming"
-    To learn more about Ballerina natural programming library module, see [natural programming](https://central.ballerina.io/ballerinax/np).
+    To learn more about Ballerina natural programming library module, see [natural programming](https://central.ballerina.io/ballerina/np/latest).
 
 
 ## Implementation
@@ -20,14 +20,14 @@ Follow the steps below to implement the integration.
 ### Step 2: Define Types
 1. Click on the **`Add Artifacts`** button and select **`Type`** in the **`Other Artifacts`** section.
 2. Click on **`+ Add Type`** to add a new type.
-3. Add the **`Record Name`** as `Blog` and paste the following JSON payload. Select **`Is Closed Record`** and click on the **`Import`** button.
+3. Add the **`Record Name`** as `Blog`. Then click on the **`JSON`** button and paste the following JSON payload. Select **`Is Closed`** and click on the **`Import`** button. Then click the **`Save`** button.
     ```json
     {
         "title": "Tips for Growing a Beautiful Garden",
         "content": "Spring is the perfect time to start your garden. Begin by preparing your soil with organic compost and ensure proper drainage. Choose plants suitable for your climate zone, and remember to water them regularly. Don't forget to mulch to retain moisture and prevent weeds."
     }
     ```
-4. Add another type with the **`Record Name`** as `Review` and paste the following JSON payload. Select **`Is Closed Record`** and click on the **`Import`** button.
+4. Add another type with the **`Record Name`** as `Review` and paste the following JSON payload. Select **`Is Closed`** and click on the **`Import`** button. Then click the **`Save`** button.
     ```json
     {
         "name": "Gardening",
@@ -42,13 +42,13 @@ Follow the steps below to implement the integration.
 1. In the design view, click on the **`Add Artifact`** button.
 2. Select **`HTTP Service`** under the **`Integration as API`** category.
 3. Select the **`Create and use the default HTTP listener`** option from the **`Listener`** dropdown.
-4. Add the service base path as `/blogs` and select the **`Design from Scratch`** option as the **`The contract of the service`**.
+4. Select the **`Design from Scratch`** option as the **`Service Contract`** and add the service base path as `/blogs`.
 5. Click on the **`Create`** button to create the new service with the specified configurations.
 <a href="{{base_path}}/assets/img/natural-functions/service.png"><img src="{{base_path}}/assets/img/natural-functions/service.png" alt="HTTP Service" width="70%"></a>
 
 ### Step 4: Add a Natural Function
 1. Click on the **`Add Artifact`** button and select **`Natural Function`** under the **`Other Artifacts`** category.
-2. Add the function name as `reviewBlog`, input parameter as `blog` of type `Blog`, return type of `Review` and click on the **`Create`** button.
+2. Add the function name as `reviewBlog`. Then click **`Add Parameter`** button to add input parameters for the natural function. Add input parameter as `blog` of type `Blog`, return type of `Review` and click on the **`Create`** button.
 <a href="{{base_path}}/assets/img/natural-functions/natural-function.png"><img src="{{base_path}}/assets/img/natural-functions/natural-function.png" alt="Natural Function" width="70%"></a>
 3. Click on the **`Edit`** button to add the function logic.
 4. Add the following prompt to the function and click on the **`Save`** button.
@@ -74,30 +74,30 @@ Follow the steps below to implement the integration.
     ```
    
 ### Step 5: Update the resource method
-1. The service will have a default resource named `greeting` with the **`GET`** method. Click on three dots appear in front of the `/convert` service resource and select **`Edit`** from menu.
+1. The service will have a default resource named `greeting` with the **`GET`** method. Click on three dots appear in front of the `/blogs` service and select **`Edit`** from menu.
 2. Then click the edit button in front of `/greeting` resource.
 3. Change the resource HTTP method to **`POST`**.
 4. Change the resource name as `review`.
-5. Add a payload parameter named `blog` to the resource of type `Blog`.
+5. Add a payload named `blog` to the resource of type `Blog`.
 6. Change the 201 response return type to `Review`.
 7. Click on the **`Save`** button to update the resource with the specified configurations.
 <a href="{{base_path}}/assets/img/natural-functions/update-resource.png"><img src="{{base_path}}/assets/img/natural-functions/update-resource.png" alt="Resource" width="70%"></a>
 
 ### Step 6: Implement resource logic
 1. Click on the `review` resource to navigate to the resource implementation designer view.
-2. Delete the default `Return` action from the resource.
-3. Hover to the arrow after start and click the ➕ button to add a new action to the resource.
-4. Select **`Call Function Call`** from the node panel.
-5. Select the `reviewBlog` function from the suggestions.
-6. Change the **`Variable Name`** to `review`, **`Variable Type`** as `Review` and **`Blog`** to `blog` and click on the **`Save`** button.    
+2. Hover to the arrow after start and click the ➕ button to add a new action to the resource.
+3. Select **`Call Natural Function`** from the node panel.
+4. Select the `reviewBlog` function from the suggestions.
+5. Change the **`Variable Name`** to `review` and **`Variable Type`** as `Review`. 
+6. For the **`Blog`** parameter, add value as `blog` and click on the **`Save`** button.    
 <a href="{{base_path}}/assets/img/natural-functions/call-np.gif"><img src="{{base_path}}/assets/img/natural-functions/call-np.gif" alt="Function Call" width="70%"></a>
 7. Add a new node after the `reviewBlog` function call and select **`Return`** from the node panel.
-8. Select the `reviewResult` variable from the dropdown and click **`Save`**.
+8. Select the `review` variable from the dropdown and click **`Save`**.
 <a href="{{base_path}}/assets/img/natural-functions/add-return.png"><img src="{{base_path}}/assets/img/natural-functions/add-return.png" alt="Add Return" width="70%"></a>
-9. The resource implementation is now complete. The function `reviewBlog` is called with the blog content as input and the review is returned as the response.
+9. The resource implementation is now complete. The function `reviewBlog` is called with the `blog` content as input and the `review` is returned as the response.
 
 ### Step 7: Configure model for natural function
-1. Press `Ctrl + Shift + P` on Windows and Linux, or `shift + ⌘ + P` on a Mac and type `>Ballerina: Configure default model for natural functions` to configure the default model for natural functions.   
+1. Press `Ctrl + Shift + P` on Windows and Linux, or `shift + ⌘ + P` on a Mac and type `>Ballerina: Configure default model for natural functions (Experimental)` to configure the default model for natural functions.   
 <a href="{{base_path}}/assets/img/natural-functions/configure-model.png"><img src="{{base_path}}/assets/img/natural-functions/configure-model.png" alt="Configure Model" width="70%"></a>
 
 
@@ -116,7 +116,7 @@ Follow the steps below to implement the integration.
         "content": "For those who want a 360-degree approach to self-care, with advice for betterment in the workplace, home, gym, and on the go, look no further. The Healthy Maven offers recipes for every type of meal under the sun (salads, sides, soups, and more), DIY tips (you’ll learn how to make your own yoga mat spray), and quick workouts. If you like where all this is going, there’s a supplementary podcast run by blogger Davida with guest wellness experts."
     }
     ```
-5. The response will be a review of the blog content with the category and rating.
+5. The response will be a review of the blog content with the category and rating (The rating value may not always be identical across different executions).
     ```json
     {
         "name": "Health",
