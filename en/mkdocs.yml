@@ -112,6 +112,7 @@ nav:
         - Build an HTTP service with WSO2 Copilot : develop/ai-assisted-development/build-an-http-service-with-wso2-copilot.md
       #- Test the integration: develop/test-the-integrations.md
       #- Debug the integration: develop/debug-the-integrations.md
+      - TIBCO BusinessWorks migration: learn/tibco-migration-assistant.md
   - Deploy:
       - Deploy to Devant: deploy/deploy-to-devant.md
       - Deploy on VM as executable JAR: deploy/deploy-on-vm-as-executable-jar.md
