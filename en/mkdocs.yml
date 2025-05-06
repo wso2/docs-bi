@@ -41,6 +41,7 @@ theme:
     - navigation.tabs.sticky
     - content.action.edit
     - content.action.view
+    - navigation.indexes
   #highlightjs: true
   feature:
     tabs: true
@@ -80,16 +81,37 @@ nav:
       - Install Ballerina Integrator: install-and-setup/install-ballerina-integrator.md
       - Install Integration Control Plane: install-and-setup/install-integration-control-plane.md
   - Learn:
-      - Message transformation: learn/message-transformation.md
-      - Message routing: learn/message-routing.md
-      - Service orchestration: learn/service-orchestration.md
-      - AI-assisted integration: learn/integration-ai.md
-      - AI agent integration: learn/ai-agent-integration.md
-      - Data mapping: learn/data-mapping.md
-#      - Natural functions: learn/natural-functions.md
-      - File integration: learn/file-integration.md
-      - EI patterns: learn/enterprise-integrations-patterns.md
+      #- Automation:
+      #  - learn/automation/index.md
+      #  - Build your first automation: learn/automation/build-your-first-automation.md
+      - AI agent:
+      #  - learn/ai-agent/index.md
+        - Build AI Agent to Handle Mathematical Queries: learn/ai-agent/build-ai-agent-to-handle-mathematical-queries.md
+      #- Integration As API:
+      #  - Build your first integration as API: learn/integration-as-api/http-service.md
+      #- Event Integration:
+      #  - learn/event-integration/index.md
+      #- File Integration:
+      #  - File integration with directory service: learn/file-integration/file-integration-with-directory-service.md
+      #  - File integration with FTP service: learn/file-integration/file-integration-with-ftp-service.md
+      - References:
+      #  - Configure the integration: learn/references/configure-the-integration.md
+        - Data mapping: learn/references/data-mapping.md
+      #  - Natural functions: learn/natural-functions.md
+      - Samples:
+        - Message transformation: learn/samples/message-transformation.md
+        - Message routing: learn/samples/message-routing.md
+        - Service orchestration: learn/samples/service-orchestration.md
+      - Enterprise Integration patterns: learn/enterprise-integrations-patterns.md
       - Mulesoft migration: learn/mulesoft-migration.md
+  - Develop:
+      - Creat a project: develop/create-a-project.md
+      - Ballerina Integrator Artifacts: develop/ballerina-integrator-artifacts.md
+      - AI assisted integration:
+      #  - develop/ai-assisted-development/index.md
+        - Build an HTTP service with WSO2 Copilot : develop/ai-assisted-development/build-an-http-service-with-wso2-copilot.md
+      #- Test the integration: develop/test-the-integrations.md
+      #- Debug the integration: develop/debug-the-integrations.md
   - Deploy:
       - Deploy to Devant: deploy/deploy-to-devant.md
       - Deploy on VM as executable JAR: deploy/deploy-on-vm-as-executable-jar.md
