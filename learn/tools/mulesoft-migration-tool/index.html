@@ -969,6 +969,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#example-converting-a-standalone-mule-xml-file" class="md-nav__link">
+    Example: Converting a standalone Mule XML file
+  </a>
+  
+    <nav class="md-nav" aria-label="Example: Converting a standalone Mule XML file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-the-migration-tool" class="md-nav__link">
+    Run the Migration Tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examine-the-generated-ballerina-code" class="md-nav__link">
+    Examine the Generated Ballerina Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#supported-mulesoft-features" class="md-nav__link">
     Supported MuleSoft Features
   </a>
@@ -1335,6 +1362,33 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#example-converting-a-standalone-mule-xml-file" class="md-nav__link">
+    Example: Converting a standalone Mule XML file
+  </a>
+  
+    <nav class="md-nav" aria-label="Example: Converting a standalone Mule XML file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-the-migration-tool" class="md-nav__link">
+    Run the Migration Tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examine-the-generated-ballerina-code" class="md-nav__link">
+    Examine the Generated Ballerina Code
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#supported-mulesoft-features" class="md-nav__link">
     Supported MuleSoft Features
   </a>
@@ -1401,7 +1455,7 @@
 
 
 <h1 id="mulesoft-migration-tool">MuleSoft Migration Tool<a class="headerlink" href="#mulesoft-migration-tool" title="Permanent link">&para;</a></h1>
-<p>This guide explains how to use the <a href="https://central.ballerina.io/wso2/tool_migrate_mule/1.0.0">migrate-mule</a> tool to convert 
+<p>This guide explains how to use the <a href="https://central.ballerina.io/wso2/tool_migrate_mule/latest">migrate-mule</a> tool to convert 
 <a href="https://www.mulesoft.com">MuleSoft</a> applications into Ballerina packages compatible with the <a href="https://wso2.com/integrator/ballerina-integrator">WSO2 Ballerina Integrator</a>.</p>
 <h2 id="tool-overview">Tool Overview<a class="headerlink" href="#tool-overview" title="Permanent link">&para;</a></h2>
 <p>The tool accepts either a MuleSoft project directory or a standalone Mule <code>.xml</code> configuration file as input and
@@ -1495,6 +1549,89 @@ TODO comments. You may need to do the conversion for them manually.</p>
 }
 </code></pre></div>
 
+<h2 id="example-converting-a-standalone-mule-xml-file">Example: Converting a standalone Mule XML file<a class="headerlink" href="#example-converting-a-standalone-mule-xml-file" title="Permanent link">&para;</a></h2>
+<p>Let's walk through an example of migrating a MuleSoft standalone sample <code>.xml</code> configuration to Ballerina.</p>
+<p>Here's a sample MuleSoft XML file (<code>users-database-query.xml</code>) that gets invoked via an HTTP listener and performs a database operation:</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+
+<span class="nt">&lt;mule</span><span class="w"> </span><span class="na">xmlns:db=</span><span class="s">&quot;http://www.mulesoft.org/schema/mule/db&quot;</span><span class="w"> </span><span class="na">xmlns:json=</span><span class="s">&quot;http://www.mulesoft.org/schema/mule/json&quot;</span><span class="w"> </span><span class="na">xmlns:tracking=</span><span class="s">&quot;http://www.mulesoft.org/schema/mule/ee/tracking&quot;</span><span class="w"> </span><span class="na">xmlns:http=</span><span class="s">&quot;http://www.mulesoft.org/schema/mule/http&quot;</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">&quot;http://www.mulesoft.org/schema/mule/core&quot;</span><span class="w"> </span><span class="na">xmlns:doc=</span><span class="s">&quot;http://www.mulesoft.org/schema/mule/documentation&quot;</span>
+<span class="w">      </span><span class="na">xmlns:spring=</span><span class="s">&quot;http://www.springframework.org/schema/beans&quot;</span>
+<span class="w">      </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+<span class="w">      </span><span class="na">xsi:schemaLocation=</span><span class="s">&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd</span>
+<span class="s">http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd</span>
+<span class="s">http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd</span>
+<span class="s">http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd</span>
+<span class="s">http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd</span>
+<span class="s">http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;http:listener-config</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;config&quot;</span><span class="w"> </span><span class="na">host=</span><span class="s">&quot;0.0.0.0&quot;</span><span class="w"> </span><span class="na">port=</span><span class="s">&quot;8081&quot;</span><span class="w">  </span><span class="na">doc:name=</span><span class="s">&quot;HTTP Listener Configuration&quot;</span><span class="w"> </span><span class="na">basePath=</span><span class="s">&quot;demo&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;db:mysql-config</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;MySQL_Configuration&quot;</span><span class="w"> </span><span class="na">host=</span><span class="s">&quot;localhost&quot;</span><span class="w"> </span><span class="na">port=</span><span class="s">&quot;3306&quot;</span><span class="w"> </span><span class="na">user=</span><span class="s">&quot;root&quot;</span><span class="w"> </span><span class="na">password=</span><span class="s">&quot;admin123&quot;</span><span class="w"> </span><span class="na">database=</span><span class="s">&quot;test_db&quot;</span><span class="w"> </span><span class="na">doc:name=</span><span class="s">&quot;MySQL Configuration&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;flow</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;demoFlow&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;http:listener</span><span class="w"> </span><span class="na">config-ref=</span><span class="s">&quot;config&quot;</span><span class="w"> </span><span class="na">path=</span><span class="s">&quot;/users&quot;</span><span class="w"> </span><span class="na">allowedMethods=</span><span class="s">&quot;GET&quot;</span><span class="w"> </span><span class="na">doc:name=</span><span class="s">&quot;HTTP&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;db:select</span><span class="w"> </span><span class="na">config-ref=</span><span class="s">&quot;MySQL_Configuration&quot;</span><span class="w"> </span><span class="na">doc:name=</span><span class="s">&quot;Database&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;db:parameterized-query&gt;</span><span class="cp">&lt;![CDATA[SELECT * FROM users;]]&gt;</span><span class="nt">&lt;/db:parameterized-query&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/db:select&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/flow&gt;</span>
+<span class="nt">&lt;/mule&gt;</span>
+</code></pre></div>
+
+<h3 id="run-the-migration-tool">Run the Migration Tool<a class="headerlink" href="#run-the-migration-tool" title="Permanent link">&para;</a></h3>
+<p>To convert the Mule XML file using the <code>migrate-mule</code> tool execute the following command:</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bal<span class="w"> </span>migrate-mule<span class="w"> </span>/path/to/users-database-query.xml
+</code></pre></div>
+
+<h3 id="examine-the-generated-ballerina-code">Examine the Generated Ballerina Code<a class="headerlink" href="#examine-the-generated-ballerina-code" title="Permanent link">&para;</a></h3>
+<p>The tool generates a Ballerina package named <code>users-database-query-ballerina</code> inside <code>/path/to</code> with the following 
+structure:</p>
+<div class="highlight"><pre><span></span><code>users-database-query-ballerina/
+├── Ballerina.toml
+├── internal-types.bal
+├── main.bal
+├── users-database-query.bal
+└── migration_summary.html
+</code></pre></div>
+
+<p>The <code>users-database-query.bal</code> file contains the Ballerina translation of the original MuleSoft XML configuration. It sets up an HTTP service that listens on port 8081 and responds to <code>GET</code> <code>/users</code> requests by querying the MySQL database and returning the results as the response payload.</p>
+<p><code>users-database-query.bal</code> will look like this.</p>
+<div class="highlight"><pre><span></span><code>import ballerina/http;
+import ballerina/sql;
+import ballerinax/mysql;
+import ballerinax/mysql.driver as _;
+
+public type Record record {
+};
+
+mysql:Client MySQL_Configuration = check new (&quot;localhost&quot;, &quot;root&quot;, &quot;admin123&quot;, &quot;test_db&quot;, 3306);
+public listener http:Listener config = new (8081);
+
+service /demo on config {
+    Context ctx;
+
+    function init() {
+        self.ctx = {payload: (), inboundProperties: {response: new, request: new, uriParams: {}}};
+    }
+
+    resource function get users(http:Request request) returns http:Response|error {
+        self.ctx.inboundProperties.request = request;
+        return invokeEndPoint0(self.ctx);
+    }
+}
+
+public function invokeEndPoint0(Context ctx) returns http:Response|error {
+
+    // database operation
+    sql:ParameterizedQuery dbQuery0 = `SELECT * FROM users;`;
+    stream&lt;Record, sql:Error?&gt; dbStream0 = MySQL_Configuration-&gt;query(dbQuery0);
+    Record[] dbSelect0 = check from Record _iterator_ in dbStream0
+        select _iterator_;
+    ctx.payload = dbSelect0;
+
+    ctx.inboundProperties.response.setPayload(ctx.payload);
+    return ctx.inboundProperties.response;
+}
+</code></pre></div>
+
+<p>You can check out the <code>migration_summary.html</code> for overview of the migration.</p>
+<p>This example demonstrates how to migrate a MuleSoft application that performs database operations to Ballerina using the migration tool. The migration tool automatically converts the database configuration and SQL query to the equivalent Ballerina code using the <code>ballerinax/mysql</code> module.</p>
 <h2 id="supported-mulesoft-features">Supported MuleSoft Features<a class="headerlink" href="#supported-mulesoft-features" title="Permanent link">&para;</a></h2>
 <h3 id="mulesoft-components">MuleSoft Components:<a class="headerlink" href="#mulesoft-components" title="Permanent link">&para;</a></h3>
 <p>The migration tool currently supports converting the following MuleSoft components:</p>
