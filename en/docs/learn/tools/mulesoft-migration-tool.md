@@ -1,5 +1,5 @@
 # MuleSoft Migration Tool
-This guide explains how to use the [migrate-mule](https://central.ballerina.io/wso2/tool_migrate_mule/1.0.0) tool to convert 
+This guide explains how to use the [migrate-mule](https://central.ballerina.io/wso2/tool_migrate_mule/latest) tool to convert 
 [MuleSoft](https://www.mulesoft.com) applications into Ballerina packages compatible with the [WSO2 Ballerina Integrator](https://wso2.com/integrator/ballerina-integrator).
 
 ## Tool Overview
@@ -99,6 +99,102 @@ public function endpoint(Context ctx) returns http:Response|error {
     return ctx.inboundProperties.response;
 }
 ```
+
+## Example: Converting a standalone Mule XML file
+
+Let's walk through an example of migrating a MuleSoft standalone sample `.xml` configuration to Ballerina.
+
+Here's a sample MuleSoft XML file (`users-database-query.xml`) that gets invoked via an HTTP listener and performs a database operation:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:db="http://www.mulesoft.org/schema/mule/db" xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+      xmlns:spring="http://www.springframework.org/schema/beans"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd">
+    <http:listener-config name="config" host="0.0.0.0" port="8081"  doc:name="HTTP Listener Configuration" basePath="demo"/>
+    <db:mysql-config name="MySQL_Configuration" host="localhost" port="3306" user="root" password="admin123" database="test_db" doc:name="MySQL Configuration"/>
+    <flow name="demoFlow">
+        <http:listener config-ref="config" path="/users" allowedMethods="GET" doc:name="HTTP"/>
+        <db:select config-ref="MySQL_Configuration" doc:name="Database">
+            <db:parameterized-query><![CDATA[SELECT * FROM users;]]></db:parameterized-query>
+        </db:select>
+    </flow>
+</mule>
+```
+
+### Run the Migration Tool
+To convert the Mule XML file using the `migrate-mule` tool execute the following command:
+
+```bash
+$ bal migrate-mule /path/to/users-database-query.xml
+```
+
+### Examine the Generated Ballerina Code
+The tool generates a Ballerina package named `users-database-query-ballerina` inside `/path/to` with the following 
+structure:
+
+```commandline
+users-database-query-ballerina/
+├── Ballerina.toml
+├── internal-types.bal
+├── main.bal
+├── users-database-query.bal
+└── migration_summary.html
+```
+
+The `users-database-query.bal` file contains the Ballerina translation of the original MuleSoft XML configuration. It sets up an HTTP service that listens on port 8081 and responds to `GET` `/users` requests by querying the MySQL database and returning the results as the response payload.
+
+`users-database-query.bal` will look like this.
+
+```ballerina
+import ballerina/http;
+import ballerina/sql;
+import ballerinax/mysql;
+import ballerinax/mysql.driver as _;
+
+public type Record record {
+};
+
+mysql:Client MySQL_Configuration = check new ("localhost", "root", "admin123", "test_db", 3306);
+public listener http:Listener config = new (8081);
+
+service /demo on config {
+    Context ctx;
+
+    function init() {
+        self.ctx = {payload: (), inboundProperties: {response: new, request: new, uriParams: {}}};
+    }
+
+    resource function get users(http:Request request) returns http:Response|error {
+        self.ctx.inboundProperties.request = request;
+        return invokeEndPoint0(self.ctx);
+    }
+}
+
+public function invokeEndPoint0(Context ctx) returns http:Response|error {
+
+    // database operation
+    sql:ParameterizedQuery dbQuery0 = `SELECT * FROM users;`;
+    stream<Record, sql:Error?> dbStream0 = MySQL_Configuration->query(dbQuery0);
+    Record[] dbSelect0 = check from Record _iterator_ in dbStream0
+        select _iterator_;
+    ctx.payload = dbSelect0;
+
+    ctx.inboundProperties.response.setPayload(ctx.payload);
+    return ctx.inboundProperties.response;
+}
+```
+
+You can check out the `migration_summary.html` for overview of the migration.
+
+This example demonstrates how to migrate a MuleSoft application that performs database operations to Ballerina using the migration tool. The migration tool automatically converts the database configuration and SQL query to the equivalent Ballerina code using the `ballerinax/mysql` module.
 
 ## Supported MuleSoft Features
 
