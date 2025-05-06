@@ -88,6 +88,7 @@ nav:
       - Data mapping: learn/data-mapping.md
 #      - Natural functions: learn/natural-functions.md
       - File integration: learn/file-integration.md
+      - EI patterns: learn/enterprise-integrations-patterns.md
   - Deploy:
       - Deploy to Devant: deploy/deploy-to-devant.md
       - Deploy on VM as executable JAR: deploy/deploy-on-vm-as-executable-jar.md
