@@ -104,7 +104,7 @@ public function endpoint(Context ctx) returns http:Response|error {
 
 Let's walk through an example of migrating a MuleSoft standalone sample `.xml` configuration to Ballerina.
 
-Here's a sample MuleSoft XML file (`users-database-query.xml`) that gets invoked via HTTP listener and performs a database operation:
+Here's a sample MuleSoft XML file (`users-database-query.xml`) that gets invoked via an HTTP listener and performs a database operation:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
