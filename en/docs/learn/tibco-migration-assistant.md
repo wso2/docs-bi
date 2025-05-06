@@ -1,4 +1,4 @@
-# TIBCO BusinessWorks Migration
+# TIBCO BusinessWorks Migration Tool
 This guide explains how to use the [migrate-tibco](https://central.ballerina.io/wso2/tool_migrate_tibco/latest) tool to convert
 [TIBCO BusinessWorks](https://docs.tibco.com/products/tibco-activematrix-businessworks) integrations into Ballerina packages compatible with the [WSO2 Ballerina Integrator](https://wso2.com/integrator/ballerina-integrator).
 ## Tool Overview
