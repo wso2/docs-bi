@@ -2,92 +2,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://bi.docs.wso2.com/</loc>
-         <lastmod>2025-05-02</lastmod>
+         <lastmod>2025-05-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/page-not-found/</loc>
-         <lastmod>2025-05-02</lastmod>
+         <lastmod>2025-05-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/deploy/deploy-as-docker-image/</loc>
-         <lastmod>2025-05-02</lastmod>
+         <lastmod>2025-05-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/deploy/deploy-on-vm-as-executable-jar/</loc>
-         <lastmod>2025-05-02</lastmod>
+         <lastmod>2025-05-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/deploy/deploy-to-devant/</loc>
-         <lastmod>2025-05-02</lastmod>
+         <lastmod>2025-05-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/get-started/introduction/</loc>
-         <lastmod>2025-05-02</lastmod>
+         <lastmod>2025-05-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/get-started/key-concepts/</loc>
-         <lastmod>2025-05-02</lastmod>
+         <lastmod>2025-05-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/get-started/quick-start-guide/</loc>
-         <lastmod>2025-05-02</lastmod>
+         <lastmod>2025-05-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/install-and-setup/install-ballerina-integrator/</loc>
-         <lastmod>2025-05-02</lastmod>
+         <lastmod>2025-05-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/install-and-setup/install-integration-control-plane/</loc>
-         <lastmod>2025-05-02</lastmod>
+         <lastmod>2025-05-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/learn/ai-agent-integration/</loc>
-         <lastmod>2025-05-02</lastmod>
+         <lastmod>2025-05-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/learn/data-mapping/</loc>
-         <lastmod>2025-05-02</lastmod>
+         <lastmod>2025-05-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bi.docs.wso2.com/learn/enterprise-integrations-patterns/</loc>
+         <lastmod>2025-05-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/learn/file-integration/</loc>
-         <lastmod>2025-05-02</lastmod>
+         <lastmod>2025-05-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/learn/integration-ai/</loc>
-         <lastmod>2025-05-02</lastmod>
+         <lastmod>2025-05-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/learn/message-routing/</loc>
-         <lastmod>2025-05-02</lastmod>
+         <lastmod>2025-05-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/learn/message-transformation/</loc>
-         <lastmod>2025-05-02</lastmod>
+         <lastmod>2025-05-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/learn/natural-functions/</loc>
-         <lastmod>2025-05-02</lastmod>
+         <lastmod>2025-05-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/learn/service-orchestration/</loc>
-         <lastmod>2025-05-02</lastmod>
+         <lastmod>2025-05-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
