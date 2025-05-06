@@ -24,8 +24,8 @@ $ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directo
 
 - **source-project-directory-or-file** - Required. The TIBCO BusinessWorks project directory or `bwp` file needs to be migrated.
 - **-o or --out** - *Optional*. The directory where the new Ballerina package will be created. If the directory does not exist, the tool will create it for you. If not provided,
-  - If source-project-directory-or-file is a directory it will create new directory named ${source-project-directory-or-file}_converted in the root of source-project-directory-or-file
-  - if source-project-directory-or-file is a file, it will create a new directory named ${root}_converted in the parent of the root directory where root is the directory containing the given file.
+  - If source-project-directory-or-file is a directory it will create new directory named `${source-project-directory-or-file}_converted` in the root of source-project-directory-or-file.
+  - if source-project-directory-or-file is a file, it will create a new directory named `${root}_converted` in the parent of the root directory where root is the directory containing the given file.
 
 ## Example
 
@@ -38,6 +38,7 @@ $ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directo
 
 ### Step 2
 1. Create the following `helloworld.bwp` file.
+
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
     <bpws:process xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
@@ -138,7 +139,7 @@ $ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directo
         </bpws:scope>
     </bpws:process>
     ```
-2. Execute `bal migrate-tibco <path to helloworld.bwp> -o converted`. This will create the `converted` directory and create a Ballerina package inside it.
+2. Execute the `bal migrate-tibco <path to helloworld.bwp> -o converted` command. This will create the `converted` directory and create a Ballerina package inside it.
 
 ### Step 3
 1. Open VS Code inside the `converted` directory
