@@ -12,20 +12,20 @@
         <meta name="author" content="WSO2">
       
       
-        <link rel="canonical" href="https://bi.docs.wso2.com/learn/mulesoft-migration-tool/">
+        <link rel="canonical" href="https://bi.docs.wso2.com/learn/tibco-businessworks-migration-tool/">
       
       
-        <link rel="prev" href="../enterprise-integrations-patterns/">
+        <link rel="prev" href="../mulesoft-migration-tool/">
       
       
-        <link rel="next" href="../tibco-businessworks-migration-tool/">
+        <link rel="next" href="../../develop/create-a-project/">
       
       <link rel="icon" href="../../images/bi-logo.svg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
     
     
       
-        <title>Mulesoft migration tool - Ballerina Integrator Documentation</title>
+        <title>TIBCO BusinessWorks Migration Tool - Ballerina Integrator Documentation</title>
       
     
     
@@ -105,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mulesoft-migration-tool" class="md-skip">
+        <a href="#tibco-businessworks-migration-tool" class="md-skip">
           Skip to content
         </a>
       
@@ -158,7 +158,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Mulesoft migration tool
+              TIBCO BusinessWorks Migration Tool
             
           </span>
         </div>
@@ -838,6 +838,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="../mulesoft-migration-tool/" class="md-nav__link">
+        Mulesoft migration tool
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -850,12 +864,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Mulesoft migration tool
+          TIBCO BusinessWorks Migration Tool
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Mulesoft migration tool
+        TIBCO BusinessWorks Migration Tool
       </a>
       
         
@@ -888,44 +902,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
-    Implementation
+  <a href="#usage" class="md-nav__link">
+    Usage
   </a>
   
-    <nav class="md-nav" aria-label="Implementation">
+    <nav class="md-nav" aria-label="Usage">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-prepare-your-input" class="md-nav__link">
-    Step 1: Prepare your input
+  <a href="#command-syntax" class="md-nav__link">
+    Command Syntax
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-run-the-migration-tool" class="md-nav__link">
-    Step 2: Run the migration tool
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-review-migration-output" class="md-nav__link">
-    Step 3: Review migration output
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-review-the-migration-summary" class="md-nav__link">
-    Step 4: Review the migration summary
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-5-address-todo-items" class="md-nav__link">
-    Step 5: Address TODO items
+  <a href="#parameters" class="md-nav__link">
+    Parameters
   </a>
   
 </li>
@@ -936,23 +929,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#supported-mulesoft-features" class="md-nav__link">
-    Supported MuleSoft Features
+  <a href="#example" class="md-nav__link">
+    Example
   </a>
   
-    <nav class="md-nav" aria-label="Supported MuleSoft Features">
+    <nav class="md-nav" aria-label="Example">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mulesoft-components" class="md-nav__link">
-    MuleSoft Components:
+  <a href="#step-1" class="md-nav__link">
+    Step 1
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dataweave-expressions" class="md-nav__link">
-    DataWeave Expressions:
+  <a href="#step-2" class="md-nav__link">
+    Step 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3" class="md-nav__link">
+    Step 3
   </a>
   
 </li>
@@ -963,9 +963,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
-    Limitations
+  <a href="#output" class="md-nav__link">
+    Output
   </a>
+  
+    <nav class="md-nav" aria-label="Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#migration-summary" class="md-nav__link">
+    Migration summary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unhandled-activities" class="md-nav__link">
+    Unhandled activities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-tibco-businessworks-activities" class="md-nav__link">
+    Supported TIBCO BusinessWorks activities
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -973,20 +1000,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tibco-businessworks-migration-tool/" class="md-nav__link">
-        TIBCO BusinessWorks Migration Tool
-      </a>
     </li>
   
 
@@ -1247,44 +1260,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
-    Implementation
+  <a href="#usage" class="md-nav__link">
+    Usage
   </a>
   
-    <nav class="md-nav" aria-label="Implementation">
+    <nav class="md-nav" aria-label="Usage">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-prepare-your-input" class="md-nav__link">
-    Step 1: Prepare your input
+  <a href="#command-syntax" class="md-nav__link">
+    Command Syntax
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-run-the-migration-tool" class="md-nav__link">
-    Step 2: Run the migration tool
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-review-migration-output" class="md-nav__link">
-    Step 3: Review migration output
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-review-the-migration-summary" class="md-nav__link">
-    Step 4: Review the migration summary
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-5-address-todo-items" class="md-nav__link">
-    Step 5: Address TODO items
+  <a href="#parameters" class="md-nav__link">
+    Parameters
   </a>
   
 </li>
@@ -1295,23 +1287,30 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#supported-mulesoft-features" class="md-nav__link">
-    Supported MuleSoft Features
+  <a href="#example" class="md-nav__link">
+    Example
   </a>
   
-    <nav class="md-nav" aria-label="Supported MuleSoft Features">
+    <nav class="md-nav" aria-label="Example">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#mulesoft-components" class="md-nav__link">
-    MuleSoft Components:
+  <a href="#step-1" class="md-nav__link">
+    Step 1
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#dataweave-expressions" class="md-nav__link">
-    DataWeave Expressions:
+  <a href="#step-2" class="md-nav__link">
+    Step 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3" class="md-nav__link">
+    Step 3
   </a>
   
 </li>
@@ -1322,9 +1321,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#limitations" class="md-nav__link">
-    Limitations
+  <a href="#output" class="md-nav__link">
+    Output
   </a>
+  
+    <nav class="md-nav" aria-label="Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#migration-summary" class="md-nav__link">
+    Migration summary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unhandled-activities" class="md-nav__link">
+    Unhandled activities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-tibco-businessworks-activities" class="md-nav__link">
+    Supported TIBCO BusinessWorks activities
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1344,7 +1370,7 @@
                   
 
   
-    <a href="https://github.com/wso2/docs-bi/edit/main/en/docs/learn/mulesoft-migration-tool.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/wso2/docs-bi/edit/main/en/docs/learn/tibco-businessworks-migration-tool.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1353,166 +1379,200 @@
     
       
     
-    <a href="https://github.com/wso2/docs-bi/raw/main/en/docs/learn/mulesoft-migration-tool.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/wso2/docs-bi/raw/main/en/docs/learn/tibco-businessworks-migration-tool.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-<h1 id="mulesoft-migration-tool">MuleSoft Migration Tool<a class="headerlink" href="#mulesoft-migration-tool" title="Permanent link">&para;</a></h1>
-<p>This guide explains how to use the <a href="https://central.ballerina.io/wso2/tool_migrate_mule/1.0.0">migrate-mule</a> tool to convert 
-<a href="https://www.mulesoft.com">MuleSoft</a> applications into Ballerina packages compatible with the <a href="https://wso2.com/integrator/ballerina-integrator">WSO2 Ballerina Integrator</a>.</p>
+<h1 id="tibco-businessworks-migration-tool">TIBCO BusinessWorks Migration Tool<a class="headerlink" href="#tibco-businessworks-migration-tool" title="Permanent link">&para;</a></h1>
+<p>This guide explains how to use the <a href="https://central.ballerina.io/wso2/tool_migrate_tibco/latest">migrate-tibco</a> tool to convert
+<a href="https://docs.tibco.com/products/tibco-activematrix-businessworks">TIBCO BusinessWorks</a> integrations into Ballerina packages compatible with the <a href="https://wso2.com/integrator/ballerina-integrator">WSO2 Ballerina Integrator</a>.</p>
 <h2 id="tool-overview">Tool Overview<a class="headerlink" href="#tool-overview" title="Permanent link">&para;</a></h2>
-<p>The tool accepts either a MuleSoft project directory or a standalone Mule <code>.xml</code> configuration file as input and
-generates an equivalent Ballerina package that can be opened in WSO2 Ballerina Integrator.</p>
+<p>The tool accepts either a BusinessWorks project directory or a standalone <code>bwp</code> file as input and generates an equivalent Ballerina package that can be opened in the WSO2 Ballerina Integrator.</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
-<p>To install the <code>migrate-mule</code> tool from Ballerina Central, run the following command:
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bal<span class="w"> </span>tool<span class="w"> </span>pull<span class="w"> </span>migrate-mule
+<p>Execute the command below to pull the <code>migrate-tibco</code> tool from Ballerina Central
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bal<span class="w"> </span>tool<span class="w"> </span>pull<span class="w"> </span>migrate-tibco
 </code></pre></div></p>
-<h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h2>
-<p>Follow the steps below to migrate your MuleSoft application.</p>
-<h3 id="step-1-prepare-your-input">Step 1: Prepare your input<a class="headerlink" href="#step-1-prepare-your-input" title="Permanent link">&para;</a></h3>
-<p>You can migrate either a complete MuleSoft project or a standalone Mule <code>.xml</code> configuration file:</p>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<h3 id="command-syntax">Command Syntax<a class="headerlink" href="#command-syntax" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bal<span class="w"> </span>migrate-tibco<span class="w"> </span>&lt;source-project-directory-or-file&gt;<span class="w"> </span><span class="o">[</span>-o<span class="p">|</span>--out<span class="w"> </span>&lt;output-directory&gt;<span class="o">]</span>
+</code></pre></div>
+
+<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
 <ul>
-<li>For MuleSoft projects: Ensure your project follows the standard structure with configuration XML files located under:
-   <div class="highlight"><pre><span></span><code>muleProjectPath/src/main/app
-</code></pre></div></li>
-<li>For standalone XML files: You can directly use any valid Mule XML configuration file.</li>
+<li><strong>source-project-directory-or-file</strong> - Required. The TIBCO BusinessWorks project directory or <code>bwp</code> file needs to be migrated.</li>
+<li><strong>-o or --out</strong> - <em>Optional</em>. The directory where the new Ballerina package will be created. If the directory does not exist, the tool will create it for you. If not provided,</li>
+<li>If source-project-directory-or-file is a directory it will create new directory named ${source-project-directory-or-file}_converted in the root of source-project-directory-or-file</li>
+<li>if source-project-directory-or-file is a file, it will create a new directory named ${root}_converted in the parent of the root directory where root is the directory containing the given file.</li>
 </ul>
-<h3 id="step-2-run-the-migration-tool">Step 2: Run the migration tool<a class="headerlink" href="#step-2-run-the-migration-tool" title="Permanent link">&para;</a></h3>
-<p>Use one of the following commands based on your needs:</p>
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
+<h3 id="step-1">Step 1<a class="headerlink" href="#step-1" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
-<p>To convert a MuleSoft project with default output location:</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bal<span class="w"> </span>migrate-mule<span class="w"> </span>/path/to/mule-project
+<p>Pull <code>migrate-tibco</code> tool for Ballerina Central using following command.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bal<span class="w"> </span>tool<span class="w"> </span>pull<span class="w"> </span>migrate-tibco
 </code></pre></div>
 
-<p>This will create a Ballerina package inside <code>/path/to/mule-project</code> directory.</p>
-</li>
-<li>
-<p>To convert a MuleSoft project with a custom output location:</p>
-<p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>bal<span class="w"> </span>migrate-mule<span class="w"> </span>/path/to/mule-project<span class="w"> </span>--out<span class="w"> </span>/path/to/output-dir
-</code></pre></div>
-This will create a Ballerina package at <code>/path/to/output-dir</code>.</p>
-</li>
-<li>
-<p>To convert a standalone Mule XML file:</p>
-<p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>bal<span class="w"> </span>migrate-mule<span class="w"> </span>/path/to/mule-flow.xml
-</code></pre></div>
-This will create a Ballerina package in the same directory as the input XML file.</p>
-</li>
-<li>
-<p>To convert a standalone XML file with a custom output location:</p>
-<p><div class="highlight"><pre><span></span><code>$<span class="w"> </span>bal<span class="w"> </span>migrate-mule<span class="w"> </span>/path/to/mule-flow.xml<span class="w"> </span>--out<span class="w"> </span>/path/to/output-dir
-</code></pre></div>
-This will create a Ballerina package at <code>/path/to/output-dir</code>.</p>
 </li>
 </ol>
-<h3 id="step-3-review-migration-output">Step 3: Review migration output<a class="headerlink" href="#step-3-review-migration-output" title="Permanent link">&para;</a></h3>
+<h3 id="step-2">Step 2<a class="headerlink" href="#step-2" title="Permanent link">&para;</a></h3>
 <ol>
-<li>
-<p>For a MuleSoft project directory input:</p>
-</li>
-<li>
-<p>A new Ballerina package is created with the same name as the input project directory, appended with a 
-     <code>-ballerina</code> suffix.</p>
-</li>
-<li>Each <code>.xml</code> file within <code>src/main/app</code> is converted to a corresponding <code>.bal</code> file with the same name.</li>
-<li>
-<p>Directory structure within <code>src/main/app</code> is reflected in the corresponding <code>.bal</code> file name.</p>
-</li>
-<li>
-<p>For a standalone XML file input:</p>
-</li>
-<li>
-<p>A new Ballerina package is created with the same name as the XML file, appended with a <code>-ballerina</code> suffix.</p>
-</li>
-<li>A new <code>.bal</code> file is created with the same name as the input file but with a <code>.bal</code> extension.</li>
+<li>Create the following <code>helloworld.bwp</code> file.
+    <div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;bpws:process</span><span class="w"> </span><span class="na">xmlns:bpws=</span><span class="s">&quot;http://docs.oasis-open.org/wsbpel/2.0/process/executable&quot;</span>
+<span class="w">    </span><span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span>
+<span class="w">    </span><span class="na">xmlns:tibex=</span><span class="s">&quot;http://www.tibco.com/bpel/2007/extensions&quot;</span>
+<span class="w">    </span><span class="na">xmlns:ns=</span><span class="s">&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot;</span>
+<span class="w">    </span><span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>
+<span class="w">    </span><span class="na">xmlns:tibprop=</span><span class="s">&quot;http://ns.tibco.com/bw/property&quot;</span>
+<span class="w">    </span><span class="na">xmlns:http=</span><span class="s">&quot;http://www.tibco.com/namespaces/tnt/plugins/http&quot;</span>
+<span class="w">    </span><span class="na">name=</span><span class="s">&quot;HelloWorldProcess&quot;</span>
+<span class="w">    </span><span class="na">targetNamespace=</span><span class="s">&quot;http://example.org/HelloWorld&quot;</span>
+<span class="w">    </span><span class="na">suppressJoinFailure=</span><span class="s">&quot;yes&quot;</span>
+<span class="w">    </span><span class="na">xmlns:tns=</span><span class="s">&quot;http://example.org/HelloWorld&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;tibex:Types&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">xmlns:tns=</span><span class="s">&quot;http://xmlns.example.com&quot;</span><span class="w"> </span><span class="na">attributeFormDefault=</span><span class="s">&quot;unqualified&quot;</span><span class="w"> </span><span class="na">elementFormDefault=</span><span class="s">&quot;qualified&quot;</span><span class="w"> </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;helloworld&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;xs:complexType&gt;</span>
+<span class="w">                </span><span class="nt">&lt;xs:sequence&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;response&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/xs:element&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xs:schema&gt;</span>
+<span class="w">        </span><span class="nt">&lt;wsdl:definitions</span>
+<span class="w">            </span><span class="na">targetNamespace=</span><span class="s">&quot;http://xmlns.example.com/20160323153822PLT&quot;</span>
+<span class="w">            </span><span class="na">xmlns:extns1=</span><span class="s">&quot;http://tns.tibco.com/bw/REST&quot;</span>
+<span class="w">            </span><span class="na">xmlns:plnk=</span><span class="s">&quot;http://docs.oasis-open.org/wsbpel/2.0/plnktype&quot;</span>
+<span class="w">            </span><span class="na">xmlns:tns=</span><span class="s">&quot;http://xmlns.example.com&quot;</span>
+<span class="w">            </span><span class="na">xmlns:wsdl=</span><span class="s">&quot;http://schemas.xmlsoap.org/wsdl/&quot;</span><span class="w"> </span><span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;plnk:partnerLinkType</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;partnerLinkType&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;plnk:role</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;use&quot;</span><span class="w"> </span><span class="na">portType=</span><span class="s">&quot;tns:helloworld&quot;</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/plnk:partnerLinkType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;wsdl:message</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;getRequest&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;wsdl:part</span><span class="w"> </span><span class="na">element=</span><span class="s">&quot;extns1:httpHeaders&quot;</span>
+<span class="w">                    </span><span class="na">name=</span><span class="s">&quot;httpHeaders&quot;</span><span class="w"> </span><span class="na">tibex:source=</span><span class="s">&quot;bw.rest&quot;</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/wsdl:message&gt;</span>
+<span class="w">            </span><span class="nt">&lt;wsdl:message</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;getResponse&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;wsdl:part</span><span class="w"> </span><span class="na">element=</span><span class="s">&quot;extns:helloworld&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;item&quot;</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/wsdl:message&gt;</span>
+<span class="w">            </span><span class="nt">&lt;wsdl:message</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;get4XXFaultMessage&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;wsdl:part</span><span class="w"> </span><span class="na">element=</span><span class="s">&quot;extns1:client4XXError&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;clientError&quot;</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/wsdl:message&gt;</span>
+<span class="w">            </span><span class="nt">&lt;wsdl:message</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;get5XXFaultMessage&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;wsdl:part</span><span class="w"> </span><span class="na">element=</span><span class="s">&quot;extns1:server5XXError&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;serverError&quot;</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/wsdl:message&gt;</span>
+<span class="w">            </span><span class="nt">&lt;wsdl:portType</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;helloworld&quot;</span>
+<span class="w">                </span><span class="na">tibex:bw.rest.apipath=</span><span class="s">&quot;/helloworld&quot;</span>
+<span class="w">                </span><span class="na">tibex:bw.rest.basepath=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;wsdl:documentation&gt;</span>Summary<span class="w"> </span>about<span class="w"> </span>the<span class="w"> </span>new<span class="w"> </span>REST<span class="w"> </span>service.<span class="nt">&lt;/wsdl:documentation&gt;</span>
+<span class="w">                </span><span class="nt">&lt;wsdl:operation</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;get&quot;</span><span class="nt">&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;wsdl:documentation/&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;wsdl:input</span><span class="w"> </span><span class="na">message=</span><span class="s">&quot;tns:getRequest&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;getInput&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;wsdl:output</span><span class="w"> </span><span class="na">message=</span><span class="s">&quot;tns:getResponse&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;getOutput&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;wsdl:fault</span><span class="w"> </span><span class="na">message=</span><span class="s">&quot;tns:get4XXFaultMessage&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;clientFault&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;wsdl:fault</span><span class="w"> </span><span class="na">message=</span><span class="s">&quot;tns:get5XXFaultMessage&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;serverFault&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/wsdl:operation&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/wsdl:portType&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/wsdl:definitions&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/tibex:Types&gt;</span>
+<span class="w">    </span><span class="nt">&lt;bpws:import</span><span class="w"> </span><span class="na">importType=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="w"> </span><span class="na">namespace=</span><span class="s">&quot;http://www.tibco.com/namespaces/tnt/plugins/http&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;bpws:partnerLinks&gt;</span>
+<span class="w">        </span><span class="nt">&lt;bpws:partnerLink</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;HttpReceiver&quot;</span><span class="w"> </span><span class="na">partnerLinkType=</span><span class="s">&quot;tns:HttpReceiver&quot;</span><span class="w"> </span><span class="na">myRole=</span><span class="s">&quot;use&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;bpws:partnerLink</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;helloworld&quot;</span><span class="w"> </span><span class="na">partnerLinkType=</span><span class="s">&quot;tns:helloworld&quot;</span><span class="w"> </span><span class="na">myRole=</span><span class="s">&quot;use&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/bpws:partnerLinks&gt;</span>
+<span class="w">    </span><span class="nt">&lt;bpws:variables&gt;</span>
+<span class="w">        </span><span class="nt">&lt;bpws:variable</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;get&quot;</span><span class="w"> </span><span class="na">messageType=</span><span class="s">&quot;tns:getRequest&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/bpws:variables&gt;</span>
+<span class="w">    </span><span class="nt">&lt;bpws:scope</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;scope&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;bpws:flow</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;flow&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;bpws:links/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;bpws:pick</span><span class="w"> </span><span class="na">createInstance=</span><span class="s">&quot;yes&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;pick&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;bpws:onMessage</span><span class="w"> </span><span class="na">operation=</span><span class="s">&quot;get&quot;</span>
+<span class="w">                    </span><span class="na">partnerLink=</span><span class="s">&quot;helloworld&quot;</span>
+<span class="w">                    </span><span class="na">portType=</span><span class="s">&quot;ns0:helloworld&quot;</span>
+<span class="w">                    </span><span class="na">variable=</span><span class="s">&quot;get&quot;</span><span class="nt">&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;bpws:scope</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;scope1&quot;</span><span class="nt">&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;bpws:flow</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;flow1&quot;</span><span class="nt">&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;bpws:links/&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;bpws:reply</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;getOut&quot;</span><span class="w"> </span><span class="na">operation=</span><span class="s">&quot;get&quot;</span>
+<span class="w">                                </span><span class="na">partnerLink=</span><span class="s">&quot;helloworld&quot;</span>
+<span class="w">                                </span><span class="na">portType=</span><span class="s">&quot;ns0:helloworld&quot;</span><span class="nt">&gt;</span>
+<span class="w">                                </span><span class="nt">&lt;tibex:inputBinding</span><span class="w"> </span><span class="na">expressionLanguage=</span><span class="s">&quot;urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0&quot;</span><span class="nt">&gt;</span><span class="ni">&amp;lt;</span>?xml<span class="w"> </span>version=&quot;1.0&quot;<span class="w"> </span>encoding=&quot;UTF-8&quot;?<span class="ni">&amp;gt;&amp;lt;</span>xsl:stylesheet<span class="w"> </span>xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;<span class="w"> </span>xmlns:tns=&quot;http://xmlns.example.com&quot;<span class="w"> </span>version=&quot;2.0&quot;<span class="ni">&amp;gt;</span><span class="w">     </span><span class="ni">&amp;lt;</span>xsl:template<span class="w"> </span>name=&quot;getOut-input&quot;<span class="w"> </span>match=&quot;/&quot;<span class="ni">&amp;gt;</span><span class="w">         </span><span class="ni">&amp;lt;</span>helloworld<span class="ni">&amp;gt;</span><span class="w"> </span><span class="ni">&amp;lt;</span>response<span class="ni">&amp;gt;</span><span class="w"> </span>helloworld<span class="w"> </span><span class="ni">&amp;lt;</span>/response<span class="ni">&amp;gt;&amp;lt;</span>/helloworld<span class="ni">&amp;gt;</span><span class="w">     </span><span class="ni">&amp;lt;</span>/xsl:template<span class="ni">&amp;gt;</span><span class="w"> </span><span class="ni">&amp;lt;</span>/xsl:stylesheet<span class="ni">&amp;gt;</span><span class="nt">&lt;/tibex:inputBinding&gt;</span>
+<span class="w">                                </span><span class="nt">&lt;tibex:inputBindings&gt;</span>
+<span class="w">                                    </span><span class="nt">&lt;tibex:partBinding</span>
+<span class="w">                                    </span><span class="na">expression=</span><span class="s">&quot;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;</span>
+<span class="s">&amp;lt;xsl:stylesheet xmlns:xsl=&amp;quot;http://www.w3.org/1999/XSL/Transform&amp;quot; xmlns:tns=&amp;quot;http://xmlns.example.com&amp;quot; version=&amp;quot;2.0&amp;quot;&amp;gt;</span>
+<span class="s">    &amp;lt;xsl:template name=&amp;quot;getOut-input&amp;quot; match=&amp;quot;/&amp;quot;&amp;gt;</span>
+<span class="s">        &amp;lt;response&amp;gt; helloworld &amp;lt;/response&amp;gt;</span>
+<span class="s">    &amp;lt;/xsl:template&amp;gt;</span>
+<span class="s">&amp;lt;/xsl:stylesheet&amp;gt;&quot;</span><span class="w"> </span><span class="na">expressionLanguage=</span><span class="s">&quot;urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                                </span><span class="nt">&lt;/tibex:inputBindings&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;/bpws:reply&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;/bpws:flow&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/bpws:scope&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/bpws:onMessage&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/bpws:pick&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/bpws:flow&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/bpws:scope&gt;</span>
+<span class="nt">&lt;/bpws:process&gt;</span>
+</code></pre></div></li>
+<li>Execute <code>bal migrate-tibco &lt;path to helloworld.bwp&gt; -o converted</code>. This will create the <code>converted</code> directory and create a Ballerina package inside it.</li>
 </ol>
-<h3 id="step-4-review-the-migration-summary">Step 4: Review the migration summary<a class="headerlink" href="#step-4-review-the-migration-summary" title="Permanent link">&para;</a></h3>
-<p>The tool displays the migration progress in command line in two stages:</p>
+<h3 id="step-3">Step 3<a class="headerlink" href="#step-3" title="Permanent link">&para;</a></h3>
 <ol>
-<li><strong>DataWeave Conversion Percentage</strong> – Indicates the conversion success rate of all DataWeave scripts.</li>
-<li><strong>Overall Project Conversion Percentage</strong> – Represents the combined conversion rate based on both component-level 
-   and DataWeave conversions.</li>
+<li>Open VS Code inside the <code>converted</code> directory
+    <div class="highlight"><pre><span></span><code>$<span class="w"> </span>code<span class="w"> </span>./test
+</code></pre></div></li>
+<li>Click the Ballerina Integrator icon on the left side bar to open the Ballerina package in Ballerina Integrator.</li>
 </ol>
-<p>A detailed report is generated as <code>migration_summary.html</code> in the root of the newly created Ballerina package.</p>
-<h3 id="step-5-address-todo-items">Step 5: Address TODO items<a class="headerlink" href="#step-5-address-todo-items" title="Permanent link">&para;</a></h3>
-<p>During conversion, if there are any unsupported Mule XML tags, they are included in the generated Ballerina code as 
-TODO comments. You may need to do the conversion for them manually.</p>
-<div class="highlight"><pre><span></span><code>public function endpoint(Context ctx) returns http:Response|error {
+<h2 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h2>
+<h3 id="migration-summary">Migration summary<a class="headerlink" href="#migration-summary" title="Permanent link">&para;</a></h3>
+<ul>
+<li>When you run the tool, it will log the number of activities it detected for each process along with the number of activities it failed to convert, if any.</li>
+</ul>
+<h3 id="unhandled-activities">Unhandled activities<a class="headerlink" href="#unhandled-activities" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>If the tool encounters any activity which it does not know how to convert it will generate a placeholder "unhandled" function with a comment containing the relevant part of the <code>bwp</code> file.</p>
+<div class="highlight"><pre><span></span><code>function unhandled(map&lt;xml&gt; context) returns xml|error {
+    //FIXME: [ParseError] : Unknown activity
+    //&lt;bpws:empty name=&quot;OnMessageStart&quot; xmlns:tibex=&quot;http://www.tibco.com/bpel/2007/extensions&quot; tibex:constructor=&quot;onMessageStart&quot; tibex:xpdlId=&quot;c266c167-7a80-40cc-9db2-60739386deeb&quot; xmlns:bpws=&quot;http://docs.oasis-open.org/wsbpel/2.0/process/executable&quot;/&gt;
 
-    // TODO: UNSUPPORTED MULE BLOCK ENCOUNTERED. MANUAL CONVERSION REQUIRED.
-    // ------------------------------------------------------------------------
-    // &lt;db:select-unsupported config-ref=&quot;MySQL_Configuration&quot; xmlns:doc=&quot;http://www.mulesoft.org/schema/mule/documentation&quot; doc:name=&quot;Database&quot; xmlns:db=&quot;http://www.mulesoft.org/schema/mule/db&quot;&gt;
-    //             &lt;db:parameterized-query&gt;&lt;![CDATA[SELECT * from users;]]&gt;&lt;/db:parameterized-query&gt;
-    //         &lt;/db:select-unsupported&gt;
-    // ------------------------------------------------------------------------
-
-    log:printInfo(string `Users details: ${ctx.payload.toString()}`);
-
-    ctx.inboundProperties.response.setPayload(ctx.payload);
-    return ctx.inboundProperties.response;
+    //&lt;bpws:empty name=&quot;OnMessageStart&quot; xmlns:tibex=&quot;http://www.tibco.com/bpel/2007/extensions&quot; tibex:constructor=&quot;onMessageStart&quot; tibex:xpdlId=&quot;c266c167-7a80-40cc-9db2-60739386deeb&quot; xmlns:bpws=&quot;http://docs.oasis-open.org/wsbpel/2.0/process/executable&quot;/&gt;
+    return xml `&lt;root&gt;&lt;/root&gt;`;
 }
 </code></pre></div>
 
-<h2 id="supported-mulesoft-features">Supported MuleSoft Features<a class="headerlink" href="#supported-mulesoft-features" title="Permanent link">&para;</a></h2>
-<h3 id="mulesoft-components">MuleSoft Components:<a class="headerlink" href="#mulesoft-components" title="Permanent link">&para;</a></h3>
-<p>The migration tool currently supports converting the following MuleSoft components:</p>
-<ul>
-<li>Async</li>
-<li>Catch Exception Strategy</li>
-<li>Choice</li>
-<li>Choice Exception Strategy</li>
-<li>Database Connector</li>
-<li>Expression Component</li>
-<li>Flow</li>
-<li>Http Listener</li>
-<li>Http Request</li>
-<li>Logger</li>
-<li>Message Enricher</li>
-<li>Object To Json</li>
-<li>Object To String</li>
-<li>Reference Exception Strategy</li>
-<li>Session Variable</li>
-<li>Set Payload</li>
-<li>Sub Flow</li>
-<li>Transform Message</li>
-<li>Variable</li>
-<li>Vm Connector</li>
+</li>
 </ul>
-<h3 id="dataweave-expressions">DataWeave Expressions:<a class="headerlink" href="#dataweave-expressions" title="Permanent link">&para;</a></h3>
-<p>The migration tool currently supports the following DataWeave expressions:</p>
+<h3 id="supported-tibco-businessworks-activities">Supported TIBCO BusinessWorks activities<a class="headerlink" href="#supported-tibco-businessworks-activities" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Concat Array Expression</li>
-<li>Concat Object Expression</li>
-<li>Concat String Expression</li>
-<li>Date Type Expression</li>
-<li>Filter Value Identifier Expression</li>
-<li>Lower Expression</li>
-<li>Map Combination Expression</li>
-<li>Map Index Identifier Expression</li>
-<li>Map Index Identifier Only Expression</li>
-<li>Map Value Identifier Expression</li>
-<li>Map With Parameters Expression</li>
-<li>Replace With Expression</li>
-<li>Single Selector Expression</li>
-<li>Sizeof Expression</li>
-<li>String Return Expression</li>
-<li>Type Coercion Date To Number Expression</li>
-<li>Type Coercion Format Expression</li>
-<li>Type Coercion Number Expression</li>
-<li>Type Coercion String Expression</li>
-<li>Type Coercion To Date Expression</li>
-<li>Upper Expression</li>
-<li>When Otherwise Expression</li>
-<li>When Otherwise Nested Expression</li>
+<li><code>invoke</code></li>
+<li><code>pick</code></li>
+<li><code>empty</code></li>
+<li><code>reply</code></li>
+<li><code>throw</code></li>
+<li><code>assign</code></li>
+<li><code>forEach</code></li>
+<li><code>extensionActivity</code></li>
+<li><code>receiveEvent</code></li>
+<li><code>activityExtension</code><ul>
+<li><code>bw.internal.end</code></li>
+<li><code>bw.http.sendHTTPRequest</code></li>
+<li><code>bw.restjson.JsonRender</code></li>
+<li><code>bw.restjson.JsonParser</code></li>
+<li><code>bw.http.sendHTTPResponse</code></li>
+<li><code>bw.file.write</code></li>
+<li><code>bw.generalactivities.log</code></li>
+<li><code>bw.xml.renderxml</code></li>
+<li><code>bw.generalactivities.mapper</code></li>
+<li><code>bw.internal.accumulateend</code></li>
 </ul>
-<h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Currently supports Mule <strong>3.x only</strong>. Support for Mule <strong>4.x</strong> is planned for future releases.</li>
-<li>Some moderate to advanced MuleSoft features may require manual adjustments after migration.</li>
+</li>
+<li><code>extActivity</code></li>
 </ul>
 
 
@@ -1540,7 +1600,7 @@ TODO comments. You may need to do the conversion for them manually.</p>
   <nav class="md-footer__inner md-grid" aria-label="Footer" >
     
     
-    <a href="../enterprise-integrations-patterns/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Enterprise Integration patterns" rel="prev">
+    <a href="../mulesoft-migration-tool/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Mulesoft migration tool" rel="prev">
       <div class="md-footer__button md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </div>
@@ -1549,20 +1609,20 @@ TODO comments. You may need to do the conversion for them manually.</p>
                 <span class="md-footer__direction">
                   Previous
                 </span>
-          Enterprise Integration patterns
+          Mulesoft migration tool
         </div>
       </div>
     </a>
     
     
     
-    <a href="../tibco-businessworks-migration-tool/" class="md-footer__link md-footer__link--next" aria-label="Next: TIBCO BusinessWorks Migration Tool" rel="next">
+    <a href="../../develop/create-a-project/" class="md-footer__link md-footer__link--next" aria-label="Next: Creat a project" rel="next">
       <div class="md-footer__title">
         <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Next
                 </span>
-          TIBCO BusinessWorks Migration Tool
+          Creat a project
         </div>
       </div>
       <div class="md-footer__button md-icon">

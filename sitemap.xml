@@ -91,6 +91,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://bi.docs.wso2.com/learn/tibco-businessworks-migration-tool/</loc>
+         <lastmod>2025-05-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://bi.docs.wso2.com/learn/ai-agent/</loc>
          <lastmod>2025-05-06</lastmod>
          <changefreq>daily</changefreq>
