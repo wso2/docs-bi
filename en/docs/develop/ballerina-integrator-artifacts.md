@@ -1,8 +1,8 @@
-# Ballerina Integrator Artifcats
+# Ballerina Integrator Artifacts
 
 Ballerina Integrator supports a range of artifact types that enable developers to build powerful, event-driven, API-based, and file-based integration solutions. Each artifact type defines how an integration is triggered and how it behaves in various runtime environments.
 
-<a href="{{base_path}}/assets/img/ballerina-integrator-artifacts/bi-artifacts.png"><img src="{{base_path}}/assets/img/ballerina-integrator-artifacts/bi-artifacts.png" alt="Artifcats" width="70%"></a>
+<a href="{{base_path}}/assets/img/ballerina-integrator-artifacts/bi-artifacts.png"><img src="{{base_path}}/assets/img/ballerina-integrator-artifacts/bi-artifacts.png" alt="Artifacts" width="70%"></a>
 
 Below is an overview of the available artifact types in the Ballerina Integrator.
 

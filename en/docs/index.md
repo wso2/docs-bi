@@ -27,14 +27,6 @@
         ]
     },
     {
-        "title": "Develop",
-        "icon": "🔧",
-        "links": [
-            {"name": "Create a Project", "url": "develop/create-a-project"},
-            {"name": "AI-assisted Development", "url": "develop/ai-assisted-development/overview/"}
-        ]
-    },
-    {
         "title": "Community & Support",
         "icon": "❓",
         "links": [
@@ -50,16 +42,17 @@
         "icon": "📚",
         "links": [
             {"name": "Build AI Agent to Handle Mathematical Queries", "url": "learn/ai-agent/build-ai-agent-to-handle-mathematical-queries/"},
-            {"name": "Build HTTP Service With WSO2 Copilot", "url": "develop/ai-assisted-development/build-an-http-service-with-wso2-copilot/"}
+            {"name": "Build HTTP Service With WSO2 Copilot", "url": "develop/ai-assisted-development/build-an-http-service-with-wso2-copilot/"},
+            {"name": "Message transformation", "url": "learn/samples/message-transformation/"},
+            {"name": "Message routing", "url": "learn/samples/message-routing/"},
+            {"name": "Service orchestration", "url": "learn/samples/service-orchestration"}
         ]
     },
     {
         "title": "Samples",
         "icon": "📖",
         "links": [
-            {"name": "Message transformation", "url": "learn/samples/message-transformation/"},
-            {"name": "Message routing", "url": "learn/samples/message-routing/"},
-            {"name": "Service orchestration", "url": "learn/samples/service-orchestration"}
+            {"name": "Enterprise Integration Patterns", "url": "learn/enterprise-integrations-patterns/"}
         ]
     }
     ]
