@@ -81,10 +81,10 @@ nav:
       - Install Ballerina Integrator: install-and-setup/install-ballerina-integrator.md
       - Install Integration Control Plane: install-and-setup/install-integration-control-plane.md
   - Learn:
-      #- Automation: 
+      #- Automation:
       #  - learn/automation/index.md
       #  - Build your first automation: learn/automation/build-your-first-automation.md
-      - AI agent: 
+      - AI agent:
       #  - learn/ai-agent/index.md
         - Build AI Agent to Handle Mathematical Queries: learn/ai-agent/build-ai-agent-to-handle-mathematical-queries.md
       #- Integration As API:
@@ -103,10 +103,11 @@ nav:
         - Message routing: learn/samples/message-routing.md
         - Service orchestration: learn/samples/service-orchestration.md
       - Enterprise Integration patterns: learn/enterprise-integrations-patterns.md
+      - Mulesoft migration tool: learn/mulesoft-migration-tool.md
   - Develop:
       - Creat a project: develop/create-a-project.md
       - Ballerina Integrator Artifacts: develop/ballerina-integrator-artifacts.md
-      - AI assisted integration: 
+      - AI assisted integration:
       #  - develop/ai-assisted-development/index.md
         - Build an HTTP service with WSO2 Copilot : develop/ai-assisted-development/build-an-http-service-with-wso2-copilot.md
       #- Test the integration: develop/test-the-integrations.md
