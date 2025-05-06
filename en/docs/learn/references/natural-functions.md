@@ -1,7 +1,7 @@
 # Natural Functions
 
 In this tutorial, you will learn how to use Natural Functions in Ballerina Integrator, which allow the function to contain instructions in natural language. 
-Such a function is evaluated at runtime with a call to a Large language Model(LLM). The example uses a Natural Function to analyze blog content to suggest a category and rate it based on predefined criteria.
+Such a function is evaluated at runtime with a call to a Large Language Model(LLM). The example uses a Natural Function to analyze blog content to suggest a category and rate it based on predefined criteria.
 
 ???+ tip "Natural Programming"
     To learn more about Ballerina Natural Programming library module, see [Natural Programming](https://central.ballerina.io/ballerina/np/latest).
