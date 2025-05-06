@@ -197,3 +197,4 @@ extra:
   # site_version: Uncomment to specify a version
   base_path: https://wso2.github.io/docs-bi
   # base_path: http://localhost:8000
+  
