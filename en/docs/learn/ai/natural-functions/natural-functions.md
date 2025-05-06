@@ -20,7 +20,7 @@ Follow the steps below to implement the integration.
 ### Step 2: Define Types
 1. Click on the **`Add Artifacts`** button and select **`Type`** in the **`Other Artifacts`** section.
 2. Click on **`+ Add Type`** to add a new type.
-3. Add the **`Record Name`** as `Blog`. Then click on the **`JSON`** button and paste the following JSON payload. Select **`Is Closed`** and click on the **`Import`** button. Then click the **`Save`** button.
+3. Use `Blog` as the **`Record Name`**. Then click on the **`JSON`** button and paste the following JSON payload. Select **`Is Closed`** and click on the **`Import`** button. Then click the **`Save`** button.
     ```json
     {
         "title": "Tips for Growing a Beautiful Garden",
@@ -48,7 +48,7 @@ Follow the steps below to implement the integration.
 
 ### Step 4: Add a Natural Function
 1. Click on the **`Add Artifact`** button and select **`Natural Function`** under the **`Other Artifacts`** category.
-2. Add the function name as `reviewBlog`. Then click the **`Add Parameter`** button to add parameter for the Natural Function. Add input parameter as `blog` of type `Blog`, return type of `Review` and click on the **`Create`** button.
+2. Use `reviewBlog` as the function name. Then click the **`Add Parameter`** button to add parameter for the Natural Function. Add input parameter as `blog` of type `Blog`, return type of `Review` and click on the **`Create`** button.
 <a href="{{base_path}}/assets/img/natural-functions/natural-function.png"><img src="{{base_path}}/assets/img/natural-functions/natural-function.png" alt="Natural Function" width="70%"></a>
 3. Click on the **`Edit`** button to add the function logic.
 4. Add the following prompt to the function and click on the **`Save`** button.
