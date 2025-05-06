@@ -104,7 +104,7 @@ nav:
         - Service orchestration: learn/samples/service-orchestration.md
       - Enterprise Integration patterns: learn/enterprise-integrations-patterns.md
       - Mulesoft migration tool: learn/mulesoft-migration-tool.md
-      - TIBCO BusinessWorks Migration Tool: learn/tibco-migration-assistant.md
+      - TIBCO BusinessWorks Migration Tool: learn/tibco-businessworks-migration-tool.md
   - Develop:
       - Creat a project: develop/create-a-project.md
       - Ballerina Integrator Artifacts: develop/ballerina-integrator-artifacts.md
