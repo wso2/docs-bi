@@ -12,7 +12,7 @@ To get started, you’ll need to configure Google API credentials:
 
 ##  Create the agent
 
-Before adding tools, make sure you’ve set up your agent by completing steps 1 to 5 in the [AI agent introduction](/learn/ai-agent/ai-agent-introduction/) guide. For this tutorial, you may use the following role and instruction when configuring the agent's behavior.
+Before adding tools, make sure you’ve set up your agent by completing steps 1 to 5 in the [AI agent introduction](/learn/ai/agent/chat-agent-introduction/) guide. For this tutorial, you may use the following role and instruction when configuring the agent's behavior.
 
 **Role**
 ``` md

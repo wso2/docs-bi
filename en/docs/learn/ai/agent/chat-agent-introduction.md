@@ -1,4 +1,4 @@
-# Introduction to AI agents
+# Introduction to chat agents
 
 In this tutorial, you'll create an AI-powered math tutor assistant capable of handling a variety of mathematical queries. The agent will be equipped with tools to perform fundamental arithmetic operations and intelligently combine and execute these tools to address user questions. By the end of this tutorial, you'll have built an interactive math assistant that can help users solve problems and provide clear, step-by-step explanations.
 
@@ -66,7 +66,7 @@ In this tutorial, you'll create an AI-powered math tutor assistant capable of ha
 
 ### Step 6: Add tools to the agent
 
-Ballerina Integrator (BI) allows you to create tools using existing functions. It also supports automatically generating [tools from connector actions](/learn/ai-agent/ai-agent-with-connector-tools/) or OpenAPI specifications by leveraging BI’s capability to generate local connectors from an OpenAPI spec.
+Ballerina Integrator (BI) allows you to create tools using existing functions. It also supports automatically generating [tools from connector actions](/learn/ai/agent/agent-with-connector-tools) or OpenAPI specifications by leveraging BI’s capability to generate local connectors from an OpenAPI spec.
 
 However, in this tutorial, we will create simple functions to perform arithmetic operations and use them as tools.
 

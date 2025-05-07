@@ -81,14 +81,15 @@ nav:
       - Install Ballerina Integrator: install-and-setup/install-ballerina-integrator.md
       - Install Integration Control Plane: install-and-setup/install-integration-control-plane.md
   - Learn:
+      - AI:
+        - Natural functions: learn/ai/natural-functions/natural-functions.md
+        - Agent:
+          - Introduction to chat agents: learn/ai/agent/chat-agent-introduction.md
+          # - Introduction to inline agents: learn/ai/agent/inlne-agent-introduction.md
+          - Integrating chat agent with external endpoints using connectors: learn/ai/agent/agent-with-connector-tools.md
       #- Automation:
       #  - learn/automation/index.md
       #  - Build your first automation: learn/automation/build-your-first-automation.md
-      - AI agent:
-      #  - learn/ai-agent/index.md
-        - Introduction to AI agents: learn/ai-agent/ai-agent-introduction.md
-        - Integrating chat agent with external endpoints:
-            - Using connectors: learn/ai-agent/ai-agent-with-connector-tools.md
       #- Integration As API:
       #  - Build your first integration as API: learn/integration-as-api/http-service.md
       #- Event Integration:
@@ -99,7 +100,6 @@ nav:
       - References:
       #  - Configure the integration: learn/references/configure-the-integration.md
         - Data mapping: learn/references/data-mapping.md
-      #  - Natural functions: learn/natural-functions.md
       - Samples:
         - Message transformation: learn/samples/message-transformation.md
         - Message routing: learn/samples/message-routing.md
