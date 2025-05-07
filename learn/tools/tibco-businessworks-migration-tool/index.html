@@ -1430,7 +1430,7 @@
 <p>This guide explains how to use the <a href="https://central.ballerina.io/wso2/tool_migrate_tibco/latest">migrate-tibco</a> tool to convert
 <a href="https://docs.tibco.com/products/tibco-activematrix-businessworks">TIBCO BusinessWorks</a> integrations into Ballerina packages compatible with the <a href="https://wso2.com/integrator/ballerina-integrator">WSO2 Ballerina Integrator</a>.</p>
 <h2 id="tool-overview">Tool Overview<a class="headerlink" href="#tool-overview" title="Permanent link">&para;</a></h2>
-<p>The tool accepts either a BusinessWorks project directory or a standalone <code>bwp</code> file as input and generates an equivalent Ballerina package that can be opened in the WSO2 Ballerina Integrator.</p>
+<p>The tool accepts either a BusinessWorks project directory or a standalone process file as input and generates an equivalent Ballerina package that can be opened in the WSO2 Ballerina Integrator.</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <p>Execute the command below to pull the <code>migrate-tibco</code> tool from Ballerina Central
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>bal<span class="w"> </span>tool<span class="w"> </span>pull<span class="w"> </span>migrate-tibco
@@ -1442,7 +1442,7 @@
 
 <h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>source-project-directory-or-file</strong> - Required. The TIBCO BusinessWorks project directory or <code>bwp</code> file needs to be migrated.</li>
+<li><strong>source-project-directory-or-file</strong> - Required. The TIBCO BusinessWorks project directory or process file needs to be migrated.</li>
 <li><strong>-o or --out</strong> - <em>Optional</em>. The directory where the new Ballerina package will be created. If the directory does not exist, the tool will create it for you. If not provided,</li>
 <li>If source-project-directory-or-file is a directory it will create new directory named <code>${source-project-directory-or-file}_converted</code> in the root of source-project-directory-or-file.</li>
 <li>if source-project-directory-or-file is a file, it will create a new directory named <code>${root}_converted</code> in the parent of the root directory where root is the directory containing the given file.</li>
@@ -1459,109 +1459,71 @@
 </ol>
 <h3 id="step-2">Step 2<a class="headerlink" href="#step-2" title="Permanent link">&para;</a></h3>
 <ol>
-<li>
-<p>Create the following <code>helloworld.bwp</code> file.</p>
-<p><div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
-<span class="nt">&lt;bpws:process</span><span class="w"> </span><span class="na">xmlns:bpws=</span><span class="s">&quot;http://docs.oasis-open.org/wsbpel/2.0/process/executable&quot;</span>
-<span class="w">    </span><span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span>
-<span class="w">    </span><span class="na">xmlns:tibex=</span><span class="s">&quot;http://www.tibco.com/bpel/2007/extensions&quot;</span>
-<span class="w">    </span><span class="na">xmlns:ns=</span><span class="s">&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot;</span>
-<span class="w">    </span><span class="na">xmlns:soapenv=</span><span class="s">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</span>
-<span class="w">    </span><span class="na">xmlns:tibprop=</span><span class="s">&quot;http://ns.tibco.com/bw/property&quot;</span>
-<span class="w">    </span><span class="na">xmlns:http=</span><span class="s">&quot;http://www.tibco.com/namespaces/tnt/plugins/http&quot;</span>
-<span class="w">    </span><span class="na">name=</span><span class="s">&quot;HelloWorldProcess&quot;</span>
-<span class="w">    </span><span class="na">targetNamespace=</span><span class="s">&quot;http://example.org/HelloWorld&quot;</span>
-<span class="w">    </span><span class="na">suppressJoinFailure=</span><span class="s">&quot;yes&quot;</span>
-<span class="w">    </span><span class="na">xmlns:tns=</span><span class="s">&quot;http://example.org/HelloWorld&quot;</span><span class="nt">&gt;</span>
-<span class="w">    </span><span class="nt">&lt;tibex:Types&gt;</span>
-<span class="w">        </span><span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">xmlns:tns=</span><span class="s">&quot;http://xmlns.example.com&quot;</span><span class="w"> </span><span class="na">attributeFormDefault=</span><span class="s">&quot;unqualified&quot;</span><span class="w"> </span><span class="na">elementFormDefault=</span><span class="s">&quot;qualified&quot;</span><span class="w"> </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;helloworld&quot;</span><span class="nt">&gt;</span>
-<span class="w">                </span><span class="nt">&lt;xs:complexType&gt;</span>
-<span class="w">                </span><span class="nt">&lt;xs:sequence&gt;</span>
-<span class="w">                    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;response&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;/xs:sequence&gt;</span>
-<span class="w">                </span><span class="nt">&lt;/xs:complexType&gt;</span>
-<span class="w">            </span><span class="nt">&lt;/xs:element&gt;</span>
-<span class="w">        </span><span class="nt">&lt;/xs:schema&gt;</span>
-<span class="w">        </span><span class="nt">&lt;wsdl:definitions</span>
-<span class="w">            </span><span class="na">targetNamespace=</span><span class="s">&quot;http://xmlns.example.com/20160323153822PLT&quot;</span>
-<span class="w">            </span><span class="na">xmlns:extns1=</span><span class="s">&quot;http://tns.tibco.com/bw/REST&quot;</span>
-<span class="w">            </span><span class="na">xmlns:plnk=</span><span class="s">&quot;http://docs.oasis-open.org/wsbpel/2.0/plnktype&quot;</span>
-<span class="w">            </span><span class="na">xmlns:tns=</span><span class="s">&quot;http://xmlns.example.com&quot;</span>
-<span class="w">            </span><span class="na">xmlns:wsdl=</span><span class="s">&quot;http://schemas.xmlsoap.org/wsdl/&quot;</span><span class="w"> </span><span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nt">&lt;plnk:partnerLinkType</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;partnerLinkType&quot;</span><span class="nt">&gt;</span>
-<span class="w">                </span><span class="nt">&lt;plnk:role</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;use&quot;</span><span class="w"> </span><span class="na">portType=</span><span class="s">&quot;tns:helloworld&quot;</span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;/plnk:partnerLinkType&gt;</span>
-<span class="w">            </span><span class="nt">&lt;wsdl:message</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;getRequest&quot;</span><span class="nt">&gt;</span>
-<span class="w">                </span><span class="nt">&lt;wsdl:part</span><span class="w"> </span><span class="na">element=</span><span class="s">&quot;extns1:httpHeaders&quot;</span>
-<span class="w">                    </span><span class="na">name=</span><span class="s">&quot;httpHeaders&quot;</span><span class="w"> </span><span class="na">tibex:source=</span><span class="s">&quot;bw.rest&quot;</span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;/wsdl:message&gt;</span>
-<span class="w">            </span><span class="nt">&lt;wsdl:message</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;getResponse&quot;</span><span class="nt">&gt;</span>
-<span class="w">                </span><span class="nt">&lt;wsdl:part</span><span class="w"> </span><span class="na">element=</span><span class="s">&quot;extns:helloworld&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;item&quot;</span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;/wsdl:message&gt;</span>
-<span class="w">            </span><span class="nt">&lt;wsdl:message</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;get4XXFaultMessage&quot;</span><span class="nt">&gt;</span>
-<span class="w">                </span><span class="nt">&lt;wsdl:part</span><span class="w"> </span><span class="na">element=</span><span class="s">&quot;extns1:client4XXError&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;clientError&quot;</span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;/wsdl:message&gt;</span>
-<span class="w">            </span><span class="nt">&lt;wsdl:message</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;get5XXFaultMessage&quot;</span><span class="nt">&gt;</span>
-<span class="w">                </span><span class="nt">&lt;wsdl:part</span><span class="w"> </span><span class="na">element=</span><span class="s">&quot;extns1:server5XXError&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;serverError&quot;</span><span class="nt">/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;/wsdl:message&gt;</span>
-<span class="w">            </span><span class="nt">&lt;wsdl:portType</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;helloworld&quot;</span>
-<span class="w">                </span><span class="na">tibex:bw.rest.apipath=</span><span class="s">&quot;/helloworld&quot;</span>
-<span class="w">                </span><span class="na">tibex:bw.rest.basepath=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
-<span class="w">                </span><span class="nt">&lt;wsdl:documentation&gt;</span>Summary<span class="w"> </span>about<span class="w"> </span>the<span class="w"> </span>new<span class="w"> </span>REST<span class="w"> </span>service.<span class="nt">&lt;/wsdl:documentation&gt;</span>
-<span class="w">                </span><span class="nt">&lt;wsdl:operation</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;get&quot;</span><span class="nt">&gt;</span>
-<span class="w">                    </span><span class="nt">&lt;wsdl:documentation/&gt;</span>
-<span class="w">                    </span><span class="nt">&lt;wsdl:input</span><span class="w"> </span><span class="na">message=</span><span class="s">&quot;tns:getRequest&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;getInput&quot;</span><span class="nt">/&gt;</span>
-<span class="w">                    </span><span class="nt">&lt;wsdl:output</span><span class="w"> </span><span class="na">message=</span><span class="s">&quot;tns:getResponse&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;getOutput&quot;</span><span class="nt">/&gt;</span>
-<span class="w">                    </span><span class="nt">&lt;wsdl:fault</span><span class="w"> </span><span class="na">message=</span><span class="s">&quot;tns:get4XXFaultMessage&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;clientFault&quot;</span><span class="nt">/&gt;</span>
-<span class="w">                    </span><span class="nt">&lt;wsdl:fault</span><span class="w"> </span><span class="na">message=</span><span class="s">&quot;tns:get5XXFaultMessage&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;serverFault&quot;</span><span class="nt">/&gt;</span>
-<span class="w">                </span><span class="nt">&lt;/wsdl:operation&gt;</span>
-<span class="w">            </span><span class="nt">&lt;/wsdl:portType&gt;</span>
-<span class="w">        </span><span class="nt">&lt;/wsdl:definitions&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/tibex:Types&gt;</span>
-<span class="w">    </span><span class="nt">&lt;bpws:import</span><span class="w"> </span><span class="na">importType=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="w"> </span><span class="na">namespace=</span><span class="s">&quot;http://www.tibco.com/namespaces/tnt/plugins/http&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;bpws:partnerLinks&gt;</span>
-<span class="w">        </span><span class="nt">&lt;bpws:partnerLink</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;HttpReceiver&quot;</span><span class="w"> </span><span class="na">partnerLinkType=</span><span class="s">&quot;tns:HttpReceiver&quot;</span><span class="w"> </span><span class="na">myRole=</span><span class="s">&quot;use&quot;</span><span class="nt">/&gt;</span>
-<span class="w">        </span><span class="nt">&lt;bpws:partnerLink</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;helloworld&quot;</span><span class="w"> </span><span class="na">partnerLinkType=</span><span class="s">&quot;tns:helloworld&quot;</span><span class="w"> </span><span class="na">myRole=</span><span class="s">&quot;use&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/bpws:partnerLinks&gt;</span>
-<span class="w">    </span><span class="nt">&lt;bpws:variables&gt;</span>
-<span class="w">        </span><span class="nt">&lt;bpws:variable</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;get&quot;</span><span class="w"> </span><span class="na">messageType=</span><span class="s">&quot;tns:getRequest&quot;</span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/bpws:variables&gt;</span>
-<span class="w">    </span><span class="nt">&lt;bpws:scope</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;scope&quot;</span><span class="nt">&gt;</span>
-<span class="w">        </span><span class="nt">&lt;bpws:flow</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;flow&quot;</span><span class="nt">&gt;</span>
-<span class="w">            </span><span class="nt">&lt;bpws:links/&gt;</span>
-<span class="w">            </span><span class="nt">&lt;bpws:pick</span><span class="w"> </span><span class="na">createInstance=</span><span class="s">&quot;yes&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;pick&quot;</span><span class="nt">&gt;</span>
-<span class="w">                </span><span class="nt">&lt;bpws:onMessage</span><span class="w"> </span><span class="na">operation=</span><span class="s">&quot;get&quot;</span>
-<span class="w">                    </span><span class="na">partnerLink=</span><span class="s">&quot;helloworld&quot;</span>
-<span class="w">                    </span><span class="na">portType=</span><span class="s">&quot;ns0:helloworld&quot;</span>
-<span class="w">                    </span><span class="na">variable=</span><span class="s">&quot;get&quot;</span><span class="nt">&gt;</span>
-<span class="w">                    </span><span class="nt">&lt;bpws:scope</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;scope1&quot;</span><span class="nt">&gt;</span>
-<span class="w">                        </span><span class="nt">&lt;bpws:flow</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;flow1&quot;</span><span class="nt">&gt;</span>
-<span class="w">                            </span><span class="nt">&lt;bpws:links/&gt;</span>
-<span class="w">                            </span><span class="nt">&lt;bpws:reply</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;getOut&quot;</span><span class="w"> </span><span class="na">operation=</span><span class="s">&quot;get&quot;</span>
-<span class="w">                                </span><span class="na">partnerLink=</span><span class="s">&quot;helloworld&quot;</span>
-<span class="w">                                </span><span class="na">portType=</span><span class="s">&quot;ns0:helloworld&quot;</span><span class="nt">&gt;</span>
-<span class="w">                                </span><span class="nt">&lt;tibex:inputBinding</span><span class="w"> </span><span class="na">expressionLanguage=</span><span class="s">&quot;urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0&quot;</span><span class="nt">&gt;</span><span class="ni">&amp;lt;</span>?xml<span class="w"> </span>version=&quot;1.0&quot;<span class="w"> </span>encoding=&quot;UTF-8&quot;?<span class="ni">&amp;gt;&amp;lt;</span>xsl:stylesheet<span class="w"> </span>xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;<span class="w"> </span>xmlns:tns=&quot;http://xmlns.example.com&quot;<span class="w"> </span>version=&quot;2.0&quot;<span class="ni">&amp;gt;</span><span class="w">     </span><span class="ni">&amp;lt;</span>xsl:template<span class="w"> </span>name=&quot;getOut-input&quot;<span class="w"> </span>match=&quot;/&quot;<span class="ni">&amp;gt;</span><span class="w">         </span><span class="ni">&amp;lt;</span>helloworld<span class="ni">&amp;gt;</span><span class="w"> </span><span class="ni">&amp;lt;</span>response<span class="ni">&amp;gt;</span><span class="w"> </span>helloworld<span class="w"> </span><span class="ni">&amp;lt;</span>/response<span class="ni">&amp;gt;&amp;lt;</span>/helloworld<span class="ni">&amp;gt;</span><span class="w">     </span><span class="ni">&amp;lt;</span>/xsl:template<span class="ni">&amp;gt;</span><span class="w"> </span><span class="ni">&amp;lt;</span>/xsl:stylesheet<span class="ni">&amp;gt;</span><span class="nt">&lt;/tibex:inputBinding&gt;</span>
-<span class="w">                                </span><span class="nt">&lt;tibex:inputBindings&gt;</span>
-<span class="w">                                    </span><span class="nt">&lt;tibex:partBinding</span>
-<span class="w">                                    </span><span class="na">expression=</span><span class="s">&quot;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;</span>
-<span class="s">&amp;lt;xsl:stylesheet xmlns:xsl=&amp;quot;http://www.w3.org/1999/XSL/Transform&amp;quot; xmlns:tns=&amp;quot;http://xmlns.example.com&amp;quot; version=&amp;quot;2.0&amp;quot;&amp;gt;</span>
-<span class="s">    &amp;lt;xsl:template name=&amp;quot;getOut-input&amp;quot; match=&amp;quot;/&amp;quot;&amp;gt;</span>
-<span class="s">        &amp;lt;response&amp;gt; helloworld &amp;lt;/response&amp;gt;</span>
-<span class="s">    &amp;lt;/xsl:template&amp;gt;</span>
-<span class="s">&amp;lt;/xsl:stylesheet&amp;gt;&quot;</span><span class="w"> </span><span class="na">expressionLanguage=</span><span class="s">&quot;urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0&quot;</span><span class="nt">/&gt;</span>
-<span class="w">                                </span><span class="nt">&lt;/tibex:inputBindings&gt;</span>
-<span class="w">                            </span><span class="nt">&lt;/bpws:reply&gt;</span>
-<span class="w">                        </span><span class="nt">&lt;/bpws:flow&gt;</span>
-<span class="w">                    </span><span class="nt">&lt;/bpws:scope&gt;</span>
-<span class="w">                </span><span class="nt">&lt;/bpws:onMessage&gt;</span>
-<span class="w">            </span><span class="nt">&lt;/bpws:pick&gt;</span>
-<span class="w">        </span><span class="nt">&lt;/bpws:flow&gt;</span>
-<span class="w">    </span><span class="nt">&lt;/bpws:scope&gt;</span>
-<span class="nt">&lt;/bpws:process&gt;</span>
-</code></pre></div>
-2. Execute the <code>bal migrate-tibco &lt;path to helloworld.bwp&gt; -o converted</code> command. This will create the <code>converted</code> directory and create a Ballerina package inside it.</p>
+<li>Create new directory named <code>tibco-hello-world</code> with following two files.</li>
+<li><code>helloworld.process</code>
+        <div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;pd:ProcessDefinition</span><span class="w"> </span><span class="na">xmlns:pd=</span><span class="s">&quot;http://xmlns.tibco.com/bw/process/2003&quot;</span><span class="w"> </span><span class="na">xmlns:xsl=</span><span class="s">&quot;http://www.w3.org/1999/XSL/Transform&quot;</span><span class="w"> </span><span class="na">xmlns:ns=</span><span class="s">&quot;http://www.tibco.com/pe/EngineTypes&quot;</span><span class="w"> </span><span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;pd:name&gt;</span>Processes/simpleResponse<span class="nt">&lt;/pd:name&gt;</span>
+<span class="w">    </span><span class="nt">&lt;pd:startName&gt;</span>HTTP<span class="w"> </span>Receiver<span class="nt">&lt;/pd:startName&gt;</span>
+<span class="w">    </span><span class="nt">&lt;pd:starter</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;HTTP Receiver&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pd:type&gt;</span>com.tibco.plugin.http.HTTPEventSource<span class="nt">&lt;/pd:type&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pd:resourceType&gt;</span>httppalette.httpEventSource<span class="nt">&lt;/pd:resourceType&gt;</span>
+<span class="w">        </span><span class="nt">&lt;config&gt;</span>
+<span class="w">            </span><span class="nt">&lt;outputMode&gt;</span>String<span class="nt">&lt;/outputMode&gt;</span>
+<span class="w">            </span><span class="nt">&lt;inputOutputVersion&gt;</span>5.3.0<span class="nt">&lt;/inputOutputVersion&gt;</span>
+<span class="w">            </span><span class="nt">&lt;sharedChannel&gt;</span>GeneralConnection.sharedhttp<span class="nt">&lt;/sharedChannel&gt;</span>
+<span class="w">            </span><span class="nt">&lt;parsePostData&gt;</span>true<span class="nt">&lt;/parsePostData&gt;</span>
+<span class="w">            </span><span class="nt">&lt;Headers/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/config&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pd:inputBindings/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/pd:starter&gt;</span>
+<span class="w">    </span><span class="nt">&lt;pd:endName&gt;</span>End<span class="nt">&lt;/pd:endName&gt;</span>
+<span class="w">    </span><span class="nt">&lt;pd:errorSchemas/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;pd:processVariables/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;pd:targetNamespace&gt;</span>http://xmlns.example.com/simpleResponse<span class="nt">&lt;/pd:targetNamespace&gt;</span>
+<span class="w">    </span><span class="nt">&lt;pd:activity</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;HTTP Response&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pd:type&gt;</span>com.tibco.plugin.http.HTTPResponseActivity<span class="nt">&lt;/pd:type&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pd:resourceType&gt;</span>httppalette.httpResponseActivity<span class="nt">&lt;/pd:resourceType&gt;</span>
+<span class="w">        </span><span class="nt">&lt;config&gt;</span>
+<span class="w">            </span><span class="nt">&lt;responseHeader&gt;</span>
+<span class="w">                </span><span class="nt">&lt;header</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Content-Type&quot;</span><span class="nt">&gt;</span>text/xml;<span class="w"> </span>charset=UTF-8<span class="nt">&lt;/header&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/responseHeader&gt;</span>
+<span class="w">            </span><span class="nt">&lt;httpResponseCode&gt;</span>200<span class="nt">&lt;/httpResponseCode&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/config&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pd:inputBindings&gt;</span>
+<span class="w">            </span><span class="nt">&lt;ResponseActivityInput&gt;</span>
+<span class="w">                </span><span class="nt">&lt;asciiContent&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;response&gt;</span>hello<span class="w"> </span>world<span class="nt">&lt;/response&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/asciiContent&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/ResponseActivityInput&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/pd:inputBindings&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/pd:activity&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;pd:transition&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pd:from&gt;</span>HTTP<span class="w"> </span>Receiver<span class="nt">&lt;/pd:from&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pd:to&gt;</span>HTTP<span class="w"> </span>Response<span class="nt">&lt;/pd:to&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pd:lineType&gt;</span>Default<span class="nt">&lt;/pd:lineType&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/pd:transition&gt;</span>
+
+<span class="w">    </span><span class="nt">&lt;pd:transition&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pd:from&gt;</span>HTTP<span class="w"> </span>Response<span class="nt">&lt;/pd:from&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pd:to&gt;</span>End<span class="nt">&lt;/pd:to&gt;</span>
+<span class="w">        </span><span class="nt">&lt;pd:lineType&gt;</span>Default<span class="nt">&lt;/pd:lineType&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/pd:transition&gt;</span>
+<span class="nt">&lt;/pd:ProcessDefinition&gt;</span>
+</code></pre></div><ul>
+<li><code>GeneralConnection.sharedhttp</code>
+    <div class="highlight"><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;ns0:httpSharedResource</span><span class="w"> </span><span class="na">xmlns:ns0=</span><span class="s">&quot;www.tibco.com/shared/HTTPConnection&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;config&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Host&gt;</span>localhost<span class="nt">&lt;/Host&gt;</span>
+<span class="w">        </span><span class="nt">&lt;Port&gt;</span>9090<span class="nt">&lt;/Port&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/config&gt;</span>
+<span class="nt">&lt;/ns0:httpSharedResource&gt;</span>
+</code></pre></div></li>
+</ul>
 </li>
+<li>Execute the <code>bal migrate-tibco &lt;tibco-hello-world&gt; -o converted</code> command. This will create the <code>converted</code> directory and create a Ballerina package inside it.</li>
 </ol>
 <h3 id="step-3">Step 3<a class="headerlink" href="#step-3" title="Permanent link">&para;</a></h3>
 <ol>
@@ -1578,7 +1540,7 @@
 <h3 id="unhandled-activities">Unhandled activities<a class="headerlink" href="#unhandled-activities" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>If the tool encounters any activity which it does not know how to convert it will generate a placeholder "unhandled" function with a comment containing the relevant part of the <code>bwp</code> file.</p>
+<p>If the tool encounters any activity which it does not know how to convert it will generate a placeholder "unhandled" function with a comment containing the relevant part of the process file.</p>
 <div class="highlight"><pre><span></span><code>function unhandled(map&lt;xml&gt; context) returns xml|error {
     //FIXME: [ParseError] : Unknown activity
     //&lt;bpws:empty name=&quot;OnMessageStart&quot; xmlns:tibex=&quot;http://www.tibco.com/bpel/2007/extensions&quot; tibex:constructor=&quot;onMessageStart&quot; tibex:xpdlId=&quot;c266c167-7a80-40cc-9db2-60739386deeb&quot; xmlns:bpws=&quot;http://docs.oasis-open.org/wsbpel/2.0/process/executable&quot;/&gt;
