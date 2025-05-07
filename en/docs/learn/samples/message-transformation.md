@@ -6,6 +6,7 @@ This guide explains how to create a simple integration to convert a JSON payload
 <a href="{{base_path}}/assets/img/learn/samples/message-transformation/introduction.png"><img src="{{base_path}}/assets/img/learn/samples/message-transformation/introduction.png" alt="JSON to XML" width="70%"></a>
 
 ## Step 1: Create a new integration project
+
 1. Click on the Ballerina Integrator icon on the sidebar.
 2. Click on the **Create Integration** button.
 3. Enter the project name as `JsonToXml`.
@@ -15,7 +16,7 @@ This guide explains how to create a simple integration to convert a JSON payload
     <a href="{{base_path}}/assets/img/learn/samples/message-transformation/create-integration.gif"><img src="{{base_path}}/assets/img/learn/samples/message-transformation/create-integration.gif" alt="Create Integration" width="70%"></a>
 
 
-## Step 2: Create a HTTP service.
+## Step 2: Create a HTTP service
 
 1. In the design view, click on the **Add Artifact** button.
 2. Select **HTTP Service** under the **Integration as API** category.
@@ -25,6 +26,7 @@ This guide explains how to create a simple integration to convert a JSON payload
 6. Click on the **Create** button to create the new service with the specified configurations.
 
 ## Step 3: Update the resource method
+
 1. The service will have a default resource named `greeting` with the **GET** method. Click on three dots appear in front of the `/convert` service resource and select **Edit** from menu.
 2. Then click the edit button in front of `/greeting` resource.  
 
@@ -42,6 +44,7 @@ This guide explains how to create a simple integration to convert a JSON payload
     To learn more about resources, see [Ballerina Resources](https://ballerina.io/learn/by-example/resource-methods/).
 
 ## Step 4: Add the transformation logic
+
 1. Click on the `toXml` resource to navigate to the resource implementation designer view.
 2. Delete the default `Return` action from the resource.
 3. Hover to the arrow after start and click the ➕ button to add a new action to the resource.
@@ -62,6 +65,7 @@ This guide explains how to create a simple integration to convert a JSON payload
 
 
 ## Step 5: Run the integration
+
 1. Click on the **Run** button in the top-right corner to run the integration.
 2. The integration will start and the service will be available at `http://localhost:9090/convert`.
 3. Click on the **Try it** button to open the embedded HTTP client.
