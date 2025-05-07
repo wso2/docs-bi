@@ -75,8 +75,8 @@ nav:
   - Home: index.md
   - Get started:
       - Introduction: get-started/introduction.md
-      - Quick start guide: get-started/quick-start-guide.md
-      - Key concepts: get-started/key-concepts.md
+      - Quick Start Guide: get-started/quick-start-guide.md
+      - Key Concepts: get-started/key-concepts.md
   - Install and Setup:
       - Install Ballerina Integrator: install-and-setup/install-ballerina-integrator.md
       - Install Integration Control Plane: install-and-setup/install-integration-control-plane.md
@@ -102,7 +102,7 @@ nav:
         - Message transformation: learn/samples/message-transformation.md
         - Message routing: learn/samples/message-routing.md
         - Service orchestration: learn/samples/service-orchestration.md
-      - Enterprise Integration patterns: learn/enterprise-integrations-patterns.md
+      - Enterprise Integration Patterns: learn/enterprise-integrations-patterns.md
       - Tools:
         - Mulesoft migration tool: learn/tools/mulesoft-migration-tool.md
         - TIBCO BusinessWorks Migration Tool: learn/tools/tibco-businessworks-migration-tool.md
@@ -198,5 +198,5 @@ extra:
     - type: linkedin
       link: https://www.linkedin.com/company/wso2
   # site_version: Uncomment to specify a version
-  base_path: https://wso2.github.io/docs-bi
-  # base_path: http://localhost:8000
+  # base_path: https://wso2.github.io/docs-bi
+  base_path: http://localhost:8000

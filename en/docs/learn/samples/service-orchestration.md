@@ -1,4 +1,4 @@
-# Service orchestration
+# Service Orchestration
 
 In this tutorial, you’ll create a service to process appointment requests for hospitals. The service will call multiple backend services sequentially, using data from each call to inform the next. This approach integrates several services into one, known as service orchestration.
 To implement this, you’ll build a REST service with a single resource in Ballerina Integrator extension and then run the service. The resource will receive user requests, make the necessary backend calls, and respond with the appointment details.

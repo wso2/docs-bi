@@ -1,4 +1,4 @@
-# Deploy on a VM as an executable JAR
+# Deploy on a VM as an Executable JAR
 
 This guide explains how to deploy an integration as an executable JAR file.
 

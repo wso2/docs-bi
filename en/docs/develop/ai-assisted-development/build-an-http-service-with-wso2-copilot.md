@@ -1,4 +1,4 @@
-# Build HTTP Service With WSO2 Copilot
+# Build an HTTP Service With WSO2 Copilot
 
 In this tutorial, you’ll create an HTTP service to add key-value pairs to a Redis database. The integrated AI-assistant will help you generate the integration flow.
 

@@ -1,4 +1,4 @@
-# Message transformation
+# Message Transformation
 
 ## Overview
 This guide explains how to create a simple integration to convert a JSON payload to an XML payload using Ballerina Integrator. An HTTP service with a single resource (`toXml`) will be created to accept a JSON payload and return the XML representation of the payload.
