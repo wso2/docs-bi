@@ -1,7 +1,8 @@
 # TIBCO BusinessWorks Migration Tool
+
 This guide explains how to use the [migrate-tibco](https://central.ballerina.io/wso2/tool_migrate_tibco/latest) tool to convert
 [TIBCO BusinessWorks](https://docs.tibco.com/products/tibco-activematrix-businessworks) integrations into Ballerina packages compatible with the [WSO2 Ballerina Integrator](https://wso2.com/integrator/ballerina-integrator).
-## Tool Overview
+## Tool overview
 
 The tool accepts either a BusinessWorks project directory or a standalone `bwp` file as input and generates an equivalent Ballerina package that can be opened in the WSO2 Ballerina Integrator.
 
@@ -14,7 +15,7 @@ $ bal tool pull migrate-tibco
 
 ## Usage
 
-### Command Syntax
+### Command syntax
 
 ```bash
 $ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directory>]
@@ -29,14 +30,16 @@ $ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directo
 
 ## Example
 
-### Step 1
-1. Pull `migrate-tibco` tool for Ballerina Central using following command.
+### Step 1: Pull the migration tool
+
+1. Pull `migrate-tibco` tool for Ballerina Central using the following command.
 
     ```bash
     $ bal tool pull migrate-tibco
     ```
 
-### Step 2
+### Step 2: Run the command
+
 1. Create the following `helloworld.bwp` file.
 
     ```xml
@@ -139,9 +142,14 @@ $ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directo
         </bpws:scope>
     </bpws:process>
     ```
-2. Execute the `bal migrate-tibco <path to helloworld.bwp> -o converted` command. This will create the `converted` directory and create a Ballerina package inside it.
+2. Execute the following command to create the `converted` directory and create a Ballerina package inside it.
 
-### Step 3
+    ```bash
+    bal migrate-tibco <path/to/helloworld.bwp> -o converted
+    ```
+
+### Step 3: Open in Ballerina Integrator
+
 1. Open VS Code inside the `converted` directory
     ```bash
     $ code ./converted
@@ -156,7 +164,7 @@ $ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directo
 
 ### Unhandled activities
 
-- If the tool encounters any activity which it does not know how to convert it will generate a placeholder "unhandled" function with a comment containing the relevant part of the `bwp` file.
+- If the tool encounters any activity that it does not know how to convert, it will generate a placeholder `unhandled` function with a comment containing the relevant part of the `bwp` file.
 
     ```ballerina
     function unhandled(map<xml> context) returns xml|error {

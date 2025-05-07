@@ -42,6 +42,7 @@
         "icon": "📚",
         "links": [
             {"name": "Build an AI Agent to Handle Mathematical Queries", "url": "learn/ai-agent/build-ai-agent-to-handle-mathematical-queries/"},
+            {"name": "File Integration With Directory Service", "url": "learn/file-integration/file-integration-with-directory-service/"},
             {"name": "Build an HTTP Service With WSO2 Copilot", "url": "develop/ai-assisted-development/build-an-http-service-with-wso2-copilot/"},
             {"name": "Message Transformation", "url": "learn/samples/message-transformation/"},
             {"name": "Message Routing", "url": "learn/samples/message-routing/"},

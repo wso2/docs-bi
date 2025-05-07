@@ -12,7 +12,7 @@ Download and install [Visual Studio Code](https://code.visualstudio.com/download
 
 1. Go to the Extensions view by clicking the extension icon on the sidebar or pressing `Ctrl + Shift + X` on Windows and Linux, or `Shift + ⌘ + X` on a Mac.
 2. Search for `Ballerina Integrator` in the extensions view search box.
-3. Click on the **`Install`** button to install the `Ballerina Integrator` extension.
+3. Click on the **Install** button to install the `Ballerina Integrator` extension.
 
       <a href="{{base_path}}/assets/img/get-started/quick-start-guide/bi-extension.png"><img src="{{base_path}}/assets/img/get-started/quick-start-guide/bi-extension.png" alt="Ballerina Integrator Extension" width="70%"></a>
 
@@ -43,7 +43,7 @@ Download and install [Visual Studio Code](https://code.visualstudio.com/download
 
 ???+ tip  "Generate with AI"
 
-    The integration service can also be generated using the AI-assistant. Click on the **`Generate with AI`** button and enter the following prompt, then press **`Add to Integration`** to generate the integration service.
+    The integration service can also be generated using the AI-assistant. Click on the **Generate with AI** button and enter the following prompt, then press **Add to Integration** to generate the integration service.
     
     ```Create an http service that has base path as /hello, and 9090 as the port. Add GET resource on /greeting that invokes https://apis.wso2.com/zvdz/mi-qsg/v1.0 endpoint and forward the response to the caller.```
 
@@ -73,14 +73,14 @@ Download and install [Visual Studio Code](https://code.visualstudio.com/download
    
       | Field               | Value        |
       |---------------------|--------------|
-      | **`Variable Name`** | `epResponse` |
-      | **`Variable Type`** | `string`     |
-      | **`Connection`**          | `externalEp` |
-      | **`Target Type`**         | `string`     |
-      | **`Path`**                | `"/zvdz/mi-qsg/v1.0"` | 
+      | **Variable Name** | `epResponse` |
+      | **Variable Type** | `string`     |
+      | **Connection**          | `externalEp` |
+      | **Target Type**         | `string`     |
+      | **Path**                | `"/zvdz/mi-qsg/v1.0"` | 
 
 10. Click ➕ button again and select **Return** from the node panel.  
-11. Select the `epResponse` variable as the **`Expression`** from the dropdown and click **`Save`**. This step will return the response from the `HelloWorld` API endpoint.      
+11. Select the `epResponse` variable as the **Expression** from the dropdown and click **Save**. This step will return the response from the `HelloWorld` API endpoint.      
 
       <a href="{{base_path}}/assets/img/get-started/quick-start-guide/invoke-endpoint.gif"><img src="{{base_path}}/assets/img/get-started/quick-start-guide/invoke-endpoint.gif" alt="Invoke Endpoint" width="70%"></a>
 

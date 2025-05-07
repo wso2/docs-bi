@@ -36,7 +36,7 @@ In this guide, you will learn how to enable Integration Control Plane (ICP) for 
     - **Username**: `admin`
     - **Password**: `admin`
    
-        <a href="{{base_path}}/assets/img/install-and-setup/icp-login.png"><img src="{{base_path}}/assets/img/install-and-setup/icp/icp-login.png" alt="ICP Login" width="70%"></a>
+    <a href="{{base_path}}/assets/img/install-and-setup/icp-login.png"><img src="{{base_path}}/assets/img/install-and-setup/icp/icp-login.png" alt="ICP Login" width="70%"></a>
 
 ## Step 3: Deploy the Ballerina integration
 
