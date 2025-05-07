@@ -51,6 +51,7 @@ In this guide, you will learn how to enable Integration Control Plane (ICP) for 
     <a href="{{base_path}}/assets/img/install-and-setup/config-toml.png"><img src="{{base_path}}/assets/img/install-and-setup/icp/config-toml.png" alt="Create Config.toml" width="70%"></a>
 
 5. Replace the `Config.toml` file content with the following configurations.   
+
     ```toml
       [ballerinax.wso2.controlplane.dashboard]
       url = "https://localhost:9743/dashboard/api"
@@ -58,6 +59,7 @@ In this guide, you will learn how to enable Integration Control Plane (ICP) for 
       groupId = "cluster1"
       mgtApiUrl ="https://localhost:9264/management/"
     ```
+
 6. Click on the **Run** button to start the integration.  
 
     <a href="{{base_path}}/assets/img/install-and-setup/run-integration.gif"><img src="{{base_path}}/assets/img/install-and-setup/icp/run-integration.gif" alt="Run Integration" width="70%"></a>
