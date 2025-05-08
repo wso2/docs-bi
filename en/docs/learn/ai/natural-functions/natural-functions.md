@@ -40,7 +40,7 @@ Follow the steps below to implement the integration.
 
 5. The types are now available in the project. `Blog` and `Review` are the types that represent the blog content and review respectively.
 
-<a href="{{base_path}}/assets/img/natural-functions/types.png"><img src="{{base_path}}/assets/img/natural-functions/types.png" alt="Types" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/references/natural-functions/types.png"><img src="{{base_path}}/assets/img/learn/references/natural-functions/types.png" alt="Types" width="70%"></a>
 
 
 ### Step 3: Create an HTTP service.
@@ -50,15 +50,15 @@ Follow the steps below to implement the integration.
 4. Select the **`Design from Scratch`** option as the **`Service Contract`** and use `/blogs` as the base path.
 5. Click on the **`Create`** button to create the new service with the specified configurations.
 
-<a href="{{base_path}}/assets/img/natural-functions/service.png"><img src="{{base_path}}/assets/img/natural-functions/service.png" alt="HTTP Service" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/references/natural-functions/service.png"><img src="{{base_path}}/assets/img/learn/references/natural-functions/service.png" alt="HTTP Service" width="70%"></a>
 
 ### Step 4: Add a Natural Function
 1. Click on the **`Add Artifact`** button and select **`Natural Function`** under the **`Other Artifacts`** category.
 2. Use `reviewBlog` as the function name. Then click the **`Add Parameter`** button to add a parameter of type `Blog` named `blog`. Use `Review` as the return type and click on the **`Create`** button.
 
-<a href="{{base_path}}/assets/img/natural-functions/natural-function.png"><img src="{{base_path}}/assets/img/natural-functions/natural-function.png" alt="Natural Function" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/references/natural-functions/natural-function.png"><img src="{{base_path}}/assets/img/learn/references/natural-functions/natural-function.png" alt="Natural Function" width="70%"></a>
 
-3. Click on the **`Edit`** button to specify the prompt.
+3. Click on the **`Edit`** button to specify the requirement in natural language (i.e., the prompt).
 4. Use the following prompt and click on the **`Save`** button.
 
     ```plaintext
@@ -82,6 +82,9 @@ Follow the steps below to implement the integration.
         Content: ${blog.content}
     ```
 
+    <a href="{{base_path}}/assets/img/learn/references/natural-functions/natural-function-view.png"><img src="{{base_path}}/assets/img/learn/references/natural-functions/natural-function-view.png" alt="Natural Function View" width="70%"></a>
+
+
 ### Step 5: Update the resource method
 1. The service will have a default resource named `greeting` with the **`GET`** method. Click on the three dots that appear in front of the `/blogs` service and select **`Edit`** from the menu.
 2. Then click the **`Edit`** button in front of `/greeting` resource.
@@ -91,7 +94,7 @@ Follow the steps below to implement the integration.
 6. Change the 201 response return type to `Review`.
 7. Click on the **`Save`** button to update the resource with the specified configurations.
 
-<a href="{{base_path}}/assets/img/natural-functions/update-resource.png"><img src="{{base_path}}/assets/img/natural-functions/update-resource.png" alt="Resource" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/references/natural-functions/update-resource.png"><img src="{{base_path}}/assets/img/learn/references/natural-functions/update-resource.png" alt="Resource" width="70%"></a>
 
 ### Step 6: Implement resource logic
 1. Click on the `review` resource to navigate to the resource implementation designer view.
@@ -101,19 +104,19 @@ Follow the steps below to implement the integration.
 5. Change the **`Variable Name`** to `review` and **`Variable Type`** to `Review`. 
 6. For the **`Blog`** parameter, use `blog` as the argument and click on the **`Save`** button.
 
-<a href="{{base_path}}/assets/img/natural-functions/call-np.gif"><img src="{{base_path}}/assets/img/natural-functions/call-np.gif" alt="Function Call" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/references/natural-functions/call-np.gif"><img src="{{base_path}}/assets/img/learn/references/natural-functions/call-np.gif" alt="Function Call" width="70%"></a>
 
 7. Add a new node after the `reviewBlog` function call and select **`Return`** from the node panel.
 8. Select the `review` variable from the dropdown and click **`Save`**.
 
-<a href="{{base_path}}/assets/img/natural-functions/add-return.png"><img src="{{base_path}}/assets/img/natural-functions/add-return.png" alt="Add Return" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/references/natural-functions/add-return.png"><img src="{{base_path}}/assets/img/learn/references/natural-functions/add-return.png" alt="Add Return" width="70%"></a>
 
 9. The resource implementation is now complete. The function `reviewBlog` is called with the `blog` content as input, and the `review` is returned as the response.
 
 ### Step 7: Configure model for Natural Function
 1. Press `Ctrl + Shift + P` on Windows and Linux, or `Shift + ⌘ + P` on a Mac, and type `>Ballerina: Configure default model for Natural Functions (Experimental)` to configure the default model for Natural Functions. 
 
-<a href="{{base_path}}/assets/img/natural-functions/configure-model.png"><img src="{{base_path}}/assets/img/natural-functions/configure-model.png" alt="Configure Model" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/references/natural-functions/configure-model.png"><img src="{{base_path}}/assets/img/learn/references/natural-functions/configure-model.png" alt="Configure Model" width="70%"></a>
 
 
 ### Step 8: Run the integration
@@ -144,4 +147,4 @@ Follow the steps below to implement the integration.
 
 6. The blog content is analyzed by the Natural Function to suggest a category and rate it based on predefined criteria.
 
-<a href="{{base_path}}/assets/img/natural-functions/run-integration.png"><img src="{{base_path}}/assets/img/natural-functions/run-integration.png" alt="Run Integration" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/references/natural-functions/run-integration.png"><img src="{{base_path}}/assets/img/learn/references/natural-functions/run-integration.png" alt="Run Integration" width="70%"></a>
