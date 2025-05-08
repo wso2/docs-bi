@@ -1,7 +1,7 @@
 # Natural Functions
 
-In this tutorial, you will learn how to use Natural Functions in Ballerina Integrator, which allows the function to contain instructions in natural language.
-Such a function is evaluated at runtime with a call to a Large Language Model (LLM). The example uses a Natural Function to analyze blog content to suggest a category and rate it based on predefined criteria.
+In this tutorial, you will learn how to use natural functions in Ballerina Integrator, which allows the function to contain instructions in natural language.
+Such a function is evaluated at runtime with a call to a Large Language Model (LLM). The example uses a natural function to analyze blog content to suggest a category and rate it based on predefined criteria.
 
 ???+ tip "Natural Programming"
     To learn more about natural programming and natural functions, see [Natural Language is Code: A hybrid approach with Natural Programming](https://blog.ballerina.io/posts/2025-04-26-introducing-natural-programming/).
@@ -56,7 +56,7 @@ Follow the steps below to implement the integration.
 1. Click on the **`Add Artifact`** button and select **`Natural Function`** under the **`Other Artifacts`** category.
 2. Use `reviewBlog` as the function name. Then click the **`Add Parameter`** button to add a parameter of type `Blog` named `blog`. Use `Review` as the return type and click on the **`Create`** button.
 
-    <a href="{{base_path}}/assets/img/learn/references/natural-functions/natural-function.png"><img src="{{base_path}}/assets/img/learn/references/natural-functions/natural-function.png" alt="Natural Function" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/references/natural-functions/natural-function.png"><img src="{{base_path}}/assets/img/learn/references/natural-functions/natural-function.png" alt="natural function" width="70%"></a>
 
 3. Click on the **`Edit`** button to specify the requirement in natural language (i.e., the prompt).
 4. Use the following prompt and click on the **`Save`** button.
@@ -82,7 +82,7 @@ Follow the steps below to implement the integration.
         Content: ${blog.content}
     ```
 
-    <a href="{{base_path}}/assets/img/learn/references/natural-functions/natural-function-view.png"><img src="{{base_path}}/assets/img/learn/references/natural-functions/natural-function-view.png" alt="Natural Function View" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/references/natural-functions/natural-function-view.png"><img src="{{base_path}}/assets/img/learn/references/natural-functions/natural-function-view.png" alt="natural function view" width="70%"></a>
 
 
 ### Step 5: Update the resource method
@@ -113,8 +113,8 @@ Follow the steps below to implement the integration.
 
 9. The resource implementation is now complete. The function `reviewBlog` is called with the `blog` content as input, and the `review` is returned as the response.
 
-### Step 7: Configure model for Natural Function
-1. Press `Ctrl + Shift + P` on Windows and Linux, or `Shift + ⌘ + P` on a Mac, and type `>Ballerina: Configure default model for Natural Functions (Experimental)` to configure the default model for Natural Functions. 
+### Step 7: Configure model for natural function
+1. Press `Ctrl + Shift + P` on Windows and Linux, or `Shift + ⌘ + P` on a Mac, and type `>Ballerina: Configure default model for natural functions (Experimental)` to configure the default model for natural functions. 
 
     <a href="{{base_path}}/assets/img/learn/references/natural-functions/configure-model.png"><img src="{{base_path}}/assets/img/learn/references/natural-functions/configure-model.png" alt="Configure Model" width="70%"></a>
 
@@ -145,6 +145,6 @@ Follow the steps below to implement the integration.
     }
     ```
 
-6. The blog content is analyzed by the Natural Function to suggest a category and rate it based on predefined criteria.
+6. The blog content is analyzed by the natural function to suggest a category and rate it based on predefined criteria.
 
     <a href="{{base_path}}/assets/img/learn/references/natural-functions/run-integration.png"><img src="{{base_path}}/assets/img/learn/references/natural-functions/run-integration.png" alt="Run Integration" width="70%"></a>
