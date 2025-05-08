@@ -1,8 +1,9 @@
 # MuleSoft Migration Tool
+
 This guide explains how to use the [migrate-mule](https://central.ballerina.io/wso2/tool_migrate_mule/latest) tool to convert 
 [MuleSoft](https://www.mulesoft.com) applications into Ballerina packages compatible with the [WSO2 Ballerina Integrator](https://wso2.com/integrator/ballerina-integrator).
 
-## Tool Overview
+## Tool overview
 The tool accepts either a MuleSoft project directory or a standalone Mule `.xml` configuration file as input and
 generates an equivalent Ballerina package that can be opened in WSO2 Ballerina Integrator.
 
@@ -17,15 +18,14 @@ $ bal tool pull migrate-mule
 Follow the steps below to migrate your MuleSoft application.
 
 ### Step 1: Prepare your input
+
 You can migrate either a complete MuleSoft project or a standalone Mule `.xml` configuration file:
 
-- For MuleSoft projects: Ensure your project follows the standard structure with configuration XML files located under:
-   ```
-   muleProjectPath/src/main/app
-   ```
-- For standalone XML files: You can directly use any valid Mule XML configuration file.
+- **For MuleSoft projects**: Ensure your project follows the standard structure with configuration XML files located under `muleProjectPath/src/main/app`
+- **For standalone XML files**: You can directly use any valid Mule XML configuration file.
 
 ### Step 2: Run the migration tool
+
 Use one of the following commands based on your needs:
 
 1. To convert a MuleSoft project with default output location:
@@ -71,6 +71,7 @@ Use one of the following commands based on your needs:
     - A new `.bal` file is created with the same name as the input file but with a `.bal` extension.
 
 ### Step 4: Review the migration summary
+
 The tool displays the migration progress in command line in two stages:
 
 1. **DataWeave Conversion Percentage** – Indicates the conversion success rate of all DataWeave scripts.
@@ -79,7 +80,8 @@ The tool displays the migration progress in command line in two stages:
 
 A detailed report is generated as `migration_summary.html` in the root of the newly created Ballerina package.
 
-### Step 5: Address TODO items
+### Step 5: Address the TODO items
+
 During conversion, if there are any unsupported Mule XML tags, they are included in the generated Ballerina code as 
 TODO comments. You may need to do the conversion for them manually.
 
@@ -196,9 +198,9 @@ You can check out the `migration_summary.html` for overview of the migration.
 
 This example demonstrates how to migrate a MuleSoft application that performs database operations to Ballerina using the migration tool. The migration tool automatically converts the database configuration and SQL query to the equivalent Ballerina code using the `ballerinax/mysql` module.
 
-## Supported MuleSoft Features
+## Supported MuleSoft features
 
-### MuleSoft Components:
+### MuleSoft components:
 The migration tool currently supports converting the following MuleSoft components:
 
 - Async
@@ -222,7 +224,7 @@ The migration tool currently supports converting the following MuleSoft componen
 - Variable
 - Vm Connector
 
-### DataWeave Expressions:
+### DataWeave expressions:
 
 The migration tool currently supports the following DataWeave expressions:
 
@@ -251,5 +253,6 @@ The migration tool currently supports the following DataWeave expressions:
 - When Otherwise Nested Expression
 
 ## Limitations
+
 - Currently supports Mule **3.x only**. Support for Mule **4.x** is planned for future releases.
 - Some moderate to advanced MuleSoft features may require manual adjustments after migration.
