@@ -107,7 +107,7 @@ nav:
         - Mulesoft Migration Tool: learn/tools/mulesoft-migration-tool.md
         - TIBCO BusinessWorks Migration Tool: learn/tools/tibco-businessworks-migration-tool.md
   - Develop:
-      - Creat a Project: develop/create-a-project.md
+      - Create a Project: develop/create-a-project.md
       - Ballerina Integrator Artifacts: develop/ballerina-integrator-artifacts.md
       - AI Assisted Integration:
       #  - develop/ai-assisted-development/index.md
