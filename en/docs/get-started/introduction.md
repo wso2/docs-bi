@@ -1,8 +1,8 @@
 # Introduction
 
-Ballerina Integrator is a powerful low-code integration platform built on top of the Ballerina programming language. It’s designed to help developers quickly build, deploy, and manage integration solutions with minimal boilerplate and maximum productivity. Whether youre working with APIs, messaging systems, databases, or SaaS platforms, Ballerina Integrator offers first-class language support and built-in tooling to make integration seamless and efficient.
+Ballerina Integrator is a powerful low-code integration platform built on top of the Ballerina programming language. It’s designed to help developers quickly build, deploy, and manage integration solutions with minimal boilerplate and maximum productivity. Whether you're working with APIs, messaging systems, databases, or SaaS platforms, Ballerina Integrator offers first-class language support and built-in tooling to make integration seamless and efficient.
 
-Whether you’re modernizing legacy systems or building cloud-native services, Ballerina Integrator provides a productive and scalable path to integration,helping teams drive digital transformation with clarity, speed, and confidence.
+Whether you’re modernizing legacy systems or building cloud-native services, Ballerina Integrator provides a productive and scalable path to integration, helping teams drive digital transformation with clarity, speed, and confidence.
 
 ## Low-code integration development
 Ballerina Integrator offers a user-friendly, streamlined environment for building integrations with minimal coding, accessible to both experienced developers and beginners. Here’s how Ballerina Integrator’s low-code features simplify integration development:
