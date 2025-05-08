@@ -13,7 +13,7 @@ Follow the steps below to implement the integration.
 ### Step 1: Create a new integration project.
 1. Click on the Ballerina Integrator icon on the sidebar.
 2. Click on the **`Create New Integration`** button.
-3. Enter the project name as `NaturalProgramming`.
+3. Enter `ProjectName` as the project name.
 4. Select Project Directory and click on the **`Select Location`** button.
 5. Click on the **`Create New Integration`** button to create the integration project.
 
