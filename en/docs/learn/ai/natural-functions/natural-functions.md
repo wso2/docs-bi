@@ -20,7 +20,7 @@ Follow the steps below to implement the integration.
 ### Step 2: Define Types
 1. Click on the **`Add Artifacts`** button and select **`Type`** in the **`Other Artifacts`** section.
 2. Click on **`+ Add Type`** to add a new type.
-3. Use `Blog` as the **`Record Name`**. Then click on the **`JSON`** button and paste the following JSON payload. Select **`Is Closed`** and click on the **`Import`** button. Then click the **`Save`** button.
+3. Use `Blog` as the **`Record Name`**. Then click on the **`JSON`** button and paste the following JSON payload. Tick **`Is Closed`** and click on the **`Import`** button. Then click the **`Save`** button.
 
     ```json
     {
@@ -29,7 +29,7 @@ Follow the steps below to implement the integration.
     }
     ```
 
-4. Add another type with the **`Record Name`** as `Review` and paste the following JSON payload. Select **`Is Closed`** and click on the **`Import`** button. Then click the **`Save`** button.
+4. Add another type with `Review` as the **`Record Name`** and paste the following JSON payload. Select **`Is Closed`** and click on the **`Import`** button. Then click the **`Save`** button.
 
     ```json
     {
@@ -54,12 +54,12 @@ Follow the steps below to implement the integration.
 
 ### Step 4: Add a Natural Function
 1. Click on the **`Add Artifact`** button and select **`Natural Function`** under the **`Other Artifacts`** category.
-2. Use `reviewBlog` as the function name. Then click the **`Add Parameter`** button to add a parameter for the Natural Function. Add input parameter as `blog` of type `Blog`, return type of `Review`, and click on the **`Create`** button.
+2. Use `reviewBlog` as the function name. Then click the **`Add Parameter`** button to add a parameter of type `Blog` named `blog`. Use `Review` as the return type and click on the **`Create`** button.
 
 <a href="{{base_path}}/assets/img/natural-functions/natural-function.png"><img src="{{base_path}}/assets/img/natural-functions/natural-function.png" alt="Natural Function" width="70%"></a>
 
-3. Click on the **`Edit`** button to add the function logic.
-4. Add the following prompt to the function and click on the **`Save`** button.
+3. Click on the **`Edit`** button to specify the prompt.
+4. Use the following prompt and click on the **`Save`** button.
 
     ```plaintext
     You are an expert content reviewer for a blog site that 
@@ -99,7 +99,7 @@ Follow the steps below to implement the integration.
 3. Select **`Call Natural Function`** from the node panel.
 4. Select the `reviewBlog` function from the suggestions.
 5. Change the **`Variable Name`** to `review` and **`Variable Type`** to `Review`. 
-6. For the **`Blog`** parameter, add the value as `blog` and click on the **`Save`** button.    
+6. For the **`Blog`** parameter, use `blog` as the argument and click on the **`Save`** button.
 
 <a href="{{base_path}}/assets/img/natural-functions/call-np.gif"><img src="{{base_path}}/assets/img/natural-functions/call-np.gif" alt="Function Call" width="70%"></a>
 
