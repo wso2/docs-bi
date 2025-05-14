@@ -75,8 +75,8 @@ nav:
   - Home: index.md
   - Get started:
       - Introduction: get-started/introduction.md
-      - Quick start guide: get-started/quick-start-guide.md
-      - Key concepts: get-started/key-concepts.md
+      - Quick Start Guide: get-started/quick-start-guide.md
+      - Key Concepts: get-started/key-concepts.md
   - Install and Setup:
       - Install Ballerina Integrator: install-and-setup/install-ballerina-integrator.md
       - Install Integration Control Plane: install-and-setup/install-integration-control-plane.md
@@ -94,32 +94,32 @@ nav:
       #  - Build your first integration as API: learn/integration-as-api/http-service.md
       #- Event Integration:
       #  - learn/event-integration/index.md
-      #- File Integration:
-      #  - File integration with directory service: learn/file-integration/file-integration-with-directory-service.md
+      - File Integration:
+        - File Integration With Directory Service: learn/file-integration/file-integration-with-directory-service.md
       #  - File integration with FTP service: learn/file-integration/file-integration-with-ftp-service.md
       - References:
       #  - Configure the integration: learn/references/configure-the-integration.md
-        - Data mapping: learn/references/data-mapping.md
+        - Data Mapping: learn/references/data-mapping.md
       - Samples:
-        - Message transformation: learn/samples/message-transformation.md
-        - Message routing: learn/samples/message-routing.md
-        - Service orchestration: learn/samples/service-orchestration.md
-      - Enterprise Integration patterns: learn/enterprise-integrations-patterns.md
+        - Message Transformation: learn/samples/message-transformation.md
+        - Message Routing: learn/samples/message-routing.md
+        - Service Orchestration: learn/samples/service-orchestration.md
+      - Enterprise Integration Patterns: learn/enterprise-integrations-patterns.md
       - Tools:
-        - Mulesoft migration tool: learn/tools/mulesoft-migration-tool.md
+        - Mulesoft Migration Tool: learn/tools/mulesoft-migration-tool.md
         - TIBCO BusinessWorks Migration Tool: learn/tools/tibco-businessworks-migration-tool.md
   - Develop:
-      - Creat a project: develop/create-a-project.md
+      - Create a Project: develop/create-a-project.md
       - Ballerina Integrator Artifacts: develop/ballerina-integrator-artifacts.md
-      - AI assisted integration:
+      - AI Assisted Integration:
       #  - develop/ai-assisted-development/index.md
-        - Build an HTTP service with WSO2 Copilot : develop/ai-assisted-development/build-an-http-service-with-wso2-copilot.md
+        - Build an HTTP Service With WSO2 Copilot : develop/ai-assisted-development/build-an-http-service-with-wso2-copilot.md
       #- Test the integration: develop/test-the-integrations.md
       #- Debug the integration: develop/debug-the-integrations.md
   - Deploy:
       - Deploy to Devant: deploy/deploy-to-devant.md
-      - Deploy on VM as executable JAR: deploy/deploy-on-vm-as-executable-jar.md
-      - Deploy as Docker image: deploy/deploy-as-docker-image.md
+      - Deploy on VM as Executable JAR: deploy/deploy-on-vm-as-executable-jar.md
+      - Deploy as Docker Image: deploy/deploy-as-docker-image.md
       
 
 # Markdown extensions configuration

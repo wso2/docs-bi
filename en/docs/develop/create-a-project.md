@@ -9,17 +9,17 @@ A Ballerina Integrator project is the foundational unit where you define and man
 
 2. Click on the Ballerina Integrator icon on the **Activity Bar** of the VS Code editor.
 
-    <a href="{{base_path}}/assets/img/create-project/bi-activity-icon.png"><img src="{{base_path}}/assets/img/create-project/bi-activity-icon.png" alt="Ballerina VS Code Extension" width="80%"></a>
+    <a href="{{base_path}}/assets/img/develop/create-project/bi-activity-icon.png"><img src="{{base_path}}/assets/img/develop/create-project/bi-activity-icon.png" alt="Ballerina VS Code Extension" width="80%"></a>
 
 3. Next, click on **Create New Integration**. 
 
-    <a href="{{base_path}}/assets/img/create-project/create-a-project.png"><img src="{{base_path}}/assets/img/create-project/create-a-project.png" alt="Ballerina VS Code Extension" width="80%"></a>
+    <a href="{{base_path}}/assets/img/develop/create-project/create-a-project.png"><img src="{{base_path}}/assets/img/develop/create-project/create-a-project.png" alt="Ballerina VS Code Extension" width="80%"></a>
 
     Then enter a suitable name for the integration project and provide a location for it.
 
 4. It will open the Ballerina Integrator view.
 
-    <a href="{{base_path}}/assets/img/create-project/ballerina-integrator-view.png"><img src="{{base_path}}/assets/img/create-project/ballerina-integrator-view.png" alt="Ballerina VS Code Extension" width="80%"></a>
+    <a href="{{base_path}}/assets/img/develop/create-project/ballerina-integrator-view.png"><img src="{{base_path}}/assets/img/develop/create-project/ballerina-integrator-view.png" alt="Ballerina VS Code Extension" width="80%"></a>
 
 Now, you can start creating your integration by developing artifacts. See the [Ballerina Integrator Artifacts]({{base_path}}/develop/ballerina-integrator-artifacts/) to learn about the integration artifacts.
 
