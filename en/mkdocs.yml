@@ -85,7 +85,7 @@ nav:
         - Natural functions: learn/ai/natural-functions/natural-functions.md
         - Agent:
           - Introduction to chat agents: learn/ai/agent/chat-agent-introduction.md
-          # - Introduction to inline agents: learn/ai/agent/inlne-agent-introduction.md
+          - Introduction to inline agents: learn/ai/agent/inline-agent-introduction.md
           - Integrating chat agent with external endpoints using connectors: learn/ai/agent/agent-with-connector-tools.md
       #- Automation:
       #  - learn/automation/index.md
