@@ -46,7 +46,7 @@
             {"name": "Build an HTTP Service With WSO2 Copilot", "url": "develop/ai-assisted-development/build-an-http-service-with-wso2-copilot/"},
             {"name": "Message Transformation", "url": "learn/samples/message-transformation/"},
             {"name": "Message Routing", "url": "learn/samples/message-routing/"},
-            {"name": "Service Crchestration", "url": "learn/samples/service-orchestration"}
+            {"name": "Service Orchestration", "url": "learn/samples/service-orchestration"}
         ]
     },
     {
