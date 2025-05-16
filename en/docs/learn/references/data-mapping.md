@@ -20,7 +20,7 @@ The following instructions demonstrate how to build an integration that transfor
     <a href="{{base_path}}/assets/img/learn/references/data-mapping/add-types.png"><img src="{{base_path}}/assets/img/learn/references/data-mapping/add-types.png" alt="Add Type" width="70%"></a>
 
 3. Generate record types corresponding to the input and output JSON payloads given below.
-4. Select **Make Separate Record Definitions** and click on the **Import** button.
+4. Select **Is Separate Record Definitions** and click on the **Import** button.
 
     **Input**
     ```json
