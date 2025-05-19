@@ -19,17 +19,17 @@ In this example, we'll define a GraphQL schema with a query that invokes the inl
 4. Select the project directory by clicking on the **Select Location** button.
 5. Click the **Create New Integration** button to generate the integration project.
 
-    <a href="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-step1.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-create-a-new-integration-project.gif" alt="Create a new integration project" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-create-a-new-integration-project.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-create-a-new-integration-project.gif" alt="Create a new integration project" width="70%"></a>
 
-### Step 2: Create a graphql service
+### Step 2: Create a GraphQL service
 
 1. Click the **+** button on the Ballerina Integrator side panel or navigate back to the design screen and click on **Add Artifact**.
 2. Select **GraphQL Service** under the **Integration as API** artifacts.
 3. Keep the default **Listener** and **Service base path** configurations, and click **Create**.
 
-    <a href="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-step2.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-create-a-graphql-service.gif" alt="Create a graphql service" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-create-a-graphql-service.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-create-a-graphql-service.gif" alt="Create a GraphQL service" width="70%"></a>
 
-### Step 3: Create a graphql resolver
+### Step 3: Create a GraphQL resolver
 
 1. Click the **+ Create Operations** button in the GraphQL design view.
 2. In the side panel, click the **+** button in the **Mutation** section to add a mutation operation.
@@ -40,7 +40,7 @@ In this example, we'll define a GraphQL schema with a query that invokes the inl
     - Click **Add** to save the argument.
 5. Provide `string|error` for the **Field type**, as this will be used as the return type of the resolver.
 
-    <a href="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-step3.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-create-a-graphql-resolver.gif" alt="Create a graphql resolver" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-create-a-graphql-resolver.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-create-a-graphql-resolver.gif" alt="Create a GraphQL resolver" width="70%"></a>
 
 ### Step 4: Implement the resolving logic with an inline agent
 
@@ -55,7 +55,7 @@ In this example, we'll define a GraphQL schema with a query that invokes the inl
 9. After configuring the agent, click the **+** button on the flow and select **Return** under **Control** from the side panel.
 10. For the **Expression**, provide the `response` variable as the input.
 
-    <a href="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-step4.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-implement-resolver.gif" alt="Implement the resolving logic with an inline agent" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-implement-resolver.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-implement-resolver.gif" alt="Implement the resolving logic with an inline agent" width="70%"></a>
 
 At this point, we've created a GraphQL resolver that takes a user-provided `query` as input, passes it to an inline agent for processing, and returns the agent’s `response` as the result of the resolver.
 
@@ -72,4 +72,4 @@ At this point, we've created a GraphQL resolver that takes a user-provided `quer
     -d '{ "query": "mutation Task { task(query: \"Summarize latest emails\") }" }'
     ```
 
-    <a href="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-step5.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-execute.gif" alt="Run the integration to query the agent" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-execute.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-execute.gif" alt="Run the integration to query the agent" width="70%"></a>

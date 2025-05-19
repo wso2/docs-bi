@@ -82,7 +82,7 @@ nav:
       - Install Integration Control Plane: install-and-setup/install-integration-control-plane.md
   - Learn:
       - AI:
-        - Natural functions: learn/ai/natural-functions/natural-functions.md
+        # - Natural functions: learn/ai/natural-functions/natural-functions.md
         - Agents:
           - Introduction to Chat Agents: learn/ai/agents/introduction-to-chat-agents.md
           - Introduction to Inline Agents: learn/ai/agents/introduction-to-inline-agents.md

@@ -12,7 +12,7 @@ To get started, you’ll need to configure Google API credentials:
 
 ##  Create the agent
 
-Before adding tools, make sure you’ve set up your agent by completing steps 1 to 5 in the [Introduction to Chat Agents](/learn/ai/agents/introduction-to-chat-agents/) guide. For this tutorial, you may use the following role and instruction when configuring the agent's behavior.
+Before adding tools, make sure you’ve set up your agent by completing steps 1 to 5 in the [Introduction to Chat Agents](/learn/ai/agents/introduction-to-chat-agents/) guide. For this tutorial, you may use the following role and instructions when configuring the agent's behavior.
 
 **Role**
 ``` md
@@ -43,19 +43,19 @@ Guidelines:
 BI includes prebuilt connectors for many external services like Gmail and Google Calendar. You can directly use their actions as tools for your agent—no need to write custom integration code. This significantly reduces the manual effort typically required when working with external APIs.
 
 
-### Add gmail tools to the agent
+### Add Gmail tools to the agent
 
 #### Tool 1: List unread emails
 
-##### Step 1: Add the gmail connector
+##### Step 1: Add the Gmail connector
 1. In Agent Flow View, click the **+** button at the bottom-left of the `AI Agent` box.
 2. Click the **+** button next to **Tools** → **Create New Tool**.
 3. Click **Add Connection** under the **Connections** section.
 4. Search for and select the **Gmail** connector.
 
-    <a href="{{base_path}}/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-add-gmail-connector.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-add-gmail-connector.gif" alt=" Add the gmail connector" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-add-gmail-connector.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-add-gmail-connector.gif" alt=" Add the Gmail connector" width="70%"></a>
 
-##### Step 2: Configure the gmail connector
+##### Step 2: Configure the Gmail connector
 1. In the configuration panel:
     - Click **Config** to open the **Expression Helper**.
     - Under the **Construct Record** tab, select **ConnectionConfig**.
@@ -67,7 +67,7 @@ BI includes prebuilt connectors for many external services like Gmail and Google
 
 2. Save the configuration. You’ll now see the Gmail connection listed under **Connections**.
 
-    <a href="{{base_path}}/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-configure-gmail-connector.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-configure-gmail-connector.gif" alt="Configure the gmail connector" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-configure-gmail-connector.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-configure-gmail-connector.gif" alt="Configure the Gmail connector" width="70%"></a>
 
 ##### Step 3: Create the tool
 1. Select the Gmail connection → choose the action **List messages in user’s mailbox**.
@@ -177,7 +177,7 @@ Remove `userId` from parameters (as done previously) and save the tool.
 1. Click on the circular `listCalendarEvents` tool node.
 2. Click **⋮** > **View** to open the tool function.
 3. Click the **Google calendar connector action node** (the rectangle connected to the Google calendar connection) to open the configuration panel for that specific connector action.
-4. Update the `calendarId` input to `"primary"` which allows access to the primary calendar of the authenticated user.
+4. Update the `calendarId` input to `"primary"`, which allows access to the primary calendar of the authenticated user.
  5. Click **Save**.
 
     <a href="{{base_path}}/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-configure-listCalendarEvents-tool.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-configure-listCalendarEvents-tool.gif" alt="Configure listCalendarEvents tool" width="70%"></a>

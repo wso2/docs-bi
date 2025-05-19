@@ -72,13 +72,13 @@ Ballerina Integrator (BI) allows you to create tools using existing functions. I
 
 However, in this tutorial, we will create simple functions to perform arithmetic operations and use them as tools.
 
-#### To create a function:
+#### Create a function
 
 1. Click the **+** button in the Ballerina Integrator side panel under the **Functions** section.
 2. Provide the required details to create the function. For this example, use `sum` as the function name, and specify the parameters and return types.
 3. Implement the function logic in the flow node editor that opens.
 
-#### To add the created function as a tool:
+#### Add the created function as a tool
 
 4. Go to the agent flow view.
 5. Click the **+** button at the bottom-left corner of the `AI Agent` box.
