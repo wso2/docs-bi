@@ -111,6 +111,10 @@ nav:
   - Develop:
       - Create a Project: develop/create-a-project.md
       - Ballerina Integrator Artifacts: develop/ballerina-integrator-artifacts.md
+      - Design the Integration:
+        - Visual View of the Integrations: develop/visual-view-of-the-integrations.md
+      #  - Service Designers: develop/service-designers.md
+      - Try the Integration: develop/try-the-integration.md
       - AI Assisted Integration:
       #  - develop/ai-assisted-development/index.md
         - Build an HTTP Service With WSO2 Copilot : develop/ai-assisted-development/build-an-http-service-with-wso2-copilot.md
@@ -201,4 +205,4 @@ extra:
       link: https://www.linkedin.com/company/wso2
   # site_version: Uncomment to specify a version
   base_path: https://wso2.github.io/docs-bi
-  # base_path: http://localhost:8000
+  #base_path: http://localhost:8000
