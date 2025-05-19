@@ -53,7 +53,7 @@ BI includes prebuilt connectors for many external services like Gmail and Google
 3. Click **Add Connection** under the **Connections** section.
 4. Search for and select the **Gmail** connector.
 
-    <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-add-gmail-connector.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-add-gmail-connector.gif" alt=" Add the gmail connector" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-add-gmail-connector.gif"><img src="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-add-gmail-connector.gif" alt=" Add the gmail connector" width="70%"></a>
 
 ##### Step 2: Configure the gmail connector
 1. In the configuration panel:
@@ -67,13 +67,13 @@ BI includes prebuilt connectors for many external services like Gmail and Google
 
 2. Save the configuration. You’ll now see the Gmail connection listed under **Connections**.
 
-    <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-configure-gmail-connector.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-configure-gmail-connector.gif" alt="Configure the gmail connector" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-configure-gmail-connector.gif"><img src="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-configure-gmail-connector.gif" alt="Configure the gmail connector" width="70%"></a>
 
 ##### Step 3: Create the tool
 1. Select the Gmail connection → choose the action **List messages in user’s mailbox**.
 2. Provide the required **Tool Name** input as `listUnreadEmails`, and optionally add a meaningful **Description** to help the LLM better understand the tool's purpose.
 
-    <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-create-listUnreadEmails-tool.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-create-listUnreadEmails-tool.gif" alt="Create listUnreadEmails tool" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-create-listUnreadEmails-tool.gif"><img src="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-create-listUnreadEmails-tool.gif" alt="Create listUnreadEmails tool" width="70%"></a>
 
 ##### Step 4: Customize the tool
 1. Click on the circular `listUnreadEmails` tool node.
@@ -84,7 +84,7 @@ BI includes prebuilt connectors for many external services like Gmail and Google
     - Under **Advanced Configurations**, set the **q** input to `"is:unread"` to filter unread emails only.
 5. Click **Save**.
 
-       <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-configure-listUnreadEmails-tool.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-configure-listUnreadEmails-tool.gif" alt="Configure listUnreadEmails tool" width="70%"></a>
+       <a href="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-configure-listUnreadEmails-tool.gif"><img src="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-configure-listUnreadEmails-tool.gif" alt="Configure listUnreadEmails tool" width="70%"></a>
 
 
 ##### Step 5: Clean up
@@ -94,7 +94,7 @@ Remove the `userId` parameter from the function as it is no longer used in the t
 - Click the **Trash** icon next to `userId`.
 - Click **Save**.
 
-    <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-cleanup-listUnreadEmails-tool.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-cleanup-listUnreadEmails-tool.gif" alt="Clean up listUnreadEmails tool" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-cleanup-listUnreadEmails-tool.gif"><img src="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-cleanup-listUnreadEmails-tool.gif" alt="Clean up listUnreadEmails tool" width="70%"></a>
 
 
 You’ve now created a tool that lists unread emails in the user’s Gmail inbox.
@@ -107,7 +107,7 @@ You’ve now created a tool that lists unread emails in the user’s Gmail inbox
 3. Choose the action **Gets the specified message**.
 4. Name the tool as `readSpecificEmail` and optionally add a description.
 
-    <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-create-readSpecificEmail-tool.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-create-readSpecificEmail-tool.gif" alt="Create readSpecificEmail tool" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-create-readSpecificEmail-tool.gif"><img src="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-create-readSpecificEmail-tool.gif" alt="Create readSpecificEmail tool" width="70%"></a>
 
 
 ##### Step 2: Customize the tool
@@ -117,13 +117,13 @@ You’ve now created a tool that lists unread emails in the user’s Gmail inbox
     - Under **Advanced Configurations**, set the **format** input to `full` to get the full email message data with the body content parsed.
 3. Click **Save**.
 
-    <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-configure-readSpecificEmail-tool.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-configure-readSpecificEmail-tool.gif" alt="Configure readSpecificEmail tool" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-configure-readSpecificEmail-tool.gif"><img src="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-configure-readSpecificEmail-tool.gif" alt="Configure readSpecificEmail tool" width="70%"></a>
 
 
 ##### Step 3: Clean up
 Remove `userId` from parameters (as done previously) and save the tool.
 
-<a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-cleanup-readSpecificEmail-tool.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-cleanup-readSpecificEmail-tool.gif" alt="Clean up readSpecificEmail tool" width="70%"></a>
+<a href="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-cleanup-readSpecificEmail-tool.gif"><img src="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-cleanup-readSpecificEmail-tool.gif" alt="Clean up readSpecificEmail tool" width="70%"></a>
 
 #### Tool 3: Send an email
 
@@ -132,14 +132,14 @@ Remove `userId` from parameters (as done previously) and save the tool.
 2. Select the action **Sends the specified message to the recipients**.
 3. Name the tool as `sendEmail` and optionally add a helpful description.
 
-    <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-create-sendEmail-tool.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-create-sendEmail-tool.gif" alt="Create sendEmail tool" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-create-sendEmail-tool.gif"><img src="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-create-sendEmail-tool.gif" alt="Create sendEmail tool" width="70%"></a>
 
 ##### Step 2: Customize and clean up
 1. Set `userId` to `"me"` in the connector action configuration (as done previously) .
 2. Remove `userId` from the parameters.
 3. Save your tool.
 
-    <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-configure-sendEmail-tool.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-configure-sendEmail-tool.gif" alt="Configure sendEmail tool" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-configure-sendEmail-tool.gif"><img src="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-configure-sendEmail-tool.gif" alt="Configure sendEmail tool" width="70%"></a>
 
 ### Add calendar tools to the agent
 
@@ -151,7 +151,7 @@ Remove `userId` from parameters (as done previously) and save the tool.
 3. Click **+** button of the **Connections** section.
 4. Search for and select the **Gcalendar** connector.
 
-    <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-add-gcalendar-connector.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-add-gcalendar-connector.gif" alt="Add the google calendar connector" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-add-gcalendar-connector.gif"><img src="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-add-gcalendar-connector.gif" alt="Add the google calendar connector" width="70%"></a>
 
 ##### Step 2: Configure the google calendar connector
 1. In the configuration panel:
@@ -163,7 +163,7 @@ Remove `userId` from parameters (as done previously) and save the tool.
     !!! note
         Externalize credentials using configurable values to avoid exposing them in your version control system. See [Configurations]({{base_path}}/get-started/key-concepts/#configurations) for more details.
 
-    <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-configure-gcalendar-connector.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-configure-gcalendar-connector.gif" alt="Configure the google calendar connector" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-configure-gcalendar-connector.gif"><img src="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-configure-gcalendar-connector.gif" alt="Configure the google calendar connector" width="70%"></a>
 
 2. Save the configuration. You’ll now see the Google calendar connection listed under **Connections**.
 
@@ -171,7 +171,7 @@ Remove `userId` from parameters (as done previously) and save the tool.
 1. Select the Google calendar connection → choose the action **Returns events on the specified calendar.**.
 2. Provide the required **Tool Name** input as `listCalendarEvents`, and optionally add a meaningful **Description**.
 
-    <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-create-listCalendarEvents-tool.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-create-listCalendarEvents-tool.gif" alt="Create listCalendarEvents tool" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-create-listCalendarEvents-tool.gif"><img src="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-create-listCalendarEvents-tool.gif" alt="Create listCalendarEvents tool" width="70%"></a>
 
 ##### Step 4: Customize the tool
 1. Click on the circular `listCalendarEvents` tool node.
@@ -180,7 +180,7 @@ Remove `userId` from parameters (as done previously) and save the tool.
 4. Update the `calendarId` input to `"primary"` which allows access to the primary calendar of the authenticated user.
  5. Click **Save**.
 
-    <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-configure-listCalendarEvents-tool.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-configure-listCalendarEvents-tool.gif" alt="Configure listCalendarEvents tool" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-configure-listCalendarEvents-tool.gif"><img src="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-configure-listCalendarEvents-tool.gif" alt="Configure listCalendarEvents tool" width="70%"></a>
 
 ##### Step 5: Clean up
 Remove the `calendarId` parameter from the function as it is no longer used in the tool:
@@ -189,7 +189,7 @@ Remove the `calendarId` parameter from the function as it is no longer used in t
 - Click the **Trash** icon next to `calendarId`.
 - Click **Save**.
 
-      <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-cleanup-listCalendarEvents-tool.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-cleanup-listCalendarEvents-tool.gif" alt="Clean up listCalendarEvents tool" width="70%"></a>
+      <a href="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-cleanup-listCalendarEvents-tool.gif"><img src="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-cleanup-listCalendarEvents-tool.gif" alt="Clean up listCalendarEvents tool" width="70%"></a>
 
 #### Tool 5: Create calendar event
 
@@ -199,7 +199,7 @@ Remove the `calendarId` parameter from the function as it is no longer used in t
 3. Choose the action **Creates an event**.
 4. Name the tool as `createCalendarEvent` and optionally add a helpful description.
 
-      <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-create-createCalendarEvent-tool.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-create-createCalendarEvent-tool.gif" alt="Create createCalendarEvent tool" width="70%"></a>
+      <a href="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-create-createCalendarEvent-tool.gif"><img src="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-create-createCalendarEvent-tool.gif" alt="Create createCalendarEvent tool" width="70%"></a>
 
 ##### Step 2: Customize the tool
 1. Click on the circular `createCalendarEvent` tool node.
@@ -208,7 +208,7 @@ Remove the `calendarId` parameter from the function as it is no longer used in t
 4. Update the `calendarId` input to `"primary"`.
 5. Click **Save**.
 
-    <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-confgure-createCalendarEvent-tool.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-confgure-createCalendarEvent-tool.gif" alt="Customize createCalendarEvent tool" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-confgure-createCalendarEvent-tool.gif"><img src="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-confgure-createCalendarEvent-tool.gif" alt="Customize createCalendarEvent tool" width="70%"></a>
 
 ##### Step 3: Clean up
 Remove the `calendarId` parameter from the function as it is no longer used in the tool:
@@ -217,7 +217,7 @@ Remove the `calendarId` parameter from the function as it is no longer used in t
 - Click the **Trash** icon next to `calendarId`.
 - Click **Save**.
 
-    <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-cleanup-createCalendarEvent-tool.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-cleanup-createCalendarEvent-tool.gif" alt="Clean up createCalendarEvent tool" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-cleanup-createCalendarEvent-tool.gif"><img src="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-cleanup-createCalendarEvent-tool.gif" alt="Clean up createCalendarEvent tool" width="70%"></a>
 
 ## Interact with the agent
 
@@ -230,4 +230,4 @@ To start chatting with the agent:
 3. If you have added any variables to the project, you’ll be prompted to update their values in the Config.toml file. Configure them to continue with the execution of the agent.
 4. Start chatting with your assistant.
 
-    <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-assistant-chat.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-assistant-chat.gif" alt="Interact With the Agent" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-assistant-chat.gif"><img src="{{base_path}}/assets/img/learn/ai/agent/integrating-agents-with-external-endpoints/ai-agent-assistant-chat.gif" alt="Interact With the Agent" width="70%"></a>
