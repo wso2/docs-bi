@@ -18,7 +18,7 @@ In this tutorial, you'll create an AI-powered math tutor assistant capable of ha
 4. Select the project directory location by clicking on the **Select Location** button.
 5. Click the **Create New Integration** button to generate the integration project.
 
-    <a href="{{base_path}}/assets/img/learn/ai/agent/introduction-to-chat-agents/1.create-new-project.gif"><img src="{{base_path}}/assets/img/learn/ai/agent/introduction-to-chat-agents/1.create-new-project.gif" alt="Create a New Integration Project" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agents/introduction-to-chat-agents/1.create-new-project.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/introduction-to-chat-agents/1.create-new-project.gif" alt="Create a New Integration Project" width="70%"></a>
 
 ### Step 2: Create an agent
 
@@ -27,7 +27,7 @@ In this tutorial, you'll create an AI-powered math tutor assistant capable of ha
 3. Provide a **Name** for the agent. It will take a moment to create an agent with the default configuration.
 4. After creating the agent, you can configure it with a model provider, memory, tools, roles, and instructions.
 
-    <a href="{{base_path}}/assets/img/learn/ai/agent/introduction-to-chat-agents/2.create-an-agent.gif"><img src="{{base_path}}/assets/img/learn/ai/agent/introduction-to-chat-agents/2.create-an-agent.gif" alt="Create an Agent" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agents/introduction-to-chat-agents/2.create-an-agent.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/introduction-to-chat-agents/2.create-an-agent.gif" alt="Create an Agent" width="70%"></a>
 
 ### Step 3: Configure the agent behavior
 
@@ -35,7 +35,7 @@ In this tutorial, you'll create an AI-powered math tutor assistant capable of ha
 2. Define the agent's **Role** and provide **Instructions** in natural language. These instructions will guide the agent’s behavior and tasks.
 3. Click **Save** to finalize and complete the agent behavior configuration.
 
-    <a href="{{base_path}}/assets/img/learn/ai/agent/introduction-to-chat-agents/3.configure-behaviour.gif"><img src="{{base_path}}/assets/img/learn/ai/agent/introduction-to-chat-agents/3.configure-behaviour.gif" alt="Configure the Agent Behavior" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agents/introduction-to-chat-agents/3.configure-behaviour.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/introduction-to-chat-agents/3.configure-behaviour.gif" alt="Configure the Agent Behavior" width="70%"></a>
 
 ### Step 4: Configure the agent model
 
@@ -56,7 +56,7 @@ In this tutorial, you'll create an AI-powered math tutor assistant capable of ha
 5. In the **Model Type** dropdown, select `ai:GPT_40`.
 6. Click **Save** to complete the LLM model configuration.    
 
-    <a href="{{base_path}}/assets/img/learn/ai/agent/introduction-to-chat-agents/4.configure-model.gif"><img src="{{base_path}}/assets/img/learn/ai/agent/introduction-to-chat-agents/4.configure-model.gif" alt="Configure the Agent Model" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/ai/agents/introduction-to-chat-agents/4.configure-model.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/introduction-to-chat-agents/4.configure-model.gif" alt="Configure the Agent Model" width="70%"></a>
 
 ### Step 5: Configure agent memory
 
@@ -68,7 +68,7 @@ In this tutorial, you'll create an AI-powered math tutor assistant capable of ha
 
 ### Step 6: Add tools to the agent
 
-Ballerina Integrator (BI) allows you to create tools using existing functions. It also supports automatically generating [tools from connector actions](/learn/ai/agent/integrating-agents-with-external-endpoints) or OpenAPI specifications by leveraging BI’s capability to generate local connectors from an OpenAPI spec.
+Ballerina Integrator (BI) allows you to create tools using existing functions. It also supports automatically generating [tools from connector actions](/learn/ai/agents/integrating-agents-with-external-endpoints) or OpenAPI specifications by leveraging BI’s capability to generate local connectors from an OpenAPI spec.
 
 However, in this tutorial, we will create simple functions to perform arithmetic operations and use them as tools.
 
@@ -89,7 +89,7 @@ However, in this tutorial, we will create simple functions to perform arithmetic
 Follow steps 1 to 3 to create functions named subtract, multiply and divide to perform subtraction, multiplication, and division operations respectively. Define the appropriate parameters and return types, and implement the corresponding logic in the flow node editor.
 Then repeat steps 4 to 8 to add each of these functions as tools in the agent by selecting them from the Current Integration list and providing a relevant tool name and description for each.    
 
-<a href="{{base_path}}/assets/img/learn/ai/agent/introduction-to-chat-agents/6.add-functions.gif"><img src="{{base_path}}/assets/img/learn/ai/agent/introduction-to-chat-agents/6.add-functions.gif" alt="Add Tools to the Agent" width="70%"></a>
+<a href="{{base_path}}/assets/img/learn/ai/agents/introduction-to-chat-agents/6.add-functions.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/introduction-to-chat-agents/6.add-functions.gif" alt="Add Tools to the Agent" width="70%"></a>
 
 ### Step 7: Interact with the agent
 
@@ -104,4 +104,4 @@ To start chatting with the agent:
 !!! note
     A temporary OpenAI API key is used in the GIF below to showcase the steps.  
 
-<a href="{{base_path}}/assets/img/learn/ai/agent/introduction-to-chat-agents/7.interact-with-agent.gif"><img src="{{base_path}}/assets/img/learn/ai/agent/introduction-to-chat-agents/7.interact-with-agent.gif" alt="Interact With the Agent" width="70%"></a>
+<a href="{{base_path}}/assets/img/learn/ai/agents/introduction-to-chat-agents/7.interact-with-agent.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/introduction-to-chat-agents/7.interact-with-agent.gif" alt="Interact With the Agent" width="70%"></a>
