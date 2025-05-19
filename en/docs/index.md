@@ -41,7 +41,9 @@
         "title": "Tutorials",
         "icon": "📚",
         "links": [
-            {"name": "Build an AI Agent to Handle Mathematical Queries", "url": "learn/ai-agent/build-ai-agent-to-handle-mathematical-queries/"},
+            {"name": "Introduction to Chat Agents", "url": "learn/ai/agents/introduction-to-chat-agents/"},
+            {"name": "Introduction to Inline Agents", "url": "learn/ai/agents/introduction-to-inline-agents"},
+            {"name": "Integrating Agents with External Endpoints", "url": "learn/ai/agents/integrating-agents-with-external-endpoints/"},
             {"name": "File Integration With Directory Service", "url": "learn/file-integration/file-integration-with-directory-service/"},
             {"name": "Build an HTTP Service With WSO2 Copilot", "url": "develop/ai-assisted-development/build-an-http-service-with-wso2-copilot/"},
             {"name": "Message Transformation", "url": "learn/samples/message-transformation/"},
