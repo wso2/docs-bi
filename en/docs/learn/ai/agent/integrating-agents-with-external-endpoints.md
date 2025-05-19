@@ -48,41 +48,41 @@ BI includes prebuilt connectors for many external services like Gmail and Google
 #### Tool 1: List unread emails
 
 ##### Step 1: Add the gmail connector
-1. In Agent Flow View, click the **`+`** button at the bottom-left of the `AI Agent` box.
-2. Click the **`+`** button next to **`Tools`** → **`Create New Tool`**.
-3. Click **`Add Connection`** under the **Connections** section.
+1. In Agent Flow View, click the **+** button at the bottom-left of the `AI Agent` box.
+2. Click the **+** button next to **Tools** → **Create New Tool**.
+3. Click **Add Connection** under the **Connections** section.
 4. Search for and select the **Gmail** connector.
 
     <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-add-gmail-connector.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-add-gmail-connector.gif" alt=" Add the gmail connector" width="70%"></a>
 
 ##### Step 2: Configure the gmail connector
 1. In the configuration panel:
-    - Click **`Config`** to open the **`Expression Helper`**.
-    - Under the **`Construct Record`** tab, select **`ConnectionConfig`**.
-    - Set the `auth` type to **`OAuth2RefreshTokenGrantType`**.
-    - Fill in your **`clientId`**, **`clientSecret`**, and **`refreshToken`**.
+    - Click **Config** to open the **Expression Helper**.
+    - Under the **Construct Record** tab, select **ConnectionConfig**.
+    - Set the `auth` type to **OAuth2RefreshTokenGrantType**.
+    - Fill in your **clientId**, **clientSecret**, and **refreshToken**.
 
     !!! note
         Externalize credentials using configurable values to avoid exposing them in your version control system. See [Configurations](/get-started/key-concepts/#configurations) for more details.
 
-2. Save the configuration. You’ll now see the Gmail connection listed under **`Connections`**.
+2. Save the configuration. You’ll now see the Gmail connection listed under **Connections**.
 
     <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-configure-gmail-connector.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-configure-gmail-connector.gif" alt="Configure the gmail connector" width="70%"></a>
 
 ##### Step 3: Create the tool
-1. Select the Gmail connection → choose the action **`List messages in user’s mailbox`**.
-2. Provide the required **`Tool Name`** input as `listUnreadEmails`, and optionally add a meaningful **`Description`** to help the LLM better understand the tool's purpose.
+1. Select the Gmail connection → choose the action **List messages in user’s mailbox**.
+2. Provide the required **Tool Name** input as `listUnreadEmails`, and optionally add a meaningful **Description** to help the LLM better understand the tool's purpose.
 
     <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-create-listUnreadEmails-tool.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-create-listUnreadEmails-tool.gif" alt="Create listUnreadEmails tool" width="70%"></a>
 
 ##### Step 4: Customize the tool
 1. Click on the circular `listUnreadEmails` tool node.
-2. Click **`⋮` > `View`** to open the tool function.
-3. Click the **`Gmail connector action node`** (the rectangle connected to the Gmail connection) to open the configuration panel for that specific connector action.
+2. Click **⋮** > **View** to open the tool function.
+3. Click the **Gmail connector action node** (the rectangle connected to the Gmail connection) to open the configuration panel for that specific connector action.
 4. Update these inputs:
-    - Set **`userId`** to **`"me"`**. The value `"me"` represents the authenticated user.
-    - Under **`Advanced Configurations`**, set the **`q`** input to `"is:unread"` to filter unread emails only.
-5. Click **`Save`**.
+    - Set **userId** to `me`. The value `"me"` represents the authenticated user.
+    - Under **Advanced Configurations**, set the **q** input to `"is:unread"` to filter unread emails only.
+5. Click **Save**.
 
        <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-configure-listUnreadEmails-tool.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-configure-listUnreadEmails-tool.gif" alt="Configure listUnreadEmails tool" width="70%"></a>
 
@@ -90,9 +90,9 @@ BI includes prebuilt connectors for many external services like Gmail and Google
 ##### Step 5: Clean up
 Remove the `userId` parameter from the function as it is no longer used in the tool:
 
-- Click **`Edit`** in the top-right of the function panel.
-- Click the **`Trash`** icon next to `userId`.
-- Click **`Save`**.
+- Click **Edit** in the top-right of the function panel.
+- Click the **Trash** icon next to `userId`.
+- Click **Save**.
 
     <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-cleanup-listUnreadEmails-tool.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-cleanup-listUnreadEmails-tool.gif" alt="Clean up listUnreadEmails tool" width="70%"></a>
 
@@ -102,20 +102,20 @@ You’ve now created a tool that lists unread emails in the user’s Gmail inbox
 #### Tool 2: Read a specific email
 
 ##### Step 1: Create the tool
-1. In Agent Flow View, click **`+`** under **Tools** → **Create New Tool**.
-2. Select the existing **`gmailClient`** connection.
-3. Choose the action **`Gets the specified message`**.
+1. In Agent Flow View, click **+** under **Tools** → **Create New Tool**.
+2. Select the existing **gmailClient** connection.
+3. Choose the action **Gets the specified message**.
 4. Name the tool as `readSpecificEmail` and optionally add a description.
 
     <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-create-readSpecificEmail-tool.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-create-readSpecificEmail-tool.gif" alt="Create readSpecificEmail tool" width="70%"></a>
 
 
 ##### Step 2: Customize the tool
-1. Open the `readSpecificEmail` tool node → **`⋮` > `View`**.
+1. Open the `readSpecificEmail` tool node → **⋮** > **View**.
 2. Click the Gmail action node and update inputs:
-    - Set **`userId`** to **`"me"`**. The value `"me"` represents the authenticated user.
-    - Under **`Advanced Configurations`**, set the **`format`** input to **`"full"`** to get the full email message data with the body content parsed.
-3. Click **`Save`**.
+    - Set **userId** to `"me"`. The value `"me"` represents the authenticated user.
+    - Under **Advanced Configurations**, set the **format** input to `full` to get the full email message data with the body content parsed.
+3. Click **Save**.
 
     <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-configure-readSpecificEmail-tool.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-configure-readSpecificEmail-tool.gif" alt="Configure readSpecificEmail tool" width="70%"></a>
 
@@ -128,14 +128,14 @@ Remove `userId` from parameters (as done previously) and save the tool.
 #### Tool 3: Send an email
 
 ##### Step 1: Create the tool
-1. Use the existing **`gmailClient`** connection.
-2. Select the action **`Sends the specified message to the recipients`**.
+1. Use the existing **gmailClient** connection.
+2. Select the action **Sends the specified message to the recipients**.
 3. Name the tool as `sendEmail` and optionally add a helpful description.
 
     <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-create-sendEmail-tool.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-create-sendEmail-tool.gif" alt="Create sendEmail tool" width="70%"></a>
 
 ##### Step 2: Customize and clean up
-1. Set `userId` to **`"me"`** in the connector action configuration (as done previously) .
+1. Set `userId` to `"me"` in the connector action configuration (as done previously) .
 2. Remove `userId` from the parameters.
 3. Save your tool.
 
@@ -146,17 +146,17 @@ Remove `userId` from parameters (as done previously) and save the tool.
 #### Tool 4: List calendar events
 
 ##### Step 1: Add the google calendar connector
-1. In Agent Flow View, click the **`+`** button at the bottom-left of the `AI Agent` box.
-2. Click the **`+`** button next to **`Tools`** → **`Create New Tool`**.
-3. Click **`+`** button of the **Connections** section.
+1. In Agent Flow View, click the **+** button at the bottom-left of the `AI Agent` box.
+2. Click the **+** button next to **Tools** → **Create New Tool**.
+3. Click **+** button of the **Connections** section.
 4. Search for and select the **Gcalendar** connector.
 
     <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-add-gcalendar-connector.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-add-gcalendar-connector.gif" alt="Add the google calendar connector" width="70%"></a>
 
 ##### Step 2: Configure the google calendar connector
 1. In the configuration panel:
-    - Click **`Config`** to open the **Expression Helper**.
-    - Under the **Construct Record** tab, select **`ConnectionConfig`**.
+    - Click **Config** to open the **Expression Helper**.
+    - Under the **Construct Record** tab, select **ConnectionConfig**.
     - Set the `auth` type to **OAuth2RefreshTokenGrantType**.
     - Fill in your **clientId**, **clientSecret**, and **refreshToken**.
 
@@ -168,14 +168,14 @@ Remove `userId` from parameters (as done previously) and save the tool.
 2. Save the configuration. You’ll now see the Google calendar connection listed under **Connections**.
 
 ##### Step 3: Create the tool
-1. Select the Google calendar connection → choose the action **`Returns events on the specified calendar.`**.
+1. Select the Google calendar connection → choose the action **Returns events on the specified calendar.**.
 2. Provide the required **Tool Name** input as `listCalendarEvents`, and optionally add a meaningful **Description**.
 
     <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-create-listCalendarEvents-tool.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-create-listCalendarEvents-tool.gif" alt="Create listCalendarEvents tool" width="70%"></a>
 
 ##### Step 4: Customize the tool
 1. Click on the circular `listCalendarEvents` tool node.
-2. Click **⋮ > View** to open the tool function.
+2. Click **⋮** > **View** to open the tool function.
 3. Click the **Google calendar connector action node** (the rectangle connected to the Google calendar connection) to open the configuration panel for that specific connector action.
 4. Update the `calendarId` input to `"primary"` which allows access to the primary calendar of the authenticated user.
  5. Click **Save**.
@@ -194,9 +194,9 @@ Remove the `calendarId` parameter from the function as it is no longer used in t
 #### Tool 5: Create calendar event
 
 ##### Step 1: Create the tool
-1. In Agent Flow View, click **`+`** under **Tools** → **Create New Tool**.
-2. Select the existing **`gcalendarClient`** connection.
-3. Choose the action **`Creates an event`**.
+1. In Agent Flow View, click **+** under **Tools** → **Create New Tool**.
+2. Select the existing **gcalendarClient** connection.
+3. Choose the action **Creates an event**.
 4. Name the tool as `createCalendarEvent` and optionally add a helpful description.
 
       <a href="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-create-createCalendarEvent-tool.gif"><img src="{{base_path}}/assets/img/learn/integrating-agents-with-external-endpoints/ai-agent-create-createCalendarEvent-tool.gif" alt="Create createCalendarEvent tool" width="70%"></a>
@@ -225,8 +225,8 @@ After completing the above steps, your personal AI assistant agent is now ready 
 
 To start chatting with the agent:
 
-1. Click the **`Chat`** button located at the top-left corner of the interface.
-2. You will be prompted to run the integration. Click **`Run Integration`**.
+1. Click the **Chat** button located at the top-left corner of the interface.
+2. You will be prompted to run the integration. Click **Run Integration**.
 3. If you have added any variables to the project, you’ll be prompted to update their values in the Config.toml file. Configure them to continue with the execution of the agent.
 4. Start chatting with your assistant.
 
