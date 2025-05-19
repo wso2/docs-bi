@@ -1,0 +1,2202 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Ballerina Integrator">
+      
+      
+        <meta name="author" content="WSO2">
+      
+      
+        <link rel="canonical" href="https://bi.docs.wso2.com/learn/ai/agents/integrating-agents-with-external-endpoints/">
+      
+      
+        <link rel="prev" href="../introduction-to-inline-agents/">
+      
+      
+        <link rel="next" href="../../../file-integration/file-integration-with-directory-service/">
+      
+      <link rel="icon" href="../../../../images/bi-logo.svg">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
+    
+    
+      
+        <title>Integrating Agents with External Endpoints - Ballerina Integrator Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.7bf56d0a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Added the font from google fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/lib/highlightjs/styles/vs.min.css">
+    
+      <link rel="stylesheet" href="../../../../assets/css/blue-palette-alt1.css">
+    
+      <link rel="stylesheet" href="../../../../assets/css/mitheme.css">
+    
+      <link rel="stylesheet" href="../../../../assets/css/custom.css">
+    
+      <link rel="stylesheet" href="../../../../assets/lib/json-formatter/json-formatter.css">
+    
+      <link rel="stylesheet" href="../../../../assets/css/config-catalog.css">
+    
+      <link rel="stylesheet" href="../../../../assets/lib/fontawesome-free-6.3.0-web/css/all.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){
+    w[l]=w[l]||[];w[l].push({
+        'gtm.start':
+            new Date().getTime(),event:'gtm.js'
+    });var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.setAttributeNode(d.createAttribute('data-ot-ignore'));j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5CR98L58');</script>
+<!-- End Google Tag Manager -->
+
+    
+    
+<meta name="google-site-verification" content="pRwRUP0jDUECheRt5DziuVd3gSs2UTw6EhL4nud3NMk" />
+
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#integrating-agents-with-external-endpoints" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      <!--
+ * Copyright (c) 2024, WSO2 LLC. (http://www.wso2.com) All Rights Reserved.
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+
+
+
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header" id="page-header" data-url="" data-lang="en">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Ballerina Integrator Documentation"
+       class="md-header__button md-logo" aria-label="Ballerina Integrator Documentation" data-md-component="logo">
+      
+  <img src="../../../../images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ballerina Integrator Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Integrating Agents with External Endpoints
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <form class="md-header__option" data-md-component="palette">
+      
+      
+      <input class="md-option" data-md-color-media="(prefers-color-scheme)"
+             data-md-color-scheme="default"
+             data-md-color-primary=""
+             data-md-color-accent="" 
+             aria-label="Switch to dark mode"  type="radio" name="__palette"
+             id="__palette_1">
+      
+      <label class="md-header__button md-icon" title="Switch to dark mode"
+             for="__palette_3" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+      </label>
+      
+      
+      
+      <input class="md-option" data-md-color-media="(prefers-color-scheme: light)"
+             data-md-color-scheme="default"
+             data-md-color-primary=""
+             data-md-color-accent="" 
+             aria-label="Switch to system preference"  type="radio" name="__palette"
+             id="__palette_2">
+      
+      <label class="md-header__button md-icon" title="Switch to system preference"
+             for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+      
+      
+      
+      <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)"
+             data-md-color-scheme="slate"
+             data-md-color-primary=""
+             data-md-color-accent="" 
+             aria-label="Switch to light mode"  type="radio" name="__palette"
+             id="__palette_3">
+      
+      <label class="md-header__button md-icon" title="Switch to light mode"
+             for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+      
+      
+    </form>
+    
+    
+    
+    <label class="md-header__button md-icon" for="__search">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+    </label>
+    <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+    <div class="md-header__source">
+      <a href="https://github.com/wso2/docs-bi" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wso2/docs-ballerina-integrator
+  </div>
+</a>
+    </div>
+    
+  </nav>
+  
+  
+  
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../get-started/introduction/" class="md-tabs__link">
+        Get started
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../install-and-setup/install-ballerina-integrator/" class="md-tabs__link">
+        Install and Setup
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../introduction-to-chat-agents/" class="md-tabs__link md-tabs__link--active">
+        Learn
+      </a>
+    </li>
+  
+
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../develop/create-a-project/" class="md-tabs__link">
+        Develop
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../deploy/deploy-to-devant/" class="md-tabs__link">
+        Deploy
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+  
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Ballerina Integrator Documentation" class="md-nav__button md-logo" aria-label="Ballerina Integrator Documentation" data-md-component="logo">
+      
+  <img src="../../../../images/logo.svg" alt="logo">
+
+    </a>
+    Ballerina Integrator Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/wso2/docs-bi" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wso2/docs-ballerina-integrator
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Get started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Get started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../get-started/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../get-started/quick-start-guide/" class="md-nav__link">
+        Quick Start Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../get-started/key-concepts/" class="md-nav__link">
+        Key Concepts
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Install and Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Install and Setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../install-and-setup/install-ballerina-integrator/" class="md-nav__link">
+        Install Ballerina Integrator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../install-and-setup/install-integration-control-plane/" class="md-nav__link">
+        Install Integration Control Plane
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Learn
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Learn
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          AI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          AI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_1" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_1_1" id="__nav_4_1_1_label" tabindex="0">
+          Agents
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          Agents
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction-to-chat-agents/" class="md-nav__link">
+        Introduction to Chat Agents
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction-to-inline-agents/" class="md-nav__link">
+        Introduction to Inline Agents
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Integrating Agents with External Endpoints
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Integrating Agents with External Endpoints
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-the-agent" class="md-nav__link">
+    Create the agent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-connector-actions-as-agent-tools" class="md-nav__link">
+    Use connector actions as agent tools
+  </a>
+  
+    <nav class="md-nav" aria-label="Use connector actions as agent tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-gmail-tools-to-the-agent" class="md-nav__link">
+    Add Gmail tools to the agent
+  </a>
+  
+    <nav class="md-nav" aria-label="Add Gmail tools to the agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tool-1-list-unread-emails" class="md-nav__link">
+    Tool 1: List unread emails
+  </a>
+  
+    <nav class="md-nav" aria-label="Tool 1: List unread emails">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-add-the-gmail-connector" class="md-nav__link">
+    Step 1: Add the Gmail connector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-configure-the-gmail-connector" class="md-nav__link">
+    Step 2: Configure the Gmail connector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-create-the-tool" class="md-nav__link">
+    Step 3: Create the tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-customize-the-tool" class="md-nav__link">
+    Step 4: Customize the tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-clean-up" class="md-nav__link">
+    Step 5: Clean up
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tool-2-read-a-specific-email" class="md-nav__link">
+    Tool 2: Read a specific email
+  </a>
+  
+    <nav class="md-nav" aria-label="Tool 2: Read a specific email">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-the-tool" class="md-nav__link">
+    Step 1: Create the tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-customize-the-tool" class="md-nav__link">
+    Step 2: Customize the tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-clean-up" class="md-nav__link">
+    Step 3: Clean up
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tool-3-send-an-email" class="md-nav__link">
+    Tool 3: Send an email
+  </a>
+  
+    <nav class="md-nav" aria-label="Tool 3: Send an email">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-the-tool_1" class="md-nav__link">
+    Step 1: Create the tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-customize-and-clean-up" class="md-nav__link">
+    Step 2: Customize and clean up
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-calendar-tools-to-the-agent" class="md-nav__link">
+    Add calendar tools to the agent
+  </a>
+  
+    <nav class="md-nav" aria-label="Add calendar tools to the agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tool-4-list-calendar-events" class="md-nav__link">
+    Tool 4: List calendar events
+  </a>
+  
+    <nav class="md-nav" aria-label="Tool 4: List calendar events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-add-the-google-calendar-connector" class="md-nav__link">
+    Step 1: Add the google calendar connector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-configure-the-google-calendar-connector" class="md-nav__link">
+    Step 2: Configure the google calendar connector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-create-the-tool_1" class="md-nav__link">
+    Step 3: Create the tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-customize-the-tool_1" class="md-nav__link">
+    Step 4: Customize the tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-clean-up_1" class="md-nav__link">
+    Step 5: Clean up
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tool-5-create-calendar-event" class="md-nav__link">
+    Tool 5: Create calendar event
+  </a>
+  
+    <nav class="md-nav" aria-label="Tool 5: Create calendar event">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-the-tool_2" class="md-nav__link">
+    Step 1: Create the tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-customize-the-tool_1" class="md-nav__link">
+    Step 2: Customize the tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-clean-up_1" class="md-nav__link">
+    Step 3: Clean up
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interact-with-the-agent" class="md-nav__link">
+    Interact with the agent
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          File Integration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          File Integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../file-integration/file-integration-with-directory-service/" class="md-nav__link">
+        File Integration With Directory Service
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          References
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          References
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/data-mapping/" class="md-nav__link">
+        Data Mapping
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          Samples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Samples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../samples/message-transformation/" class="md-nav__link">
+        Message Transformation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../samples/message-routing/" class="md-nav__link">
+        Message Routing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../samples/service-orchestration/" class="md-nav__link">
+        Service Orchestration
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../enterprise-integrations-patterns/" class="md-nav__link">
+        Enterprise Integration Patterns
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/mulesoft-migration-tool/" class="md-nav__link">
+        Mulesoft Migration Tool
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/tibco-businessworks-migration-tool/" class="md-nav__link">
+        TIBCO BusinessWorks Migration Tool
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Develop
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Develop
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../develop/create-a-project/" class="md-nav__link">
+        Create a Project
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../develop/ballerina-integrator-artifacts/" class="md-nav__link">
+        Ballerina Integrator Artifacts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+          AI Assisted Integration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          AI Assisted Integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../develop/ai-assisted-development/build-an-http-service-with-wso2-copilot/" class="md-nav__link">
+        Build an HTTP Service With WSO2 Copilot
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Deploy
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Deploy
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/deploy-to-devant/" class="md-nav__link">
+        Deploy to Devant
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/deploy-on-vm-as-executable-jar/" class="md-nav__link">
+        Deploy on VM as Executable JAR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/deploy-as-docker-image/" class="md-nav__link">
+        Deploy as Docker Image
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-the-agent" class="md-nav__link">
+    Create the agent
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-connector-actions-as-agent-tools" class="md-nav__link">
+    Use connector actions as agent tools
+  </a>
+  
+    <nav class="md-nav" aria-label="Use connector actions as agent tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-gmail-tools-to-the-agent" class="md-nav__link">
+    Add Gmail tools to the agent
+  </a>
+  
+    <nav class="md-nav" aria-label="Add Gmail tools to the agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tool-1-list-unread-emails" class="md-nav__link">
+    Tool 1: List unread emails
+  </a>
+  
+    <nav class="md-nav" aria-label="Tool 1: List unread emails">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-add-the-gmail-connector" class="md-nav__link">
+    Step 1: Add the Gmail connector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-configure-the-gmail-connector" class="md-nav__link">
+    Step 2: Configure the Gmail connector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-create-the-tool" class="md-nav__link">
+    Step 3: Create the tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-customize-the-tool" class="md-nav__link">
+    Step 4: Customize the tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-clean-up" class="md-nav__link">
+    Step 5: Clean up
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tool-2-read-a-specific-email" class="md-nav__link">
+    Tool 2: Read a specific email
+  </a>
+  
+    <nav class="md-nav" aria-label="Tool 2: Read a specific email">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-the-tool" class="md-nav__link">
+    Step 1: Create the tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-customize-the-tool" class="md-nav__link">
+    Step 2: Customize the tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-clean-up" class="md-nav__link">
+    Step 3: Clean up
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tool-3-send-an-email" class="md-nav__link">
+    Tool 3: Send an email
+  </a>
+  
+    <nav class="md-nav" aria-label="Tool 3: Send an email">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-the-tool_1" class="md-nav__link">
+    Step 1: Create the tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-customize-and-clean-up" class="md-nav__link">
+    Step 2: Customize and clean up
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-calendar-tools-to-the-agent" class="md-nav__link">
+    Add calendar tools to the agent
+  </a>
+  
+    <nav class="md-nav" aria-label="Add calendar tools to the agent">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tool-4-list-calendar-events" class="md-nav__link">
+    Tool 4: List calendar events
+  </a>
+  
+    <nav class="md-nav" aria-label="Tool 4: List calendar events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-add-the-google-calendar-connector" class="md-nav__link">
+    Step 1: Add the google calendar connector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-configure-the-google-calendar-connector" class="md-nav__link">
+    Step 2: Configure the google calendar connector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-create-the-tool_1" class="md-nav__link">
+    Step 3: Create the tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-customize-the-tool_1" class="md-nav__link">
+    Step 4: Customize the tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-clean-up_1" class="md-nav__link">
+    Step 5: Clean up
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tool-5-create-calendar-event" class="md-nav__link">
+    Tool 5: Create calendar event
+  </a>
+  
+    <nav class="md-nav" aria-label="Tool 5: Create calendar event">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-the-tool_2" class="md-nav__link">
+    Step 1: Create the tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-customize-the-tool_1" class="md-nav__link">
+    Step 2: Customize the tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-clean-up_1" class="md-nav__link">
+    Step 3: Clean up
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interact-with-the-agent" class="md-nav__link">
+    Interact with the agent
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+                  
+
+  
+    <a href="https://github.com/wso2/docs-bi/edit/main/en/docs/learn/ai/agents/integrating-agents-with-external-endpoints.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/wso2/docs-bi/raw/main/en/docs/learn/ai/agents/integrating-agents-with-external-endpoints.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
+<h1 id="integrating-agents-with-external-endpoints">Integrating Agents with External Endpoints<a class="headerlink" href="#integrating-agents-with-external-endpoints" title="Permanent link">&para;</a></h1>
+<p>In this tutorial, you’ll create an AI-powered personal assistant agent that integrates with Gmail and Google Calendar to help you efficiently manage emails, tasks, and schedules. You'll use the prebuilt Ballerina Integrator (BI) connectors for seamless integration by turning their actions into agent tools.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>To get started, you’ll need to configure Google API credentials:</p>
+<ol>
+<li>Go to the <a href="https://console.cloud.google.com/">Google Cloud Console</a> and sign in.</li>
+<li>Follow <a href="https://developers.google.com/identity/protocols/oauth2">this guide</a> to generate your <strong>Client ID</strong>, <strong>Client Secret</strong>, and <strong>Refresh Token</strong>.</li>
+<li>Make sure the necessary scopes and permissions are enabled for both the Gmail and Calendar APIs.</li>
+</ol>
+<h2 id="create-the-agent">Create the agent<a class="headerlink" href="#create-the-agent" title="Permanent link">&para;</a></h2>
+<p>Before adding tools, make sure you’ve set up your agent by completing steps 1 to 5 in the <a href="/learn/ai/agents/introduction-to-chat-agents/">Introduction to Chat Agents</a> guide. For this tutorial, you may use the following role and instructions when configuring the agent's behavior.</p>
+<p><strong>Role</strong>
+<div class="highlight"><pre><span></span><code>Personal AI Assistant
+</code></pre></div></p>
+<p><strong>Instructions</strong>
+<div class="highlight"><pre><span></span><code>You are Nova, a smart AI assistant helping me stay organized and efficient.
+
+Your primary responsibilities include:
+<span class="k">-</span><span class="w"> </span>Calendar Management: Scheduling, updating, and retrieving events from the calendar as per the user&#39;s needs.
+<span class="k">-</span><span class="w"> </span>Email Assistance: Reading, summarizing, composing, and sending emails while ensuring clarity and professionalism.
+<span class="k">-</span><span class="w"> </span>Context Awareness: Maintaining a seamless understanding of ongoing tasks and conversations to 
+  provide relevant responses.
+<span class="k">-</span><span class="w"> </span>Privacy &amp; Security: Handling user data responsibly, ensuring sensitive information is kept confidential,
+  and confirming actions before executing them.
+
+Guidelines:
+<span class="k">-</span><span class="w"> </span>Respond in a natural, friendly, and professional tone.
+<span class="k">-</span><span class="w"> </span>Always confirm before making changes to the user&#39;s calendar or sending emails.
+<span class="k">-</span><span class="w"> </span>Provide concise summaries when retrieving information unless the user requests details.
+<span class="k">-</span><span class="w"> </span>Prioritize clarity, efficiency, and user convenience in all tasks.
+</code></pre></div></p>
+<h2 id="use-connector-actions-as-agent-tools">Use connector actions as agent tools<a class="headerlink" href="#use-connector-actions-as-agent-tools" title="Permanent link">&para;</a></h2>
+<p>BI includes prebuilt connectors for many external services like Gmail and Google Calendar. You can directly use their actions as tools for your agent—no need to write custom integration code. This significantly reduces the manual effort typically required when working with external APIs.</p>
+<h3 id="add-gmail-tools-to-the-agent">Add Gmail tools to the agent<a class="headerlink" href="#add-gmail-tools-to-the-agent" title="Permanent link">&para;</a></h3>
+<h4 id="tool-1-list-unread-emails">Tool 1: List unread emails<a class="headerlink" href="#tool-1-list-unread-emails" title="Permanent link">&para;</a></h4>
+<h5 id="step-1-add-the-gmail-connector">Step 1: Add the Gmail connector<a class="headerlink" href="#step-1-add-the-gmail-connector" title="Permanent link">&para;</a></h5>
+<ol>
+<li>In Agent Flow View, click the <strong>+</strong> button at the bottom-left of the <code>AI Agent</code> box.</li>
+<li>Click the <strong>+</strong> button next to <strong>Tools</strong> → <strong>Create New Tool</strong>.</li>
+<li>Click <strong>Add Connection</strong> under the <strong>Connections</strong> section.</li>
+<li>
+<p>Search for and select the <strong>Gmail</strong> connector.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-add-gmail-connector.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-add-gmail-connector.gif" alt=" Add the Gmail connector" width="70%"></a></p>
+</li>
+</ol>
+<h5 id="step-2-configure-the-gmail-connector">Step 2: Configure the Gmail connector<a class="headerlink" href="#step-2-configure-the-gmail-connector" title="Permanent link">&para;</a></h5>
+<ol>
+<li>
+<p>In the configuration panel:</p>
+<ul>
+<li>Click <strong>Config</strong> to open the <strong>Expression Helper</strong>.</li>
+<li>Under the <strong>Construct Record</strong> tab, select <strong>ConnectionConfig</strong>.</li>
+<li>Set the <code>auth</code> type to <strong>OAuth2RefreshTokenGrantType</strong>.</li>
+<li>Fill in your <strong>clientId</strong>, <strong>clientSecret</strong>, and <strong>refreshToken</strong>.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Externalize credentials using configurable values to avoid exposing them in your version control system. See <a href="/get-started/key-concepts/#configurations">Configurations</a> for more details.</p>
+</div>
+</li>
+<li>
+<p>Save the configuration. You’ll now see the Gmail connection listed under <strong>Connections</strong>.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-configure-gmail-connector.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-configure-gmail-connector.gif" alt="Configure the Gmail connector" width="70%"></a></p>
+</li>
+</ol>
+<h5 id="step-3-create-the-tool">Step 3: Create the tool<a class="headerlink" href="#step-3-create-the-tool" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Select the Gmail connection → choose the action <strong>List messages in user’s mailbox</strong>.</li>
+<li>
+<p>Provide the required <strong>Tool Name</strong> input as <code>listUnreadEmails</code>, and optionally add a meaningful <strong>Description</strong> to help the LLM better understand the tool's purpose.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-create-listUnreadEmails-tool.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-create-listUnreadEmails-tool.gif" alt="Create listUnreadEmails tool" width="70%"></a></p>
+</li>
+</ol>
+<h5 id="step-4-customize-the-tool">Step 4: Customize the tool<a class="headerlink" href="#step-4-customize-the-tool" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Click on the circular <code>listUnreadEmails</code> tool node.</li>
+<li>Click <strong>⋮</strong> &gt; <strong>View</strong> to open the tool function.</li>
+<li>Click the <strong>Gmail connector action node</strong> (the rectangle connected to the Gmail connection) to open the configuration panel for that specific connector action.</li>
+<li>Update these inputs:<ul>
+<li>Set <strong>userId</strong> to <code>me</code>. The value <code>"me"</code> represents the authenticated user.</li>
+<li>Under <strong>Advanced Configurations</strong>, set the <strong>q</strong> input to <code>"is:unread"</code> to filter unread emails only.</li>
+</ul>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-configure-listUnreadEmails-tool.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-configure-listUnreadEmails-tool.gif" alt="Configure listUnreadEmails tool" width="70%"></a></p>
+</li>
+</ol>
+<h5 id="step-5-clean-up">Step 5: Clean up<a class="headerlink" href="#step-5-clean-up" title="Permanent link">&para;</a></h5>
+<p>Remove the <code>userId</code> parameter from the function as it is no longer used in the tool:</p>
+<ul>
+<li>Click <strong>Edit</strong> in the top-right of the function panel.</li>
+<li>Click the <strong>Trash</strong> icon next to <code>userId</code>.</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-cleanup-listUnreadEmails-tool.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-cleanup-listUnreadEmails-tool.gif" alt="Clean up listUnreadEmails tool" width="70%"></a></p>
+</li>
+</ul>
+<p>You’ve now created a tool that lists unread emails in the user’s Gmail inbox.</p>
+<h4 id="tool-2-read-a-specific-email">Tool 2: Read a specific email<a class="headerlink" href="#tool-2-read-a-specific-email" title="Permanent link">&para;</a></h4>
+<h5 id="step-1-create-the-tool">Step 1: Create the tool<a class="headerlink" href="#step-1-create-the-tool" title="Permanent link">&para;</a></h5>
+<ol>
+<li>In Agent Flow View, click <strong>+</strong> under <strong>Tools</strong> → <strong>Create New Tool</strong>.</li>
+<li>Select the existing <strong>gmailClient</strong> connection.</li>
+<li>Choose the action <strong>Gets the specified message</strong>.</li>
+<li>
+<p>Name the tool as <code>readSpecificEmail</code> and optionally add a description.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-create-readSpecificEmail-tool.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-create-readSpecificEmail-tool.gif" alt="Create readSpecificEmail tool" width="70%"></a></p>
+</li>
+</ol>
+<h5 id="step-2-customize-the-tool">Step 2: Customize the tool<a class="headerlink" href="#step-2-customize-the-tool" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Open the <code>readSpecificEmail</code> tool node → <strong>⋮</strong> &gt; <strong>View</strong>.</li>
+<li>Click the Gmail action node and update inputs:<ul>
+<li>Set <strong>userId</strong> to <code>"me"</code>. The value <code>"me"</code> represents the authenticated user.</li>
+<li>Under <strong>Advanced Configurations</strong>, set the <strong>format</strong> input to <code>full</code> to get the full email message data with the body content parsed.</li>
+</ul>
+</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-configure-readSpecificEmail-tool.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-configure-readSpecificEmail-tool.gif" alt="Configure readSpecificEmail tool" width="70%"></a></p>
+</li>
+</ol>
+<h5 id="step-3-clean-up">Step 3: Clean up<a class="headerlink" href="#step-3-clean-up" title="Permanent link">&para;</a></h5>
+<p>Remove <code>userId</code> from parameters (as done previously) and save the tool.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-cleanup-readSpecificEmail-tool.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-cleanup-readSpecificEmail-tool.gif" alt="Clean up readSpecificEmail tool" width="70%"></a></p>
+<h4 id="tool-3-send-an-email">Tool 3: Send an email<a class="headerlink" href="#tool-3-send-an-email" title="Permanent link">&para;</a></h4>
+<h5 id="step-1-create-the-tool_1">Step 1: Create the tool<a class="headerlink" href="#step-1-create-the-tool_1" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Use the existing <strong>gmailClient</strong> connection.</li>
+<li>Select the action <strong>Sends the specified message to the recipients</strong>.</li>
+<li>
+<p>Name the tool as <code>sendEmail</code> and optionally add a helpful description.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-create-sendEmail-tool.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-create-sendEmail-tool.gif" alt="Create sendEmail tool" width="70%"></a></p>
+</li>
+</ol>
+<h5 id="step-2-customize-and-clean-up">Step 2: Customize and clean up<a class="headerlink" href="#step-2-customize-and-clean-up" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Set <code>userId</code> to <code>"me"</code> in the connector action configuration (as done previously) .</li>
+<li>Remove <code>userId</code> from the parameters.</li>
+<li>
+<p>Save your tool.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-configure-sendEmail-tool.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-configure-sendEmail-tool.gif" alt="Configure sendEmail tool" width="70%"></a></p>
+</li>
+</ol>
+<h3 id="add-calendar-tools-to-the-agent">Add calendar tools to the agent<a class="headerlink" href="#add-calendar-tools-to-the-agent" title="Permanent link">&para;</a></h3>
+<h4 id="tool-4-list-calendar-events">Tool 4: List calendar events<a class="headerlink" href="#tool-4-list-calendar-events" title="Permanent link">&para;</a></h4>
+<h5 id="step-1-add-the-google-calendar-connector">Step 1: Add the google calendar connector<a class="headerlink" href="#step-1-add-the-google-calendar-connector" title="Permanent link">&para;</a></h5>
+<ol>
+<li>In Agent Flow View, click the <strong>+</strong> button at the bottom-left of the <code>AI Agent</code> box.</li>
+<li>Click the <strong>+</strong> button next to <strong>Tools</strong> → <strong>Create New Tool</strong>.</li>
+<li>Click <strong>+</strong> button of the <strong>Connections</strong> section.</li>
+<li>
+<p>Search for and select the <strong>Gcalendar</strong> connector.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-add-gcalendar-connector.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-add-gcalendar-connector.gif" alt="Add the google calendar connector" width="70%"></a></p>
+</li>
+</ol>
+<h5 id="step-2-configure-the-google-calendar-connector">Step 2: Configure the google calendar connector<a class="headerlink" href="#step-2-configure-the-google-calendar-connector" title="Permanent link">&para;</a></h5>
+<ol>
+<li>
+<p>In the configuration panel:</p>
+<ul>
+<li>Click <strong>Config</strong> to open the <strong>Expression Helper</strong>.</li>
+<li>Under the <strong>Construct Record</strong> tab, select <strong>ConnectionConfig</strong>.</li>
+<li>Set the <code>auth</code> type to <strong>OAuth2RefreshTokenGrantType</strong>.</li>
+<li>Fill in your <strong>clientId</strong>, <strong>clientSecret</strong>, and <strong>refreshToken</strong>.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Externalize credentials using configurable values to avoid exposing them in your version control system. See <a href="https://wso2.github.io/docs-bi/get-started/key-concepts/#configurations">Configurations</a> for more details.</p>
+</div>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-configure-gcalendar-connector.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-configure-gcalendar-connector.gif" alt="Configure the google calendar connector" width="70%"></a></p>
+</li>
+<li>
+<p>Save the configuration. You’ll now see the Google calendar connection listed under <strong>Connections</strong>.</p>
+</li>
+</ol>
+<h5 id="step-3-create-the-tool_1">Step 3: Create the tool<a class="headerlink" href="#step-3-create-the-tool_1" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Select the Google calendar connection → choose the action <strong>Returns events on the specified calendar.</strong>.</li>
+<li>
+<p>Provide the required <strong>Tool Name</strong> input as <code>listCalendarEvents</code>, and optionally add a meaningful <strong>Description</strong>.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-create-listCalendarEvents-tool.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-create-listCalendarEvents-tool.gif" alt="Create listCalendarEvents tool" width="70%"></a></p>
+</li>
+</ol>
+<h5 id="step-4-customize-the-tool_1">Step 4: Customize the tool<a class="headerlink" href="#step-4-customize-the-tool_1" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Click on the circular <code>listCalendarEvents</code> tool node.</li>
+<li>Click <strong>⋮</strong> &gt; <strong>View</strong> to open the tool function.</li>
+<li>Click the <strong>Google calendar connector action node</strong> (the rectangle connected to the Google calendar connection) to open the configuration panel for that specific connector action.</li>
+<li>Update the <code>calendarId</code> input to <code>"primary"</code>, which allows access to the primary calendar of the authenticated user.</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-configure-listCalendarEvents-tool.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-configure-listCalendarEvents-tool.gif" alt="Configure listCalendarEvents tool" width="70%"></a></p>
+</li>
+</ol>
+<h5 id="step-5-clean-up_1">Step 5: Clean up<a class="headerlink" href="#step-5-clean-up_1" title="Permanent link">&para;</a></h5>
+<p>Remove the <code>calendarId</code> parameter from the function as it is no longer used in the tool:</p>
+<ul>
+<li>Click <strong>Edit</strong> in the top-right of the function panel.</li>
+<li>Click the <strong>Trash</strong> icon next to <code>calendarId</code>.</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-cleanup-listCalendarEvents-tool.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-cleanup-listCalendarEvents-tool.gif" alt="Clean up listCalendarEvents tool" width="70%"></a></p>
+</li>
+</ul>
+<h4 id="tool-5-create-calendar-event">Tool 5: Create calendar event<a class="headerlink" href="#tool-5-create-calendar-event" title="Permanent link">&para;</a></h4>
+<h5 id="step-1-create-the-tool_2">Step 1: Create the tool<a class="headerlink" href="#step-1-create-the-tool_2" title="Permanent link">&para;</a></h5>
+<ol>
+<li>In Agent Flow View, click <strong>+</strong> under <strong>Tools</strong> → <strong>Create New Tool</strong>.</li>
+<li>Select the existing <strong>gcalendarClient</strong> connection.</li>
+<li>Choose the action <strong>Creates an event</strong>.</li>
+<li>
+<p>Name the tool as <code>createCalendarEvent</code> and optionally add a helpful description.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-create-createCalendarEvent-tool.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-create-createCalendarEvent-tool.gif" alt="Create createCalendarEvent tool" width="70%"></a></p>
+</li>
+</ol>
+<h5 id="step-2-customize-the-tool_1">Step 2: Customize the tool<a class="headerlink" href="#step-2-customize-the-tool_1" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Click on the circular <code>createCalendarEvent</code> tool node.</li>
+<li>Click <strong>⋮ &gt; View</strong> to open the tool function.</li>
+<li>Click the <strong>Google calendar connector action node</strong> to open the configuration panel for that specific connector action.</li>
+<li>Update the <code>calendarId</code> input to <code>"primary"</code>.</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-confgure-createCalendarEvent-tool.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-confgure-createCalendarEvent-tool.gif" alt="Customize createCalendarEvent tool" width="70%"></a></p>
+</li>
+</ol>
+<h5 id="step-3-clean-up_1">Step 3: Clean up<a class="headerlink" href="#step-3-clean-up_1" title="Permanent link">&para;</a></h5>
+<p>Remove the <code>calendarId</code> parameter from the function as it is no longer used in the tool:</p>
+<ul>
+<li>Click <strong>Edit</strong> in the top-right of the function panel.</li>
+<li>Click the <strong>Trash</strong> icon next to <code>calendarId</code>.</li>
+<li>
+<p>Click <strong>Save</strong>.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-cleanup-createCalendarEvent-tool.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-cleanup-createCalendarEvent-tool.gif" alt="Clean up createCalendarEvent tool" width="70%"></a></p>
+</li>
+</ul>
+<h2 id="interact-with-the-agent">Interact with the agent<a class="headerlink" href="#interact-with-the-agent" title="Permanent link">&para;</a></h2>
+<p>After completing the above steps, your personal AI assistant agent is now ready to assist you with necessary tasks. Ballerina Integrator provides a built-in chat interface to interact with the agent.</p>
+<p>To start chatting with the agent:</p>
+<ol>
+<li>Click the <strong>Chat</strong> button located at the top-left corner of the interface.</li>
+<li>You will be prompted to run the integration. Click <strong>Run Integration</strong>.</li>
+<li>If you have added any variables to the project, you’ll be prompted to update their values in the Config.toml file. Configure them to continue with the execution of the agent.</li>
+<li>
+<p>Start chatting with your assistant.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-assistant-chat.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-assistant-chat.gif" alt="Interact With the Agent" width="70%"></a></p>
+</li>
+</ol>
+
+
+
+
+
+                
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CR98L58" height="0" width="0"
+                  style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+      
+        <footer class="md-footer">
+  
+  
+  <nav class="md-footer__inner md-grid" aria-label="Footer" >
+    
+    
+    <a href="../introduction-to-inline-agents/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Introduction to Inline Agents" rel="prev">
+      <div class="md-footer__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </div>
+      <div class="md-footer__title">
+        <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+          Introduction to Inline Agents
+        </div>
+      </div>
+    </a>
+    
+    
+    
+    <a href="../../../file-integration/file-integration-with-directory-service/" class="md-footer__link md-footer__link--next" aria-label="Next: File Integration With Directory Service" rel="next">
+      <div class="md-footer__title">
+        <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Next
+                </span>
+          File Integration With Directory Service
+        </div>
+      </div>
+      <div class="md-footer__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+      </div>
+    </a>
+    
+  </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  <div class="footer-copyright-left">
+  
+    <div class="md-copyright__highlight">
+      WSO2 Ballerina Integrator - Documentation
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+  </div>
+  <div class="footer-copyright-right">
+    <div class="footer-copyright-top">
+      Copyright &copy; <a href="https://wso2.com/">WSO2</a> LLC (2025)
+    </div>
+    <div class="footer-copyright-bottom">
+      Content licensed under <a href="https://creativecommons.org/licenses/by/4.0">CC By 4.0.</a> | Sample code
+      licensed under <a href="http://www.apache.org/licenses/">Apache 2.0</a>.
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "content.action.edit", "content.action.view", "navigation.indexes"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+      
+        <script src="../../../../assets/lib/highlightjs/highlight.min.js"></script>
+      
+        <script src="../../../../assets/lib/json-formatter/json-formatter.umd.js"></script>
+      
+        <script src="../../../../assets/js/mitheme.js"></script>
+      
+    
+  </body>
+</html>
