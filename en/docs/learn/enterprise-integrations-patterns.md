@@ -92,7 +92,7 @@ The WSO2 Ballerina Integrator supports the implementation of key Enterprise Inte
     <tr>
         <td><a href="https://github.com/wso2/integration-samples/tree/main/EI%20patterns/content_based_router" target="_blank">Content-Based Router</a></td>
         <td><a href="{{base_path}}assets/img/learn/eip/content-based-router.svg"><img src="{{base_path}}/assets/img/learn/eip/content-based-router.svg" alt="content-based-router" width="80"></a></td>
-        <td>How to connect one application to another</td>
+        <td>How to route messages based on message content</td>
     </tr>
     <tr>
         <td><a href="https://github.com/wso2/integration-samples/tree/main/EI%20patterns/aggregator" target="_blank">Aggregator</a></td>
