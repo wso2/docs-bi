@@ -25,6 +25,11 @@ The WSO2 Ballerina Integrator supports the implementation of key Enterprise Inte
         <td>How systems using different data formats communicate with each other using messaging</td>
     </tr>
     <tr>
+        <td><a href="https://github.com/wso2/integration-samples/tree/main/EI%20patterns/message_router" target="_blank">Message Router</a></td>
+        <td><a href="{{base_path}}/assets/img/learn/eip/message-router.svg"><img src="{{base_path}}/assets/img/learn/eip/message-router.svg" alt="message-router" width="80"></a></td>
+        <td>How to decouple individual processing steps so that messages can be passed to different filters depending on a set of conditions</td>
+    </tr>
+    <tr>
         <td><a href="https://github.com/wso2/integration-samples/tree/main/EI%20patterns/pipes_and_filters" target="_blank">Pipes and Filters</a></td>
         <td><a href="{{base_path}}/assets/img/learn/eip/pipes-and-filters.svg"><img src="{{base_path}}/assets/img/learn/eip/pipes-and-filters.svg" alt="pipes-and-filters" width="80"></a></td>
         <td>How to perform complex processing on a message while maintaining independence and flexibility</td>
@@ -55,6 +60,11 @@ The WSO2 Ballerina Integrator supports the implementation of key Enterprise Inte
 
 <table>
     <tr>
+        <td><a href="https://github.com/wso2/integration-samples/tree/main/EI%20patterns/command_message" target="_blank">Command Message</a></td>
+        <td><a href="{{base_path}}assets/img/learn/eip/command-message.svg"><img src="{{base_path}}/assets/img/learn/eip/command-message.svg" alt="command-message" width="80"></a></td>
+        <td>How messaging can be used to invoke a procedure in another application</td>
+    </tr>
+    <tr>
         <td><a href="https://github.com/wso2/integration-samples/tree/main/EI%20patterns/document_message" target="_blank">Document Message</a></td>
         <td><a href="{{base_path}}assets/img/learn/eip/document-message.svg"><img src="{{base_path}}/assets/img/learn/eip/document-message.svg" alt="document-message" width="80"></a></td>
         <td>How messaging can be used to transfer data between applications.</td>
@@ -79,6 +89,11 @@ The WSO2 Ballerina Integrator supports the implementation of key Enterprise Inte
 ## Message routing
 
 <table>
+    <tr>
+        <td><a href="https://github.com/wso2/integration-samples/tree/main/EI%20patterns/content_based_router" target="_blank">Content-Based Router</a></td>
+        <td><a href="{{base_path}}assets/img/learn/eip/content-based-router.svg"><img src="{{base_path}}/assets/img/learn/eip/content-based-router.svg" alt="content-based-router" width="80"></a></td>
+        <td>How to handle a situation where the implementation of a single logical function is spread across multiple physical systems</td>
+    </tr>
     <tr>
         <td><a href="https://github.com/wso2/integration-samples/tree/main/EI%20patterns/aggregator" target="_blank">Aggregator</a></td>
         <td><a href="{{base_path}}assets/img/learn/eip/aggregator.svg"><img src="{{base_path}}/assets/img/learn/eip/aggregator.svg" alt="aggregator" width="80"></a></td>
@@ -123,6 +138,26 @@ The WSO2 Ballerina Integrator supports the implementation of key Enterprise Inte
         <td><a href="https://github.com/wso2/integration-samples/tree/main/EI%20patterns/normalizer" target="_blank">Normalizer</a></td>
         <td><a href="{{base_path}}/assets/img/learn/eip/normalizer.svg"><img src="{{base_path}}/assets/img/learn/eip/normalizer.svg" alt="normalizer" width="80"></a></td>
         <td>How to process messages that are semantically equivalent but arrive in a different format</td>
+    </tr>
+</table>
+
+## Messaging Endpoints
+
+<table>
+    <tr>
+        <td><a href="https://github.com/wso2/integration-samples/tree/main/EI%20patterns/idempotent_receiver" target="_blank">Idempotent Receiver</a></td>
+        <td><a href="{{base_path}}assets/img/learn/eip/idempotent-receiver.svg"><img src="{{base_path}}/assets/img/learn/eip/idempotent-receiver.svg" alt="idempotent-receiver" width="80"></a></td>
+        <td>How can a message receiver deal with duplicate messages</td>
+    </tr>
+</table>
+
+## System Management
+
+<table>
+    <tr>
+        <td><a href="https://github.com/wso2/integration-samples/tree/main/EI%20patterns/message_store" target="_blank">Message Store</a></td>
+        <td><a href="{{base_path}}assets/img/learn/eip/message-store.svg"><img src="{{base_path}}/assets/img/learn/eip/message-store.svg" alt="message-store" width="80"></a></td>
+        <td>How to report against message information without disturbing the loosely coupled and transient nature of a messaging system</td>
     </tr>
 </table>
 
