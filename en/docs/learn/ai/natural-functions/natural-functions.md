@@ -13,7 +13,7 @@ Follow the steps below to implement the integration.
 ### Step 1: Create a new integration project.
 1. Click on the Ballerina Integrator icon on the sidebar.
 2. Click on the **`Create New Integration`** button.
-3. Enter `ProjectName` as the project name.
+3. Enter `BlogReviewer` as the project name.
 4. Select Project Directory and click on the **`Select Location`** button.
 5. Click on the **`Create New Integration`** button to create the integration project.
 
@@ -54,9 +54,9 @@ Follow the steps below to implement the integration.
 
 ### Step 4: Add a Natural Function
 1. Click on the **`Add Artifact`** button and select **`Natural Function`** under the **`Other Artifacts`** category.
-2. Use `reviewBlog` as the name of the function. Then click the **`Add Parameter`** button to add a parameter of type `Blog` named `blog`. Use `Review` as the return type and click on the **`Create`** button.
+2. Use `reviewBlog` as the name of the function. Then click the **`Add Parameter`** button to add a parameter of type `Blog` named `blog`. Use `Review` as the return type and convert it to nilable type using type operators. Then click on the **`Create`** button.
 
-    <a href="{{base_path}}/assets/img/learn/references/natural-functions/natural-function.png"><img src="{{base_path}}/assets/img/learn/references/natural-functions/natural-function.png" alt="natural function" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/references/natural-functions/natural-function.png"><img src="{{base_path}}/assets/img/learn/references/natural-functions/natural-function.png" alt="natural function"></a>
 
 3. Click on the **`Edit`** button to specify the requirement in natural language (i.e., the prompt).
 4. Use the following prompt and click on the **`Save`** button. Note how interpolations refer to the `blog` parameter.
@@ -101,17 +101,16 @@ Follow the steps below to implement the integration.
 2. Hover over the arrow after start and click the ➕ button to add a new action to the resource.
 3. Select **`Call Natural Function`** from the node panel.
 4. Select the `reviewBlog` function from the suggestions.
-5. Change the **`Variable Name`** to `review` and **`Variable Type`** to `Review`. 
-6. For the **`Blog`** parameter, use `blog` as the argument and click on the **`Save`** button.
+5. For the **`Blog`** parameter, use `blog` as the argument and click on the **`Save`** button.
 
-    <a href="{{base_path}}/assets/img/learn/references/natural-functions/call-np.gif"><img src="{{base_path}}/assets/img/learn/references/natural-functions/call-np.gif" alt="Function Call" width="70%"></a>
+    <a href="{{base_path}}/assets/img/learn/references/natural-functions/call-np.gif"><img src="{{base_path}}/assets/img/learn/references/natural-functions/call-np.gif" alt="Function Call"></a>
 
-7. Add a new node after the `reviewBlog` function call and select **`Return`** from the node panel.
-8. Select the `review` variable from the dropdown and click **`Save`**.
+6. Add a new node after the `reviewBlog` function call and select **`Return`** from the node panel.
+7. Select the `review` variable from the dropdown and click **`Save`**.
 
     <a href="{{base_path}}/assets/img/learn/references/natural-functions/add-return.png"><img src="{{base_path}}/assets/img/learn/references/natural-functions/add-return.png" alt="Add Return" width="70%"></a>
 
-9. The resource implementation is now complete. The function `reviewBlog` is called with the `blog` content as input, and the `review` is returned as the response.
+8. The resource implementation is now complete. The function `reviewBlog` is called with the `blog` content as input, and the `review` is returned as the response.
 
 ### Step 7: Configure model for natural function
 1. Press `Ctrl + Shift + P` on Windows and Linux, or `Shift + ⌘ + P` on a Mac, and type `>Ballerina: Configure default model for natural functions (Experimental)` to configure the default model for natural functions. 
@@ -136,15 +135,6 @@ Follow the steps below to implement the integration.
     }
     ```
 
-5. The response will be a review of the blog content with the suggested category and rating.
-
-    ```json
-    {
-        "suggestedCategory": "Health",
-        "rating": 8
-    }
-    ```
-
-6. The blog content is analyzed by the natural function to suggest a category and rate it based on predefined criteria.
+5. The blog content is analyzed by the natural function to suggest a category and rate it based on predefined criteria.
 
     <a href="{{base_path}}/assets/img/learn/references/natural-functions/run-integration.png"><img src="{{base_path}}/assets/img/learn/references/natural-functions/run-integration.png" alt="Run Integration" width="70%"></a>
