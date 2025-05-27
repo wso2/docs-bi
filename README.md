@@ -38,7 +38,7 @@ Follow the steps below if you need to perform a major modification (For example:
 
 >**Prerequisites:**
 >
->Set up the machine and run the project locally by following the [Running the project locally](#running-the-project-locally) documentation.
+>Set up the machine and run the project locally by following the [Running the project locally](#-running-the-project-locally) documentation.
 >
 
 1. When working, always start by getting a pull from upstream so that you are in sync with the upstream.
