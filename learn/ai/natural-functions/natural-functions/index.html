@@ -15,13 +15,17 @@
         <link rel="canonical" href="https://bi.docs.wso2.com/learn/ai/natural-functions/natural-functions/">
       
       
+        <link rel="prev" href="../../../../install-and-setup/install-integration-control-plane/">
+      
+      
+        <link rel="next" href="../../agents/introduction-to-chat-agents/">
       
       <link rel="icon" href="../../../../images/bi-logo.svg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
     
     
       
-        <title>Natural Functions - Ballerina Integrator Documentation</title>
+        <title>Natural functions - Ballerina Integrator Documentation</title>
       
     
     
@@ -154,7 +158,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Natural Functions
+              Natural functions
             
           </span>
         </div>
@@ -310,12 +314,9 @@
         
   
   
-
-
-  
-  
-  
     
+  
+
 
   
   
@@ -326,12 +327,10 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../agents/introduction-to-chat-agents/" class="md-tabs__link">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
         Learn
       </a>
     </li>
-  
-
   
 
   
@@ -594,14 +593,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
       
       
         
@@ -624,7 +625,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Learn
@@ -635,16 +636,20 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
       
       
+        
+          
         
           
         
@@ -655,12 +660,122 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4_1">
           <span class="md-nav__icon md-icon"></span>
           AI
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Natural functions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Natural functions
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    Implementation
+  </a>
+  
+    <nav class="md-nav" aria-label="Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-a-new-integration-project" class="md-nav__link">
+    Step 1: Create a new integration project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-define-types" class="md-nav__link">
+    Step 2: Define Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-add-a-natural-function" class="md-nav__link">
+    Step 3: Add a Natural Function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-create-an-http-service" class="md-nav__link">
+    Step 4: Create an HTTP service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-implement-the-resource-logic" class="md-nav__link">
+    Step 5: Implement the resource logic
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-configure-model-for-natural-function" class="md-nav__link">
+    Step 6: Configure model for natural function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-run-the-integration" class="md-nav__link">
+    Step 7: Run the integration
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
           
             
               
@@ -673,7 +788,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_1" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_2" >
       
       
         
@@ -685,13 +800,13 @@
         
       
       
-        <label class="md-nav__link" for="__nav_4_1_1" id="__nav_4_1_1_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_4_1_2" id="__nav_4_1_2_label" tabindex="0">
           Agents
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_1_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_4_1_1">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_1_2">
           <span class="md-nav__icon md-icon"></span>
           Agents
         </label>
@@ -1343,7 +1458,7 @@
         
           <li class="md-nav__item">
   <a href="#step-1-create-a-new-integration-project" class="md-nav__link">
-    Step 1: Create a new integration project.
+    Step 1: Create a new integration project
   </a>
   
 </li>
@@ -1356,43 +1471,36 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-3-create-an-http-service" class="md-nav__link">
-    Step 3: Create an HTTP service.
+  <a href="#step-3-add-a-natural-function" class="md-nav__link">
+    Step 3: Add a Natural Function
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-4-add-a-natural-function" class="md-nav__link">
-    Step 4: Add a Natural Function
+  <a href="#step-4-create-an-http-service" class="md-nav__link">
+    Step 4: Create an HTTP service
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-5-update-the-resource-method" class="md-nav__link">
-    Step 5: Update the resource method
+  <a href="#step-5-implement-the-resource-logic" class="md-nav__link">
+    Step 5: Implement the resource logic
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-6-implement-resource-logic" class="md-nav__link">
-    Step 6: Implement resource logic
+  <a href="#step-6-configure-model-for-natural-function" class="md-nav__link">
+    Step 6: Configure model for natural function
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-7-configure-model-for-natural-function" class="md-nav__link">
-    Step 7: Configure model for natural function
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-8-run-the-integration" class="md-nav__link">
-    Step 8: Run the integration
+  <a href="#step-7-run-the-integration" class="md-nav__link">
+    Step 7: Run the integration
   </a>
   
 </li>
@@ -1435,17 +1543,17 @@
 
 
 <h1 id="natural-functions">Natural Functions<a class="headerlink" href="#natural-functions" title="Permanent link">&para;</a></h1>
-<p>In this tutorial, you will learn how to use natural functions in Ballerina Integrator, which allow the function to contain instructions in natural language. 
-Such a function is evaluated at runtime with a call to an LLM. The example uses a natural function to analyze blog content to suggest a category and rate it based on predefined criteria.</p>
-<details class="tip" open="open"><summary>Natural Programming</summary><p>To learn more about Ballerina natural programming library module, see <a href="https://central.ballerina.io/ballerinax/np">natural programming</a>.</p>
+<p>In this tutorial, you will create and use a natural function using the Ballerina Integrator. A natural function allows the logic of the function to be described in natural language and is executed at runtime with a call to a Large Language Model (LLM), with the natural language instructions as the prompt.
+The tutorial uses a natural function to analyze blog content to suggest a suitable category and rate it on a scale of 1 to 10 based on specified criteria.</p>
+<details class="tip" open="open"><summary>Natural Programming</summary><p>To learn more about natural programming and natural functions, see <a href="https://blog.ballerina.io/posts/2025-04-26-introducing-natural-programming/">Natural Language is Code: A hybrid approach with Natural Programming</a>.</p>
 </details>
 <h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h2>
 <p>Follow the steps below to implement the integration.</p>
-<h3 id="step-1-create-a-new-integration-project">Step 1: Create a new integration project.<a class="headerlink" href="#step-1-create-a-new-integration-project" title="Permanent link">&para;</a></h3>
+<h3 id="step-1-create-a-new-integration-project">Step 1: Create a new integration project<a class="headerlink" href="#step-1-create-a-new-integration-project" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Click on the Ballerina Integrator icon on the sidebar.</li>
 <li>Click on the <strong><code>Create New Integration</code></strong> button.</li>
-<li>Enter the project name as <code>NaturalProgramming</code>.</li>
+<li>Enter <code>BlogReviewer</code> as the project name.</li>
 <li>Select Project Directory and click on the <strong><code>Select Location</code></strong> button.</li>
 <li>Click on the <strong><code>Create New Integration</code></strong> button to create the integration project.</li>
 </ol>
@@ -1453,38 +1561,42 @@ Such a function is evaluated at runtime with a call to an LLM. The example uses 
 <ol>
 <li>Click on the <strong><code>Add Artifacts</code></strong> button and select <strong><code>Type</code></strong> in the <strong><code>Other Artifacts</code></strong> section.</li>
 <li>Click on <strong><code>+ Add Type</code></strong> to add a new type.</li>
-<li>Add the <strong><code>Record Name</code></strong> as <code>Blog</code> and paste the following JSON payload. Select <strong><code>Is Closed Record</code></strong> and click on the <strong><code>Import</code></strong> button.
-    <div class="highlight"><pre><span></span><code><span class="p">{</span>
+<li>
+<p>Use <code>Blog</code> as the <strong><code>Name</code></strong>. Then click on the <strong><code>JSON</code></strong> button and paste the following JSON payload. Tick <strong><code>Is Closed</code></strong> and click on the <strong><code>Import</code></strong> button. Then click the <strong><code>Save</code></strong> button.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tips for Growing a Beautiful Garden&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Spring is the perfect time to start your garden. Begin by preparing your soil with organic compost and ensure proper drainage. Choose plants suitable for your climate zone, and remember to water them regularly. Don&#39;t forget to mulch to retain moisture and prevent weeds.&quot;</span>
 <span class="p">}</span>
-</code></pre></div></li>
-<li>Add another type with the <strong><code>Record Name</code></strong> as <code>Review</code> and paste the following JSON payload. Select <strong><code>Is Closed Record</code></strong> and click on the <strong><code>Import</code></strong> button.
-    <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Gardening&quot;</span><span class="p">,</span>
+</code></pre></div>
+
+</li>
+<li>
+<p>Add another type with <code>Review</code> as the <strong><code>Name</code></strong> and paste the following JSON payload. Select <strong><code>Is Closed</code></strong> and click on the <strong><code>Import</code></strong> button. Then click the <strong><code>Save</code></strong> button.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;suggestedCategory&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Gardening&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;rating&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
 <span class="p">}</span>
-</code></pre></div></li>
-<li>The types are now available in the project. <code>Blog</code> and <code>Review</code> are the types that represent the blog content and review respectively.
-<a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/types.png"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/types.png" alt="Types" width="70%"></a></li>
+</code></pre></div>
+
+</li>
+<li>
+<p>The types are now available in the project. <code>Blog</code> and <code>Review</code> are the types that represent the blog content and review respectively.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/references/natural-functions/types.png"><img src="https://wso2.github.io/docs-bi/assets/img/learn/references/natural-functions/types.png" alt="Types" width="70%"></a></p>
+</li>
 </ol>
-<h3 id="step-3-create-an-http-service">Step 3: Create an HTTP service.<a class="headerlink" href="#step-3-create-an-http-service" title="Permanent link">&para;</a></h3>
-<ol>
-<li>In the design view, click on the <strong><code>Add Artifact</code></strong> button.</li>
-<li>Select <strong><code>HTTP Service</code></strong> under the <strong><code>Integration as API</code></strong> category.</li>
-<li>Select the <strong><code>Create and use the default HTTP listener</code></strong> option from the <strong><code>Listener</code></strong> dropdown.</li>
-<li>Add the service base path as <code>/blogs</code> and select the <strong><code>Design from Scratch</code></strong> option as the <strong><code>The contract of the service</code></strong>.</li>
-<li>Click on the <strong><code>Create</code></strong> button to create the new service with the specified configurations.
-<a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/service.png"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/service.png" alt="HTTP Service" width="70%"></a></li>
-</ol>
-<h3 id="step-4-add-a-natural-function">Step 4: Add a Natural Function<a class="headerlink" href="#step-4-add-a-natural-function" title="Permanent link">&para;</a></h3>
+<h3 id="step-3-add-a-natural-function">Step 3: Add a Natural Function<a class="headerlink" href="#step-3-add-a-natural-function" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Click on the <strong><code>Add Artifact</code></strong> button and select <strong><code>Natural Function</code></strong> under the <strong><code>Other Artifacts</code></strong> category.</li>
-<li>Add the function name as <code>reviewBlog</code>, input parameter as <code>blog</code> of type <code>Blog</code>, return type of <code>Review</code> and click on the <strong><code>Create</code></strong> button.
-<a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/natural-function.png"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/natural-function.png" alt="Natural Function" width="70%"></a></li>
-<li>Click on the <strong><code>Edit</code></strong> button to add the function logic.</li>
-<li>Add the following prompt to the function and click on the <strong><code>Save</code></strong> button.
-    <div class="highlight"><pre><span></span><code>You are an expert content reviewer for a blog site that 
+<li>
+<p>Use <code>reviewBlog</code> as the name of the function. Then click the <strong><code>Add Parameter</code></strong> button to add a parameter of type <code>Blog</code> named <code>blog</code>. Use <code>Review</code> as the return type and convert it to nilable type using type operators. Then click on the <strong><code>Create</code></strong> button.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/references/natural-functions/natural-function.png"><img src="https://wso2.github.io/docs-bi/assets/img/learn/references/natural-functions/natural-function.png" alt="natural function"></a></p>
+</li>
+<li>
+<p>Click on the <strong><code>Edit</code></strong> button to specify the requirement in natural language (i.e., the prompt).</p>
+</li>
+<li>
+<p>Use the following prompt and click on the <strong><code>Save</code></strong> button. Note how interpolations refer to the <code>blog</code> parameter.</p>
+<div class="highlight"><pre><span></span><code>You are an expert content reviewer for a blog site that 
     categorizes posts under the following categories: &quot;Gardening&quot;, &quot;Sports&quot;, &quot;Health&quot;, &quot;Technology&quot;, &quot;Travel&quot;
 
     Your tasks are:
@@ -1502,39 +1614,63 @@ Here is the blog post content:
 
     Title: ${blog.title}
     Content: ${blog.content}
-</code></pre></div></li>
+</code></pre></div>
+
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/references/natural-functions/natural-function-view.png"><img src="https://wso2.github.io/docs-bi/assets/img/learn/references/natural-functions/natural-function-view.png" alt="natural function view" width="70%"></a></p>
+</li>
 </ol>
-<h3 id="step-5-update-the-resource-method">Step 5: Update the resource method<a class="headerlink" href="#step-5-update-the-resource-method" title="Permanent link">&para;</a></h3>
+<h3 id="step-4-create-an-http-service">Step 4: Create an HTTP service<a class="headerlink" href="#step-4-create-an-http-service" title="Permanent link">&para;</a></h3>
 <ol>
-<li>The service will have a default resource named <code>greeting</code> with the <strong><code>GET</code></strong> method. Click on three dots appear in front of the <code>/convert</code> service resource and select <strong><code>Edit</code></strong> from menu.</li>
-<li>Then click the edit button in front of <code>/greeting</code> resource.</li>
+<li>In the design view, click on the <strong><code>Add Artifact</code></strong> button.</li>
+<li>Select <strong><code>HTTP Service</code></strong> under the <strong><code>Integration as API</code></strong> category.</li>
+<li>Select the <strong><code>Create and use the default HTTP listener (port: 9090)</code></strong> option from the <strong><code>Listeners</code></strong> dropdown.</li>
+<li>Select the <strong><code>Design from Scratch</code></strong> option as the <strong><code>Service Contract</code></strong> and use <code>/blogs</code> as the <strong><code>Service base path</code></strong>.</li>
+<li>
+<p>Click on the <strong><code>Create</code></strong> button to create the new service with the specified configurations.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/references/natural-functions/service.png"><img src="https://wso2.github.io/docs-bi/assets/img/learn/references/natural-functions/service.png" alt="HTTP Service" width="70%"></a></p>
+</li>
+<li>
+<p>The service will have a default resource named <code>greeting</code> with the <strong><code>GET</code></strong> method. Click on the three dots that appear in front of the <code>/blogs</code> service and select <strong><code>Edit</code></strong> from the menu.</p>
+</li>
+<li>Then click the <strong><code>Edit</code></strong> button in front of <code>/greeting</code> resource.</li>
 <li>Change the resource HTTP method to <strong><code>POST</code></strong>.</li>
-<li>Change the resource name as <code>review</code>.</li>
-<li>Add a payload parameter named <code>blog</code> to the resource of type <code>Blog</code>.</li>
+<li>Change the resource name to <code>review</code>.</li>
+<li>Click on <strong><code>Add Payload</code></strong> and specify <code>blog</code> as the name and <code>Blog</code> as the type.</li>
 <li>Change the 201 response return type to <code>Review</code>.</li>
-<li>Click on the <strong><code>Save</code></strong> button to update the resource with the specified configurations.
-<a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/update-resource.png"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/update-resource.png" alt="Resource" width="70%"></a></li>
+<li>
+<p>Click on the <strong><code>Save</code></strong> button to update the resource with the specified configurations.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/references/natural-functions/update-resource.png"><img src="https://wso2.github.io/docs-bi/assets/img/learn/references/natural-functions/update-resource.png" alt="Resource" width="70%"></a></p>
+</li>
 </ol>
-<h3 id="step-6-implement-resource-logic">Step 6: Implement resource logic<a class="headerlink" href="#step-6-implement-resource-logic" title="Permanent link">&para;</a></h3>
+<h3 id="step-5-implement-the-resource-logic">Step 5: Implement the resource logic<a class="headerlink" href="#step-5-implement-the-resource-logic" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Click on the <code>review</code> resource to navigate to the resource implementation designer view.</li>
-<li>Delete the default <code>Return</code> action from the resource.</li>
-<li>Hover to the arrow after start and click the ➕ button to add a new action to the resource.</li>
-<li>Select <strong><code>Call Function Call</code></strong> from the node panel.</li>
+<li>Hover over the arrow after start and click the ➕ button to add a new action to the resource.</li>
+<li>Select <strong><code>Call Natural Function</code></strong> from the node panel.</li>
 <li>Select the <code>reviewBlog</code> function from the suggestions.</li>
-<li>Change the <strong><code>Variable Name</code></strong> to <code>review</code>, <strong><code>Variable Type</code></strong> as <code>Review</code> and <strong><code>Blog</code></strong> to <code>blog</code> and click on the <strong><code>Save</code></strong> button.  <br />
-<a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/call-np.gif"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/call-np.gif" alt="Function Call" width="70%"></a></li>
-<li>Add a new node after the <code>reviewBlog</code> function call and select <strong><code>Return</code></strong> from the node panel.</li>
-<li>Select the <code>reviewResult</code> variable from the dropdown and click <strong><code>Save</code></strong>.
-<a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/add-return.png"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/add-return.png" alt="Add Return" width="70%"></a></li>
-<li>The resource implementation is now complete. The function <code>reviewBlog</code> is called with the blog content as input and the review is returned as the response.</li>
+<li>
+<p>For the <strong><code>Blog</code></strong> parameter, use <code>blog</code> as the argument and click on the <strong><code>Save</code></strong> button.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/references/natural-functions/call-np.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/references/natural-functions/call-np.gif" alt="Function Call"></a></p>
+</li>
+<li>
+<p>Add a new node after the <code>reviewBlog</code> function call and select <strong><code>Return</code></strong> from the node panel.</p>
+</li>
+<li>
+<p>Select the <code>review</code> variable from the dropdown and click <strong><code>Save</code></strong>.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/references/natural-functions/add-return.png"><img src="https://wso2.github.io/docs-bi/assets/img/learn/references/natural-functions/add-return.png" alt="Add Return" width="70%"></a></p>
+</li>
+<li>
+<p>The resource implementation is now complete. The function <code>reviewBlog</code> is called with the <code>blog</code> content as input, and the <code>review</code> is returned as the response.</p>
+</li>
 </ol>
-<h3 id="step-7-configure-model-for-natural-function">Step 7: Configure model for natural function<a class="headerlink" href="#step-7-configure-model-for-natural-function" title="Permanent link">&para;</a></h3>
+<h3 id="step-6-configure-model-for-natural-function">Step 6: Configure model for natural function<a class="headerlink" href="#step-6-configure-model-for-natural-function" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Press <code>Ctrl + Shift + P</code> on Windows and Linux, or <code>shift + ⌘ + P</code> on a Mac and type <code>&gt;Ballerina: Configure default model for natural functions</code> to configure the default model for natural functions. <br />
-<a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/configure-model.png"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/configure-model.png" alt="Configure Model" width="70%"></a></li>
+<li>
+<p>Press <code>Ctrl + Shift + P</code> on Windows and Linux, or <code>Shift + ⌘ + P</code> on a Mac, and type <code>&gt;Ballerina: Configure default model for natural functions (Experimental)</code> to configure the default model for natural functions. </p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/references/natural-functions/configure-model.png"><img src="https://wso2.github.io/docs-bi/assets/img/learn/references/natural-functions/configure-model.png" alt="Configure Model" width="70%"></a></p>
+</li>
 </ol>
-<h3 id="step-8-run-the-integration">Step 8: Run the integration<a class="headerlink" href="#step-8-run-the-integration" title="Permanent link">&para;</a></h3>
+<h3 id="step-7-run-the-integration">Step 7: Run the integration<a class="headerlink" href="#step-7-run-the-integration" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Response May Vary</p>
 <p>Since this integration involves an LLM (Large Language Model) call, the response values may not always be identical across different executions.</p>
@@ -1543,20 +1679,19 @@ Here is the blog post content:
 <li>Click on the <strong><code>Run</code></strong> button in the top-right corner to run the integration.</li>
 <li>The integration will start and the service will be available at <code>http://localhost:9090/blogs</code>.</li>
 <li>Click on the <strong><code>Try it</code></strong> button to open the embedded HTTP client.</li>
-<li>Enter the blog content in the request body and click on the ▶️ button to send the request.
-    <div class="highlight"><pre><span></span><code><span class="p">{</span>
+<li>
+<p>Enter the blog content in the request body and click on the ▶️ button to send the request.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The Healthy Maven&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;For those who want a 360-degree approach to self-care, with advice for betterment in the workplace, home, gym, and on the go, look no further. The Healthy Maven offers recipes for every type of meal under the sun (salads, sides, soups, and more), DIY tips (you’ll learn how to make your own yoga mat spray), and quick workouts. If you like where all this is going, there’s a supplementary podcast run by blogger Davida with guest wellness experts.&quot;</span>
 <span class="p">}</span>
-</code></pre></div></li>
-<li>The response will be a review of the blog content with the category and rating.
-    <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Health&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;rating&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span>
-<span class="p">}</span>
-</code></pre></div></li>
-<li>The blog content is analyzed by the natural function to suggest a category and rate it based on predefined criteria.    <br />
-<a href="https://wso2.github.io/docs-bi/assets/img/natural-functions/run-integration.png"><img src="https://wso2.github.io/docs-bi/assets/img/natural-functions/run-integration.png" alt="Run Integration" width="70%"></a></li>
+</code></pre></div>
+
+</li>
+<li>
+<p>The blog content is analyzed by the natural function to suggest a category and rate it based on predefined criteria.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/references/natural-functions/run-integration.png"><img src="https://wso2.github.io/docs-bi/assets/img/learn/references/natural-functions/run-integration.png" alt="Run Integration" width="70%"></a></p>
+</li>
 </ol>
 
 
@@ -1579,6 +1714,42 @@ Here is the blog post content:
       
       
         <footer class="md-footer">
+  
+  
+  <nav class="md-footer__inner md-grid" aria-label="Footer" >
+    
+    
+    <a href="../../../../install-and-setup/install-integration-control-plane/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Install Integration Control Plane" rel="prev">
+      <div class="md-footer__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </div>
+      <div class="md-footer__title">
+        <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+          Install Integration Control Plane
+        </div>
+      </div>
+    </a>
+    
+    
+    
+    <a href="../../agents/introduction-to-chat-agents/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction to Chat Agents" rel="next">
+      <div class="md-footer__title">
+        <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Next
+                </span>
+          Introduction to Chat Agents
+        </div>
+      </div>
+      <div class="md-footer__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+      </div>
+    </a>
+    
+  </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
