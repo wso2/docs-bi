@@ -1,7 +1,7 @@
 # Natural Functions
 
-In this tutorial, you will learn how to use natural functions in Ballerina Integrator, which allows the function to contain instructions in natural language.
-Such a function is evaluated at runtime with a call to a Large Language Model (LLM). The example uses a natural function to analyze blog content to suggest a category and rate it based on predefined criteria.
+In this tutorial, you will create and use a natural function using the Ballerina Integrator. A natural function allows the logic of the function to be described in natural language and is executed at runtime with a call to a Large Language Model (LLM), with the natural language instructions as the prompt.
+The tutorial uses a natural function to analyze blog content to suggest a suitable category and rate it on a scale of 1 to 10 based on specified criteria.
 
 ???+ tip "Natural Programming"
     To learn more about natural programming and natural functions, see [Natural Language is Code: A hybrid approach with Natural Programming](https://blog.ballerina.io/posts/2025-04-26-introducing-natural-programming/).
@@ -20,7 +20,7 @@ Follow the steps below to implement the integration.
 ### Step 2: Define Types
 1. Click on the **`Add Artifacts`** button and select **`Type`** in the **`Other Artifacts`** section.
 2. Click on **`+ Add Type`** to add a new type.
-3. Use `Blog` as the **`Record Name`**. Then click on the **`JSON`** button and paste the following JSON payload. Tick **`Is Closed`** and click on the **`Import`** button. Then click the **`Save`** button.
+3. Use `Blog` as the **`Name`**. Then click on the **`JSON`** button and paste the following JSON payload. Tick **`Is Closed`** and click on the **`Import`** button. Then click the **`Save`** button.
 
     ```json
     {
@@ -29,7 +29,7 @@ Follow the steps below to implement the integration.
     }
     ```
 
-4. Add another type with `Review` as the **`Record Name`** and paste the following JSON payload. Select **`Is Closed`** and click on the **`Import`** button. Then click the **`Save`** button.
+4. Add another type with `Review` as the **`Name`** and paste the following JSON payload. Select **`Is Closed`** and click on the **`Import`** button. Then click the **`Save`** button.
 
     ```json
     {
@@ -46,20 +46,20 @@ Follow the steps below to implement the integration.
 ### Step 3: Create an HTTP service.
 1. In the design view, click on the **`Add Artifact`** button.
 2. Select **`HTTP Service`** under the **`Integration as API`** category.
-3. Select the **`Create and use the default HTTP listener`** option from the **`Listener`** dropdown.
-4. Select the **`Design from Scratch`** option as the **`Service Contract`** and use `/blogs` as the base path.
+3. Select the **`Create and use the default HTTP listener (port: 9090)`** option from the **`Listeners`** dropdown.
+4. Select the **`Design from Scratch`** option as the **`Service Contract`** and use `/blogs` as the **`Service base path`**.
 5. Click on the **`Create`** button to create the new service with the specified configurations.
 
     <a href="{{base_path}}/assets/img/learn/references/natural-functions/service.png"><img src="{{base_path}}/assets/img/learn/references/natural-functions/service.png" alt="HTTP Service" width="70%"></a>
 
 ### Step 4: Add a Natural Function
 1. Click on the **`Add Artifact`** button and select **`Natural Function`** under the **`Other Artifacts`** category.
-2. Use `reviewBlog` as the function name. Then click the **`Add Parameter`** button to add a parameter of type `Blog` named `blog`. Use `Review` as the return type and click on the **`Create`** button.
+2. Use `reviewBlog` as the name of the function. Then click the **`Add Parameter`** button to add a parameter of type `Blog` named `blog`. Use `Review` as the return type and click on the **`Create`** button.
 
     <a href="{{base_path}}/assets/img/learn/references/natural-functions/natural-function.png"><img src="{{base_path}}/assets/img/learn/references/natural-functions/natural-function.png" alt="natural function" width="70%"></a>
 
 3. Click on the **`Edit`** button to specify the requirement in natural language (i.e., the prompt).
-4. Use the following prompt and click on the **`Save`** button.
+4. Use the following prompt and click on the **`Save`** button. Note how interpolations refer to the `blog` parameter.
 
     ```plaintext
     You are an expert content reviewer for a blog site that 
@@ -89,14 +89,14 @@ Follow the steps below to implement the integration.
 1. The service will have a default resource named `greeting` with the **`GET`** method. Click on the three dots that appear in front of the `/blogs` service and select **`Edit`** from the menu.
 2. Then click the **`Edit`** button in front of `/greeting` resource.
 3. Change the resource HTTP method to **`POST`**.
-4. Change the resource name as `review`.
-5. Add a payload named `blog` to the resource of type `Blog`.
+4. Change the resource name to `review`.
+5. Click on **`Add Payload`** and specify `blog` as the name and `Blog` as the type.
 6. Change the 201 response return type to `Review`.
 7. Click on the **`Save`** button to update the resource with the specified configurations.
 
     <a href="{{base_path}}/assets/img/learn/references/natural-functions/update-resource.png"><img src="{{base_path}}/assets/img/learn/references/natural-functions/update-resource.png" alt="Resource" width="70%"></a>
 
-### Step 6: Implement resource logic
+### Step 6: Implement the resource logic
 1. Click on the `review` resource to navigate to the resource implementation designer view.
 2. Hover over the arrow after start and click the ➕ button to add a new action to the resource.
 3. Select **`Call Natural Function`** from the node panel.
@@ -136,7 +136,7 @@ Follow the steps below to implement the integration.
     }
     ```
 
-5. The response will be a review of the blog content with the category and rating.
+5. The response will be a review of the blog content with the suggested category and rating.
 
     ```json
     {
