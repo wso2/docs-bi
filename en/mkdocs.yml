@@ -87,6 +87,8 @@ nav:
           - Introduction to Chat Agents: learn/ai/agents/introduction-to-chat-agents.md
           - Introduction to Inline Agents: learn/ai/agents/introduction-to-inline-agents.md
           - Integrating Agents with External Endpoints: learn/ai/agents/integrating-agents-with-external-endpoints.md
+        - RAG:
+          - Building a RAG Application with Ballerina Integrator: learn/ai/rag/building-rag-with-ballerina-integrator.md
       #- Automation:
       #  - learn/automation/index.md
       #  - Build your first automation: learn/automation/build-your-first-automation.md
