@@ -162,3 +162,7 @@ $ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directo
     - `bw.generalactivities.mapper`
     - `bw.internal.accumulateend`
   - `extActivity`
+
+???+ note  "Disclaimer"
+
+    **TIBCO**: "TIBCO", “TIBCO BusinessWorks”, and “TIBCO Flogo” are trademarks, or registered trademarks, of TIBCO Software Inc. a business unit of Cloud Software Group. All product, company names and marks mentioned herein are the property of their respective owners and are mentioned for identification purposes only.

@@ -256,3 +256,7 @@ The migration tool currently supports the following DataWeave expressions:
 
 - Currently supports Mule **3.x only**. Support for Mule **4.x** is planned for future releases.
 - Some moderate to advanced MuleSoft features may require manual adjustments after migration.
+
+???+ note  "Disclaimer"
+
+    **MuleSoft**: "MuleSoft", Mulesoft's "Anypoint Platform", and "DataWeave" are trademarks of MuleSoft LLC, a Salesforce company. All product, company names and marks mentioned herein are the property of their respective owners and are mentioned for identification purposes only.
