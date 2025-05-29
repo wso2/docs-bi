@@ -81,7 +81,7 @@ However, in this tutorial, we will create simple functions to perform arithmetic
 #### Add the created function as a tool
 
 4. Go to the agent flow view.
-5. Click the **+** button at the bottom-left corner of the `AI Agent` box.
+5. Click the **+** button at the bottom-right corner of the `AI Agent` box.
 6. Click the **+** button under the **Tools** section.
 7. Select the created function from the **Current Integration** list — in this case, `sum`.
 8. Then provide the **Tool Name** and **Description** of the tool
