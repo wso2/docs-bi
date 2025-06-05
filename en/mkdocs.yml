@@ -87,6 +87,8 @@ nav:
           - Introduction to Chat Agents: learn/ai/agents/introduction-to-chat-agents.md
           - Introduction to Inline Agents: learn/ai/agents/introduction-to-inline-agents.md
           - Integrating Agents with External Endpoints: learn/ai/agents/integrating-agents-with-external-endpoints.md
+        - RAG:
+          - Build a RAG Application: learn/ai/rag/build-a-rag-application.md
       #- Automation:
       #  - learn/automation/index.md
       #  - Build your first automation: learn/automation/build-your-first-automation.md
@@ -205,4 +207,4 @@ extra:
       link: https://www.linkedin.com/company/wso2
   # site_version: Uncomment to specify a version
   base_path: https://wso2.github.io/docs-bi
-  #base_path: http://localhost:8000
+  # base_path: http://localhost:8000
