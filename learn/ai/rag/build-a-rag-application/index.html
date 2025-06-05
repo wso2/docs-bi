@@ -1,0 +1,2371 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for Ballerina Integrator">
+      
+      
+        <meta name="author" content="WSO2">
+      
+      
+        <link rel="canonical" href="https://bi.docs.wso2.com/learn/ai/rag/build-a-rag-application/">
+      
+      
+        <link rel="prev" href="../../agents/integrating-agents-with-external-endpoints/">
+      
+      
+        <link rel="next" href="../../../file-integration/file-integration-with-directory-service/">
+      
+      <link rel="icon" href="../../../../images/bi-logo.svg">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
+    
+    
+      
+        <title>Build a RAG Application - Ballerina Integrator Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.7bf56d0a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Added the font from google fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/lib/highlightjs/styles/vs.min.css">
+    
+      <link rel="stylesheet" href="../../../../assets/css/blue-palette-alt1.css">
+    
+      <link rel="stylesheet" href="../../../../assets/css/mitheme.css">
+    
+      <link rel="stylesheet" href="../../../../assets/css/custom.css">
+    
+      <link rel="stylesheet" href="../../../../assets/lib/json-formatter/json-formatter.css">
+    
+      <link rel="stylesheet" href="../../../../assets/css/config-catalog.css">
+    
+      <link rel="stylesheet" href="../../../../assets/lib/fontawesome-free-6.3.0-web/css/all.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){
+    w[l]=w[l]||[];w[l].push({
+        'gtm.start':
+            new Date().getTime(),event:'gtm.js'
+    });var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.setAttributeNode(d.createAttribute('data-ot-ignore'));j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5CR98L58');</script>
+<!-- End Google Tag Manager -->
+
+    
+    
+<meta name="google-site-verification" content="pRwRUP0jDUECheRt5DziuVd3gSs2UTw6EhL4nud3NMk" />
+
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#build-a-rag-application" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      <!--
+ * Copyright (c) 2024, WSO2 LLC. (http://www.wso2.com) All Rights Reserved.
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+
+
+
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header" id="page-header" data-url="" data-lang="en">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Ballerina Integrator Documentation"
+       class="md-header__button md-logo" aria-label="Ballerina Integrator Documentation" data-md-component="logo">
+      
+  <img src="../../../../images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ballerina Integrator Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Build a RAG Application
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <form class="md-header__option" data-md-component="palette">
+      
+      
+      <input class="md-option" data-md-color-media="(prefers-color-scheme)"
+             data-md-color-scheme="default"
+             data-md-color-primary=""
+             data-md-color-accent="" 
+             aria-label="Switch to dark mode"  type="radio" name="__palette"
+             id="__palette_1">
+      
+      <label class="md-header__button md-icon" title="Switch to dark mode"
+             for="__palette_3" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+      </label>
+      
+      
+      
+      <input class="md-option" data-md-color-media="(prefers-color-scheme: light)"
+             data-md-color-scheme="default"
+             data-md-color-primary=""
+             data-md-color-accent="" 
+             aria-label="Switch to system preference"  type="radio" name="__palette"
+             id="__palette_2">
+      
+      <label class="md-header__button md-icon" title="Switch to system preference"
+             for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+      
+      
+      
+      <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)"
+             data-md-color-scheme="slate"
+             data-md-color-primary=""
+             data-md-color-accent="" 
+             aria-label="Switch to light mode"  type="radio" name="__palette"
+             id="__palette_3">
+      
+      <label class="md-header__button md-icon" title="Switch to light mode"
+             for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+      
+      
+    </form>
+    
+    
+    
+    <label class="md-header__button md-icon" for="__search">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+    </label>
+    <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+    <div class="md-header__source">
+      <a href="https://github.com/wso2/docs-bi" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wso2/docs-ballerina-integrator
+  </div>
+</a>
+    </div>
+    
+  </nav>
+  
+  
+  
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../get-started/introduction/" class="md-tabs__link">
+        Get started
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../install-and-setup/install-ballerina-integrator/" class="md-tabs__link">
+        Install and Setup
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../natural-functions/natural-functions/" class="md-tabs__link md-tabs__link--active">
+        Learn
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../develop/create-a-project/" class="md-tabs__link">
+        Develop
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../deploy/deploy-to-devant/" class="md-tabs__link">
+        Deploy
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+  
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Ballerina Integrator Documentation" class="md-nav__button md-logo" aria-label="Ballerina Integrator Documentation" data-md-component="logo">
+      
+  <img src="../../../../images/logo.svg" alt="logo">
+
+    </a>
+    Ballerina Integrator Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/wso2/docs-bi" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wso2/docs-ballerina-integrator
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Get started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Get started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../get-started/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../get-started/quick-start-guide/" class="md-nav__link">
+        Quick Start Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../get-started/key-concepts/" class="md-nav__link">
+        Key Concepts
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Install and Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Install and Setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../install-and-setup/install-ballerina-integrator/" class="md-nav__link">
+        Install Ballerina Integrator
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../install-and-setup/install-integration-control-plane/" class="md-nav__link">
+        Install Integration Control Plane
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Learn
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Learn
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          AI
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          AI
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../natural-functions/natural-functions/" class="md-nav__link">
+        Natural functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_1_2" id="__nav_4_1_2_label" tabindex="0">
+          Agents
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Agents
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/introduction-to-chat-agents/" class="md-nav__link">
+        Introduction to Chat Agents
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/introduction-to-inline-agents/" class="md-nav__link">
+        Introduction to Inline Agents
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agents/integrating-agents-with-external-endpoints/" class="md-nav__link">
+        Integrating Agents with External Endpoints
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_3" checked>
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_1_3" id="__nav_4_1_3_label" tabindex="0">
+          RAG
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          RAG
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Build a RAG Application
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Build a RAG Application
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rag-pipeline-overview" class="md-nav__link">
+    RAG pipeline overview
+  </a>
+  
+    <nav class="md-nav" aria-label="RAG pipeline overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-ingestion" class="md-nav__link">
+    Data ingestion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-retrieval" class="md-nav__link">
+    Data retrieval
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-ingestion-pipeline" class="md-nav__link">
+    Data ingestion pipeline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-retrieval-pipeline" class="md-nav__link">
+    Data retrieval pipeline
+  </a>
+  
+    <nav class="md-nav" aria-label="Data retrieval pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-an-http-service" class="md-nav__link">
+    Step 1: Create an HTTP service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-implementation-of-rag" class="md-nav__link">
+    Step 2: Implementation of RAG
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Implementation of RAG">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-retrieve-embeddings-for-user-query" class="md-nav__link">
+    2.1 Retrieve embeddings for user query
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Retrieve embeddings for user query">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-create-an-embeddings-function" class="md-nav__link">
+    2.1.1 Create an embeddings function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-add-embeddings-connection" class="md-nav__link">
+    2.1.2 Add embeddings connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#213-configure-the-embeddings-connector" class="md-nav__link">
+    2.1.3 Configure the embeddings connector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#214-implement-the-embeddings-function-logic" class="md-nav__link">
+    2.1.4 Implement the embeddings function logic
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-retrieve-relevant-chunks-from-vector-database" class="md-nav__link">
+    2.2 Retrieve relevant chunks from vector database
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Retrieve relevant chunks from vector database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-add-pinecone-vector-connection" class="md-nav__link">
+    2.2.1 Add Pinecone vector connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-configure-the-connector" class="md-nav__link">
+    2.2.2 Configure the connector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223-create-a-retriever-function" class="md-nav__link">
+    2.2.3 Create a retriever function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#224-implement-the-retriever-function-logic" class="md-nav__link">
+    2.2.4 Implement the retriever function logic
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-augment-queries-with-relevant-chunks" class="md-nav__link">
+    2.3 Augment queries with relevant chunks
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 Augment queries with relevant chunks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-create-an-augment-function" class="md-nav__link">
+    2.3.1 Create an augment function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-implement-the-augment-function-logic" class="md-nav__link">
+    2.3.2 Implement the augment function logic
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-generate-response-using-the-context" class="md-nav__link">
+    2.4 Generate response Using the context
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 Generate response Using the context">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241-add-chat-client-connection" class="md-nav__link">
+    2.4.1 Add chat client connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242-create-a-generate-function" class="md-nav__link">
+    2.4.2 Create a generate function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#243-implement-the-generate-function-logic" class="md-nav__link">
+    2.4.3 Implement the generate function logic
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-create-the-combined-llm-function" class="md-nav__link">
+    Step 3: Create the combined LLM function
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Create the combined LLM function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-create-the-llm-function" class="md-nav__link">
+    3.1 Create the LLM function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-implement-the-function-logic" class="md-nav__link">
+    3.2 Implement the function logic
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-integrate-with-http-service" class="md-nav__link">
+    Step 4: Integrate with HTTP service
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4: Integrate with HTTP service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-update-the-chat-resource" class="md-nav__link">
+    4.1 Update the chat resource
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-run-the-integration-and-query-the-rag" class="md-nav__link">
+    Step 5: Run the integration and query the RAG
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          File Integration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          File Integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../file-integration/file-integration-with-directory-service/" class="md-nav__link">
+        File Integration With Directory Service
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          References
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          References
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../references/data-mapping/" class="md-nav__link">
+        Data Mapping
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+          Samples
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Samples
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../samples/message-transformation/" class="md-nav__link">
+        Message Transformation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../samples/message-routing/" class="md-nav__link">
+        Message Routing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../samples/service-orchestration/" class="md-nav__link">
+        Service Orchestration
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../enterprise-integrations-patterns/" class="md-nav__link">
+        Enterprise Integration Patterns
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+          Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_6">
+          <span class="md-nav__icon md-icon"></span>
+          Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/mulesoft-migration-tool/" class="md-nav__link">
+        Mulesoft Migration Tool
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/tibco-businessworks-migration-tool/" class="md-nav__link">
+        TIBCO BusinessWorks Migration Tool
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Develop
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Develop
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../develop/create-a-project/" class="md-nav__link">
+        Create a Project
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../develop/ballerina-integrator-artifacts/" class="md-nav__link">
+        Ballerina Integrator Artifacts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+          Design the Integration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Design the Integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../develop/visual-view-of-the-integrations/" class="md-nav__link">
+        Visual View of the Integrations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../develop/try-the-integration/" class="md-nav__link">
+        Try the Integration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+          AI Assisted Integration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          AI Assisted Integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../develop/ai-assisted-development/build-an-http-service-with-wso2-copilot/" class="md-nav__link">
+        Build an HTTP Service With WSO2 Copilot
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Deploy
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Deploy
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/deploy-to-devant/" class="md-nav__link">
+        Deploy to Devant
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/deploy-on-vm-as-executable-jar/" class="md-nav__link">
+        Deploy on VM as Executable JAR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/deploy-as-docker-image/" class="md-nav__link">
+        Deploy as Docker Image
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rag-pipeline-overview" class="md-nav__link">
+    RAG pipeline overview
+  </a>
+  
+    <nav class="md-nav" aria-label="RAG pipeline overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-ingestion" class="md-nav__link">
+    Data ingestion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-retrieval" class="md-nav__link">
+    Data retrieval
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-ingestion-pipeline" class="md-nav__link">
+    Data ingestion pipeline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-retrieval-pipeline" class="md-nav__link">
+    Data retrieval pipeline
+  </a>
+  
+    <nav class="md-nav" aria-label="Data retrieval pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-an-http-service" class="md-nav__link">
+    Step 1: Create an HTTP service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-implementation-of-rag" class="md-nav__link">
+    Step 2: Implementation of RAG
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 2: Implementation of RAG">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-retrieve-embeddings-for-user-query" class="md-nav__link">
+    2.1 Retrieve embeddings for user query
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Retrieve embeddings for user query">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-create-an-embeddings-function" class="md-nav__link">
+    2.1.1 Create an embeddings function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-add-embeddings-connection" class="md-nav__link">
+    2.1.2 Add embeddings connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#213-configure-the-embeddings-connector" class="md-nav__link">
+    2.1.3 Configure the embeddings connector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#214-implement-the-embeddings-function-logic" class="md-nav__link">
+    2.1.4 Implement the embeddings function logic
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-retrieve-relevant-chunks-from-vector-database" class="md-nav__link">
+    2.2 Retrieve relevant chunks from vector database
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Retrieve relevant chunks from vector database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-add-pinecone-vector-connection" class="md-nav__link">
+    2.2.1 Add Pinecone vector connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-configure-the-connector" class="md-nav__link">
+    2.2.2 Configure the connector
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#223-create-a-retriever-function" class="md-nav__link">
+    2.2.3 Create a retriever function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#224-implement-the-retriever-function-logic" class="md-nav__link">
+    2.2.4 Implement the retriever function logic
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-augment-queries-with-relevant-chunks" class="md-nav__link">
+    2.3 Augment queries with relevant chunks
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3 Augment queries with relevant chunks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-create-an-augment-function" class="md-nav__link">
+    2.3.1 Create an augment function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-implement-the-augment-function-logic" class="md-nav__link">
+    2.3.2 Implement the augment function logic
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-generate-response-using-the-context" class="md-nav__link">
+    2.4 Generate response Using the context
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4 Generate response Using the context">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241-add-chat-client-connection" class="md-nav__link">
+    2.4.1 Add chat client connection
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#242-create-a-generate-function" class="md-nav__link">
+    2.4.2 Create a generate function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#243-implement-the-generate-function-logic" class="md-nav__link">
+    2.4.3 Implement the generate function logic
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-create-the-combined-llm-function" class="md-nav__link">
+    Step 3: Create the combined LLM function
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Create the combined LLM function">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-create-the-llm-function" class="md-nav__link">
+    3.1 Create the LLM function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-implement-the-function-logic" class="md-nav__link">
+    3.2 Implement the function logic
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-integrate-with-http-service" class="md-nav__link">
+    Step 4: Integrate with HTTP service
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 4: Integrate with HTTP service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-update-the-chat-resource" class="md-nav__link">
+    4.1 Update the chat resource
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-run-the-integration-and-query-the-rag" class="md-nav__link">
+    Step 5: Run the integration and query the RAG
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+                  
+
+  
+    <a href="https://github.com/wso2/docs-bi/edit/main/en/docs/learn/ai/rag/build-a-rag-application.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/wso2/docs-bi/raw/main/en/docs/learn/ai/rag/build-a-rag-application.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
+<h1 id="build-a-rag-application">Build a RAG Application<a class="headerlink" href="#build-a-rag-application" title="Permanent link">&para;</a></h1>
+<p>This tutorial guides you through creating a Retrieval-Augmented Generation (RAG) system using the Ballerina Integrator. While there are several ways to structure a RAG workflow, we'll focus on a typical two-phase pipeline approach.</p>
+<h2 id="rag-pipeline-overview">RAG pipeline overview<a class="headerlink" href="#rag-pipeline-overview" title="Permanent link">&para;</a></h2>
+<h3 id="data-ingestion">Data ingestion<a class="headerlink" href="#data-ingestion" title="Permanent link">&para;</a></h3>
+<p>This step is managed through a separate pipeline <a href="https://wso2.com/devant/">Devant</a> and focuses on preparing documents for efficient retrieval in the RAG system.</p>
+<ul>
+<li>Chunk the information into smaller, meaningful sections</li>
+<li>Convert each chunk into embeddings using an embedding model</li>
+<li>Store embeddings in the vector database for efficient retrieval</li>
+</ul>
+<h3 id="data-retrieval">Data retrieval<a class="headerlink" href="#data-retrieval" title="Permanent link">&para;</a></h3>
+<p>This tutorial focuses on implementing the data retrieval component of a Retrieval-Augmented Generation (RAG) system using the <a href="https://wso2.com/integrator/bi/">Ballerina Integrator</a>.</p>
+<ul>
+<li>Convert the user's question into embeddings</li>
+<li>Perform a similarity search in the vector database</li>
+<li>Fetch the most relevant chunks</li>
+<li>Include only the relevant data in the prompt</li>
+<li>Generate a fact-grounded answer using the LLM</li>
+</ul>
+<p>By the end of this tutorial, you'll have a working RAG system that can retrieve relevant information and generate accurate, grounded responses using pre-ingested documents.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Access to <a href="https://www.pinecone.io/">Pinecone</a> vector database (requires API key and service URL)</li>
+<li>Access to <a href="https://learn.microsoft.com/en-us/azure/ai-services/openai/">Azure OpenAI</a> (requires API key and endpoint URL)</li>
+<li>Access to <a href="https://wso2.com/devant/">Devant</a></li>
+</ul>
+<h2 id="data-ingestion-pipeline">Data ingestion pipeline<a class="headerlink" href="#data-ingestion-pipeline" title="Permanent link">&para;</a></h2>
+<p>We assume you've already run the Devant pipeline to handle document processing and create your vector index. Devant manages the complete ingestion pipeline independently from our main application flow. The Integrator will focus solely on the data retrieval part, using the pre-created vector index from Devant's ingestion pipeline.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you haven't completed the above steps, follow this detailed tutorial <a href="https://www.youtube.com/watch?v=8GlrHYS-EYI&amp;list=PLp0TUr0bmhX4colDnjhEKAnZ3RmjCv5y2&amp;ab_channel=WSO2">video</a> to understand how to set up the RAG ingestion pipeline and create your vector index.</p>
+</div>
+<h2 id="data-retrieval-pipeline">Data retrieval pipeline<a class="headerlink" href="#data-retrieval-pipeline" title="Permanent link">&para;</a></h2>
+<h3 id="step-1-create-an-http-service">Step 1: Create an HTTP service<a class="headerlink" href="#step-1-create-an-http-service" title="Permanent link">&para;</a></h3>
+<ol>
+<li>In the design view, click on the <strong>Add Artifact</strong> button.</li>
+<li>Select <strong>HTTP Service</strong> under the Integration as API category.</li>
+<li>Select the <strong>Create and use the default HTTP listener (port:9090)</strong> option from the Listeners dropdown.</li>
+<li>Select the <strong>Design from Scratch</strong> option as the Service Contract and use <code>/personalAssitant</code> as the Service base path.</li>
+<li>
+<p>Click on the <strong>Create</strong> button to create the new service with the specified configurations.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/1.create-new-service.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/1.create-new-service.gif" alt="Create a New Service" width="70%"></a></p>
+</li>
+<li>
+<p>The service will have a default resource named <code>greeting</code> with the GET method.</p>
+</li>
+<li>Click the <strong>Edit FunctionModel</strong> button in front of <code>/greeting</code> resource.</li>
+<li>Change the resource HTTP method to <strong>POST</strong>.</li>
+<li>Change the resource name to <code>chat</code>.</li>
+<li>Click on <strong>Add Parameter</strong> under the Parameters and specify the parameters you need. We used to select the Param Type as <strong>QUERY</strong> and specify <code>request</code> as the name and <code>ChatRequestMessage</code> as the type.</li>
+<li>Change the <strong>200</strong> response return type to <code>string</code>.</li>
+<li>
+<p>Click on the <strong>Save</strong> button to update the resource with the specified configurations.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/2.create-new-resource.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/2.create-new-resource.gif" alt="Create a New Resource Function" width="70%"></a></p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here we use a modular approach for the resource logic for the <code>/chat</code> resource. You may use your own logic calling directly in the <code>/chat</code> service without creating functions separately.</p>
+<p>This approach allows for flexibility in implementation - you can either:</p>
+<ul>
+<li>Follow the modular pattern shown in this tutorial for better organization and maintainability</li>
+<li>Implement your logic directly within the <code>/chat</code> resource function based on your specific requirements</li>
+</ul>
+</div>
+<h3 id="step-2-implementation-of-rag">Step 2: Implementation of RAG<a class="headerlink" href="#step-2-implementation-of-rag" title="Permanent link">&para;</a></h3>
+<h4 id="21-retrieve-embeddings-for-user-query">2.1 Retrieve embeddings for user query<a class="headerlink" href="#21-retrieve-embeddings-for-user-query" title="Permanent link">&para;</a></h4>
+<p>Follow these steps to create a function that retrieves embeddings using Azure OpenAI:</p>
+<h5 id="211-create-an-embeddings-function">2.1.1 Create an embeddings function<a class="headerlink" href="#211-create-an-embeddings-function" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Click the <strong>+</strong> button in the Integrator side panel under the <strong>Functions</strong> section.</li>
+<li>
+<p>Provide the required details to create the function. Use <code>getEmbeddings</code> as the function name and specify the parameters and return types.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/3.create-embeddings.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/3.create-embeddings.gif" alt="Create an Embeddings Function" width="70%"></a></p>
+</li>
+</ol>
+<h5 id="212-add-embeddings-connection">2.1.2 Add embeddings connection<a class="headerlink" href="#212-add-embeddings-connection" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Click the <strong>+</strong> button and select the <strong>+ Add Connection</strong> the side panel.</li>
+<li>Select the connector <strong>Embeddings - ballerinax/azure.openai.embeddings</strong>.</li>
+</ol>
+<h5 id="213-configure-the-embeddings-connector">2.1.3 Configure the embeddings connector<a class="headerlink" href="#213-configure-the-embeddings-connector" title="Permanent link">&para;</a></h5>
+<ol>
+<li>In the configuration of the connector, under the Config select the <strong>Add Expression</strong> to open the Expression Helper window.</li>
+<li>In the Expression Helper, navigate to <strong>Configurables</strong>, click the <strong>Create new configurable variable</strong>. Here we create <code>azure_api_key</code> and <code>azure_service_url</code>.</li>
+<li>Select the <strong>ConnectionConfig</strong> under the Construct Record in the Expression Helper window.</li>
+<li>Change the <strong>BearerTokenConfig</strong> to <strong>ApiKeysConfig</strong> in the auth.</li>
+<li>Select the <strong>Configurables</strong> and click the <code>azure_api_key</code>.</li>
+<li>Expand the <strong>Advanced Configurations</strong> section. Under the <strong>ServiceUrl</strong> select the <strong>Add Expression</strong> to open the Expression Helper window.</li>
+<li>
+<p>In the Expression Helper, navigate to <strong>Configurables</strong>, select on <code>azure_service_url</code> as the value for <strong>ServiceUrl</strong> and click <strong>Save</strong> button.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/4.create-embeddings-connection.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/4.create-embeddings-connection.gif" alt="Create an Embeddings Connection" width="70%"></a></p>
+</li>
+</ol>
+<h5 id="214-implement-the-embeddings-function-logic">2.1.4 Implement the embeddings function logic<a class="headerlink" href="#214-implement-the-embeddings-function-logic" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Click the <strong>+</strong> button and select the <strong>Declare Variable</strong> under the Statement.</li>
+<li>Create variable name as <code>embeddingsBody</code> and specify its type and expression.</li>
+<li>Click the <strong>+</strong> button and select the <code>embeddingsClient</code>.</li>
+<li>Configure the client with the DeploymentId, payload and API version.</li>
+<li>Configure the function to convert the returned decimal embeddings to float values.</li>
+<li>Return the final float array.</li>
+</ol>
+<h4 id="22-retrieve-relevant-chunks-from-vector-database">2.2 Retrieve relevant chunks from vector database<a class="headerlink" href="#22-retrieve-relevant-chunks-from-vector-database" title="Permanent link">&para;</a></h4>
+<p>Follow these steps to create a function that retrieves similar vectors from Pinecone using vector embeddings:</p>
+<h5 id="221-add-pinecone-vector-connection">2.2.1 Add Pinecone vector connection<a class="headerlink" href="#221-add-pinecone-vector-connection" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Click the <strong>+</strong> button in the Integrator side panel under the <strong>Connections</strong> section.</li>
+<li>Select the connector <strong>Vector - ballerinax/pinecone.vector</strong>.</li>
+</ol>
+<h5 id="222-configure-the-connector">2.2.2 Configure the connector<a class="headerlink" href="#222-configure-the-connector" title="Permanent link">&para;</a></h5>
+<ol>
+<li>In the configuration of the connector, under the ApiKeyConfig select the <strong>Add Expression</strong> to open the Expression Helper window.</li>
+<li>Select the <strong>Configurables</strong> and click the <strong>Create new configurable variable</strong>. Here we create <code>pinecone_api_key</code> and <code>pinecone_url</code>.</li>
+<li>Select the <strong>ConnectionConfig</strong> under the Construct Record in the Expression Helper window.</li>
+<li>Click the <strong>ApiKeysConfig</strong> in the auth, select the <strong>Configurables</strong> and click the <code>pinecone_api_key</code>.</li>
+<li>
+<p>Enter the <code>pinecone_url</code> as <strong>ServiceUrl</strong> and save it.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/5.create-pinecone-connection.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/5.create-pinecone-connection.gif" alt="Create an Pinecone Connection" width="70%"></a></p>
+</li>
+</ol>
+<h5 id="223-create-a-retriever-function">2.2.3 Create a retriever function<a class="headerlink" href="#223-create-a-retriever-function" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Click the <strong>+</strong> button in the Integrator side panel under the <strong>Functions</strong> section.</li>
+<li>
+<p>Provide the required details to create the function. Use <code>retrieveData</code> as the function name and specify the parameters and return types.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/6.create-retriever-function.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/6.create-retriever-function.gif" alt="Create an Retriever Function" width="70%"></a></p>
+</li>
+</ol>
+<h5 id="224-implement-the-retriever-function-logic">2.2.4 Implement the retriever function logic<a class="headerlink" href="#224-implement-the-retriever-function-logic" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Click the <strong>+</strong> button and select the <code>vectorClient</code>.</li>
+<li>Select <strong>Query</strong> from the vectorClient dropdown.</li>
+<li>Configure the vector client and specify the payload. Here, we use <code>{ topK: 4}</code> for the record QueryRequest.</li>
+<li>Extract the matches array from the QueryResponse.</li>
+<li>Handle null response scenarios with appropriate error handling.</li>
+<li>
+<p>Return the relevant matching array from the client response.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/7.retriever-function-logic.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/7.retriever-function-logic.gif" alt="Implement Retriever Function Logic" width="70%"></a></p>
+</li>
+</ol>
+<h4 id="23-augment-queries-with-relevant-chunks">2.3 Augment queries with relevant chunks<a class="headerlink" href="#23-augment-queries-with-relevant-chunks" title="Permanent link">&para;</a></h4>
+<p>Follow these steps to create a function that augments queries with relevant text chunks from vector search results:</p>
+<h5 id="231-create-an-augment-function">2.3.1 Create an augment function<a class="headerlink" href="#231-create-an-augment-function" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Click the <strong>+</strong> button in the Integrator side panel under the <strong>Functions</strong> section.</li>
+<li>Create the function with <code>augment</code> as the function name and specify the parameter type and return type.</li>
+</ol>
+<h5 id="232-implement-the-augment-function-logic">2.3.2 Implement the augment function logic<a class="headerlink" href="#232-implement-the-augment-function-logic" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Create an empty string variable named <code>context</code>.</li>
+<li>Add a foreach loop to process each match in the input array.</li>
+<li>Extract metadata from each match and convert to the appropriate type.</li>
+<li>Concatenate the text from metadata to the context string.</li>
+<li>
+<p>Return the aggregated context string with all relevant text chunks.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/8.augment-function-logic.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/8.augment-function-logic.gif" alt="Implement Augment Function Logic" width="70%"></a></p>
+</li>
+</ol>
+<h4 id="24-generate-response-using-the-context">2.4 Generate response Using the context<a class="headerlink" href="#24-generate-response-using-the-context" title="Permanent link">&para;</a></h4>
+<h5 id="241-add-chat-client-connection">2.4.1 Add chat client connection<a class="headerlink" href="#241-add-chat-client-connection" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Click the <strong>+</strong> button in the Integrator side panel under the <strong>Connections</strong> section.</li>
+<li>Select the connector <strong>Chat - ballerinax/azure.openai.chat</strong>.</li>
+<li>In the configuration of the connector, under the Config select the <strong>ConnectionConfig</strong> under the Construct Record in the Expression Helper window.</li>
+<li>Change the <strong>BearerTokenConfig</strong> to <strong>ApiKeysConfig</strong> in the auth.</li>
+<li>Select the <strong>Configurables</strong> and click the <code>azure_api_key</code>.</li>
+<li>
+<p>Expand the <strong>Advanced Configurations</strong> and Enter the <code>azure_service_url</code> as ServiceUrl and save it.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/9.create-chat-client.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/9.create-chat-client.gif" alt="Create a Chat Client" width="70%"></a></p>
+</li>
+</ol>
+<details class="tip" open="open"><summary>Model Flexibility</summary><p>While this tutorial demonstrates Azure OpenAI integration, the same principles apply to other AI providers. You can adapt this implementation to work with:</p>
+<ul>
+<li><strong>OpenAI API</strong> </li>
+<li><strong>Anthropic's Claude API</strong></li>
+<li><strong>Google's PaLM API</strong></li>
+<li><strong>Local models</strong> (via APIs like Ollama)</li>
+<li><strong>Other cloud AI services</strong></li>
+</ul>
+<p>Simply replace the connector and adjust the API configuration parameters according to your chosen provider's requirements.</p>
+</details>
+<h5 id="242-create-a-generate-function">2.4.2 Create a generate function<a class="headerlink" href="#242-create-a-generate-function" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Click the <strong>+</strong> button in the Integrator side panel under the <strong>Functions</strong> section.</li>
+<li>Create the function with <code>generateText</code> as the function name and specify the parameters and return types.</li>
+</ol>
+<h5 id="243-implement-the-generate-function-logic">2.4.3 Implement the generate function logic<a class="headerlink" href="#243-implement-the-generate-function-logic" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Create variables such as <code>systemPrompt</code> and <code>chatRequest</code>.</li>
+<li>Click the <strong>+</strong> button and select the <code>chatClient</code>.</li>
+<li>Select <strong>Creates a completion for the chat message</strong> from the chatClient dropdown.</li>
+<li>Configure the client and specify the DeploymentId, API version, and payload.</li>
+<li>Return the chat response from the client.</li>
+</ol>
+<h3 id="step-3-create-the-combined-llm-function">Step 3: Create the combined LLM function<a class="headerlink" href="#step-3-create-the-combined-llm-function" title="Permanent link">&para;</a></h3>
+<h4 id="31-create-the-llm-function">3.1 Create the LLM function<a class="headerlink" href="#31-create-the-llm-function" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Click the <strong>+</strong> button in the Integrator side panel under the <strong>Functions</strong> section.</li>
+<li>
+<p>Create the function with <code>llmChat</code> as the function name and specify the parameters and return types.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/10.create-llm-chat.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/10.create-llm-chat.gif" alt="Create a Chat Function" width="70%"></a></p>
+</li>
+</ol>
+<h4 id="32-implement-the-function-logic">3.2 Implement the function logic<a class="headerlink" href="#32-implement-the-function-logic" title="Permanent link">&para;</a></h4>
+<p>This function orchestrates the entire RAG (Retrieval-Augmented Generation) pipeline:</p>
+<ol>
+<li><strong>Get Embeddings</strong>: Call the <code>getEmbeddings</code> function with the user query to convert it into vector embeddings.</li>
+<li><strong>Retrieve Data</strong>: Use the embeddings to query the vector database through the <code>retrieveData</code> function to get relevant document chunks.</li>
+<li><strong>Augment Context</strong>: Process the retrieved chunks using the <code>augment</code> function to create a consolidated context string.</li>
+<li><strong>Generate Response</strong>: Call the <code>generateText</code> function with both the original query and the augmented context to generate the final response.</li>
+<li>
+<p><strong>Return Result</strong>: Return the generated response string.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/11.llm-chat-logic.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/11.llm-chat-logic.gif" alt="Implement Chat Function Logic" width="70%"></a></p>
+</li>
+</ol>
+<p>This completes the end-to-end RAG pipeline where user queries are processed through embeddings, vector search, context augmentation, and LLM generation before returning intelligent responses through the HTTP API.</p>
+<h3 id="step-4-integrate-with-http-service">Step 4: Integrate with HTTP service<a class="headerlink" href="#step-4-integrate-with-http-service" title="Permanent link">&para;</a></h3>
+<h4 id="41-update-the-chat-resource">4.1 Update the chat resource<a class="headerlink" href="#41-update-the-chat-resource" title="Permanent link">&para;</a></h4>
+<p>Go back to the HTTP service created in Step 1. In the <code>/chat</code> resource implementation:</p>
+<ol>
+<li>Call the <code>llmChat</code> function with the user's query.</li>
+<li>
+<p>Return the chat response.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/12.chat-service-logic.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/12.chat-service-logic.gif" alt="Implement Chat Function Logic" width="70%"></a></p>
+</li>
+</ol>
+<h3 id="step-5-run-the-integration-and-query-the-rag">Step 5: Run the integration and query the RAG<a class="headerlink" href="#step-5-run-the-integration-and-query-the-rag" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Click on the <strong>Run</strong> button in the top-right corner to run the integration.</li>
+<li>If you have added any variables to the project, you’ll be prompted to update their values in the <code>Config.toml</code> file. Configure them to continue with the execution of the request.</li>
+<li>
+<p>Query the rag by sending the curl request below.</p>
+<div class="highlight"><pre><span></span><code>curl --location &#39;http://localhost:9090/personalAssistant/chat&#39; \
+--header &#39;Content-Type: application/json&#39; \
+--data &#39;{&quot;message&quot;: &quot;What is the process for reporting safety concerns?&quot;}&#39;
+</code></pre></div>
+
+<p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/13.rag-execute.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/13.rag-execute.gif" alt="Run the integration to query rag" width="70%"></a></p>
+</li>
+</ol>
+<div class="admonition warning">
+<p class="admonition-title">Response May Vary</p>
+<p>Since this integration involves an LLM (Large Language Model) call, the response values may not always be identical across different executions.</p>
+</div>
+<p>Your RAG system is now ready to answer questions using retrieved context from your vector database!</p>
+
+
+
+
+
+                
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CR98L58" height="0" width="0"
+                  style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+      
+        <footer class="md-footer">
+  
+  
+  <nav class="md-footer__inner md-grid" aria-label="Footer" >
+    
+    
+    <a href="../../agents/integrating-agents-with-external-endpoints/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Integrating Agents with External Endpoints" rel="prev">
+      <div class="md-footer__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </div>
+      <div class="md-footer__title">
+        <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+          Integrating Agents with External Endpoints
+        </div>
+      </div>
+    </a>
+    
+    
+    
+    <a href="../../../file-integration/file-integration-with-directory-service/" class="md-footer__link md-footer__link--next" aria-label="Next: File Integration With Directory Service" rel="next">
+      <div class="md-footer__title">
+        <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Next
+                </span>
+          File Integration With Directory Service
+        </div>
+      </div>
+      <div class="md-footer__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+      </div>
+    </a>
+    
+  </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  <div class="footer-copyright-left">
+  
+    <div class="md-copyright__highlight">
+      WSO2 Ballerina Integrator - Documentation
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+  </div>
+  <div class="footer-copyright-right">
+    <div class="footer-copyright-top">
+      Copyright &copy; <a href="https://wso2.com/">WSO2</a> LLC (2025)
+    </div>
+    <div class="footer-copyright-bottom">
+      Content licensed under <a href="https://creativecommons.org/licenses/by/4.0">CC By 4.0.</a> | Sample code
+      licensed under <a href="http://www.apache.org/licenses/">Apache 2.0</a>.
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "content.action.edit", "content.action.view", "navigation.indexes"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+      
+        <script src="../../../../assets/lib/highlightjs/highlight.min.js"></script>
+      
+        <script src="../../../../assets/lib/json-formatter/json-formatter.umd.js"></script>
+      
+        <script src="../../../../assets/js/mitheme.js"></script>
+      
+    
+  </body>
+</html>
