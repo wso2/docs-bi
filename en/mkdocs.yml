@@ -166,6 +166,7 @@ markdown_extensions:
 # Plugins configuration
 plugins:
   - search
+  - open-in-new-tab
   - markdownextradata: {}
   - exclude:
       glob:
