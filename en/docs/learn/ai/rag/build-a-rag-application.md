@@ -8,10 +8,7 @@ This step is managed through [Devant](https://wso2.com/devant/docs/ai/rag-applic
 - Convert each chunk into embeddings using an embedding model
 - Store embeddings in the vector database for efficient retrieval
 
-We assume you've already run the Devant to handle document processing and create your vector index. Devant manages the complete ingestion independently from our main application flow. The Integrator will focus solely on the rag retrieval part, using the pre-created vector index from Devant's ingestion.
-
-!!! note  
-    If you haven't completed the above steps, follow this detailed tutorial [video](https://www.youtube.com/watch?v=8GlrHYS-EYI&list=PLp0TUr0bmhX4colDnjhEKAnZ3RmjCv5y2&ab_channel=WSO2) to understand how to set up the RAG ingestion and create your vector index.
+We assume that you've already used [Devant](https://wso2.com/devant/docs/ai/rag-application/) to process and ingest the documents. Devant handles the entire ingestion process independently of the main application flow. The following steps of the tutorial focus solely on RAG retrieval.
 
 ## RAG retrieval 
 This tutorial focuses on implementing the rag retrieval component of a Retrieval-Augmented Generation (RAG) system using the [Ballerina Integrator](https://wso2.com/integrator/bi/).
