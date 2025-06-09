@@ -840,53 +840,26 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rag-pipeline-overview" class="md-nav__link">
-    RAG pipeline overview
+  <a href="#rag-ingestion" class="md-nav__link">
+    RAG ingestion
   </a>
-  
-    <nav class="md-nav" aria-label="RAG pipeline overview">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#data-ingestion" class="md-nav__link">
-    Data ingestion
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-retrieval" class="md-nav__link">
-    Data retrieval
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#rag-retrieval" class="md-nav__link">
+    RAG retrieval
+  </a>
+  
+    <nav class="md-nav" aria-label="RAG retrieval">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     Prerequisites
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#data-ingestion-pipeline" class="md-nav__link">
-    Data ingestion pipeline
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-retrieval-pipeline" class="md-nav__link">
-    Data retrieval pipeline
-  </a>
-  
-    <nav class="md-nav" aria-label="Data retrieval pipeline">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#step-1-create-an-http-service" class="md-nav__link">
@@ -1714,53 +1687,26 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rag-pipeline-overview" class="md-nav__link">
-    RAG pipeline overview
+  <a href="#rag-ingestion" class="md-nav__link">
+    RAG ingestion
   </a>
-  
-    <nav class="md-nav" aria-label="RAG pipeline overview">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#data-ingestion" class="md-nav__link">
-    Data ingestion
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-retrieval" class="md-nav__link">
-    Data retrieval
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
+  <a href="#rag-retrieval" class="md-nav__link">
+    RAG retrieval
+  </a>
+  
+    <nav class="md-nav" aria-label="RAG retrieval">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#prerequisites" class="md-nav__link">
     Prerequisites
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#data-ingestion-pipeline" class="md-nav__link">
-    Data ingestion pipeline
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#data-retrieval-pipeline" class="md-nav__link">
-    Data retrieval pipeline
-  </a>
-  
-    <nav class="md-nav" aria-label="Data retrieval pipeline">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#step-1-create-an-http-service" class="md-nav__link">
@@ -2017,17 +1963,17 @@
 
 
 <h1 id="build-a-rag-application">Build a RAG Application<a class="headerlink" href="#build-a-rag-application" title="Permanent link">&para;</a></h1>
-<p>This tutorial guides you through creating a Retrieval-Augmented Generation (RAG) system using the Ballerina Integrator. While there are several ways to structure a RAG workflow, we'll focus on a typical two-phase pipeline approach.</p>
-<h2 id="rag-pipeline-overview">RAG pipeline overview<a class="headerlink" href="#rag-pipeline-overview" title="Permanent link">&para;</a></h2>
-<h3 id="data-ingestion">Data ingestion<a class="headerlink" href="#data-ingestion" title="Permanent link">&para;</a></h3>
-<p>This step is managed through a separate pipeline <a href="https://wso2.com/devant/">Devant</a> and focuses on preparing documents for efficient retrieval in the RAG system.</p>
+<p>This tutorial guides you through creating a Retrieval-Augmented Generation (RAG) system using the Ballerina Integrator. While there are several ways to structure a RAG workflow, we’ll focus on a typical two-phase approach: ingestion and retrieval.</p>
+<h2 id="rag-ingestion">RAG ingestion<a class="headerlink" href="#rag-ingestion" title="Permanent link">&para;</a></h2>
+<p>This step is managed through <a href="https://wso2.com/devant/docs/ai/rag-application/">Devant</a> and it focuses on preparing documents for efficient retrieval in the RAG system.</p>
 <ul>
 <li>Chunk the information into smaller, meaningful sections</li>
 <li>Convert each chunk into embeddings using an embedding model</li>
 <li>Store embeddings in the vector database for efficient retrieval</li>
 </ul>
-<h3 id="data-retrieval">Data retrieval<a class="headerlink" href="#data-retrieval" title="Permanent link">&para;</a></h3>
-<p>This tutorial focuses on implementing the data retrieval component of a Retrieval-Augmented Generation (RAG) system using the <a href="https://wso2.com/integrator/bi/">Ballerina Integrator</a>.</p>
+<p>We assume that you've already used <a href="https://wso2.com/devant/docs/ai/rag-application/">Devant</a> to process and ingest the documents. Devant handles the entire ingestion process independently of the main application flow. The following steps of the tutorial focus solely on RAG retrieval.</p>
+<h2 id="rag-retrieval">RAG retrieval<a class="headerlink" href="#rag-retrieval" title="Permanent link">&para;</a></h2>
+<p>This tutorial focuses on implementing the rag retrieval component of a Retrieval-Augmented Generation (RAG) system using the <a href="https://wso2.com/integrator/bi/">Ballerina Integrator</a>.</p>
 <ul>
 <li>Convert the user's question into embeddings</li>
 <li>Perform a similarity search in the vector database</li>
@@ -2036,19 +1982,12 @@
 <li>Generate a fact-grounded answer using the LLM</li>
 </ul>
 <p>By the end of this tutorial, you'll have a working RAG system that can retrieve relevant information and generate accurate, grounded responses using pre-ingested documents.</p>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Access to <a href="https://www.pinecone.io/">Pinecone</a> vector database (requires API key and service URL)</li>
 <li>Access to <a href="https://learn.microsoft.com/en-us/azure/ai-services/openai/">Azure OpenAI</a> (requires API key and endpoint URL)</li>
 <li>Access to <a href="https://wso2.com/devant/">Devant</a></li>
 </ul>
-<h2 id="data-ingestion-pipeline">Data ingestion pipeline<a class="headerlink" href="#data-ingestion-pipeline" title="Permanent link">&para;</a></h2>
-<p>We assume you've already run the Devant pipeline to handle document processing and create your vector index. Devant manages the complete ingestion pipeline independently from our main application flow. The Integrator will focus solely on the data retrieval part, using the pre-created vector index from Devant's ingestion pipeline.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you haven't completed the above steps, follow this detailed tutorial <a href="https://www.youtube.com/watch?v=8GlrHYS-EYI&amp;list=PLp0TUr0bmhX4colDnjhEKAnZ3RmjCv5y2&amp;ab_channel=WSO2">video</a> to understand how to set up the RAG ingestion pipeline and create your vector index.</p>
-</div>
-<h2 id="data-retrieval-pipeline">Data retrieval pipeline<a class="headerlink" href="#data-retrieval-pipeline" title="Permanent link">&para;</a></h2>
 <h3 id="step-1-create-an-http-service">Step 1: Create an HTTP service<a class="headerlink" href="#step-1-create-an-http-service" title="Permanent link">&para;</a></h3>
 <ol>
 <li>In the design view, click on the <strong>Add Artifact</strong> button.</li>
@@ -2221,7 +2160,7 @@
 </li>
 </ol>
 <h4 id="32-implement-the-function-logic">3.2 Implement the function logic<a class="headerlink" href="#32-implement-the-function-logic" title="Permanent link">&para;</a></h4>
-<p>This function orchestrates the entire RAG (Retrieval-Augmented Generation) pipeline:</p>
+<p>This function orchestrates the entire RAG (Retrieval-Augmented Generation):</p>
 <ol>
 <li><strong>Get Embeddings</strong>: Call the <code>getEmbeddings</code> function with the user query to convert it into vector embeddings.</li>
 <li><strong>Retrieve Data</strong>: Use the embeddings to query the vector database through the <code>retrieveData</code> function to get relevant document chunks.</li>
@@ -2232,7 +2171,7 @@
 <p><a href="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/11.llm-chat-logic.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/ai/rag/build-a-rag-application/11.llm-chat-logic.gif" alt="Implement Chat Function Logic" width="70%"></a></p>
 </li>
 </ol>
-<p>This completes the end-to-end RAG pipeline where user queries are processed through embeddings, vector search, context augmentation, and LLM generation before returning intelligent responses through the HTTP API.</p>
+<p>This completes the end-to-end RAG where user queries are processed through embeddings, vector search, context augmentation, and LLM generation before returning intelligent responses through the HTTP API.</p>
 <h3 id="step-4-integrate-with-http-service">Step 4: Integrate with HTTP service<a class="headerlink" href="#step-4-integrate-with-http-service" title="Permanent link">&para;</a></h3>
 <h4 id="41-update-the-chat-resource">4.1 Update the chat resource<a class="headerlink" href="#41-update-the-chat-resource" title="Permanent link">&para;</a></h4>
 <p>Go back to the HTTP service created in Step 1. In the <code>/chat</code> resource implementation:</p>
@@ -2365,6 +2304,8 @@
         <script src="../../../../assets/lib/json-formatter/json-formatter.umd.js"></script>
       
         <script src="../../../../assets/js/mitheme.js"></script>
+      
+        <script src="../../../../js/open_in_new_tab.js"></script>
       
     
   </body>
