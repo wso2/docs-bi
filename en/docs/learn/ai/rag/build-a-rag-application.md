@@ -1,18 +1,17 @@
 # Build a RAG Application
+This tutorial guides you through creating a Retrieval-Augmented Generation (RAG) system using the Ballerina Integrator. While there are several ways to structure a RAG workflow, we’ll focus on a typical two-phase approach: ingestion and retrieval.
 
-This tutorial guides you through creating a Retrieval-Augmented Generation (RAG) system using the Ballerina Integrator. While there are several ways to structure a RAG workflow, we'll focus on a typical two-phase pipeline approach.
-
-## RAG pipeline overview
-
-### Data ingestion 
-This step is managed through a separate pipeline [Devant](https://wso2.com/devant/) and focuses on preparing documents for efficient retrieval in the RAG system.
+## RAG ingestion 
+This step is managed through [Devant](https://wso2.com/devant/docs/ai/rag-application/) and it focuses on preparing documents for efficient retrieval in the RAG system.
 
 - Chunk the information into smaller, meaningful sections
 - Convert each chunk into embeddings using an embedding model
 - Store embeddings in the vector database for efficient retrieval
 
-### Data retrieval 
-This tutorial focuses on implementing the data retrieval component of a Retrieval-Augmented Generation (RAG) system using the [Ballerina Integrator](https://wso2.com/integrator/bi/).
+We assume that you've already used [Devant](https://wso2.com/devant/docs/ai/rag-application/) to process and ingest the documents. Devant handles the entire ingestion process independently of the main application flow. The following steps of the tutorial focus solely on RAG retrieval.
+
+## RAG retrieval 
+This tutorial focuses on implementing the rag retrieval component of a Retrieval-Augmented Generation (RAG) system using the [Ballerina Integrator](https://wso2.com/integrator/bi/).
 
 - Convert the user's question into embeddings
 - Perform a similarity search in the vector database
@@ -22,20 +21,11 @@ This tutorial focuses on implementing the data retrieval component of a Retrieva
 
 By the end of this tutorial, you'll have a working RAG system that can retrieve relevant information and generate accurate, grounded responses using pre-ingested documents.
 
-## Prerequisites
+### Prerequisites
 
 - Access to [Pinecone](https://www.pinecone.io/) vector database (requires API key and service URL)
 - Access to [Azure OpenAI](https://learn.microsoft.com/en-us/azure/ai-services/openai/) (requires API key and endpoint URL)
 - Access to [Devant](https://wso2.com/devant/)
-
-## Data ingestion pipeline
-
-We assume you've already run the Devant pipeline to handle document processing and create your vector index. Devant manages the complete ingestion pipeline independently from our main application flow. The Integrator will focus solely on the data retrieval part, using the pre-created vector index from Devant's ingestion pipeline.
-
-!!! note  
-    If you haven't completed the above steps, follow this detailed tutorial [video](https://www.youtube.com/watch?v=8GlrHYS-EYI&list=PLp0TUr0bmhX4colDnjhEKAnZ3RmjCv5y2&ab_channel=WSO2) to understand how to set up the RAG ingestion pipeline and create your vector index.
-
-## Data retrieval pipeline
 
 ### Step 1: Create an HTTP service
 
@@ -195,7 +185,7 @@ Follow these steps to create a function that augments queries with relevant text
 
 #### 3.2 Implement the function logic
 
-This function orchestrates the entire RAG (Retrieval-Augmented Generation) pipeline:
+This function orchestrates the entire RAG (Retrieval-Augmented Generation):
 
 1. **Get Embeddings**: Call the `getEmbeddings` function with the user query to convert it into vector embeddings.
 2. **Retrieve Data**: Use the embeddings to query the vector database through the `retrieveData` function to get relevant document chunks.
@@ -205,7 +195,7 @@ This function orchestrates the entire RAG (Retrieval-Augmented Generation) pipel
 
     <a href="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/11.llm-chat-logic.gif"><img src="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/11.llm-chat-logic.gif" alt="Implement Chat Function Logic" width="70%"></a>
 
-This completes the end-to-end RAG pipeline where user queries are processed through embeddings, vector search, context augmentation, and LLM generation before returning intelligent responses through the HTTP API.
+This completes the end-to-end RAG where user queries are processed through embeddings, vector search, context augmentation, and LLM generation before returning intelligent responses through the HTTP API.
 
 ### Step 4: Integrate with HTTP service
 
