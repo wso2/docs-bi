@@ -10,3 +10,4 @@ markdown-include==0.8.1
 markdown==3.2.1
 mkdocs-exclude==1.0.2
 jinja2==3.1.2
+mkdocs-open-in-new-tab===1.0.3
