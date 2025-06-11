@@ -83,12 +83,12 @@ nav:
   - Learn:
       - AI:
         - Natural functions: learn/ai/natural-functions/natural-functions.md
+        - RAG:
+          - Build a RAG Application: learn/ai/rag/build-a-rag-application.md
         - Agents:
           - Introduction to Chat Agents: learn/ai/agents/introduction-to-chat-agents.md
           - Introduction to Inline Agents: learn/ai/agents/introduction-to-inline-agents.md
           - Integrating Agents with External Endpoints: learn/ai/agents/integrating-agents-with-external-endpoints.md
-        - RAG:
-          - Build a RAG Application: learn/ai/rag/build-a-rag-application.md
       #- Automation:
       #  - learn/automation/index.md
       #  - Build your first automation: learn/automation/build-your-first-automation.md
@@ -166,7 +166,6 @@ markdown_extensions:
 # Plugins configuration
 plugins:
   - search
-  - open-in-new-tab
   - markdownextradata: {}
   - exclude:
       glob:
