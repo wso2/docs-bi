@@ -1,6 +1,6 @@
 # Natural Functions
 
-In this tutorial, you will create and use a natural function using the Ballerina Integrator. A natural function allows the logic of the function to be described in natural language and is executed at runtime with a call to a Large Language Model (LLM), with the natural language instructions as the prompt.
+In this tutorial, you will create and use a natural function using the WSO2 Integrator: BI. A natural function allows the logic of the function to be described in natural language and is executed at runtime with a call to a Large Language Model (LLM), with the natural language instructions as the prompt.
 The tutorial uses a natural function to analyze blog content to suggest a suitable category and rate it on a scale of 1 to 10 based on specified criteria.
 
 ???+ tip "Natural Programming"
@@ -11,7 +11,7 @@ The tutorial uses a natural function to analyze blog content to suggest a suitab
 Follow the steps below to implement the integration.
 
 ### Step 1: Create a new integration project
-1. Click on the Ballerina Integrator icon on the sidebar.
+1. Click on the **BI** icon on the sidebar.
 2. Click on the **`Create New Integration`** button.
 3. Enter `BlogReviewer` as the project name.
 4. Select Project Directory and click on the **`Select Location`** button.

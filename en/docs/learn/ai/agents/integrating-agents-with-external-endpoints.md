@@ -1,6 +1,6 @@
 # Integrating Agents with External Endpoints
 
-In this tutorial, you’ll create an AI-powered personal assistant agent that integrates with Gmail and Google Calendar to help you efficiently manage emails, tasks, and schedules. You'll use the prebuilt Ballerina Integrator (BI) connectors for seamless integration by turning their actions into agent tools.
+In this tutorial, you’ll create an AI-powered personal assistant agent that integrates with Gmail and Google Calendar to help you efficiently manage emails, tasks, and schedules. You'll use the prebuilt WSO2 Integrator: BI connectors for seamless integration by turning their actions into agent tools.
 
 ## Prerequisites
 
@@ -221,7 +221,7 @@ Remove the `calendarId` parameter from the function as it is no longer used in t
 
 ## Interact with the agent
 
-After completing the above steps, your personal AI assistant agent is now ready to assist you with necessary tasks. Ballerina Integrator provides a built-in chat interface to interact with the agent.
+After completing the above steps, your personal AI assistant agent is now ready to assist you with necessary tasks. WSO2 Integrator: BI provides a built-in chat interface to interact with the agent.
 
 To start chatting with the agent:
 
