@@ -3,7 +3,7 @@
 ## Overview
 
 In this tutorial, you'll create a service that allows users to reserve appointments at various hospitals. Requests will be directed to the appropriate hospital based on the request payload's content.
-To accomplish this, you’ll build a REST service with a single resource in Ballerina Integrator extension. The resource will handle user requests, identify the hospital endpoint based on the hospital ID, forward the request to the specified hospital service to make the reservation, and return the reservation details.
+To accomplish this, you’ll build a REST service with a single resource in WSO2 Integrator: BI extension. The resource will handle user requests, identify the hospital endpoint based on the hospital ID, forward the request to the specified hospital service to make the reservation, and return the reservation details.
 
 Here’s an overview of the process flow.
 
@@ -57,7 +57,7 @@ Here’s an overview of the process flow.
 
 ## Step 1: Create a new integration project
 
-1. Click on the Ballerina Integrator icon on the sidebar.
+1. Click on the **BI** icon on the sidebar.
 2. Click on the **Create New Integration** button.
 3. Enter the project name as `MessageRouting`.
 4. Select Project Directory and click on the **Select Location** button.
@@ -136,7 +136,7 @@ Here’s an overview of the process flow.
    
 ???+ info "HTTP Connector"
     To learn more about HTTP client, see [Ballerina HTTP Client](https://ballerina.io/learn/by-example/http-client-send-request-receive-response/).
-    See supported advanced client configurations in the [HTTP Client Configurations](https://central.ballerina.io/ballerina/http/2.12.2#ClientConfiguration).
+    See supported advanced client configurations in the [HTTP Client Configurations](https://central.ballerina.io/ballerina/http/latest#ClientConfiguration).
 
 ## Step 5: Add a resource method
 

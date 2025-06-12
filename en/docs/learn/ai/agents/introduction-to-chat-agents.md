@@ -3,7 +3,7 @@
 In this tutorial, you'll create an AI-powered math tutor assistant capable of handling a variety of mathematical queries. The agent will be equipped with tools to perform fundamental arithmetic operations and intelligently combine and execute these tools to address user questions. By the end of this tutorial, you'll have built an interactive math assistant that can help users solve problems and provide clear, step-by-step explanations.
 
 !!! note  
-    This math tutor agent can technically be implemented using just an LLM, without any agent capabilities. However, the purpose of this tutorial is to help you understand the essential concepts required to build an AI agent using Ballerina Integrator. By following this guide, you'll gain hands-on experience with agent creation in Ballerina Integrator, setting the foundation for developing more powerful and tailored AI agents in the future.
+    This math tutor agent can technically be implemented using just an LLM, without any agent capabilities. However, the purpose of this tutorial is to help you understand the essential concepts required to build an AI agent using WSO2 Integrator: BI. By following this guide, you'll gain hands-on experience with agent creation in BWSO2 Integrator: BI, setting the foundation for developing more powerful and tailored AI agents in the future.
 
 ## Prerequisites
 
@@ -12,7 +12,7 @@ In this tutorial, you'll create an AI-powered math tutor assistant capable of ha
 
 ### Step 1: Create a new integration project
 
-1. Click on the **Ballerina Integrator** icon in the sidebar.
+1. Click on the **BI** icon in the sidebar.
 2. Click on the **Create New Integration** button.
 3. Enter the project name as `MathTutor`.
 4. Select the project directory location by clicking on the **Select Location** button.
@@ -22,7 +22,7 @@ In this tutorial, you'll create an AI-powered math tutor assistant capable of ha
 
 ### Step 2: Create an agent
 
-1. Click the **+** button on the Ballerina Integrator side panel or navigate back to the design screen and click on **Add Artifact**.
+1. Click the **+** button on the WSO2 Integrator: BI side panel or navigate back to the design screen and click on **Add Artifact**.
 2. Select **AI Chat Agent** under the **AI Agent** artifacts.
 3. Provide a **Name** for the agent. It will take a moment to create an agent with the default configuration.
 4. After creating the agent, you can configure it with a model provider, memory, tools, roles, and instructions.
@@ -68,13 +68,13 @@ In this tutorial, you'll create an AI-powered math tutor assistant capable of ha
 
 ### Step 6: Add tools to the agent
 
-Ballerina Integrator (BI) allows you to create tools using existing functions. It also supports automatically generating [tools from connector actions](/learn/ai/agents/integrating-agents-with-external-endpoints) or OpenAPI specifications by leveraging BI’s capability to generate local connectors from an OpenAPI spec.
+WSO2 Integrator: BI allows you to create tools using existing functions. It also supports automatically generating [tools from connector actions](/learn/ai/agents/integrating-agents-with-external-endpoints) or OpenAPI specifications by leveraging BI’s capability to generate local connectors from an OpenAPI spec.
 
 However, in this tutorial, we will create simple functions to perform arithmetic operations and use them as tools.
 
 #### Create a function
 
-1. Click the **+** button in the Ballerina Integrator side panel under the **Functions** section.
+1. Click the **+** button in the WSO2 Integrator: BI side panel under the **Functions** section.
 2. Provide the required details to create the function. For this example, use `sum` as the function name, and specify the parameters and return types.
 3. Implement the function logic in the flow node editor that opens.
 
@@ -93,7 +93,7 @@ Then repeat steps 4 to 8 to add each of these functions as tools in the agent by
 
 ### Step 7: Interact with the agent
 
-After completing the above steps, your math tutor assistant is now ready to answer questions. Ballerina Integrator provides a built-in chat interface to interact with the agent.
+After completing the above steps, your math tutor assistant is now ready to answer questions. WSO2 Integrator: BI provides a built-in chat interface to interact with the agent.
 
 To start chatting with the agent:
 

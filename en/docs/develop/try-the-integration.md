@@ -1,6 +1,6 @@
 # Try the Integration
 
-Once you have completed building your integration with the Ballerina Integrator, you can quickly test it right from the design interface. This section walks you through how to run and try your integration project using the built-in tooling.
+Once you have completed building your integration with the WSO2 Integrator: BI, you can quickly test it right from the design interface. This section walks you through how to run and try your integration project using the built-in tooling.
 
 ## Run the integration
 
@@ -25,6 +25,6 @@ Once you have completed building your integration with the Ballerina Integrator,
 
 ## Try the services
 
-The **Try It** window on the right side of the Ballerina Integrator interface provides a built-in way to test your HTTP services without leaving the development environment. 
+The **Try It** window on the right side of the BI interface provides a built-in way to test your HTTP services without leaving the development environment. 
 
 <a href="{{base_path}}/assets/img/develop/try-the-integration/try-it.png"><img src="{{base_path}}/assets/img/develop/try-the-integration/try-it.png" alt="Design View" width="80%"></a>

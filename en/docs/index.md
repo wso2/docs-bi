@@ -22,8 +22,8 @@
         "title": "Install & Setup",
         "icon": "⏬",
         "links": [
-            {"name": "Install Ballerina Integrator", "url": "install-and-setup/install-ballerina-integrator/"},
-            {"name": "Install Integration Control Plane", "url": "install-and-setup/install-integration-control-plane/"}
+            {"name": "Install WSO2 Integrator: BI", "url": "install-and-setup/install-wso2-integrator-bi/"},
+            {"name": "Install WSO2 Integrator: ICP", "url": "install-and-setup/install-wso2-integrator-icp/"}
         ]
     },
     {
@@ -64,10 +64,10 @@
 <div class="homePage">
     <div class="description-section">
         <div>
-            WSO2 Ballerina Integrator</b> is a low-code integration solution built on <a href="https://ballerina.io">Ballerina</a>, enabling fast and efficient integration development with minimal coding. The Ballerina Integrator extension for Visual Studio Code (VS Code) provides a familiar, AI-assisted environment that streamlines tasks and enhances accuracy, accelerating digital transformation efforts.
+            <b>WSO2 Integrator: BI</b> is a low-code integration solution built on <a href="https://ballerina.io">Ballerina</a>, enabling fast and efficient integration development with minimal coding. The <a href="https://marketplace.visualstudio.com/items?itemName=WSO2.ballerina-integrator">WSO2 Integrator: BI</a> extension for Visual Studio Code (VS Code) provides a familiar, AI-assisted environment that streamlines tasks and enhances accuracy, accelerating digital transformation efforts.
         </div>
         <div>
-            <a href="https://wso2.com/integrator/ballerina-integrator/" class="banner-link"></a>
+            <a href="https://wso2.com/integrator/bi/" class="banner-link"></a>
         </div>
     </div>
     <div class="section02">

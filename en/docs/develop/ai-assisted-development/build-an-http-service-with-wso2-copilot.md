@@ -8,7 +8,7 @@ In this tutorial, you’ll create an HTTP service to add key-value pairs to a Re
 
 ## Step 1: Create a new integration project
 
-1. Click on the Ballerina Integrator icon on the sidebar.
+1. Click on the **BI** icon on the sidebar.
 2. Click on the **Create New Integration** button.
 3. Enter the project name as `RedisService`.
 4. Select project directory location by clicking on the **Select Location** button.
@@ -79,7 +79,7 @@ In this tutorial, you’ll create an HTTP service to add key-value pairs to a Re
    ```curl
       curl -X POST http://localhost:8080/cache/add \
         -H "Content-Type: application/json" \
-        -d '{"key": "BI", "value": "Ballerina Integrator is an AI-assisted integration platform."}' 
+        -d '{"key": "BI", "value": "BI is an AI-assisted integration platform."}' 
    ```
 3. Execute the generated `curl` command to get the value of the key.
    ```curl
@@ -87,7 +87,7 @@ In this tutorial, you’ll create an HTTP service to add key-value pairs to a Re
    ```  
 4. The response will be the value of the key `BI` stored in the Redis server.
    ```text
-   Ballerina Integrator is an AI-assisted integration platform.%
+   BI is an AI-assisted integration platform.%
    ```
 
 ## Step 7: Stop the integration

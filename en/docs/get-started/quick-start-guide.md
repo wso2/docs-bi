@@ -1,6 +1,6 @@
 # Quick Start Guide
 
-In this guide, you'll build a simple integration using the Ballerina Integrator plugin. You'll create an HTTP service with a single resource named `greeting` that invokes the public [Hello World API endpoint](https://apis.wso2.com/zvdz/mi-qsg/v1.0) and returns the response.
+In this guide, you'll build a simple integration using the WSO2 Integrator: BI extension. You'll create an HTTP service with a single resource named `greeting` that invokes the public [Hello World API endpoint](https://apis.wso2.com/zvdz/mi-qsg/v1.0) and returns the response.
 
 <a href="{{base_path}}/assets/img/get-started/quick-start-guide/introduction.png"><img src="{{base_path}}/assets/img/get-started/quick-start-guide/introduction.png" alt="introduction" width="70%"></a>
 
@@ -8,30 +8,30 @@ In this guide, you'll build a simple integration using the Ballerina Integrator 
 
 Download and install [Visual Studio Code](https://code.visualstudio.com/download).
 
-## Step 2: Install the WSO2 Ballerina Integrator extension
+## Step 2: Install the WSO2 Integrator: BI extension
 
 1. Go to the Extensions view by clicking the extension icon on the sidebar or pressing `Ctrl + Shift + X` on Windows and Linux, or `Shift + ⌘ + X` on a Mac.
-2. Search for `Ballerina Integrator` in the extensions view search box.
-3. Click on the **Install** button to install the `Ballerina Integrator` extension.
+2. Search for `WSO2 Integrator: BI` in the extensions view search box.
+3. Click on the **Install** button to install the `WSO2 Integrator: BI` extension.
 
-      <a href="{{base_path}}/assets/img/get-started/quick-start-guide/bi-extension.png"><img src="{{base_path}}/assets/img/get-started/quick-start-guide/bi-extension.png" alt="Ballerina Integrator Extension" width="70%"></a>
+      <a href="{{base_path}}/assets/img/get-started/quick-start-guide/bi-extension.png"><img src="{{base_path}}/assets/img/get-started/quick-start-guide/bi-extension.png" alt="WSO2 Integrator: BI Extension" width="70%"></a>
 
-4. This will install the **Ballerina Integrator** and **Ballerina** extensions on VS Code.
+4. This will install the **WSO2 Integrator: BI** and **Ballerina** extensions on VS Code.
 
-## Step 3: Set up Ballerina Integrator for the first time
-1. Click on the Ballerina Integrator icon on the sidebar.    
+## Step 3: Set up WSO2 Integrator: BI for the first time
+1. Click on the **BI** icon on the sidebar.    
 
-      <a href="{{base_path}}/assets/img/get-started/quick-start-guide/bi-icon.png"><img src="{{base_path}}/assets/img/get-started/quick-start-guide/bi-icon.png" alt="Ballerina Integrator Icon" width="70%"></a>
+      <a href="{{base_path}}/assets/img/get-started/quick-start-guide/bi-icon.png"><img src="{{base_path}}/assets/img/get-started/quick-start-guide/bi-icon.png" alt="WSO2 Integrator: BI Icon" width="70%"></a>
 
 2. Click on the **Set up Ballerina distribution** button.
-3. The setup wizard will install and configure the [Ballerina](https://ballerina.io/) distribution required for Ballerina Integrator.
+3. The setup wizard will install and configure the [Ballerina](https://ballerina.io/) distribution required for WSO2 Integrator: BI.
 4. Click on the **Restart Now** button to complete the setup.
 
       <a href="{{base_path}}/assets/img/get-started/quick-start-guide/bi-setup.gif"><img src="{{base_path}}/assets/img/get-started/quick-start-guide/bi-setup.gif" alt="BI Setup" width="70%"></a>
 
 ## Step 4: Create a new integration project
 
-1. Click on the Ballerina Integrator icon on the sidebar.
+1. Click on the **BI** icon on the sidebar.
 2. Click on the **Create New Integration** button.
 3. Enter the **Integration Name** as `HelloWorld`.
 4. Select the project directory by clicking on the **Select Path** button.

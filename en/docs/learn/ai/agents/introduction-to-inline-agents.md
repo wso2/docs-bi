@@ -1,6 +1,6 @@
 # Introduction to Inline Agents
 
-In this tutorial, you'll learn how to connect an AI agent to a GraphQL service, enabling the agent to be invoked directly within a GraphQL resolver. This demonstrates the use of an **inline agent**—a powerful capability in the Ballerina Integrator.
+In this tutorial, you'll learn how to connect an AI agent to a GraphQL service, enabling the agent to be invoked directly within a GraphQL resolver. This demonstrates the use of an **inline agent**—a powerful capability in the WSO2 Integrator: BI.
 
 Unlike [chat agents](/learn/ai/agents/introduction-to-chat-agents), which are exposed as REST APIs for external interaction, **inline agents** are not tied to an API endpoint. Instead, they can be invoked programmatically from anywhere within your integration logic, just like a regular function call.
 
@@ -13,7 +13,7 @@ In this example, we'll define a GraphQL schema with a query that invokes the inl
 
 ### Step 1: Create a new integration project
 
-1. Click on the **Ballerina Integrator** icon in the sidebar.
+1. Click on the **BI** icon in the sidebar.
 2. Click on the **Create New Integration** button.
 3. Enter the project name as `GraphqlService`.
 4. Select the project directory by clicking on the **Select Location** button.
@@ -23,7 +23,7 @@ In this example, we'll define a GraphQL schema with a query that invokes the inl
 
 ### Step 2: Create a GraphQL service
 
-1. Click the **+** button on the Ballerina Integrator side panel or navigate back to the design screen and click on **Add Artifact**.
+1. Click the **+** button on the WSO2 Integrator: BI side panel or navigate back to the design screen and click on **Add Artifact**.
 2. Select **GraphQL Service** under the **Integration as API** artifacts.
 3. Keep the default **Listener** and **Service base path** configurations, and click **Create**.
 

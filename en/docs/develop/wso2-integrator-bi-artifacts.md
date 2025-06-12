@@ -1,10 +1,10 @@
-# Ballerina Integrator Artifacts
+# WSO2 Integrator: BI Artifacts
 
-Ballerina Integrator supports a range of artifact types that enable developers to build powerful, event-driven, API-based, and file-based integration solutions. Each artifact type defines how an integration is triggered and how it behaves in various runtime environments.
+WSO2 Integrator: BI supports a range of artifact types that enable developers to build powerful, event-driven, API-based, and file-based integration solutions. Each artifact type defines how an integration is triggered and how it behaves in various runtime environments.
 
-<a href="{{base_path}}/assets/img/develop/ballerina-integrator-artifacts/bi-artifacts.png"><img src="{{base_path}}/assets/img/develop/ballerina-integrator-artifacts/bi-artifacts.png" alt="Artifacts" width="70%"></a>
+<a href="{{base_path}}/assets/img/develop/wso2-integrator-bi-artifacts/bi-artifacts.png"><img src="{{base_path}}/assets/img/develop/wso2-integrator-bi-artifacts/bi-artifacts.png" alt="Artifacts" width="70%"></a>
 
-Below is an overview of the available artifact types in the Ballerina Integrator.
+Below is an overview of the available artifact types in the WSO2 Integrator: BI.
 
 ## Automation
 

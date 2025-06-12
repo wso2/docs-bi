@@ -1,6 +1,6 @@
 # Enterprise Integrations Patterns
 
-The WSO2 Ballerina Integrator supports the implementation of key Enterprise Integration Patterns (EIPs), enabling you to build robust and scalable integrations based on proven architectural best practices. These patterns—originally defined in <a href="http://www.eaipatterns.com/toc.html" target="_blank">Enterprise Integration Patterns</a> by Gregor Hohpe and Bobby Woolf—provide reusable solutions for common messaging and system integration challenges. This guide demonstrates how to implement each core pattern using the low-code capabilities and visual tools of the Ballerina Integrator, helping you design clear, maintainable, and standards-based integration flows.
+The WSO2 Integrator: BI supports the implementation of key Enterprise Integration Patterns (EIPs), enabling you to build robust and scalable integrations based on proven architectural best practices. These patterns—originally defined in <a href="http://www.eaipatterns.com/toc.html" target="_blank">Enterprise Integration Patterns</a> by Gregor Hohpe and Bobby Woolf—provide reusable solutions for common messaging and system integration challenges. This guide demonstrates how to implement each core pattern using the low-code capabilities and visual tools of the WSO2 Integrator: BI, helping you design clear, maintainable, and standards-based integration flows.
 
 ???+ tip  "Enterprise Integration Patterns with Ballerina"
 
