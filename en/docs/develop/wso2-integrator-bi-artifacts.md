@@ -4,7 +4,7 @@ WSO2 Integrator: BI supports a range of artifact types that enable developers to
 
 <a href="{{base_path}}/assets/img/develop/wso2-integrator-bi-artifacts/bi-artifacts.png"><img src="{{base_path}}/assets/img/develop/wso2-integrator-bi-artifacts/bi-artifacts.png" alt="Artifacts" width="70%"></a>
 
-Below is an overview of the available artifact types in the WSO2 Integrator: BI.
+Below is an overview of the available artifact types in the BI.
 
 ## Automation
 

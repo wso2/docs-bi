@@ -4,7 +4,7 @@ This guide explains how to use the [migrate-tibco](https://central.ballerina.io/
 [TIBCO BusinessWorks](https://docs.tibco.com/products/tibco-activematrix-businessworks) integrations into Ballerina packages compatible with the [WSO2 Integrator: BI](https://wso2.com/integrator/bi/).
 ## Tool overview
 
-The tool accepts either a BusinessWorks project directory or a standalone process file as input and generates an equivalent Ballerina package that can be opened in the WSO2 Integrator: BI.
+The tool accepts either a BusinessWorks project directory or a standalone process file as input and generates an equivalent Ballerina package that can be opened in the BI.
 
 ## Installation
 
@@ -111,13 +111,13 @@ $ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directo
     bal migrate-tibco <tibco-hello-world> -o converted
     ```
 
-### Step 3: Open in WSO2 Integrator: BI
+### Step 3: Open in BI
 
 1. Open VS Code inside the `converted` directory
     ```bash
     $ code ./converted
     ```
-2. Click the **BI** icon on the left side bar to open the Ballerina package in WSO2 Integrator: BI.
+2. Click the **BI** icon on the left side bar to open the Ballerina package in BI.
 
 ## Output
 

@@ -17,9 +17,9 @@ Project is the foundational unit where you define and manage your integration ar
 
     Then enter a suitable name for the integration project and provide a location for it.
 
-4. It will open the WSO2 Integrator: BI view.
+4. It will open the home page of BI.
 
-    <a href="{{base_path}}/assets/img/develop/create-project/ballerina-integrator-view.png"><img src="{{base_path}}/assets/img/develop/create-project/ballerina-integrator-view.png" alt="Ballerina VS Code Extension" width="80%"></a>
+    <a href="{{base_path}}/assets/img/develop/create-project/bi-view.png"><img src="{{base_path}}/assets/img/develop/create-project/bi-view.png" alt="Ballerina VS Code Extension" width="80%"></a>
 
 Now, you can start creating your integration by developing artifacts. See the [WSO2 Integrator: BI Artifacts]({{base_path}}/develop/wso2-integrator-bi-artifacts/) to learn about the integration artifacts.
 
