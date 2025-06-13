@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentation for Ballerina Integrator">
+        <meta name="description" content="Documentation for WSO2 Integrator: BI">
       
       
         <meta name="author" content="WSO2">
@@ -15,7 +15,7 @@
         <link rel="canonical" href="https://bi.docs.wso2.com/learn/ai/natural-functions/natural-functions/">
       
       
-        <link rel="prev" href="../../../../install-and-setup/install-integration-control-plane/">
+        <link rel="prev" href="../../../../install-and-setup/install-wso2-integrator-icp/">
       
       
         <link rel="next" href="../../rag/build-a-rag-application/">
@@ -25,7 +25,7 @@
     
     
       
-        <title>Natural functions - Ballerina Integrator Documentation</title>
+        <title>Natural functions - WSO2 Integrator: BI Documentation</title>
       
     
     
@@ -139,8 +139,8 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header" id="page-header" data-url="" data-lang="en">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="Ballerina Integrator Documentation"
-       class="md-header__button md-logo" aria-label="Ballerina Integrator Documentation" data-md-component="logo">
+    <a href="../../../.." title="WSO2 Integrator: BI Documentation"
+       class="md-header__button md-logo" aria-label="WSO2 Integrator: BI Documentation" data-md-component="logo">
       
   <img src="../../../../images/logo.svg" alt="logo">
 
@@ -152,7 +152,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Ballerina Integrator Documentation
+            WSO2 Integrator: BI Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -304,7 +304,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../install-and-setup/install-ballerina-integrator/" class="md-tabs__link">
+      <a href="../../../../install-and-setup/install-wso2-integrator-bi/" class="md-tabs__link">
         Install and Setup
       </a>
     </li>
@@ -396,12 +396,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Ballerina Integrator Documentation" class="md-nav__button md-logo" aria-label="Ballerina Integrator Documentation" data-md-component="logo">
+    <a href="../../../.." title="WSO2 Integrator: BI Documentation" class="md-nav__button md-logo" aria-label="WSO2 Integrator: BI Documentation" data-md-component="logo">
       
   <img src="../../../../images/logo.svg" alt="logo">
 
     </a>
-    Ballerina Integrator Documentation
+    WSO2 Integrator: BI Documentation
   </label>
   
     <div class="md-nav__source">
@@ -559,8 +559,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../install-and-setup/install-ballerina-integrator/" class="md-nav__link">
-        Install Ballerina Integrator
+      <a href="../../../../install-and-setup/install-wso2-integrator-bi/" class="md-nav__link">
+        Install WSO2 Integrator: BI
       </a>
     </li>
   
@@ -573,8 +573,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../install-and-setup/install-integration-control-plane/" class="md-nav__link">
-        Install Integration Control Plane
+      <a href="../../../../install-and-setup/install-wso2-integrator-icp/" class="md-nav__link">
+        Install WSO2 Integrator: ICP
       </a>
     </li>
   
@@ -1259,8 +1259,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../develop/ballerina-integrator-artifacts/" class="md-nav__link">
-        Ballerina Integrator Artifacts
+      <a href="../../../../develop/wso2-integrator-bi-artifacts/" class="md-nav__link">
+        WSO2 Integrator: BI Artifacts
       </a>
     </li>
   
@@ -1597,7 +1597,7 @@
 
 
 <h1 id="natural-functions">Natural Functions<a class="headerlink" href="#natural-functions" title="Permanent link">&para;</a></h1>
-<p>In this tutorial, you will create and use a natural function using the Ballerina Integrator. A natural function allows the logic of the function to be described in natural language and is executed at runtime with a call to a Large Language Model (LLM), with the natural language instructions as the prompt.
+<p>In this tutorial, you will create and use a natural function using the WSO2 Integrator: BI. A natural function allows the logic of the function to be described in natural language and is executed at runtime with a call to a Large Language Model (LLM), with the natural language instructions as the prompt.
 The tutorial uses a natural function to analyze blog content to suggest a suitable category and rate it on a scale of 1 to 10 based on specified criteria.</p>
 <details class="tip" open="open"><summary>Natural Programming</summary><p>To learn more about natural programming and natural functions, see <a href="https://blog.ballerina.io/posts/2025-04-26-introducing-natural-programming/">Natural Language is Code: A hybrid approach with Natural Programming</a>.</p>
 </details>
@@ -1605,7 +1605,7 @@ The tutorial uses a natural function to analyze blog content to suggest a suitab
 <p>Follow the steps below to implement the integration.</p>
 <h3 id="step-1-create-a-new-integration-project">Step 1: Create a new integration project<a class="headerlink" href="#step-1-create-a-new-integration-project" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Click on the Ballerina Integrator icon on the sidebar.</li>
+<li>Click on the <strong>BI</strong> icon on the sidebar.</li>
 <li>Click on the <strong><code>Create New Integration</code></strong> button.</li>
 <li>Enter <code>BlogReviewer</code> as the project name.</li>
 <li>Select Project Directory and click on the <strong><code>Select Location</code></strong> button.</li>
@@ -1773,7 +1773,7 @@ Here is the blog post content:
   <nav class="md-footer__inner md-grid" aria-label="Footer" >
     
     
-    <a href="../../../../install-and-setup/install-integration-control-plane/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Install Integration Control Plane" rel="prev">
+    <a href="../../../../install-and-setup/install-wso2-integrator-icp/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Install WSO2 Integrator: ICP" rel="prev">
       <div class="md-footer__button md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </div>
@@ -1782,7 +1782,7 @@ Here is the blog post content:
                 <span class="md-footer__direction">
                   Previous
                 </span>
-          Install Integration Control Plane
+          Install WSO2 Integrator: ICP
         </div>
       </div>
     </a>
@@ -1811,7 +1811,7 @@ Here is the blog post content:
   <div class="footer-copyright-left">
   
     <div class="md-copyright__highlight">
-      WSO2 Ballerina Integrator - Documentation
+      WSO2 Integrator: BI - Documentation
     </div>
   
   
