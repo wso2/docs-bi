@@ -1,10 +1,10 @@
 # Visual View of the Integrations
 
-Ballerina Integrator provides intuitive tools to design, analyze, and manage integration flows. Whether you're creating new integrations or reviewing existing ones, the visualizer offers a clear and structured view of system behavior to streamline development and maintenance.
+WSO2 Integrator: BI provides intuitive tools to design, analyze, and manage integration flows. Whether you're creating new integrations or reviewing existing ones, the visualizer offers a clear and structured view of system behavior to streamline development and maintenance.
 
 ## Design view
 
-The Design View in Ballerina Integrator provides an intuitive, visual interface for developing integration projects. It helps you model, understand, and manage integration flows without needing to write or view code directly.
+The Design View in BI provides an intuitive, visual interface for developing integration projects. It helps you model, understand, and manage integration flows without needing to write or view code directly.
 
 Design View helps you:
 
@@ -52,7 +52,7 @@ This panel provides contextual documentation about the integration. It’s used 
 
 ## Function/Automation logic view
 
-When working with Functions and Automations in Ballerina Integrator, you can explore and edit the internal logic using two interactive visual modes—Flow and Sequence. These modes provide complementary perspectives to help understand and manage the behavior of your logic components effectively.
+When working with Functions and Automations in BI, you can explore and edit the internal logic using two interactive visual modes—Flow and Sequence. These modes provide complementary perspectives to help understand and manage the behavior of your logic components effectively.
 
 ### Flow diagram
 
@@ -67,7 +67,7 @@ The Flow mode presents a high-level, graphical layout of the execution path. It 
 
 #### Editing capabilities in the flow diagram
 
-The **Flow** mode in Ballerina Integrator provides an intuitive, interactive interface for visually editing integration logic. It allows you to design and refine integration flows by interacting directly with the diagram.
+The **Flow** mode in BI provides an intuitive, interactive interface for visually editing integration logic. It allows you to design and refine integration flows by interacting directly with the diagram.
 
 **Interaction Options on Hover**
 
@@ -108,7 +108,7 @@ The Types Diagram shows a clear visual of how types are defined and connected in
 
 ## Source code view
 
-In addition to the visual views, Ballerina Integrator provides a source code view for directly editing the underlying Ballerina code.
+In addition to the visual views, BI provides a source code view for directly editing the underlying Ballerina code.
 
 You can switch to this view by clicking the **`</>`** icon located in the top-right corner of the editor interface. This opens the full source code corresponding to your integration logic.
 

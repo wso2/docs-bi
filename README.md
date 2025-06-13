@@ -1,25 +1,25 @@
-# WSO2 Ballerina Integrator Documentation
+# WSO2 Integrator: BI Documentation
 
 [![pages-build-deployment](https://github.com/wso2/docs-bi/actions/workflows/pages/pages-build-deployment/badge.svg?branch=gh-pages)](https://github.com/wso2/docs-bi/actions/workflows/pages/pages-build-deployment)
-[![Ballerina Integrator Docs Publish](https://github.com/wso2/docs-bi/actions/workflows/publish_docs.yaml/badge.svg)](https://github.com/wso2/docs-bi/actions/workflows/publish_docs.yaml)
+[![BI Docs Publish](https://github.com/wso2/docs-bi/actions/workflows/publish_docs.yaml/badge.svg)](https://github.com/wso2/docs-bi/actions/workflows/publish_docs.yaml)
 
-This repository contains the source code for WSO2 Ballerina Integrator documentation.
+This repository contains the source code for WSO2 Integrator: BI documentation.
 
 This repository is open and we welcome your contributions!
 
-To access the WSO2 Ballerina Integrator documentation site, visit https://bi.docs.wso2.com/.
+To access the WSO2 Integrator: BI documentation site, visit https://bi.docs.wso2.com/.
 
 Follow the below topics to learn more:
 
-- [Contributing to WSO2 Ballerina Integrator documentation](#contribute)
+- [Contributing to BI documentation](#contribute)
     - [For minor modifications](#minor-modification)
     - [For major modifications](#major-modification)
 - [Running the project locally](#run-locally)
 - [Signing the CLA](#cla)
 
-## <a name="contribute"></a> Contributing to WSO2 Ballerina Integrator documentation
+## <a name="contribute"></a> Contributing to BI documentation
 
-As an open-source project, WSO2 Ballerina Integrator documentation welcomes contributions from the community. Before you contribute, read the following guidelines to understand how you can contribute:
+As an open-source project, BI documentation welcomes contributions from the community. Before you contribute, read the following guidelines to understand how you can contribute:
 
 ### <a name="minor-modification"></a> For minor modifications
 

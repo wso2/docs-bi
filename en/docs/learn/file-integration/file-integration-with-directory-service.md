@@ -1,10 +1,10 @@
 # File Integration With Directory Service
 
-In this section, we will learn how to create a file integration using the Ballerina Integrator. The integration will listen to events in a directory and will be triggered when an file related event occurs.
+In this section, we will learn how to create a file integration using the WSO2 Integrator: BI. The integration will listen to events in a directory and will be triggered when an file related event occurs.
 
 ## Step 1: Create a new integration project
 
-1. Click on the Ballerina Integrator icon on the sidebar.
+1. Click on the **BI** icon on the sidebar.
 2. Click on the **Create New Integration** button.
 3. Enter the project name as `FileIntegration`.
 4. Select Project Directory and click on the **Select Location** button.

@@ -1,11 +1,11 @@
 # MuleSoft Migration Tool
 
 This guide explains how to use the [migrate-mule](https://central.ballerina.io/wso2/tool_migrate_mule/latest) tool to convert 
-[MuleSoft](https://www.mulesoft.com) applications into Ballerina packages compatible with the [WSO2 Ballerina Integrator](https://wso2.com/integrator/ballerina-integrator).
+[MuleSoft](https://www.mulesoft.com) applications into Ballerina packages compatible with the [WSO2 Integrator: BI](https://wso2.com/integrator/bi/).
 
 ## Tool overview
 The tool accepts either a MuleSoft project directory or a standalone Mule `.xml` configuration file as input and
-generates an equivalent Ballerina package that can be opened in WSO2 Ballerina Integrator.
+generates an equivalent Ballerina package that can be opened in WSO2 Integrator: BI.
 
 ## Installation
 

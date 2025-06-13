@@ -1,7 +1,7 @@
-# Install Integration Control Plane
+# Install WSO2 Integrator: ICP
 
-The [WSO2 Integration Control Plane (ICP)](https://wso2.com/integrator/integration-control-plane/) monitors the Ballerina runtime artifacts in a deployment. It provides a graphical view of the integration artifacts that are deployed.
-In this guide, you will learn how to enable Integration Control Plane (ICP) for a Ballerina integration. 
+The [WSO2 Integrator: ICP](https://wso2.com/integrator/icp/) monitors the runtime artifacts in a deployment. It provides a graphical view of the integration artifacts that are deployed.
+In this guide, you will learn how to enable ICP for an integration developed using WSO2 Integrator: BI. 
 
 
 ## Prerequisites
@@ -10,11 +10,11 @@ In this guide, you will learn how to enable Integration Control Plane (ICP) for 
 
 ## Step 1: Download and start ICP server
 
-1. Go to the [WSO2 Integration Control Plane](https://wso2.com/integrator/integration-control-plane/) web page. 
+1. Go to the [WSO2 Integrator: ICP](https://wso2.com/integrator/icp/) web page. 
 2. Click Download. 
 3. Provide the necessary details. 
-4. Click Zip Archive to download the Integration Control Plane as a ZIP file. 
-5. Extract the archive file to a dedicated directory for the Integration Control Plane, which will hereafter be referred to as `<ICP_HOME>`.
+4. Click Zip Archive to download the ICP as a ZIP file. 
+5. Extract the archive file to a dedicated directory for the ICP, which will hereafter be referred to as `<ICP_HOME>`.
 6. Open a terminal and navigate to the `<ICP_HOME>/bin` folder.
 7. Execute one of the commands given below.
 === "On MacOS/Linux"
@@ -36,19 +36,19 @@ In this guide, you will learn how to enable Integration Control Plane (ICP) for 
     - **Username**: `admin`
     - **Password**: `admin`
    
-    <a href="{{base_path}}/assets/img/install-and-setup/icp-login.png"><img src="{{base_path}}/assets/img/install-and-setup/icp/icp-login.png" alt="ICP Login" width="70%"></a>
+    <a href="{{base_path}}/assets/img/install-and-setup/icp/icp-login.png"><img src="{{base_path}}/assets/img/install-and-setup/icp/icp-login.png" alt="ICP Login" width="70%"></a>
 
-## Step 3: Deploy the Ballerina integration
+## Step 3: Deploy the integration
 
-1. Navigate to the Visualizer view by clicking on the Ballerina Integrator icon on the sidebar.
+1. Navigate to the Visualizer view by clicking on the **BI** icon on the sidebar.
 2. Check **Enable ICP** under the **Integration Control Plane** section in the right panel.
 
-    <a href="{{base_path}}/assets/img/install-and-setup/enable-icp.png"><img src="{{base_path}}/assets/img/install-and-setup/icp/enable-icp.png" alt="Enable ICP" width="70%"></a>
+    <a href="{{base_path}}/assets/img/install-and-setup/icp/enable-icp.png"><img src="{{base_path}}/assets/img/install-and-setup/icp/enable-icp.png" alt="Enable ICP" width="70%"></a>
 
 3. Click on the **Run** button to start the integration. 
 4. Click on the **Create Config.toml** on the prompt to create the `Config.toml` file.
 
-    <a href="{{base_path}}/assets/img/install-and-setup/config-toml.png"><img src="{{base_path}}/assets/img/install-and-setup/icp/config-toml.png" alt="Create Config.toml" width="70%"></a>
+    <a href="{{base_path}}/assets/img/install-and-setup/icp/config-toml.png"><img src="{{base_path}}/assets/img/install-and-setup/icp/config-toml.png" alt="Create Config.toml" width="70%"></a>
 
 5. Replace the `Config.toml` file content with the following configurations.   
 
@@ -62,7 +62,7 @@ In this guide, you will learn how to enable Integration Control Plane (ICP) for 
 
 6. Click on the **Run** button to start the integration.  
 
-    <a href="{{base_path}}/assets/img/install-and-setup/run-integration.gif"><img src="{{base_path}}/assets/img/install-and-setup/icp/run-integration.gif" alt="Run Integration" width="70%"></a>
+    <a href="{{base_path}}/assets/img/install-and-setup/icp/run-integration.gif"><img src="{{base_path}}/assets/img/install-and-setup/icp/run-integration.gif" alt="Run Integration" width="70%"></a>
 
 7. A log message will be displayed in the console indicating that the integration is connected to the ICP dashboard.  
 
@@ -84,4 +84,4 @@ In this guide, you will learn how to enable Integration Control Plane (ICP) for 
 
 5. Click on the **Listeners** to view details of the listener.
 
-    <a href="{{base_path}}/assets/img/deploinstall-and-setupy/icp/icp-listener.png"><img src="{{base_path}}/assets/img/install-and-setup/icp/icp-listener.png" alt="ICP Listener" width="70%"></a>
+    <a href="{{base_path}}/assets/img/install-and-setup/icp/icp-listener.png"><img src="{{base_path}}/assets/img/install-and-setup/icp/icp-listener.png" alt="ICP Listener" width="70%"></a>
