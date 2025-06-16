@@ -15,13 +15,17 @@
         <link rel="canonical" href="https://bi.docs.wso2.com/learn/ai/agents/">
       
       
+        <link rel="prev" href="../rag/build-a-rag-application/">
+      
+      
+        <link rel="next" href="introduction-to-chat-agents/">
       
       <link rel="icon" href="../../../images/bi-logo.svg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
     
     
       
-        <title>AI Agent Overview - WSO2 Integrator: BI Documentation</title>
+        <title>Agents Overview - WSO2 Integrator: BI Documentation</title>
       
     
     
@@ -101,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ai-agent-overview" class="md-skip">
+        <a href="#agents-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -154,7 +158,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              AI Agent Overview
+              Agents Overview
             
           </span>
         </div>
@@ -310,6 +314,8 @@
         
   
   
+    
+  
 
 
   
@@ -321,7 +327,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../natural-functions/natural-functions/" class="md-tabs__link">
+      <a href="../natural-functions/natural-functions/" class="md-tabs__link md-tabs__link--active">
         Learn
       </a>
     </li>
@@ -587,14 +593,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
       
       
         
@@ -617,7 +625,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           Learn
@@ -628,14 +636,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
       
       
         
@@ -652,7 +662,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4_1">
           <span class="md-nav__icon md-icon"></span>
           AI
@@ -729,36 +739,50 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_3" checked>
       
       
         
+          
+            
           
         
           
         
           
         
+          
+        
       
       
-        <label class="md-nav__link" for="__nav_4_1_3" id="__nav_4_1_3_label" tabindex="0">
-          Agents
-          <span class="md-nav__icon md-icon"></span>
-        </label>
+        
+        
+        <div class="md-nav__link md-nav__link--index md-nav__link--active">
+          <a href="./">Agents</a>
+          
+            <label for="__nav_4_1_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4_1_3">
           <span class="md-nav__icon md-icon"></span>
           Agents
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
+          
+            
           
             
               
@@ -1390,6 +1414,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chat-agents" class="md-nav__link">
+    Chat Agents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inline-agents" class="md-nav__link">
+    Inline Agents
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1420,7 +1466,20 @@
   
 
 
-<h1 id="ai-agent-overview">AI Agent Overview<a class="headerlink" href="#ai-agent-overview" title="Permanent link">&para;</a></h1>
+<h1 id="agents-overview">Agents Overview<a class="headerlink" href="#agents-overview" title="Permanent link">&para;</a></h1>
+<p>The Ballerina Integrator (BI) enables developers to easily create intelligent AI agents powered by large language models (LLMs) and integrated with external APIs and services. These AI agents can automate complex workflows, interact with users through natural language, and seamlessly connect with systems like Gmail, Google Calendar, and more. Designed for low-code development and rapid integration, BI makes it simple to embed AI-driven logic into your applications, services, and business processes.</p>
+<p>There are two main types of AI agents in BI:</p>
+<h2 id="chat-agents">Chat Agents<a class="headerlink" href="#chat-agents" title="Permanent link">&para;</a></h2>
+<p>Chat agents are exposed through HTTP endpoints as REST APIs and are designed to interact with users or external systems. These agents are ideal when you need a chatbot-like experience, where users can type questions or commands and receive intelligent responses powered by an LLM.</p>
+<h2 id="inline-agents">Inline Agents<a class="headerlink" href="#inline-agents" title="Permanent link">&para;</a></h2>
+<p>Inline agents are embedded within service logic (e.g., REST APIs, GraphQL resolvers) and invoked programmatically as part of a backend workflow. These agents are ideal for automation, enrichment, or dynamic processing tasks within your services or business logic.</p>
+<p>Both Chat and Inline agents can be extended with tools that connect to real-world systems via BI's built-in connectors. You can easily integrate agents with services like Gmail, Google Calendar, databases, or custom APIs—allowing agents to perform actions beyond reasoning, such as reading emails, sending messages, creating events, or fetching records.</p>
+<p>To get started with agents, visit the following tutorial examples:</p>
+<ul>
+<li><a href="/learn/ai/agents/introduction-to-chat-agents/">Introduction to Chat Agents</a></li>
+<li><a href="/learn/ai/agents/introduction-to-inline-agents/">Introduction to Inline Agents</a></li>
+<li><a href="/learn/ai/agents/integrating-agents-with-external-endpoints/">Integrating Agents with External Endpoints</a></li>
+</ul>
 
 
 
@@ -1442,6 +1501,42 @@
       
       
         <footer class="md-footer">
+  
+  
+  <nav class="md-footer__inner md-grid" aria-label="Footer" >
+    
+    
+    <a href="../rag/build-a-rag-application/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Build a RAG Application" rel="prev">
+      <div class="md-footer__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </div>
+      <div class="md-footer__title">
+        <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+          Build a RAG Application
+        </div>
+      </div>
+    </a>
+    
+    
+    
+    <a href="introduction-to-chat-agents/" class="md-footer__link md-footer__link--next" aria-label="Next: Introduction to Chat Agents" rel="next">
+      <div class="md-footer__title">
+        <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Next
+                </span>
+          Introduction to Chat Agents
+        </div>
+      </div>
+      <div class="md-footer__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+      </div>
+    </a>
+    
+  </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
