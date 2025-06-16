@@ -86,6 +86,7 @@ nav:
         - RAG:
           - Build a RAG Application: learn/ai/rag/build-a-rag-application.md
         - Agents:
+          - learn/ai/agents/index.md
           - Introduction to Chat Agents: learn/ai/agents/introduction-to-chat-agents.md
           - Introduction to Inline Agents: learn/ai/agents/introduction-to-inline-agents.md
           - Integrating Agents with External Endpoints: learn/ai/agents/integrating-agents-with-external-endpoints.md
