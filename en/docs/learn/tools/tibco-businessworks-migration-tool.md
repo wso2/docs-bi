@@ -18,7 +18,7 @@ $ bal tool pull migrate-tibco
 ### Command syntax
 
 ```bash
-$ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directory>]
+$ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directory>] [-k|--keep-structure] [-v|--verbose] [-d|--dry-run]
 ```
 
 ### Parameters
@@ -27,6 +27,9 @@ $ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directo
 - **-o or --out** - *Optional*. The directory where the new Ballerina package will be created. If the directory does not exist, the tool will create it for you. If not provided,
   - If source-project-directory-or-file is a directory it will create new directory named `${source-project-directory-or-file}_converted` in the root of source-project-directory-or-file.
   - if source-project-directory-or-file is a file, it will create a new directory named `${root}_converted` in the parent of the root directory where root is the directory containing the given file.
+- **-k or --keep-structure** - *Optional*. If specified, preserves the original process structure during migration. By default, this option is disabled.
+- **-v or --verbose** - *Optional*. Enable verbose output during conversion.
+- **-d or --dry-run** - *Optional*. Run the parsing and analysis phases and generate the `report.html` file without generating the Ballerina package.
 
 ## Example
 
@@ -123,7 +126,7 @@ $ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directo
 
 ### Migration summary
 
-- When you run the tool, it will log the number of activities it detected for each process along with the number of activities it failed to convert, if any.
+- When you run the tool, it will generate `report.html` file in the output directory with a summary containing information about activities it failed to convert and time estimation for manually converting them.
 
 ### Unhandled activities
 
@@ -162,6 +165,25 @@ $ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directo
     - `bw.generalactivities.mapper`
     - `bw.internal.accumulateend`
   - `extActivity`
+- `com.tibco.plugin.mapper.MapperActivity`
+- `com.tibco.plugin.http.HTTPEventSource`
+- `com.tibco.pe.core.AssignActivity`
+- `com.tibco.plugin.http.HTTPResponseActivity`
+- `com.tibco.plugin.xml.XMLRendererActivity`
+- `com.tibco.plugin.xml.XMLParseActivity`
+- `com.tibco.pe.core.LoopGroup`
+- `com.tibco.pe.core.WriteToLogActivity`
+- `com.tibco.pe.core.CatchActivity`
+- `com.tibco.plugin.file.FileReadActivity`
+- `com.tibco.plugin.file.FileWriteActivity`
+- `com.tibco.plugin.jdbc.JDBCGeneralActivity`
+- `com.tibco.plugin.json.activities.RestActivity`
+- `com.tibco.pe.core.CallProcessActivity`
+- `com.tibco.plugin.soap.SOAPSendReceiveActivity`
+- `com.tibco.plugin.json.activities.JSONParserActivity`
+- `com.tibco.plugin.json.activities.JSONRenderActivity`
+- `com.tibco.plugin.soap.SOAPSendReplyActivity`
+- `com.tibco.pe.core.WriteToLogActivity`
 
 ???+ note  "Disclaimer"
 
