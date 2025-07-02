@@ -126,7 +126,12 @@ nav:
       - Deploy to Devant: deploy/deploy-to-devant.md
       - Deploy on VM as Executable JAR: deploy/deploy-on-vm-as-executable-jar.md
       - Deploy as Docker Image: deploy/deploy-as-docker-image.md
-      
+  - Observe:
+      - Setup Observability: observe/setup-observability.md
+      - Configure BI: observe/configure-bi.md
+      - View Logs: observe/view-logs.md
+      - View Metrics: observe/view-metrics.md
+      - View Traces: observe/view-traces.md
 
 # Markdown extensions configuration
 markdown_extensions:
