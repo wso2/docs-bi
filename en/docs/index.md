@@ -9,7 +9,7 @@
             {"name": "Develop Automation", "url": "get-started/develop-automation/"},
             {"name": "Develop File Integration", "url": "get-started/develop-file-integration/"},
             {"name": "Develop Event Integration", "url": "get-started/develop-event-integration/"},
-            {"name": "Develop Event Integration", "url": "get-started/develop-ai-agent/"}
+            {"name": "Develop AI Agent", "url": "get-started/develop-ai-agent/"}
         ]
     },
     {
