@@ -27,7 +27,7 @@ This redirects you to the **Create New Integration in VS Code** page.
     | `path`              | `string`   |
     | `pattern`           | `string`   |
 
-    <a href="{{base_path}}/assets/img/get-started/deploy-your-first-file-integration/add-configurables.gif"><img src="{{base_path}}/assets/img/get-started/deploy-your-first-file-integration/add-configurables.gif" alt="Add Configurations" width="80%"></a>
+    <a href="{{base_path}}/assets/img/get-started/develop-file-integration/add-configurables.gif"><img src="{{base_path}}/assets/img/get-started/develop-file-integration/add-configurables.gif" alt="Add Configurations" width="80%"></a>
 
 2. Go to the **Design View** by clicking the Home icon on the top left corner and click **Add Artifact**.
 3. Select **FTP Service**. Choosing the **File Integration** from the Devant console disables the other options.
@@ -44,7 +44,7 @@ This redirects you to the **Create New Integration in VS Code** page.
 6. Click **Next**, and you will see the created listener with the name `weatherListener`. 
 7. Then click on **Create**. It will redirect you to the **Service Designer** view.
 
-    <a href="{{base_path}}/assets/img/get-started/deploy-your-first-file-integration/setup-listener-and-service-configs.gif"><img src="{{base_path}}/assets/img/get-started/deploy-your-first-file-integration/setup-listener-and-service-configs.gif" alt="Setup listener & service configs" width="80%"></a>
+    <a href="{{base_path}}/assets/img/get-started/develop-file-integration/setup-listener-and-service-configs.gif"><img src="{{base_path}}/assets/img/get-started/develop-file-integration/setup-listener-and-service-configs.gif" alt="Setup listener & service configs" width="80%"></a>
 
 8. In the **Design** view, click the `onFileChange` function box. It will redirect you to the flow diagram view.
 9. Click the plus icon after the **Start** node to open the node panel.
@@ -58,4 +58,4 @@ This redirects you to the **Create New Integration in VS Code** page.
 
 11. Under the **Foreach** node, add a **Log Info** node with the **Msg** as `"File added:" + addedFiles.name`. 
 
-    <a href="{{base_path}}/assets/img/get-started/deploy-your-first-file-integration/implement-onfilechange.gif"><img src="{{base_path}}/assets/img/get-started/deploy-your-first-file-integration/implement-onfilechange.gif" alt="Setup listener & service configs" width="80%"></a>
+    <a href="{{base_path}}/assets/img/get-started/develop-file-integration/implement-onfilechange.gif"><img src="{{base_path}}/assets/img/get-started/develop-file-integration/implement-onfilechange.gif" alt="Setup listener & service configs" width="80%"></a>
