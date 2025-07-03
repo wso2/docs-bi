@@ -1168,11 +1168,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
+  <a href="#examples" class="md-nav__link">
+    Examples
   </a>
   
-    <nav class="md-nav" aria-label="Example">
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#migrating-tibco-businessworks-5-process" class="md-nav__link">
+    Migrating TIBCO BusinessWorks 5 process
+  </a>
+  
+    <nav class="md-nav" aria-label="Migrating TIBCO BusinessWorks 5 process">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1193,6 +1201,45 @@
   <a href="#step-3-open-in-bi" class="md-nav__link">
     Step 3: Open in BI
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migrating-tibco-businessworks-6-process" class="md-nav__link">
+    Migrating TIBCO BusinessWorks 6 process
+  </a>
+  
+    <nav class="md-nav" aria-label="Migrating TIBCO BusinessWorks 6 process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-pull-the-migration-tool_1" class="md-nav__link">
+    Step 1: Pull the migration tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-run-the-migration-tool_1" class="md-nav__link">
+    Step 2: Run the migration tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-open-in-bi_1" class="md-nav__link">
+    Step 3: Open in BI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1603,11 +1650,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
+  <a href="#examples" class="md-nav__link">
+    Examples
   </a>
   
-    <nav class="md-nav" aria-label="Example">
+    <nav class="md-nav" aria-label="Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#migrating-tibco-businessworks-5-process" class="md-nav__link">
+    Migrating TIBCO BusinessWorks 5 process
+  </a>
+  
+    <nav class="md-nav" aria-label="Migrating TIBCO BusinessWorks 5 process">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1628,6 +1683,45 @@
   <a href="#step-3-open-in-bi" class="md-nav__link">
     Step 3: Open in BI
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#migrating-tibco-businessworks-6-process" class="md-nav__link">
+    Migrating TIBCO BusinessWorks 6 process
+  </a>
+  
+    <nav class="md-nav" aria-label="Migrating TIBCO BusinessWorks 6 process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-pull-the-migration-tool_1" class="md-nav__link">
+    Step 1: Pull the migration tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-run-the-migration-tool_1" class="md-nav__link">
+    Step 2: Run the migration tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-open-in-bi_1" class="md-nav__link">
+    Step 3: Open in BI
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1713,7 +1807,7 @@
 </code></pre></div></p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <h3 id="command-syntax">Command syntax<a class="headerlink" href="#command-syntax" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bal<span class="w"> </span>migrate-tibco<span class="w"> </span>&lt;source-project-directory-or-file&gt;<span class="w"> </span><span class="o">[</span>-o<span class="p">|</span>--out<span class="w"> </span>&lt;output-directory&gt;<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bal<span class="w"> </span>migrate-tibco<span class="w"> </span>&lt;source-project-directory-or-file&gt;<span class="w"> </span><span class="o">[</span>-o<span class="p">|</span>--out<span class="w"> </span>&lt;output-directory&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>-k<span class="p">|</span>--keep-structure<span class="o">]</span><span class="w"> </span><span class="o">[</span>-v<span class="p">|</span>--verbose<span class="o">]</span><span class="w"> </span><span class="o">[</span>-d<span class="p">|</span>--dry-run<span class="o">]</span>
 </code></pre></div>
 
 <h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
@@ -1722,9 +1816,13 @@
 <li><strong>-o or --out</strong> - <em>Optional</em>. The directory where the new Ballerina package will be created. If the directory does not exist, the tool will create it for you. If not provided,</li>
 <li>If source-project-directory-or-file is a directory it will create new directory named <code>${source-project-directory-or-file}_converted</code> in the root of source-project-directory-or-file.</li>
 <li>if source-project-directory-or-file is a file, it will create a new directory named <code>${root}_converted</code> in the parent of the root directory where root is the directory containing the given file.</li>
+<li><strong>-k or --keep-structure</strong> - <em>Optional</em>. If specified, preserves the original process structure during migration. By default, this option is disabled.</li>
+<li><strong>-v or --verbose</strong> - <em>Optional</em>. Enable verbose output during conversion.</li>
+<li><strong>-d or --dry-run</strong> - <em>Optional</em>. Run the parsing and analysis phases and generate the <code>report.html</code> file without generating the Ballerina package.</li>
 </ul>
-<h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h2>
-<h3 id="step-1-pull-the-migration-tool">Step 1: Pull the migration tool<a class="headerlink" href="#step-1-pull-the-migration-tool" title="Permanent link">&para;</a></h3>
+<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<h3 id="migrating-tibco-businessworks-5-process">Migrating TIBCO BusinessWorks 5 process<a class="headerlink" href="#migrating-tibco-businessworks-5-process" title="Permanent link">&para;</a></h3>
+<h4 id="step-1-pull-the-migration-tool">Step 1: Pull the migration tool<a class="headerlink" href="#step-1-pull-the-migration-tool" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
 <p>Pull <code>migrate-tibco</code> tool for Ballerina Central using the following command.</p>
@@ -1733,7 +1831,7 @@
 
 </li>
 </ol>
-<h3 id="step-2-run-the-migration-tool">Step 2: Run the migration tool<a class="headerlink" href="#step-2-run-the-migration-tool" title="Permanent link">&para;</a></h3>
+<h4 id="step-2-run-the-migration-tool">Step 2: Run the migration tool<a class="headerlink" href="#step-2-run-the-migration-tool" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
 <p>Create new directory named <code>tibco-hello-world</code> with following two files.</p>
@@ -1806,7 +1904,264 @@
 
 </li>
 </ol>
-<h3 id="step-3-open-in-bi">Step 3: Open in BI<a class="headerlink" href="#step-3-open-in-bi" title="Permanent link">&para;</a></h3>
+<h4 id="step-3-open-in-bi">Step 3: Open in BI<a class="headerlink" href="#step-3-open-in-bi" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Open VS Code inside the <code>converted</code> directory
+    <div class="highlight"><pre><span></span><code>$<span class="w"> </span>code<span class="w"> </span>./converted
+</code></pre></div></li>
+<li>Click the <strong>BI</strong> icon on the left side bar to open the Ballerina package in BI.</li>
+</ol>
+<h3 id="migrating-tibco-businessworks-6-process">Migrating TIBCO BusinessWorks 6 process<a class="headerlink" href="#migrating-tibco-businessworks-6-process" title="Permanent link">&para;</a></h3>
+<h4 id="step-1-pull-the-migration-tool_1">Step 1: Pull the migration tool<a class="headerlink" href="#step-1-pull-the-migration-tool_1" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>Pull <code>migrate-tibco</code> tool for Ballerina Central using the following command.</p>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bal<span class="w"> </span>tool<span class="w"> </span>pull<span class="w"> </span>migrate-tibco
+</code></pre></div>
+
+</li>
+</ol>
+<h4 id="step-2-run-the-migration-tool_1">Step 2: Run the migration tool<a class="headerlink" href="#step-2-run-the-migration-tool_1" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>Create new directory named <code>tibco-hello-world</code> with following process file.</p>
+<div class="highlight"><span class="filename">main.bwp</span><pre><span></span><code><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;bpws:process</span><span class="w"> </span><span class="na">exitOnStandardFault=</span><span class="s">&quot;no&quot;</span>
+<span class="w">    </span><span class="na">name=</span><span class="s">&quot;test.api.MainProcess&quot;</span><span class="w"> </span><span class="na">suppressJoinFailure=</span><span class="s">&quot;yes&quot;</span>
+<span class="w">    </span><span class="na">targetNamespace=</span><span class="s">&quot;http://xmlns.example.com/test/api&quot;</span>
+<span class="w">    </span><span class="na">xmlns:bpws=</span><span class="s">&quot;http://docs.oasis-open.org/wsbpel/2.0/process/executable&quot;</span>
+<span class="w">    </span><span class="na">xmlns:info=</span><span class="s">&quot;http://www.tibco.com/bw/process/info&quot;</span>
+<span class="w">    </span><span class="na">xmlns:ns=</span><span class="s">&quot;http://www.tibco.com/pe/EngineTypes&quot;</span>
+<span class="w">    </span><span class="na">xmlns:ns0=</span><span class="s">&quot;http://xmlns.example.com/test/api/wsdl&quot;</span>
+<span class="w">    </span><span class="na">xmlns:ns1=</span><span class="s">&quot;http://xmlns.example.com/test/api&quot;</span>
+<span class="w">    </span><span class="na">xmlns:sca=</span><span class="s">&quot;http://docs.oasis-open.org/ns/opencsa/sca/200912&quot;</span>
+<span class="w">    </span><span class="na">xmlns:sca-bpel=</span><span class="s">&quot;http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801&quot;</span>
+<span class="w">    </span><span class="na">xmlns:tibex=</span><span class="s">&quot;http://www.tibco.com/bpel/2007/extensions&quot;</span>
+<span class="w">    </span><span class="na">xmlns:tibprop=</span><span class="s">&quot;http://ns.tibco.com/bw/property&quot;</span><span class="w"> </span><span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+<span class="w">    </span><span class="nt">&lt;tibex:Types&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">attributeFormDefault=</span><span class="s">&quot;unqualified&quot;</span>
+<span class="w">            </span><span class="na">elementFormDefault=</span><span class="s">&quot;qualified&quot;</span>
+<span class="w">            </span><span class="na">targetNamespace=</span><span class="s">&quot;http://www.tibco.com/pe/EngineTypes&quot;</span>
+<span class="w">            </span><span class="na">xmlns:tns=</span><span class="s">&quot;http://www.tibco.com/pe/EngineTypes&quot;</span><span class="w"> </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:complexType</span><span class="w"> </span><span class="na">block=</span><span class="s">&quot;extension restriction&quot;</span>
+<span class="w">                </span><span class="na">final=</span><span class="s">&quot;extension restriction&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ProcessContext&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;xs:sequence&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;xs:element</span>
+<span class="w">                        </span><span class="na">block=</span><span class="s">&quot;extension restriction substitution&quot;</span>
+<span class="w">                        </span><span class="na">form=</span><span class="s">&quot;unqualified&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;JobId&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;xs:element</span>
+<span class="w">                        </span><span class="na">block=</span><span class="s">&quot;extension restriction substitution&quot;</span>
+<span class="w">                        </span><span class="na">form=</span><span class="s">&quot;unqualified&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ApplicationName&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;xs:element</span>
+<span class="w">                        </span><span class="na">block=</span><span class="s">&quot;extension restriction substitution&quot;</span>
+<span class="w">                        </span><span class="na">form=</span><span class="s">&quot;unqualified&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;EngineName&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;xs:element</span>
+<span class="w">                        </span><span class="na">block=</span><span class="s">&quot;extension restriction substitution&quot;</span>
+<span class="w">                        </span><span class="na">form=</span><span class="s">&quot;unqualified&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ProcessInstanceId&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;xs:element</span>
+<span class="w">                        </span><span class="na">block=</span><span class="s">&quot;extension restriction substitution&quot;</span>
+<span class="w">                        </span><span class="na">form=</span><span class="s">&quot;unqualified&quot;</span><span class="w"> </span><span class="na">minOccurs=</span><span class="s">&quot;0&quot;</span>
+<span class="w">                        </span><span class="na">name=</span><span class="s">&quot;CustomJobId&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;xs:element</span>
+<span class="w">                        </span><span class="na">block=</span><span class="s">&quot;extension restriction substitution&quot;</span>
+<span class="w">                        </span><span class="na">form=</span><span class="s">&quot;unqualified&quot;</span><span class="w"> </span><span class="na">maxOccurs=</span><span class="s">&quot;unbounded&quot;</span>
+<span class="w">                        </span><span class="na">minOccurs=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;TrackingInfo&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">block=</span><span class="s">&quot;extension restriction substitution&quot;</span>
+<span class="w">                </span><span class="na">final=</span><span class="s">&quot;extension restriction&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;ProcessContext&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;tns:ProcessContext&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xs:schema&gt;</span>
+<span class="w">        </span><span class="nt">&lt;xs:schema</span><span class="w"> </span><span class="na">attributeFormDefault=</span><span class="s">&quot;unqualified&quot;</span>
+<span class="w">            </span><span class="na">elementFormDefault=</span><span class="s">&quot;qualified&quot;</span>
+<span class="w">            </span><span class="na">targetNamespace=</span><span class="s">&quot;http://xmlns.example.com/test/api&quot;</span>
+<span class="w">            </span><span class="na">xmlns:tns=</span><span class="s">&quot;http://xmlns.example.com/test/api&quot;</span><span class="w"> </span><span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:complexType</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;TestRequestType&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;xs:sequence&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;request&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:complexType</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;TestResponseType&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;xs:sequence&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;response&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xs:string&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/xs:sequence&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;TestRequest&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;tns:TestRequestType&quot;</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;xs:element</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;TestResponse&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;tns:TestResponseType&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/xs:schema&gt;</span>
+<span class="w">        </span><span class="nt">&lt;wsdl:definitions</span>
+<span class="w">            </span><span class="na">targetNamespace=</span><span class="s">&quot;http://xmlns.example.com/test/api/wsdl&quot;</span>
+<span class="w">            </span><span class="na">xmlns:extns=</span><span class="s">&quot;http://tns.tibco.com/bw/REST&quot;</span>
+<span class="w">            </span><span class="na">xmlns:extns1=</span><span class="s">&quot;http://xmlns.example.com/test/api&quot;</span>
+<span class="w">            </span><span class="na">xmlns:plnk=</span><span class="s">&quot;http://docs.oasis-open.org/wsbpel/2.0/plnktype&quot;</span>
+<span class="w">            </span><span class="na">xmlns:tibex=</span><span class="s">&quot;http://www.tibco.com/bpel/2007/extensions&quot;</span>
+<span class="w">            </span><span class="na">xmlns:tns=</span><span class="s">&quot;http://xmlns.example.com/test/api/wsdl&quot;</span>
+<span class="w">            </span><span class="na">xmlns:vprop=</span><span class="s">&quot;http://docs.oasis-open.org/wsbpel/2.0/varprop&quot;</span>
+<span class="w">            </span><span class="na">xmlns:wsdl=</span><span class="s">&quot;http://schemas.xmlsoap.org/wsdl/&quot;</span><span class="w"> </span><span class="na">xmlns:xsd=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;plnk:partnerLinkType</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;partnerLinkType&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;plnk:role</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;use&quot;</span><span class="w"> </span><span class="na">portType=</span><span class="s">&quot;tns:testapi&quot;</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/plnk:partnerLinkType&gt;</span>
+<span class="w">            </span><span class="nt">&lt;wsdl:import</span><span class="w"> </span><span class="na">namespace=</span><span class="s">&quot;http://tns.tibco.com/bw/REST&quot;</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;wsdl:import</span><span class="w"> </span><span class="na">namespace=</span><span class="s">&quot;http://xmlns.example.com/test/api&quot;</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;wsdl:message</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;postRequest&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;wsdl:part</span><span class="w"> </span><span class="na">element=</span><span class="s">&quot;extns1:TestRequest&quot;</span>
+<span class="w">                    </span><span class="na">name=</span><span class="s">&quot;item&quot;</span><span class="w"> </span><span class="na">tibex:hasMultipleNamespaces=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;wsdl:part</span><span class="w"> </span><span class="na">element=</span><span class="s">&quot;extns:httpHeaders&quot;</span>
+<span class="w">                    </span><span class="na">name=</span><span class="s">&quot;httpHeaders&quot;</span><span class="w"> </span><span class="na">tibex:source=</span><span class="s">&quot;bw.rest&quot;</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/wsdl:message&gt;</span>
+<span class="w">            </span><span class="nt">&lt;wsdl:message</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;postResponse&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;wsdl:part</span><span class="w"> </span><span class="na">element=</span><span class="s">&quot;extns1:TestResponse&quot;</span>
+<span class="w">                    </span><span class="na">name=</span><span class="s">&quot;item&quot;</span><span class="w"> </span><span class="na">tibex:hasMultipleNamespaces=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/wsdl:message&gt;</span>
+<span class="w">            </span><span class="nt">&lt;wsdl:message</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;post4XXFaultMessage&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;wsdl:part</span><span class="w"> </span><span class="na">element=</span><span class="s">&quot;extns:client4XXError&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;clientError&quot;</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/wsdl:message&gt;</span>
+<span class="w">            </span><span class="nt">&lt;wsdl:message</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;post5XXFaultMessage&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;wsdl:part</span><span class="w"> </span><span class="na">element=</span><span class="s">&quot;extns:server5XXError&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;serverError&quot;</span><span class="nt">/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/wsdl:message&gt;</span>
+<span class="w">            </span><span class="nt">&lt;wsdl:portType</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;testapi&quot;</span>
+<span class="w">                </span><span class="na">tibex:bw.rest.apipath=</span><span class="s">&quot;/test&quot;</span>
+<span class="w">                </span><span class="na">tibex:bw.rest.basepath=</span><span class="s">&quot;TestAPI&quot;</span>
+<span class="w">                </span><span class="na">tibex:bw.rest.resource=</span><span class="s">&quot;Service Descriptors/test.api.MainProcess-TestAPI.json&quot;</span>
+<span class="w">                </span><span class="na">tibex:bw.rest.resource.source=</span><span class="s">&quot;generated&quot;</span><span class="w"> </span><span class="na">tibex:source=</span><span class="s">&quot;bw.rest.service&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;wsdl:documentation&gt;</span>Simple<span class="w"> </span>REST<span class="w"> </span>API<span class="w"> </span>with<span class="w"> </span>test<span class="w"> </span>endpoint.<span class="nt">&lt;/wsdl:documentation&gt;</span>
+<span class="w">                </span><span class="nt">&lt;wsdl:operation</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;wsdl:input</span><span class="w"> </span><span class="na">message=</span><span class="s">&quot;tns:postRequest&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;postInput&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;wsdl:output</span><span class="w"> </span><span class="na">message=</span><span class="s">&quot;tns:postResponse&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;postOutput&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;wsdl:fault</span><span class="w"> </span><span class="na">message=</span><span class="s">&quot;tns:post4XXFaultMessage&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;clientFault&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;wsdl:fault</span><span class="w"> </span><span class="na">message=</span><span class="s">&quot;tns:post5XXFaultMessage&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;serverFault&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/wsdl:operation&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/wsdl:portType&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/wsdl:definitions&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/tibex:Types&gt;</span>
+<span class="w">    </span><span class="nt">&lt;tibex:ProcessInfo</span><span class="w"> </span><span class="na">callable=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">createdBy=</span><span class="s">&quot;heshan&quot;</span>
+<span class="w">        </span><span class="na">createdOn=</span><span class="s">&quot;Mon Dec 16 00:00:00 PST 2024&quot;</span><span class="w"> </span><span class="na">description=</span><span class="s">&quot;&quot;</span>
+<span class="w">        </span><span class="na">extraErrorVars=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">modifiers=</span><span class="s">&quot;public&quot;</span>
+<span class="w">        </span><span class="na">productVersion=</span><span class="s">&quot;6.5.0 V63 2018-08-08&quot;</span><span class="w"> </span><span class="na">scalable=</span><span class="s">&quot;true&quot;</span>
+<span class="w">        </span><span class="na">singleton=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">stateless=</span><span class="s">&quot;true&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;IT&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;tibex:ProcessInterface</span><span class="w"> </span><span class="na">context=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">input=</span><span class="s">&quot;&quot;</span><span class="w"> </span><span class="na">output=</span><span class="s">&quot;&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;tibex:ProcessTemplateConfigurations/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;tibex:NamespaceRegistry</span><span class="w"> </span><span class="na">enabled=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;tibex:namespaceItem</span>
+<span class="w">            </span><span class="na">namespace=</span><span class="s">&quot;http://xmlns.example.com/test/api&quot;</span><span class="w"> </span><span class="na">prefix=</span><span class="s">&quot;tns&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;tibex:namespaceItem</span>
+<span class="w">            </span><span class="na">namespace=</span><span class="s">&quot;http://xmlns.example.com/test/api/wsdl&quot;</span><span class="w"> </span><span class="na">prefix=</span><span class="s">&quot;tns1&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/tibex:NamespaceRegistry&gt;</span>
+<span class="w">    </span><span class="nt">&lt;bpws:import</span><span class="w"> </span><span class="na">importType=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="w"> </span><span class="na">namespace=</span><span class="s">&quot;http://tns.tibco.com/bw/REST&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;bpws:import</span><span class="w"> </span><span class="na">importType=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema&quot;</span><span class="w"> </span><span class="na">namespace=</span><span class="s">&quot;http://xmlns.example.com/test/api&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;bpws:partnerLinks&gt;</span>
+<span class="w">        </span><span class="nt">&lt;bpws:partnerLink</span><span class="w"> </span><span class="na">myRole=</span><span class="s">&quot;use&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;testapi&quot;</span>
+<span class="w">            </span><span class="na">partnerLinkType=</span><span class="s">&quot;ns0:partnerLinkType&quot;</span>
+<span class="w">            </span><span class="na">sca-bpel:ignore=</span><span class="s">&quot;false&quot;</span><span class="w"> </span><span class="na">sca-bpel:service=</span><span class="s">&quot;testapi&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/bpws:partnerLinks&gt;</span>
+<span class="w">    </span><span class="nt">&lt;bpws:variables&gt;</span>
+<span class="w">        </span><span class="nt">&lt;bpws:variable</span><span class="w"> </span><span class="na">element=</span><span class="s">&quot;ns:ProcessContext&quot;</span>
+<span class="w">            </span><span class="na">name=</span><span class="s">&quot;_processContext&quot;</span><span class="w"> </span><span class="na">sca-bpel:internal=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;bpws:variable</span><span class="w"> </span><span class="na">messageType=</span><span class="s">&quot;ns0:postRequest&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;post&quot;</span><span class="w"> </span><span class="na">sca-bpel:internal=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;bpws:variable</span><span class="w"> </span><span class="na">messageType=</span><span class="s">&quot;ns0:postResponse&quot;</span>
+<span class="w">            </span><span class="na">name=</span><span class="s">&quot;postOut-input&quot;</span><span class="w"> </span><span class="na">sca-bpel:internal=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;bpws:variable</span><span class="w"> </span><span class="na">element=</span><span class="s">&quot;ns1:TestResponse&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;RenderOutput-output&quot;</span><span class="w"> </span><span class="na">sca-bpel:internal=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/bpws:variables&gt;</span>
+<span class="w">    </span><span class="nt">&lt;bpws:extensions&gt;</span>
+<span class="w">        </span><span class="nt">&lt;bpws:extension</span><span class="w"> </span><span class="na">mustUnderstand=</span><span class="s">&quot;no&quot;</span><span class="w"> </span><span class="na">namespace=</span><span class="s">&quot;http://www.eclipse.org/gmf/runtime/1.0.2/notation&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;bpws:extension</span><span class="w"> </span><span class="na">mustUnderstand=</span><span class="s">&quot;no&quot;</span><span class="w"> </span><span class="na">namespace=</span><span class="s">&quot;http://www.tibco.com/bw/process/info&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;bpws:extension</span><span class="w"> </span><span class="na">mustUnderstand=</span><span class="s">&quot;no&quot;</span><span class="w"> </span><span class="na">namespace=</span><span class="s">&quot;http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;bpws:extension</span><span class="w"> </span><span class="na">mustUnderstand=</span><span class="s">&quot;no&quot;</span><span class="w"> </span><span class="na">namespace=</span><span class="s">&quot;http://docs.oasis-open.org/ns/opencsa/sca/200912&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;bpws:extension</span><span class="w"> </span><span class="na">mustUnderstand=</span><span class="s">&quot;no&quot;</span><span class="w"> </span><span class="na">namespace=</span><span class="s">&quot;http://ns.tibco.com/bw/property&quot;</span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="nt">&lt;bpws:extension</span><span class="w"> </span><span class="na">mustUnderstand=</span><span class="s">&quot;no&quot;</span><span class="w"> </span><span class="na">namespace=</span><span class="s">&quot;http://www.tibco.com/bpel/2007/extensions&quot;</span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/bpws:extensions&gt;</span>
+<span class="w">    </span><span class="nt">&lt;bpws:scope</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;scope&quot;</span><span class="nt">&gt;</span>
+<span class="w">        </span><span class="nt">&lt;bpws:flow</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;flow&quot;</span><span class="nt">&gt;</span>
+<span class="w">            </span><span class="nt">&lt;bpws:links/&gt;</span>
+<span class="w">            </span><span class="nt">&lt;bpws:pick</span><span class="w"> </span><span class="na">createInstance=</span><span class="s">&quot;yes&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;pick&quot;</span><span class="nt">&gt;</span>
+<span class="w">                </span><span class="nt">&lt;bpws:onMessage</span><span class="w"> </span><span class="na">operation=</span><span class="s">&quot;post&quot;</span>
+<span class="w">                    </span><span class="na">partnerLink=</span><span class="s">&quot;testapi&quot;</span>
+<span class="w">                    </span><span class="na">portType=</span><span class="s">&quot;ns0:testapi&quot;</span>
+<span class="w">                    </span><span class="na">variable=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;bpws:scope</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;scope1&quot;</span><span class="nt">&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;bpws:flow</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;flow1&quot;</span><span class="nt">&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;bpws:links&gt;</span>
+<span class="w">                                </span><span class="nt">&lt;bpws:link</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;JSONPayloadOut&quot;</span><span class="w"> </span><span class="na">tibex:linkType=</span><span class="s">&quot;SUCCESS&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;/bpws:links&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;bpws:extensionActivity&gt;</span>
+<span class="w">                                </span><span class="nt">&lt;tibex:activityExtension</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;RenderOutput&quot;</span><span class="w"> </span><span class="na">outputVariable=</span><span class="s">&quot;RenderOutput&quot;</span>
+<span class="w">                                    </span><span class="na">xmlns:tibex=</span><span class="s">&quot;http://www.tibco.com/bpel/2007/extensions&quot;</span><span class="nt">&gt;</span>
+<span class="w">                                    </span><span class="nt">&lt;bpws:targets/&gt;</span>
+<span class="w">                                    </span><span class="nt">&lt;bpws:sources&gt;</span>
+<span class="w">                                        </span><span class="nt">&lt;bpws:source</span><span class="w"> </span><span class="na">linkName=</span><span class="s">&quot;JSONPayloadOut&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                                    </span><span class="nt">&lt;/bpws:sources&gt;</span>
+<span class="w">                                    </span><span class="nt">&lt;tibex:inputBindings&gt;</span>
+<span class="w">                                        </span><span class="nt">&lt;tibex:inputBinding</span><span class="w"> </span><span class="na">expression=</span><span class="s">&quot;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&gt;&amp;#xa;&amp;lt;xsl:stylesheet xmlns:xsl=&amp;quot;http://www.w3.org/1999/XSL/Transform&amp;quot; xmlns:tns=&amp;quot;http://xmlns.example.com/test/api&amp;quot; version=&amp;quot;2.0&amp;quot;&gt;&amp;#xa;    &amp;lt;xsl:template name=&amp;quot;RenderOutput-input&amp;quot; match=&amp;quot;/&amp;quot;&gt;&amp;#xa;        &amp;lt;tns:TestResponse&gt;&amp;#xa;            &amp;lt;tns:response&gt;Hello world&amp;lt;/tns:response&gt;&amp;#xa;        &amp;lt;/tns:TestResponse&gt;&amp;#xa;    &amp;lt;/xsl:template&gt;&amp;#xa;&amp;lt;/xsl:stylesheet&gt;&quot;</span><span class="w"> </span><span class="na">expressionLanguage=</span><span class="s">&quot;urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                                    </span><span class="nt">&lt;/tibex:inputBindings&gt;</span>
+<span class="w">                                    </span><span class="nt">&lt;tibex:config&gt;</span>
+<span class="w">                                        </span><span class="nt">&lt;bwext:BWActivity</span><span class="w"> </span><span class="na">activityTypeID=</span><span class="s">&quot;bw.restjson.JsonRender&quot;</span>
+<span class="w">                                            </span><span class="na">xmlns:activityconfig=</span><span class="s">&quot;http://tns.tibco.com/bw/model/activityconfig&quot;</span>
+<span class="w">                                            </span><span class="na">xmlns:bwext=</span><span class="s">&quot;http://tns.tibco.com/bw/model/core/bwext&quot;</span>
+<span class="w">                                            </span><span class="na">xmlns:restjson=</span><span class="s">&quot;http://ns.tibco.com/bw/palette/restjson&quot;</span>
+<span class="w">                                            </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
+<span class="w">                                            </span><span class="nt">&lt;activityConfig&gt;</span>
+<span class="w">                                                </span><span class="nt">&lt;properties</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;config&quot;</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;activityconfig:EMFProperty&quot;</span><span class="nt">&gt;</span>
+<span class="w">                                                    </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">href=</span><span class="s">&quot;http://ns.tibco.com/bw/palette/restjson#//JsonRender&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                                                    </span><span class="nt">&lt;value</span><span class="w"> </span><span class="na">jsonOutputStyle=</span><span class="s">&quot;None&quot;</span><span class="w"> </span><span class="na">schemaType=</span><span class="s">&quot;Xsd&quot;</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;restjson:JsonRender&quot;</span><span class="nt">&gt;</span>
+<span class="w">                                                        </span><span class="nt">&lt;inputEditorElement</span><span class="w"> </span><span class="na">href=</span><span class="s">&quot;Schema.xsd#//TestResponse;XSDElementDeclaration&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                                                    </span><span class="nt">&lt;/value&gt;</span>
+<span class="w">                                                </span><span class="nt">&lt;/properties&gt;</span>
+<span class="w">                                            </span><span class="nt">&lt;/activityConfig&gt;</span>
+<span class="w">                                        </span><span class="nt">&lt;/bwext:BWActivity&gt;</span>
+<span class="w">                                    </span><span class="nt">&lt;/tibex:config&gt;</span>
+<span class="w">                                </span><span class="nt">&lt;/tibex:activityExtension&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;/bpws:extensionActivity&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;bpws:extensionActivity&gt;</span>
+<span class="w">                                </span><span class="nt">&lt;tibex:activityExtension</span>
+<span class="w">                                    </span><span class="na">inputVariable=</span><span class="s">&quot;RenderOutput&quot;</span>
+<span class="w">                                    </span><span class="na">name=</span><span class="s">&quot;SendHTTPResponse&quot;</span>
+<span class="w">                                    </span><span class="na">xmlns:tibex=</span><span class="s">&quot;http://www.tibco.com/bpel/2007/extensions&quot;</span><span class="nt">&gt;</span>
+<span class="w">                                    </span><span class="nt">&lt;bpws:targets&gt;</span>
+<span class="w">                                        </span><span class="nt">&lt;bpws:target</span><span class="w"> </span><span class="na">linkName=</span><span class="s">&quot;JSONPayloadOut&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                                    </span><span class="nt">&lt;/bpws:targets&gt;</span>
+<span class="w">                                    </span><span class="nt">&lt;tibex:inputBindings&gt;</span>
+<span class="w">                                        </span><span class="nt">&lt;tibex:inputBinding</span>
+<span class="w">                                            </span><span class="na">expression=</span><span class="s">&quot;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&gt;&amp;#xa;&amp;lt;xsl:stylesheet xmlns:xsl=&amp;quot;http://www.w3.org/1999/XSL/Transform&amp;quot; xmlns:tns1=&amp;quot;http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+3847aa9b-8275-4b15-9ea8-812816768fa4+ResponseActivityInput&amp;quot; version=&amp;quot;2.0&amp;quot;&gt;&amp;#xa;    &amp;lt;xsl:template name=&amp;quot;SendHTTPResponse-input&amp;quot; match=&amp;quot;/&amp;quot;&gt;&amp;#xa;        &amp;lt;tns1:ResponseActivityInput&gt;&amp;#xa;            &amp;lt;asciiContent&gt;&amp;#xa;                &amp;lt;xsl:value-of select=&amp;quot;/jsonString&amp;quot;/&gt;&amp;#xa;            &amp;lt;/asciiContent&gt;&amp;#xa;            &amp;lt;Headers&gt;&amp;#xa;                &amp;lt;Content-Type&gt;&amp;#xa;                    &amp;lt;xsl:value-of select=&amp;quot;&amp;amp;quot;application/json&amp;amp;quot;&amp;quot;/&gt;&amp;#xa;                &amp;lt;/Content-Type&gt;&amp;#xa;            &amp;lt;/Headers&gt;&amp;#xa;        &amp;lt;/tns1:ResponseActivityInput&gt;&amp;#xa;    &amp;lt;/xsl:template&gt;&amp;#xa;&amp;lt;/xsl:stylesheet&gt;&quot;</span>
+<span class="w">                                            </span><span class="na">expressionLanguage=</span><span class="s">&quot;urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                                    </span><span class="nt">&lt;/tibex:inputBindings&gt;</span>
+<span class="w">                                    </span><span class="nt">&lt;tibex:config&gt;</span>
+<span class="w">                                        </span><span class="nt">&lt;bwext:BWActivity</span>
+<span class="w">                                            </span><span class="na">activityTypeID=</span><span class="s">&quot;bw.http.sendHTTPResponse&quot;</span>
+<span class="w">                                            </span><span class="na">version=</span><span class="s">&quot;6.0.0.20132205&quot;</span>
+<span class="w">                                            </span><span class="na">xmlns:ResponseActivityInput=</span><span class="s">&quot;http://tns.tibco.com/bw/activity/sendhttpresponse/xsd/input+3847aa9b-8275-4b15-9ea8-812816768fa4+ResponseActivityInput&quot;</span>
+<span class="w">                                            </span><span class="na">xmlns:activityconfig=</span><span class="s">&quot;http://tns.tibco.com/bw/model/activityconfig&quot;</span>
+<span class="w">                                            </span><span class="na">xmlns:bwext=</span><span class="s">&quot;http://tns.tibco.com/bw/model/core/bwext&quot;</span>
+<span class="w">                                            </span><span class="na">xmlns:http=</span><span class="s">&quot;http://ns.tibco.com/bw/palette/http&quot;</span>
+<span class="w">                                            </span><span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span><span class="nt">&gt;</span>
+<span class="w">                                            </span><span class="nt">&lt;activityConfig&gt;</span>
+<span class="w">                                                </span><span class="nt">&lt;properties</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;config&quot;</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;activityconfig:EMFProperty&quot;</span><span class="nt">&gt;</span>
+<span class="w">                                                    </span><span class="nt">&lt;type</span><span class="w"> </span><span class="na">href=</span><span class="s">&quot;http://ns.tibco.com/bw/palette/http#//SendHTTPResponse&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                                                    </span><span class="nt">&lt;value</span><span class="w"> </span><span class="na">closeConnection=</span><span class="s">&quot;true&quot;</span>
+<span class="w">                                                        </span><span class="na">inputHeadersQName=</span><span class="s">&quot;ResponseActivityInput:headersType&quot;</span>
+<span class="w">                                                        </span><span class="na">replyFor=</span><span class="s">&quot;HTTPReceiver&quot;</span><span class="w"> </span><span class="na">xsi:type=</span><span class="s">&quot;http:SendHTTPResponse&quot;</span><span class="nt">/&gt;</span>
+<span class="w">                                                </span><span class="nt">&lt;/properties&gt;</span>
+<span class="w">                                            </span><span class="nt">&lt;/activityConfig&gt;</span>
+<span class="w">                                        </span><span class="nt">&lt;/bwext:BWActivity&gt;</span>
+<span class="w">                                    </span><span class="nt">&lt;/tibex:config&gt;</span>
+<span class="w">                                </span><span class="nt">&lt;/tibex:activityExtension&gt;</span>
+<span class="w">                            </span><span class="nt">&lt;/bpws:extensionActivity&gt;</span>
+<span class="w">                        </span><span class="nt">&lt;/bpws:flow&gt;</span>
+<span class="w">                    </span><span class="nt">&lt;/bpws:scope&gt;</span>
+<span class="w">                </span><span class="nt">&lt;/bpws:onMessage&gt;</span>
+<span class="w">            </span><span class="nt">&lt;/bpws:pick&gt;</span>
+<span class="w">        </span><span class="nt">&lt;/bpws:flow&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/bpws:scope&gt;</span>
+<span class="nt">&lt;/bpws:process&gt;</span>
+</code></pre></div>
+
+</li>
+<li>
+<p>Execute the following command. This will create the <code>converted</code> directory and create a Ballerina package inside it.</p>
+<div class="highlight"><pre><span></span><code>bal<span class="w"> </span>migrate-tibco<span class="w"> </span>&lt;tibco-hello-world&gt;<span class="w"> </span>-o<span class="w"> </span>converted
+</code></pre></div>
+
+</li>
+</ol>
+<h4 id="step-3-open-in-bi_1">Step 3: Open in BI<a class="headerlink" href="#step-3-open-in-bi_1" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Open VS Code inside the <code>converted</code> directory
     <div class="highlight"><pre><span></span><code>$<span class="w"> </span>code<span class="w"> </span>./converted
@@ -1816,7 +2171,7 @@
 <h2 id="output">Output<a class="headerlink" href="#output" title="Permanent link">&para;</a></h2>
 <h3 id="migration-summary">Migration summary<a class="headerlink" href="#migration-summary" title="Permanent link">&para;</a></h3>
 <ul>
-<li>When you run the tool, it will log the number of activities it detected for each process along with the number of activities it failed to convert, if any.</li>
+<li>When you run the tool, it will generate <code>report.html</code> file in the output directory with a summary containing information about activities it failed to convert and time estimation for manually converting them.</li>
 </ul>
 <h3 id="unhandled-activities">Unhandled activities<a class="headerlink" href="#unhandled-activities" title="Permanent link">&para;</a></h3>
 <ul>
@@ -1858,6 +2213,25 @@
 </ul>
 </li>
 <li><code>extActivity</code></li>
+<li><code>com.tibco.plugin.mapper.MapperActivity</code></li>
+<li><code>com.tibco.plugin.http.HTTPEventSource</code></li>
+<li><code>com.tibco.pe.core.AssignActivity</code></li>
+<li><code>com.tibco.plugin.http.HTTPResponseActivity</code></li>
+<li><code>com.tibco.plugin.xml.XMLRendererActivity</code></li>
+<li><code>com.tibco.plugin.xml.XMLParseActivity</code></li>
+<li><code>com.tibco.pe.core.LoopGroup</code></li>
+<li><code>com.tibco.pe.core.WriteToLogActivity</code></li>
+<li><code>com.tibco.pe.core.CatchActivity</code></li>
+<li><code>com.tibco.plugin.file.FileReadActivity</code></li>
+<li><code>com.tibco.plugin.file.FileWriteActivity</code></li>
+<li><code>com.tibco.plugin.jdbc.JDBCGeneralActivity</code></li>
+<li><code>com.tibco.plugin.json.activities.RestActivity</code></li>
+<li><code>com.tibco.pe.core.CallProcessActivity</code></li>
+<li><code>com.tibco.plugin.soap.SOAPSendReceiveActivity</code></li>
+<li><code>com.tibco.plugin.json.activities.JSONParserActivity</code></li>
+<li><code>com.tibco.plugin.json.activities.JSONRenderActivity</code></li>
+<li><code>com.tibco.plugin.soap.SOAPSendReplyActivity</code></li>
+<li><code>com.tibco.pe.core.WriteToLogActivity</code></li>
 </ul>
 <details class="note" open="open"><summary>Disclaimer</summary><p><strong>TIBCO</strong>: "TIBCO", “TIBCO BusinessWorks”, and “TIBCO Flogo” are trademarks, or registered trademarks, of TIBCO Software Inc. a business unit of Cloud Software Group. All product, company names and marks mentioned herein are the property of their respective owners and are mentioned for identification purposes only.</p>
 </details>
