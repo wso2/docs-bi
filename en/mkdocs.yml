@@ -75,11 +75,17 @@ nav:
   - Home: index.md
   - Get started:
       - Introduction: get-started/introduction.md
+      - "Install WSO2 Integrator: BI": get-started/install-wso2-integrator-bi.md
       - Quick Start Guide: get-started/quick-start-guide.md
+      - Develop Integration as API: get-started/develop-integration-as-api.md
+      - Develop Automation: get-started/develop-automation.md
+      - Develop File Integration: get-started/develop-file-integration.md
+      - Develop Event Integration: get-started/develop-event-integration.md
+      - Develop AI Agent: get-started/develop-ai-agent.md
       - Key Concepts: get-started/key-concepts.md
-  - Install and Setup:
-      - "Install WSO2 Integrator: BI": install-and-setup/install-wso2-integrator-bi.md
-      - "Install WSO2 Integrator: ICP": install-and-setup/install-wso2-integrator-icp.md
+  # - Install and Setup:
+  #     - "Install WSO2 Integrator: BI": install-and-setup/install-wso2-integrator-bi.md
+  #     - "Install WSO2 Integrator: ICP": install-and-setup/install-wso2-integrator-icp.md
   - Learn:
       - AI:
         - Natural functions: learn/ai/natural-functions/natural-functions.md
@@ -127,6 +133,10 @@ nav:
       - Deploy to Devant: deploy/deploy-to-devant.md
       - Deploy on VM as Executable JAR: deploy/deploy-on-vm-as-executable-jar.md
       - Deploy as Docker Image: deploy/deploy-as-docker-image.md
+  - References:
+      - Key Concepts: get-started/key-concepts.md
+      - "Install WSO2 Integrator: ICP": install-and-setup/install-wso2-integrator-icp.md
+      - "Enterprise Integrations Patterns": learn/enterprise-integrations-patterns.md
       
 
 # Markdown extensions configuration

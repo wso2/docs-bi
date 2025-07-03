@@ -4,8 +4,12 @@
         "icon": "🚀",
         "links": [
             {"name": "Introduction", "url": "get-started/introduction/"},
-            {"name": "Key Concepts", "url": "get-started/key-concepts/"},
-            {"name": "Quick Start Guide", "url": "get-started/quick-start-guide/"}
+            {"name": "Install WSO2 Integrator: BI", "url": "install-and-setup/install-wso2-integrator-bi/"},
+            {"name": "Develop Integration as API", "url": "get-started/develop-integration-as-api/"},
+            {"name": "Develop Automation", "url": "get-started/develop-automation/"},
+            {"name": "Develop File Integration", "url": "get-started/develop-file-integration/"},
+            {"name": "Develop Event Integration", "url": "get-started/develop-event-integration/"},
+            {"name": "Develop Event Integration", "url": "get-started/develop-ai-agent/"}
         ]
     },
     {
@@ -18,14 +22,7 @@
         ]
     }
     ],
-    [{
-        "title": "Install & Setup",
-        "icon": "⏬",
-        "links": [
-            {"name": "Install WSO2 Integrator: BI", "url": "install-and-setup/install-wso2-integrator-bi/"},
-            {"name": "Install WSO2 Integrator: ICP", "url": "install-and-setup/install-wso2-integrator-icp/"}
-        ]
-    },
+    [
     {
         "title": "Community & Support",
         "icon": "❓",
@@ -52,9 +49,11 @@
         ]
     },
     {
-        "title": "Samples",
+        "title": "References",
         "icon": "📖",
         "links": [
+            {"name": "Key Concepts", "url": "get-started/key-concepts/"},
+            {"name": "Install WSO2 Integrator: ICP", "url": "install-and-setup/install-wso2-integrator-icp/"},
             {"name": "Enterprise Integration Patterns", "url": "learn/enterprise-integrations-patterns/"}
         ]
     }
