@@ -24,4 +24,4 @@ Before you begin, make sure you have the following:
 
 1. Click **Run** in the top right corner to run the automation. This compiles the automation and runs it in the embedded Ballerina runtime.
 
-    <a href="{{base_path}}/assets/img/get-started/schedule-your-first-automation/design-integration.gif"><img src="../../assets/img/get-started/develop-automation/design-integration.gif" alt="Design Integration" width="80%"></a>
+    <a href="{{base_path}}/assets/img/get-started/develop-automation/design-integration.gif"><img src="../../assets/img/get-started/develop-automation/design-integration.gif" alt="Design Integration" width="80%"></a>

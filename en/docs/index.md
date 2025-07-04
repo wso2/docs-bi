@@ -4,7 +4,7 @@
         "icon": "🚀",
         "links": [
             {"name": "Introduction", "url": "get-started/introduction/"},
-            {"name": "Install WSO2 Integrator: BI", "url": "install-and-setup/install-wso2-integrator-bi/"},
+            {"name": "Install WSO2 Integrator: BI", "url": "get-started/install-wso2-integrator-bi/"},
             {"name": "Develop Integration as API", "url": "get-started/develop-integration-as-api/"},
             {"name": "Develop Automation", "url": "get-started/develop-automation/"},
             {"name": "Develop File Integration", "url": "get-started/develop-file-integration/"},
