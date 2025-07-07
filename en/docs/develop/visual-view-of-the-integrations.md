@@ -102,7 +102,7 @@ The Sequence mode offers a more structured, detailed view closer to traditional 
 
 ## Types diagram
 
-The Types Diagram shows a clear visual of how types are defined and connected in the application, allowing for visually adding and editing types.. It makes it easier to design data models and understand nested structures by showing their relationships graphically. You can open the Types diagram by clicking on a type in the left panel. 
+The Types Diagram shows a clear visual of how types are defined and connected in the application, allowing for visually adding and editing types. It makes it easier to design data models and understand nested structures by showing their relationships graphically. You can open the Types diagram by clicking on a type in the left panel. 
 
 <a href="{{base_path}}/assets/img/develop/visual-view/type-diagram.png"><img src="{{base_path}}/assets/img/develop/visual-view/type-diagram.png" alt="Type diagram" width="80%"></a>
 
