@@ -3,7 +3,7 @@
 ## Overview
 
 In this guide, you will:<br>
-Create a simple AI agent that provides math tutoring assistance. We will define a GraphQL schema with a query that invokes the inline agent to generate dynamic responses based on input parameters. The agent runs within the resolver logic and returns results directly as part of the GraphQL response.
+Create a simple AI agent that provides personal assistance. We will define a GraphQL schema with a query that invokes the inline agent to generate dynamic responses based on input parameters. The agent runs within the resolver logic and returns results directly as part of the GraphQL response.
 
 ## Prerequisites
 

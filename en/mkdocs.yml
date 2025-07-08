@@ -75,7 +75,6 @@ nav:
   - Get started:
       - Introduction: get-started/introduction.md
       - "Install WSO2 Integrator: BI": get-started/install-wso2-integrator-bi.md
-      - Quick Start Guide: get-started/quick-start-guide.md
       - Develop Integration as API: get-started/develop-integration-as-api.md
       - Develop Automation: get-started/develop-automation.md
       - Develop File Integration: get-started/develop-file-integration.md

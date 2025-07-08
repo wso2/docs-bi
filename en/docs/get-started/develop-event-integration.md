@@ -50,3 +50,7 @@ Before you begin, make sure you have the following:
 13. Add a **Log Info** node with the **Msg** as `message.toString()`. 
 
     <a href="{{base_path}}/assets/img/get-started/develop-event-integration/implement-event-handler.gif"><img src="{{base_path}}/assets/img/get-started/develop-event-integration/implement-event-handler.gif" alt="Add Configurations" width="80%"></a>
+
+## Step 2: Run the integration in WSO2 Integrator: BI
+
+1. Click **Run** in the top right corner to run the integration. This compiles the integration and runs it in the embedded Ballerina runtime.

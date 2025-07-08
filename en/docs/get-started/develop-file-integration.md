@@ -59,3 +59,7 @@ This redirects you to the **Create New Integration in VS Code** page.
 11. Under the **Foreach** node, add a **Log Info** node with the **Msg** as `"File added:" + addedFiles.name`. 
 
     <a href="{{base_path}}/assets/img/get-started/develop-file-integration/implement-onfilechange.gif"><img src="{{base_path}}/assets/img/get-started/develop-file-integration/implement-onfilechange.gif" alt="Setup listener & service configs" width="80%"></a>
+
+## Step 2: Run the integration in WSO2 Integrator: BI
+
+1. Click **Run** in the top right corner to run the integration. This compiles the integration and runs it in the embedded Ballerina runtime.
