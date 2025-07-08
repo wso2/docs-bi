@@ -19,8 +19,8 @@ Follow the steps below to implement the integration.
 
 ### Step 2: Define Types
 1. Click on the **`Add Artifacts`** button and select **`Type`** in the **`Other Artifacts`** section.
-2. Click on **`+ Add Type`** to add a new type.
-3. Use `Blog` as the **`Name`**. Then click on the **`JSON`** button and paste the following JSON payload. Tick **`Is Closed`** and click on the **`Import`** button. Then click the **`Save`** button.
+2. Click on **`+ Add Type`** to add a new type and switch to the **`Import`** section. 
+3. Enter `Blog` as the **`Name`**, paste the following JSON payload, and then click the **`Import`** button.
 
     ```json
     {
@@ -29,7 +29,7 @@ Follow the steps below to implement the integration.
     }
     ```
 
-4. Add another type with `Review` as the **`Name`** and paste the following JSON payload. Select **`Is Closed`** and click on the **`Import`** button. Then click the **`Save`** button.
+4. Add another type with `Review` as the **`Name`** and paste the following JSON payload. Then click the **`Import`** button.
 
     ```json
     {
