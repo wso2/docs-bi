@@ -11,7 +11,7 @@ In this guide, you will create a simple integration as an API that acts as a ser
 Before you begin, make sure you have the following:
 
 - <b>Visual Studio Code</b>: Install <a href="https://code.visualstudio.com/">Visual Studio Code</a> if you don't have it already.
-- <b>WSO2 Integrator: BI Extension</b>: Install the WSO2 Integrator: BI extension. Refer to <a href="../install-and-setup/install-wso2-integrator-bi/">Install WSO2 Integrator: BI</a> for detailed instructions.
+- <b>WSO2 Integrator: BI Extension</b>: Install the WSO2 Integrator: BI extension. Refer to <a href="../install-wso2-integrator-bi/">Install WSO2 Integrator: BI</a> for detailed instructions.
 
 ## Step 1: Create a new integration project
 

@@ -9,7 +9,7 @@ In this guide, you will build a simple event integration that monitors RabbitMQ 
 Before you begin, make sure you have the following:
 
 - <b>Visual Studio Code</b>: Install <a href="https://code.visualstudio.com/">Visual Studio Code</a> if you don't have it already.
-- <b>WSO2 Integrator: BI Extension</b>: Install the WSO2 Integrator: BI extension. Refer to <a href="../install-and-setup/install-wso2-integrator-bi/">Install WSO2 Integrator: BI</a> for detailed instructions.
+- <b>WSO2 Integrator: BI Extension</b>: Install the WSO2 Integrator: BI extension. Refer to <a href="../install-wso2-integrator-bi/">Install WSO2 Integrator: BI</a> for detailed instructions.
 - <b>Set up RabbitMQ</b>:
     1. Use an existing RabbitMQ instance or start a new [RabbitMQ](https://www.rabbitmq.com/download.html) instance on a server that can be accessed via the internet.
     2. Obtain the `host`, `port`, `username`, and `password` from the RabbitMQ instance.

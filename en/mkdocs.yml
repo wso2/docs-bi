@@ -91,12 +91,12 @@ nav:
           - Introduction to Chat Agents: integration-guides/ai/agents/introduction-to-chat-agents.md
           - Introduction to Inline Agents: integration-guides/ai/agents/introduction-to-inline-agents.md
           - Integrating Agents with External Endpoints: integration-guides/ai/agents/integrating-agents-with-external-endpoints.md
-      - File Integration:
-        - File Integration With Directory Service: integration-guides/file-integration/file-integration-with-directory-service.md
       - Integration As API:
+        - Service Orchestration: integration-guides/integration-as-api/service-orchestration.md
         - Message Transformation: integration-guides/integration-as-api/message-transformation.md
         - Message Routing: integration-guides/integration-as-api/message-routing.md
-        - Service Orchestration: integration-guides/integration-as-api/service-orchestration.md
+      - File Integration:
+        - File Integration With Directory Service: integration-guides/file-integration/file-integration-with-directory-service.md
   - Developer Guides:
       - Create a Project: developer-guides/create-a-project.md
       - "WSO2 Integrator: BI Artifacts": developer-guides/wso2-integrator-bi-artifacts.md
