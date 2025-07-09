@@ -45,8 +45,14 @@
         "icon": "⚙️",
         "links": [
             {"name": "Deploy to Devant", "url": "deploy/deploy-to-devant/"},
-            {"name": "Deploy as a Docker Image", "url": "deploy/deploy-as-docker-image/"},
-            {"name": "Deploy on VM as an Executable JAR", "url": "deploy/deploy-on-vm-as-executable-jar/"}
+            {"name": "Introduction to Deployment", "url": "deploy/introduction-to-deployment"},
+            {"name": "Introduction to Containerized Deployment", "url": "deploy/containerized-deployment/introduction-to-containerized-deployment"},
+            {"name": "Deploy as a Docker Image", "url": "deploy/containerized-deployment/deploy-as-docker-image"},
+            {"name": "Deploy on Kubernetes", "url": "deploy/containerized-deployment/deploy-on-kubernetes"},
+            {"name": "Centralized Deployment", "url": "deploy/vm-based-deployment/centralized-deployment"},
+            {"name": "Decentralized Deployment", "url": "deploy/vm-based-deployment/de-centralized-deployment"},
+            {"name": "Deploy on VM as Executable Jar", "url": "deploy/vm-based-deployment/deploy-on-vm-as-executable-jar"},
+            {"name": "Github Action for CICD", "url": "deploy/vm-based-deployment/github-action-for-cicd"}
         ]
     }
     ],

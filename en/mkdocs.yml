@@ -110,9 +110,17 @@ nav:
           - Mulesoft Migration Tool: developer-guides/tools/migration-tools/mulesoft-migration-tool.md
           - TIBCO BusinessWorks Migration Tool: developer-guides/tools/migration-tools/tibco-businessworks-migration-tool.md
   - Deploy:
-      - Deploy to Devant: deploy/deploy-to-devant.md
-      - Deploy on VM as Executable JAR: deploy/deploy-on-vm-as-executable-jar.md
-      - Deploy as Docker Image: deploy/deploy-as-docker-image.md
+      - Deploy in Devant: deploy/deploy-to-devant.md
+      - Introduction to Deployment: deploy/introduction-to-deployment.md
+      - Containerized Deployment:
+        - Introduction to Containerized Deployment: deploy/containerized-deployment/introduction-to-containerized-deployment.md
+        - Deploy as Docker Image: deploy/containerized-deployment/deploy-as-docker-image.md
+        - Deploy on Kubernetes: deploy/containerized-deployment/deploy-on-kubernetes.md
+      - VM-based Deployment:
+        - Deploy on VM as Executable JAR: deploy/vm-based-deployment/deploy-on-vm-as-executable-jar.md
+        - Centralized Deployment: deploy/vm-based-deployment/centralized-deployment.md
+        - Decentralized Deployment: deploy/vm-based-deployment/de-centralized-deployment.md
+        - GitHub Action for CICD: deploy/vm-based-deployment/github-action-for-cicd.md
   - Observability and Monitoring:
       - "Monitoring with WSO2 Integrator: ICP": observability-and-monitoring/monitoring-with-wso2-integrator-icp.md
   - References:
@@ -198,4 +206,4 @@ extra:
       link: https://www.linkedin.com/company/wso2
   # site_version: Uncomment to specify a version
   base_path: https://wso2.github.io/docs-bi
-  #base_path: http://localhost:8000
+  # base_path: http://localhost:8000
