@@ -92,7 +92,7 @@ The flow is as follows.
 5. Add the service base path as `/healthcare` and select the **Design from Scratch** option as the **The contract of the service**.
 6. Click on the **Create** button to create the new service with the specified configurations.
 
-    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api//service-orchestration/create-service.png"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api//service-orchestration/create-service.png" alt="HTTP Service" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/create-service.png"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/create-service.png" alt="HTTP Service" width="70%"></a>
 
 ## Step 3: Define types
 
