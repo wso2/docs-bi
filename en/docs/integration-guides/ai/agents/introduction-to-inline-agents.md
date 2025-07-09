@@ -1,19 +1,15 @@
-# Develop AI Agent
+# Introduction to Inline Agents
 
-## Overview
+In this tutorial, you'll learn how to connect an AI agent to a GraphQL service, enabling the agent to be invoked directly within a GraphQL resolver. This demonstrates the use of an **inline agent**—a powerful capability in the WSO2 Integrator: BI.
 
-In this guide, you will:<br>
-Create a simple AI agent that provides personal assistance. We will define a GraphQL schema with a query that invokes the inline agent to generate dynamic responses based on input parameters. The agent runs within the resolver logic and returns results directly as part of the GraphQL response.
+Unlike [chat agents](/integration-guides/ai/agents/introduction-to-chat-agents), which are exposed as REST APIs for external interaction, **inline agents** are not tied to an API endpoint. Instead, they can be invoked programmatically from anywhere within your integration logic, just like a regular function call.
+
+In this example, we'll define a GraphQL schema with a query that invokes the inline agent to generate dynamic responses based on input parameters. The agent runs within the resolver logic and returns results directly as part of the GraphQL response.
 
 ## Prerequisites
 
-Before you begin, make sure you have the following:
-
-- <b>Visual Studio Code</b>: Install <a href="https://code.visualstudio.com/">Visual Studio Code</a> if you don't have it already.
-- <b>WSO2 Integrator: BI Extension</b>: Install the WSO2 Integrator: BI extension. Refer to <a href="../install-wso2-integrator-bi/">Install WSO2 Integrator: BI</a> for detailed instructions.
-- <b>Get OpenAI key</b>:
-    1. Sign up at [OpenAI](https://platform.openai.com/signup/).
-    2. Get an API key from the [API section](https://platform.openai.com/docs/api-reference/authentication).
+- Sign up at [OpenAI](https://platform.openai.com/signup/).
+- Get an API key from the [API section](https://platform.openai.com/docs/api-reference/authentication).
 
 ### Step 1: Create a new integration project
 
