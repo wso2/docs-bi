@@ -35,7 +35,7 @@ By the end of this tutorial, you'll have a working RAG system that can retrieve 
 4. Select the **Design from Scratch** option as the Service Contract and use `/personalAssitant` as the Service base path.
 5. Click on the **Create** button to create the new service with the specified configurations.
 
-    <a href="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/1.create-new-service.gif"><img src="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/1.create-new-service.gif" alt="Create a New Service" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/1.create-new-service.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/1.create-new-service.gif" alt="Create a New Service" width="70%"></a>
 
 6. The service will have a default resource named `greeting` with the GET method.
 7. Click the **Edit FunctionModel** button in front of `/greeting` resource.
@@ -45,7 +45,7 @@ By the end of this tutorial, you'll have a working RAG system that can retrieve 
 11. Change the **200** response return type to `string`.
 12. Click on the **Save** button to update the resource with the specified configurations.
 
-    <a href="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/2.create-new-resource.gif"><img src="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/2.create-new-resource.gif" alt="Create a New Resource Function" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/2.create-new-resource.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/2.create-new-resource.gif" alt="Create a New Resource Function" width="70%"></a>
 
 !!! note
     Here we use a modular approach for the resource logic for the `/chat` resource. You may use your own logic calling directly in the `/chat` service without creating functions separately.
@@ -65,7 +65,7 @@ Follow these steps to create a function that retrieves embeddings using Azure Op
 1. Click the **+** button in the Integrator side panel under the **Functions** section.
 2. Provide the required details to create the function. Use `getEmbeddings` as the function name and specify the parameters and return types.
 
-    <a href="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/3.create-embeddings.gif"><img src="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/3.create-embeddings.gif" alt="Create an Embeddings Function" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/3.create-embeddings.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/3.create-embeddings.gif" alt="Create an Embeddings Function" width="70%"></a>
 
 ##### 2.1.2 Add embeddings connection
 1. Click the **+** button and select the **+ Add Connection** the side panel.
@@ -80,7 +80,7 @@ Follow these steps to create a function that retrieves embeddings using Azure Op
 6. Expand the **Advanced Configurations** section. Under the **ServiceUrl** select the **Add Expression** to open the Expression Helper window.
 7. In the Expression Helper, navigate to **Configurables**, select on `azure_service_url` as the value for **ServiceUrl** and click **Save** button.
 
-    <a href="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/4.create-embeddings-connection.gif"><img src="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/4.create-embeddings-connection.gif" alt="Create an Embeddings Connection" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/4.create-embeddings-connection.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/4.create-embeddings-connection.gif" alt="Create an Embeddings Connection" width="70%"></a>
 
 ##### 2.1.4 Implement the embeddings function logic
 1. Click the **+** button and select the **Declare Variable** under the Statement.
@@ -105,13 +105,13 @@ Follow these steps to create a function that retrieves similar vectors from Pine
 4. Click the **ApiKeysConfig** in the auth, select the **Configurables** and click the `pinecone_api_key`.
 5. Enter the `pinecone_url` as **ServiceUrl** and save it.
 
-    <a href="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/5.create-pinecone-connection.gif"><img src="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/5.create-pinecone-connection.gif" alt="Create an Pinecone Connection" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/5.create-pinecone-connection.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/5.create-pinecone-connection.gif" alt="Create an Pinecone Connection" width="70%"></a>
 
 ##### 2.2.3 Create a retriever function
 1. Click the **+** button in the Integrator side panel under the **Functions** section.
 2. Provide the required details to create the function. Use `retrieveData` as the function name and specify the parameters and return types.
 
-    <a href="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/6.create-retriever-function.gif"><img src="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/6.create-retriever-function.gif" alt="Create an Retriever Function" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/6.create-retriever-function.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/6.create-retriever-function.gif" alt="Create an Retriever Function" width="70%"></a>
 
 ##### 2.2.4 Implement the retriever function logic
 1. Click the **+** button and select the `vectorClient`.
@@ -121,7 +121,7 @@ Follow these steps to create a function that retrieves similar vectors from Pine
 5. Handle null response scenarios with appropriate error handling.
 6. Return the relevant matching array from the client response.
 
-    <a href="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/7.retriever-function-logic.gif"><img src="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/7.retriever-function-logic.gif" alt="Implement Retriever Function Logic" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/7.retriever-function-logic.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/7.retriever-function-logic.gif" alt="Implement Retriever Function Logic" width="70%"></a>
 
 #### 2.3 Augment queries with relevant chunks
 
@@ -138,7 +138,7 @@ Follow these steps to create a function that augments queries with relevant text
 4. Concatenate the text from metadata to the context string.
 5. Return the aggregated context string with all relevant text chunks.
 
-    <a href="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/8.augment-function-logic.gif"><img src="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/8.augment-function-logic.gif" alt="Implement Augment Function Logic" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/8.augment-function-logic.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/8.augment-function-logic.gif" alt="Implement Augment Function Logic" width="70%"></a>
 
 #### 2.4 Generate response Using the context
 
@@ -150,7 +150,7 @@ Follow these steps to create a function that augments queries with relevant text
 5. Select the **Configurables** and click the `azure_api_key`.
 6. Expand the **Advanced Configurations** and Enter the `azure_service_url` as ServiceUrl and save it.
 
-    <a href="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/9.create-chat-client.gif"><img src="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/9.create-chat-client.gif" alt="Create a Chat Client" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/9.create-chat-client.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/9.create-chat-client.gif" alt="Create a Chat Client" width="70%"></a>
 
 ???+ tip "Model Flexibility"   
 
@@ -181,7 +181,7 @@ Follow these steps to create a function that augments queries with relevant text
 1. Click the **+** button in the Integrator side panel under the **Functions** section.
 2. Create the function with `llmChat` as the function name and specify the parameters and return types.
 
-    <a href="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/10.create-llm-chat.gif"><img src="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/10.create-llm-chat.gif" alt="Create a Chat Function" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/10.create-llm-chat.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/10.create-llm-chat.gif" alt="Create a Chat Function" width="70%"></a>
 
 #### 3.2 Implement the function logic
 
@@ -193,7 +193,7 @@ This function orchestrates the entire RAG (Retrieval-Augmented Generation):
 4. **Generate Response**: Call the `generateText` function with both the original query and the augmented context to generate the final response.
 5. **Return Result**: Return the generated response string.
 
-    <a href="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/11.llm-chat-logic.gif"><img src="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/11.llm-chat-logic.gif" alt="Implement Chat Function Logic" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/11.llm-chat-logic.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/11.llm-chat-logic.gif" alt="Implement Chat Function Logic" width="70%"></a>
 
 This completes the end-to-end RAG where user queries are processed through embeddings, vector search, context augmentation, and LLM generation before returning intelligent responses through the HTTP API.
 
@@ -206,7 +206,7 @@ Go back to the HTTP service created in Step 1. In the `/chat` resource implement
 1. Call the `llmChat` function with the user's query.
 2. Return the chat response.
 
-    <a href="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/12.chat-service-logic.gif"><img src="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/12.chat-service-logic.gif" alt="Implement Chat Function Logic" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/12.chat-service-logic.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/12.chat-service-logic.gif" alt="Implement Chat Function Logic" width="70%"></a>
 
 ### Step 5: Run the integration and query the RAG
 
@@ -220,7 +220,7 @@ Go back to the HTTP service created in Step 1. In the `/chat` resource implement
     --data '{"message": "What is the process for reporting safety concerns?"}'
     ```
 
-    <a href="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/13.rag-execute.gif"><img src="{{base_path}}/assets/img/learn/ai/rag/build-a-rag-application/13.rag-execute.gif" alt="Run the integration to query rag" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/13.rag-execute.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/13.rag-execute.gif" alt="Run the integration to query rag" width="70%"></a>
 
 !!! warning "Response May Vary"
     Since this integration involves an LLM (Large Language Model) call, the response values may not always be identical across different executions.

@@ -16,6 +16,6 @@ Both Chat and Inline agents can be extended with tools that connect to real-worl
 
 To get started with agents, visit the following tutorial examples:
 
-* [Introduction to Chat Agents](/learn/ai/agents/introduction-to-chat-agents/)
-* [Introduction to Inline Agents](/learn/ai/agents/introduction-to-inline-agents/)
-* [Integrating Agents with External Endpoints](/learn/ai/agents/integrating-agents-with-external-endpoints/)
+* [Introduction to Chat Agents](/integration-guides/ai/agents/introduction-to-chat-agents/)
+* [Introduction to Inline Agents](/integration-guides/ai/agents/introduction-to-inline-agents/)
+* [Integrating Agents with External Endpoints](/integration-guides/ai/agents/integrating-agents-with-external-endpoints/)

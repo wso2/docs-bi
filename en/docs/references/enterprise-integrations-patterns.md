@@ -4,7 +4,7 @@ The WSO2 Integrator: BI supports the implementation of key Enterprise Integratio
 
 ???+ tip  "Enterprise Integration Patterns with Ballerina"
 
-    For a code-centric implementation of Enterprise Integration Patterns using the Ballerina language, refer to the <a href="https://ballerina.io/references/enterprise-integration-patterns/" target="_blank">Ballerina EIP guide</a>.
+    For a code-centric implementation of Enterprise Integration Patterns using the Ballerina language, refer to the <a href="https://ballerina.io/learn/enterprise-integration-patterns/" target="_blank">Ballerina EIP guide</a>.
 
 ## Messaging systems
 

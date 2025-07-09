@@ -5,7 +5,7 @@ Project is the foundational unit where you define and manage your integration ar
 1. Launch Visual Studio Code with the WSO2 Integrator: BI extension installed.
 
     !!! info
-        Follow the [Install WSO2 Integrator: BI]({{base_path}}/install-and-setup/install-wso2-integrator-bi/) documentation for a complete installation guide.
+        Follow the [Install WSO2 Integrator: BI]({{base_path}}/get-started/install-wso2-integrator-bi/) documentation for a complete installation guide.
 
 2. Click on the BI icon on the **Activity Bar** of the VS Code editor.
 
@@ -21,6 +21,6 @@ Project is the foundational unit where you define and manage your integration ar
 
     <a href="{{base_path}}/assets/img/developer-guides/create-project/bi-view.png"><img src="{{base_path}}/assets/img/developer-guides/create-project/bi-view.png" alt="Ballerina VS Code Extension" width="80%"></a>
 
-Now, you can start creating your integration by developing artifacts. See the [WSO2 Integrator: BI Artifacts]({{base_path}}/develop/wso2-integrator-bi-artifacts/) to learn about the integration artifacts.
+Now, you can start creating your integration by developing artifacts. See the [WSO2 Integrator: BI Artifacts]({{base_path}}/developer-guides/wso2-integrator-bi-artifacts/) to learn about the integration artifacts.
 
-Additionally, you can enhance your experience by incorporating AI-powered assistance with [WSO2 Copilot]({{base_path}}/develop/ai-assisted-development/build-an-http-service-with-wso2-copilot/).
+Additionally, you can enhance your experience by incorporating AI-powered assistance with [WSO2 Copilot]({{base_path}}/developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot/).

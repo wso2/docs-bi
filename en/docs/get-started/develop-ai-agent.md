@@ -23,7 +23,7 @@ Before you begin, make sure you have the following:
 4. Select the project directory by clicking on the **Select Location** button.
 5. Click the **Create New Integration** button to generate the integration project.
 
-    <a href="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-create-a-new-integration-project.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-create-a-new-integration-project.gif" alt="Create a new integration project" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-create-a-new-integration-project.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-create-a-new-integration-project.gif" alt="Create a new integration project" width="70%"></a>
 
 ### Step 2: Create a GraphQL service
 
@@ -31,7 +31,7 @@ Before you begin, make sure you have the following:
 2. Select **GraphQL Service** under the **Integration as API** artifacts.
 3. Keep the default **Listener** and **Service base path** configurations, and click **Create**.
 
-    <a href="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-create-a-graphql-service.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-create-a-graphql-service.gif" alt="Create a GraphQL service" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-create-a-graphql-service.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-create-a-graphql-service.gif" alt="Create a GraphQL service" width="70%"></a>
 
 ### Step 3: Create a GraphQL resolver
 
@@ -44,7 +44,7 @@ Before you begin, make sure you have the following:
     - Click **Add** to save the argument.
 5. Provide `string|error` for the **Field type**, as this will be used as the return type of the resolver.
 
-    <a href="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-create-a-graphql-resolver.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-create-a-graphql-resolver.gif" alt="Create a GraphQL resolver" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-create-a-graphql-resolver.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-create-a-graphql-resolver.gif" alt="Create a GraphQL resolver" width="70%"></a>
 
 ### Step 4: Implement the resolving logic with an inline agent
 
@@ -55,11 +55,11 @@ Before you begin, make sure you have the following:
 5. Update the **Role** and **Instructions** to configure the agent’s behavior.
 6. Provide the query parameter as the input for Query. This will serve as the command that the agent will execute.
 7. Click **Save**.
-8. Next, configure the agent’s memory, model, and tools. For guidance, refer to the [Chat Agent](/learn/ai/agents/introduction-to-chat-agents) configuration steps and the [Personal Assistant](/learn/ai/agents/integrating-agents-with-external-endpoints) setup guide to make the agent function as a personal assistant.
+8. Next, configure the agent’s memory, model, and tools. For guidance, refer to the [Chat Agent](/integration-guides/ai/agents/introduction-to-chat-agents) configuration steps and the [Personal Assistant](/integration-guides/ai/agents/integrating-agents-with-external-endpoints) setup guide to make the agent function as a personal assistant.
 9. After configuring the agent, click the **+** button on the flow and select **Return** under **Control** from the side panel.
 10. For the **Expression**, provide the `response` variable as the input.
 
-    <a href="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-implement-resolver.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-implement-resolver.gif" alt="Implement the resolving logic with an inline agent" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-implement-resolver.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-implement-resolver.gif" alt="Implement the resolving logic with an inline agent" width="70%"></a>
 
 At this point, we've created a GraphQL resolver that takes a user-provided `query` as input, passes it to an inline agent for processing, and returns the agent’s `response` as the result of the resolver.
 
@@ -76,4 +76,4 @@ At this point, we've created a GraphQL resolver that takes a user-provided `quer
     -d '{ "query": "mutation Task { task(query: \"Summarize latest emails\") }" }'
     ```
 
-    <a href="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-execute.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/introduction-to-inline-agents/inline-agent-execute.gif" alt="Run the integration to query the agent" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-execute.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-execute.gif" alt="Run the integration to query the agent" width="70%"></a>
