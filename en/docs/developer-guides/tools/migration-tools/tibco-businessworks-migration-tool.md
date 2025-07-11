@@ -18,7 +18,7 @@ $ bal tool pull migrate-tibco
 ### Command syntax
 
 ```bash
-$ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directory>] [-k|--keep-structure] [-v|--verbose] [-d|--dry-run]
+$ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directory>] [-k|--keep-structure] [-v|--verbose] [-d|--dry-run] [-m|--multi-root]
 ```
 
 ### Parameters
@@ -30,6 +30,7 @@ $ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directo
 - **-k or --keep-structure** - *Optional*. If specified, preserves the original process structure during migration. By default, this option is disabled.
 - **-v or --verbose** - *Optional*. Enable verbose output during conversion.
 - **-d or --dry-run** - *Optional*. Run the parsing and analysis phases and generate the `report.html` file without generating the Ballerina package.
+- **-m or --multi-root** - *Optional*. Treat each child directory as a separate project and convert all of them. The source must be a directory containing multiple TIBCO projects.
 
 ## Examples
 
@@ -388,6 +389,12 @@ $ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directo
 
 - When you run the tool, it will generate `report.html` file in the output directory with a summary containing information about activities it failed to convert and time estimation for manually converting them.
 
+## Limitations
+
+### Ballerina compiler version
+
+- Tool generates code assuming target compiler version is 2201.12.0 or later.
+
 ### Unhandled activities
 
 - If the tool encounters any activity which it does not know how to convert it will generate a placeholder "unhandled" function with a comment containing the relevant part of the process file.
@@ -400,6 +407,22 @@ $ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directo
         //<bpws:empty name="OnMessageStart" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions" tibex:constructor="onMessageStart" tibex:xpdlId="c266c167-7a80-40cc-9db2-60739386deeb" xmlns:bpws="http://docs.oasis-open.org/wsbpel/2.0/process/executable"/>
         return xml `<root></root>`;
     }
+    ```
+
+### Partially supported activities
+
+- In case of activities that are only partially supported you will see a log message with the activity name.
+    ```bash
+    WARNING: Partially supported activity: JMS Send
+    ```
+
+- They will also be listed in the report under heading "Activities that need manual validation". For most typical use cases, you can use the converted source as is, but we highly encourage users to check the converted code. There will be comments explaining any limitations/assumptions the tool has made.
+    ```ballerina
+        // WARNING: using default destination configuration
+        jms:MessageProducer var4 = check var3.createProducer(destination = {
+            'type: jms:TOPIC,
+            name: "TOPIC"
+        });
     ```
 
 ### Supported TIBCO BusinessWorks activities
@@ -443,7 +466,19 @@ $ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directo
 - `com.tibco.plugin.json.activities.JSONParserActivity`
 - `com.tibco.plugin.json.activities.JSONRenderActivity`
 - `com.tibco.plugin.soap.SOAPSendReplyActivity`
-- `com.tibco.pe.core.WriteToLogActivity`
+- `com.tibco.plugin.jms.JMSQueueEventSource`
+- `com.tibco.plugin.jms.JMSQueueSendActivity`
+- `com.tibco.plugin.jms.JMSQueueGetMessageActivity`
+- `com.tibco.plugin.jms.JMSTopicPublishActivity`
+- `com.tibco.pe.core.GenerateErrorActivity`
+- `com.tibco.plugin.timer.NullActivity`
+- `com.tibco.plugin.timer.SleepActivity`
+- `com.tibco.pe.core.GetSharedVariableActivity`
+- `com.tibco.pe.core.SetSharedVariableActivity`
+- `com.tibco.plugin.file.FileEventSource`
+- `com.tibco.pe.core.OnStartupEventSource`
+- `com.tibco.plugin.file.ListFilesActivity`
+- `com.tibco.plugin.xml.XMLTransformActivity`
 
 ???+ note  "Disclaimer"
 
