@@ -1230,9 +1230,36 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    Limitations
+  </a>
+  
+    <nav class="md-nav" aria-label="Limitations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ballerina-compiler-version" class="md-nav__link">
+    Ballerina compiler version
+  </a>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#unhandled-activities" class="md-nav__link">
     Unhandled activities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partially-supported-activities" class="md-nav__link">
+    Partially supported activities
   </a>
   
 </li>
@@ -1616,9 +1643,36 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    Limitations
+  </a>
+  
+    <nav class="md-nav" aria-label="Limitations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ballerina-compiler-version" class="md-nav__link">
+    Ballerina compiler version
+  </a>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#unhandled-activities" class="md-nav__link">
     Unhandled activities
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partially-supported-activities" class="md-nav__link">
+    Partially supported activities
   </a>
   
 </li>
@@ -1678,7 +1732,7 @@
 </code></pre></div></p>
 <h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
 <h3 id="command-syntax">Command syntax<a class="headerlink" href="#command-syntax" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bal<span class="w"> </span>migrate-tibco<span class="w"> </span>&lt;source-project-directory-or-file&gt;<span class="w"> </span><span class="o">[</span>-o<span class="p">|</span>--out<span class="w"> </span>&lt;output-directory&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>-k<span class="p">|</span>--keep-structure<span class="o">]</span><span class="w"> </span><span class="o">[</span>-v<span class="p">|</span>--verbose<span class="o">]</span><span class="w"> </span><span class="o">[</span>-d<span class="p">|</span>--dry-run<span class="o">]</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>bal<span class="w"> </span>migrate-tibco<span class="w"> </span>&lt;source-project-directory-or-file&gt;<span class="w"> </span><span class="o">[</span>-o<span class="p">|</span>--out<span class="w"> </span>&lt;output-directory&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>-k<span class="p">|</span>--keep-structure<span class="o">]</span><span class="w"> </span><span class="o">[</span>-v<span class="p">|</span>--verbose<span class="o">]</span><span class="w"> </span><span class="o">[</span>-d<span class="p">|</span>--dry-run<span class="o">]</span><span class="w"> </span><span class="o">[</span>-m<span class="p">|</span>--multi-root<span class="o">]</span>
 </code></pre></div>
 
 <h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
@@ -1690,6 +1744,7 @@
 <li><strong>-k or --keep-structure</strong> - <em>Optional</em>. If specified, preserves the original process structure during migration. By default, this option is disabled.</li>
 <li><strong>-v or --verbose</strong> - <em>Optional</em>. Enable verbose output during conversion.</li>
 <li><strong>-d or --dry-run</strong> - <em>Optional</em>. Run the parsing and analysis phases and generate the <code>report.html</code> file without generating the Ballerina package.</li>
+<li><strong>-m or --multi-root</strong> - <em>Optional</em>. Treat each child directory as a separate project and convert all of them. The source must be a directory containing multiple TIBCO projects.</li>
 </ul>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <h3 id="migrating-tibco-businessworks-5-process">Migrating TIBCO BusinessWorks 5 process<a class="headerlink" href="#migrating-tibco-businessworks-5-process" title="Permanent link">&para;</a></h3>
@@ -2044,6 +2099,11 @@
 <ul>
 <li>When you run the tool, it will generate <code>report.html</code> file in the output directory with a summary containing information about activities it failed to convert and time estimation for manually converting them.</li>
 </ul>
+<h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
+<h3 id="ballerina-compiler-version">Ballerina compiler version<a class="headerlink" href="#ballerina-compiler-version" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Tool generates code assuming target compiler version is 2201.12.0 or later.</li>
+</ul>
 <h3 id="unhandled-activities">Unhandled activities<a class="headerlink" href="#unhandled-activities" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
@@ -2057,6 +2117,23 @@
 }
 </code></pre></div>
 
+</li>
+</ul>
+<h3 id="partially-supported-activities">Partially supported activities<a class="headerlink" href="#partially-supported-activities" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>In case of activities that are only partially supported you will see a log message with the activity name.
+    <div class="highlight"><pre><span></span><code>WARNING:<span class="w"> </span>Partially<span class="w"> </span>supported<span class="w"> </span>activity:<span class="w"> </span>JMS<span class="w"> </span>Send
+</code></pre></div></p>
+</li>
+<li>
+<p>They will also be listed in the report under heading "Activities that need manual validation". For most typical use cases, you can use the converted source as is, but we highly encourage users to check the converted code. There will be comments explaining any limitations/assumptions the tool has made.
+    <div class="highlight"><pre><span></span><code>    // WARNING: using default destination configuration
+    jms:MessageProducer var4 = check var3.createProducer(destination = {
+        &#39;type: jms:TOPIC,
+        name: &quot;TOPIC&quot;
+    });
+</code></pre></div></p>
 </li>
 </ul>
 <h3 id="supported-tibco-businessworks-activities">Supported TIBCO BusinessWorks activities<a class="headerlink" href="#supported-tibco-businessworks-activities" title="Permanent link">&para;</a></h3>
@@ -2102,7 +2179,19 @@
 <li><code>com.tibco.plugin.json.activities.JSONParserActivity</code></li>
 <li><code>com.tibco.plugin.json.activities.JSONRenderActivity</code></li>
 <li><code>com.tibco.plugin.soap.SOAPSendReplyActivity</code></li>
-<li><code>com.tibco.pe.core.WriteToLogActivity</code></li>
+<li><code>com.tibco.plugin.jms.JMSQueueEventSource</code></li>
+<li><code>com.tibco.plugin.jms.JMSQueueSendActivity</code></li>
+<li><code>com.tibco.plugin.jms.JMSQueueGetMessageActivity</code></li>
+<li><code>com.tibco.plugin.jms.JMSTopicPublishActivity</code></li>
+<li><code>com.tibco.pe.core.GenerateErrorActivity</code></li>
+<li><code>com.tibco.plugin.timer.NullActivity</code></li>
+<li><code>com.tibco.plugin.timer.SleepActivity</code></li>
+<li><code>com.tibco.pe.core.GetSharedVariableActivity</code></li>
+<li><code>com.tibco.pe.core.SetSharedVariableActivity</code></li>
+<li><code>com.tibco.plugin.file.FileEventSource</code></li>
+<li><code>com.tibco.pe.core.OnStartupEventSource</code></li>
+<li><code>com.tibco.plugin.file.ListFilesActivity</code></li>
+<li><code>com.tibco.plugin.xml.XMLTransformActivity</code></li>
 </ul>
 <details class="note" open="open"><summary>Disclaimer</summary><p><strong>TIBCO</strong>: "TIBCO", “TIBCO BusinessWorks”, and “TIBCO Flogo” are trademarks, or registered trademarks, of TIBCO Software Inc. a business unit of Cloud Software Group. All product, company names and marks mentioned herein are the property of their respective owners and are mentioned for identification purposes only.</p>
 </details>
