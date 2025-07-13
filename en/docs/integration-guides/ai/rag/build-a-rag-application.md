@@ -11,7 +11,7 @@ This step is managed through [Devant](https://wso2.com/devant/docs/ai/rag-applic
 We assume that you've already used [Devant](https://wso2.com/devant/docs/ai/rag-application/) to process and ingest the documents. Devant handles the entire ingestion process independently of the main application flow. The following steps of the tutorial focus solely on RAG retrieval.
 
 ## RAG retrieval 
-This tutorial focuses on implementing the rag retrieval component of a Retrieval-Augmented Generation (RAG) system using the [Ballerina Integrator](https://wso2.com/integrator/bi/).
+This tutorial focuses on implementing the retrieval component of a Retrieval-Augmented Generation (RAG) system using the [Ballerina Integrator](https://wso2.com/integrator/bi/).
 
 - Convert the user's question into embeddings
 - Perform a similarity search in the vector database
@@ -32,7 +32,7 @@ By the end of this tutorial, you'll have a working RAG system that can retrieve 
 1. In the design view, click on the **Add Artifact** button.
 2. Select **HTTP Service** under the Integration as API category.
 3. Select the **Create and use the default HTTP listener (port:9090)** option from the Listeners dropdown.
-4. Select the **Design from Scratch** option as the Service Contract and use `/personalAssitant` as the Service base path.
+4. Select the **Design from Scratch** option as the Service Contract and use `/personalAssistant` as the Service base path.
 5. Click on the **Create** button to create the new service with the specified configurations.
 
     <a href="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/1.create-new-service.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/1.create-new-service.gif" alt="Create a New Service" width="70%"></a>
@@ -41,7 +41,7 @@ By the end of this tutorial, you'll have a working RAG system that can retrieve 
 7. Click the **Edit FunctionModel** button in front of `/greeting` resource.
 8. Change the resource HTTP method to **POST**.
 9. Change the resource name to `chat`.
-10. Click on **Add Parameter** under the Parameters and specify the parameters you need. We used to select the Param Type as **QUERY** and specify `request` as the name and `ChatRequestMessage` as the type.
+10. Click on **Add Parameter** under the Parameters and specify the parameters you need. Select the Param Type as **QUERY** and specify `request` as the name and `ChatRequestMessage` as the type.
 11. Change the **200** response return type to `string`.
 12. Click on the **Save** button to update the resource with the specified configurations.
 
@@ -68,7 +68,7 @@ Follow these steps to create a function that retrieves embeddings using Azure Op
     <a href="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/3.create-embeddings.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/3.create-embeddings.gif" alt="Create an Embeddings Function" width="70%"></a>
 
 ##### 2.1.2 Add embeddings connection
-1. Click the **+** button and select the **+ Add Connection** the side panel.
+1. Click the **+** button and select the **+ Add Connection** in the side panel.
 2. Select the connector **Embeddings - ballerinax/azure.openai.embeddings**.
 
 ##### 2.1.3 Configure the embeddings connector
@@ -140,7 +140,7 @@ Follow these steps to create a function that augments queries with relevant text
 
     <a href="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/8.augment-function-logic.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/rag/build-a-rag-application/8.augment-function-logic.gif" alt="Implement Augment Function Logic" width="70%"></a>
 
-#### 2.4 Generate response Using the context
+#### 2.4 Generate response using the context
 
 ##### 2.4.1 Add chat client connection
 1. Click the **+** button in the Integrator side panel under the **Connections** section.
@@ -212,7 +212,7 @@ Go back to the HTTP service created in Step 1. In the `/chat` resource implement
 
 1. Click on the **Run** button in the top-right corner to run the integration.
 2. If you have added any variables to the project, you’ll be prompted to update their values in the `Config.toml` file. Configure them to continue with the execution of the request.
-3. Query the rag by sending the curl request below.
+3. Query the RAG by sending the curl request below.
 
     ```
     curl --location 'http://localhost:9090/personalAssistant/chat' \
