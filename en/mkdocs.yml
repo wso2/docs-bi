@@ -123,7 +123,15 @@ nav:
         - GitHub Action for CICD: deploy/vm-based-deployment/github-action-for-cicd.md
       - Managing configurations: deploy/managing-configurations.md
   - Observability and Monitoring:
+      - "Overview of Observability in BI": observability-and-monitoring/overview-of-observability.md
       - "Monitoring with WSO2 Integrator: ICP": observability-and-monitoring/monitoring-with-wso2-integrator-icp.md
+      - Supported Observability Tools and Platforms:
+        - Supporting Prometheus in BI: observability-and-monitoring/supported-observability-tools-and-platforms/prometheus.md
+        - Supporting Jaeger in BI: observability-and-monitoring/supported-observability-tools-and-platforms/jaeger.md
+        - Supporting Zipkin in BI: observability-and-monitoring/supported-observability-tools-and-platforms/zipkin.md
+        - Supporting New Relic in BI: observability-and-monitoring/supported-observability-tools-and-platforms/new-relic.md
+        - Supporting Datadog in BI: observability-and-monitoring/supported-observability-tools-and-platforms/datadog.md
+        - Supporting Elastic Stack in BI: observability-and-monitoring/supported-observability-tools-and-platforms/elastic-stack.md
   - References:
       - "Enterprise Integrations Patterns": references/enterprise-integrations-patterns.md
       

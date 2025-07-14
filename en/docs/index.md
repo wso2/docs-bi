@@ -62,6 +62,13 @@
         "title": "Observability and Monitoring",
         "icon": "📈 ",
         "links": [
+            {"name": "Overview of Observability in BI", "url": "observability-and-monitoring/overview-of-observability/"},
+            {"name": "Supporting Prometheus in BI", "url": "observability-and-monitoring/supported-observability-tools-and-platforms/prometheus"},
+            {"name": "Supporting Jaeger in BI", "url": "observability-and-monitoring/supported-observability-tools-and-platforms/jaeger"},
+            {"name": "Supporting Zipkin in BI", "url": "observability-and-monitoring/supported-observability-tools-and-platforms/zipkin"},
+            {"name": "Supporting New Relic in BI", "url": "observability-and-monitoring/supported-observability-tools-and-platforms/new-relic"},
+            {"name": "Supporting Datadog in BI", "url": "observability-and-monitoring/supported-observability-tools-and-platforms/datadog"},
+            {"name": "Supporting Elastic Stack in BI", "url": "observability-and-monitoring/supported-observability-tools-and-platforms/elastic-stack"},
             {"name": "Monitoring with WSO2 Integrator: ICP", "url": "observability-and-monitoring/monitoring-with-wso2-integrator-icp/"}
         ]
     },

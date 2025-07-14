@@ -8,7 +8,7 @@ Consider the following step-by-step guide to configuring a Ballerina package tha
 
 2. Create a type `Greeting` that holds the greeting information.
 
-3. Create a configurable to hold the greeting to be sent when invoking the API endpoint.
+3. Create a configurable variable to hold the greeting to be sent when invoking the API endpoint. This can be done by adding a `Configuration` in `WSO2 Integrator: BI` design view.
 
     <a href="{{base_path}}/assets/img/deploy/config_1.gif"><img src="{{base_path}}/assets/img/deploy/config_1.gif" alt="Create Configurable Variable" width="70%"></a>
 
