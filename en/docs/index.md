@@ -46,14 +46,9 @@
         "links": [
             {"name": "Introduction to Deployment", "url": "deploy/introduction-to-deployment"},
             {"name": "Deploy to Devant", "url": "deploy/deploy-to-devant/"},
-            {"name": "Introduction to Containerized Deployment", "url": "deploy/containerized-deployment/introduction-to-containerized-deployment"},
-            {"name": "Deploy as a Docker Image", "url": "deploy/containerized-deployment/deploy-as-docker-image"},
-            {"name": "Deploy on Kubernetes", "url": "deploy/containerized-deployment/deploy-on-kubernetes"},
-            {"name": "Deploy on VM as Executable Jar", "url": "deploy/vm-based-deployment/deploy-on-vm-as-executable-jar"},
-            {"name": "Centralized Deployment", "url": "deploy/vm-based-deployment/centralized-deployment"},
-            {"name": "Decentralized Deployment", "url": "deploy/vm-based-deployment/de-centralized-deployment"},
-            {"name": "Github Action for CICD", "url": "deploy/vm-based-deployment/github-action-for-cicd"},
-            {"name": "Managing Configurations", "url": "deploy/managing-configurations"},
+            {"name": "Containerized Deployment", "url": "deploy/containerized-deployment/introduction-to-containerized-deployment"},
+            {"name": "VM-based Deployment", "url": "deploy/vm-based-deployment/introduction-to-vm-based-deloyment"},
+            {"name": "Managing Configurations", "url": "deploy/managing-configurations"}
         ]
     }
     ],
@@ -62,14 +57,9 @@
         "title": "Observability and Monitoring",
         "icon": "📈 ",
         "links": [
-            {"name": "Overview of Observability in BI", "url": "observability-and-monitoring/overview-of-observability/"},
-            {"name": "Supporting Prometheus in BI", "url": "observability-and-monitoring/supported-observability-tools-and-platforms/prometheus"},
-            {"name": "Supporting Jaeger in BI", "url": "observability-and-monitoring/supported-observability-tools-and-platforms/jaeger"},
-            {"name": "Supporting Zipkin in BI", "url": "observability-and-monitoring/supported-observability-tools-and-platforms/zipkin"},
-            {"name": "Supporting New Relic in BI", "url": "observability-and-monitoring/supported-observability-tools-and-platforms/new-relic"},
-            {"name": "Supporting Datadog in BI", "url": "observability-and-monitoring/supported-observability-tools-and-platforms/datadog"},
-            {"name": "Supporting Elastic Stack in BI", "url": "observability-and-monitoring/supported-observability-tools-and-platforms/elastic-stack"},
-            {"name": "Monitoring with WSO2 Integrator: ICP", "url": "observability-and-monitoring/monitoring-with-wso2-integrator-icp/"}
+            {"name": "Monitoring with WSO2 Integrator: ICP", "url": "observability-and-monitoring/monitoring-with-wso2-integrator-icp"},
+            {"name": "Observability with Devant", "url": "observability-and-monitoring/observability-with-devant"},
+            {"name": "Supporting Observability Tools and Platforms", "url": "observability-and-monitoring/supported-observability-tools-and-platforms/supported-observability-tools"}
         ]
     },
     {

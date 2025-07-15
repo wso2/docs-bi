@@ -117,15 +117,17 @@ nav:
         - Deploy as Docker Image: deploy/containerized-deployment/deploy-as-docker-image.md
         - Deploy on Kubernetes: deploy/containerized-deployment/deploy-on-kubernetes.md
       - VM-based Deployment:
+        - Introduction to VM-based Deployment: deploy/vm-based-deployment/introduction-to-vm-based-deloyment.md
         - Deploy on VM as Executable JAR: deploy/vm-based-deployment/deploy-on-vm-as-executable-jar.md
         - Centralized Deployment: deploy/vm-based-deployment/centralized-deployment.md
         - Decentralized Deployment: deploy/vm-based-deployment/de-centralized-deployment.md
         - GitHub Action for CICD: deploy/vm-based-deployment/github-action-for-cicd.md
       - Managing configurations: deploy/managing-configurations.md
   - Observability and Monitoring:
-      - "Overview of Observability in BI": observability-and-monitoring/overview-of-observability.md
       - "Monitoring with WSO2 Integrator: ICP": observability-and-monitoring/monitoring-with-wso2-integrator-icp.md
+      - "Observability with Devant": observability-and-monitoring/observability-with-devant.md
       - Supported Observability Tools and Platforms:
+        - Supported Observability Tools and Platforms: observability-and-monitoring/supported-observability-tools-and-platforms/supported-observability-tools.md
         - Supporting Prometheus in BI: observability-and-monitoring/supported-observability-tools-and-platforms/prometheus.md
         - Supporting Jaeger in BI: observability-and-monitoring/supported-observability-tools-and-platforms/jaeger.md
         - Supporting Zipkin in BI: observability-and-monitoring/supported-observability-tools-and-platforms/zipkin.md

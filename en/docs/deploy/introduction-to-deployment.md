@@ -1,6 +1,6 @@
 # Introduction to Deployment
 
-## Deplyment Options
+## Deployment Options
 
 WSO2 Integrator: BI supports flexible deployment models that can be grouped into two main categories:
 
@@ -28,9 +28,9 @@ WSO2 Integrator: BI supports flexible deployment models that can be grouped into
 
 To address different architectural and operational requirements, WSO2 Integrator: BI supports both centralized and decentralized deployment patterns:
 
- - <b>Centralized Deployment</b>: Consolidates multiple BI artifacts into a single deployable unit. This pattern simplifies deployment, reduces resource consumption, and is ideal for tightly coupled integration solutions.
+* <b>Centralized Deployment</b>: Consolidates multiple BI artifacts into a single deployable unit. This pattern simplifies deployment, reduces resource consumption, and is ideal for tightly coupled integration solutions.
 
-- <b>Decentralized Deployment</b>: Each BI component is packaged and deployed independently. This allows teams to iterate and release components separately, improving agility and scalability in microservice-oriented environments.
+* <b>Decentralized Deployment</b>: Each BI component is packaged and deployed independently. This allows teams to iterate and release components separately, improving agility and scalability in microservice-oriented environments.
 
 You can choose a pattern based on your team's workflows, size of the integration solution, and deployment control requirements.
 
@@ -129,3 +129,10 @@ http {
 
 ???+ Tip "Best Practice"
     Ensure identical configurations across all instances and automate deployments for consistency.
+
+You can visit the following sections to get an understanding on the possible deployment and configuration options.
+
+* [Containerized Deployment](/deploy/containerized-deployment/introduction-to-containerized-deployment)
+* [VM-based Deployment](/deploy/vm-based-deployment/introduction-to-vm-based-deloyment)
+* [Deploy to Devant](/deploy/deploy-to-devant)
+* [Managing Configurations](/deploy/managing-configurations)

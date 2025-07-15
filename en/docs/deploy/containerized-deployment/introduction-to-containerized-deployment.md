@@ -20,3 +20,6 @@ Containerized deployment ensures:
 * Easier integration with CI/CD pipelines and cloud infrastructure.
 
 In the following sections, you will learn how to package and deploy your BI projects using Docker and Kubernetes, along with best practices and configuration options.
+
+* [Deploy as Docker Image](/deploy/containerized-deployment/deploy-as-docker-image)
+* [Deploy on Kubernetes](/deploy/containerized-deployment/deploy-on-kubernetes)

@@ -1,4 +1,4 @@
-# Overview of Observability in WSO2 Integrator: BI
+# Supported Observability Tools and Platforms
 
 Observability is a measure of how well the internal states of a system can be understood from its external outputs.
 
@@ -204,3 +204,10 @@ Observability tools and platforms help monitor and analyze application performan
 - **[Elastic Stack](https://www.elastic.co/elastic-stack):** A collection of tools (Elasticsearch, Logstash, Kibana) for centralized logging and analytics.
 
 The following sections contain guides to set up and observe BI programs in each of the observability tools or platforms mentioned above.
+
+* [Supporting Prometheus on BI](/observability-and-monitoring/supported-observability-tools-and-platforms/prometheus)
+* [Supporting Jaeger on BI](/observability-and-monitoring/supported-observability-tools-and-platforms/jaeger)
+* [Supporting Zipkin on BI](/observability-and-monitoring/supported-observability-tools-and-platforms/zipkin)
+* [Supporting New Relic on BI](/observability-and-monitoring/supported-observability-tools-and-platforms/new-relic)
+* [Supporting Datadog on BI](/observability-and-monitoring/supported-observability-tools-and-platforms/datadog)
+* [Supporting Elastic Stack on BI](/observability-and-monitoring/supported-observability-tools-and-platforms/elastic-stack)
