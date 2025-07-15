@@ -1,12 +1,12 @@
 # De-centralized Deployment
 
-The decentralized deployment offers a straightforward approach, ideal for simpler applications or when direct control over individual deployments is preferred. In this method, BI artifacts are developed and published to a registry (a storage location for deployable components). The deployment process retrieves these artifacts and deploys them to the target environment, ensuring all necessary dependencies and configurations are included.
+The de-centralized deployment offers a straightforward approach, ideal for simpler applications or when direct control over individual deployments is preferred. In this method, BI artifacts are developed and published to a registry (a storage location for deployable components). The deployment process retrieves these artifacts and deploys them to the target environment, ensuring all necessary dependencies and configurations are included.
 
 ## Continuous Integration (CI)
 
-Continuous Integration (CI) in decentralized deployment streamlines development by automating the building, testing, and publishing of individual BI artifacts, ensuring faster feedback and fewer integration issues.
+Continuous Integration (CI) in de-centralized deployment streamlines development by automating the building, testing, and publishing of individual BI artifacts, ensuring faster feedback and fewer integration issues.
 
-The following steps outline the CI process of the decentralized deployment:
+The following steps outline the CI process of the de-centralized deployment:
 
 1. Prepare the Server Environment by provisioning the VM or Bare Metal Server.
    - Ensure the server meets the hardware requirements for your application (CPU, memory, disk space, etc.).
@@ -41,4 +41,4 @@ The following steps outline the CI process of the decentralized deployment:
 
 ### Continuous Deployment (CD)
 
-The Continuous Deployment (CD) process in a decentralized setup involves automating the deployment of Ballerina artifacts to the target environment.  This typically involves using a deployment workflow or pipeline to retrieve the built artifacts from the registry, configure the target environment, deploy the application, and verify its successful deployment.
+The Continuous Deployment (CD) process in a de-centralized setup involves automating the deployment of Ballerina artifacts to the target environment. This typically involves using a deployment workflow or pipeline to retrieve the built artifacts from the registry, configure the target environment, deploy the application, and verify its successful deployment.

@@ -110,7 +110,7 @@ nav:
           - Mulesoft Migration Tool: developer-guides/tools/migration-tools/mulesoft-migration-tool.md
           - TIBCO BusinessWorks Migration Tool: developer-guides/tools/migration-tools/tibco-businessworks-migration-tool.md
   - Deploy:
-      - Introduction to Deployment: deploy/introduction-to-deployment.md
+      - Overview of Deployment Options: deploy/overview-of-deployment-options.md
       - Deploy to Devant: deploy/deploy-to-devant.md
       - Containerized Deployment:
         - Introduction to Containerized Deployment: deploy/containerized-deployment/introduction-to-containerized-deployment.md
@@ -124,6 +124,7 @@ nav:
         - GitHub Action for CICD: deploy/vm-based-deployment/github-action-for-cicd.md
       - Managing configurations: deploy/managing-configurations.md
   - Observability and Monitoring:
+      - overview-of-observability: observability-and-monitoring/overview-of-observability.md
       - "Monitoring with WSO2 Integrator: ICP": observability-and-monitoring/monitoring-with-wso2-integrator-icp.md
       - "Observability with Devant": observability-and-monitoring/observability-with-devant.md
       - Supported Observability Tools and Platforms:

@@ -84,6 +84,6 @@ The deployment repository acts as the central hub for production-ready integrati
     - Click on the **Deploy on VM** under the **Deployment Options** section in the right panel.
     - Click **Create Executable** button.       
         <a href="{{base_path}}/assets/img/deploy/jar.gif"><img src="{{base_path}}/assets/img/deploy/jar.gif" alt="Build JAR" width="70%"></a> 
-    - The integration will be built as an executable JAR and the JAR file will be available in the `target\bin` directory of the project.
+    - The integration will be built as an executable JAR, and the JAR file will be available in the `target\bin` directory of the project.
 
 The generated Ballerina artifact can be deployed to the target environment, configuring necessary environment variables and system settings.

@@ -10,7 +10,7 @@ There are two primary approaches to containerized deployment:
   Ideal for local development, testing, or simple production environments. The integration runtime is encapsulated in a Docker image, which can be built, run, and managed using standard Docker tools.
 
 * **Kubernetes Deployment:**
-  Suitable for orchestrating containerized applications at scale. Kubernetes provides advanced capabilities like auto-scaling, service discovery, rolling updates, and self-healing making it the preferred choice for cloud-native and enterprise-grade deployments.
+  Suitable for orchestrating containerized applications at scale. Kubernetes provides advanced capabilities like auto-scaling, service discovery, rolling updates, and self-healing, making it the preferred choice for cloud-native and enterprise-grade deployments.
 
 Containerized deployment ensures:
 
