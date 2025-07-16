@@ -1,7 +1,34 @@
 # Deploy to Devant
-[Devant](https://console.devant.dev/) is a powerful IPaaS with first-class AI support. Incorporate AI agents into the integrations you build in low-code and pro-code, and move away from siloed systems to intelligent digital experiences with Devant by WSO2—the AI iPaaS that your AI Agents can call “home”.
-WSO2 Integrator: BI provides a seamless integration experience with Devant. You can deploy your integrations to Devant with just a few clicks.
 
-Refer to the [Devant quick start guide](https://wso2.com/devant/docs/quick-start-guides/schedule-your-first-automation/) to deploy your integration in Devant. This guide provides step-by-step instructions to help you set up, configure, and successfully execute your integration with minimal effort.
+[Devant](https://console.devant.dev/) is a powerful IPaaS with first-class AI support. Incorporate AI agents into the integrations you build in low-code and pro-code, and move away from siloed systems to intelligent digital experiences with Devant by WSO2—the AI iPaaS that your AI Agents can call 'home'.
+BI provides a seamless integration experience with Devant. You can deploy your integrations to Devant with just a few clicks.
 
-<a href="{{base_path}}/assets/img/deploy/devant.png"><img src="{{base_path}}/assets/img/deploy/devant.png" alt="Devant" width="70%"></a>
+#### Step 1: Login and Create a project in Devant
+
+* Navigate to the Visualizer view by clicking on the BI icon on the sidebar.
+
+* On the right hand side, under `Deployment Options` select `Deploy to Devant`.
+
+<a href="{{base_path}}/assets/img/deploy/devant_1.gif"><img src="{{base_path}}/assets/img/deploy/devant_1.gif" alt="Deploy to Devant" width="70%"></a>
+
+* Login to Devant organization and create a project
+
+<a href="{{base_path}}/assets/img/deploy/devant_2.gif"><img src="{{base_path}}/assets/img/deploy/devant_2.gif" alt="Login to Devant" width="70%"></a> 
+
+#### Step 2: Initialize the source as a Git repository and push the changes
+
+Go to the `Source Control` view and follow the steps to create a Git repository and commit your changes.
+
+<a href="{{base_path}}/assets/img/deploy/devant_3.gif"><img src="{{base_path}}/assets/img/deploy/devant_3.gif" alt="Initialize Source" width="70%"></a> 
+
+#### Step 3: Create the integration on Devant
+
+Once the source is pushed to GitHub, you can configure the build details and create the integration in Devant.
+
+<a href="{{base_path}}/assets/img/deploy/devant_4.gif"><img src="{{base_path}}/assets/img/deploy/devant_4.gif" alt="Create Integration on Devant" width="70%"></a>
+
+#### Step 4: View the integration on Devant
+
+Once the integration is deployed to Devant, the `Deployment Options` panel displays a `View in Devant` link. This opens the Devant overview page, where you can view logs, update configurations, test the integration, promote it to higher environments, and perform many other management tasks.
+
+<a href="{{base_path}}/assets/img/deploy/devant_5.gif"><img src="{{base_path}}/assets/img/deploy/devant_5.gif" alt="Create Integration on Devant" width="70%"></a>

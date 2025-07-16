@@ -110,11 +110,31 @@ nav:
           - Mulesoft Migration Tool: developer-guides/tools/migration-tools/mulesoft-migration-tool.md
           - TIBCO BusinessWorks Migration Tool: developer-guides/tools/migration-tools/tibco-businessworks-migration-tool.md
   - Deploy:
+      - Overview: deploy/overview.md
       - Deploy to Devant: deploy/deploy-to-devant.md
-      - Deploy on VM as Executable JAR: deploy/deploy-on-vm-as-executable-jar.md
-      - Deploy as Docker Image: deploy/deploy-as-docker-image.md
+      - Containerized Deployment:
+        - Overview: deploy/containerized-deployment/overview.md
+        - Deploy as Docker Image: deploy/containerized-deployment/deploy-as-docker-image.md
+        - Deploy on Kubernetes: deploy/containerized-deployment/deploy-on-kubernetes.md
+      - VM-based Deployment:
+        - Overview: deploy/vm-based-deployment/overview.md
+        - Deploy on VM as Executable JAR: deploy/vm-based-deployment/deploy-on-vm-as-executable-jar.md
+        - Centralized Deployment: deploy/vm-based-deployment/centralized-deployment.md
+        - Decentralized Deployment: deploy/vm-based-deployment/de-centralized-deployment.md
+        - GitHub Action for CICD: deploy/vm-based-deployment/github-action-for-cicd.md
+      - Managing configurations: deploy/managing-configurations.md
   - Observability and Monitoring:
+      - Overview: observability-and-monitoring/overview.md
       - "Monitoring with WSO2 Integrator: ICP": observability-and-monitoring/monitoring-with-wso2-integrator-icp.md
+      - Observability with Devant: observability-and-monitoring/observability-with-devant.md
+      - Supported Observability Tools and Platforms:
+        - Overview: observability-and-monitoring/supported-observability-tools-and-platforms/overview.md
+        - Prometheus: observability-and-monitoring/supported-observability-tools-and-platforms/prometheus.md
+        - Jaeger: observability-and-monitoring/supported-observability-tools-and-platforms/jaeger.md
+        - Zipkin: observability-and-monitoring/supported-observability-tools-and-platforms/zipkin.md
+        - New Relic: observability-and-monitoring/supported-observability-tools-and-platforms/new-relic.md
+        - Datadog: observability-and-monitoring/supported-observability-tools-and-platforms/datadog.md
+        - Elastic Stack: observability-and-monitoring/supported-observability-tools-and-platforms/elastic-stack.md
   - References:
       - "Enterprise Integrations Patterns": references/enterprise-integrations-patterns.md
       
@@ -198,4 +218,4 @@ extra:
       link: https://www.linkedin.com/company/wso2
   # site_version: Uncomment to specify a version
   base_path: https://wso2.github.io/docs-bi
-  #base_path: http://localhost:8000
+  # base_path: http://localhost:8000

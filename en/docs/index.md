@@ -44,9 +44,11 @@
         "title": "Deploy",
         "icon": "⚙️",
         "links": [
+            {"name": "Overview", "url": "deploy/overview"},
             {"name": "Deploy to Devant", "url": "deploy/deploy-to-devant/"},
-            {"name": "Deploy as a Docker Image", "url": "deploy/deploy-as-docker-image/"},
-            {"name": "Deploy on VM as an Executable JAR", "url": "deploy/deploy-on-vm-as-executable-jar/"}
+            {"name": "Containerized Deployment", "url": "deploy/containerized-deployment/overview"},
+            {"name": "VM-based Deployment", "url": "deploy/vm-based-deployment/overview"},
+            {"name": "Managing Configurations", "url": "deploy/managing-configurations"}
         ]
     }
     ],
@@ -55,7 +57,10 @@
         "title": "Observability and Monitoring",
         "icon": "📈 ",
         "links": [
-            {"name": "Monitoring with WSO2 Integrator: ICP", "url": "observability-and-monitoring/monitoring-with-wso2-integrator-icp/"}
+            {"name": "Overview", "url": "observability-and-monitoring/overview"},
+            {"name": "Monitoring with WSO2 Integrator: ICP", "url": "observability-and-monitoring/monitoring-with-wso2-integrator-icp"},
+            {"name": "Observability with Devant", "url": "observability-and-monitoring/observability-with-devant"},
+            {"name": "Supporting Observability Tools and Platforms", "url": "observability-and-monitoring/supported-observability-tools-and-platforms/overview"}
         ]
     },
     {

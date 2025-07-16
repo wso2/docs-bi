@@ -1,8 +1,7 @@
 # Monitoring with WSO2 Integrator: ICP
 
 The [WSO2 Integrator: ICP](https://wso2.com/integrator/icp/) monitors the runtime artifacts in a deployment. It provides a graphical view of the integration artifacts that are deployed.
-In this guide, you will learn how to enable ICP for an integration developed using WSO2 Integrator: BI. 
-
+In this guide, you will learn how to enable ICP for an integration developed using WSO2 Integrator: BI.
 
 ## Prerequisites
 1. Java 11 or later versions should be installed on your machine.
