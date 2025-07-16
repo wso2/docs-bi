@@ -12,27 +12,27 @@
         <meta name="author" content="WSO2">
       
       
-        <link rel="canonical" href="https://bi.docs.wso2.com/deploy/deploy-as-docker-image/">
+        <link rel="canonical" href="https://bi.docs.wso2.com/deploy/vm-based-deployment/centralized-deployment/">
       
       
         <link rel="prev" href="../deploy-on-vm-as-executable-jar/">
       
       
-        <link rel="next" href="../../observability-and-monitoring/monitoring-with-wso2-integrator-icp/">
+        <link rel="next" href="../de-centralized-deployment/">
       
-      <link rel="icon" href="../../images/bi-logo.svg">
+      <link rel="icon" href="../../../images/bi-logo.svg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
     
     
       
-        <title>Deploy as Docker Image - WSO2 Integrator: BI Documentation</title>
+        <title>Centralized Deployment - WSO2 Integrator: BI Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7bf56d0a.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7bf56d0a.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -51,21 +51,21 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/lib/highlightjs/styles/vs.min.css">
+      <link rel="stylesheet" href="../../../assets/lib/highlightjs/styles/vs.min.css">
     
-      <link rel="stylesheet" href="../../assets/css/blue-palette-alt1.css">
+      <link rel="stylesheet" href="../../../assets/css/blue-palette-alt1.css">
     
-      <link rel="stylesheet" href="../../assets/css/mitheme.css">
+      <link rel="stylesheet" href="../../../assets/css/mitheme.css">
     
-      <link rel="stylesheet" href="../../assets/css/custom.css">
+      <link rel="stylesheet" href="../../../assets/css/custom.css">
     
-      <link rel="stylesheet" href="../../assets/lib/json-formatter/json-formatter.css">
+      <link rel="stylesheet" href="../../../assets/lib/json-formatter/json-formatter.css">
     
-      <link rel="stylesheet" href="../../assets/css/config-catalog.css">
+      <link rel="stylesheet" href="../../../assets/css/config-catalog.css">
     
-      <link rel="stylesheet" href="../../assets/lib/fontawesome-free-6.3.0-web/css/all.min.css">
+      <link rel="stylesheet" href="../../../assets/lib/fontawesome-free-6.3.0-web/css/all.min.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){
@@ -105,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#deploy-as-a-docker-image" class="md-skip">
+        <a href="#centralized-deployment" class="md-skip">
           Skip to content
         </a>
       
@@ -139,10 +139,10 @@
 
 <header class="md-header md-header--shadow" data-md-component="header" id="page-header" data-url="" data-lang="en">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="WSO2 Integrator: BI Documentation"
+    <a href="../../.." title="WSO2 Integrator: BI Documentation"
        class="md-header__button md-logo" aria-label="WSO2 Integrator: BI Documentation" data-md-component="logo">
       
-  <img src="../../images/logo.svg" alt="logo">
+  <img src="../../../images/logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -158,7 +158,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Deploy as Docker Image
+              Centralized Deployment
             
           </span>
         </div>
@@ -284,9 +284,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="WSO2 Integrator: BI Documentation" class="md-nav__button md-logo" aria-label="WSO2 Integrator: BI Documentation" data-md-component="logo">
+    <a href="../../.." title="WSO2 Integrator: BI Documentation" class="md-nav__button md-logo" aria-label="WSO2 Integrator: BI Documentation" data-md-component="logo">
       
-  <img src="../../images/logo.svg" alt="logo">
+  <img src="../../../images/logo.svg" alt="logo">
 
     </a>
     WSO2 Integrator: BI Documentation
@@ -314,7 +314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -356,7 +356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../get-started/quick-start-guide/" class="md-nav__link">
+      <a href="../../../get-started/quick-start-guide/" class="md-nav__link">
         Quick Start Guide
       </a>
     </li>
@@ -370,7 +370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../get-started/install-wso2-integrator-bi/" class="md-nav__link">
+      <a href="../../../get-started/install-wso2-integrator-bi/" class="md-nav__link">
         Install WSO2 Integrator: BI
       </a>
     </li>
@@ -411,7 +411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../get-started/develop-automation/" class="md-nav__link">
+      <a href="../../../get-started/develop-automation/" class="md-nav__link">
         Develop Automation
       </a>
     </li>
@@ -425,7 +425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../get-started/develop-ai-agent/" class="md-nav__link">
+      <a href="../../../get-started/develop-ai-agent/" class="md-nav__link">
         Develop AI Agent
       </a>
     </li>
@@ -439,7 +439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../get-started/develop-integration-as-api/" class="md-nav__link">
+      <a href="../../../get-started/develop-integration-as-api/" class="md-nav__link">
         Develop Integration as API
       </a>
     </li>
@@ -453,7 +453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../get-started/develop-event-integration/" class="md-nav__link">
+      <a href="../../../get-started/develop-event-integration/" class="md-nav__link">
         Develop Event Integration
       </a>
     </li>
@@ -467,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../get-started/develop-file-integration/" class="md-nav__link">
+      <a href="../../../get-started/develop-file-integration/" class="md-nav__link">
         Develop File Integration
       </a>
     </li>
@@ -550,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integration-guides/ai/natural-functions/natural-functions/" class="md-nav__link">
+      <a href="../../../integration-guides/ai/natural-functions/natural-functions/" class="md-nav__link">
         Natural functions
       </a>
     </li>
@@ -591,7 +591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integration-guides/ai/rag/build-a-rag-application/" class="md-nav__link">
+      <a href="../../../integration-guides/ai/rag/build-a-rag-application/" class="md-nav__link">
         Build a RAG Application
       </a>
     </li>
@@ -639,7 +639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integration-guides/ai/agents/" class="md-nav__link">
+      <a href="../../../integration-guides/ai/agents/" class="md-nav__link">
         Agents Overview
       </a>
     </li>
@@ -653,7 +653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integration-guides/ai/agents/introduction-to-chat-agents/" class="md-nav__link">
+      <a href="../../../integration-guides/ai/agents/introduction-to-chat-agents/" class="md-nav__link">
         Introduction to Chat Agents
       </a>
     </li>
@@ -667,7 +667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integration-guides/ai/agents/introduction-to-inline-agents/" class="md-nav__link">
+      <a href="../../../integration-guides/ai/agents/introduction-to-inline-agents/" class="md-nav__link">
         Introduction to Inline Agents
       </a>
     </li>
@@ -681,7 +681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integration-guides/ai/agents/integrating-agents-with-external-endpoints/" class="md-nav__link">
+      <a href="../../../integration-guides/ai/agents/integrating-agents-with-external-endpoints/" class="md-nav__link">
         Integrating Agents with External Endpoints
       </a>
     </li>
@@ -736,7 +736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integration-guides/integration-as-api/service-orchestration/" class="md-nav__link">
+      <a href="../../../integration-guides/integration-as-api/service-orchestration/" class="md-nav__link">
         Service Orchestration
       </a>
     </li>
@@ -750,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integration-guides/integration-as-api/message-transformation/" class="md-nav__link">
+      <a href="../../../integration-guides/integration-as-api/message-transformation/" class="md-nav__link">
         Message Transformation
       </a>
     </li>
@@ -764,7 +764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integration-guides/integration-as-api/message-routing/" class="md-nav__link">
+      <a href="../../../integration-guides/integration-as-api/message-routing/" class="md-nav__link">
         Message Routing
       </a>
     </li>
@@ -812,7 +812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integration-guides/file-integration/file-integration-with-directory-service/" class="md-nav__link">
+      <a href="../../../integration-guides/file-integration/file-integration-with-directory-service/" class="md-nav__link">
         File Integration With Directory Service
       </a>
     </li>
@@ -868,7 +868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer-guides/create-a-project/" class="md-nav__link">
+      <a href="../../../developer-guides/create-a-project/" class="md-nav__link">
         Create a Project
       </a>
     </li>
@@ -882,7 +882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer-guides/wso2-integrator-bi-artifacts/" class="md-nav__link">
+      <a href="../../../developer-guides/wso2-integrator-bi-artifacts/" class="md-nav__link">
         WSO2 Integrator: BI Artifacts
       </a>
     </li>
@@ -896,7 +896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer-guides/design-the-integrations/" class="md-nav__link">
+      <a href="../../../developer-guides/design-the-integrations/" class="md-nav__link">
         Design the Integrations
       </a>
     </li>
@@ -910,7 +910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer-guides/data-mapping/" class="md-nav__link">
+      <a href="../../../developer-guides/data-mapping/" class="md-nav__link">
         Data Mapping
       </a>
     </li>
@@ -924,7 +924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer-guides/try-the-integration/" class="md-nav__link">
+      <a href="../../../developer-guides/try-the-integration/" class="md-nav__link">
         Try the Integration
       </a>
     </li>
@@ -965,7 +965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot/" class="md-nav__link">
+      <a href="../../../developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot/" class="md-nav__link">
         Build an HTTP Service With WSO2 Copilot
       </a>
     </li>
@@ -1040,7 +1040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer-guides/tools/migration-tools/mulesoft-migration-tool/" class="md-nav__link">
+      <a href="../../../developer-guides/tools/migration-tools/mulesoft-migration-tool/" class="md-nav__link">
         Mulesoft Migration Tool
       </a>
     </li>
@@ -1054,7 +1054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer-guides/tools/migration-tools/tibco-businessworks-migration-tool/" class="md-nav__link">
+      <a href="../../../developer-guides/tools/migration-tools/tibco-businessworks-migration-tool/" class="md-nav__link">
         TIBCO BusinessWorks Migration Tool
       </a>
     </li>
@@ -1119,8 +1119,141 @@
   
   
     <li class="md-nav__item">
-      <a href="../deploy-to-devant/" class="md-nav__link">
+      <a href="../../overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deploy-to-devant/" class="md-nav__link">
         Deploy to Devant
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+          Containerized Deployment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Containerized Deployment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../containerized-deployment/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../containerized-deployment/deploy-as-docker-image/" class="md-nav__link">
+        Deploy as Docker Image
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../containerized-deployment/deploy-on-kubernetes/" class="md-nav__link">
+        Deploy on Kubernetes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+          VM-based Deployment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          VM-based Deployment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        Overview
       </a>
     </li>
   
@@ -1156,10 +1289,205 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Centralized Deployment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Deploy as Docker Image
+        Centralized Deployment
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#source-repository-ci" class="md-nav__link">
+    Source Repository (CI)
+  </a>
+  
+    <nav class="md-nav" aria-label="Source Repository (CI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steps-in-the-ci-process" class="md-nav__link">
+    Steps in the CI Process:
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps in the CI Process:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-prepare-server-environment" class="md-nav__link">
+    Step 1: Prepare Server Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-install-prerequisites" class="md-nav__link">
+    Step 2: Install prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-create-and-implement-bi-projects" class="md-nav__link">
+    Step 3: Create and Implement BI Projects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-add-tests" class="md-nav__link">
+    Step 4: Add Tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-build-the-artifacts" class="md-nav__link">
+    Step 5: Build the Artifacts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-publish-artifacts" class="md-nav__link">
+    Step 6: Publish Artifacts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-repository-cd" class="md-nav__link">
+    Deployment Repository (CD)
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment Repository (CD)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steps-in-the-cd-process" class="md-nav__link">
+    Steps in the CD Process:
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps in the CD Process:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-prepare-the-runtime-environment" class="md-nav__link">
+    Step 1: Prepare the Runtime Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-fetch-and-consolidate-artifacts" class="md-nav__link">
+    Step 2: Fetch and Consolidate Artifacts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-add-integration-tests-to-the-consolidated-project" class="md-nav__link">
+    Step 3: Add integration tests to the consolidated project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-create-the-executable-jar-for-the-project" class="md-nav__link">
+    Step 4: Create the executable JAR for the project
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../de-centralized-deployment/" class="md-nav__link">
+        Decentralized Deployment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../github-action-for-cicd/" class="md-nav__link">
+        GitHub Action for CICD
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managing-configurations/" class="md-nav__link">
+        Managing configurations
+      </a>
     </li>
   
 
@@ -1206,9 +1534,169 @@
   
   
     <li class="md-nav__item">
-      <a href="../../observability-and-monitoring/monitoring-with-wso2-integrator-icp/" class="md-nav__link">
+      <a href="../../../observability-and-monitoring/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observability-and-monitoring/monitoring-with-wso2-integrator-icp/" class="md-nav__link">
         Monitoring with WSO2 Integrator: ICP
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observability-and-monitoring/observability-with-devant/" class="md-nav__link">
+        Observability with Devant
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+          Supported Observability Tools and Platforms
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          Supported Observability Tools and Platforms
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observability-and-monitoring/supported-observability-tools-and-platforms/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observability-and-monitoring/supported-observability-tools-and-platforms/prometheus/" class="md-nav__link">
+        Prometheus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observability-and-monitoring/supported-observability-tools-and-platforms/jaeger/" class="md-nav__link">
+        Jaeger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observability-and-monitoring/supported-observability-tools-and-platforms/zipkin/" class="md-nav__link">
+        Zipkin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observability-and-monitoring/supported-observability-tools-and-platforms/new-relic/" class="md-nav__link">
+        New Relic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observability-and-monitoring/supported-observability-tools-and-platforms/datadog/" class="md-nav__link">
+        Datadog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../observability-and-monitoring/supported-observability-tools-and-platforms/elastic-stack/" class="md-nav__link">
+        Elastic Stack
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -1255,7 +1743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../references/enterprise-integrations-patterns/" class="md-nav__link">
+      <a href="../../../references/enterprise-integrations-patterns/" class="md-nav__link">
         Enterprise Integrations Patterns
       </a>
     </li>
@@ -1289,6 +1777,136 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#source-repository-ci" class="md-nav__link">
+    Source Repository (CI)
+  </a>
+  
+    <nav class="md-nav" aria-label="Source Repository (CI)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steps-in-the-ci-process" class="md-nav__link">
+    Steps in the CI Process:
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps in the CI Process:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-prepare-server-environment" class="md-nav__link">
+    Step 1: Prepare Server Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-install-prerequisites" class="md-nav__link">
+    Step 2: Install prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-create-and-implement-bi-projects" class="md-nav__link">
+    Step 3: Create and Implement BI Projects
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-add-tests" class="md-nav__link">
+    Step 4: Add Tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-build-the-artifacts" class="md-nav__link">
+    Step 5: Build the Artifacts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-publish-artifacts" class="md-nav__link">
+    Step 6: Publish Artifacts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-repository-cd" class="md-nav__link">
+    Deployment Repository (CD)
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment Repository (CD)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#steps-in-the-cd-process" class="md-nav__link">
+    Steps in the CD Process:
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps in the CD Process:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-prepare-the-runtime-environment" class="md-nav__link">
+    Step 1: Prepare the Runtime Environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-fetch-and-consolidate-artifacts" class="md-nav__link">
+    Step 2: Fetch and Consolidate Artifacts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-add-integration-tests-to-the-consolidated-project" class="md-nav__link">
+    Step 3: Add integration tests to the consolidated project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-create-the-executable-jar-for-the-project" class="md-nav__link">
+    Step 4: Create the executable JAR for the project
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1303,7 +1921,7 @@
                   
 
   
-    <a href="https://github.com/wso2/docs-bi/edit/main/en/docs/deploy/deploy-as-docker-image.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/wso2/docs-bi/edit/main/en/docs/deploy/vm-based-deployment/centralized-deployment.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1312,26 +1930,93 @@
     
       
     
-    <a href="https://github.com/wso2/docs-bi/raw/main/en/docs/deploy/deploy-as-docker-image.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/wso2/docs-bi/raw/main/en/docs/deploy/vm-based-deployment/centralized-deployment.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-<h1 id="deploy-as-a-docker-image">Deploy as a Docker Image<a class="headerlink" href="#deploy-as-a-docker-image" title="Permanent link">&para;</a></h1>
-<p>This guide explains how to deploy an integration as a Docker image.</p>
-<ol>
-<li>Navigate to the Visualizer view by clicking on the BI icon on the sidebar.</li>
-<li>Click on the <strong>Deploy with Docker</strong> under the <strong>Deployment Options</strong> section in the right panel.</li>
-<li>
-<p>Click <strong>Create Docker Image</strong> button.     <br />
-   <a href="https://wso2.github.io/docs-bi/assets/img/deploy/docker.gif"><img src="https://wso2.github.io/docs-bi/assets/img/deploy/docker.gif" alt="Build Docker Image" width="70%"></a></p>
-</li>
-<li>
-<p>The integration will be built as a Docker image and the image will be available in the local Docker registry.</p>
-</li>
-</ol>
+<h1 id="centralized-deployment">Centralized Deployment<a class="headerlink" href="#centralized-deployment" title="Permanent link">&para;</a></h1>
+<p>Managing a large number of BI artifacts across different environments can become complex over time. Each integration flow or service, if deployed independently, can lead to higher operational overhead and increased resource consumption. <strong>Centralized deployment</strong> simplifies this by bundling all related integration artifacts into a single deployable unit, enabling more efficient resource utilization and streamlined deployments. This approach is ideal when multiple integration solutions need to be deployed and managed together across environments.</p>
+<p>Centralized deployment typically involves <strong>two repositories</strong>:</p>
+<h3 id="source-repository-ci">Source Repository (CI)<a class="headerlink" href="#source-repository-ci" title="Permanent link">&para;</a></h3>
+<p>Typically, a single integration can consist of multiple components, each implemented as a separate BI project. These components can represent distinct functionalities or services that collectively form the complete integration solution. By organizing the integration into multiple projects, the source repository ensures modularity, reusability, and easier maintenance. Each project can be developed, tested, and published independently, allowing teams to work on different components in parallel while maintaining a clear separation of concerns.</p>
+<p>The source repository is responsible for the <strong>continuous integration (CI)</strong> process, which includes:</p>
+<h4 id="steps-in-the-ci-process">Steps in the CI Process:<a class="headerlink" href="#steps-in-the-ci-process" title="Permanent link">&para;</a></h4>
+<h5 id="step-1-prepare-server-environment">Step 1: Prepare Server Environment<a class="headerlink" href="#step-1-prepare-server-environment" title="Permanent link">&para;</a></h5>
+<pre class="codehilite"><code class="linenums">- Provision the VM or Bare Metal Server.
+- Ensure the server meets the hardware requirements for your application (CPU, memory, disk space, etc.).
+- Configure the server OS (Linux is recommended for production).</code></pre>
+
+
+<h5 id="step-2-install-prerequisites">Step 2: Install prerequisites<a class="headerlink" href="#step-2-install-prerequisites" title="Permanent link">&para;</a></h5>
+<pre class="codehilite"><code class="linenums"> - Visual Studio Code: Install &lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;Visual Studio Code&lt;/a&gt; if you don't have it already.
+ - WSO2 Integrator: BI Extension: Install the WSO2 Integrator: BI extension. Refer to &lt;a href=&quot;../install-wso2-integrator-bi/&quot;&gt;Install WSO2 Integrator: BI&lt;/a&gt; for detailed instructions.</code></pre>
+
+
+<h5 id="step-3-create-and-implement-bi-projects">Step 3: Create and Implement BI Projects<a class="headerlink" href="#step-3-create-and-implement-bi-projects" title="Permanent link">&para;</a></h5>
+<pre class="codehilite"><code class="linenums">- Create a new integration project using the BI VS Code extension.
+- Implement business logic using the drag-and-drop designer or by writing Ballerina/DSL code.
+
+???+ Tip
+    Use shared modules or libraries for common logic and avoid duplication.</code></pre>
+
+
+<h5 id="step-4-add-tests">Step 4: Add Tests<a class="headerlink" href="#step-4-add-tests" title="Permanent link">&para;</a></h5>
+<pre class="codehilite"><code class="linenums"> - Use the `Test Explorer` to create integration tests for services and connectors.</code></pre>
+
+
+<h5 id="step-5-build-the-artifacts">Step 5: Build the Artifacts<a class="headerlink" href="#step-5-build-the-artifacts" title="Permanent link">&para;</a></h5>
+<pre class="codehilite"><code class="linenums"> - Package the project using the BI toolchain to generate deployable `.zip` or `.jar` artifacts.</code></pre>
+
+
+<h5 id="step-6-publish-artifacts">Step 6: Publish Artifacts<a class="headerlink" href="#step-6-publish-artifacts" title="Permanent link">&para;</a></h5>
+<pre class="codehilite"><code class="linenums">- Push the generated artifacts to a shared artifact repository (e.g., GitHub Packages, Nexus, or internal registry).
+
+???+ Tip
+    Automate the above CI steps using GitHub Actions or your preferred CI tool.</code></pre>
+
+
+<h3 id="deployment-repository-cd">Deployment Repository (CD)<a class="headerlink" href="#deployment-repository-cd" title="Permanent link">&para;</a></h3>
+<p>The deployment repository acts as the central hub for production-ready integration artifacts. It collects and consolidates the required applications from one or more source repositories, enabling centralized configuration and deployment. This repository streamlines the deployment process by orchestrating the integration of these applications and preparing them for deployment to the target environment. By centralizing deployment management, it simplifies configuration, enhances maintainability, and ensures consistency across environments.</p>
+<h4 id="steps-in-the-cd-process">Steps in the CD Process:<a class="headerlink" href="#steps-in-the-cd-process" title="Permanent link">&para;</a></h4>
+<h5 id="step-1-prepare-the-runtime-environment">Step 1: Prepare the Runtime Environment<a class="headerlink" href="#step-1-prepare-the-runtime-environment" title="Permanent link">&para;</a></h5>
+<pre class="codehilite"><code class="linenums">- Provision a server or containerized environment (e.g., Kubernetes, Docker).
+- Install WSO2 Integrator runtime.
+- Ensure external dependencies (databases, message brokers, etc.) are configured.</code></pre>
+
+
+<h5 id="step-2-fetch-and-consolidate-artifacts">Step 2: Fetch and Consolidate Artifacts<a class="headerlink" href="#step-2-fetch-and-consolidate-artifacts" title="Permanent link">&para;</a></h5>
+<pre class="codehilite"><code class="linenums">- Go to the terminal on VSCode and install the `Ballerina consolidate packages` tool
+
+```
+$ bal tool pull consolidate-packages
+```
+
+- Pull integration artifacts from the source/artifact repositories to create a consolidated project
+
+```
+$ bal consolidate-packages new --package-path &lt;consolidated-project-path&gt; &lt;comma-separated-list-of-package-names&gt;
+```
+
+???+ Tip
+    Visit the [Consolidate-packages tool](/learn/consolidate-packages-tool) for more information on how to consolidate Ballerina packages.</code></pre>
+
+
+<h5 id="step-3-add-integration-tests-to-the-consolidated-project">Step 3: Add integration tests to the consolidated project<a class="headerlink" href="#step-3-add-integration-tests-to-the-consolidated-project" title="Permanent link">&para;</a></h5>
+<pre class="codehilite"><code class="linenums">- Use the `Test Explorer` of BI to write and execute tests for the consolidated project.</code></pre>
+
+
+<h5 id="step-4-create-the-executable-jar-for-the-project">Step 4: Create the executable JAR for the project<a class="headerlink" href="#step-4-create-the-executable-jar-for-the-project" title="Permanent link">&para;</a></h5>
+<pre class="codehilite"><code class="linenums">- Navigate to the Visualizer view by clicking on the BI icon on the sidebar.
+- Click on the **Deploy on VM** under the **Deployment Options** section in the right panel.
+- Click **Create Executable** button.       
+    &lt;a href=&quot;https://wso2.github.io/docs-bi/assets/img/deploy/jar.gif&quot;&gt;&lt;img src=&quot;https://wso2.github.io/docs-bi/assets/img/deploy/jar.gif&quot; alt=&quot;Build JAR&quot; width=&quot;70%&quot;&gt;&lt;/a&gt; 
+- The integration will be built as an executable JAR, and the JAR file will be available in the `target\bin` directory of the project.</code></pre>
+
+
+<p>The generated Ballerina artifact can be deployed to the target environment, configuring necessary environment variables and system settings.</p>
 
 
 
@@ -1379,13 +2064,13 @@
     
     
     
-    <a href="../../observability-and-monitoring/monitoring-with-wso2-integrator-icp/" class="md-footer__link md-footer__link--next" aria-label="Next: Monitoring with WSO2 Integrator: ICP" rel="next">
+    <a href="../de-centralized-deployment/" class="md-footer__link md-footer__link--next" aria-label="Next: Decentralized Deployment" rel="next">
       <div class="md-footer__title">
         <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Next
                 </span>
-          Monitoring with WSO2 Integrator: ICP
+          Decentralized Deployment
         </div>
       </div>
       <div class="md-footer__button md-icon">
@@ -1430,16 +2115,16 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "content.action.view", "navigation.path", "navigation.top"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.action.edit", "content.action.view", "navigation.path", "navigation.top"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
       
-        <script src="../../assets/lib/highlightjs/highlight.min.js"></script>
+        <script src="../../../assets/lib/highlightjs/highlight.min.js"></script>
       
-        <script src="../../assets/lib/json-formatter/json-formatter.umd.js"></script>
+        <script src="../../../assets/lib/json-formatter/json-formatter.umd.js"></script>
       
-        <script src="../../assets/js/mitheme.js"></script>
+        <script src="../../../assets/js/mitheme.js"></script>
       
     
   </body>

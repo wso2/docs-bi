@@ -12,27 +12,27 @@
         <meta name="author" content="WSO2">
       
       
-        <link rel="canonical" href="https://bi.docs.wso2.com/deploy/deploy-on-vm-as-executable-jar/">
+        <link rel="canonical" href="https://bi.docs.wso2.com/observability-and-monitoring/supported-observability-tools-and-platforms/elastic-stack/">
       
       
-        <link rel="prev" href="../deploy-to-devant/">
+        <link rel="prev" href="../datadog/">
       
       
-        <link rel="next" href="../deploy-as-docker-image/">
+        <link rel="next" href="../../../references/enterprise-integrations-patterns/">
       
-      <link rel="icon" href="../../images/bi-logo.svg">
+      <link rel="icon" href="../../../images/bi-logo.svg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
     
     
       
-        <title>Deploy on VM as Executable JAR - WSO2 Integrator: BI Documentation</title>
+        <title>Elastic Stack - WSO2 Integrator: BI Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.7bf56d0a.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.7bf56d0a.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a0c5b2b5.min.css">
       
       
 
@@ -51,21 +51,21 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/lib/highlightjs/styles/vs.min.css">
+      <link rel="stylesheet" href="../../../assets/lib/highlightjs/styles/vs.min.css">
     
-      <link rel="stylesheet" href="../../assets/css/blue-palette-alt1.css">
+      <link rel="stylesheet" href="../../../assets/css/blue-palette-alt1.css">
     
-      <link rel="stylesheet" href="../../assets/css/mitheme.css">
+      <link rel="stylesheet" href="../../../assets/css/mitheme.css">
     
-      <link rel="stylesheet" href="../../assets/css/custom.css">
+      <link rel="stylesheet" href="../../../assets/css/custom.css">
     
-      <link rel="stylesheet" href="../../assets/lib/json-formatter/json-formatter.css">
+      <link rel="stylesheet" href="../../../assets/lib/json-formatter/json-formatter.css">
     
-      <link rel="stylesheet" href="../../assets/css/config-catalog.css">
+      <link rel="stylesheet" href="../../../assets/css/config-catalog.css">
     
-      <link rel="stylesheet" href="../../assets/lib/fontawesome-free-6.3.0-web/css/all.min.css">
+      <link rel="stylesheet" href="../../../assets/lib/fontawesome-free-6.3.0-web/css/all.min.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){
@@ -105,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#deploy-on-a-vm-as-an-executable-jar" class="md-skip">
+        <a href="#observe-logs-using-elastic-stack" class="md-skip">
           Skip to content
         </a>
       
@@ -139,10 +139,10 @@
 
 <header class="md-header md-header--shadow" data-md-component="header" id="page-header" data-url="" data-lang="en">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="WSO2 Integrator: BI Documentation"
+    <a href="../../.." title="WSO2 Integrator: BI Documentation"
        class="md-header__button md-logo" aria-label="WSO2 Integrator: BI Documentation" data-md-component="logo">
       
-  <img src="../../images/logo.svg" alt="logo">
+  <img src="../../../images/logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -158,7 +158,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Deploy on VM as Executable JAR
+              Elastic Stack
             
           </span>
         </div>
@@ -284,9 +284,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="WSO2 Integrator: BI Documentation" class="md-nav__button md-logo" aria-label="WSO2 Integrator: BI Documentation" data-md-component="logo">
+    <a href="../../.." title="WSO2 Integrator: BI Documentation" class="md-nav__button md-logo" aria-label="WSO2 Integrator: BI Documentation" data-md-component="logo">
       
-  <img src="../../images/logo.svg" alt="logo">
+  <img src="../../../images/logo.svg" alt="logo">
 
     </a>
     WSO2 Integrator: BI Documentation
@@ -314,7 +314,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -356,7 +356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../get-started/quick-start-guide/" class="md-nav__link">
+      <a href="../../../get-started/quick-start-guide/" class="md-nav__link">
         Quick Start Guide
       </a>
     </li>
@@ -370,7 +370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../get-started/install-wso2-integrator-bi/" class="md-nav__link">
+      <a href="../../../get-started/install-wso2-integrator-bi/" class="md-nav__link">
         Install WSO2 Integrator: BI
       </a>
     </li>
@@ -411,7 +411,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../get-started/develop-automation/" class="md-nav__link">
+      <a href="../../../get-started/develop-automation/" class="md-nav__link">
         Develop Automation
       </a>
     </li>
@@ -425,7 +425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../get-started/develop-ai-agent/" class="md-nav__link">
+      <a href="../../../get-started/develop-ai-agent/" class="md-nav__link">
         Develop AI Agent
       </a>
     </li>
@@ -439,7 +439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../get-started/develop-integration-as-api/" class="md-nav__link">
+      <a href="../../../get-started/develop-integration-as-api/" class="md-nav__link">
         Develop Integration as API
       </a>
     </li>
@@ -453,7 +453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../get-started/develop-event-integration/" class="md-nav__link">
+      <a href="../../../get-started/develop-event-integration/" class="md-nav__link">
         Develop Event Integration
       </a>
     </li>
@@ -467,7 +467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../get-started/develop-file-integration/" class="md-nav__link">
+      <a href="../../../get-started/develop-file-integration/" class="md-nav__link">
         Develop File Integration
       </a>
     </li>
@@ -550,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integration-guides/ai/natural-functions/natural-functions/" class="md-nav__link">
+      <a href="../../../integration-guides/ai/natural-functions/natural-functions/" class="md-nav__link">
         Natural functions
       </a>
     </li>
@@ -591,7 +591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integration-guides/ai/rag/build-a-rag-application/" class="md-nav__link">
+      <a href="../../../integration-guides/ai/rag/build-a-rag-application/" class="md-nav__link">
         Build a RAG Application
       </a>
     </li>
@@ -639,7 +639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integration-guides/ai/agents/" class="md-nav__link">
+      <a href="../../../integration-guides/ai/agents/" class="md-nav__link">
         Agents Overview
       </a>
     </li>
@@ -653,7 +653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integration-guides/ai/agents/introduction-to-chat-agents/" class="md-nav__link">
+      <a href="../../../integration-guides/ai/agents/introduction-to-chat-agents/" class="md-nav__link">
         Introduction to Chat Agents
       </a>
     </li>
@@ -667,7 +667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integration-guides/ai/agents/introduction-to-inline-agents/" class="md-nav__link">
+      <a href="../../../integration-guides/ai/agents/introduction-to-inline-agents/" class="md-nav__link">
         Introduction to Inline Agents
       </a>
     </li>
@@ -681,7 +681,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integration-guides/ai/agents/integrating-agents-with-external-endpoints/" class="md-nav__link">
+      <a href="../../../integration-guides/ai/agents/integrating-agents-with-external-endpoints/" class="md-nav__link">
         Integrating Agents with External Endpoints
       </a>
     </li>
@@ -736,7 +736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integration-guides/integration-as-api/service-orchestration/" class="md-nav__link">
+      <a href="../../../integration-guides/integration-as-api/service-orchestration/" class="md-nav__link">
         Service Orchestration
       </a>
     </li>
@@ -750,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integration-guides/integration-as-api/message-transformation/" class="md-nav__link">
+      <a href="../../../integration-guides/integration-as-api/message-transformation/" class="md-nav__link">
         Message Transformation
       </a>
     </li>
@@ -764,7 +764,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integration-guides/integration-as-api/message-routing/" class="md-nav__link">
+      <a href="../../../integration-guides/integration-as-api/message-routing/" class="md-nav__link">
         Message Routing
       </a>
     </li>
@@ -812,7 +812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../integration-guides/file-integration/file-integration-with-directory-service/" class="md-nav__link">
+      <a href="../../../integration-guides/file-integration/file-integration-with-directory-service/" class="md-nav__link">
         File Integration With Directory Service
       </a>
     </li>
@@ -868,7 +868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer-guides/create-a-project/" class="md-nav__link">
+      <a href="../../../developer-guides/create-a-project/" class="md-nav__link">
         Create a Project
       </a>
     </li>
@@ -882,7 +882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer-guides/wso2-integrator-bi-artifacts/" class="md-nav__link">
+      <a href="../../../developer-guides/wso2-integrator-bi-artifacts/" class="md-nav__link">
         WSO2 Integrator: BI Artifacts
       </a>
     </li>
@@ -896,7 +896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer-guides/design-the-integrations/" class="md-nav__link">
+      <a href="../../../developer-guides/design-the-integrations/" class="md-nav__link">
         Design the Integrations
       </a>
     </li>
@@ -910,7 +910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer-guides/data-mapping/" class="md-nav__link">
+      <a href="../../../developer-guides/data-mapping/" class="md-nav__link">
         Data Mapping
       </a>
     </li>
@@ -924,7 +924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer-guides/try-the-integration/" class="md-nav__link">
+      <a href="../../../developer-guides/try-the-integration/" class="md-nav__link">
         Try the Integration
       </a>
     </li>
@@ -965,7 +965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot/" class="md-nav__link">
+      <a href="../../../developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot/" class="md-nav__link">
         Build an HTTP Service With WSO2 Copilot
       </a>
     </li>
@@ -1040,7 +1040,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer-guides/tools/migration-tools/mulesoft-migration-tool/" class="md-nav__link">
+      <a href="../../../developer-guides/tools/migration-tools/mulesoft-migration-tool/" class="md-nav__link">
         Mulesoft Migration Tool
       </a>
     </li>
@@ -1054,7 +1054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../developer-guides/tools/migration-tools/tibco-businessworks-migration-tool/" class="md-nav__link">
+      <a href="../../../developer-guides/tools/migration-tools/tibco-businessworks-migration-tool/" class="md-nav__link">
         TIBCO BusinessWorks Migration Tool
       </a>
     </li>
@@ -1088,16 +1088,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
       
       
       
@@ -1106,7 +1104,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           Deploy
@@ -1119,8 +1117,408 @@
   
   
     <li class="md-nav__item">
-      <a href="../deploy-to-devant/" class="md-nav__link">
+      <a href="../../../deploy/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deploy/deploy-to-devant/" class="md-nav__link">
         Deploy to Devant
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+          Containerized Deployment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Containerized Deployment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deploy/containerized-deployment/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deploy/containerized-deployment/deploy-as-docker-image/" class="md-nav__link">
+        Deploy as Docker Image
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deploy/containerized-deployment/deploy-on-kubernetes/" class="md-nav__link">
+        Deploy on Kubernetes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+          VM-based Deployment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          VM-based Deployment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deploy/vm-based-deployment/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deploy/vm-based-deployment/deploy-on-vm-as-executable-jar/" class="md-nav__link">
+        Deploy on VM as Executable JAR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deploy/vm-based-deployment/centralized-deployment/" class="md-nav__link">
+        Centralized Deployment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deploy/vm-based-deployment/de-centralized-deployment/" class="md-nav__link">
+        Decentralized Deployment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deploy/vm-based-deployment/github-action-for-cicd/" class="md-nav__link">
+        GitHub Action for CICD
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../deploy/managing-configurations/" class="md-nav__link">
+        Managing configurations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Observability and Monitoring
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Observability and Monitoring
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../monitoring-with-wso2-integrator-icp/" class="md-nav__link">
+        Monitoring with WSO2 Integrator: ICP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observability-with-devant/" class="md-nav__link">
+        Observability with Devant
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+          Supported Observability Tools and Platforms
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          Supported Observability Tools and Platforms
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prometheus/" class="md-nav__link">
+        Prometheus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jaeger/" class="md-nav__link">
+        Jaeger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zipkin/" class="md-nav__link">
+        Zipkin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../new-relic/" class="md-nav__link">
+        New Relic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../datadog/" class="md-nav__link">
+        Datadog
       </a>
     </li>
   
@@ -1142,24 +1540,62 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Elastic Stack
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        Deploy on VM as Executable JAR
+        Elastic Stack
       </a>
       
-    </li>
-  
+        
 
-            
-          
-            
-              
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
-    <li class="md-nav__item">
-      <a href="../deploy-as-docker-image/" class="md-nav__link">
-        Deploy as Docker Image
-      </a>
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-set-up-elastic-stack" class="md-nav__link">
+    Step 1 - Set up Elastic Stack
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-run-ballerina-service" class="md-nav__link">
+    Step 2 - Run Ballerina Service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-send-requests" class="md-nav__link">
+    Step 3 - Send requests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-view-logs-on-kibana" class="md-nav__link">
+    Step 4 - View logs on Kibana
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1167,48 +1603,6 @@
           
         </ul>
       </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-      
-      
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
-      
-      
-      
-        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
-          Observability and Monitoring
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_6">
-          <span class="md-nav__icon md-icon"></span>
-          Observability and Monitoring
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../observability-and-monitoring/monitoring-with-wso2-integrator-icp/" class="md-nav__link">
-        Monitoring with WSO2 Integrator: ICP
-      </a>
     </li>
   
 
@@ -1255,7 +1649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../references/enterprise-integrations-patterns/" class="md-nav__link">
+      <a href="../../../references/enterprise-integrations-patterns/" class="md-nav__link">
         Enterprise Integrations Patterns
       </a>
     </li>
@@ -1289,6 +1683,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-set-up-elastic-stack" class="md-nav__link">
+    Step 1 - Set up Elastic Stack
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-run-ballerina-service" class="md-nav__link">
+    Step 2 - Run Ballerina Service
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-send-requests" class="md-nav__link">
+    Step 3 - Send requests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-view-logs-on-kibana" class="md-nav__link">
+    Step 4 - View logs on Kibana
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1303,7 +1733,7 @@
                   
 
   
-    <a href="https://github.com/wso2/docs-bi/edit/main/en/docs/deploy/deploy-on-vm-as-executable-jar.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/wso2/docs-bi/edit/main/en/docs/observability-and-monitoring/supported-observability-tools-and-platforms/elastic-stack.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1312,26 +1742,127 @@
     
       
     
-    <a href="https://github.com/wso2/docs-bi/raw/main/en/docs/deploy/deploy-on-vm-as-executable-jar.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/wso2/docs-bi/raw/main/en/docs/observability-and-monitoring/supported-observability-tools-and-platforms/elastic-stack.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-<h1 id="deploy-on-a-vm-as-an-executable-jar">Deploy on a VM as an Executable JAR<a class="headerlink" href="#deploy-on-a-vm-as-an-executable-jar" title="Permanent link">&para;</a></h1>
-<p>This guide explains how to deploy an integration as an executable JAR file.</p>
+<h1 id="observe-logs-using-elastic-stack">Observe logs using Elastic Stack<a class="headerlink" href="#observe-logs-using-elastic-stack" title="Permanent link">&para;</a></h1>
+<p>In BI, distributed logging and analysis are supported by the <a href="https://www.elastic.co/elastic-stack">Elastic Stack</a>. BI has a log module for logging into the console. To monitor the logs, the BI standard output needs to be redirected to a file.</p>
+<p>The Elastic Stack comprises the following components.</p>
 <ol>
-<li>Navigate to the Visualizer view by clicking on the BI icon on the sidebar.</li>
-<li>Click on the <strong>Deploy on VM</strong> under the <strong>Deployment Options</strong> section in the right panel.</li>
+<li><strong>Beats</strong> - Multiple agents that ship data to Logstash or Elasticsearch. In our context, Filebeat will ship the BI logs to Logstash. Filebeat should be a container running on the same host as the BI service. This is so that the log file (ballerina.log) can be mounted to the Filebeat container.</li>
+<li><strong>Logstash</strong> - Used to process and structure the log files received from Filebeat and send them to Elasticsearch.</li>
+<li><strong>Elasticsearch</strong> - Storage and indexing of the logs sent by Logstash.</li>
+<li><strong>Kibana</strong> - Visualizes the data stored in Elasticsearch.</li>
+</ol>
+<p>The sample <a href="/observability-and-monitoring/overview#example-observing-a-sample-integration-service">shop service</a> will be used in this guide. Follow the steps given below to observe BI logs in Elastic Stack.</p>
+<h2 id="step-1-set-up-elastic-stack">Step 1 - Set up Elastic Stack<a class="headerlink" href="#step-1-set-up-elastic-stack" title="Permanent link">&para;</a></h2>
+<p>Elasticsearch and Kibana are provided as <a href="https://www.elastic.co/cloud" target="_blank">Cloud services</a>. Alternatively, Docker containers can be used to set up Elasticsearch and Kibana as well.</p>
+<ol>
 <li>
-<p>Click <strong>Create Executable</strong> button.     <br />
-<a href="https://wso2.github.io/docs-bi/assets/img/deploy/jar.gif"><img src="https://wso2.github.io/docs-bi/assets/img/deploy/jar.gif" alt="Build JAR" width="70%"></a></p>
+<p>Download the Docker images using the following commands.</p>
+<div class="highlight"><pre><span></span><code># Elasticsearch Image
+$ docker pull docker.elastic.co/elasticsearch/elasticsearch:8.15.2
+# Kibana Image
+$ docker pull docker.elastic.co/kibana/kibana:8.15.2
+# Filebeat Image
+$ docker pull docker.elastic.co/beats/filebeat:8.15.2
+# Logstash Image
+$ docker pull docker.elastic.co/logstash/logstash:8.15.2
+</code></pre></div>
+
 </li>
 <li>
-<p>The integration will be built as an executable JAR and the JAR file will be available in the <code>target\bin</code> directory of the project.</p>
+<p>Start Elasticsearch and Kibana containers by executing the following commands.</p>
+<div class="highlight"><pre><span></span><code>$ docker run -p 9200:9200 -p 9300:9300 -it -h elasticsearch --name elasticsearch docker.elastic.co/elasticsearch/elasticsearch:8.15.2
+$ docker run -p 5601:5601 -h kibana --name kibana --link elasticsearch:elasticsearch docker.elastic.co/kibana/kibana:8.15.2
+</code></pre></div>
+
+<p>If you are using Linux, you may have to increase the <code>vm.max_map_count</code> for the Elasticsearch container to start. 
+Execute the following command to do that.</p>
+<div class="highlight"><pre><span></span><code>$ sudo sysctl -w vm.max_map_count=262144
+</code></pre></div>
+
+</li>
+<li>
+<p>Create a <code>logstash.conf</code> file in the <code>/tmp/pipeline/</code> directory and include the following content in the file.</p>
+<div class="highlight"><pre><span></span><code>input {
+  beats {
+    port =&gt; 5044
+    }
+}
+filter {
+  grok  {
+    match =&gt; { &quot;message&quot; =&gt; &quot;%{TIMESTAMP_ISO8601:date}%{SPACE}%{WORD:logLevel}%{SPACE}\[%{GREEDYDATA:module}\]%{SPACE}\-%{SPACE}%{GREEDYDATA:logMessage}&quot;}
+  }
+}
+output {
+    elasticsearch {
+        hosts =&gt; &quot;elasticsearch:9200&quot;
+        index =&gt; &quot;ballerina&quot;
+      document_type =&gt; &quot;ballerina_logs&quot;
+    }
+}
+</code></pre></div>
+
+<p>Here, the 3 stages are specified in the pipeline. Input is specified as beats and listens to port 5044. 
+A Grok filter is used to structure the Ballerina logs and the output is specified to push to Elasticsearch on
+<code>elasticsearch:9200</code>.</p>
+</li>
+<li>
+<p>Start the Logstash container by executing the following command.</p>
+<div class="highlight"><pre><span></span><code>$ docker run -h logstash --name logstash --link elasticsearch:elasticsearch -it --rm -v /tmp/pipeline:/usr/share/logstash/pipeline/ -p 5044:5044 docker.elastic.co/logstash/logstash:8.15.2
+</code></pre></div>
+
+</li>
+<li>
+<p>Configure Filebeat to ship the Ballerina logs. Create a <code>filebeat.yml</code> file in the <code>/tmp/</code> directory and include the following content in the file.</p>
+<div class="highlight"><pre><span></span><code>filebeat.prospectors:
+- type: log
+  paths:
+    - /usr/share/filebeat/ballerina.log
+output.logstash:
+  hosts: [&quot;logstash:5044&quot;]
+</code></pre></div>
+
+</li>
+<li>
+<p>Start the Filebeat container with the following command.</p>
+<div class="highlight"><pre><span></span><code>$ docker run -v /tmp/filebeat.yml:/usr/share/filebeat/filebeat.yml -v /&lt;path-to-ballerina.log&gt;/ballerina.log:/usr/share/filebeat/ballerina.log --link logstash:logstash docker.elastic.co/beats/filebeat:8.15.2
+</code></pre></div>
+
+<p>The <code>-v</code> flag is used for bind mounting, where the container will read the file from the host machine. Provide the path to the <code>ballerina.log</code> file to be bind-mounted to the filebeat container.</p>
 </li>
 </ol>
+<h2 id="step-2-run-ballerina-service">Step 2 - Run Ballerina Service<a class="headerlink" href="#step-2-run-ballerina-service" title="Permanent link">&para;</a></h2>
+<p>This can be done by running the Ballerina service using the <code>Run</code> option in BI.</p>
+<h2 id="step-3-send-requests">Step 3 - Send requests<a class="headerlink" href="#step-3-send-requests" title="Permanent link">&para;</a></h2>
+<p>Send requests to <code>http://localhost:8090/shop/products</code>.</p>
+<p>Example cURL commands:</p>
+<p><div class="highlight"><pre><span></span><code>$ curl -X GET http://localhost:8090/shop/products
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>$ curl -X POST http://localhost:8090/shop/product \
+-H &quot;Content-Type: application/json&quot; \
+-d &#39;{
+    &quot;id&quot;: 4, 
+    &quot;name&quot;: &quot;Laptop Charger&quot;, 
+    &quot;price&quot;: 50.00
+}&#39;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>$ curl -X POST http://localhost:8090/shop/order \
+-H &quot;Content-Type: application/json&quot; \
+-d &#39;{
+    &quot;productId&quot;: 1, 
+    &quot;quantity&quot;: 1
+}&#39;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>$ curl -X GET http://localhost:8090/shop/order/0
+</code></pre></div></p>
+<h2 id="step-4-view-logs-on-kibana">Step 4 - View logs on Kibana<a class="headerlink" href="#step-4-view-logs-on-kibana" title="Permanent link">&para;</a></h2>
+<p>Access Kibana to visualize the logs at <code>http://localhost:5601</code>. Add an index named <code>ballerina</code> and click on <code>Discover</code> to visualize the logs.</p>
 
 
 
@@ -1363,7 +1894,7 @@
   <nav class="md-footer__inner md-grid" aria-label="Footer" >
     
     
-    <a href="../deploy-to-devant/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Deploy to Devant" rel="prev">
+    <a href="../datadog/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Datadog" rel="prev">
       <div class="md-footer__button md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </div>
@@ -1372,20 +1903,20 @@
                 <span class="md-footer__direction">
                   Previous
                 </span>
-          Deploy to Devant
+          Datadog
         </div>
       </div>
     </a>
     
     
     
-    <a href="../deploy-as-docker-image/" class="md-footer__link md-footer__link--next" aria-label="Next: Deploy as Docker Image" rel="next">
+    <a href="../../../references/enterprise-integrations-patterns/" class="md-footer__link md-footer__link--next" aria-label="Next: Enterprise Integrations Patterns" rel="next">
       <div class="md-footer__title">
         <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Next
                 </span>
-          Deploy as Docker Image
+          Enterprise Integrations Patterns
         </div>
       </div>
       <div class="md-footer__button md-icon">
@@ -1430,16 +1961,16 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.action.edit", "content.action.view", "navigation.path", "navigation.top"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "content.action.edit", "content.action.view", "navigation.path", "navigation.top"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
       
-        <script src="../../assets/lib/highlightjs/highlight.min.js"></script>
+        <script src="../../../assets/lib/highlightjs/highlight.min.js"></script>
       
-        <script src="../../assets/lib/json-formatter/json-formatter.umd.js"></script>
+        <script src="../../../assets/lib/json-formatter/json-formatter.umd.js"></script>
       
-        <script src="../../assets/js/mitheme.js"></script>
+        <script src="../../../assets/js/mitheme.js"></script>
       
     
   </body>
