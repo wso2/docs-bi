@@ -1,5 +1,3 @@
-# Overview of Deployment Options
-
 ## Deployment Options
 
 WSO2 Integrator: BI supports flexible deployment models that can be grouped into two main categories:
@@ -132,7 +130,7 @@ http {
 
 You can visit the following sections to get an understanding on the possible deployment and configuration options.
 
-* [Containerized Deployment](/deploy/containerized-deployment/introduction-to-containerized-deployment)
-* [VM-based Deployment](/deploy/vm-based-deployment/introduction-to-vm-based-deloyment)
 * [Deploy to Devant](/deploy/deploy-to-devant)
+* [Containerized Deployment](/deploy/containerized-deployment/overview)
+* [VM-based Deployment](/deploy/vm-based-deployment/overview)
 * [Managing Configurations](/deploy/managing-configurations)

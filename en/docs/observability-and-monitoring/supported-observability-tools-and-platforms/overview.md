@@ -2,7 +2,7 @@
 
 Observability is a measure of how well the internal states of a system can be understood from its external outputs.
 
-In WSO2 Integrator: BI, observability is a core feature that helps monitor, debug, and optimize integration services. It focuses on the following three key pillars:
+In BI, observability is a core feature that helps monitor, debug, and optimize integration services. It focuses on the following three key pillars:
 
 <b>Metrics</b> – Numeric data collected and aggregated over time to monitor system performance.
 
@@ -12,11 +12,11 @@ In WSO2 Integrator: BI, observability is a core feature that helps monitor, debu
 
 Observability platforms allow developers and operators to gain insight into system behavior, troubleshoot issues, and ensure reliability in production deployments.
 
-## Observability in WSO2 Integrator: BI
+## Observability in BI
 
-WSO2 Integrator: BI provides built-in support for observability across its runtime. Integration services, APIs, and connectors emit rich telemetry data that can be exported to standard monitoring tools.
+BI provides built-in support for observability across its runtime. Integration services, APIs, and connectors emit rich telemetry data that can be exported to standard monitoring tools.
 
-This guide explains how to enable and configure observability in WSO2 Integrator: BI using a simplified integration example.
+This guide explains how to enable and configure observability in BI using a simplified integration example.
 
 ## Example: Observing a Sample Integration Service
 

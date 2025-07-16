@@ -2,7 +2,7 @@
 
 This guide explains how to deploy an integration in a Kubernetes cluster.
 
-1. Enable Kubernetes artifact build
+## Step 1: Enable Kubernetes artifact build
 
     - Navigate to the Visualizer view by clicking on the BI icon on the sidebar.
     - Go to the `Explorer` view and add the following to `Ballerina.toml` to enable building artifacts for Kubernetes.
@@ -23,7 +23,7 @@ This guide explains how to deploy an integration in a Kubernetes cluster.
 
     <a href="{{base_path}}/assets/img/deploy/k8s_1.gif"><img src="{{base_path}}/assets/img/deploy/k8s_1.gif" alt="Update k8s build configurations" width="70%"></a>
 
-2. Build the artifacts
+## Step 2: Build the artifacts
 
     Go to the terminal in VSCode and build the executable using `bal build`. You'll get an output as follows.
 
@@ -52,7 +52,7 @@ This guide explains how to deploy an integration in a Kubernetes cluster.
     ???+ Info
         This generates the cloud artifacts inside the `target/` directory.
 
-3. Push the Docker image
+## Step 3:  Push the Docker image
 
     Execute the command below to push the created Docker image into Docker Hub for the cluster to get access to the previously built container.
     ```
@@ -69,7 +69,7 @@ This guide explains how to deploy an integration in a Kubernetes cluster.
     latest: digest: sha256:c1acf5165848d70c347a970d6b5c32f63669cdbb0d4c1daca2c91cfbe32f61b2 size: 13718
     ```
 
-4. Deploy on Kubernetes
+## Step 4:  Deploy on Kubernetes
 
     Execute the command below to deploy the application into the Kubernetes cluster.
 

@@ -12,20 +12,20 @@ The source repository is responsible for the **continuous integration (CI)** pro
 
 #### Steps in the CI Process:
 
-1. Prepare Server Environment
+##### Step 1: Prepare Server Environment
 
     - Provision the VM or Bare Metal Server.
     - Ensure the server meets the hardware requirements for your application (CPU, memory, disk space, etc.).
     - Configure the server OS (Linux is recommended for production).
 
 
-2. Install prerequisites
+##### Step 2: Install prerequisites
 
      - Visual Studio Code: Install <a href="https://code.visualstudio.com/">Visual Studio Code</a> if you don't have it already.
      - WSO2 Integrator: BI Extension: Install the WSO2 Integrator: BI extension. Refer to <a href="../install-wso2-integrator-bi/">Install WSO2 Integrator: BI</a> for detailed instructions.
 
 
-2. Create and Implement BI Projects
+##### Step 3: Create and Implement BI Projects
 
     - Create a new integration project using the BI VS Code extension.
     - Implement business logic using the drag-and-drop designer or by writing Ballerina/DSL code.
@@ -33,14 +33,14 @@ The source repository is responsible for the **continuous integration (CI)** pro
     ???+ Tip
         Use shared modules or libraries for common logic and avoid duplication.
 
-3. Add Tests
+##### Step 4: Add Tests
      - Use the `Test Explorer` to create integration tests for services and connectors.
 
-4. Build the Artifacts
+##### Step 5: Build the Artifacts
 
      - Package the project using the BI toolchain to generate deployable `.zip` or `.jar` artifacts.
 
-5. Publish Artifacts
+##### Step 6: Publish Artifacts
 
     - Push the generated artifacts to a shared artifact repository (e.g., GitHub Packages, Nexus, or internal registry).
 
@@ -53,13 +53,13 @@ The deployment repository acts as the central hub for production-ready integrati
 
 #### Steps in the CD Process:
 
-1. Prepare the Runtime Environment
+##### Step 1: Prepare the Runtime Environment
 
     - Provision a server or containerized environment (e.g., Kubernetes, Docker).
     - Install WSO2 Integrator runtime.
     - Ensure external dependencies (databases, message brokers, etc.) are configured.
 
-2. Fetch and Consolidate Artifacts
+##### Step 2: Fetch and Consolidate Artifacts
     - Go to the terminal on VSCode and install the `Ballerina consolidate packages` tool
 
     ```
@@ -75,10 +75,10 @@ The deployment repository acts as the central hub for production-ready integrati
     ???+ Tip
         Visit the [Consolidate-packages tool](/learn/consolidate-packages-tool) for more information on how to consolidate Ballerina packages.
 
-3. Add integration tests to the consolidated project
+##### Step 3: Add integration tests to the consolidated project
     - Use the `Test Explorer` of BI to write and execute tests for the consolidated project.    
 
-4. Create the executable JAR for the project
+##### Step 4: Create the executable JAR for the project
 
     - Navigate to the Visualizer view by clicking on the BI icon on the sidebar.
     - Click on the **Deploy on VM** under the **Deployment Options** section in the right panel.

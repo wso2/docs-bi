@@ -2,7 +2,7 @@
 
 Observability is a measure of how well the internal states of a system can be understood from its external outputs.
 
-In WSO2 Integrator: BI, observability is a core feature that helps monitor, debug, and optimize integration services. It focuses on the following three key pillars:
+In BI, observability is a core feature that helps monitor, debug, and optimize integration services. It focuses on the following three key pillars:
 
 <b>Metrics</b> – Numeric data collected and aggregated over time to monitor system performance.
 
@@ -12,13 +12,13 @@ In WSO2 Integrator: BI, observability is a core feature that helps monitor, debu
 
 Observability platforms allow developers and operators to gain insight into system behavior, troubleshoot issues, and ensure reliability in production deployments.
 
-## Observability in WSO2 Integrator: BI
+## Observability in BI
 
-WSO2 Integrator: BI provides built-in support for observability across its runtime. Integration services, APIs, and connectors emit rich telemetry data that can be exported to standard monitoring tools.
+BI provides built-in support for observability across its runtime. Integration services, APIs, and connectors emit rich telemetry data that can be exported to standard monitoring tools.
 
 ## Available Observability Options
 
-WSO2 Integrator: BI supports multiple options for observing and monitoring deployed integrations. Depending on the deployment environment and the level of visibility required, you can choose from the following observability solutions.
+BI supports multiple options for observing and monitoring deployed integrations. Depending on the deployment environment and the level of visibility required, you can choose from the following observability solutions.
 
 ### 1. **WSO2 Integrator: ICP (Integration Control Plane)**
 
@@ -28,17 +28,17 @@ The [WSO2 Integrator: ICP](https://wso2.com/integrator/icp/) provides centralize
 * View runtime metadata and node-level details.
 * Manage and visualize the health of integration components across environments.
 
-This is ideal for teams that manage integrations across hybrid or distributed environments and require control-plane-level visibility.
+This is ideal for teams that manage integrations across hybrid or distributed environments and require control-plane-level visibility. Refer to [Monitoring with WSO2:Integrator ICP](/observability-and-monitoring/monitoring-with-wso2-integrator-icp) for further details.
 
-### 2. **Devant Observability**
+### 2. **Devant by WSO2**
 
-Devant is WSO2’s AI-powered Integration Platform as a Service (iPaaS). When BI integrations are deployed to Devant, the platform provides built-in observability capabilities, including the following.
+[Devant](https://wso2.com/devant/) is WSO2’s AI-powered Integration Platform as a Service (iPaaS). When BI integrations are deployed to Devant, the platform provides built-in observability capabilities, including the following.
 
 * A unified dashboard for visualizing service performance and metrics.
 * Insight into request flow, throughput, latency, and error rates.
 * AI-powered analytics to detect anomalies and optimize system performance.
 
-Devant observability is suitable for cloud-native teams looking for a fully managed, intelligent monitoring experience.
+Devant observability is suitable for cloud-native teams looking for a fully managed, intelligent monitoring experience. Refer to [Observability with Devant](/observability-and-monitoring/observability-with-devant) for further details.
 
 ### 3. **Integration with Third-Party Observability Tools**
 
@@ -48,4 +48,4 @@ BI is designed to work seamlessly with standard observability stacks. You can in
 * **Jaeger** for distributed tracing.
 * **ELK** for centralized logging.
 
-These integrations provide flexibility for teams already invested in their own observability ecosystems and allow for consistent monitoring practices across different services and platforms.
+These integrations provide flexibility for teams already invested in their own observability ecosystems and allow for consistent monitoring practices across different services and platforms. Refer to [Supported Observability Tools and Platforms](/observability-and-monitoring/supported-observability-tools-and-platforms/overview) for further details.

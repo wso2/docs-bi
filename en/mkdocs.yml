@@ -110,31 +110,31 @@ nav:
           - Mulesoft Migration Tool: developer-guides/tools/migration-tools/mulesoft-migration-tool.md
           - TIBCO BusinessWorks Migration Tool: developer-guides/tools/migration-tools/tibco-businessworks-migration-tool.md
   - Deploy:
-      - Overview of Deployment Options: deploy/overview-of-deployment-options.md
+      - Overview: deploy/overview.md
       - Deploy to Devant: deploy/deploy-to-devant.md
       - Containerized Deployment:
-        - Introduction to Containerized Deployment: deploy/containerized-deployment/introduction-to-containerized-deployment.md
+        - Overview: deploy/containerized-deployment/overview.md
         - Deploy as Docker Image: deploy/containerized-deployment/deploy-as-docker-image.md
         - Deploy on Kubernetes: deploy/containerized-deployment/deploy-on-kubernetes.md
       - VM-based Deployment:
-        - Introduction to VM-based Deployment: deploy/vm-based-deployment/introduction-to-vm-based-deloyment.md
+        - Overview: deploy/vm-based-deployment/overview.md
         - Deploy on VM as Executable JAR: deploy/vm-based-deployment/deploy-on-vm-as-executable-jar.md
         - Centralized Deployment: deploy/vm-based-deployment/centralized-deployment.md
         - Decentralized Deployment: deploy/vm-based-deployment/de-centralized-deployment.md
         - GitHub Action for CICD: deploy/vm-based-deployment/github-action-for-cicd.md
       - Managing configurations: deploy/managing-configurations.md
   - Observability and Monitoring:
-      - overview-of-observability: observability-and-monitoring/overview-of-observability.md
+      - Overview: observability-and-monitoring/overview.md
       - "Monitoring with WSO2 Integrator: ICP": observability-and-monitoring/monitoring-with-wso2-integrator-icp.md
-      - "Observability with Devant": observability-and-monitoring/observability-with-devant.md
+      - Observability with Devant: observability-and-monitoring/observability-with-devant.md
       - Supported Observability Tools and Platforms:
-        - Supported Observability Tools and Platforms: observability-and-monitoring/supported-observability-tools-and-platforms/supported-observability-tools.md
-        - Supporting Prometheus in BI: observability-and-monitoring/supported-observability-tools-and-platforms/prometheus.md
-        - Supporting Jaeger in BI: observability-and-monitoring/supported-observability-tools-and-platforms/jaeger.md
-        - Supporting Zipkin in BI: observability-and-monitoring/supported-observability-tools-and-platforms/zipkin.md
-        - Supporting New Relic in BI: observability-and-monitoring/supported-observability-tools-and-platforms/new-relic.md
-        - Supporting Datadog in BI: observability-and-monitoring/supported-observability-tools-and-platforms/datadog.md
-        - Supporting Elastic Stack in BI: observability-and-monitoring/supported-observability-tools-and-platforms/elastic-stack.md
+        - Overview: observability-and-monitoring/supported-observability-tools-and-platforms/overview.md
+        - Prometheus: observability-and-monitoring/supported-observability-tools-and-platforms/prometheus.md
+        - Jaeger: observability-and-monitoring/supported-observability-tools-and-platforms/jaeger.md
+        - Zipkin: observability-and-monitoring/supported-observability-tools-and-platforms/zipkin.md
+        - New Relic: observability-and-monitoring/supported-observability-tools-and-platforms/new-relic.md
+        - Datadog: observability-and-monitoring/supported-observability-tools-and-platforms/datadog.md
+        - Elastic Stack: observability-and-monitoring/supported-observability-tools-and-platforms/elastic-stack.md
   - References:
       - "Enterprise Integrations Patterns": references/enterprise-integrations-patterns.md
       

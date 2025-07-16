@@ -1,3 +1,7 @@
+# Observe logs using Elastic Stack
+
+In BI, distributed logging and analysis are supported by the [Elastic Stack](https://www.elastic.co/elastic-stack). BI has a log module for logging into the console. To monitor the logs, the BI standard output needs to be redirected to a file.
+
 The Elastic Stack comprises the following components.
 
 1. **Beats** - Multiple agents that ship data to Logstash or Elasticsearch. In our context, Filebeat will ship the BI logs to Logstash. Filebeat should be a container running on the same host as the BI service. This is so that the log file (ballerina.log) can be mounted to the Filebeat container.
@@ -5,7 +9,7 @@ The Elastic Stack comprises the following components.
 3. **Elasticsearch** - Storage and indexing of the logs sent by Logstash.
 4. **Kibana** - Visualizes the data stored in Elasticsearch.
 
-The sample [shop service](/observability-and-monitoring/overview-of-observability#example-observing-a-sample-integration-service) will be used in this guide. Follow the steps given below to observe BI logs in Elastic Stack.
+The sample [shop service](/observability-and-monitoring/overview#example-observing-a-sample-integration-service) will be used in this guide. Follow the steps given below to observe BI logs in Elastic Stack.
 
 ## Step 1 - Set up Elastic Stack
 

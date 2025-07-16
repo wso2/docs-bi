@@ -1,4 +1,6 @@
-The sample [shop service](/observability-and-monitoring/overview-of-observability#example-observing-a-sample-integration-service) will be used in this guide. Follow the steps given below to observe BI metrics in Prometheus.
+# Observe metrics using Prometheus
+
+The sample [shop service](/observability-and-monitoring/overview#example-observing-a-sample-integration-service) will be used in this guide. Follow the steps given below to observe BI metrics in [Prometheus](https://prometheus.io/).
 
 ## Step 1 - Set up Prometheus
 Prometheus is used as the monitoring system, which pulls out the metrics collected from the `/metrics` service exposed by BI runtime. This section focuses on the quick installation of Prometheus with Docker and the configuration required to collect metrics from the metrics service with the default configurations. Follow the steps below to configure Prometheus. 
@@ -80,7 +82,7 @@ ballerina: started Prometheus HTTP listener 0.0.0.0:9797
 
 ## Step 5 - Send requests
  
-Send requests to <http://localhost:8090/shop/products>.
+Send requests to `http://localhost:8090/shop/products`.
 
 Example cURL commands:
 
