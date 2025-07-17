@@ -205,9 +205,9 @@ Observability tools and platforms help monitor and analyze application performan
 
 The following sections contain guides to set up and observe BI programs in each of the observability tools or platforms mentioned above.
 
-* [Supporting Prometheus on BI](/observability-and-monitoring/supported-observability-tools-and-platforms/prometheus)
-* [Supporting Jaeger on BI](/observability-and-monitoring/supported-observability-tools-and-platforms/jaeger)
-* [Supporting Zipkin on BI](/observability-and-monitoring/supported-observability-tools-and-platforms/zipkin)
-* [Supporting New Relic on BI](/observability-and-monitoring/supported-observability-tools-and-platforms/new-relic)
-* [Supporting Datadog on BI](/observability-and-monitoring/supported-observability-tools-and-platforms/datadog)
-* [Supporting Elastic Stack on BI](/observability-and-monitoring/supported-observability-tools-and-platforms/elastic-stack)
+* [Observe metrics using Prometheus](/observability-and-monitoring/supported-observability-tools-and-platforms/prometheus)
+* [Observe tracing using Jaeger](/observability-and-monitoring/supported-observability-tools-and-platforms/jaeger)
+* [Observe tracing using Zipkin](/observability-and-monitoring/supported-observability-tools-and-platforms/zipkin)
+* [Observe metrics and tracing using New Relic](/observability-and-monitoring/supported-observability-tools-and-platforms/new-relic)
+* [Observe metrics and tracing using Datadog](/observability-and-monitoring/supported-observability-tools-and-platforms/datadog)
+* [Observe logs using Elastic Stack](/observability-and-monitoring/supported-observability-tools-and-platforms/elastic-stack)
