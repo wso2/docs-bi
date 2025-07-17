@@ -132,7 +132,7 @@ The flow is as follows.
 
 ## Step 5: Design the resource
 
-1. The service will have a default resource named `greeting` with the **GET** method. Click on three dots appear in front of the `/healthCare` service resource and select **Edit** from the menu.
+1. The service will have a default resource named `greeting` with the **GET** method. Click on the three dots that appear in front of the `/healthCare` service resource and select **Edit** from the menu.
 2. Change the resource HTTP method to **POST**.
 3. Change the resource name as `categories/[string category]/reserve`.
 4. Add a payload parameter named `reservation` to the resource of type `ReservationRequest`.

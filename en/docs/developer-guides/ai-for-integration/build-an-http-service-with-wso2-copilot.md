@@ -52,7 +52,7 @@ In this tutorial, you’ll create an HTTP service to add key-value pairs to a Re
 
 ## Step 6: Configure the Redis client
 
-1. In the design view, click on the **Configure** button on the top-right side.
+1. In the `Design View`, click on the **Configure** button on the top-right side.
 2. Set `redisHost` value to `localhost`.
 3. Set `redisPort` value to `6379`.   
 

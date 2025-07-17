@@ -17,7 +17,7 @@ Before you begin, make sure you have the following:
 
 This redirects you to the **Create New Integration in VS Code** page. 
 
-1. click on the **Configure** button on the top-right side, and add the following configurables.
+1. Click on the **Configure** button on the top-right side, and add the following configurables.
 
     | Configurable        | Type       |
     |---------------------|------------|
