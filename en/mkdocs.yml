@@ -105,10 +105,19 @@ nav:
       - Try the Integration: developer-guides/try-the-integration.md
       - AI For Integration:
         - Build an HTTP Service With WSO2 Copilot : developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot.md
+      - Protocols and Connectors:
+        - Supported Protocols: developer-guides/protocols-and-connectors/supported-protocols.md
       - Tools:
         - Migration Tools:
           - Mulesoft Migration Tool: developer-guides/tools/migration-tools/mulesoft-migration-tool.md
           - TIBCO BusinessWorks Migration Tool: developer-guides/tools/migration-tools/tibco-businessworks-migration-tool.md
+        - Integration Tools:
+          - Health Tool: developer-guides/tools/integration-tools/health-tool.md
+          - EDI Tool: developer-guides/tools/integration-tools/edi-tool.md
+        - Other Tools:
+          - Scan Tool: developer-guides/tools/other-tools/scan-tool.md
+          - Profiler Tool: developer-guides/tools/other-tools/profiler-tool.md
+          - Strand Dump Tool: developer-guides/tools/other-tools/strand-dump-tool.md
   - Deploy:
       - Overview: deploy/overview.md
       - Deploy to Devant: deploy/deploy-to-devant.md
