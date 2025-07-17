@@ -25,7 +25,7 @@ The flow is as follows.
         "appointment_date": "2024-11-06"
       }
     ```
-2. Extract necessary details from the request (e.g., hospital, patient, doctor, etc.) and make a call to the hospital backend service to request an appointment. A response similar to the following will be returned from the hospital backend service on success. 
+2. Extract the necessary details from the request (e.g., hospital, patient, doctor, etc.) and make a call to the hospital backend service to request an appointment. A response similar to the following will be returned from the hospital backend service on success. 
     ```json
       {
        "appointmentNumber": 1,
@@ -103,12 +103,12 @@ The flow is as follows.
 2. Click on **+ Add Type** to add a new type
  Generate record types corresponding to the response from the hospital backend service by providing a sample of the expected JSON payload. The values are given below.
     
-    |Type| Name               | Sample JSON value                                                                                                                                                                                                                                                                                             | Make Separate Record Definition |
-    |--|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------|
-    |Record| ReservationRequest | ```{"patient":{"name":"John Doe","dob":"1940-03-19","ssn":"234-23-525","address":"California","phone":"8770586755","email":"johndoe@gmail.com","cardNo":"7844481124110331"},"doctor":"thomas collins","hospital_id":"grandoaks","hospital":"grand oak community hospital","appointment_date":"2024-11-06"}``` | ☑️                     |
-    |Record| ReservationStatus  | ```{"appointmentNo":1, "doctorName":"thomas collins", "patient":"John Doe", "actualFee":7000.0, "discount":20, "discounted":5600.0, "paymentID":"e560ea82-1c42-4972-a471-af5c1ad4995f", "status":"settled"}```                                                                                                | ☑️                     |
-    |Record| Appointment        | ```{"appointmentNumber":12345,"doctor":{"name":"Dr. Alice Carter","hospital":"Green Valley Hospital","category":"Cardiology","availability":"Mon-Fri, 9 AM - 5 PM","fee":200},"patientName":"Emma Johnson","hospital":"Green Valley Hospital","confirmed":true,"appointmentDate":"2024-11-20T10:00:00"}```    | ☑️                     |
-    |Record| Fee                | ```{"patientName":"Emma Johnson","doctorName":"Dr. Alice Carter","actualFee":"150.00"}```                                                                                                                                                                                                                     |                        |
+    | Type   | Name               | Sample JSON value                                                                                                                                                                                                                                                                                             | Make Separate Record Definition |
+    |--------|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------|
+    | Record | ReservationRequest | ```{"patient":{"name":"John Doe","dob":"1940-03-19","ssn":"234-23-525","address":"California","phone":"8770586755","email":"johndoe@gmail.com","cardNo":"7844481124110331"},"doctor":"thomas collins","hospital_id":"grandoaks","hospital":"grand oak community hospital","appointment_date":"2024-11-06"}``` | ☑️                              |
+    | Record | ReservationStatus  | ```{"appointmentNo":1, "doctorName":"thomas collins", "patient":"John Doe", "actualFee":7000.0, "discount":20, "discounted":5600.0, "paymentID":"e560ea82-1c42-4972-a471-af5c1ad4995f", "status":"settled"}```                                                                                                | ☑️                              |
+    | Record | Appointment        | ```{"appointmentNumber":12345,"doctor":{"name":"Dr. Alice Carter","hospital":"Green Valley Hospital","category":"Cardiology","availability":"Mon-Fri, 9 AM - 5 PM","fee":200},"patientName":"Emma Johnson","hospital":"Green Valley Hospital","confirmed":true,"appointmentDate":"2024-11-20T10:00:00"}```    | ☑️                              |
+    | Record | Fee                | ```{"patientName":"Emma Johnson","doctorName":"Dr. Alice Carter","actualFee":"150.00"}```                                                                                                                                                                                                                     |                                 |
      
 3. The final types will look like the following.   
 
@@ -118,8 +118,8 @@ The flow is as follows.
 
 1. Navigate to design view and click on the **Add Artifacts** button and select **Connection** in the **Other Artifacts** section.
 2. Search and select the **HTTP Client** connector.
-3. Enter the connector name as `hospitalEp`, URL as `http://localhost:9090` and click on the **Save** button.
-  
+3. Enter the **Url** as `http://localhost:9090`, **Connection Name** as `hospitalEp` and click on the **Save** button.
+
     <a href="{{base_path}}/assets/img/integration-guides/integration-as-api//service-orchestration/add-connector.gif"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api//service-orchestration/add-connector.gif" alt="Add Connector" width="70%"></a>
 
 4. Add another connector for the payment backend service with the URL `http://localhost:9090/healthcare/payments` and the name `paymentEp`.    
@@ -132,7 +132,7 @@ The flow is as follows.
 
 ## Step 5: Design the resource
 
-1. The service will have a default resource named `greeting` with the **GET** method. Click on three dots appear in front of the `/healthCare` service resource and select **Edit** from menu.
+1. The service will have a default resource named `greeting` with the **GET** method. Click on three dots appear in front of the `/healthCare` service resource and select **Edit** from the menu.
 2. Change the resource HTTP method to **POST**.
 3. Change the resource name as `categories/[string category]/reserve`.
 4. Add a payload parameter named `reservation` to the resource of type `ReservationRequest`.
@@ -171,14 +171,14 @@ The flow is as follows.
 
     <a href="{{base_path}}/assets/img/integration-guides/integration-as-api//service-orchestration/variable.png"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api//service-orchestration/variable.png" alt="Variable" width="70%"></a>
 
-7. Click ➕ sign and select **hospitalServicesEp** connector from the node panel and select **post** from the dropdown. Then, fill in the required fields with the values given below and click **Save**.
+7. Click ➕ sign and select **hospitalEp** connector from the node panel and select **post** from the dropdown. Then, fill in the required fields with the values given below and click **Save**.
 
-      |Field| Value                                                                     |
-      |---|---------------------------------------------------------------------------|
-      |Variable Name| `appointment`                                                             |
-      |Variable Type| `Appointment`                                                             |
-      |Resource Path| ``` string `/${reservation.hospital_id}/categories/${category}/reserve` ``` |
-      |message| `hospitalRequest`                                                         |
+      | Field         | Value                                                                       |
+      |---------------|-----------------------------------------------------------------------------|
+      | Variable Name | `appointment`                                                               |
+      | Variable Type | `Appointment`                                                               |
+      | Resource Path | ``` string `/${reservation.hospital_id}/categories/${category}/reserve` ``` |
+      | message       | `hospitalRequest`                                                           |
 
 8. The connector action will look like the following.   
 
@@ -186,18 +186,18 @@ The flow is as follows.
 
 ## Step 7: Get the fee 
 
-1. Declare an **int**  variable named `appointmentNumber` with expression `appointment.appointmentNumber` after the hospital service request.  
+1. Declare an **int** variable named `appointmentNumber` with expression `appointment.appointmentNumber` after the hospital service request.  
 
     <a href="{{base_path}}/assets/img/integration-guides/integration-as-api//service-orchestration/appointment.png"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api//service-orchestration/appointment.png" alt="Appointment Number" width="70%"></a>   
 
 2. Let's add another connector invocation to get the fee for the appointment. Click on the ➕ sign and select **hospitalServicesEp** connector from the node panel.  
 3. Select **get** from the dropdown. Then, fill in the required fields with the values given below and click **Save**.
 
-    |Field| Value                                                                                         |
-    |---|-----------------------------------------------------------------------------------------------|
-    |Variable Name| `fee`                                                                                         |
-    |Variable Type| `Fee`                                                                                         |
-    |Resource Path| ``` string `/${reservation.hospital_id}/categories/appointments/${appointmentNumber}/fee` ``` |
+    | Field         | Value                                                                                         |
+    |---------------|-----------------------------------------------------------------------------------------------|
+    | Variable Name | `fee`                                                                                         |
+    | Variable Type | `Fee`                                                                                         |
+    | Resource Path | ``` string `/${reservation.hospital_id}/categories/appointments/${appointmentNumber}/fee` ``` |
 
     <a href="{{base_path}}/assets/img/integration-guides/integration-as-api//service-orchestration/fee.png"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api//service-orchestration/fee.png" alt="Hospital Service Request" width="70%"></a>
 
@@ -223,12 +223,12 @@ The flow is as follows.
 
 4. Then, fill in the required fields with the values given below and click **Save**.
 
-    |Field| Value            |
-    |---|------------------|
-    |Variable Name| `status`         |
-    |Variable Type| `ReservationStatus`        |
-    |Resource Path| `"/"` |
-    |message| `paymentRequest` |
+    | Field         | Value               |
+    |---------------|---------------------|
+    | Variable Name | `status`            |
+    | Variable Type | `ReservationStatus` |
+    | Resource Path | `"/"`               |
+    | message       | `paymentRequest`    |
 
 5. Click on the ➕ sign and select **Return** from the node panel. Add the `status` variable to the return node.
 6. The final integration will look like the following.   
@@ -242,7 +242,7 @@ The flow is as follows.
     ```bash
     docker run --name hospital-backend -p 9090:9090 -d anuruddhal/kola-hospital-backend
     ```
-3. Click on the **Run**  on the run button (▶️) in the top right corner to run the service.
+3. Click on the **Run** on the run button (▶️) in the top right corner to run the service.
 4. The service will start and the service will be available at `http://localhost:8290/healthcare/categories/[category]/reserve`.
 5. Click on the **Try it** button to open the embedded HTTP client.
 6. Replace the **{category}** with `surgery` in the resource path and enter the following JSON payload in the request body and click on the ▶️ button to send the request.
@@ -266,7 +266,7 @@ The flow is as follows.
 7. The response will be similar to the following.
    ```json
     {
-	 "appointmentNo": 1,
+   	 "appointmentNo": 1,
 	 "doctorName": "thomas collins",
 	 "patient": "John Doe",
 	 "actualFee": 7000,
