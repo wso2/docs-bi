@@ -103,10 +103,14 @@ nav:
       - Design the Integrations: developer-guides/design-the-integrations.md
       - Data Mapping: developer-guides/data-mapping.md
       - Try the Integration: developer-guides/try-the-integration.md
+      - Testing: developer-guides/test-the-integrations.md
+      - Debugging & Troubleshooting: developer-guides/debug-the-integrations.md
       - AI For Integration:
         - Build an HTTP Service With WSO2 Copilot : developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot.md
       - Protocols and Connectors:
+        - Overview of Connectors: developer-guides/protocols-and-connectors/overview-of-connectors.md
         - Supported Protocols: developer-guides/protocols-and-connectors/supported-protocols.md
+        - Build Local Connectors: developer-guides/protocols-and-connectors/build-local-connectors.md
       - Tools:
         - Migration Tools:
           - Mulesoft Migration Tool: developer-guides/tools/migration-tools/mulesoft-migration-tool.md
