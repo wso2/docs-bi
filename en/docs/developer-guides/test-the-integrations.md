@@ -4,21 +4,28 @@ BI has a built-in robust test framework, which allows you to ensure that your ap
 
 ## Test a Simple Function
 
-To get started, let's set up the BI project to run tests.
+Follow the steps below to get started with testing in your BI project.
 
-1\. Create a BI project and add an artifact type `automation` 
+1\. Create a BI Project
+   Open WSO2 BI and create a new project.
+   Add an artifact of type **`automation`** to your project.
 
-2\. Add the following function to the `main.bal` file.
+2\. Add a Sample Function
+   In the generated `main.bal` file, add the following function:
 
-    ```ballerina
-    public function intAdd(int a, int b) returns int {
-        return a + b;
-    }
-    ```
+   ```ballerina
+   public function intAdd(int a, int b) returns int {
+       return a + b;
+   }
+   ```
 
-3\. Go tho the `Testing` extension on the left navigation panel. From there, create a new unit test and add an assertion to validate the results of the `intAdd` function.
+3\. Create a Unit Test
+   Navigate to the **Testing** extension from the left-hand navigation panel.
+   Create a new unit test and include an assertion to validate the output of the `intAdd` function.
 
-4\. Execute the tests using the `Run Test` option for the recently added test case or by selecting to run all the tests in the `DEFAULT_GROUP`
+4\. Run the Tests
+   Use the **Run Test** option to execute the newly added test case, or choose to run all the tests under the `DEFAULT_GROUP`.
+
 
 <a href="{{base_path}}/assets/img/developer-guides/testing/testing_1.gif"><img src="{{base_path}}/assets/img/developer-guides/testing/testing_1.gif" alt="Testing a simple function" width="80%"></a>
 

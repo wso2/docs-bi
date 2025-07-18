@@ -4,7 +4,7 @@ The Ballerina compiler is especially useful in BI development, where large-scale
 
 ## Debugging sessions
 
-BI offers three types of debugging sessions (i.e., program debugging, test debugging, and remote debugging). Debugging sessions can be initiated using CodeLens or configurations in a `launch.json file`. It also provides a **Debug Console** to view the output and perform various debugging scenarios.
+BI offers three types of debugging sessions (i.e., program debugging, test debugging, and remote debugging). Debugging sessions can be initiated using CodeLens or configurations in a `launch.json file`. It also provides a `Debug Console` to view the output and perform various debugging scenarios.
 
 ???+ Info
     For more information on the debugging sessions and methods, go to [Debugging Sessions](https://wso2.com/ballerina/vscode/docs/debug-the-code/debug-sessions/).
@@ -13,7 +13,7 @@ BI offers three types of debugging sessions (i.e., program debugging, test debug
 
 BI provides a range of powerful debugging features. You can set breakpoints with conditions and logpoints, pause and continue program execution for precise inspection, evaluate expressions at runtime, and view call stacks and strands. These features enhance the debugging experience, enabling effective troubleshooting and analysis of Ballerina code.
 
-You can set break points for a node in BI by  Clicking on the three dots that appear in right hand side of the node and select **`Add Breakpoint`** from the menu.
+You can set break points for a node in BI by  Clicking on the three dots that appear in right hand side of the node and select `Add Breakpoint` from the menu.
 
 ???+ Info
     For detailed information on the feature-rich debugging experience for troubleshooting BI applications, go to [Debugging Features](https://wso2.com/ballerina/vscode/docs/debug-the-code/debug-features/).
