@@ -1,4 +1,4 @@
-# Strand dump tool
+# Strand Dump Tool
 
 The BI runtime can have unexpected behaviors due to user code errors, bugs, or issues with the running environment. These will result in memory leaks, CPU spinning, runtime hangs, performance degradation or crashing with various errors. This tool provides the capability to dump the status of currently running strands.
 

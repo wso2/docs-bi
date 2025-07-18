@@ -1,4 +1,4 @@
-# Health tool (FHIR/HL7)
+# Health Tool (FHIR/HL7)
 
 The health tool generates Ballerina library packages and Ballerina templates for FHIR APIs for developing healthcare integrations.
 

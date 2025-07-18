@@ -1,4 +1,4 @@
-# EDI tool
+# EDI Tool
 
 The EDI tool provides the below set of command line tools to work with EDI files in BI.
 
@@ -69,7 +69,7 @@ $ bal edi codegen -i <input schema path> -o <output path>
 
 The above command generates all Ballerina records and parser functions required for working with data in the given EDI schema and writes those into the file specified in the `output path`. The generated parser function (i.e., `fromEdiString(...)`) can read EDI text files into generated records, which can be accessed from the Ballerina code, similar to accessing any other Ballerina record. Similarly, the generated serialization function (i.e., `toEdiString(...)`) can serialize generated Ballerina records into EDI text.
 
-### `codegen` command options
+### Command options for `codegen`
 
 | Command option  | Description                  | Mandatory/Optional |
 |-----------------|------------------------------|--------------------|
@@ -145,7 +145,7 @@ public function main() returns error? {
 
 ## Package generation
 
-Usually, organizations have to work with many EDI formats, and integration developers need to have a convenient way to work on EDI data with minimum effort. Ballerina EDI libraries facilitate this by allowing organizations to pack all EDI processing codes for their EDI collections into an importable package. Therefore, integration developers can simply import those libraries and convert EDI messages into Ballerina records in a single line of code.
+Usually, organizations have to work with many EDI formats, and integration developers need to have a convenient way to work on EDI data with minimum effort. Ballerina EDI packages facilitate this by allowing organizations to pack all EDI processing codes for their EDI collections into an importable package. Therefore, integration developers can simply import those packages and convert EDI messages into Ballerina records in a single line of code.
 
 The below command can be used to generate Ballerina records, parser and util functions, and a REST connector for a given collection of EDI schemas organized into a Ballerina package:
 
@@ -155,13 +155,13 @@ $ bal edi libgen -p <organization-name/package-name> -i <input schema folder> -o
 
 The Ballerina package will be generated in the output folder. This package can be built and published by issuing `bal pack` and `bal push` commands from the output folder. Then, the generated package can be imported into any BI project, and the generated utility functions of the package can be invoked to parse EDI messages into Ballerina records. 
 
-### `libgen` command options
+### Command options for `libgen` 
 
 | Command option  | Description                                           | Mandatory/Optional |
 |-----------------|-------------------------------------------------------|--------------------|
 | `-p, --package` | Package name (organization-name/package-name).        | Mandatory          |
 | `-i, --input`   | Path to the folder containing EDI schemas.            | Mandatory          |
-| `-o, --output`  | Path to the folder where libraries will be generated. | Mandatory          |
+| `-o, --output`  | Path to the folder where packages will be generated. | Mandatory          |
 
 ### Package generation example
 
@@ -234,9 +234,9 @@ public function main() returns error? {
 
 It is quite common for different trading partners to use variations of standard EDI formats. In such cases, it is possible to create partner-specific schemas and generate a partner-specific Ballerina package for processing interactions with the particular partner.
 
-### Using generated EDI libraries as standalone REST services
+### Using generated EDI Packages as standalone REST services
 
-EDI libraries generated in the previous step can also be compiled into a jar file (using the `bal build` command) and executed (using the `bal run` command) as a standalone Ballerina service that processes EDI files via a REST interface. This is useful for microservice environments where the EDI processing functionality can be deployed as a separate microservice.
+EDI packages generated in the previous step can also be compiled into a jar file (using the `bal build` command) and executed (using the `bal run` command) as a standalone Ballerina service that processes EDI files via a REST interface. This is useful for microservice environments where the EDI processing functionality can be deployed as a separate microservice.
 
 For example, the "citymart" package generated in the above step can be built and executed as a jar file. Once executed, it will expose a REST service to work with X12 850, 810, 820, and 855 files. 
 
@@ -355,7 +355,7 @@ The below command can be used to convert the X12 schema to the Ballerina EDI sch
 $ bal edi convertX12Schema -H <enable headers mode> -c <enable collection mode > -i <input schema path> -o <output json file/folder path> -d <segment details path>
 ```
 
-#### `convertX12Schema` command options
+**Command options for `convertX12Schema`**
 
 | Command option     | Description                                                 | Mandatory/Optional |
 |--------------------|-------------------------------------------------------------|--------------------|
@@ -380,7 +380,7 @@ The below command can be used to convert the EDIFACT schema to the Ballerina EDI
 $ bal edi convertEdifactSchema -v <EDIFACT version> -t <EDIFACT message type> -o <output folder>
 ```
 
-#### `convertEdifactSchema` command options
+**Command options for `convertEdifactSchema`**
 
 | Command option  | Description                                                 | Mandatory/Optional |
 |-----------------|-------------------------------------------------------------|--------------------|
@@ -403,7 +403,7 @@ The below command can be used to convert the ESL schema to the Ballerina EDI sch
 $ bal edi convertESL -b <segment definitions file path> -i <input ESL schema file/folder> -o <output file/folder>
 ```
 
-#### `convertEdifactSchema` command options
+**Command options for `convertEdifactSchema`**
 
 | Command option   | Description                                                     | Mandatory/Optional |
 |------------------|-----------------------------------------------------------------|--------------------|

@@ -1,4 +1,4 @@
-# Scan tool
+# Scan Tool
 
 The scan tool is a static code analysis tool that performs analysis on BI projects and identifies potential code smells, bugs, and vulnerabilities without executing them.
 
@@ -15,7 +15,7 @@ $ bal tool pull scan
 
 To learn more about managing Ballerina tools, refer to the [Ballerina CLI tool command documentation](https://ballerina.io/learn/cli-commands/#tool-commands).
 
-## Usage Guide for scan tool
+## Usage guide for the scan tool
 
 The scan tool helps you analyze your BI project for potential issues, enforce coding standards, and generate detailed reports. 
 
