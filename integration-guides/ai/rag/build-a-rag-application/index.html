@@ -778,10 +778,10 @@
         
           <li class="md-nav__item">
   <a href="#24-generate-response-using-the-context" class="md-nav__link">
-    2.4 Generate response Using the context
+    2.4 Generate response using the context
   </a>
   
-    <nav class="md-nav" aria-label="2.4 Generate response Using the context">
+    <nav class="md-nav" aria-label="2.4 Generate response using the context">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2359,10 +2359,10 @@
         
           <li class="md-nav__item">
   <a href="#24-generate-response-using-the-context" class="md-nav__link">
-    2.4 Generate response Using the context
+    2.4 Generate response using the context
   </a>
   
-    <nav class="md-nav" aria-label="2.4 Generate response Using the context">
+    <nav class="md-nav" aria-label="2.4 Generate response using the context">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2498,7 +2498,7 @@
 </ul>
 <p>We assume that you've already used <a href="https://wso2.com/devant/docs/ai/rag-application/">Devant</a> to process and ingest the documents. Devant handles the entire ingestion process independently of the main application flow. The following steps of the tutorial focus solely on RAG retrieval.</p>
 <h2 id="rag-retrieval">RAG retrieval<a class="headerlink" href="#rag-retrieval" title="Permanent link">&para;</a></h2>
-<p>This tutorial focuses on implementing the rag retrieval component of a Retrieval-Augmented Generation (RAG) system using the <a href="https://wso2.com/integrator/bi/">Ballerina Integrator</a>.</p>
+<p>This tutorial focuses on implementing the retrieval component of a Retrieval-Augmented Generation (RAG) system using the <a href="https://wso2.com/integrator/bi/">Ballerina Integrator</a>.</p>
 <ul>
 <li>Convert the user's question into embeddings</li>
 <li>Perform a similarity search in the vector database</li>
@@ -2518,7 +2518,7 @@
 <li>In the design view, click on the <strong>Add Artifact</strong> button.</li>
 <li>Select <strong>HTTP Service</strong> under the Integration as API category.</li>
 <li>Select the <strong>Create and use the default HTTP listener (port:9090)</strong> option from the Listeners dropdown.</li>
-<li>Select the <strong>Design from Scratch</strong> option as the Service Contract and use <code>/personalAssitant</code> as the Service base path.</li>
+<li>Select the <strong>Design from Scratch</strong> option as the Service Contract and use <code>/personalAssistant</code> as the Service base path.</li>
 <li>
 <p>Click on the <strong>Create</strong> button to create the new service with the specified configurations.</p>
 <p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/ai/rag/build-a-rag-application/1.create-new-service.gif"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/ai/rag/build-a-rag-application/1.create-new-service.gif" alt="Create a New Service" width="70%"></a></p>
@@ -2529,7 +2529,7 @@
 <li>Click the <strong>Edit FunctionModel</strong> button in front of <code>/greeting</code> resource.</li>
 <li>Change the resource HTTP method to <strong>POST</strong>.</li>
 <li>Change the resource name to <code>chat</code>.</li>
-<li>Click on <strong>Add Parameter</strong> under the Parameters and specify the parameters you need. We used to select the Param Type as <strong>QUERY</strong> and specify <code>request</code> as the name and <code>ChatRequestMessage</code> as the type.</li>
+<li>Click on <strong>Add Parameter</strong> under the Parameters and specify the parameters you need. Select the Param Type as <strong>QUERY</strong> and specify <code>request</code> as the name and <code>ChatRequestMessage</code> as the type.</li>
 <li>Change the <strong>200</strong> response return type to <code>string</code>.</li>
 <li>
 <p>Click on the <strong>Save</strong> button to update the resource with the specified configurations.</p>
@@ -2558,7 +2558,7 @@
 </ol>
 <h5 id="212-add-embeddings-connection">2.1.2 Add embeddings connection<a class="headerlink" href="#212-add-embeddings-connection" title="Permanent link">&para;</a></h5>
 <ol>
-<li>Click the <strong>+</strong> button and select the <strong>+ Add Connection</strong> the side panel.</li>
+<li>Click the <strong>+</strong> button and select the <strong>+ Add Connection</strong> in the side panel.</li>
 <li>Select the connector <strong>Embeddings - ballerinax/azure.openai.embeddings</strong>.</li>
 </ol>
 <h5 id="213-configure-the-embeddings-connector">2.1.3 Configure the embeddings connector<a class="headerlink" href="#213-configure-the-embeddings-connector" title="Permanent link">&para;</a></h5>
@@ -2639,7 +2639,7 @@
 <p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/ai/rag/build-a-rag-application/8.augment-function-logic.gif"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/ai/rag/build-a-rag-application/8.augment-function-logic.gif" alt="Implement Augment Function Logic" width="70%"></a></p>
 </li>
 </ol>
-<h4 id="24-generate-response-using-the-context">2.4 Generate response Using the context<a class="headerlink" href="#24-generate-response-using-the-context" title="Permanent link">&para;</a></h4>
+<h4 id="24-generate-response-using-the-context">2.4 Generate response using the context<a class="headerlink" href="#24-generate-response-using-the-context" title="Permanent link">&para;</a></h4>
 <h5 id="241-add-chat-client-connection">2.4.1 Add chat client connection<a class="headerlink" href="#241-add-chat-client-connection" title="Permanent link">&para;</a></h5>
 <ol>
 <li>Click the <strong>+</strong> button in the Integrator side panel under the <strong>Connections</strong> section.</li>
@@ -2712,7 +2712,7 @@
 <li>Click on the <strong>Run</strong> button in the top-right corner to run the integration.</li>
 <li>If you have added any variables to the project, you’ll be prompted to update their values in the <code>Config.toml</code> file. Configure them to continue with the execution of the request.</li>
 <li>
-<p>Query the rag by sending the curl request below.</p>
+<p>Query the RAG by sending the curl request below.</p>
 <div class="highlight"><pre><span></span><code>curl --location &#39;http://localhost:9090/personalAssistant/chat&#39; \
 --header &#39;Content-Type: application/json&#39; \
 --data &#39;{&quot;message&quot;: &quot;What is the process for reporting safety concerns?&quot;}&#39;
