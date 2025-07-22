@@ -18,7 +18,12 @@
         "links": [
             {"name": "Design the Integrations", "url": "developer-guides/design-the-integrations/"},
             {"name": "Data Mapping", "url": "developer-guides/data-mapping/"},
-            {"name": "Migration Tools", "url": "developer-guides/tools/migration-tools/mulesoft-migration-tool/"}
+            {"name": "Testing", "url": "developer-guides/test-the-integrations/"},
+            {"name": "Debugging & Troubleshooting", "url": "developer-guides/debugging-and-troubleshooting/overview"},
+            {"name": "Protocols and Connectors", "url": "developer-guides/protocols-and-connectors/overview-of-connectors/"},
+            {"name": "Integration Tools", "url": "developer-guides/tools/integration-tools/health-tool/"},
+            {"name": "Migration Tools", "url": "developer-guides/tools/migration-tools/mulesoft-migration-tool"},
+            {"name": "Other Tools", "url": "developer-guides/tools/other-tools/scan-tool/"}
         ]
     }
     ],

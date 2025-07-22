@@ -12,12 +12,12 @@ Consider the following step-by-step guide to configuring a Ballerina package tha
 
 * Create a configurable variable to hold the greeting to be sent when invoking the API endpoint. This can be done by adding a `Configuration` in `WSO2 Integrator: BI` design view.
 
-<a href="{{base_path}}/assets/img/deploy/config_1.gif"><img src="{{base_path}}/assets/img/deploy/config_1.gif" alt="Create Configurable Variable" width="70%"></a>
+<a href="{{base_path}}/assets/img/deploy/create-config.gif"><img src="{{base_path}}/assets/img/deploy/create-config.gif" alt="Create Configurable Variable" width="70%"></a>
 
 #### Step 3: Run the integration
 
 * You'll be prompted to create a `Config.toml`. This file can contain the greeting information. This allows configuring the values externally during the runtime.
 
-<a href="{{base_path}}/assets/img/deploy/config_2.gif"><img src="{{base_path}}/assets/img/deploy/config_2.gif" alt="Create Config.toml" width="70%"></a>
+<a href="{{base_path}}/assets/img/deploy/run-integration.gif"><img src="{{base_path}}/assets/img/deploy/run-integration.gif" alt="Create Config.toml" width="70%"></a>
 
 This concept of configurables can be used to hold environment specific variables that needs to be updated at the time of execution.
