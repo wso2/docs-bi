@@ -1,4 +1,4 @@
-# Azure Logic Apps Migration Tool
+# Azure Logic Apps migration tool
 
 This guide explains how to use the [migrate-logicapps](https://central.ballerina.io/wso2/tool_migrate_logicapps/latest) tool to convert
 [Azure Logic Apps](https://azure.microsoft.com/en-us/products/logic-apps) integrations into Ballerina packages compatible with the [WSO2 Integrator: BI](https://wso2.com/integrator/bi/).
@@ -73,7 +73,7 @@ Use one of the following commands based on your needs:
     - A new Ballerina package is created with the same name as the `.json` file, appended with a `_ballerina` suffix.
    - Created Ballerina package contains the Ballerina Integrator file structure.
 
-### Step 4: Address the TODO items
+### Step 4: Address the TODO comments and manual adjustments
 
 The generated Ballerina code may contain TODO comments for some Logic App actions. 
 You need to manually review and implement these actions in the Ballerina code.
@@ -101,9 +101,9 @@ public function initializeHttpClient(HttpConfig config) returns http:Client|erro
 
 Let's walk through an example of migrating a Logic App sample `.json` integration to Ballerina.
 
-Here's a sample Logic App `.json` file (`weather-forcast.json`) that runs every hour to fetch weather data from an external API and store it in a SQL database.
+Here's a sample Logic App `.json` file (`weather-forecast.json`) that runs every hour to fetch weather data from an external API and store it in a SQL database.
 
-<a href="{{base_path}}/assets/img/developer-guides/migration-tools/logic-app-weather-forcast.png"><img src="{{base_path}}/assets/img/developer-guides/migration-tools/logic-app-weather-forcast.png" alt="Logic App Flow Diagram" width="70%"></a>
+<a href="{{base_path}}/assets/img/developer-guides/migration-tools/logic-app-weather-forecast.png"><img src="{{base_path}}/assets/img/developer-guides/migration-tools/logic-app-weather-forecast.png" alt="Logic App Flow Diagram" width="70%"></a>
 
 ```json
 {
@@ -379,19 +379,19 @@ Here's a sample Logic App `.json` file (`weather-forcast.json`) that runs every 
 }
 ```
 
-### Run the Migration Tool
+### Run the migration tool
 To convert the Logic App `.json` file using the `migrate-logicapps` tool, execute the following command:
 
 ```bash
-$ bal migrate-logicapps /path/to/weather_forcast.json
+$ bal migrate-logicapps /path/to/weather_forecast.json
 ```
 
-### Examine the Generated Ballerina Code
-The tool generates a Ballerina package named `weather-forcast_ballerina` inside `/path/to` with the following
+### Examine the generated Ballerina code
+The tool generates a Ballerina package named `weather-forecast_ballerina` inside `/path/to` with the following
 structure:
 
 ```commandline
-weather-forcast_ballerina/
+weather-forecast_ballerina/
 ├── agents.bal
 ├── Ballerina.toml
 ├── config.bal
@@ -406,35 +406,35 @@ The `main.bal` file contains the main logic of the integration, which includes t
 
 Please note that the generated Ballerina code may be different in multiple runs since the migration tool use AI-based conversion and the output may vary based on the complexity of the Logic App.
 
-## Supported Logic Apps Features
+## Supported Logic Apps features
 
 The migration tool supports the following Azure Logic Apps features:
 
-### Core Workflow Components
+### Core workflow components
 - **Triggers**: HTTP requests, scheduled triggers, and event-based triggers
 - **Actions**: HTTP actions, data operations, and control flow actions
 - **Connectors**: Common Azure connectors and third-party service integrations
 - **Variables**: Workflow variables and their transformations
 - **Expressions**: Logic Apps expressions and functions
 
-### Control Flow
+### Control flow
 - **Conditional Logic**: If-else conditions and switch statements
 - **Loops**: For-each loops and until loops
 - **Parallel Branches**: Concurrent execution paths
 - **Scopes**: Grouping actions and error handling
 
-### Data Operations
+### Data operations
 - **Data Transformation**: JSON parsing, composition, and manipulation
 - **Variable Operations**: Initialize, set, increment, and append operations
 - **Array Operations**: Filtering, mapping, and aggregation
 - **String Operations**: Concatenation, substring, and formatting
 
-### Error Handling
+### Error handling
 - **Try-Catch Blocks**: Exception handling and error propagation
 - **Retry Policies**: Configurable retry mechanisms
 - **Timeout Settings**: Action timeout configurations
 
-### Integration Patterns
+### Integration patterns
 - **REST API Calls**: HTTP client operations with authentication
 - **Message Routing**: Content-based routing and message transformation
 - **Protocol Translation**: Converting between different message formats
@@ -443,21 +443,21 @@ The migration tool supports the following Azure Logic Apps features:
 
 While the migration tool provides comprehensive conversion capabilities, there are some limitations to be aware of:
 
-### Platform-Specific Features
+### Platform-specific features
 - **Azure-specific Connectors**: Some Azure-native connectors may not have direct Ballerina equivalents
 - **Logic Apps Runtime Features**: Some runtime-specific features may need manual implementation
 
-### Advanced Scenarios
+### Advanced scenarios
 - **Complex Custom Connectors**: Custom connectors with complex authentication flows may require manual adaptation
 - **Stateful Workflows**: Long-running stateful workflows may need additional consideration
 - **Large-scale Parallel Processing**: Extremely high-concurrency scenarios may require performance tuning
 
-### AI-Generated Code Considerations
+### AI-generated code considerations
 - **Code Review Required**: Generated code should be reviewed and tested before production use
 - **Performance Optimization**: Generated code may require optimization for specific use cases
 - **Security Validation**: Security configurations and credentials should be validated manually
 
-### Post-Migration Requirements
+### Post-migration requirements
 - **Testing**: Comprehensive testing of converted workflows is recommended
 - **Configuration**: Environment-specific configurations need to be set up manually
 - **Monitoring**: Logging and monitoring setup may require additional configuration
