@@ -76,11 +76,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bi.docs.wso2.com/developer-guides/debug-the-integrations/</loc>
-         <lastmod>2025-07-22</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://bi.docs.wso2.com/developer-guides/design-the-integrations/</loc>
          <lastmod>2025-07-22</lastmod>
          <changefreq>daily</changefreq>
@@ -106,12 +101,67 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://bi.docs.wso2.com/developer-guides/debugging-and-troubleshooting/capturing-strand-dumps/</loc>
+         <lastmod>2025-07-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bi.docs.wso2.com/developer-guides/debugging-and-troubleshooting/debugging-within-the-editor/</loc>
+         <lastmod>2025-07-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bi.docs.wso2.com/developer-guides/debugging-and-troubleshooting/overview/</loc>
+         <lastmod>2025-07-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bi.docs.wso2.com/developer-guides/debugging-and-troubleshooting/profiling-runtime-performance/</loc>
+         <lastmod>2025-07-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bi.docs.wso2.com/developer-guides/debugging-and-troubleshooting/remote-debugging-integrations/</loc>
+         <lastmod>2025-07-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bi.docs.wso2.com/developer-guides/protocols-and-connectors/build-local-connectors/</loc>
+         <lastmod>2025-07-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bi.docs.wso2.com/developer-guides/protocols-and-connectors/overview-of-connectors/</loc>
+         <lastmod>2025-07-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bi.docs.wso2.com/developer-guides/protocols-and-connectors/supported-protocols/</loc>
+         <lastmod>2025-07-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bi.docs.wso2.com/developer-guides/tools/integration-tools/edi-tool/</loc>
+         <lastmod>2025-07-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bi.docs.wso2.com/developer-guides/tools/integration-tools/health-tool/</loc>
+         <lastmod>2025-07-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://bi.docs.wso2.com/developer-guides/tools/migration-tools/mulesoft-migration-tool/</loc>
          <lastmod>2025-07-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/developer-guides/tools/migration-tools/tibco-businessworks-migration-tool/</loc>
+         <lastmod>2025-07-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bi.docs.wso2.com/developer-guides/tools/other-tools/scan-tool/</loc>
          <lastmod>2025-07-22</lastmod>
          <changefreq>daily</changefreq>
     </url>

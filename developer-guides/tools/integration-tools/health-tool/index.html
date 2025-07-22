@@ -1,0 +1,3242 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for WSO2 Integrator: BI">
+      
+      
+        <meta name="author" content="WSO2">
+      
+      
+        <link rel="canonical" href="https://bi.docs.wso2.com/developer-guides/tools/integration-tools/health-tool/">
+      
+      
+        <link rel="prev" href="../../migration-tools/tibco-businessworks-migration-tool/">
+      
+      
+        <link rel="next" href="../edi-tool/">
+      
+      <link rel="icon" href="../../../../images/bi-logo.svg">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
+    
+    
+      
+        <title>Health Tool - WSO2 Integrator: BI Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.7bf56d0a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Added the font from google fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/lib/highlightjs/styles/vs.min.css">
+    
+      <link rel="stylesheet" href="../../../../assets/css/blue-palette-alt1.css">
+    
+      <link rel="stylesheet" href="../../../../assets/css/mitheme.css">
+    
+      <link rel="stylesheet" href="../../../../assets/css/custom.css">
+    
+      <link rel="stylesheet" href="../../../../assets/lib/json-formatter/json-formatter.css">
+    
+      <link rel="stylesheet" href="../../../../assets/css/config-catalog.css">
+    
+      <link rel="stylesheet" href="../../../../assets/lib/fontawesome-free-6.3.0-web/css/all.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){
+    w[l]=w[l]||[];w[l].push({
+        'gtm.start':
+            new Date().getTime(),event:'gtm.js'
+    });var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.setAttributeNode(d.createAttribute('data-ot-ignore'));j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5CR98L58');</script>
+<!-- End Google Tag Manager -->
+
+    
+    
+<meta name="google-site-verification" content="pRwRUP0jDUECheRt5DziuVd3gSs2UTw6EhL4nud3NMk" />
+
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#health-tool-fhirhl7" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      <!--
+ * Copyright (c) 2024, WSO2 LLC. (http://www.wso2.com) All Rights Reserved.
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+
+
+
+
+<header class="md-header md-header--shadow" data-md-component="header" id="page-header" data-url="" data-lang="en">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="WSO2 Integrator: BI Documentation"
+       class="md-header__button md-logo" aria-label="WSO2 Integrator: BI Documentation" data-md-component="logo">
+      
+  <img src="../../../../images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WSO2 Integrator: BI Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Health Tool
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <form class="md-header__option" data-md-component="palette">
+      
+      
+      <input class="md-option" data-md-color-media="(prefers-color-scheme)"
+             data-md-color-scheme="default"
+             data-md-color-primary=""
+             data-md-color-accent="" 
+             aria-label="Switch to dark mode"  type="radio" name="__palette"
+             id="__palette_1">
+      
+      <label class="md-header__button md-icon" title="Switch to dark mode"
+             for="__palette_3" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+      </label>
+      
+      
+      
+      <input class="md-option" data-md-color-media="(prefers-color-scheme: light)"
+             data-md-color-scheme="default"
+             data-md-color-primary=""
+             data-md-color-accent="" 
+             aria-label="Switch to system preference"  type="radio" name="__palette"
+             id="__palette_2">
+      
+      <label class="md-header__button md-icon" title="Switch to system preference"
+             for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+      
+      
+      
+      <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)"
+             data-md-color-scheme="slate"
+             data-md-color-primary=""
+             data-md-color-accent="" 
+             aria-label="Switch to light mode"  type="radio" name="__palette"
+             id="__palette_3">
+      
+      <label class="md-header__button md-icon" title="Switch to light mode"
+             for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+      
+      
+    </form>
+    
+    
+    
+    <label class="md-header__button md-icon" for="__search">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+    </label>
+    <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+    <div class="md-header__source">
+      <a href="https://github.com/wso2/docs-bi" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wso2/docs-ballerina-integrator
+  </div>
+</a>
+    </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="WSO2 Integrator: BI Documentation" class="md-nav__button md-logo" aria-label="WSO2 Integrator: BI Documentation" data-md-component="logo">
+      
+  <img src="../../../../images/logo.svg" alt="logo">
+
+    </a>
+    WSO2 Integrator: BI Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/wso2/docs-bi" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wso2/docs-ballerina-integrator
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Get started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Get started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../get-started/quick-start-guide/" class="md-nav__link">
+        Quick Start Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../get-started/install-wso2-integrator-bi/" class="md-nav__link">
+        Install WSO2 Integrator: BI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          Develop Integrations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Develop Integrations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../get-started/develop-automation/" class="md-nav__link">
+        Develop Automation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../get-started/develop-ai-agent/" class="md-nav__link">
+        Develop AI Agent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../get-started/develop-integration-as-api/" class="md-nav__link">
+        Develop Integration as API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../get-started/develop-event-integration/" class="md-nav__link">
+        Develop Event Integration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../get-started/develop-file-integration/" class="md-nav__link">
+        Develop File Integration
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Integration Guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Integration Guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          AI Agents and Other Gen AI Integrations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          AI Agents and Other Gen AI Integrations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../integration-guides/ai/natural-functions/natural-functions/" class="md-nav__link">
+        Natural functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_2" id="__nav_3_1_2_label" tabindex="0">
+          RAG
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          RAG
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../integration-guides/ai/rag/build-a-rag-application/" class="md-nav__link">
+        Build a RAG Application
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
+          Agents
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Agents
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../integration-guides/ai/agents/" class="md-nav__link">
+        Agents Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../integration-guides/ai/agents/introduction-to-chat-agents/" class="md-nav__link">
+        Introduction to Chat Agents
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../integration-guides/ai/agents/introduction-to-inline-agents/" class="md-nav__link">
+        Introduction to Inline Agents
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../integration-guides/ai/agents/integrating-agents-with-external-endpoints/" class="md-nav__link">
+        Integrating Agents with External Endpoints
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          Integration As API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Integration As API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../integration-guides/integration-as-api/service-orchestration/" class="md-nav__link">
+        Service Orchestration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../integration-guides/integration-as-api/message-transformation/" class="md-nav__link">
+        Message Transformation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../integration-guides/integration-as-api/message-routing/" class="md-nav__link">
+        Message Routing
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          File Integration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          File Integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../integration-guides/file-integration/file-integration-with-directory-service/" class="md-nav__link">
+        File Integration With Directory Service
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Developer Guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Developer Guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../create-a-project/" class="md-nav__link">
+        Create a Project
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../wso2-integrator-bi-artifacts/" class="md-nav__link">
+        WSO2 Integrator: BI Artifacts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../design-the-integrations/" class="md-nav__link">
+        Design the Integrations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../data-mapping/" class="md-nav__link">
+        Data Mapping
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../try-the-integration/" class="md-nav__link">
+        Try the Integration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../test-the-integrations/" class="md-nav__link">
+        Testing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          Debugging & Troubleshooting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          Debugging & Troubleshooting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../debugging-and-troubleshooting/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../debugging-and-troubleshooting/debugging-within-the-editor/" class="md-nav__link">
+        Debugging within the Editor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../debugging-and-troubleshooting/remote-debugging-integrations/" class="md-nav__link">
+        Remote Debugging Integrations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../debugging-and-troubleshooting/capturing-strand-dumps/" class="md-nav__link">
+        Capturing Strand Dumps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../debugging-and-troubleshooting/profiling-runtime-performance/" class="md-nav__link">
+        Profiling Runtime Performance
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+          AI For Integration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_8">
+          <span class="md-nav__icon md-icon"></span>
+          AI For Integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai-for-integration/build-an-http-service-with-wso2-copilot/" class="md-nav__link">
+        Build an HTTP Service With WSO2 Copilot
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+          Protocols and Connectors
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_9">
+          <span class="md-nav__icon md-icon"></span>
+          Protocols and Connectors
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../protocols-and-connectors/overview-of-connectors/" class="md-nav__link">
+        Overview of Connectors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../protocols-and-connectors/supported-protocols/" class="md-nav__link">
+        Supported Protocols
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../protocols-and-connectors/build-local-connectors/" class="md-nav__link">
+        Build Local Connectors
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+          Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4_10">
+          <span class="md-nav__icon md-icon"></span>
+          Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_10_1" id="__nav_4_10_1_label" tabindex="0">
+          Migration Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_10_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_10_1">
+          <span class="md-nav__icon md-icon"></span>
+          Migration Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../migration-tools/mulesoft-migration-tool/" class="md-nav__link">
+        Mulesoft Migration Tool
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../migration-tools/tibco-businessworks-migration-tool/" class="md-nav__link">
+        TIBCO BusinessWorks Migration Tool
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_10_2" id="__nav_4_10_2_label" tabindex="0">
+          Integration Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_10_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_4_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          Integration Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Health Tool
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Health Tool
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-tool" class="md-nav__link">
+    Install the tool
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-options" class="md-nav__link">
+    Command options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fhir-package-generation" class="md-nav__link">
+    FHIR package generation
+  </a>
+  
+    <nav class="md-nav" aria-label="FHIR package generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#package-generation-usage" class="md-nav__link">
+    Package generation usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-generation-command-options" class="md-nav__link">
+    Package generation command options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-generation-example" class="md-nav__link">
+    Package generation example
+  </a>
+  
+    <nav class="md-nav" aria-label="Package generation example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-clone-the-example-project" class="md-nav__link">
+    Step 1: Clone the example project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-generate-the-package" class="md-nav__link">
+    Step 2: Generate the package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-use-the-generated-package" class="md-nav__link">
+    Step 3: Use the generated package
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fhir-template-generation" class="md-nav__link">
+    FHIR template generation
+  </a>
+  
+    <nav class="md-nav" aria-label="FHIR template generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#template-generation-usage" class="md-nav__link">
+    Template generation usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-generation-command-options" class="md-nav__link">
+    Template generation command options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-generation-example" class="md-nav__link">
+    Template generation example
+  </a>
+  
+    <nav class="md-nav" aria-label="Template generation example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-clone-the-example-project_1" class="md-nav__link">
+    Step 1: Clone the example project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-generate-the-templates" class="md-nav__link">
+    Step 2: Generate the templates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-use-the-generated-templates" class="md-nav__link">
+    Step 3: Use the generated templates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cds-template-generation" class="md-nav__link">
+    CDS template generation
+  </a>
+  
+    <nav class="md-nav" aria-label="CDS template generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#template-generation-usage_1" class="md-nav__link">
+    Template generation usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Template generation usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cds-template-generation-command-options" class="md-nav__link">
+    CDS template generation command options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-generation-example_1" class="md-nav__link">
+    Template generation example
+  </a>
+  
+    <nav class="md-nav" aria-label="Template generation example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-the-cds-definition-file" class="md-nav__link">
+    Step 1: Create the CDS definition file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-generate-the-templates_1" class="md-nav__link">
+    Step 2: Generate the templates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-use-the-generated-templates_1" class="md-nav__link">
+    Step 3: Use the generated templates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../edi-tool/" class="md-nav__link">
+        EDI Tool
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_10_3" id="__nav_4_10_3_label" tabindex="0">
+          Other Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_10_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          Other Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../other-tools/scan-tool/" class="md-nav__link">
+        Scan Tool
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Deploy
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Deploy
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/deploy-to-devant/" class="md-nav__link">
+        Deploy to Devant
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+          Containerized Deployment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Containerized Deployment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/containerized-deployment/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/containerized-deployment/deploy-as-docker-image/" class="md-nav__link">
+        Deploy as Docker Image
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/containerized-deployment/deploy-on-kubernetes/" class="md-nav__link">
+        Deploy on Kubernetes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+          VM-based Deployment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          VM-based Deployment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/vm-based-deployment/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/vm-based-deployment/deploy-on-vm-as-executable-jar/" class="md-nav__link">
+        Deploy on VM as Executable JAR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/vm-based-deployment/centralized-deployment/" class="md-nav__link">
+        Centralized Deployment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/vm-based-deployment/de-centralized-deployment/" class="md-nav__link">
+        Decentralized Deployment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/vm-based-deployment/github-action-for-cicd/" class="md-nav__link">
+        GitHub Action for CICD
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/managing-configurations/" class="md-nav__link">
+        Managing configurations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Observability and Monitoring
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Observability and Monitoring
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observability-and-monitoring/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observability-and-monitoring/monitoring-with-wso2-integrator-icp/" class="md-nav__link">
+        Monitoring with WSO2 Integrator: ICP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observability-and-monitoring/observability-with-devant/" class="md-nav__link">
+        Observability with Devant
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+          Supported Observability Tools and Platforms
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          Supported Observability Tools and Platforms
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observability-and-monitoring/supported-observability-tools-and-platforms/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observability-and-monitoring/supported-observability-tools-and-platforms/prometheus/" class="md-nav__link">
+        Prometheus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observability-and-monitoring/supported-observability-tools-and-platforms/jaeger/" class="md-nav__link">
+        Jaeger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observability-and-monitoring/supported-observability-tools-and-platforms/zipkin/" class="md-nav__link">
+        Zipkin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observability-and-monitoring/supported-observability-tools-and-platforms/new-relic/" class="md-nav__link">
+        New Relic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observability-and-monitoring/supported-observability-tools-and-platforms/datadog/" class="md-nav__link">
+        Datadog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observability-and-monitoring/supported-observability-tools-and-platforms/elastic-stack/" class="md-nav__link">
+        Elastic Stack
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          References
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          References
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../references/enterprise-integrations-patterns/" class="md-nav__link">
+        Enterprise Integrations Patterns
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-tool" class="md-nav__link">
+    Install the tool
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#command-options" class="md-nav__link">
+    Command options
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fhir-package-generation" class="md-nav__link">
+    FHIR package generation
+  </a>
+  
+    <nav class="md-nav" aria-label="FHIR package generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#package-generation-usage" class="md-nav__link">
+    Package generation usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-generation-command-options" class="md-nav__link">
+    Package generation command options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-generation-example" class="md-nav__link">
+    Package generation example
+  </a>
+  
+    <nav class="md-nav" aria-label="Package generation example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-clone-the-example-project" class="md-nav__link">
+    Step 1: Clone the example project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-generate-the-package" class="md-nav__link">
+    Step 2: Generate the package
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-use-the-generated-package" class="md-nav__link">
+    Step 3: Use the generated package
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fhir-template-generation" class="md-nav__link">
+    FHIR template generation
+  </a>
+  
+    <nav class="md-nav" aria-label="FHIR template generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#template-generation-usage" class="md-nav__link">
+    Template generation usage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-generation-command-options" class="md-nav__link">
+    Template generation command options
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-generation-example" class="md-nav__link">
+    Template generation example
+  </a>
+  
+    <nav class="md-nav" aria-label="Template generation example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-clone-the-example-project_1" class="md-nav__link">
+    Step 1: Clone the example project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-generate-the-templates" class="md-nav__link">
+    Step 2: Generate the templates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-use-the-generated-templates" class="md-nav__link">
+    Step 3: Use the generated templates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cds-template-generation" class="md-nav__link">
+    CDS template generation
+  </a>
+  
+    <nav class="md-nav" aria-label="CDS template generation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#template-generation-usage_1" class="md-nav__link">
+    Template generation usage
+  </a>
+  
+    <nav class="md-nav" aria-label="Template generation usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cds-template-generation-command-options" class="md-nav__link">
+    CDS template generation command options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#template-generation-example_1" class="md-nav__link">
+    Template generation example
+  </a>
+  
+    <nav class="md-nav" aria-label="Template generation example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-the-cds-definition-file" class="md-nav__link">
+    Step 1: Create the CDS definition file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-generate-the-templates_1" class="md-nav__link">
+    Step 2: Generate the templates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-use-the-generated-templates_1" class="md-nav__link">
+    Step 3: Use the generated templates
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+                  
+
+  
+    <a href="https://github.com/wso2/docs-bi/edit/main/en/docs/developer-guides/tools/integration-tools/health-tool.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/wso2/docs-bi/raw/main/en/docs/developer-guides/tools/integration-tools/health-tool.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
+<h1 id="health-tool-fhirhl7">Health Tool (FHIR/HL7)<a class="headerlink" href="#health-tool-fhirhl7" title="Permanent link">&para;</a></h1>
+<p>The health tool generates Ballerina library packages and Ballerina templates for FHIR APIs for developing healthcare integrations.</p>
+<p>These artifacts generated by the tool are primarily focused on the <a href="https://www.hl7.org/fhir/overview.html">Fast Healthcare Interoperability Resources (FHIR)</a> standard and are developed using Ballerina.</p>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<p>Download a directory containing all FHIR specification definition files. You can download a preferred standard implementation guide from the <a href="https://fhir.org/guides/registry/">FHIR Implementation Guide registry</a>.</p>
+<details class="note" open="open"><summary>Note</summary><p>It is recommended to use a Standard for Trial Use (STU) or higher release level of the implementation guides. Make sure that the downloaded specification archive has the <code>StructureDefinition</code>, <code>ValueSet</code>, and <code>CodeSystem</code> files for the Implementation Guide (IG) resources when extracted.</p>
+</details>
+<h2 id="install-the-tool">Install the tool<a class="headerlink" href="#install-the-tool" title="Permanent link">&para;</a></h2>
+<p>Execute the command below to pull the Health tool from Ballerina Central.</p>
+<div class="highlight"><pre><span></span><code>$ bal tool pull health
+health:2.0.0 pulled successfully.
+health:2.0.0 successfully set as the active version.
+</code></pre></div>
+
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h2>
+<p>The Ballerina Health tool has the following usages.</p>
+<ul>
+<li><a href="#fhir-package-generation"><strong>FHIR package generation:</strong></a> generate a Ballerina package from a given FHIR implementation guide.</li>
+<li><a href="#fhir-template-generation"><strong>FHIR template generation:</strong></a> generate Ballerina templates for FHIR APIs from a given FHIR implementation guide.</li>
+<li><a href="#cds-template-generation"><strong>CDS template generation:</strong></a> generate Ballerina templates for Clinical Decision Support (CDS) services based on the <a href="https://cds-hooks.hl7.org/2.0/">CDS specification 2.0</a>.</li>
+</ul>
+<p>The general usage of the tool is as follows.</p>
+<details class="note" open="open"><summary>Note</summary><p>Make sure to give the directory path of the downloaded FHIR definitions as the last argument.</p>
+</details>
+<div class="highlight"><pre><span></span><code>$ bal health fhir [-m | --mode] &lt;mode-type&gt;
+            [-o | --output] &lt;output-location&gt;
+            [--package-name] &lt;ballerina-package-name&gt;
+            [--dependent-package] &lt;dependent-ballerina-package-name&gt; 
+            [--org-name] &lt;package-or-template-organization-name&gt;
+            [--included-profile] &lt;profile(s)-to-include-in-generation&gt;
+            [--excluded-profile] &lt;profile(s)-to-exclude-in-generation&gt;
+            &lt;fhir-specification-directory-path&gt;
+</code></pre></div>
+
+<h2 id="command-options">Command options<a class="headerlink" href="#command-options" title="Permanent link">&para;</a></h2>
+<p>The parameters that are available with the tool are listed below.</p>
+<table>
+<thead>
+<tr>
+<th>Command option</th>
+<th>Description</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-m, --mode</code></td>
+<td>Mode type can be <code>package</code> or <code>template</code>. The Ballerina package and API templates are generated according to the mode.</td>
+<td><ul><li><a href="#package-generation-command-options">package generation</a></li><li><a href="#template-generation-command-options">template generation</a></li></ul></td>
+</tr>
+<tr>
+<td><code>-o, --output</code></td>
+<td>The Ballerina artifacts are generated at the same location from which the <code>bal health fhir</code> command is executed. You can point to another directory location by using the <code>(-o\|--output)</code> flag.</td>
+<td><ul><li><a href="#package-generation-command-options">package generation</a></li><li><a href="#template-generation-command-options">template generation</a></li></ul></td>
+</tr>
+<tr>
+<td><code>--package-name</code></td>
+<td>Name of the Ballerina package to be generated.</td>
+<td><ul><li><a href="#package-generation-command-options">package generation</a></li></ul></td>
+</tr>
+<tr>
+<td><code>--dependent-package</code></td>
+<td>Ballerina package name, which contains the IG resources.</td>
+<td><ul><li><a href="#template-generation-command-options">template generation</a></li></ul></td>
+</tr>
+<tr>
+<td><code>--org-name</code></td>
+<td>Organization name of the Ballerina package or API templates to be generated.</td>
+<td><ul><li><a href="#package-generation-command-options">package generation</a></li><li><a href="#template-generation-command-options">template generation</a></li></ul></td>
+</tr>
+<tr>
+<td><code>--included-profile</code></td>
+<td>Generate one or more specific FHIR profiles as Ballerina templates for FHIR APIs.</td>
+<td><ul><li><a href="#template-generation-command-options">template generation</a></li></ul></td>
+</tr>
+<tr>
+<td><code>--excluded-profile</code></td>
+<td>Skip one or more specific FHIR profiles when generating Ballerina templates for FHIR APIs.</td>
+<td><ul><li><a href="#template-generation-command-options">template generation</a></li></ul></td>
+</tr>
+</tbody>
+</table>
+<h2 id="fhir-package-generation">FHIR package generation<a class="headerlink" href="#fhir-package-generation" title="Permanent link">&para;</a></h2>
+<p>The FHIR resources in the implementation guide will be represented as Ballerina records including the correct cardinality constraints and metadata. FHIR integration developers can leverage the generated package when transforming custom health data into FHIR format without referring to the specification.</p>
+<h3 id="package-generation-usage">Package generation usage<a class="headerlink" href="#package-generation-usage" title="Permanent link">&para;</a></h3>
+<p>The tool supports the package generation usage as follows.</p>
+<div class="highlight"><pre><span></span><code>$ bal health fhir [-m | --mode] package
+            [--package-name] &lt;ballerina-package-name&gt;
+            [-o | --output] &lt;output-location&gt;
+            [--org-name] &lt;package-organization-name&gt;
+            &lt;fhir-specification-directory-path&gt;
+</code></pre></div>
+
+<h3 id="package-generation-command-options">Package generation command options<a class="headerlink" href="#package-generation-command-options" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command option</th>
+<th>Description</th>
+<th>Mandatory/Optional</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-m, --mode</code></td>
+<td>If <code>mode</code> is set to <code>package</code>, a Ballerina package will be generated including all the records and types.</td>
+<td>Mandatory</td>
+</tr>
+<tr>
+<td><code>--package-name</code></td>
+<td>Name of the Ballerina package to be generated. The package name can be explicitly set using this argument. Unless specified, the default name of the implementation guide will be taken to construct the name of the package. For more information, see the <a href="https://ballerina.io/learn/package-references/#the-name-field" target="_blank">the <code>name</code> field</a>.</td>
+<td>Mandatory</td>
+</tr>
+<tr>
+<td><code>-o, --output</code></td>
+<td>Location of the generated Ballerina artifacts. If this path is not specified, the output will be written to the same directory from which the command is run.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><code>--org-name</code></td>
+<td>Organization name of the Ballerina package to be generated. For more information, see <a href="https://ballerina.io/learn/package-references/#the-org-field" target="_blank"> the <code>org</code> field</a>.</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h3 id="package-generation-example">Package generation example<a class="headerlink" href="#package-generation-example" title="Permanent link">&para;</a></h3>
+<p>Follow the steps below to try out an example package generation use case of the Health tool.</p>
+<h4 id="step-1-clone-the-example-project">Step 1: Clone the example project<a class="headerlink" href="#step-1-clone-the-example-project" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>Clone the <a href="https://github.com/ballerina-guides/healthcare-samples/tree/main/working-with-health-tool/package-generation">artifacts of the example</a> and extract them to a preferred location.</p>
+</li>
+<li>
+<p>The cloned directory includes the artifacts below that will be required to try out this example (Ballerina project and the FHIR specification files). </p>
+<ul>
+<li>The <a href="https://github.com/ballerina-guides/healthcare-samples/tree/main/working-with-health-tool/package-generation/ig-carinbb/definitions"><code>ig-carinbb/definitions</code></a> directory: includes the definition files of the FHIR specification.</li>
+<li>The <a href="https://github.com/ballerina-guides/healthcare-samples/tree/main/working-with-health-tool/package-generation/carinbb-patient-service"><code>carinbb-patient-service</code></a> directory: includes the Ballerina project containing the artifacts (i.e., the <code>Ballerina.toml</code>, <code>Dependencies.toml</code>, and <code>service.bal</code> files) to be executed.</li>
+</ul>
+</li>
+</ul>
+<h4 id="step-2-generate-the-package">Step 2: Generate the package<a class="headerlink" href="#step-2-generate-the-package" title="Permanent link">&para;</a></h4>
+<p>Follow the steps below to run the Health tool and create the Ballerina package.</p>
+<ol>
+<li>
+<p>Navigate to the cloned <code>working-with-health-tool/package-generation</code> directory.</p>
+</li>
+<li>
+<p>Run the tool with the <a href="#package-generation-command-options">required command options</a> to generate the package.</p>
+<details class="note" open="open"><summary>Note</summary><p>This example uses the <a href="https://github.com/ballerina-guides/healthcare-samples/tree/main/working-with-health-tool/package-generation/ig-carinbb/definitions">definitions files</a> downloaded from the <strong>JSON Definitions ZIP archive</strong> of the <a href="https://hl7.org/fhir/us/carin-bb/STU2/downloads.html">Carin BB implementation guide</a> to generate the package.</p>
+</details>
+<div class="highlight"><pre><span></span><code>$ bal health fhir -m package -o ig-carinbb/gen --org-name healthcare_samples --package-name carinbb_package ig-carinbb/definitions/
+[INFO] Ballerina FHIR package generation completed successfully. Generated package can be found at: /tmp/healthcare-samples/working-with-health-tool/package-generation/ig-carinbb/gen
+</code></pre></div>
+
+<p>The generated folder (i.e., <code>working-with-health-tool/package-generation/ig-carinbb/gen</code>) will contain the following directory structure.</p>
+<div class="highlight"><pre><span></span><code>└── carinbb_package
+    ├── Ballerina.toml
+    ├── Package.md
+    ├── initializer.bal
+    ├── resource_c4bbcoverage.bal
+    ├── resource_c4bbexplanation_of_benefit.bal
+    ├── resource_c4bbexplanation_of_benefit_inpatient_institutional.bal
+    ├── resource_c4bbexplanation_of_benefit_oral.bal
+    ├── resource_c4bbexplanation_of_benefit_outpatient_institutional.bal
+    ├── resource_c4bbexplanation_of_benefit_pharmacy.bal
+    ├── resource_c4bbexplanation_of_benefit_professional_non_clinician.bal
+    ├── resource_c4bborganization.bal
+    ├── resource_c4bbpatient.bal
+    ├── resource_c4bbpractitioner.bal
+    ├── resource_c4bbrelated_person.bal
+    ├── resources
+    ├── tests
+    └── variables.bal
+</code></pre></div>
+
+</li>
+<li>
+<p>Build the generated package.</p>
+<div class="highlight"><pre><span></span><code>$ cd ig-carinbb/gen/carinbb_package
+$ bal pack
+Compiling source
+        healthcare_samples/carinbb_package:0.0.1
+
+Creating bala
+        target/bala/healthcare_samples-carinbb_package-any-0.0.1.bala
+</code></pre></div>
+
+</li>
+<li>
+<p>Push it to a repository.</p>
+<details class="tip" open="open"><summary>Tip</summary><p>You can push either to the local repository or to <a href="https://central.ballerina.io/">Ballerina Central</a>, which is a remote repository.</p>
+</details>
+<div class="highlight"><pre><span></span><code>$ bal push --repository local
+Successfully pushed target/bala/healthcare_samples-carinbb_package-any-0.0.1.bala to &#39;local&#39; repository.
+</code></pre></div>
+
+</li>
+</ol>
+<h4 id="step-3-use-the-generated-package">Step 3: Use the generated package<a class="headerlink" href="#step-3-use-the-generated-package" title="Permanent link">&para;</a></h4>
+<p>Follow the steps below to use the generated package by running the cloned BI project.</p>
+<ol>
+<li>
+<p>Navigate to the cloned <code>working-with-health-tool/package-generation/carinbb-patient-service</code> directory.</p>
+<details class="info" open="open"><summary>Info</summary><p>You can change the dependency (name and version) of the generated package in the <a href="https://github.com/ballerina-guides/healthcare-samples/blob/main/working-with-health-tool/package-generation/carinbb-patient-service/Ballerina.toml"><code>carinbb-patient-service/Ballerina.toml</code></a> file of this cloned BI project directory as preferred.</p>
+</details>
+</li>
+<li>
+<p>Run the cloned BI project and validate the output.</p>
+<div class="highlight"><pre><span></span><code>Compiling source
+        healthcare_samples/carinbb_ballerina:1.0.0
+
+Running executable
+</code></pre></div>
+
+</li>
+<li>
+<p>Invoke the API to try it out.</p>
+<div class="highlight"><pre><span></span><code>$ curl http://localhost:9090/Patient/2121
+</code></pre></div>
+
+<p>You can view the response shown below.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Patient&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;gender&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;male&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2121&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;system&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://hl7.org/fhir/sid/us-ssn&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2121&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">&quot;http://hl7.org/fhir/us/carin-bb/StructureDefinition/C4BB-Patient&quot;</span>
+<span class="w">        </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;family&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Doe&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;given&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="s2">&quot;John&quot;</span><span class="p">,</span>
+<span class="w">                </span><span class="s2">&quot;Hemish&quot;</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+</li>
+</ol>
+<h2 id="fhir-template-generation">FHIR template generation<a class="headerlink" href="#fhir-template-generation" title="Permanent link">&para;</a></h2>
+<p>The tool can also be used to generate Ballerina templates for FHIR APIs for the FHIR resources in an implementation guide. FHIR integration developers can utilize these API templates by customizing them to align with their specific business logic and subsequently exposing them as standard FHIR APIs.</p>
+<h3 id="template-generation-usage">Template generation usage<a class="headerlink" href="#template-generation-usage" title="Permanent link">&para;</a></h3>
+<p>The tool supports the template generation usage as follows.</p>
+<div class="highlight"><pre><span></span><code>$ bal health fhir [-m | --mode] template
+            [--dependent-package] &lt;dependent-ballerina-package-name&gt; 
+            [-o | --output] &lt;output-location&gt;
+            [--org-name] &lt;template-organization-name&gt;
+            [--included-profile] &lt;profile(s)-to-include-in-generation&gt;
+            [--excluded-profile] &lt;profile(s)-to-exclude-in-generation&gt;
+            &lt;fhir-specification-directory-path&gt;
+</code></pre></div>
+
+<h3 id="template-generation-command-options">Template generation command options<a class="headerlink" href="#template-generation-command-options" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Command option</th>
+<th>Description</th>
+<th>Mandatory/Optional</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-m, --mode</code></td>
+<td>If <code>mode</code> is set to <code>template</code>, Ballerina templates for FHIR APIs can be generated.</td>
+<td>Mandatory</td>
+</tr>
+<tr>
+<td><code>--dependent-package</code></td>
+<td>Fully qualified name of the published Ballerina package containing the IG resources (e.g., <code>&lt;org&gt;/&lt;package&gt;</code>). This option can be used to generate Ballerina templates for FHIR APIs specifically for the resources in the given IG. The package name part of this value will be added as a prefix to the template name.</td>
+<td>Mandatory</td>
+</tr>
+<tr>
+<td><code>-o, --output</code></td>
+<td>Location of the generated Ballerina artifacts. If this path is not specified, the output will be written to the same directory from which the command is run.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><code>--org-name</code></td>
+<td>Organization name of the Ballerina templates for FHIR APIs to be generated. For more information, see <a href="https://ballerina.io/learn/package-references/#the-org-field" target="_blank"> the <code>org</code> field</a>.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><code>--included-profile</code></td>
+<td>If one or more specific FHIR profiles need to be generated as Ballerina templates, specify the profile URL(s) as the value of this parameter. This argument can be used more than once.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><code>--excluded-profile</code></td>
+<td>If one or more specific FHIR profiles need to be skipped when generating Ballerina templates, specify the profile URL(s) as the value of this parameter. This argument can be used more than once.</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h3 id="template-generation-example">Template generation example<a class="headerlink" href="#template-generation-example" title="Permanent link">&para;</a></h3>
+<p>Follow the steps below to try out an example template generation use case of the Health tool.</p>
+<h4 id="step-1-clone-the-example-project_1">Step 1: Clone the example project<a class="headerlink" href="#step-1-clone-the-example-project_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>Clone the <a href="https://github.com/ballerina-guides/healthcare-samples/tree/main/working-with-health-tool/template-generation">artifacts of the example</a> and extract them to a preferred location.</p>
+</li>
+<li>
+<p>The cloned directory includes the <a href="https://github.com/ballerina-guides/healthcare-samples/tree/main/working-with-health-tool/template-generation/ig-uscore/definitions"><code>ig-uscore/definitions</code></a> directory, which includes the definition files of the FHIR specification.</p>
+</li>
+</ul>
+<h4 id="step-2-generate-the-templates">Step 2: Generate the templates<a class="headerlink" href="#step-2-generate-the-templates" title="Permanent link">&para;</a></h4>
+<p>Follow the steps below to run the Health tool and generate the Ballerina templates for FHIR APIs for the selected package.</p>
+<details class="note" open="open"><summary>Note</summary><p>You need to have a Ballerina package containing IG-specific FHIR resource data models to generate FHIR IG templates. You can use the package mode of the Health tool for easy generation of this package. This example uses the <a href="https://central.ballerina.io/ballerinax/health.fhir.r4.uscore501/latest"><code>health.fhir.r4.uscore501</code></a> package in Ballerina Central.</p>
+</details>
+<ol>
+<li>
+<p>Navigate to the cloned <code>working-with-health-tool/template-generation</code> directory.</p>
+</li>
+<li>
+<p>Run the tool with the <a href="#template-generation-command-options">required command options</a> to generate the Ballerina templates for FHIR APIs.</p>
+<details class="note" open="open"><summary>Note</summary><p>This example uses the <a href="https://github.com/ballerina-guides/healthcare-samples/tree/main/working-with-health-tool/template-generation/ig-uscore/definitions">definitions files</a> downloaded from the <strong>JSON Definitions ZIP archive</strong> of the <a href="https://build.fhir.org/ig/HL7/US-Core/downloads.html">US Core implementation guide</a> to generate the templates.</p>
+</details>
+<div class="highlight"><pre><span></span><code>$ bal health fhir -m template -o ig-uscore/gen --org-name healthcare_samples --dependent-package ballerinax/health.fhir.r4.uscore501 ig-uscore/definitions
+[INFO] Generating templates for all FHIR profiles...
+[INFO] Ballerina FHIR API templates generation completed successfully. Generated templates can be found at: /tmp/healthcare-samples/working-with-health-tool/template-generation/ig-uscore/gen
+</code></pre></div>
+
+<p>The generated folder (i.e., <code>working-with-health-tool/template-generation/ig-uscore/gen</code>) will contain the following directory structure.</p>
+<div class="highlight"><pre><span></span><code>.
+|____device
+|   |____api_config.bal
+|   |____service.bal
+|   |____.gitignore
+|   |____Package.md
+|   |____Ballerina.toml
+|____observation
+|   |____api_config.bal
+|   |____service.bal
+|   |____.gitignore
+|   |____Package.md
+|   |____Ballerina.toml
+|____patient
+|   |____api_config.bal
+|   |____service.bal
+|   |____Dependencies.toml
+|   |____.gitignore
+|   |____Package.md
+|   |____Ballerina.toml
+|____practitioner
+|   |____api_config.bal
+|   |____service.bal
+|   |____Dependencies.toml
+|   |____.gitignore
+|   |____Package.md
+|   |____Ballerina.toml
+|____practitionerrole
+|   |____api_config.bal
+|   |____service.bal
+|   |____.gitignore
+|   |____Package.md
+|   |____Ballerina.toml
+|____procedure
+|   |____api_config.bal
+|   |____service.bal
+|   |____.gitignore
+|   |____Package.md
+|   |____Ballerina.toml
+|____relatedperson
+|   |____api_config.bal
+|   |____service.bal
+|   |____.gitignore
+|   |____Package.md
+|   |____Ballerina.toml    
+</code></pre></div>
+
+</li>
+</ol>
+<h4 id="step-3-use-the-generated-templates">Step 3: Use the generated templates<a class="headerlink" href="#step-3-use-the-generated-templates" title="Permanent link">&para;</a></h4>
+<p>Follow the steps below to use the generated API templates by running the cloned Ballerina project.</p>
+<ol>
+<li>
+<p>Navigate to the generated <code>working-with-health-tool/template-generation/ig-uscore/gen/practitioner/</code> directory.</p>
+</li>
+<li>
+<p>Update the <code>get fhir/r4/Practitioner/[string id]</code> method in the corresponding <code>working-with-health-tool/template-generation/ig-uscore/gen/practitioner/service.bal</code> file with the code below to implement the business logic.</p>
+<div class="highlight"><pre><span></span><code>isolated resource function get fhir/r4/Practitioner/[string id] (r4:FHIRContext fhirContext) returns Practitioner|r4:OperationOutcome|r4:FHIRError {
+    Practitioner practitioner = {
+        resourceType: &quot;Practitioner&quot;,
+        id: &quot;1&quot;,
+        meta: {
+            lastUpdated: &quot;2021-08-24T10:10:10Z&quot;,
+            profile: [
+                &quot;http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner&quot;
+            ]
+        },
+        identifier: [
+            {
+                use: &quot;official&quot;,
+                system: &quot;http://hl7.org/fhir/sid/us-npi&quot;,
+                value: &quot;1234567890&quot;
+            }
+        ],
+        name: [
+            {
+                use: &quot;official&quot;,
+                family: &quot;Smith&quot;,
+                given: [
+                    &quot;John&quot;,
+                    &quot;Jacob&quot;
+                ],
+                prefix: [
+                    &quot;Dr.&quot;
+                ]
+            }
+        ]
+    };
+    return practitioner;
+}
+</code></pre></div>
+
+</li>
+<li>
+<p>Run the service and verify the output response.</p>
+<div class="highlight"><pre><span></span><code>Compiling source
+        healthcare_samples/health.fhir.r4.uscore501.practitioner:1.0.0
+
+Running executable
+</code></pre></div>
+
+</li>
+<li>
+<p>Invoke the API to try it out.</p>
+<div class="highlight"><pre><span></span><code>$ curl http://localhost:9090/fhir/r4/Practitioner/1
+</code></pre></div>
+
+<p>You can view the response shown below.</p>
+<p><code>json
+{
+"resourceType":"Practitioner",
+"identifier":[
+    {
+        "system":"http://hl7.org/fhir/sid/us-npi",
+        "use":"official",
+        "value":"1234567890"
+    }
+],
+"meta":{
+    "lastUpdated":"2021-08-24T10:10:10Z",
+    "profile":[
+        "http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner"
+    ]
+},
+"name":[
+    {
+        "given":[
+            "John",
+            "Jacob"
+        ],
+        "prefix":[
+            "Dr."
+        ],
+        "use":"official",
+        "family":"Smith"
+    }
+],
+"id":"1"
+   }</code></p>
+</li>
+</ol>
+<h2 id="cds-template-generation">CDS template generation<a class="headerlink" href="#cds-template-generation" title="Permanent link">&para;</a></h2>
+<p>A Ballerina service template can be generated from CDS hook definitions. This template will also include basic functionalities such as validation, prefetch, etc., and it will facilitate the developers' implementation of the required connection with the external decision support system to run the CDS server. The generated Ballerina service project will be written into the provided output location.</p>
+<p>Supported CDS version: <a href="https://cds-hooks.hl7.org/2.0">2.0</a></p>
+<h3 id="template-generation-usage_1">Template generation usage<a class="headerlink" href="#template-generation-usage_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>$ bal health cds
+            [--org-name] &lt;template-organization-name&gt;
+            [--package-name] &lt;name-of-the-package&gt;
+            [--package-version] &lt;version-of-the-package&gt;
+            [-o | --output] &lt;output-location&gt;
+            [-i | --input] &lt;cds-hook-definitions-file-path&gt;
+</code></pre></div>
+
+<h4 id="cds-template-generation-command-options">CDS template generation command options<a class="headerlink" href="#cds-template-generation-command-options" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Command option</th>
+<th>Description</th>
+<th>Mandatory/Optional</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-i, --input</code></td>
+<td>The input file with CDS hook definitions which will be used to generate the Ballerina service. Only TOML files are accepted.</td>
+<td>Mandatory</td>
+</tr>
+<tr>
+<td><code>--org-name</code></td>
+<td>The organization name to be used for the generated Ballerina template. For more information, see <a href="https://ballerina.io/learn/package-references/#the-org-field" target="_blank"> the <code>org</code> field</a>.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><code>--package-name</code></td>
+<td>The package name to be used for the generated Ballerina template. If not specified, <code>health.fhir.templates.crd</code> will be used to construct the name of the package.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><code>--package-version</code></td>
+<td>The version to be used for the generated Ballerina template.</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td><code>-o, --output</code></td>
+<td>The location of the generated Ballerina artifacts. If this path is not specified, the output will be written to the same directory from which the command is run.</td>
+<td>Optional</td>
+</tr>
+</tbody>
+</table>
+<h3 id="template-generation-example_1">Template generation example<a class="headerlink" href="#template-generation-example_1" title="Permanent link">&para;</a></h3>
+<p>Follow the steps below to try out a sample CDS template generation use case of the Health tool.</p>
+<h4 id="step-1-create-the-cds-definition-file">Step 1: Create the CDS definition file<a class="headerlink" href="#step-1-create-the-cds-definition-file" title="Permanent link">&para;</a></h4>
+<p>Create a TOML file with the CDS hook definitions. Refer to <a href="https://cds-hooks.hl7.org/2.0/#response">CDS specifications</a> for more information about the attributes.</p>
+<p>Sample <code>cds-definitions.toml</code> file:</p>
+<div class="highlight"><pre><span></span><code>[[cds_services]]
+id = &quot;static-patient-greeter&quot;
+hook = &quot;patient-view&quot;
+title = &quot;Static CDS Service Example&quot;
+description = &quot;An example of a CDS Service that returns a static set of cards&quot;
+usageRequirements = &quot;Note: functionality of this CDS Service is degraded without access to a FHIR Restful API as part of CDS recommendation generation.&quot;
+[cds_services.prefetch]
+patientToGreet = &quot;Patient/{{context.patientId}}&quot;
+
+[[cds_services]]
+id = &quot;book-imaging-center&quot;
+hook = &quot;order-dispatch&quot;
+title = &quot;Book an imaging center&quot;
+description = &quot;This hook can be used when booking imaging center&quot;
+</code></pre></div>
+
+<h4 id="step-2-generate-the-templates_1">Step 2: Generate the templates<a class="headerlink" href="#step-2-generate-the-templates_1" title="Permanent link">&para;</a></h4>
+<p>Follow the steps below to run the Health tool and generate the Ballerina templates for CDS for the given hook definitions.</p>
+<ol>
+<li>
+<p>Navigate to the working directory that contains the CDS hook definitions file.</p>
+</li>
+<li>
+<p>Run the tool with the <a href="#cds-template-generation-command-options">required command options</a> to generate the Ballerina template.</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code>$ bal health cds --org-name wso2 --package-name cds_service  --package-version 1.0.0 -i cds-definitions.toml
+[INFO] Ballerina CDS service template generation completed successfully. The generated project can be found at /Users/tom/Desktop/working_directory/generated-template/cds_service
+</code></pre></div>
+
+<p>The generated folder (i.e., working_directory/template-generation/cds_service) will contain the following directory structure.</p>
+<div class="highlight"><pre><span></span><code>.
+├── Ballerina.toml
+├── Config.toml
+├── Package.md
+├── decision_engine_connector.bal
+├── interceptor.bal
+├── service.bal
+└── utils.bal
+</code></pre></div>
+
+<h4 id="step-3-use-the-generated-templates_1">Step 3: Use the generated templates<a class="headerlink" href="#step-3-use-the-generated-templates_1" title="Permanent link">&para;</a></h4>
+<p>Follow the steps below to use the generated CDS service template.</p>
+<p>1. Navigate to the generated <code>working_directory/template-generation/cds_service/</code> directory.</p>
+<p>2. Complete the decision system connectivity implementation. The <code>decision_engine_connector</code> file contains placeholder functions that must be implemented to connect with external decision systems. Please follow the instructions in the file.</p>
+<pre class="codehilite"><code class="linenums">Sample implementation for a placeholder function:
+
+```
+isolated function connectDecisionSystemForBookImagingCenter(cds:CdsRequest cdsRequest, string hookId) returns cds:CdsResponse|cds:CdsError {
+    cds:Card card1 = {
+        summary: &quot;Prior authorization&quot;,
+        indicator: &quot;critical&quot;,
+        'source: {
+            label: &quot;Static CDS Service Example&quot;,
+            url: &quot;https://example.com&quot;,
+            icon: &quot;https://example.com/img/icon-100px.png&quot;
+        },
+        detail: &quot;Obtain prior authorization to avoid claim denials and patient financial liability. Contact: For questions, reach out to the insurance provider or billing department.&quot;,
+        suggestions: [{label: &quot;Kindly get pri-authorization&quot;}],
+        selectionBehavior: &quot;at-most-one&quot;,
+        links: [{label: &quot;Prior-auth&quot;, url: &quot;https://www.acmehealth.com/policies/lab-coverage&quot;, 'type: cds:ABSOLUTE}]
+    };
+
+    cds:Card card2 = {
+        summary: &quot;Alternative centers&quot;,
+        indicator: &quot;info&quot;,
+        'source: {
+            label: &quot;Static CDS Service Example&quot;,
+            url: &quot;https://example.com&quot;,
+            icon: &quot;https://example.com/img/icon-100px.png&quot;
+        },
+        detail: &quot;Discuss alternative imaging centers with patients to enhance access and affordability. For assistance, reach out to the facility's scheduling department or insurance provider.&quot;,
+        suggestions: [
+            {label: &quot;The selected imaging center is far away from your location. Please select nearby one. Suggested: Asiri labs : Col - 3&quot;}
+        ],
+        selectionBehavior: &quot;any&quot;
+    };
+
+    cds:CdsResponse cdsResponse = {
+        cards: [card1, card2],
+        systemActions: []
+    };
+    return cdsResponse;
+}
+```</code></pre>
+
+
+<p>3. Run the service.</p>
+<div class="highlight"><pre><span></span><code>Compiling source
+        healthcare_samples/health.fhir.r4.uscore501.practitioner:1.0.0
+
+Running executable
+</code></pre></div>
+
+<p>4. Invoke the API to try it out.</p>
+<div class="highlight"><pre><span></span><code>curl --location &#39;http://localhost:8080/cds-services/book-imaging-center&#39; \
+--header &#39;Content-Type: application/json&#39; \
+--data &#39;{
+ &quot;hookInstance&quot;: &quot;d1577c69-dfbe-44ad-ba6d-3e05e953b2ea&quot;,
+ &quot;hook&quot;: &quot;order-dispatch&quot;,
+ &quot;context&quot;: {
+     &quot;patientId&quot;: &quot;12345&quot;,
+     &quot;dispatchedOrders&quot;: [
+         &quot;ServiceRequest/proc002&quot;
+     ],
+     &quot;performer&quot;: &quot;Organization/O12345&quot;,
+     &quot;fulfillmentTasks&quot;: [
+         {
+             &quot;resourceType&quot;: &quot;Task&quot;,
+             &quot;status&quot;: &quot;draft&quot;,
+             &quot;intent&quot;: &quot;order&quot;,
+             &quot;code&quot;: {
+                 &quot;coding&quot;: [
+                     {
+                         &quot;system&quot;: &quot;http://hl7.org/fhir/CodeSystem/task-code&quot;,
+                         &quot;code&quot;: &quot;fulfill&quot;
+                     }
+                 ]
+             },
+             &quot;focus&quot;: {
+                 &quot;reference&quot;: &quot;ServiceRequest/proc002&quot;
+             },
+             &quot;for&quot;: {
+                 &quot;reference&quot;: &quot;Patient/12345&quot;
+             },
+             &quot;authoredOn&quot;: &quot;2016-03-10T22:39:32-04:00&quot;,
+             &quot;lastModified&quot;: &quot;2016-03-10T22:39:32-04:00&quot;,
+             &quot;requester&quot;: {
+                 &quot;reference&quot;: &quot;Practitioner/wdwdwd&quot;
+             },
+             &quot;owner&quot;: {
+                 &quot;reference&quot;: &quot;Organization/some-performer&quot;
+             }
+         }
+     ]
+ }
+}&#39;
+</code></pre></div>
+
+<p>You can view the response shown below.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;resourceType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Practitioner&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;identifier&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;system&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://hl7.org/fhir/sid/us-npi&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;use&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;official&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1234567890&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;lastUpdated&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-08-24T10:10:10Z&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;profile&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;http://hl7.org/fhir/us/core/StructureDefinition/us-core-practitioner&quot;</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;given&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Jacob&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;prefix&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Dr.&quot;</span><span class="p">],</span>
+<span class="w">      </span><span class="nt">&quot;use&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;official&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;family&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Smith&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+
+
+
+                
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CR98L58" height="0" width="0"
+                  style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+      
+        <footer class="md-footer">
+  
+  
+  <nav class="md-footer__inner md-grid" aria-label="Footer" >
+    
+    
+    <a href="../../migration-tools/tibco-businessworks-migration-tool/" class="md-footer__link md-footer__link--prev" aria-label="Previous: TIBCO BusinessWorks Migration Tool" rel="prev">
+      <div class="md-footer__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </div>
+      <div class="md-footer__title">
+        <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+          TIBCO BusinessWorks Migration Tool
+        </div>
+      </div>
+    </a>
+    
+    
+    
+    <a href="../edi-tool/" class="md-footer__link md-footer__link--next" aria-label="Next: EDI Tool" rel="next">
+      <div class="md-footer__title">
+        <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Next
+                </span>
+          EDI Tool
+        </div>
+      </div>
+      <div class="md-footer__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+      </div>
+    </a>
+    
+  </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  <div class="footer-copyright-left">
+  
+    <div class="md-copyright__highlight">
+      WSO2 Integrator: BI - Documentation
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+  </div>
+  <div class="footer-copyright-right">
+    <div class="footer-copyright-top">
+      Copyright &copy; <a href="https://wso2.com/">WSO2</a> LLC (2025)
+    </div>
+    <div class="footer-copyright-bottom">
+      Content licensed under <a href="https://creativecommons.org/licenses/by/4.0">CC By 4.0.</a> | Sample code
+      licensed under <a href="http://www.apache.org/licenses/">Apache 2.0</a>.
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.edit", "content.action.view", "navigation.path", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+      
+        <script src="../../../../assets/lib/highlightjs/highlight.min.js"></script>
+      
+        <script src="../../../../assets/lib/json-formatter/json-formatter.umd.js"></script>
+      
+        <script src="../../../../assets/js/mitheme.js"></script>
+      
+    
+  </body>
+</html>
