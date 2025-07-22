@@ -6,51 +6,23 @@ The following categories summarize the available connectors.
 
 ## 🌐 Network Connectors
 
-Use built-in network protocols to expose or consume services across various communication standards.
-
-* HTTP – `ballerina/http`
-* GraphQL – `ballerina/graphql`
-* WebSocket – `ballerina/websocket`
-* TCP – `ballerina/tcp`
-* UDP – `ballerina/udp`
-* FTP – `ballerina/ftp`
+BI provides multiple connectors to interact over common network protocols such as HTTP, TCP, or FTP. Frequently used options include HTTP (`ballerina/http`), GraphQL (`ballerina/graphql`), WebSocket (`ballerina/websocket`), and FTP (`ballerina/ftp`). These allow you to expose services or connect to remote endpoints using a variety of communication protocols.
 
 ## 🗃️ Database Connectors
 
-Connect to relational and NoSQL databases to read, write, or manipulate data.
-
-* MySQL – `ballerinax/mysql`
-* MongoDB – `ballerinax/mongodb`
-* PostgreSQL – `ballerinax/postgresql`
-* MS SQL Server – `ballerinax/mssql`
-* Redis – `ballerinax/redis`
+To handle structured and unstructured data, BI offers connectors to popular relational and NoSQL databases. Some examples include MySQL (`ballerinax/mysql`), MongoDB (`ballerinax/mongodb`), MS SQL Server (`ballerinax/mssql`), and Redis (`ballerinax/redis`). Additional connectors exist for other specialized or cloud-native databases.
 
 ## 📩 Messaging Connectors
 
-Integrate with messaging systems for real-time event streaming and queue-based communication.
-
-* Kafka (Consumer & Producer) – `ballerinax/kafka`
-* RabbitMQ – `ballerinax/rabbitmq`
+BI includes support for various message brokers and streaming platforms. Popular messaging connectors include Kafka Consumer and Producer (`ballerinax/kafka`) and RabbitMQ (`ballerinax/rabbitmq`). These connectors help implement asynchronous communication patterns for scalable system designs.
 
 ## ☁️ Cloud Connectors
 
-Access cloud-native services such as storage, queues, and NoSQL databases.
-
-* Amazon S3 – `ballerinax/aws.s3`
-* Amazon SQS – `ballerinax/aws.sqs`
-* Amazon DynamoDB – `ballerinax/aws.dynamodb`
-* Gmail – `ballerinax/googleapis.gmail`
-* Google Calendar – `ballerinax/googleapis.gcalendar`
+Connectors are available for accessing storage, queueing, and database services in cloud environments. Common options include Amazon S3 (`ballerinax/aws.s3`), Gmail (`ballerinax/googleapis.gmail`), and Google Calendar (`ballerinax/googleapis.gcalendar`). BI also supports many other connectors for cloud-native services across different providers.
 
 ## 🧩 SaaS Connectors
 
-Integrate with popular SaaS applications to exchange business-critical data.
-
-* Salesforce – `ballerinax/salesforce`
-* Slack – `ballerinax/slack`
-* Twilio – `ballerinax/twilio`
-* GitHub – `ballerinax/github`
-* Stripe – `ballerinax/stripe`
+BI provides connectors for integrating with widely used SaaS platforms. These enable smooth data flow between your integration and business-critical tools like Salesforce (`ballerinax/salesforce`), Twilio (`ballerinax/twilio`), GitHub (`ballerinax/github`), and Stripe (`ballerinax/stripe`). Many additional SaaS connectors are available to meet your integration needs.
 
 ## Using Connectors in BI
 

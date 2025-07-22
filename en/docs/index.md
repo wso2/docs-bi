@@ -18,7 +18,7 @@
         "links": [
             {"name": "Design the Integrations", "url": "developer-guides/design-the-integrations/"},
             {"name": "Data Mapping", "url": "developer-guides/data-mapping/"},
-            {"name": "Tesing", "url": "developer-guides/test-the-integrations/"},
+            {"name": "Testing", "url": "developer-guides/test-the-integrations/"},
             {"name": "Debugging & Troubleshooting", "url": "developer-guides/debug-the-integrations/"},
             {"name": "Protocols and Connectors", "url": "developer-guides/protocols-and-connectors/overview-of-connectors/"},
             {"name": "Integration Tools", "url": "developer-guides/tools/integration-tools/health-tool/"},
