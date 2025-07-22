@@ -106,10 +106,10 @@ nav:
       - Testing: developer-guides/test-the-integrations.md
       - Debugging & Troubleshooting:
           Overview: developer-guides/debugging-and-troubleshooting/overview.md
-          Debugging within the Editor: developer-guides/debugging-and-troubleshooting/debugging-within-editor.md
-          Remote Debugging Integrations: developer-guides/debugging-and-troubleshooting/remote-debugging.md
+          Debugging within the Editor: developer-guides/debugging-and-troubleshooting/debugging-within-the-editor.md
+          Remote Debugging Integrations: developer-guides/debugging-and-troubleshooting/remote-debugging-integrations.md
           Capturing Strand Dumps: developer-guides/debugging-and-troubleshooting/capturing-strand-dumps.md
-          Profiling Runtime Performance: developer-guides/debugging-and-troubleshooting/profiling-performance.md
+          Profiling Runtime Performance: developer-guides/debugging-and-troubleshooting/profiling-runtime-performance.md
       - AI For Integration:
         - Build an HTTP Service With WSO2 Copilot : developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot.md
       - Protocols and Connectors:

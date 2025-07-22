@@ -8,8 +8,8 @@ BI offers three types of debugging sessions (i.e., program debugging, test debug
 
 Refer to the following sections for more information on debugging sessions.
 
-* [Debugging Within Editor](/developer-guides/debugging-and-troubleshooting/debugging-within-editor/)
-* [Remotely Debugging Integrations](/developer-guides/debugging-and-troubleshooting/remote-debugging/)
+* [Debugging Within Editor](/developer-guides/debugging-and-troubleshooting/debugging-within-the-editor/)
+* [Remotely Debugging Integrations](/developer-guides/debugging-and-troubleshooting/remote-debugging-integrations/)
 
 ???+ Info
     For more information on the debugging sessions and methods, go to [Debugging Sessions](https://wso2.com/ballerina/vscode/docs/debug-the-code/debug-sessions/).
