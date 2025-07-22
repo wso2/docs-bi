@@ -6,6 +6,11 @@ The Ballerina compiler is especially useful in BI development, where large-scale
 
 BI offers three types of debugging sessions (i.e., program debugging, test debugging, and remote debugging). Debugging sessions can be initiated using CodeLens or configurations in a `launch.json file`. It also provides a `Debug Console` to view the output and perform various debugging scenarios.
 
+Refer to the following sections for more information on debugging sessions.
+
+* [Debugging Within Editor](/developer-guides/debugging-and-troubleshooting/debugging-within-editor/)
+* [Remotely Debugging Integrations](/developer-guides/debugging-and-troubleshooting/remote-debugging/)
+
 ???+ Info
     For more information on the debugging sessions and methods, go to [Debugging Sessions](https://wso2.com/ballerina/vscode/docs/debug-the-code/debug-sessions/).
 

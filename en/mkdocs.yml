@@ -104,7 +104,12 @@ nav:
       - Data Mapping: developer-guides/data-mapping.md
       - Try the Integration: developer-guides/try-the-integration.md
       - Testing: developer-guides/test-the-integrations.md
-      - Debugging & Troubleshooting: developer-guides/debug-the-integrations.md
+      - Debugging & Troubleshooting:
+          Overview: developer-guides/debugging-and-troubleshooting/overview.md
+          Debugging within the Editor: developer-guides/debugging-and-troubleshooting/debugging-within-editor.md
+          Remote Debugging Integrations: developer-guides/debugging-and-troubleshooting/remote-debugging.md
+          Capturing Strand Dumps: developer-guides/debugging-and-troubleshooting/capturing-strand-dumps.md
+          Profiling Runtime Performance: developer-guides/debugging-and-troubleshooting/profiling-performance.md
       - AI For Integration:
         - Build an HTTP Service With WSO2 Copilot : developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot.md
       - Protocols and Connectors:
@@ -120,8 +125,6 @@ nav:
           - EDI Tool: developer-guides/tools/integration-tools/edi-tool.md
         - Other Tools:
           - Scan Tool: developer-guides/tools/other-tools/scan-tool.md
-          - Profiler Tool: developer-guides/tools/other-tools/profiler-tool.md
-          - Strand Dump Tool: developer-guides/tools/other-tools/strand-dump-tool.md
   - Deploy:
       - Overview: deploy/overview.md
       - Deploy to Devant: deploy/deploy-to-devant.md
