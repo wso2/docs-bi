@@ -14,7 +14,7 @@ The program will pause at your debug points, allowing you to inspect variables, 
 
 This integrated debugging experience helps you quickly identify and resolve issues directly within your development environment.
 
-<a href="{{base_path}}/assets/img/developer-guides/testing/testting-a-function.gif"><img src="{{base_path}}/assets/img/developer-guides/testing/testting-a-function.gif" alt="Testing a simple function" width="80%"></a>
+<a href="{{base_path}}/assets/img/developer-guides/debugging/debugging-within-editor.gif"><img src="{{base_path}}/assets/img/developer-guides/debugging/debugging-within-editor.gif" alt="Testing a simple function" width="80%"></a>
 
 ???+ Note
 
