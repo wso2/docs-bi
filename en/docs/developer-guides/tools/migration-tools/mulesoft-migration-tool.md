@@ -10,7 +10,7 @@ Multi-project conversion is supported via the `--multi-root` option, allowing ba
 
 For migration assessment, the `--dry-run` option is available. This generates a detailed migration assessment report (`migration_report.html`) without actually converting the project, helping teams evaluate migration feasibility, estimate effort, and identify manual conversion requirements before committing to a full migration.
 
-## Supported Mule Versions
+## Supported Mule versions
 
 The migration tool supports both Mule 3.x and Mule 4.x projects.
 
@@ -227,7 +227,7 @@ You can check out the `migration_report.html` for overview of the migration.
 
 This example demonstrates how to migrate a MuleSoft application that performs database operations to Ballerina using the migration tool. The migration tool automatically converts the database configuration and SQL query to the equivalent Ballerina code using the `ballerinax/mysql` module.
 
-## Supported Mule Components
+## Supported Mule components
 
 The migration tool currently supports a wide range of Mule components for both Mule 3.x and Mule 4.x. For a full list of supported components and their mappings, see:
 - [Mule 3.x Components](https://github.com/wso2/integration-bi-migration-assistant/blob/main/mule/docs/palette-item-mappings-v3.md)
