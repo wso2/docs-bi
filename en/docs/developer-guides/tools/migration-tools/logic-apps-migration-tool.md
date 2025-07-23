@@ -1,11 +1,16 @@
-# Azure Logic Apps migration tool
+# Azure Logic Apps Migration Tool
 
 This guide explains how to use the [migrate-logicapps](https://central.ballerina.io/wso2/tool_migrate_logicapps/latest) tool to convert
 [Azure Logic Apps](https://azure.microsoft.com/en-us/products/logic-apps) integrations into Ballerina packages compatible with the [WSO2 Integrator: BI](https://wso2.com/integrator/bi/).
 
 ## Tool overview
-The tool accepts either a project directory that contains multiple Logic App `.json` files or a single Logic App `.json` 
+The tool accepts either a project directory that contains multiple Logic Apps `.json` files or a single Logic Apps `.json` 
 file as input and produces an equivalent Ballerina Integrator application.
+
+## Supported Logic Apps versions
+
+The migration tool supports all the NuGet versions of Azure Logic Apps. 
+It is recommended to use the latest version of the Logic Apps JSON schema for the best results.
 
 ## Installation
 
@@ -14,68 +19,80 @@ To pull the `migrate-logicapps` tool from Ballerina Central, run the following c
 $ bal tool pull migrate-logicapps
 ```
 
+## Parameters
+
+Following are parameters that can be used with the `migrate-logicapps` tool:
+
+- **source-project-directory-or-file** - *Required*. The path to the directory which contains multiple Logic App JSON files
+  or a single Logic App JSON file to be migrated.
+- **-o or --out** - *Optional*. The directory where the new Ballerina package will be created. If not provided,
+      - For a project directory input, the new Ballerina package is created inside the source project directory.
+      - For a single JSON file, the new Ballerina package is created in the same directory as the source file.
+- **-v or --verbose** - *Optional*. Enable verbose output during conversion.
+- **-m or --multi-root** - *Optional*. Treat each child directory as a separate project and convert all of them. The source must be a directory containing multiple Logic App JSON files.
+
 ## Implementation
 Follow the steps below to migrate your Logic Apps integration.
 
 ### Step 1: Prepare your input
 
-You can migrate either a project directory which contains multiple Logic App `.json` files or a single Logic App `.json`
+You can migrate either a project directory that contains multiple Logic Apps `.json` files or a single Logic Apps `.json`
 file:
 
-- **For multiple JSON files**: Ensure that the project directory only contains Logic App `.json` files
-- **For single JSON files**: You can directly use any valid Logic App `.json` file.
+- **For multiple JSON files**: Ensure that the project directory only contains Logic Apps `.json` files.
+- **For single JSON files**: You can directly use any valid Logic Apps `.json` file.
 
 ### Step 2: Run the migration tool
 
 Use one of the following commands based on your needs.
 
-1. To convert a Logic App JSON file with the default output location:
+1. To convert a Logic Apps JSON file with the default output location:
 
-   ```bash
-   $ bal migrate-logicapps /path/to/logic-app-control-flow.json
-   ```
+    ```bash
+    $ bal migrate-logicapps /path/to/logic-app-control-flow.json
+    ```
    
-   This will create a Ballerina package in the same directory as the input `.json` file.
+    This will create a Ballerina package in the same directory as the input `.json` file.
 
-2. To convert a Logic App JSON file with a custom output location:
+2. To convert a Logic Apps JSON file with a custom output location:
 
-   ```bash
-   $ bal migrate-logicapps /path/to/logic-app-control-flow.json --out /path/to/output-dir
-   ```
+    ```bash
+    $ bal migrate-logicapps /path/to/logic-app-control-flow.json --out /path/to/output-dir
+    ```
    
-   This will create a Ballerina package at `/path/to/output-dir`.
+    This will create a Ballerina package at `/path/to/output-dir`.
 
-3. To convert multiple Logic App JSON files with the default output location:
+3. To convert multiple Logic Apps JSON files with the default output location:
 
-   ```bash
-   $ bal migrate-logicapps /path/to/logic-apps-file-directory --multi-root
-   ```
+    ```bash
+    $ bal migrate-logicapps /path/to/logic-apps-file-directory --multi-root
+    ```
    
-   This will create multiple Ballerina packages inside `/path/to/logic-apps-file-directory` directory for each Logic 
-   App file.
+    This will create multiple Ballerina packages inside `/path/to/logic-apps-file-directory` directory for each Logic 
+    App file.
 
-4. To convert multiple Logic App JSON files with a custom output location:
+4. To convert multiple Logic Apps JSON files with a custom output location:
 
-   ```bash
-   $ bal migrate-logicapps /path/to/logic-apps-file-directory --out /path/to/output-dir --multi-root
-   ```
+    ```bash
+    $ bal migrate-logicapps /path/to/logic-apps-file-directory --out /path/to/output-dir --multi-root
+    ```
    
-   This will create multiple Ballerina packages at `/path/to/output-dir` for each Logic App file.
+    This will create multiple Ballerina packages at `/path/to/output-dir` for each Logic Apps file.
 
 ### Step 3: Review migration output
 
-1. For a directory with multiple Logic App JSON files as input:
-   - A new Ballerina package is created for each Logic App file with the same name as the input `.json` file, appended 
-     with a `_ballerina` suffix.
-   - Created Ballerina package contains the Ballerina Integrator file structure.
+1. For a directory with multiple Logic Apps JSON files as input:
+    - A new Ballerina package is created for each Logic Apps file with the same name as the input `.json` file, appended 
+      with a `_ballerina` suffix.
+    - Created Ballerina package contains the Ballerina Integrator file structure.
 
-2. For a single Logic App JSON file input:
+2. For a single Logic Apps JSON file input:
     - A new Ballerina package is created with the same name as the `.json` file, appended with a `_ballerina` suffix.
-   - Created Ballerina package contains the Ballerina Integrator file structure.
+    - Created Ballerina package contains the Ballerina Integrator file structure.
 
 ### Step 4: Address the TODO comments and manual adjustments
 
-The generated Ballerina code may contain TODO comments for some Logic App actions. 
+The generated Ballerina code may contain TODO comments for some Logic Apps actions. 
 You need to manually review and implement these actions in the Ballerina code.
 
 ```ballerina
@@ -97,13 +114,11 @@ public function initializeHttpClient(HttpConfig config) returns http:Client|erro
 }
 ```
 
-## Example: Converting a Logic App JSON file
+## Example: Converting a Logic Apps JSON file
 
-Let's walk through an example of migrating a Logic App sample `.json` integration to Ballerina.
+Let's walk through an example of migrating a Logic Apps sample `.json` integration to Ballerina.
 
-Here's a sample Logic App `.json` file (`weather-forecast.json`) that runs every hour to fetch weather data from an external API and store it in a SQL database.
-
-<a href="{{base_path}}/assets/img/developer-guides/migration-tools/logic-app-weather-forecast.png"><img src="{{base_path}}/assets/img/developer-guides/migration-tools/logic-app-weather-forecast.png" alt="Logic App Flow Diagram" width="70%"></a>
+Here's a sample Logic Apps `.json` file (`weather-forecast.json`) that runs every hour to fetch weather data from an external API and store it in a SQL database.
 
 ```json
 {
@@ -379,8 +394,17 @@ Here's a sample Logic App `.json` file (`weather-forecast.json`) that runs every
 }
 ```
 
+Following is the flow diagram of the Logic Apps:
+
+<div align="center">
+  <a href="{{base_path}}/assets/img/developer-guides/migration-tools/logic-app-weather-forecast.png">
+    <img src="{{base_path}}/assets/img/developer-guides/migration-tools/logic-app-weather-forecast.png" alt="Logic Apps Flow Diagram" width="70%">
+  </a>
+  <p><em>Logic Apps workflow showing the hourly weather data collection and database storage process</em></p>
+</div>
+
 ### Run the migration tool
-To convert the Logic App `.json` file using the `migrate-logicapps` tool, execute the following command:
+To convert the Logic Apps `.json` file using the `migrate-logicapps` tool, execute the following command:
 
 ```bash
 $ bal migrate-logicapps /path/to/weather_forecast.json
@@ -461,3 +485,7 @@ While the migration tool provides comprehensive conversion capabilities, there a
 - **Testing**: Comprehensive testing of converted workflows is recommended
 - **Configuration**: Environment-specific configurations need to be set up manually
 - **Monitoring**: Logging and monitoring setup may require additional configuration
+
+???+ note  "Disclaimer"
+
+    **Azure Logic Apps**: "Azure Logic Apps", "Microsoft Azure", and "Logic Apps" are trademarks of Microsoft Corporation. All product, company names and marks mentioned herein are the property of their respective owners and are mentioned for identification purposes only.
