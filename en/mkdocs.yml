@@ -15,8 +15,8 @@
 # under the License.
 
 # Project information
-site_name: Ballerina Integrator Documentation
-site_description: Documentation for Ballerina Integrator
+site_name: "WSO2 Integrator: BI Documentation"
+site_description: "Documentation for WSO2 Integrator: BI"
 site_author: WSO2
 site_url: https://bi.docs.wso2.com/
 
@@ -27,7 +27,7 @@ edit_uri: https://github.com/wso2/docs-bi/edit/main/en/docs/
 dev_addr: localhost:8000
 
 # Copyright
-copyright: WSO2 Ballerina Integrator - Documentation
+copyright: "WSO2 Integrator: BI - Documentation"
 
 # Configuration
 theme:
@@ -37,11 +37,10 @@ theme:
   favicon: images/bi-logo.svg
   features:
     - content.code.copy
-    - navigation.tabs
-    - navigation.tabs.sticky
     - content.action.edit
     - content.action.view
-    - navigation.indexes
+    - navigation.path
+    - navigation.top
   #highlightjs: true
   feature:
     tabs: true
@@ -74,50 +73,86 @@ strict: false # Set to true to break the build if there are warnings
 nav:
   - Home: index.md
   - Get started:
-      - Introduction: get-started/introduction.md
       - Quick Start Guide: get-started/quick-start-guide.md
-      - Key Concepts: get-started/key-concepts.md
-  - Install and Setup:
-      - Install Ballerina Integrator: install-and-setup/install-ballerina-integrator.md
-      - Install Integration Control Plane: install-and-setup/install-integration-control-plane.md
-  - Learn:
-      #- Automation:
-      #  - learn/automation/index.md
-      #  - Build your first automation: learn/automation/build-your-first-automation.md
-      - AI agent:
-      #  - learn/ai-agent/index.md
-        - Build AI Agent to Handle Mathematical Queries: learn/ai-agent/build-ai-agent-to-handle-mathematical-queries.md
-      #- Integration As API:
-      #  - Build your first integration as API: learn/integration-as-api/http-service.md
-      #- Event Integration:
-      #  - learn/event-integration/index.md
+      - "Install WSO2 Integrator: BI": get-started/install-wso2-integrator-bi.md
+      - Develop Integrations:
+        - Develop Automation: get-started/develop-automation.md
+        - Develop AI Agent: get-started/develop-ai-agent.md
+        - Develop Integration as API: get-started/develop-integration-as-api.md
+        - Develop Event Integration: get-started/develop-event-integration.md
+        - Develop File Integration: get-started/develop-file-integration.md
+  - Integration Guides:
+      - AI Agents and Other Gen AI Integrations:
+        - Natural functions: integration-guides/ai/natural-functions/natural-functions.md
+        - RAG:
+          - Build a RAG Application: integration-guides/ai/rag/build-a-rag-application.md
+        - Agents:
+          - integration-guides/ai/agents/index.md
+          - Introduction to Chat Agents: integration-guides/ai/agents/introduction-to-chat-agents.md
+          - Introduction to Inline Agents: integration-guides/ai/agents/introduction-to-inline-agents.md
+          - Integrating Agents with External Endpoints: integration-guides/ai/agents/integrating-agents-with-external-endpoints.md
+      - Integration As API:
+        - Service Orchestration: integration-guides/integration-as-api/service-orchestration.md
+        - Message Transformation: integration-guides/integration-as-api/message-transformation.md
+        - Message Routing: integration-guides/integration-as-api/message-routing.md
       - File Integration:
-        - File Integration With Directory Service: learn/file-integration/file-integration-with-directory-service.md
-      #  - File integration with FTP service: learn/file-integration/file-integration-with-ftp-service.md
-      - References:
-      #  - Configure the integration: learn/references/configure-the-integration.md
-        - Data Mapping: learn/references/data-mapping.md
-      #  - Natural functions: learn/references/natural-functions.md
-      - Samples:
-        - Message Transformation: learn/samples/message-transformation.md
-        - Message Routing: learn/samples/message-routing.md
-        - Service Orchestration: learn/samples/service-orchestration.md
-      - Enterprise Integration Patterns: learn/enterprise-integrations-patterns.md
+        - File Integration With Directory Service: integration-guides/file-integration/file-integration-with-directory-service.md
+  - Developer Guides:
+      - Create a Project: developer-guides/create-a-project.md
+      - "WSO2 Integrator: BI Artifacts": developer-guides/wso2-integrator-bi-artifacts.md
+      - Design the Integrations: developer-guides/design-the-integrations.md
+      - Data Mapping: developer-guides/data-mapping.md
+      - Try the Integration: developer-guides/try-the-integration.md
+      - Testing: developer-guides/test-the-integrations.md
+      - Debugging & Troubleshooting:
+          Overview: developer-guides/debugging-and-troubleshooting/overview.md
+          Debugging within the Editor: developer-guides/debugging-and-troubleshooting/debugging-within-the-editor.md
+          Remote Debugging Integrations: developer-guides/debugging-and-troubleshooting/remote-debugging-integrations.md
+          Capturing Strand Dumps: developer-guides/debugging-and-troubleshooting/capturing-strand-dumps.md
+          Profiling Runtime Performance: developer-guides/debugging-and-troubleshooting/profiling-runtime-performance.md
+      - AI For Integration:
+        - Build an HTTP Service With WSO2 Copilot : developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot.md
+      - Protocols and Connectors:
+        - Overview of Connectors: developer-guides/protocols-and-connectors/overview-of-connectors.md
+        - Supported Protocols: developer-guides/protocols-and-connectors/supported-protocols.md
+        - Build Local Connectors: developer-guides/protocols-and-connectors/build-local-connectors.md
       - Tools:
-        - Mulesoft Migration Tool: learn/tools/mulesoft-migration-tool.md
-        - TIBCO BusinessWorks Migration Tool: learn/tools/tibco-businessworks-migration-tool.md
-  - Develop:
-      - Create a Project: develop/create-a-project.md
-      - Ballerina Integrator Artifacts: develop/ballerina-integrator-artifacts.md
-      - AI Assisted Integration:
-      #  - develop/ai-assisted-development/index.md
-        - Build an HTTP Service With WSO2 Copilot : develop/ai-assisted-development/build-an-http-service-with-wso2-copilot.md
-      #- Test the integration: develop/test-the-integrations.md
-      #- Debug the integration: develop/debug-the-integrations.md
+        - Migration Tools:
+          - Mulesoft Migration Tool: developer-guides/tools/migration-tools/mulesoft-migration-tool.md
+          - TIBCO BusinessWorks Migration Tool: developer-guides/tools/migration-tools/tibco-businessworks-migration-tool.md
+        - Integration Tools:
+          - Health Tool: developer-guides/tools/integration-tools/health-tool.md
+          - EDI Tool: developer-guides/tools/integration-tools/edi-tool.md
+        - Other Tools:
+          - Scan Tool: developer-guides/tools/other-tools/scan-tool.md
   - Deploy:
+      - Overview: deploy/overview.md
       - Deploy to Devant: deploy/deploy-to-devant.md
-      - Deploy on VM as Executable JAR: deploy/deploy-on-vm-as-executable-jar.md
-      - Deploy as Docker Image: deploy/deploy-as-docker-image.md
+      - Containerized Deployment:
+        - Overview: deploy/containerized-deployment/overview.md
+        - Deploy as Docker Image: deploy/containerized-deployment/deploy-as-docker-image.md
+        - Deploy on Kubernetes: deploy/containerized-deployment/deploy-on-kubernetes.md
+      - VM-based Deployment:
+        - Overview: deploy/vm-based-deployment/overview.md
+        - Deploy on VM as Executable JAR: deploy/vm-based-deployment/deploy-on-vm-as-executable-jar.md
+        - Centralized Deployment: deploy/vm-based-deployment/centralized-deployment.md
+        - Decentralized Deployment: deploy/vm-based-deployment/de-centralized-deployment.md
+        - GitHub Action for CICD: deploy/vm-based-deployment/github-action-for-cicd.md
+      - Managing configurations: deploy/managing-configurations.md
+  - Observability and Monitoring:
+      - Overview: observability-and-monitoring/overview.md
+      - "Monitoring with WSO2 Integrator: ICP": observability-and-monitoring/monitoring-with-wso2-integrator-icp.md
+      - Observability with Devant: observability-and-monitoring/observability-with-devant.md
+      - Supported Observability Tools and Platforms:
+        - Overview: observability-and-monitoring/supported-observability-tools-and-platforms/overview.md
+        - Prometheus: observability-and-monitoring/supported-observability-tools-and-platforms/prometheus.md
+        - Jaeger: observability-and-monitoring/supported-observability-tools-and-platforms/jaeger.md
+        - Zipkin: observability-and-monitoring/supported-observability-tools-and-platforms/zipkin.md
+        - New Relic: observability-and-monitoring/supported-observability-tools-and-platforms/new-relic.md
+        - Datadog: observability-and-monitoring/supported-observability-tools-and-platforms/datadog.md
+        - Elastic Stack: observability-and-monitoring/supported-observability-tools-and-platforms/elastic-stack.md
+  - References:
+      - "Enterprise Integrations Patterns": references/enterprise-integrations-patterns.md
       
 
 # Markdown extensions configuration
