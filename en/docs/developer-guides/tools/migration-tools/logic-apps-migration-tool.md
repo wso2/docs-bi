@@ -45,7 +45,7 @@ Use one of the following commands based on your needs.
    
    This will create a Ballerina package at `/path/to/output-dir`.
 
-3. To convert multiple Logic App JSON files with default output location:
+3. To convert multiple Logic App JSON files with the default output location:
 
    ```bash
    $ bal migrate-logicapps /path/to/logic-apps-file-directory --multi-root
