@@ -444,7 +444,7 @@ The migration tool supports the following Azure Logic Apps features:
 While the migration tool provides comprehensive conversion capabilities, there are some limitations to be aware of:
 
 ### Platform-specific features
-- **Azure-specific Connectors**: Some Azure-native connectors may not have direct Ballerina equivalents
+- **Azure-specific connectors**: Some Azure-native connectors may not have direct Ballerina equivalents.
 - **Logic Apps runtime features**: Some runtime-specific features may need manual implementation
 
 ### Advanced scenarios
