@@ -24,18 +24,18 @@ In this tutorial, you’ll create an HTTP service to add key-value pairs to a Re
 
       <a href="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/prompt.gif"><img src="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/prompt.gif" alt="AI Prompt" width="70%"></a>
 
-3. Click on **+ Add to Ingeration** button to add the generated integration to the project.
+3. Click on **+ Add to Integration** button to add the generated integration to the project.
 4. The generated integration will look like below:  
 
       <a href="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/generated-integration.png"><img src="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/generated-integration.png" alt="Generated integration" width="70%"></a>
 
-## Step 3:  Add a resource to get value
+## Step 3: Add a resource to get value
 
 1. Add the following prompt and press `Enter`:
    ```text
     Add a resource to get the value of a key from Redis.
    ```
-2. Click on **+ Add to Ingeration** button to add the generated integration to the project.
+2. Click on **+ Add to Integration** button to add the generated integration to the project.
 3. The generated integration will look like below:  
 
       <a href="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/get.png"><img src="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/get.png" alt="Add get resource" width="70%"></a>
@@ -50,11 +50,13 @@ In this tutorial, you’ll create an HTTP service to add key-value pairs to a Re
 
       <a href="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/docker.png"><img src="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/docker.png" alt="Start Redis" width="70%"></a>
 
-## Step 6:  Configure the Redis client
+## Step 6: Configure the Redis client
 
-1. In the `Integrator overview`, click on the **Configurations**.
+1. In the `Design View`, click on the **Configure** button on the top-right side.
 2. Set `redisHost` value to `localhost`.
 3. Set `redisPort` value to `6379`.   
+
+> **Note:** No need to set the above values if the configurable variables are generated with default values.
 
       <a href="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/configuration.gif"><img src="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/configuration.gif" alt="Configurations" width="70%"></a>
 

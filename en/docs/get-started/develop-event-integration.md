@@ -19,7 +19,7 @@ Before you begin, make sure you have the following:
 1. In WSO2 Integrator: BI design view, click **Add Artifact**.
 2. Select **Event Integration** from the Constructs menu.
 3. Click **Create** to create an event integration. This directs you to the event integration diagram view.
-4. From the left side panel, click **+** on the **Configurations**, and add the following configurables.
+4. Go to the **Design View** by clicking the Home icon in the top left corner, click on the **Configure** button, and add the following configurables.
 
     | Configurable        | Type       |
     |---------------------|------------|

@@ -49,8 +49,10 @@ In this guide, you will learn how to enable ICP for an integration developed usi
 
     <a href="{{base_path}}/assets/img/observability/icp/config-toml.png"><img src="{{base_path}}/assets/img/observability/icp/config-toml.png" alt="Create Config.toml" width="70%"></a>
 
-5. Replace the `Config.toml` file content with the following configurations.   
+5. Click on the **Edit in Config.toml** button in the top right corner and, update the `Config.toml` file with the following entry.
 
+    <a href="{{base_path}}/assets/img/observability/icp/config-editor.png"><img alt="Config Editor" src="{{base_path}}/assets/img/observability/icp/config-editor.png" width="70%"/></a>
+    
     ```toml
       [ballerinax.wso2.controlplane.dashboard]
       url = "https://localhost:9743/dashboard/api"
