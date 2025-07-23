@@ -29,7 +29,7 @@ file:
 
 Use one of the following commands based on your needs.
 
-1. To convert a Logic App JSON file with default output location:
+1. To convert a Logic App JSON file with the default output location:
 
    ```bash
    $ bal migrate-logicapps /path/to/logic-app-control-flow.json
