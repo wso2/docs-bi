@@ -4,7 +4,7 @@ This guide explains how to use the [migrate-logicapps](https://central.ballerina
 [Azure Logic Apps](https://azure.microsoft.com/en-us/products/logic-apps) integrations into Ballerina packages compatible with the [WSO2 Integrator: BI](https://wso2.com/integrator/bi/).
 
 ## Tool overview
-The tool accepts either a project directory which contains multiple Logic App `.json` files or a single Logic App `.json` 
+The tool accepts either a project directory that contains multiple Logic App `.json` files or a single Logic App `.json` 
 file as input and produces an equivalent Ballerina Integrator application.
 
 ## Installation
