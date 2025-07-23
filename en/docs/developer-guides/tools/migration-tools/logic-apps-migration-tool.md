@@ -445,7 +445,7 @@ While the migration tool provides comprehensive conversion capabilities, there a
 
 ### Platform-specific features
 - **Azure-specific Connectors**: Some Azure-native connectors may not have direct Ballerina equivalents
-- **Logic Apps Runtime Features**: Some runtime-specific features may need manual implementation
+- **Logic Apps runtime features**: Some runtime-specific features may need manual implementation
 
 ### Advanced scenarios
 - **Complex Custom Connectors**: Custom connectors with complex authentication flows may require manual adaptation
