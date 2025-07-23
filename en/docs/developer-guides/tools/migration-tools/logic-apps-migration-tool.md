@@ -27,7 +27,7 @@ file:
 
 ### Step 2: Run the migration tool
 
-Use one of the following commands based on your needs:
+Use one of the following commands based on your needs.
 
 1. To convert a Logic App JSON file with default output location:
 
