@@ -723,4 +723,4 @@ Then click on the `Integration logs dashboard` to view the integration logs.
 
 <a href="{{base_path}}/assets/img/observability/supported-tools/opensearch-logs-dashboard-categories.png"><img src="{{base_path}}/assets/img/observability/supported-tools/opensearch-logs-dashboard-categories.png" alt="OpenSearch logs dashboard - log categories" width="70%"></a>
 
-<a href="{{base_path}}/assets/img/observability/supported-tools/opensearch-logs-dashboard-integration-logs.png"><img src="{{base_path}}/assets/img/observability/supported-tools/opensearch-logs-dashboard-integration-logs.png" alt="OpenSearch logs dashboard - integration logs" width="70%"></a>
+<a href="{{base_path}}/assets/img/observability/supported-tools/opensearch-logs-dashboard-logs-view.png"><img src="{{base_path}}/assets/img/observability/supported-tools/opensearch-logs-dashboard-logs-view.png" alt="OpenSearch logs dashboard - integration logs" width="70%"></a>
