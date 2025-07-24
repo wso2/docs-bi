@@ -1,6 +1,6 @@
 # Observe tracing using Zipkin
 
-The sample [shop service](/observability-and-monitoring/overview#example-observing-a-sample-integration-service) will be used in this guide. Follow the steps given below to observe BI tracing in [Zipkin](https://zipkin.io/).
+The sample [shop service](/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service) will be used in this guide. Follow the steps given below to observe BI tracing in [Zipkin](https://zipkin.io/).
 
 ## Step 1 - Set up Zipkin
 

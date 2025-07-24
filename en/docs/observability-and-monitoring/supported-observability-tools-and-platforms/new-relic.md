@@ -1,6 +1,6 @@
 # Observe metrics and tracing using New Relic
 
-The sample [shop service](/observability-and-monitoring/overview#example-observing-a-sample-integration-service) will be used in this guide. Follow the steps given below to observe BI tracing and metrics in [New Relic](https://newrelic.com/).
+The sample [shop service](/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service) will be used in this guide. Follow the steps given below to observe BI tracing and metrics in [New Relic](https://newrelic.com/).
 
 ## Step 1 - Create a New Relic account and  an API key
 

@@ -211,3 +211,4 @@ The following sections contain guides to set up and observe BI programs in each 
 * [Observe metrics and tracing using New Relic](/observability-and-monitoring/supported-observability-tools-and-platforms/new-relic)
 * [Observe metrics and tracing using Datadog](/observability-and-monitoring/supported-observability-tools-and-platforms/datadog)
 * [Observe logs using Elastic Stack](/observability-and-monitoring/supported-observability-tools-and-platforms/elastic-stack)
+* [Observe metrics, traces and logs using OpenSearch](/observability-and-monitoring/supported-observability-tools-and-platforms/opensearch)

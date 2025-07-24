@@ -1,6 +1,6 @@
 # Observe metrics and tracing using Datadog
 
-The sample [shop service](/observability-and-monitoring/overview#example-observing-a-sample-integration-service) will be used in this guide. Follow the steps given below to observe BI tracing and metrics in [Datadog](https://www.datadoghq.com/).
+The sample [shop service](/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service) will be used in this guide. Follow the steps given below to observe BI tracing and metrics in [Datadog](https://www.datadoghq.com/).
 
 Create a new account in Datadog. Select a billing plan according to your needs (A free plan is also included).
 
