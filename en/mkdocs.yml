@@ -120,6 +120,7 @@ nav:
         - Migration Tools:
           - Mulesoft Migration Tool: developer-guides/tools/migration-tools/mulesoft-migration-tool.md
           - TIBCO BusinessWorks Migration Tool: developer-guides/tools/migration-tools/tibco-businessworks-migration-tool.md
+          - Azure Logic Apps Migration Tool: developer-guides/tools/migration-tools/logic-apps-migration-tool.md
         - Integration Tools:
           - Health Tool: developer-guides/tools/integration-tools/health-tool.md
           - EDI Tool: developer-guides/tools/integration-tools/edi-tool.md
