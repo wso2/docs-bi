@@ -428,7 +428,7 @@ weather-forecast_ballerina/
 
 The `main.bal` file contains the main logic of the integration, which includes the scheduled trigger.
 
-Please note that the generated Ballerina code may be different in multiple runs since the migration tool use AI-based conversion and the output may vary based on the complexity of the Logic App.
+Please note that the generated Ballerina code may be different in multiple runs since the migration tool uses AI-based conversion and the output may vary based on the complexity of the Logic App.
 
 ## Supported Logic Apps features
 
