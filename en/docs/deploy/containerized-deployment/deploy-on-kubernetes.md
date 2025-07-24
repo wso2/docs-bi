@@ -21,7 +21,7 @@ This guide explains how to deploy an integration in a Kubernetes cluster.
     tag="latest"
     ```
 
-    <a href="{{base_path}}/assets/img/deploy/k8s_1.gif"><img src="{{base_path}}/assets/img/deploy/k8s_1.gif" alt="Update k8s build configurations" width="70%"></a>
+    <a href="{{base_path}}/assets/img/deploy/update-k8s-cnfigs.gif"><img src="{{base_path}}/assets/img/deploy/update-k8s-cnfigs.gif" alt="Update k8s build configurations" width="70%"></a>
 
 ## Step 2: Build the artifacts
 
@@ -47,7 +47,7 @@ This guide explains how to deploy an integration in a Kubernetes cluster.
                 kubectl apply -f /home/example/greeter/target/kubernetes/greeter
     ```
 
-    <a href="{{base_path}}/assets/img/deploy/k8s_2.gif"><img src="{{base_path}}/assets/img/deploy/k8s_2.gif" alt="Build k8s artifacts" width="70%"></a>
+    <a href="{{base_path}}/assets/img/deploy/build-k8s-artifacts.gif"><img src="{{base_path}}/assets/img/deploy/build-k8s-artifacts.gif" alt="Build k8s artifacts" width="70%"></a>
 
     ???+ Info
         This generates the cloud artifacts inside the `target/` directory.

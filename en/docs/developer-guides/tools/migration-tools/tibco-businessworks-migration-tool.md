@@ -6,6 +6,10 @@ This guide explains how to use the [migrate-tibco](https://central.ballerina.io/
 
 The tool accepts either a BusinessWorks project directory or a standalone process file as input and generates an equivalent Ballerina package that can be opened in the BI.
 
+## Supported BusinessWorks versions
+
+The migration tool supports both BusinessWorks 5 and BusinessWorks 6 projects.
+
 ## Installation
 
 Execute the command below to pull the `migrate-tibco` tool from Ballerina Central
@@ -100,7 +104,7 @@ $ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directo
         </pd:transition>
     </pd:ProcessDefinition>
     ```
- 
+
     ```xml title="GeneralConnection.sharedhttp"
     <?xml version="1.0" encoding="UTF-8"?>
     <ns0:httpSharedResource xmlns:ns0="www.tibco.com/shared/HTTPConnection">
