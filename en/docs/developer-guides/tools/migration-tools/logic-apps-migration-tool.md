@@ -407,7 +407,7 @@ Following is the flow diagram of the Logic Apps:
 To convert the Logic Apps `.json` file using the `migrate-logicapps` tool, execute the following command:
 
 ```bash
-$ bal migrate-logicapps /path/to/weather_forecast.json
+$ bal migrate-logicapps /path/to/weather-forecast.json
 ```
 
 ### Examine the generated Ballerina code
