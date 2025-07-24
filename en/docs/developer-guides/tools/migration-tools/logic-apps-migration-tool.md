@@ -23,13 +23,13 @@ $ bal tool pull migrate-logicapps
 
 Following are parameters that can be used with the `migrate-logicapps` tool:
 
-- **source-project-directory-or-file** - *Required*. The path to the directory which contains multiple Logic App JSON files
-  or a single Logic App JSON file to be migrated.
+- **source-project-directory-or-file** - *Required*. The path to the directory which contains multiple Logic Apps JSON files
+  or a single Logic Apps JSON file to be migrated.
 - **-o or --out** - *Optional*. The directory where the new Ballerina package will be created. If not provided,
       - For a project directory input, the new Ballerina package is created inside the source project directory.
       - For a single JSON file, the new Ballerina package is created in the same directory as the source file.
 - **-v or --verbose** - *Optional*. Enable verbose output during conversion.
-- **-m or --multi-root** - *Optional*. Treat each child directory as a separate project and convert all of them. The source must be a directory containing multiple Logic App JSON files.
+- **-m or --multi-root** - *Optional*. Treat each child directory as a separate project and convert all of them. The source must be a directory containing multiple Logic Apps JSON files.
 
 ## Implementation
 Follow the steps below to migrate your Logic Apps integration.
