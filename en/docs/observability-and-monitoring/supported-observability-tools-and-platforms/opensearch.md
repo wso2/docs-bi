@@ -44,7 +44,7 @@ Main components:
 
 **Sample Service**
 
-Create `Config.toml` at `config/ballerina/Config.toml` to enable metrics, logs and traces in the application and to configure the Jaeger exporter.
+Create a `Config.toml` file in the `config/ballerina` directory to enable metrics, logs, and traces in the application and to configure the Jaeger exporter. Ensure the directory structure matches `config/ballerina/Config.toml`.
 
 ```
 [ballerina.observe]
@@ -629,8 +629,8 @@ logging.quiet: false
      ports:
        - "8090:8090"
      volumes:
-       - ./config/sample-service/Config.toml:/home/sample-service/Config.toml
-       - ./logs/sample-service/app.log:/var/log/sample-service/app.log
+       - ./config/ballerina/Config.toml:/home/sample-service/Config.toml
+       - ./logs/sample-service/app.log:/var/log/ballerina/sample-service/app.log
      environment:
        - BAL_CONFIG_FILES=/home/sample-service/Config.toml
      depends_on:
@@ -649,7 +649,7 @@ logging.quiet: false
 
 ## Step 3 - Start the deployment
 
-Run the following `docker compose` command in the terminal to start the setup OpenSearch deployment along with the BI aplication.
+Run the following `docker compose` command in the terminal to start the setup OpenSearch deployment along with the BI application.
 
 ```
 docker compose -f docker-compose.yml up -d
