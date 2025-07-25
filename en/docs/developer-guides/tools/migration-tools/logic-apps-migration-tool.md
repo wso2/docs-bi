@@ -69,7 +69,7 @@ Use one of the following commands based on your needs.
     ```
    
     This will create multiple Ballerina packages inside `/path/to/logic-apps-file-directory` directory for each Logic 
-    App file.
+    Apps file.
 
 4. To convert multiple Logic Apps JSON files with a custom output location:
 
@@ -428,7 +428,8 @@ weather-forecast_ballerina/
 
 The `main.bal` file contains the main logic of the integration, which includes the scheduled trigger.
 
-Please note that the generated Ballerina code may be different in multiple runs since the migration tool uses AI-based conversion and the output may vary based on the complexity of the Logic App.
+Please note that the generated Ballerina code may be different in multiple runs since the migration tool uses AI-based 
+conversion and the output may vary based on the complexity of the Logic Apps application.
 
 ## Supported Logic Apps features
 
