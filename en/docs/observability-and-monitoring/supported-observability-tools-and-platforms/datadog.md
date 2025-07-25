@@ -88,7 +88,7 @@ Then follow the steps below to configure metrics and tracing data publishing to 
 
 ## Step 3 - Import Prometheus and Jaeger extensions for BI
 
-To include the Prometheus and Jaeger extensions into the executable, the `ballerinax/prometheus` and `ballerinax/jaeger` modules need to be imported into your BI project. Navigate to `file explorer` and add the following to the `main.bal` file.
+To include the Prometheus and Jaeger extensions into the executable, the `ballerinax/prometheus` and `ballerinax/jaeger` modules need to be imported into your BI project. Navigate to **file explorer** and add the following to the `main.bal` file.
 
 ```ballerina
 import ballerinax/prometheus as _;
@@ -101,7 +101,7 @@ Jaeger extension has an `Opentelemetry GRPC Span Exporter` which will push traci
 
 ## Step 4 - Configure BI runtime configurations
 
-Tracing and metrics can be enabled in your BI project using configurations similar to the following.  Navigate to `file explorer` and add the following to the `Config.toml` file.
+Tracing and metrics can be enabled in your BI project using configurations similar to the following.  Navigate to **file explorer** and add the following to the `Config.toml` file.
 
 ```toml
 [ballerina.observe]
@@ -192,7 +192,7 @@ You can add filters and use functions in the Datadog to visualize what you want 
 
 Ballerina provides a [dashboard](https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-prometheus/refs/heads/main/metrics-dashboards/datadog/ballerina_metrics_dashboard.json) in the Datadog to observe metrics in Ballerina applications.
 
-You can add a new dashboard in the Datadog under the `Dashboards` tab in the left navigation. After creating the new dashboard, go to the `Configure` tab in the dashboard. Import the `dashboard.json` file provided above.
+You can add a new dashboard in the Datadog under the **Dashboards** tab in the left navigation. After creating the new dashboard, go to the **Configure** tab in the dashboard. Import the `dashboard.json` file provided above.
 
 <a href="{{base_path}}/assets/img/observability/supported-tools/datadog-importing-dashboard.png"><img src="{{base_path}}/assets/img/observability/supported-tools/datadog-importing-dashboard.png" alt="Importing a dashboard json" width="70%"></a>
 

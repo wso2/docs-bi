@@ -17,7 +17,7 @@ $ docker run -d -p 9411:9411 openzipkin/zipkin
 
 ## Step 2 - Import Ballerina Zipkin extension
 
-To include the Zipkin extension into the executable, the `ballerinax/zipkin` module needs to be imported into your BI project by navigating to `file explorer` and adding the following to `main.bal` file.
+To include the Zipkin extension into the executable, the `ballerinax/zipkin` module needs to be imported into your BI project by navigating to **file explorer** and adding the following to `main.bal` file.
 
 ```ballerina
 import ballerinax/zipkin as _;

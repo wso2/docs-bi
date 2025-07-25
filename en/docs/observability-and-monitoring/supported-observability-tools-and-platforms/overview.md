@@ -27,7 +27,7 @@ Let’s consider an example where an integration service handles product managem
 1. Create a new integration on BI
 2. Define types to hold the `Product`, `Order` and `OrderRequest`
 
-    You can do this by navigating to the `types.bal` from the `File Explorer` view and copying the following content.
+    You can do this by navigating to the `types.bal` from the **file explorer** view and copying the following content.
 
     ```
     type Product record {|
@@ -55,7 +55,7 @@ Let’s consider an example where an integration service handles product managem
     - Place a new order `'order(OrderRequest orderRequest)`
     - Get order details by ID `'order/[int orderId]()`
 
-    You can add the service related logic by navigating to the `main.bal` from the `File Explorer` view and copying the following content. 
+    You can add the service related logic by navigating to the `main.bal` from the **file explorer** view and copying the following content. 
 
     ```
     import ballerina/http;
@@ -151,7 +151,7 @@ Let’s consider an example where an integration service handles product managem
 
 ### Enable Observability for the project
 
-Observability can be enabled in a BI project by adding the following section to the `Ballerina.toml` file by navigating to the `File Explorer` view.
+Observability can be enabled in a BI project by adding the following section to the `Ballerina.toml` file by navigating to the **file explorer** view.
 
 ```
 [build-options]

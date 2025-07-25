@@ -28,7 +28,7 @@ Consider the following step-by-step guide to profile a Ballerina package.
 
 * Create a BI project named `sort`
 
-* Go to the `file explorer` view and replace the contents of the `main.bal` file with the following Ballerina code, which creates an array of random integers, sorts them, and verifies the output.
+* Go to the **file explorer** view and replace the contents of the `main.bal` file with the following Ballerina code, which creates an array of random integers, sorts them, and verifies the output.
 
 ```ballerina
 import ballerina/io;

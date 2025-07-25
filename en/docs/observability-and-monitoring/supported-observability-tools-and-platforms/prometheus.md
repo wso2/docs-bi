@@ -39,7 +39,7 @@ Prometheus is used as the monitoring system, which pulls out the metrics collect
 
 ## Step 2 - Import Prometheus extension for BI
 
-To include the Prometheus extension into the executable, the `ballerinax/prometheus` module needs to be imported into your BI project. Navigate to `file explorer` and add the following to the `main.bal` file.
+To include the Prometheus extension into the executable, the `ballerinax/prometheus` module needs to be imported into your BI project. Navigate to **file explorer** and add the following to the `main.bal` file.
 
 ```ballerina
 import ballerinax/prometheus as _;
@@ -48,7 +48,7 @@ import ballerinax/prometheus as _;
 To support Prometheus as the metrics reporter, an HTTP endpoint starts with the context of `/metrics` in the default port `9797` when starting the service in BI.
 
 ## Step 3 - Configure runtime configurations for observability
-You can set up Prometheus for your BI project using configurations similar to the following in the `Config.toml` file. Navigate to `file explorer` and add the following to the `Config.toml` file.
+You can set up Prometheus for your BI project using configurations similar to the following in the `Config.toml` file. Navigate to **file explorer** and add the following to the `Config.toml` file.
 
 ```toml
 [ballerina.observe]
