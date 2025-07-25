@@ -9,7 +9,7 @@ The Elastic Stack comprises the following components.
 3. **Elasticsearch** - Storage and indexing of the logs sent by Logstash.
 4. **Kibana** - Visualizes the data stored in Elasticsearch.
 
-The sample [shop service](/observability-and-monitoring/overview#example-observing-a-sample-integration-service) will be used in this guide. Follow the steps given below to observe BI logs in Elastic Stack.
+The sample [shop service](/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service) will be used in this guide. Follow the steps given below to observe BI logs in Elastic Stack.
 
 ## Step 1 - Set up Elastic Stack
 
