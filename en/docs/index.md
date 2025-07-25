@@ -3,27 +3,76 @@
         "title": "Get Started",
         "icon": "🚀",
         "links": [
-            {"name": "Introduction", "url": "get-started/introduction/"},
-            {"name": "Key Concepts", "url": "get-started/key-concepts/"},
-            {"name": "Quick Start Guide", "url": "get-started/quick-start-guide/"}
+            {"name": "Quick Start Guide", "url": "get-started/quick-start-guide/"},
+            {"name": "Install WSO2 Integrator: BI", "url": "get-started/install-wso2-integrator-bi/"},
+            {"name": "Develop Integration as API", "url": "get-started/develop-integration-as-api/"},
+            {"name": "Develop Automation", "url": "get-started/develop-automation/"},
+            {"name": "Develop File Integration", "url": "get-started/develop-file-integration/"},
+            {"name": "Develop Event Integration", "url": "get-started/develop-event-integration/"},
+            {"name": "Develop AI Agent", "url": "get-started/develop-ai-agent/"}
         ]
     },
     {
-        "title": "Deployment Options",
-        "icon": "⚙️",
+        "title": "Developer Guides",
+        "icon": "🛠️ ",
         "links": [
-            {"name": "Deploy to Devant", "url": "deploy/deploy-to-devant/"},
-            {"name": "Deploy as a Docker Image", "url": "deploy/deploy-as-docker-image/"},
-            {"name": "Deploy on VM as an Executable JAR", "url": "deploy/deploy-on-vm-as-executable-jar/"}
+            {"name": "Design the Integrations", "url": "developer-guides/design-the-integrations/"},
+            {"name": "Data Mapping", "url": "developer-guides/data-mapping/"},
+            {"name": "Testing", "url": "developer-guides/test-the-integrations/"},
+            {"name": "Debugging & Troubleshooting", "url": "developer-guides/debugging-and-troubleshooting/overview"},
+            {"name": "Protocols and Connectors", "url": "developer-guides/protocols-and-connectors/overview-of-connectors/"},
+            {"name": "Integration Tools", "url": "developer-guides/tools/integration-tools/health-tool/"},
+            {"name": "Migration Tools", "url": "developer-guides/tools/migration-tools/mulesoft-migration-tool"},
+            {"name": "Other Tools", "url": "developer-guides/tools/other-tools/scan-tool/"}
         ]
     }
     ],
-    [{
-        "title": "Install & Setup",
-        "icon": "⏬",
+    [
+    {
+        "title": "AI",
+        "icon": "🤖",
         "links": [
-            {"name": "Install WSO2 Integrator: BI", "url": "install-and-setup/install-wso2-integrator-bi/"},
-            {"name": "Install WSO2 Integrator: ICP", "url": "install-and-setup/install-wso2-integrator-icp/"}
+            {"name": "AI Agents and other Gen AI Integrations", "url": "integration-guides/ai/agents"},
+            {"name": "AI for Integration", "url": "developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot/"}
+        ]
+    },
+    {
+        "title": "Integration Guides",
+        "icon": "📚",
+        "links": [
+            {"name": "AI Agents and other Gen AI Integrations", "url": "integration-guides/ai/agents"},
+            {"name": "Integration as API", "url": "integration-guides/integration-as-api/service-orchestration/"},
+            {"name": "File Integration", "url": "integration-guides/file-integration/file-integration-with-directory-service/"}
+        ]
+    },
+    {
+        "title": "Deploy",
+        "icon": "⚙️",
+        "links": [
+            {"name": "Overview", "url": "deploy/overview"},
+            {"name": "Deploy to Devant", "url": "deploy/deploy-to-devant/"},
+            {"name": "Containerized Deployment", "url": "deploy/containerized-deployment/overview"},
+            {"name": "VM-based Deployment", "url": "deploy/vm-based-deployment/overview"},
+            {"name": "Managing Configurations", "url": "deploy/managing-configurations"}
+        ]
+    }
+    ],
+    [
+    {
+        "title": "Observability and Monitoring",
+        "icon": "📈 ",
+        "links": [
+            {"name": "Overview", "url": "observability-and-monitoring/overview"},
+            {"name": "Monitoring with WSO2 Integrator: ICP", "url": "observability-and-monitoring/monitoring-with-wso2-integrator-icp"},
+            {"name": "Observability with Devant", "url": "observability-and-monitoring/observability-with-devant"},
+            {"name": "Supporting Observability Tools and Platforms", "url": "observability-and-monitoring/supported-observability-tools-and-platforms/overview"}
+        ]
+    },
+    {
+        "title": "References",
+        "icon": "📖",
+        "links": [
+            {"name": "Enterprise Integration Patterns", "url": "references/enterprise-integrations-patterns/"}
         ]
     },
     {
@@ -33,29 +82,6 @@
             {"name": "GitHub", "url": "https://github.com/wso2/product-ballerina-integrator/issues"},
             {"name": "Discord", "url": "https://discord.com/invite/wso2"},
             {"name": "Enterprise Support", "url": "https://wso2.com/subscription/"}
-        ]
-    }
-    ],
-    [
-    {
-        "title": "Tutorials",
-        "icon": "📚",
-        "links": [
-            {"name": "Introduction to Chat Agents", "url": "learn/ai/agents/introduction-to-chat-agents/"},
-            {"name": "Introduction to Inline Agents", "url": "learn/ai/agents/introduction-to-inline-agents"},
-            {"name": "Integrating Agents with External Endpoints", "url": "learn/ai/agents/integrating-agents-with-external-endpoints/"},
-            {"name": "File Integration With Directory Service", "url": "learn/file-integration/file-integration-with-directory-service/"},
-            {"name": "Build an HTTP Service With WSO2 Copilot", "url": "develop/ai-assisted-development/build-an-http-service-with-wso2-copilot/"},
-            {"name": "Message Transformation", "url": "learn/samples/message-transformation/"},
-            {"name": "Message Routing", "url": "learn/samples/message-routing/"},
-            {"name": "Service Orchestration", "url": "learn/samples/service-orchestration"}
-        ]
-    },
-    {
-        "title": "Samples",
-        "icon": "📖",
-        "links": [
-            {"name": "Enterprise Integration Patterns", "url": "learn/enterprise-integrations-patterns/"}
         ]
     }
     ]
