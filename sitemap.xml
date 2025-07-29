@@ -216,6 +216,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://bi.docs.wso2.com/integration-guides/ai/agents/integrating-agents-with-mcp-servers/</loc>
+         <lastmod>2025-07-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://bi.docs.wso2.com/integration-guides/ai/agents/introduction-to-chat-agents/</loc>
          <lastmod>2025-07-29</lastmod>
          <changefreq>daily</changefreq>
