@@ -4,7 +4,7 @@ This tutorial guides you through creating an AI-powered Weather Assistant that i
 
 ## Prerequisites
 
-Before you begin, ensure you have an running MCP Server connected to a weather service. For this setup, you can set up an MCP Server using the guidelines given [here](https://github.com/xlight05/mcp-openweathermap). This server acts as a bridge between your AI agent and the weather API, allowing seamless data retrieval.
+Before you begin, ensure you have an running MCP Server connected to a weather service. For this setup, you can set up an MCP Server using the guidelines given [here](https://github.com/xlight05/mcp-openweathermap). This server enables effective communication between your AI agent and the weather API, allowing real-time data retrieval.
 
 ## Create the AI Agent
 
@@ -42,14 +42,14 @@ By connecting to the Weather MCP server allows your AI agent to interact with re
 Provide the MCP server connection details.
 
 1. In Agent Flow View, click the **+** button at the bottom-right of the `AI Agent` box.
-2. Select **Use MCP Server** under **Add Tools** section.
-3. Under **Add MCP Server** section, provide necessary values and select **Save Tool**.
+2. Under **Add Tools** section, select **Use MCP Server**.
+3. Provide the necessary configuration details, then click **Save Tool**.
 
     <a href="{{base_path}}/assets/img/integration-guides/ai/agents/integrating-agents-with-external-endpoints/ai-agent-add-mcp-server.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/agents/integrating-agents-with-external-endpoints/ai-agent-add-mcp-server.gif" alt="Add MCP Server" width="70%"></a>
 
 ##### Step 2: Customize the MCP Server
 
-Depending on your use case, you can modify the MCP server configuration to include more tools for the AI agent to handle.
+You can further customize the MCP configuration to include additional weather tools to suit your use case.
 
 <a href="{{base_path}}/assets/img/integration-guides/ai/agents/integrating-agents-with-external-endpoints/ai-agent-edit-mcp-server.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/agents/integrating-agents-with-external-endpoints/ai-agent-edit-mcp-server.gif" alt="Edit MCP Server" width="70%"></a>
 
