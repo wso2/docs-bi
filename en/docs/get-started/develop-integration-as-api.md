@@ -47,21 +47,19 @@ Before you begin, make sure you have the following:
 3. Hover over the arrow after start and click the **➕** button to add a new action to the resource.
 4. Select **Add Connection** from the node panel. 
 5. Search for `HTTP` in the search bar and select **HTTP** as the connection type.
-6. Change the **Connection Name** to `externalEP`.
-7. Add the URL `"https://apis.wso2.com"` to the connection URL field and click **Save**.
+6. Add the URL `"https://apis.wso2.com"` to the connection URL field and click **Save**.
+7. Change the **Connection Name** to `externalEP`.
 
       <a href="{{base_path}}/assets/img/get-started/develop-integration-as-api/create-connection.gif"><img src="{{base_path}}/assets/img/get-started/develop-integration-as-api/create-connection.gif" alt="Create New Connection" width="70%"></a>
 
-8. Click the ➕ button again and select **Connections** -> **externalEP** -> **get** from the node panel.
+8. Select **Connections** -> **externalEP** -> **get** from the node panel.
 9. Fill in the request details as below and click **Save**.
-   
-      | Field               | Value        |
-      |---------------------|--------------|
-      | **Variable Name** | `epResponse` |
-      | **Variable Type** | `string`     |
-      | **Connection**          | `externalEp` |
-      | **Target Type**         | `string`     |
-      | **Path**                | `"/zvdz/mi-qsg/v1.0"` | 
+
+   | Field             | Value                 |
+   |-------------------|-----------------------|
+   | **Path**          | `"/zvdz/mi-qsg/v1.0"` | 
+   | **Result**        | `epResponse`          |
+   | **Target Type**   | `string`              |
 
 10. Click ➕ button again and select **Return** from the node panel.  
 11. Select the `epResponse` variable as the **Expression** from the dropdown and click **Save**. This step will return the response from the `HelloWorld` API endpoint.      

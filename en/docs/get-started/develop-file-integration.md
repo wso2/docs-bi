@@ -17,7 +17,7 @@ Before you begin, make sure you have the following:
 
 This redirects you to the **Create New Integration in VS Code** page. 
 
-1. From the left side panel, click **+** on the **Configurations**, and add the following configurables.
+1. Click on the **Configure** button on the top-right side, and add the following configurables.
 
     | Configurable        | Type       |
     |---------------------|------------|
@@ -29,7 +29,7 @@ This redirects you to the **Create New Integration in VS Code** page.
 
     <a href="{{base_path}}/assets/img/get-started/develop-file-integration/add-configurables.gif"><img src="{{base_path}}/assets/img/get-started/develop-file-integration/add-configurables.gif" alt="Add Configurations" width="80%"></a>
 
-2. Go to the **Design View** by clicking the Home icon on the top left corner and click **Add Artifact**.
+2. Go to the **Design View** by clicking the Home icon in the top left corner and click **Add Artifact**.
 3. Select **FTP Service**. Choosing the **File Integration** from the Devant console disables the other options.
 4. Provide the name of the **Listener Configuration** as `weatherListener`.
 5. Then expand the **Advanced Configurations** and enter the following configurables:
