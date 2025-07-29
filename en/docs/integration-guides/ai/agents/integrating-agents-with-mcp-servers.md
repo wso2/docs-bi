@@ -4,7 +4,7 @@ This tutorial guides you through creating an AI-powered Weather Assistant that i
 
 ## Prerequisites
 
-Before you begin, ensure you have an running MCP Server connected to a weather service. For this setup, you can set up an MCP Server using the guidelines given [here](https://github.com/xlight05/mcp-openweathermap). This server enables effective communication between your AI agent and the weather API, allowing real-time data retrieval.
+Before you begin, ensure you have a running MCP Server connected to a weather service. For this setup, you can set up an MCP Server using the guidelines given [here](https://github.com/xlight05/mcp-openweathermap). This server enables effective communication between your AI agent and the weather API, allowing real-time data retrieval.
 
 ## Create the AI Agent
 
@@ -35,7 +35,7 @@ Guidelines:
 
 ### Add MCP Server to the Agent
 
-By connecting to the Weather MCP server allows your AI agent to interact with real-time weather data sources. To integrate it, follow the steps below.
+By connecting to the Weather MCP server, your AI agent can access and interact with real-time weather data sources. To integrate it, follow the steps below.
 
 ##### Step 1: Add the MCP Server
 
