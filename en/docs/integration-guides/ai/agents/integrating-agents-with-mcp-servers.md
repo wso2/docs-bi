@@ -37,7 +37,7 @@ Guidelines:
 
 By connecting to the Weather MCP server, your AI agent can access and interact with real-time weather data sources. To integrate it, follow the steps below.
 
-##### Step 1: Add the MCP Server
+#### Step 1: Add the MCP Server
 
 Provide the MCP server connection details.
 
@@ -47,7 +47,7 @@ Provide the MCP server connection details.
 
     <a href="{{base_path}}/assets/img/integration-guides/ai/agents/integrating-agents-with-external-endpoints/ai-agent-add-mcp-server.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/agents/integrating-agents-with-external-endpoints/ai-agent-add-mcp-server.gif" alt="Add MCP Server" width="70%"></a>
 
-##### Step 2: Customize the MCP Server
+#### Step 2: Customize the MCP Server
 
 You can further customize the MCP configuration to include additional weather tools to suit your use case.
 
