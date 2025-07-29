@@ -67,23 +67,23 @@ docker compose -f docker-compose.yml up -d
 
 * Navigate to **file explorer** view and create the `Config.toml` file in the package directory to set the runtime configurations as follows.
 
-   ```toml
-   [ballerina.observe]
-   metricsLogsEnabled = true
-   tracingEnabled = true
-   tracingProvider = "jaeger"
-    
-   [ballerinax.jaeger]
-   agentHostname = "localhost"
-   agentPort = 4317
-   samplerType = "const"
-   samplerParam = 1.0
-   reporterFlushInterval = 2000
-   reporterBufferSize = 1000
-    
-   [ballerinax.metrics.logs]
-   logFilePath = "<PATH>/<TO>/opensearch-observability-dashboard/logs/ballerina/<SERVICE_NAME>/app.log"
-   ```
+      ```toml
+      [ballerina.observe]
+      metricsLogsEnabled = true
+      tracingEnabled = true
+      tracingProvider = "jaeger"
+
+      [ballerinax.jaeger]
+      agentHostname = "localhost"
+      agentPort = 4317
+      samplerType = "const"
+      samplerParam = 1.0
+      reporterFlushInterval = 2000
+      reporterBufferSize = 1000
+
+      [ballerinax.metrics.logs]
+      logFilePath = "<PATH>/<TO>/opensearch-observability-dashboard/logs/ballerina/<SERVICE_NAME>/app.log"
+      ```
     
    These configurations enable metrics logs and traces in the Ballerina application and configures the Jaeger exporter.
 
