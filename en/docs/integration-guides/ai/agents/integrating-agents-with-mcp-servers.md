@@ -45,13 +45,13 @@ Provide the MCP server connection details.
 2. Select **Use MCP Server** under **Add Tools** section.
 3. Under **Add MCP Server** section, provide necessary values and select **Save Tool**.
 
-    <a href="{{base_path}}/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/add-mcp-server.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/add-mcp-server.gif" alt="Add MCP Server" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/ai/agents/integrating-agents-with-external-endpoints/ai-agent-add-mcp-server.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/agents/integrating-agents-with-external-endpoints/ai-agent-add-mcp-server.gif" alt="Add MCP Server" width="70%"></a>
 
 ##### Step 2: Customize the MCP Server
 
 Depending on your use case, you can modify the MCP server configuration to include more tools for the AI agent to handle.
 
-<a href="{{base_path}}/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-edit-mcp-server.giff"><img src="{{base_path}}/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-edit-mcp-server.gif" alt="Edit MCP Server" width="70%"></a>
+<a href="{{base_path}}/assets/img/integration-guides/ai/agents/integrating-agents-with-external-endpoints/ai-agent-edit-mcp-server.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/agents/integrating-agents-with-external-endpoints/ai-agent-edit-mcp-server.gif" alt="Edit MCP Server" width="70%"></a>
 
 ## Interact with the Agent
 
@@ -63,4 +63,4 @@ To start chatting with the agent:
 2. You will be prompted to run the integration. Click **Run Integration**.
 3. Start chatting with your assistant.
 
-    <a href="{{base_path}}/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-interact-mcp-server.gif"><img src="{{base_path}}/assets/img/learn/ai/agents/integrating-agents-with-external-endpoints/ai-agent-interact-mcp-server.gif" alt="Interact With the Agent" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/ai/agents/integrating-agents-with-external-endpoints/ai-agent-interact-mcp-server.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/agents/integrating-agents-with-external-endpoints/ai-agent-interact-mcp-server.gif" alt="Interact With the Agent" width="70%"></a>
