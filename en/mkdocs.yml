@@ -85,7 +85,8 @@ nav:
       - AI Agents and Other Gen AI Integrations:
         - Natural functions: integration-guides/ai/natural-functions/natural-functions.md
         - RAG:
-          - Build a RAG Application: integration-guides/ai/rag/build-a-rag-application.md
+          - Rag Ingestion: integration-guides/ai/rag/rag-ingestion.md
+          - Rag Query: integration-guides/ai/rag/rag-query.md
         - Agents:
           - integration-guides/ai/agents/index.md
           - Introduction to Chat Agents: integration-guides/ai/agents/introduction-to-chat-agents.md
