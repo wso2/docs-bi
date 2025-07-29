@@ -2244,7 +2244,7 @@ To implement this, you’ll build a REST service with a single resource in WSO2 
 <span class="w">    </span><span class="nt">&quot;appointment_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-11-06&quot;</span>
 <span class="w">  </span><span class="p">}</span>
 </code></pre></div></li>
-<li>Extract necessary details from the request (e.g., hospital, patient, doctor, etc.) and make a call to the hospital backend service to request an appointment. A response similar to the following will be returned from the hospital backend service on success. 
+<li>Extract the necessary details from the request (e.g., hospital, patient, doctor, etc.) and make a call to the hospital backend service to request an appointment. A response similar to the following will be returned from the hospital backend service on success. 
     <div class="highlight"><pre><span></span><code><span class="w">  </span><span class="p">{</span>
 <span class="w">   </span><span class="nt">&quot;appointmentNumber&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
 <span class="w">   </span><span class="nt">&quot;doctor&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -2367,7 +2367,7 @@ To implement this, you’ll build a REST service with a single resource in WSO2 
 <li>Navigate to design view and click on the <strong>Add Artifacts</strong> button and select <strong>Connection</strong> in the <strong>Other Artifacts</strong> section.</li>
 <li>Search and select the <strong>HTTP Client</strong> connector.</li>
 <li>
-<p>Enter the connector name as <code>hospitalEp</code>, URL as <code>http://localhost:9090</code> and click on the <strong>Save</strong> button.</p>
+<p>Enter the <strong>Url</strong> as <code>http://localhost:9090</code>, <strong>Connection Name</strong> as <code>hospitalEp</code> and click on the <strong>Save</strong> button.</p>
 <p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/add-connector.gif"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/add-connector.gif" alt="Add Connector" width="70%"></a></p>
 </li>
 <li>
@@ -2380,7 +2380,7 @@ See supported client configurations in the <a href="https://central.ballerina.io
 </details>
 <h2 id="step-5-design-the-resource">Step 5: Design the resource<a class="headerlink" href="#step-5-design-the-resource" title="Permanent link">&para;</a></h2>
 <ol>
-<li>The service will have a default resource named <code>greeting</code> with the <strong>GET</strong> method. Click on three dots appear in front of the <code>/healthCare</code> service resource and select <strong>Edit</strong> from menu.</li>
+<li>The service will have a default resource named <code>greeting</code> with the <strong>GET</strong> method. Click on the three dots that appear in front of the <code>/healthCare</code> service resource and select <strong>Edit</strong> from the menu.</li>
 <li>Change the resource HTTP method to <strong>POST</strong>.</li>
 <li>Change the resource name as <code>categories/[string category]/reserve</code>.</li>
 <li>Add a payload parameter named <code>reservation</code> to the resource of type <code>ReservationRequest</code>.</li>
@@ -2420,7 +2420,7 @@ See supported client configurations in the <a href="https://central.ballerina.io
 <p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/variable.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/variable.png" alt="Variable" width="70%"></a></p>
 </li>
 <li>
-<p>Click ➕ sign and select <strong>hospitalServicesEp</strong> connector from the node panel and select <strong>post</strong> from the dropdown. Then, fill in the required fields with the values given below and click <strong>Save</strong>.</p>
+<p>Click ➕ sign and select <strong>hospitalEp</strong> connector from the node panel and select <strong>post</strong> from the dropdown. Then, fill in the required fields with the values given below and click <strong>Save</strong>.</p>
 <table>
 <thead>
 <tr>
@@ -2456,7 +2456,7 @@ See supported client configurations in the <a href="https://central.ballerina.io
 <h2 id="step-7-get-the-fee">Step 7: Get the fee<a class="headerlink" href="#step-7-get-the-fee" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>Declare an <strong>int</strong>  variable named <code>appointmentNumber</code> with expression <code>appointment.appointmentNumber</code> after the hospital service request.  </p>
+<p>Declare an <strong>int</strong> variable named <code>appointmentNumber</code> with expression <code>appointment.appointmentNumber</code> after the hospital service request.  </p>
 <p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/appointment.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/appointment.png" alt="Appointment Number" width="70%"></a>   </p>
 </li>
 <li>
@@ -2552,7 +2552,7 @@ See supported client configurations in the <a href="https://central.ballerina.io
 <li>Start the backend service by executing the following command in a terminal.
     <div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>hospital-backend<span class="w"> </span>-p<span class="w"> </span><span class="m">9090</span>:9090<span class="w"> </span>-d<span class="w"> </span>anuruddhal/kola-hospital-backend
 </code></pre></div></li>
-<li>Click on the <strong>Run</strong>  on the run button (▶️) in the top right corner to run the service.</li>
+<li>Click on the <strong>Run</strong> on the run button (▶️) in the top right corner to run the service.</li>
 <li>The service will start and the service will be available at <code>http://localhost:8290/healthcare/categories/[category]/reserve</code>.</li>
 <li>Click on the <strong>Try it</strong> button to open the embedded HTTP client.</li>
 <li>Replace the <strong>{category}</strong> with <code>surgery</code> in the resource path and enter the following JSON payload in the request body and click on the ▶️ button to send the request.

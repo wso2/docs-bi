@@ -2180,16 +2180,16 @@
 <li>Hover over the arrow after start and click the <strong>➕</strong> button to add a new action to the resource.</li>
 <li>Select <strong>Add Connection</strong> from the node panel. </li>
 <li>Search for <code>HTTP</code> in the search bar and select <strong>HTTP</strong> as the connection type.</li>
-<li>Change the <strong>Connection Name</strong> to <code>externalEP</code>.</li>
+<li>Add the URL <code>"https://apis.wso2.com"</code> to the connection URL field and click <strong>Save</strong>.</li>
 <li>
-<p>Add the URL <code>"https://apis.wso2.com"</code> to the connection URL field and click <strong>Save</strong>.</p>
+<p>Change the <strong>Connection Name</strong> to <code>externalEP</code>.</p>
 <p><a href="https://wso2.github.io/docs-bi/assets/img/get-started/develop-integration-as-api/create-connection.gif"><img src="https://wso2.github.io/docs-bi/assets/img/get-started/develop-integration-as-api/create-connection.gif" alt="Create New Connection" width="70%"></a></p>
 </li>
 <li>
-<p>Click the ➕ button again and select <strong>Connections</strong> -&gt; <strong>externalEP</strong> -&gt; <strong>get</strong> from the node panel.</p>
+<p>Select <strong>Connections</strong> -&gt; <strong>externalEP</strong> -&gt; <strong>get</strong> from the node panel.</p>
 </li>
-<li>
-<p>Fill in the request details as below and click <strong>Save</strong>.</p>
+<li>Fill in the request details as below and click <strong>Save</strong>.</li>
+</ol>
 <table>
 <thead>
 <tr>
@@ -2199,31 +2199,21 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Variable Name</strong></td>
+<td><strong>Path</strong></td>
+<td><code>"/zvdz/mi-qsg/v1.0"</code></td>
+</tr>
+<tr>
+<td><strong>Result</strong></td>
 <td><code>epResponse</code></td>
-</tr>
-<tr>
-<td><strong>Variable Type</strong></td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td><strong>Connection</strong></td>
-<td><code>externalEp</code></td>
 </tr>
 <tr>
 <td><strong>Target Type</strong></td>
 <td><code>string</code></td>
 </tr>
-<tr>
-<td><strong>Path</strong></td>
-<td><code>"/zvdz/mi-qsg/v1.0"</code></td>
-</tr>
 </tbody>
 </table>
-</li>
-<li>
-<p>Click ➕ button again and select <strong>Return</strong> from the node panel.  </p>
-</li>
+<ol>
+<li>Click ➕ button again and select <strong>Return</strong> from the node panel.  </li>
 <li>
 <p>Select the <code>epResponse</code> variable as the <strong>Expression</strong> from the dropdown and click <strong>Save</strong>. This step will return the response from the <code>HelloWorld</code> API endpoint.      </p>
 <p><a href="https://wso2.github.io/docs-bi/assets/img/get-started/develop-integration-as-api/invoke-endpoint.gif"><img src="https://wso2.github.io/docs-bi/assets/img/get-started/develop-integration-as-api/invoke-endpoint.gif" alt="Invoke Endpoint" width="70%"></a></p>
