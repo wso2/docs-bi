@@ -18,4 +18,5 @@ To get started with agents, visit the following tutorial examples:
 
 * [Introduction to Chat Agents](/integration-guides/ai/agents/introduction-to-chat-agents/)
 * [Introduction to Inline Agents](/integration-guides/ai/agents/introduction-to-inline-agents/)
+* [Integrating Agents with MCP Servers](/integration-guides/ai/agents/integrating-agents-with-mcp-servers/)
 * [Integrating Agents with External Endpoints](/integration-guides/ai/agents/integrating-agents-with-external-endpoints/)
