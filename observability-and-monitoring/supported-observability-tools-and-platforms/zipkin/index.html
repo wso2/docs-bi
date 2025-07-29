@@ -1961,6 +1961,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../opensearch/" class="md-nav__link">
+        OpenSearch
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2124,7 +2138,7 @@
 
 
 <h1 id="observe-tracing-using-zipkin">Observe tracing using Zipkin<a class="headerlink" href="#observe-tracing-using-zipkin" title="Permanent link">&para;</a></h1>
-<p>The sample <a href="/observability-and-monitoring/overview#example-observing-a-sample-integration-service">shop service</a> will be used in this guide. Follow the steps given below to observe BI tracing in <a href="https://zipkin.io/">Zipkin</a>.</p>
+<p>The sample <a href="/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service">shop service</a> will be used in this guide. Follow the steps given below to observe BI tracing in <a href="https://zipkin.io/">Zipkin</a>.</p>
 <h2 id="step-1-set-up-zipkin">Step 1 - Set up Zipkin<a class="headerlink" href="#step-1-set-up-zipkin" title="Permanent link">&para;</a></h2>
 <p>You can configure BI to support distributed tracing with Zipkin. This section focuses on configuring Zipkin with Docker as a quick installation.</p>
 <details class="tip" open="open"><summary>Tip</summary><p>There are many possible ways to deploy Zipkin. For more information, see <a href="https://zipkin.io/pages/quickstart" target="_blank">Zipkin Quickstart</a>.</p>
@@ -2134,7 +2148,7 @@
 </code></pre></div>
 
 <h2 id="step-2-import-ballerina-zipkin-extension">Step 2 - Import Ballerina Zipkin extension<a class="headerlink" href="#step-2-import-ballerina-zipkin-extension" title="Permanent link">&para;</a></h2>
-<p>To include the Zipkin extension into the executable, the <code>ballerinax/zipkin</code> module needs to be imported into your BI project by navigating to <code>file explorer</code> and adding the following to <code>main.bal</code> file.</p>
+<p>To include the Zipkin extension into the executable, the <code>ballerinax/zipkin</code> module needs to be imported into your BI project by navigating to <strong>file explorer</strong> and adding the following to <code>main.bal</code> file.</p>
 <div class="highlight"><pre><span></span><code>import ballerinax/zipkin as _;
 </code></pre></div>
 

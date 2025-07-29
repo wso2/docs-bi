@@ -1968,6 +1968,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../opensearch/" class="md-nav__link">
+        OpenSearch
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2138,7 +2152,7 @@
 
 
 <h1 id="observe-metrics-and-tracing-using-new-relic">Observe metrics and tracing using New Relic<a class="headerlink" href="#observe-metrics-and-tracing-using-new-relic" title="Permanent link">&para;</a></h1>
-<p>The sample <a href="/observability-and-monitoring/overview#example-observing-a-sample-integration-service">shop service</a> will be used in this guide. Follow the steps given below to observe BI tracing and metrics in <a href="https://newrelic.com/">New Relic</a>.</p>
+<p>The sample <a href="/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service">shop service</a> will be used in this guide. Follow the steps given below to observe BI tracing and metrics in <a href="https://newrelic.com/">New Relic</a>.</p>
 <h2 id="step-1-create-a-new-relic-account-and-an-api-key">Step 1 - Create a New Relic account and  an API key<a class="headerlink" href="#step-1-create-a-new-relic-account-and-an-api-key" title="Permanent link">&para;</a></h2>
 <p>Sign up and Generate an API Key in New Relic.</p>
 <p>To configure the API key in Newrelic:</p>
@@ -2146,14 +2160,14 @@
 <p>Go to <strong>Profile -&gt; API keys -&gt; Insights Insert key -&gt; Insert keys</strong> to create an account in New Relic.</p>
 </blockquote>
 <h2 id="step-2-import-the-new-relic-extension">Step 2 - Import the New Relic extension<a class="headerlink" href="#step-2-import-the-new-relic-extension" title="Permanent link">&para;</a></h2>
-<p>To include the New Relic extension into the executable, the <code>ballerinax/newrelic</code> module needs to be imported into your BI project. Navigate to <code>file explorer</code> and add the following to <code>main.bal</code> file.</p>
+<p>To include the New Relic extension into the executable, the <code>ballerinax/newrelic</code> module needs to be imported into your BI project. Navigate to <strong>file explorer</strong> and add the following to <code>main.bal</code> file.</p>
 <div class="highlight"><pre><span></span><code>import ballerinax/newrelic as _;
 </code></pre></div>
 
 <p>New Relic extension has an <code>Opentelemetry GRPC Span Exporter</code> which will push tracing data as batches to the New Relic server endpoint (https://otlp.nr-data.net:4317) in opentelemetry format.</p>
 <p>New Relic extension pushes metrics in New Relic metric format to the New Relic server endpoint (https://metric-api.newrelic.com/metric/v1).</p>
 <h2 id="step-3-configure-runtime-configurations-for-observability">Step 3 - Configure runtime configurations for Observability<a class="headerlink" href="#step-3-configure-runtime-configurations-for-observability" title="Permanent link">&para;</a></h2>
-<p>Tracing and metrics can be enabled in your BI project using configurations similar to the following. Navigate to <code>file explorer</code> and add the following to <code>Config.toml</code> file.</p>
+<p>Tracing and metrics can be enabled in your BI project using configurations similar to the following. Navigate to <strong>file explorer</strong> and add the following to <code>Config.toml</code> file.</p>
 <div class="highlight"><pre><span></span><code><span class="k">[ballerina.observe]</span>
 <span class="n">tracingEnabled</span><span class="o">=</span><span class="kc">true</span>
 <span class="n">tracingProvider</span><span class="o">=</span><span class="s">&quot;newrelic&quot;</span>

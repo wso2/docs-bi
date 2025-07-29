@@ -1967,6 +1967,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../opensearch/" class="md-nav__link">
+        OpenSearch
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2152,7 +2166,7 @@
 <li>Create a new integration on BI</li>
 <li>
 <p>Define types to hold the <code>Product</code>, <code>Order</code> and <code>OrderRequest</code></p>
-<p>You can do this by navigating to the <code>types.bal</code> from the <code>File Explorer</code> view and copying the following content.</p>
+<p>You can do this by navigating to the <code>types.bal</code> from the <strong>file explorer</strong> view and copying the following content.</p>
 <div class="highlight"><pre><span></span><code>type Product record {|
     int id;
     string name;
@@ -2181,7 +2195,7 @@ type Order record {|
 <li>Place a new order <code>'order(OrderRequest orderRequest)</code></li>
 <li>Get order details by ID <code>'order/[int orderId]()</code></li>
 </ul>
-<p>You can add the service related logic by navigating to the <code>main.bal</code> from the <code>File Explorer</code> view and copying the following content. </p>
+<p>You can add the service related logic by navigating to the <code>main.bal</code> from the <strong>file explorer</strong> view and copying the following content. </p>
 <div class="highlight"><pre><span></span><code>import ballerina/http;
 import ballerina/log;
 
@@ -2275,7 +2289,7 @@ service /shop on new http:Listener(8090) {
 </ol>
 <p><a href="https://wso2.github.io/docs-bi/assets/img/deploy/observability_1.gif"><img src="https://wso2.github.io/docs-bi/assets/img/deploy/observability_1.gif" alt="Create Observability Demo Service" width="70%"></a></p>
 <h3 id="enable-observability-for-the-project">Enable Observability for the project<a class="headerlink" href="#enable-observability-for-the-project" title="Permanent link">&para;</a></h3>
-<p>Observability can be enabled in a BI project by adding the following section to the <code>Ballerina.toml</code> file by navigating to the <code>File Explorer</code> view.</p>
+<p>Observability can be enabled in a BI project by adding the following section to the <code>Ballerina.toml</code> file by navigating to the <strong>file explorer</strong> view.</p>
 <div class="highlight"><pre><span></span><code>[build-options]
 observabilityIncluded=true
 </code></pre></div>
@@ -2362,6 +2376,7 @@ tracingProvider=&lt;TRACING_PROVIDER&gt;
 <li><a href="/observability-and-monitoring/supported-observability-tools-and-platforms/new-relic">Observe metrics and tracing using New Relic</a></li>
 <li><a href="/observability-and-monitoring/supported-observability-tools-and-platforms/datadog">Observe metrics and tracing using Datadog</a></li>
 <li><a href="/observability-and-monitoring/supported-observability-tools-and-platforms/elastic-stack">Observe logs using Elastic Stack</a></li>
+<li><a href="/observability-and-monitoring/supported-observability-tools-and-platforms/opensearch">Observe metrics, traces and logs using OpenSearch</a></li>
 </ul>
 
 

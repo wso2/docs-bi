@@ -306,6 +306,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://bi.docs.wso2.com/observability-and-monitoring/supported-observability-tools-and-platforms/opensearch/</loc>
+         <lastmod>2025-07-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://bi.docs.wso2.com/observability-and-monitoring/supported-observability-tools-and-platforms/overview/</loc>
          <lastmod>2025-07-29</lastmod>
          <changefreq>daily</changefreq>

@@ -1975,6 +1975,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../opensearch/" class="md-nav__link">
+        OpenSearch
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2152,7 +2166,7 @@
 
 
 <h1 id="observe-metrics-and-tracing-using-datadog">Observe metrics and tracing using Datadog<a class="headerlink" href="#observe-metrics-and-tracing-using-datadog" title="Permanent link">&para;</a></h1>
-<p>The sample <a href="/observability-and-monitoring/overview#example-observing-a-sample-integration-service">shop service</a> will be used in this guide. Follow the steps given below to observe BI tracing and metrics in <a href="https://www.datadoghq.com/">Datadog</a>.</p>
+<p>The sample <a href="/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service">shop service</a> will be used in this guide. Follow the steps given below to observe BI tracing and metrics in <a href="https://www.datadoghq.com/">Datadog</a>.</p>
 <p>Create a new account in Datadog. Select a billing plan according to your needs (A free plan is also included).</p>
 <p>Then follow the steps below to set up your Datadog account to view metrics and tracing provided by Ballerina.</p>
 <h2 id="step-1-create-a-datadog-account-and-an-api-key">Step 1 - Create a Datadog account and  an API key<a class="headerlink" href="#step-1-create-a-datadog-account-and-an-api-key" title="Permanent link">&para;</a></h2>
@@ -2226,7 +2240,7 @@ instances:
 </li>
 </ol>
 <h2 id="step-3-import-prometheus-and-jaeger-extensions-for-bi">Step 3 - Import Prometheus and Jaeger extensions for BI<a class="headerlink" href="#step-3-import-prometheus-and-jaeger-extensions-for-bi" title="Permanent link">&para;</a></h2>
-<p>To include the Prometheus and Jaeger extensions into the executable, the <code>ballerinax/prometheus</code> and <code>ballerinax/jaeger</code> modules need to be imported into your BI project. Navigate to <code>file explorer</code> and add the following to the <code>main.bal</code> file.</p>
+<p>To include the Prometheus and Jaeger extensions into the executable, the <code>ballerinax/prometheus</code> and <code>ballerinax/jaeger</code> modules need to be imported into your BI project. Navigate to <strong>file explorer</strong> and add the following to the <code>main.bal</code> file.</p>
 <div class="highlight"><pre><span></span><code>import ballerinax/prometheus as _;
 import ballerinax/jaeger as _;
 </code></pre></div>
@@ -2234,7 +2248,7 @@ import ballerinax/jaeger as _;
 <p>To support Prometheus as the metrics reporter, an HTTP endpoint starts with the context of <code>/metrics</code> in default port 9797 when starting the Ballerina service.</p>
 <p>Jaeger extension has an <code>Opentelemetry GRPC Span Exporter</code> which will push tracing data as batches to the endpoint (default - http://localhost:4317) in opentelemetry format.</p>
 <h2 id="step-4-configure-bi-runtime-configurations">Step 4 - Configure BI runtime configurations<a class="headerlink" href="#step-4-configure-bi-runtime-configurations" title="Permanent link">&para;</a></h2>
-<p>Tracing and metrics can be enabled in your BI project using configurations similar to the following.  Navigate to <code>file explorer</code> and add the following to the <code>Config.toml</code> file.</p>
+<p>Tracing and metrics can be enabled in your BI project using configurations similar to the following.  Navigate to <strong>file explorer</strong> and add the following to the <code>Config.toml</code> file.</p>
 <div class="highlight"><pre><span></span><code><span class="k">[ballerina.observe]</span>
 <span class="n">tracingEnabled</span><span class="o">=</span><span class="kc">true</span>
 <span class="n">tracingProvider</span><span class="o">=</span><span class="s">&quot;jaeger&quot;</span>
@@ -2353,7 +2367,7 @@ ballerina: started publishing traces to Jaeger on localhost:4317
 <p><a href="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/datadog-metrics-explorer.png"><img src="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/datadog-metrics-explorer.png " alt="Metrics Explorer in Datadog" width="70%"></a></p>
 <p>You can add filters and use functions in the Datadog to visualize what you want with the metrics provided by BI.</p>
 <p>Ballerina provides a <a href="https://raw.githubusercontent.com/ballerina-platform/module-ballerinax-prometheus/refs/heads/main/metrics-dashboards/datadog/ballerina_metrics_dashboard.json">dashboard</a> in the Datadog to observe metrics in Ballerina applications.</p>
-<p>You can add a new dashboard in the Datadog under the <code>Dashboards</code> tab in the left navigation. After creating the new dashboard, go to the <code>Configure</code> tab in the dashboard. Import the <code>dashboard.json</code> file provided above.</p>
+<p>You can add a new dashboard in the Datadog under the <strong>Dashboards</strong> tab in the left navigation. After creating the new dashboard, go to the <strong>Configure</strong> tab in the dashboard. Import the <code>dashboard.json</code> file provided above.</p>
 <p><a href="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/datadog-importing-dashboard.png"><img src="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/datadog-importing-dashboard.png" alt="Importing a dashboard json" width="70%"></a></p>
 <p>The Ballerina Dashboard in the Datadog will be displayed as below.</p>
 <p><a href="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/datadog-metrics-dashboard-1.png"><img src="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/datadog-metrics-dashboard-1.png" alt="Ballerina Dashboard in Datadog" width="70%"></a></p>

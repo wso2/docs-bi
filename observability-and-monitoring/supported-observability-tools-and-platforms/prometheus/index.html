@@ -1968,6 +1968,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../opensearch/" class="md-nav__link">
+        OpenSearch
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2138,7 +2152,7 @@
 
 
 <h1 id="observe-metrics-using-prometheus">Observe metrics using Prometheus<a class="headerlink" href="#observe-metrics-using-prometheus" title="Permanent link">&para;</a></h1>
-<p>The sample <a href="/observability-and-monitoring/overview#example-observing-a-sample-integration-service">shop service</a> will be used in this guide. Follow the steps given below to observe BI metrics in <a href="https://prometheus.io/">Prometheus</a>.</p>
+<p>The sample <a href="/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service">shop service</a> will be used in this guide. Follow the steps given below to observe BI metrics in <a href="https://prometheus.io/">Prometheus</a>.</p>
 <h2 id="step-1-set-up-prometheus">Step 1 - Set up Prometheus<a class="headerlink" href="#step-1-set-up-prometheus" title="Permanent link">&para;</a></h2>
 <p>Prometheus is used as the monitoring system, which pulls out the metrics collected from the <code>/metrics</code> service exposed by BI runtime. This section focuses on the quick installation of Prometheus with Docker and the configuration required to collect metrics from the metrics service with the default configurations. Follow the steps below to configure Prometheus. </p>
 <details class="tip" open="open"><summary>Tip</summary><p>There are many other ways to install Prometheus and you can find possible options from the <a href="https://prometheus.io/docs/prometheus/latest/installation/" target="_blank">installation guide</a>.
@@ -2175,13 +2189,13 @@ add the target as <code>host.docker.internal:9797</code> to access the localhost
 </li>
 </ol>
 <h2 id="step-2-import-prometheus-extension-for-bi">Step 2 - Import Prometheus extension for BI<a class="headerlink" href="#step-2-import-prometheus-extension-for-bi" title="Permanent link">&para;</a></h2>
-<p>To include the Prometheus extension into the executable, the <code>ballerinax/prometheus</code> module needs to be imported into your BI project. Navigate to <code>file explorer</code> and add the following to the <code>main.bal</code> file.</p>
+<p>To include the Prometheus extension into the executable, the <code>ballerinax/prometheus</code> module needs to be imported into your BI project. Navigate to <strong>file explorer</strong> and add the following to the <code>main.bal</code> file.</p>
 <div class="highlight"><pre><span></span><code>import ballerinax/prometheus as _;
 </code></pre></div>
 
 <p>To support Prometheus as the metrics reporter, an HTTP endpoint starts with the context of <code>/metrics</code> in the default port <code>9797</code> when starting the service in BI.</p>
 <h2 id="step-3-configure-runtime-configurations-for-observability">Step 3 - Configure runtime configurations for observability<a class="headerlink" href="#step-3-configure-runtime-configurations-for-observability" title="Permanent link">&para;</a></h2>
-<p>You can set up Prometheus for your BI project using configurations similar to the following in the <code>Config.toml</code> file. Navigate to <code>file explorer</code> and add the following to the <code>Config.toml</code> file.</p>
+<p>You can set up Prometheus for your BI project using configurations similar to the following in the <code>Config.toml</code> file. Navigate to <strong>file explorer</strong> and add the following to the <code>Config.toml</code> file.</p>
 <div class="highlight"><pre><span></span><code><span class="k">[ballerina.observe]</span>
 <span class="n">metricsEnabled</span><span class="o">=</span><span class="kc">true</span>
 <span class="n">metricsReporter</span><span class="o">=</span><span class="s">&quot;prometheus&quot;</span>
