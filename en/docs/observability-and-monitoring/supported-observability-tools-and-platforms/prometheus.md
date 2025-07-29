@@ -1,6 +1,6 @@
 # Observe metrics using Prometheus
 
-The sample [shop service](/observability-and-monitoring/overview#example-observing-a-sample-integration-service) will be used in this guide. Follow the steps given below to observe BI metrics in [Prometheus](https://prometheus.io/).
+The sample [shop service](/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service) will be used in this guide. Follow the steps given below to observe BI metrics in [Prometheus](https://prometheus.io/).
 
 ## Step 1 - Set up Prometheus
 Prometheus is used as the monitoring system, which pulls out the metrics collected from the `/metrics` service exposed by BI runtime. This section focuses on the quick installation of Prometheus with Docker and the configuration required to collect metrics from the metrics service with the default configurations. Follow the steps below to configure Prometheus. 
@@ -39,7 +39,7 @@ Prometheus is used as the monitoring system, which pulls out the metrics collect
 
 ## Step 2 - Import Prometheus extension for BI
 
-To include the Prometheus extension into the executable, the `ballerinax/prometheus` module needs to be imported into your BI project. Navigate to `file explorer` and add the following to the `main.bal` file.
+To include the Prometheus extension into the executable, the `ballerinax/prometheus` module needs to be imported into your BI project. Navigate to **file explorer** and add the following to the `main.bal` file.
 
 ```ballerina
 import ballerinax/prometheus as _;
@@ -48,7 +48,7 @@ import ballerinax/prometheus as _;
 To support Prometheus as the metrics reporter, an HTTP endpoint starts with the context of `/metrics` in the default port `9797` when starting the service in BI.
 
 ## Step 3 - Configure runtime configurations for observability
-You can set up Prometheus for your BI project using configurations similar to the following in the `Config.toml` file. Navigate to `file explorer` and add the following to the `Config.toml` file.
+You can set up Prometheus for your BI project using configurations similar to the following in the `Config.toml` file. Navigate to **file explorer** and add the following to the `Config.toml` file.
 
 ```toml
 [ballerina.observe]

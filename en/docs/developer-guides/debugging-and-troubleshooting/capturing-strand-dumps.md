@@ -22,7 +22,7 @@ To get the strand dump when a BI program is running, you need to know the proces
 program. For that, you can use the `jps` tool. Then, you need to send the `SIGTRAP` signal to the process. The strand 
 dump will be produced to the standard output stream in the text format.
 
-For example, create a BI integration and copy the following content to the `main.bal` file via the `file explorer` view on VSCode.
+For example, create a BI integration and copy the following content to the `main.bal` file via the **file explorer** view on VSCode.
 
 ```ballerina
 import ballerina/lang.runtime;

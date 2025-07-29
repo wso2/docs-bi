@@ -1,6 +1,6 @@
 # Observe metrics and tracing using New Relic
 
-The sample [shop service](/observability-and-monitoring/overview#example-observing-a-sample-integration-service) will be used in this guide. Follow the steps given below to observe BI tracing and metrics in [New Relic](https://newrelic.com/).
+The sample [shop service](/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service) will be used in this guide. Follow the steps given below to observe BI tracing and metrics in [New Relic](https://newrelic.com/).
 
 ## Step 1 - Create a New Relic account and  an API key
 
@@ -11,7 +11,7 @@ To configure the API key in Newrelic:
 
 ## Step 2 - Import the New Relic extension
 
-To include the New Relic extension into the executable, the `ballerinax/newrelic` module needs to be imported into your BI project. Navigate to `file explorer` and add the following to `main.bal` file.
+To include the New Relic extension into the executable, the `ballerinax/newrelic` module needs to be imported into your BI project. Navigate to **file explorer** and add the following to `main.bal` file.
 
 ```ballerina
 import ballerinax/newrelic as _;
@@ -23,7 +23,7 @@ New Relic extension pushes metrics in New Relic metric format to the New Relic s
 
 ## Step 3 - Configure runtime configurations for Observability
 
-Tracing and metrics can be enabled in your BI project using configurations similar to the following. Navigate to `file explorer` and add the following to `Config.toml` file.
+Tracing and metrics can be enabled in your BI project using configurations similar to the following. Navigate to **file explorer** and add the following to `Config.toml` file.
 
 ```toml
 [ballerina.observe]
