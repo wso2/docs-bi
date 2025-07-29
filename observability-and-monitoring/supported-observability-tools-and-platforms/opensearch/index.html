@@ -2222,8 +2222,6 @@ import ballerinax/jaeger as _;
 </li>
 <li>
 <p>Navigate to <strong>file explorer</strong> view and create the <code>Config.toml</code> file in the package directory to set the runtime configurations as follows.</p>
-</li>
-</ul>
 <div class="highlight"><pre><span></span><code><span class="k">[ballerina.observe]</span>
 <span class="n">metricsLogsEnabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
 <span class="n">tracingEnabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
@@ -2241,6 +2239,8 @@ import ballerinax/jaeger as _;
 <span class="n">logFilePath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&lt;PATH&gt;/&lt;TO&gt;/opensearch-observability-dashboard/logs/ballerina/&lt;SERVICE_NAME&gt;/app.log&quot;</span>
 </code></pre></div>
 
+</li>
+</ul>
 <p>These configurations enable metrics logs and traces in the Ballerina application and configures the Jaeger exporter.</p>
 <p>The table below provides the descriptions of each configuration option and possible values that can be assigned.</p>
 <table>
