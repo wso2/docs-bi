@@ -1,4 +1,4 @@
-# Integrating AI Agents with MCP Servers
+# Integrating Agents with MCP Servers
 
 This tutorial guides you through creating an AI-powered Weather Assistant that integrates with an MCP server to provide real-time weather information. By the end of this tutorial, you will have a personal assistant capable of delivering current weather conditions and forecast details for any location worldwide.
 
