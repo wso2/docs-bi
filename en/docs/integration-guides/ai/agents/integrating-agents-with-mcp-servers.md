@@ -6,19 +6,19 @@ This tutorial guides you through creating an AI-powered Weather Assistant that i
 
 Before you begin, ensure you have a running MCP Server connected to a weather service. For this setup, you can set up an MCP Server using the guidelines given [here](https://github.com/xlight05/mcp-openweathermap). This server enables effective communication between your AI agent and the weather API, allowing real-time data retrieval.
 
-## Create the AI Agent
+## Create the AI agent
 
 Before integrating MCP capabilities, you must first create an AI agent. Follow **Steps 1 to 5** in the [Introduction to Chat Agents](/learn/ai/agents/introduction-to-chat-agents/) guide to set up your agent.
 
 For this tutorial, you can configure the agent with the following **role** and **instructions**:
 
-### **Role**
+**Role:**
 
 ```md
 Weather AI Assistant
 ```
 
-**Instructions**
+**Instructions:**
 
 ``` md
 You are Nova, a smart AI assistant dedicated to providing accurate and timely weather information.
@@ -33,11 +33,11 @@ Guidelines:
 - Confirm location details if ambiguous and suggest alternatives when data is unavailable.
 ```
 
-### Add MCP Server to the Agent
+### Add MCP Server to the agent
 
 By connecting to the Weather MCP server, your AI agent can access and interact with real-time weather data sources. To integrate it, follow the steps below.
 
-#### Step 1: Add the MCP Server
+#### Step 1: Add the MCP server
 
 Provide the MCP server connection details.
 
@@ -47,13 +47,13 @@ Provide the MCP server connection details.
 
     <a href="{{base_path}}/assets/img/integration-guides/ai/agents/integrating-agents-with-external-endpoints/ai-agent-add-mcp-server.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/agents/integrating-agents-with-external-endpoints/ai-agent-add-mcp-server.gif" alt="Add MCP Server" width="70%"></a>
 
-#### Step 2: Customize the MCP Server
+#### Step 2: Customize the MCP server
 
 You can further customize the MCP configuration to include additional weather tools to suit your use case.
 
 <a href="{{base_path}}/assets/img/integration-guides/ai/agents/integrating-agents-with-external-endpoints/ai-agent-edit-mcp-server.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/agents/integrating-agents-with-external-endpoints/ai-agent-edit-mcp-server.gif" alt="Edit MCP Server" width="70%"></a>
 
-## Interact with the Agent
+## Interact with the agent
 
 After completing the above steps, your personal AI assistant agent is now ready to assist you with necessary tasks. Ballerina Integrator provides a built-in chat interface to interact with the agent.
 
