@@ -15,10 +15,6 @@
         <link rel="canonical" href="https://bi.docs.wso2.com/integration-guides/ai/rag/build-a-rag-application/">
       
       
-        <link rel="prev" href="../../natural-functions/natural-functions/">
-      
-      
-        <link rel="next" href="../../agents/">
       
       <link rel="icon" href="../../../../images/bi-logo.svg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
@@ -494,16 +490,14 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
       
       
       
@@ -512,7 +506,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           Integration Guides
@@ -523,16 +517,14 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
       
       
       
@@ -541,7 +533,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3_1">
           <span class="md-nav__icon md-icon"></span>
           AI Agents and Other Gen AI Integrations
@@ -566,16 +558,14 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2" >
       
       
       
@@ -584,7 +574,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3_1_2">
           <span class="md-nav__icon md-icon"></span>
           RAG
@@ -595,289 +585,25 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Build a RAG Application
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        Build a RAG Application
+    <li class="md-nav__item">
+      <a href="../rag-ingestion/" class="md-nav__link">
+        Rag Ingestion
       </a>
-      
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+            
+          
+            
+              
   
   
   
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#rag-ingestion" class="md-nav__link">
-    RAG ingestion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#rag-retrieval" class="md-nav__link">
-    RAG retrieval
-  </a>
-  
-    <nav class="md-nav" aria-label="RAG retrieval">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-1-create-an-http-service" class="md-nav__link">
-    Step 1: Create an HTTP service
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-implementation-of-rag" class="md-nav__link">
-    Step 2: Implementation of RAG
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 2: Implementation of RAG">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21-retrieve-embeddings-for-user-query" class="md-nav__link">
-    2.1 Retrieve embeddings for user query
-  </a>
-  
-    <nav class="md-nav" aria-label="2.1 Retrieve embeddings for user query">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#211-create-an-embeddings-function" class="md-nav__link">
-    2.1.1 Create an embeddings function
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#212-add-embeddings-connection" class="md-nav__link">
-    2.1.2 Add embeddings connection
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#213-configure-the-embeddings-connector" class="md-nav__link">
-    2.1.3 Configure the embeddings connector
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#214-implement-the-embeddings-function-logic" class="md-nav__link">
-    2.1.4 Implement the embeddings function logic
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-retrieve-relevant-chunks-from-vector-database" class="md-nav__link">
-    2.2 Retrieve relevant chunks from vector database
-  </a>
-  
-    <nav class="md-nav" aria-label="2.2 Retrieve relevant chunks from vector database">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#221-add-pinecone-vector-connection" class="md-nav__link">
-    2.2.1 Add Pinecone vector connection
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#222-configure-the-connector" class="md-nav__link">
-    2.2.2 Configure the connector
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#223-create-a-retriever-function" class="md-nav__link">
-    2.2.3 Create a retriever function
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#224-implement-the-retriever-function-logic" class="md-nav__link">
-    2.2.4 Implement the retriever function logic
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23-augment-queries-with-relevant-chunks" class="md-nav__link">
-    2.3 Augment queries with relevant chunks
-  </a>
-  
-    <nav class="md-nav" aria-label="2.3 Augment queries with relevant chunks">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#231-create-an-augment-function" class="md-nav__link">
-    2.3.1 Create an augment function
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#232-implement-the-augment-function-logic" class="md-nav__link">
-    2.3.2 Implement the augment function logic
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#24-generate-response-using-the-context" class="md-nav__link">
-    2.4 Generate response using the context
-  </a>
-  
-    <nav class="md-nav" aria-label="2.4 Generate response using the context">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#241-add-chat-client-connection" class="md-nav__link">
-    2.4.1 Add chat client connection
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#242-create-a-generate-function" class="md-nav__link">
-    2.4.2 Create a generate function
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#243-implement-the-generate-function-logic" class="md-nav__link">
-    2.4.3 Implement the generate function logic
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-create-the-combined-llm-function" class="md-nav__link">
-    Step 3: Create the combined LLM function
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 3: Create the combined LLM function">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31-create-the-llm-function" class="md-nav__link">
-    3.1 Create the LLM function
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-implement-the-function-logic" class="md-nav__link">
-    3.2 Implement the function logic
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-4-integrate-with-http-service" class="md-nav__link">
-    Step 4: Integrate with HTTP service
-  </a>
-  
-    <nav class="md-nav" aria-label="Step 4: Integrate with HTTP service">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#41-update-the-chat-resource" class="md-nav__link">
-    4.1 Update the chat resource
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-5-run-the-integration-and-query-the-rag" class="md-nav__link">
-    Step 5: Run the integration and query the RAG
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
+    <li class="md-nav__item">
+      <a href="../rag-query/" class="md-nav__link">
+        Rag Query
+      </a>
     </li>
   
 
@@ -2766,42 +2492,6 @@
       
       
         <footer class="md-footer">
-  
-  
-  <nav class="md-footer__inner md-grid" aria-label="Footer" >
-    
-    
-    <a href="../../natural-functions/natural-functions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Natural functions" rel="prev">
-      <div class="md-footer__button md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </div>
-      <div class="md-footer__title">
-        <div class="md-ellipsis">
-                <span class="md-footer__direction">
-                  Previous
-                </span>
-          Natural functions
-        </div>
-      </div>
-    </a>
-    
-    
-    
-    <a href="../../agents/" class="md-footer__link md-footer__link--next" aria-label="Next: Agents Overview" rel="next">
-      <div class="md-footer__title">
-        <div class="md-ellipsis">
-                <span class="md-footer__direction">
-                  Next
-                </span>
-          Agents Overview
-        </div>
-      </div>
-      <div class="md-footer__button md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-      </div>
-    </a>
-    
-  </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
