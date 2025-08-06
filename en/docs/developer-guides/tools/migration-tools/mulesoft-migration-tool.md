@@ -29,8 +29,8 @@ Follow the steps below to migrate your MuleSoft application.
 You can migrate a complete MuleSoft project, a standalone Mule `.xml` configuration file, or a directory containing multiple MuleSoft projects:
 
 - **For MuleSoft projects**: Ensure your project follows the standard structure with configuration XML files located under:
-  - Mule 3.x: `mule-project/src/main/app`
-  - Mule 4.x: `mule-project/src/main/mule`
+    - Mule 3.x: `mule-project/src/main/app`
+    - Mule 4.x: `mule-project/src/main/mule`
 - **For standalone XML files**: You can directly use any valid Mule XML configuration file.
 - **For multiple MuleSoft projects**: To use multi-project migration, organize your MuleSoft projects so that each project is a separate directory directly inside a single parent directory. The parent directory should contain only the individual MuleSoft project folders (not nested further). The tool can process all projects in batch using the `--multi-root` option.
 
@@ -102,11 +102,11 @@ Use one of the following commands based on your needs:
 ### Step 4: Review the migration summary
 
 - The migration assessment/summary report provides the following percentages:
-    1. **Component Conversion Percentage** - Shows the proportion of MuleSoft components successfully converted to Ballerina.
-    2. **DataWeave Conversion Percentage** - Reflects the success rate of converting DataWeave scripts.
-    3. **Overall Project Conversion Percentage** – Combines both component and DataWeave conversion rates to indicate the total migration success.
-- The report includes a **Manual Work Estimation** section, which provides an estimated time required to review the migrated code, address TODOs, and complete the migration process.
-- The report also features sections for **Element Blocks that Require Manual Conversion** and **DataWeave Expressions that Require Manual Conversion**, listing all Mule component blocks and DataWeave scripts unsupported by the current tool version and requiring manual conversion. These items are marked as TODOs in the appropriate locations within the generated Ballerina package, unless you use the `--dry-run` option, which only generates the report without producing code.
+    1. **Component conversion percentage** - Shows the proportion of MuleSoft components successfully converted to Ballerina.
+    2. **DataWeave conversion percentage** - Reflects the success rate of converting DataWeave scripts.
+    3. **Overall project conversion percentage** – Combines both component and DataWeave conversion rates to indicate the total migration success.
+- The report includes a **Manual work estimation** section, which provides an estimated time required to review the migrated code, address TODOs, and complete the migration process.
+- The report also features sections for **Element blocks that require manual conversion** and **DataWeave expressions that require manual conversion**, listing all Mule component blocks and DataWeave scripts unsupported by the current tool version and requiring manual conversion. These items are marked as TODOs in the appropriate locations within the generated Ballerina package, unless you use the `--dry-run` option, which only generates the report without producing code.
 
 ### Step 5: Address the TODO items
 
@@ -158,14 +158,14 @@ http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/jso
 </mule>
 ```
 
-### Run the Migration Tool
+### Run the migration tool
 To convert the Mule XML file using the `migrate-mule` tool execute the following command:
 
 ```bash
 $ bal migrate-mule /path/to/users-database-query.xml --force-version 3
 ```
 
-### Examine the Generated Ballerina Code
+### Examine the generated Ballerina code
 The tool generates a Ballerina package named `users-database-query-ballerina` inside `/path/to` with the following structure (Standard BI layout):
 
 ```commandline
@@ -230,13 +230,15 @@ This example demonstrates how to migrate a MuleSoft application that performs da
 ## Supported Mule components
 
 The migration tool currently supports a wide range of Mule components for both Mule 3.x and Mule 4.x. For a full list of supported components and their mappings, see:
+
 - [Mule 3.x Components](https://github.com/wso2/integration-bi-migration-assistant/blob/main/mule/docs/palette-item-mappings-v3.md)
 - [Mule 4.x Components](https://github.com/wso2/integration-bi-migration-assistant/blob/main/mule/docs/palette-item-mappings-v4.md)
 
-## Supported DataWeave Transformations
+## Supported DataWeave transformations
 
 The migration tool supports both DataWeave 1.0 (Mule 3.x) and DataWeave 2.0 (Mule 4.x) transformations. For details and
 conversion samples, see:
+
 - [DataWeave 1.0 Mappings](https://github.com/wso2/integration-bi-migration-assistant/blob/main/mule/docs/dataweave-mappings-v3.md)
 - [DataWeave 2.0 Mappings](https://github.com/wso2/integration-bi-migration-assistant/blob/main/mule/docs/dataweave-mappings-v4.md)
 
