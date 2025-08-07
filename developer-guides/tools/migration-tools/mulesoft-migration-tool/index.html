@@ -1380,14 +1380,14 @@
         
           <li class="md-nav__item">
   <a href="#run-the-migration-tool" class="md-nav__link">
-    Run the Migration Tool
+    Run the migration tool
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#examine-the-generated-ballerina-code" class="md-nav__link">
-    Examine the Generated Ballerina Code
+    Examine the generated Ballerina code
   </a>
   
 </li>
@@ -1406,7 +1406,7 @@
       
         <li class="md-nav__item">
   <a href="#supported-dataweave-transformations" class="md-nav__link">
-    Supported DataWeave Transformations
+    Supported DataWeave transformations
   </a>
   
 </li>
@@ -2219,14 +2219,14 @@
         
           <li class="md-nav__item">
   <a href="#run-the-migration-tool" class="md-nav__link">
-    Run the Migration Tool
+    Run the migration tool
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#examine-the-generated-ballerina-code" class="md-nav__link">
-    Examine the Generated Ballerina Code
+    Examine the generated Ballerina code
   </a>
   
 </li>
@@ -2245,7 +2245,7 @@
       
         <li class="md-nav__item">
   <a href="#supported-dataweave-transformations" class="md-nav__link">
-    Supported DataWeave Transformations
+    Supported DataWeave transformations
   </a>
   
 </li>
@@ -2307,9 +2307,11 @@
 <h3 id="step-1-prepare-your-input">Step 1: Prepare your input<a class="headerlink" href="#step-1-prepare-your-input" title="Permanent link">&para;</a></h3>
 <p>You can migrate a complete MuleSoft project, a standalone Mule <code>.xml</code> configuration file, or a directory containing multiple MuleSoft projects:</p>
 <ul>
-<li><strong>For MuleSoft projects</strong>: Ensure your project follows the standard structure with configuration XML files located under:</li>
+<li><strong>For MuleSoft projects</strong>: Ensure your project follows the standard structure with configuration XML files located under:<ul>
 <li>Mule 3.x: <code>mule-project/src/main/app</code></li>
 <li>Mule 4.x: <code>mule-project/src/main/mule</code></li>
+</ul>
+</li>
 <li><strong>For standalone XML files</strong>: You can directly use any valid Mule XML configuration file.</li>
 <li><strong>For multiple MuleSoft projects</strong>: To use multi-project migration, organize your MuleSoft projects so that each project is a separate directory directly inside a single parent directory. The parent directory should contain only the individual MuleSoft project folders (not nested further). The tool can process all projects in batch using the <code>--multi-root</code> option.</li>
 </ul>
@@ -2377,13 +2379,13 @@ $<span class="w"> </span>bal<span class="w"> </span>migrate-mule<span class="w">
 <h3 id="step-4-review-the-migration-summary">Step 4: Review the migration summary<a class="headerlink" href="#step-4-review-the-migration-summary" title="Permanent link">&para;</a></h3>
 <ul>
 <li>The migration assessment/summary report provides the following percentages:<ol>
-<li><strong>Component Conversion Percentage</strong> - Shows the proportion of MuleSoft components successfully converted to Ballerina.</li>
-<li><strong>DataWeave Conversion Percentage</strong> - Reflects the success rate of converting DataWeave scripts.</li>
-<li><strong>Overall Project Conversion Percentage</strong> – Combines both component and DataWeave conversion rates to indicate the total migration success.</li>
+<li><strong>Component conversion percentage</strong> - Shows the proportion of MuleSoft components successfully converted to Ballerina.</li>
+<li><strong>DataWeave conversion percentage</strong> - Reflects the success rate of converting DataWeave scripts.</li>
+<li><strong>Overall project conversion percentage</strong> – Combines both component and DataWeave conversion rates to indicate the total migration success.</li>
 </ol>
 </li>
-<li>The report includes a <strong>Manual Work Estimation</strong> section, which provides an estimated time required to review the migrated code, address TODOs, and complete the migration process.</li>
-<li>The report also features sections for <strong>Element Blocks that Require Manual Conversion</strong> and <strong>DataWeave Expressions that Require Manual Conversion</strong>, listing all Mule component blocks and DataWeave scripts unsupported by the current tool version and requiring manual conversion. These items are marked as TODOs in the appropriate locations within the generated Ballerina package, unless you use the <code>--dry-run</code> option, which only generates the report without producing code.</li>
+<li>The report includes a <strong>Manual work estimation</strong> section, which provides an estimated time required to review the migrated code, address TODOs, and complete the migration process.</li>
+<li>The report also features sections for <strong>Element blocks that require manual conversion</strong> and <strong>DataWeave expressions that require manual conversion</strong>, listing all Mule component blocks and DataWeave scripts unsupported by the current tool version and requiring manual conversion. These items are marked as TODOs in the appropriate locations within the generated Ballerina package, unless you use the <code>--dry-run</code> option, which only generates the report without producing code.</li>
 </ul>
 <h3 id="step-5-address-the-todo-items">Step 5: Address the TODO items<a class="headerlink" href="#step-5-address-the-todo-items" title="Permanent link">&para;</a></h3>
 <p>During conversion, if there are any unsupported Mule XML tags, they are included in the generated Ballerina code as TODO comments. You may need to do the conversion for them manually.</p>
@@ -2428,12 +2430,12 @@ $<span class="w"> </span>bal<span class="w"> </span>migrate-mule<span class="w">
 <span class="nt">&lt;/mule&gt;</span>
 </code></pre></div>
 
-<h3 id="run-the-migration-tool">Run the Migration Tool<a class="headerlink" href="#run-the-migration-tool" title="Permanent link">&para;</a></h3>
+<h3 id="run-the-migration-tool">Run the migration tool<a class="headerlink" href="#run-the-migration-tool" title="Permanent link">&para;</a></h3>
 <p>To convert the Mule XML file using the <code>migrate-mule</code> tool execute the following command:</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>bal<span class="w"> </span>migrate-mule<span class="w"> </span>/path/to/users-database-query.xml<span class="w"> </span>--force-version<span class="w"> </span><span class="m">3</span>
 </code></pre></div>
 
-<h3 id="examine-the-generated-ballerina-code">Examine the Generated Ballerina Code<a class="headerlink" href="#examine-the-generated-ballerina-code" title="Permanent link">&para;</a></h3>
+<h3 id="examine-the-generated-ballerina-code">Examine the generated Ballerina code<a class="headerlink" href="#examine-the-generated-ballerina-code" title="Permanent link">&para;</a></h3>
 <p>The tool generates a Ballerina package named <code>users-database-query-ballerina</code> inside <code>/path/to</code> with the following structure (Standard BI layout):</p>
 <div class="highlight"><pre><span></span><code>users-database-query-ballerina/
 ├── Ballerina.toml
@@ -2489,14 +2491,18 @@ public function invokeEndPoint0(Context ctx) returns http:Response|error {
 <p>You can check out the <code>migration_report.html</code> for overview of the migration.</p>
 <p>This example demonstrates how to migrate a MuleSoft application that performs database operations to Ballerina using the migration tool. The migration tool automatically converts the database configuration and SQL query to the equivalent Ballerina code using the <code>ballerinax/mysql</code> module.</p>
 <h2 id="supported-mule-components">Supported Mule components<a class="headerlink" href="#supported-mule-components" title="Permanent link">&para;</a></h2>
-<p>The migration tool currently supports a wide range of Mule components for both Mule 3.x and Mule 4.x. For a full list of supported components and their mappings, see:
-- <a href="https://github.com/wso2/integration-bi-migration-assistant/blob/main/mule/docs/palette-item-mappings-v3.md">Mule 3.x Components</a>
-- <a href="https://github.com/wso2/integration-bi-migration-assistant/blob/main/mule/docs/palette-item-mappings-v4.md">Mule 4.x Components</a></p>
-<h2 id="supported-dataweave-transformations">Supported DataWeave Transformations<a class="headerlink" href="#supported-dataweave-transformations" title="Permanent link">&para;</a></h2>
+<p>The migration tool currently supports a wide range of Mule components for both Mule 3.x and Mule 4.x. For a full list of supported components and their mappings, see:</p>
+<ul>
+<li><a href="https://github.com/wso2/integration-bi-migration-assistant/blob/main/mule/docs/palette-item-mappings-v3.md">Mule 3.x Components</a></li>
+<li><a href="https://github.com/wso2/integration-bi-migration-assistant/blob/main/mule/docs/palette-item-mappings-v4.md">Mule 4.x Components</a></li>
+</ul>
+<h2 id="supported-dataweave-transformations">Supported DataWeave transformations<a class="headerlink" href="#supported-dataweave-transformations" title="Permanent link">&para;</a></h2>
 <p>The migration tool supports both DataWeave 1.0 (Mule 3.x) and DataWeave 2.0 (Mule 4.x) transformations. For details and
-conversion samples, see:
-- <a href="https://github.com/wso2/integration-bi-migration-assistant/blob/main/mule/docs/dataweave-mappings-v3.md">DataWeave 1.0 Mappings</a>
-- <a href="https://github.com/wso2/integration-bi-migration-assistant/blob/main/mule/docs/dataweave-mappings-v4.md">DataWeave 2.0 Mappings</a></p>
+conversion samples, see:</p>
+<ul>
+<li><a href="https://github.com/wso2/integration-bi-migration-assistant/blob/main/mule/docs/dataweave-mappings-v3.md">DataWeave 1.0 Mappings</a></li>
+<li><a href="https://github.com/wso2/integration-bi-migration-assistant/blob/main/mule/docs/dataweave-mappings-v4.md">DataWeave 2.0 Mappings</a></li>
+</ul>
 <h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Some moderate to advanced MuleSoft features may require manual adjustments after migration.</li>
