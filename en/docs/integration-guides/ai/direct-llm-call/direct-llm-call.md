@@ -98,7 +98,7 @@ Follow the steps below to implement the integration.
         Content: ${blog.content}
     ```
 
-    <a href="{{base_path}}/assets/img/learn/references/direct-llm-call/add_generate_call_direct_llm_docs.gif"><img src="{{base_path}}/assets/img/learn/references/direct-llm-call/add_generate_call_direct_llm_docs.gif" alt=Implement resource logic"></a>
+    <a href="{{base_path}}/assets/img/learn/references/direct-llm-call/add_generate_call_direct_llm_docs.gif"><img src="{{base_path}}/assets/img/learn/references/direct-llm-call/add_generate_call_direct_llm_docs.gif" alt="Implement resource logic"></a>
 
 6. Add a new node after the `generate` API call and select **`Return`** from the node panel.
 7. Select the `review` variable from the dropdown and click **`Save`**.
