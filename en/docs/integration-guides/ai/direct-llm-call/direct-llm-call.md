@@ -105,8 +105,14 @@ Follow the steps below to implement the integration.
 
     <a href="{{base_path}}/assets/img/learn/references/direct-llm-call/return_node_direct_llm_call_docs.gif"><img src="{{base_path}}/assets/img/learn/references/direct-llm-call/return_node_direct_llm_call_docs.gif" alt="Add Return" width="70%"></a>
 
+### Step 6: Configure default WSO2 model provider
 
-### Step 6: Run the integration
+1. As the workflow uses the `Default Model Provider (WSO2)`, you need to configure its settings:
+    - Press `Ctrl/Cmd + Shift + P` to open the VS Code command palette.
+    - Run the command: `Ballerina: Configure default WSO2 model provider`.
+   This will automatically generate the required configuration entries.
+
+### Step 7: Run the integration
 
 !!! warning "Response May Vary"
     Since this integration involves an LLM (Large Language Model) call, the response values may not always be identical across different executions.

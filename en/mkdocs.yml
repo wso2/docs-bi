@@ -84,7 +84,7 @@ nav:
   - Integration Guides:
       - AI Agents and Other Gen AI Integrations:
         - Natural functions: integration-guides/ai/natural-functions/natural-functions.md
-        - Direct LLM Invocation: learn/ai/direct-llm-call/direct-llm-call.md
+        - Direct LLM Invocation: integration-guides/ai/direct-llm-call/direct-llm-call.md
         - RAG:
           - Rag Ingestion: integration-guides/ai/rag/rag-ingestion.md
           - Rag Query: integration-guides/ai/rag/rag-query.md
@@ -238,5 +238,5 @@ extra:
     - type: linkedin
       link: https://www.linkedin.com/company/wso2
   # site_version: Uncomment to specify a version
-  base_path: https://wso2.github.io/docs-bi
-  # base_path: http://localhost:8000
+  # base_path: https://wso2.github.io/docs-bi
+  base_path: http://localhost:8000
