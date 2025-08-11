@@ -84,6 +84,7 @@ nav:
   - Integration Guides:
       - AI Agents and Other Gen AI Integrations:
         - Natural functions: integration-guides/ai/natural-functions/natural-functions.md
+        - Direct LLM Invocation: integration-guides/ai/direct-llm-call/direct-llm-call.md
         - RAG:
           - Rag Ingestion: integration-guides/ai/rag/rag-ingestion.md
           - Rag Query: integration-guides/ai/rag/rag-query.md
