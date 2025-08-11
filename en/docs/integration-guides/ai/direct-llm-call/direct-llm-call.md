@@ -21,7 +21,7 @@ Follow the steps below to implement the integration.
 
 1. Click on the **`Add Artifacts`** button and select **`Type`** in the **`Other Artifacts`** section.
 2. Click on **`+ Add Type`** to add a new type.
-3. Click on **`Import`** button the top right corner of the type editor.
+3. Click on **`Import`** button in the top right corner of the type editor.
 4. Use `Blog` as the **`Name`**. Then select **`JSON`** on the dropdown and paste the following JSON payload. Then Click on the **`Import`** button.
 
     ```json
@@ -100,19 +100,19 @@ Follow the steps below to implement the integration.
 
     <a href="{{base_path}}/assets/img/learn/references/direct-llm-call/add_generate_call_direct_llm_docs.gif"><img src="{{base_path}}/assets/img/learn/references/direct-llm-call/add_generate_call_direct_llm_docs.gif" alt="Implement resource logic"></a>
 
-6. Add a new node after the `generate` API call and select **`Return`** from the node panel.
-7. Select the `review` variable from the dropdown and click **`Save`**.
+11. Add a new node after the `generate` API call and select **`Return`** from the node panel.
+12. Select the `review` variable from the dropdown and click **`Save`**.
 
     <a href="{{base_path}}/assets/img/learn/references/direct-llm-call/return_node_direct_llm_call_docs.gif"><img src="{{base_path}}/assets/img/learn/references/direct-llm-call/return_node_direct_llm_call_docs.gif" alt="Add Return" width="70%"></a>
 
-### Step 6: Configure default WSO2 model provider
+### Step 5: Configure default WSO2 model provider
 
 1. As the workflow uses the `Default Model Provider (WSO2)`, you need to configure its settings:
     - Press `Ctrl/Cmd + Shift + P` to open the VS Code command palette.
     - Run the command: `Ballerina: Configure default WSO2 model provider`.
    This will automatically generate the required configuration entries.
 
-### Step 7: Run the integration
+### Step 6: Run the integration
 
 !!! warning "Response May Vary"
     Since this integration involves an LLM (Large Language Model) call, the response values may not always be identical across different executions.
