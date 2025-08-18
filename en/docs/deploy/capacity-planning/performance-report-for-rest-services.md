@@ -1,5 +1,7 @@
 # Performance report for Rest services (HTTP and HTTPS)
 
+## Overview
+
 | Test Scenarios | Description |
 | --- | --- |
 | Passthrough HTTP service (h1c -> h1c) | An HTTP Service, which forwards all requests to an HTTP back-end service. |
@@ -18,6 +20,10 @@ performance metrics.
 A majority of test scenarios use a [Netty](https://netty.io/) based back-end service which echoes back any request
 posted to it after a specified period of time.
 
+> The code and instructions for running these tests are provided [here](https://github.com/ballerina-platform/ballerina-performance).
+
+## Performance Metrics
+
 We run the performance tests under different numbers of concurrent users, message sizes (payloads) and back-end service
 delays.
 
@@ -27,6 +33,8 @@ The main performance metrics:
 2. **Response Time**: The end-to-end latency for an operation of invoking a Ballerina service. The complete distribution of response times was recorded.
 
 In addition to the above metrics, we measure the load average and several memory-related metrics.
+
+## Test Parameters
 
 The following are the test parameters.
 
@@ -54,6 +62,8 @@ test parameters.
 | 99th Percentile of Response Time (ms) | 99% of the requests took no more than this time. The remaining samples took at least as long as this |
 | Throughput (Requests/sec) | The throughput measured in requests per second. |
 | Average Memory Footprint After Full GC (M) | The average memory consumed by the application after a full garbage collection event. |
+
+## Test Results
 
 The following is the summary of performance test results collected for the measurement period.
 
