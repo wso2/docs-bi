@@ -7,6 +7,7 @@ Download and install [Visual Studio Code](https://code.visualstudio.com/download
 ## Step 2: Install the WSO2 Integrator: BI extension
 
 1. Go to the Extensions view by clicking on the extension icon on the sidebar or pressing `Ctrl + Shift + X` on Windows and Linux, or `Shift + ⌘ + X` on a Mac.
+> Check [system requirements](/references/system-requirements/) to verify environment compatibility.
 2. Search for `WSO2 Integrator: BI` in the extensions view search box.
 3. Click on the **Install** button to install the `WSO2 Integrator: BI` extension.
 
