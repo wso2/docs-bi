@@ -39,9 +39,7 @@ Prior to installing WSO2 Integrator: BI, make sure that the appropriate prerequi
 
 ## Environment compatibility
 
-- Install a JRE version compatible with the product version listed below, using one of the supported operating systems.
-
-- The details of the tested environments for the WSO2 Integrator: BI are given below.
+The details of the tested environments for the WSO2 Integrator: BI are given below.
 
 ### Tested operating systems
 
@@ -54,9 +52,11 @@ The WSO2 Integrator: BI runtime is tested with the following operating systems:
 | Red Hat Enterprise Linux | 9   |
 | MacOS                    | 14.6      |
 
-### Tested JREs
+### Tested Java Runtime Environments
 
 The WSO2 Integrator: BI runtime is tested with the following JREs:
+
+> A compatible JRE version will be automatically installed during the Ballerina installation process if one is not already available in the environment.
 
 | JRE         |Versions|
 |-------------|--------|
@@ -65,7 +65,7 @@ The WSO2 Integrator: BI runtime is tested with the following JREs:
 | OpenJRE     | 21 |
 | Oracle JRE  | 21 |
 
-### Tested DBMSs
+### Tested Database Management Systems
 
 The WSO2 Integrator: BI runtime is tested with the following databases:
 
