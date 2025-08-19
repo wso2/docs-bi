@@ -30,7 +30,7 @@ Prior to installing WSO2 Integrator: BI, make sure that the appropriate prerequi
           1 core (compute units with at least 1.0-1.2 GHz Opteron/Xeon processor)
         </li>
         <li>
-          1 GB memory for the container/pod
+          1 GB heap size
         </li>
       </ul>
     </td>
