@@ -22,7 +22,7 @@ posted to it after a specified period of time.
 
 > The code and instructions for running these tests are provided [here](https://github.com/ballerina-platform/ballerina-performance).
 
-## Performance Metrics
+## Performance metrics
 
 We run the performance tests under different numbers of concurrent users, message sizes (payloads) and back-end service
 delays.
@@ -34,7 +34,7 @@ The main performance metrics:
 
 In addition to the above metrics, we measure the load average and several memory-related metrics.
 
-## Test Parameters
+## Test parameters
 
 The following are the test parameters.
 
@@ -63,7 +63,7 @@ test parameters.
 | Throughput (Requests/sec) | The throughput measured in requests per second. |
 | Average Memory Footprint After Full GC (M) | The average memory consumed by the application after a full garbage collection event. |
 
-## Test Results
+## Test results
 
 The following is the summary of performance test results collected for the measurement period.
 

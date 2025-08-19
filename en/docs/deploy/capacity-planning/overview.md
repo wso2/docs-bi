@@ -16,7 +16,7 @@ The tests were conducted on the following AWS EC2 instance configuration:
 | Operating System | Ubuntu 18.04.6 LTS |
 | Kernel version | 5.4.0-1094-aws |
 
-## Performance Reports
+## Performance reports
 
 Explore the detailed performance reports for various integration types:
 
