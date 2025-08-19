@@ -72,7 +72,8 @@
         "title": "References",
         "icon": "📖",
         "links": [
-            {"name": "Enterprise Integration Patterns", "url": "references/enterprise-integrations-patterns/"}
+            {"name": "Enterprise Integration Patterns", "url": "references/enterprise-integrations-patterns/"},
+            {"name": "System requirements", "url": "references/system-requirements/"}
         ]
     },
     {

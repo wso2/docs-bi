@@ -159,6 +159,7 @@ nav:
         - OpenSearch: observability-and-monitoring/supported-observability-tools-and-platforms/opensearch.md
   - References:
       - "Enterprise Integrations Patterns": references/enterprise-integrations-patterns.md
+      - "System Requirements": references/system-requirements.md
       
 
 # Markdown extensions configuration
