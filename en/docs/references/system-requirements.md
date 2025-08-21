@@ -65,17 +65,6 @@ The WSO2 Integrator: BI runtime is tested with the following JREs:
 | OpenJRE     | 21 |
 | Oracle JRE  | 21 |
 
-### Tested Database Management Systems
-
-The WSO2 Integrator: BI runtime is tested with the following databases:
-
-| DBMS                 | Versions                |
-|----------------------|-------------------------|
-| MySQL                | 8+                      |
-| Oracle               | 12c R2+                 |
-| Microsoft SQL Server | 2005+                   |
-| PostgreSQL           | 8.4+                    |
-
 ### ARM compatibility
 
 WSO2 Integrator: BI is compatible with ARM processors. It can run on ARM-based systems, such as those with Apple Silicon or ARM-based Linux distributions.
