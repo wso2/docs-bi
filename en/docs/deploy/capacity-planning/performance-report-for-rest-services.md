@@ -11,25 +11,26 @@
 | Passthrough HTTP/2(over TLS) service (h2 -> h2) | An HTTPS Service exposed over HTTP/2 protocol, which forwards all requests to an HTTP/2(over TLS) back-end service. |
 | Passthrough HTTP/2(over TLS) service (h2 -> h1) | An HTTPS Service exposed over HTTP/2 protocol, which forwards all requests to an HTTPS back-end service. |
 | Passthrough HTTP/2(over TLS) service (h2 -> h1c) | An HTTPS Service exposed over HTTP/2 protocol, which forwards all requests to an HTTP back-end service. |
-| HTTP/2 client and server downgrade service (h2 -> h2) | An HTTP/2(with TLS) server accepts requests from an HTTP/1.1(with TLS) client and the HTTP/2(with TLS) client sends requests to an HTTP/1.1(with TLS) back-end service. Both the upstream and the downgrade connection is downgraded to HTTP/1.1(with TLS). |
+| HTTP/2 client and server downgrade service (h2 -> h2) | An HTTP/2(with TLS) server accepts requests from an HTTP/1.1(with TLS) client and the HTTP/2(with TLS) client sends requests to an HTTP/1.1(with TLS) back-end service. Both the upstream and downstream connections are downgraded to HTTP/1.1(with TLS). |
 
 Our test client is [Apache JMeter](https://jmeter.apache.org/index.html). We test each scenario for a fixed duration of
-time. We split the test results into warmup and measurement parts and use the measurement part to compute the
+time. We split the test results into warm-up and measurement parts and use the measurement part to compute the
 performance metrics.
 
-A majority of test scenarios use a [Netty](https://netty.io/) based back-end service which echoes back any request
+A majority of test scenarios use a [Netty](https://netty.io/) based back-end service, which echoes back any request
 posted to it after a specified period of time.
 
-> The code and instructions for running these tests are provided [here](https://github.com/ballerina-platform/ballerina-performance).
+!!! note
+    The code and instructions for running these tests are provided [here](https://github.com/ballerina-platform/ballerina-performance).
 
 ## Performance metrics
 
-We run the performance tests under different numbers of concurrent users, message sizes (payloads) and back-end service
+We run the performance tests under different numbers of concurrent users, message sizes (payloads), and back-end service
 delays.
 
 The main performance metrics:
 
-1. **Throughput**: The number of requests that the Ballerina service processes during a specific time interval (e.g. per second).
+1. **Throughput**: The number of requests that the Ballerina service processes during a specific time interval (e.g., per second).
 2. **Response Time**: The end-to-end latency for an operation of invoking a Ballerina service. The complete distribution of response times was recorded.
 
 In addition to the above metrics, we measure the load average and several memory-related metrics.
@@ -131,5 +132,5 @@ The following is the summary of performance test results collected for the measu
 |  HTTP/2 client and server downgrade service (h2 -> h2) | 1000 | 10000 | 0 | 0.01 | 4017.91 | 248.82 | 61.31 | 447 |
 
 
-**Note:**
->Ballerina Swan Lake 2201.12.4 was used for testing with default configurations. Your results may vary depending on the Ballerina version and configuration used.
+!!! note
+    Ballerina Swan Lake 2201.12.4 was used for testing with default configurations. Your results may vary depending on the Ballerina version and configuration used.
