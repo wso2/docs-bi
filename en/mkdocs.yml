@@ -83,9 +83,9 @@ nav:
         - Develop File Integration: get-started/develop-file-integration.md
   - Integration Guides:
       - AI Agents and Other Gen AI Integrations:
-        - Direct LLM Invocation:
+        - Direct LLM invocation:
           - Natural functions(Beta): integration-guides/ai/natural-functions/natural-functions.md
-          - Direct LLM Invocation using Model providers: integration-guides/ai/direct-llm-call/direct-llm-call.md
+          - Model providers: integration-guides/ai/direct-llm-call/direct-llm-invocation-with-ballerina-model-providers.md
         - RAG:
           - Rag Ingestion: integration-guides/ai/rag/rag-ingestion.md
           - Rag Query: integration-guides/ai/rag/rag-query.md

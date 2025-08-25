@@ -1,4 +1,4 @@
-# Direct LLM Invocation with Ballerina Model Providers
+# Direct LLM invocation with Ballerina model providers
 
 In this tutorial, you will create an integration that makes a direct call to a Large Language Model (LLM) using Ballerina’s model providers. Direct LLM calls are designed for simple, stateless interactions where conversational history is not required, giving you fine-grained control over each request.
 With Ballerina, you can send a prompt along with a type descriptor, instructing the LLM to generate a response that automatically conforms to your desired type-safe format (e.g., JSON, Ballerina records, integers). This eliminates manual parsing and ensures structured, predictable outputs.
@@ -17,7 +17,7 @@ Follow the steps below to implement the integration.
 4. Select Project Directory and click on the **`Select Location`** button.
 5. Click on the **`Create New Integration`** button to create the integration project.
 
-### Step 2: Define Types
+### Step 2: Define types
 
 1. Click on the **`Add Artifacts`** button and select **`Type`** in the **`Other Artifacts`** section.
 2. Click on **`+ Add Type`** to add a new type.
@@ -107,7 +107,7 @@ Follow the steps below to implement the integration.
 
 ### Step 5: Configure default WSO2 model provider
 
-1. As the workflow uses the `Default Model Provider (WSO2)`, you need to configure its settings:
+1. Ballerina supports direct calls to Large Language Models (LLMs) with various providers, such as OpenAI, Azure OpenAI, and Anthropic. This demonstration focuses on using the Default Model Provider (WSO2). To begin, you need to configure its settings:
     - Press `Ctrl/Cmd + Shift + P` to open the VS Code command palette.
     - Run the command: `Ballerina: Configure default WSO2 model provider`.
    This will automatically generate the required configuration entries.
