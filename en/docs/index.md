@@ -94,7 +94,7 @@
             <b>WSO2 Integrator: BI</b> is a low-code integration solution built on <a href="https://ballerina.io">Ballerina</a>, enabling fast and efficient integration development with minimal coding. The <a href="https://marketplace.visualstudio.com/items?itemName=WSO2.ballerina-integrator">WSO2 Integrator: BI</a> extension for Visual Studio Code (VS Code) provides a familiar, AI-assisted environment that streamlines tasks and enhances accuracy, accelerating digital transformation efforts.
         </div>
         <div>
-            <a href="https://wso2.com/integrator/bi/" class="banner-link"></a>
+            <a href="https://wso2.com/integrator/bi/" class="banner-link" />
         </div>
     </div>
     <div class="section02">
@@ -113,14 +113,14 @@
                             {% if tile.title == "Community & Support" %}
                                 <a href="{{ link.url }}" target="_blank" class="link">{{ link.name }}</a>
                             {% else %}
-                                <a href="{{ base_path }}/{{ link.url }}" class="link">{{ link.name }}</a>
+                                <a href="{{ base_path|default('') }}/{{ link.url }}" class="link">{{ link.name }}</a>
                             {% endif %}
                         </li>
                         {% endfor %}
                     </ul>
                     {% if tile.more_btn %}
                     <div class="button-container">
-                        <a href="{{base_path}}/{{ tile.more_btn.url }}" class="view-all-button">{{ tile.more_btn.name }}</a>
+                        <a href="{{ base_path }}/{{ tile.more_btn.get('url','') }}" class="view-all-button">{{ tile.more_btn.get('name','') }}</a>
                     </div>
                     {% endif %}
                 </div>
@@ -180,7 +180,7 @@ header.md-header .md-header__button:not([hidden]) {
     }
 }
 .md-typeset h1{
-    visibility: hidden;
+    display: none;
     margin-bottom: 0;
 }
 .md-search-result__article.md-typeset h1{
@@ -198,7 +198,6 @@ header.md-header .md-header__button:not([hidden]) {
     align-items: start;
 }
 .tile {
-    display: inline-block;
     vertical-align: top;
     background-color: rgba(255, 255, 255, 0.03);
     padding: 20px;
@@ -250,7 +249,7 @@ header.md-header .md-header__button:not([hidden]) {
 }
 .view-all-button {
     display: inline-block;
-    background-color: none;
+    background-color: transparent;
     color: var(--text-color) !important;
     text-decoration: none;
     border-radius: 5px;
