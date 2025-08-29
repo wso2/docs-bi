@@ -16,7 +16,7 @@ Observability platforms allow developers and operators to gain insight into syst
 
 BI provides built-in support for observability across its runtime. Integration services, APIs, and connectors emit rich telemetry data that can be exported to standard monitoring tools.
 
-This guide explains how to enable and configure observability in BI using a simplified integration example. This integration sample is used to demonstarte the supported observability and monitorng tools in the next sections.
+This guide explains how to enable and configure observability in BI using a simplified integration example. This integration sample is used to demonstrate the supported observability and monitoring tools in the next sections.
 
 ## Example: Observing a Sample Integration Service
 
