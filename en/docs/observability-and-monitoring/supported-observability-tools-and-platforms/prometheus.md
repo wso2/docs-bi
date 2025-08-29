@@ -3,6 +3,7 @@
 The sample [shop service](/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service) will be used in this guide. Follow the steps given below to observe BI metrics in [Prometheus](https://prometheus.io/).
 
 ## Step 1 - Set up Prometheus
+
 Prometheus is used as the monitoring system, which pulls out the metrics collected from the `/metrics` service exposed by BI runtime. This section focuses on the quick installation of Prometheus with Docker and the configuration required to collect metrics from the metrics service with the default configurations. Follow the steps below to configure Prometheus. 
 
 ???+ Tip
@@ -39,7 +40,7 @@ Prometheus is used as the monitoring system, which pulls out the metrics collect
 
 ## Step 2 - Import Prometheus extension for BI
 
-To include the Prometheus extension into the executable, the `ballerinax/prometheus` module needs to be imported into your BI project. Navigate to **file explorer** and add the following to the `main.bal` file.
+Create the sample [shop service](/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service). To include the Prometheus extension into the executable, the `ballerinax/prometheus` module needs to be imported into your BI project. Navigate to **file explorer** and add the following to the `main.bal` file.
 
 ```ballerina
 import ballerinax/prometheus as _;

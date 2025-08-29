@@ -19,8 +19,6 @@ The sample [shop service](/observability-and-monitoring/supported-observability-
 ```
     .
     |____config
-    | 	    |____ballerina
-    | 	    |     |____Config.toml
     |       |____dashboards
     |       |   	|____opensearch_dashboards.yml
     |       |____data-prepper
@@ -57,6 +55,8 @@ docker compose -f docker-compose.yml up -d
 ```
 
 ## Step 2 - Set up BI application for observability
+
+* Create the sample [shop service](/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service).
 
 * Navigate to **file explorer** view and add the following to `main.bal`.
 

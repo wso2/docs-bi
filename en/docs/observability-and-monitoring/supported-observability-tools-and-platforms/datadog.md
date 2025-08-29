@@ -88,7 +88,7 @@ Then follow the steps below to configure metrics and tracing data publishing to 
 
 ## Step 3 - Import Prometheus and Jaeger extensions for BI
 
-To include the Prometheus and Jaeger extensions into the executable, the `ballerinax/prometheus` and `ballerinax/jaeger` modules need to be imported into your BI project. Navigate to **file explorer** and add the following to the `main.bal` file.
+Create the sample [shop service](/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service). To include the Prometheus and Jaeger extensions into the executable, the `ballerinax/prometheus` and `ballerinax/jaeger` modules need to be imported into your BI project. Navigate to **file explorer** and add the following to the `main.bal` file.
 
 ```ballerina
 import ballerinax/prometheus as _;
