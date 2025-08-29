@@ -20,5 +20,5 @@ The tests were conducted on the following AWS EC2 instance configuration:
 
 Explore the detailed performance reports for various integration types:
 
-* [Performance report for REST Services (HTTPS)](/deploy/capacity-planning/performance-report-for-rest-services)  
+* [Performance report for REST Services (HTTP and HTTPS)](/deploy/capacity-planning/performance-report-for-rest-services)  
 

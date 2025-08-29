@@ -1,4 +1,4 @@
-# Performance report for Rest services (HTTP and HTTPS)
+# Performance report for REST services (HTTP and HTTPS)
 
 ## Overview
 
