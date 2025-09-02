@@ -53,7 +53,8 @@
             {"name": "Deploy to Devant", "url": "deploy/deploy-to-devant/"},
             {"name": "Containerized Deployment", "url": "deploy/containerized-deployment/overview"},
             {"name": "VM-based Deployment", "url": "deploy/vm-based-deployment/overview"},
-            {"name": "Managing Configurations", "url": "deploy/managing-configurations"}
+            {"name": "Managing Configurations", "url": "deploy/managing-configurations"},
+            {"name": "Capacity Planning", "url": "deploy/capacity-planning/overview"}
         ]
     }
     ],

@@ -144,6 +144,9 @@ nav:
         - Decentralized Deployment: deploy/vm-based-deployment/de-centralized-deployment.md
         - GitHub Action for CICD: deploy/vm-based-deployment/github-action-for-cicd.md
       - Managing configurations: deploy/managing-configurations.md
+      - Capacity Planning:
+        - Overview: deploy/capacity-planning/overview.md
+        - Performance Report for REST Services: deploy/capacity-planning/performance-report-for-rest-services.md
   - Observability and Monitoring:
       - Overview: observability-and-monitoring/overview.md
       - "Monitoring with WSO2 Integrator: ICP": observability-and-monitoring/monitoring-with-wso2-integrator-icp.md
