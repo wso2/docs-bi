@@ -95,7 +95,7 @@ Elasticsearch and Kibana are provided as <a href="https://www.elastic.co/cloud" 
 
 ## Step 2 - Run Ballerina Service
 
-This can be done by running the Ballerina service using the `Run` option in BI.
+Create the sample [shop service](/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service) and run it using the `Run` option in BI.
 
 ## Step 3 - Send requests
 
