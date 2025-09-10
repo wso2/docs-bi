@@ -177,7 +177,7 @@ During conversion, if there are any unsupported TIBCO activities or components, 
    5. Click "Start Migration" to begin the conversion process
    6. Configure your integration project details and click "Create and Open Project"
 
-#### Step 3: Review the generated code
+#### Step 2: Review the generated code
 
 The migration wizard will create a new Ballerina project with the converted code, which you can immediately start working with in the BI interface.
 
@@ -425,12 +425,12 @@ The migration wizard will create a new Ballerina project with the converted code
    5. Click "Start Migration" to begin the conversion process
    6. Configure your integration project details and click "Create and Open Project"
 
-#### Step 3: Review the generated code
+#### Step 2: Review the generated code
 
 The migration wizard will create a new Ballerina project with the converted code, which you can immediately start working with in the BI interface.
 
 ## Limitations
-- **Multi-project migration is not currently supported** through the VS Code extension UI. For batch migration of multiple TIBCO projects, use the CLI tool separately.
+- Multi-project migration is not currently supported through the VS Code extension UI. For batch migration of multiple TIBCO projects, use the CLI tool [migrate-tibco](https://central.ballerina.io/wso2/tool_migrate_tibco/latest) separately.
 - Tool generates code assuming target compiler version is 2201.12.0 or later.
 
 ### Unhandled activities

@@ -71,7 +71,7 @@ Once the migration process completes, the same page updates to show:
 - **View Full Report**: Click this button to view the detailed migration report in your browser.
 - **Save Report**: Click this button to save the migration report to your local file system for future reference.
 
-### Step 6: Create and open the Ballerina project
+### Step 5: Create and open the Ballerina project
 <a href="{{base_path}}/assets/img/developer-guides/migration-tools/mule-create-open.png"><img src="{{base_path}}/assets/img/developer-guides/migration-tools/mule-create-open.png" alt="Migration Success" width="70%"></a>
 
 1. **Configure your integration project**:
@@ -81,7 +81,7 @@ Once the migration process completes, the same page updates to show:
     - Choose whether to create a new directory using the package name.
 2. **Click "Create and Open Project"** to generate the Ballerina integration project with the converted code.
 
-### Step 7: Review migration output
+### Step 6: Review migration output
 
 The generated Ballerina package follows the standard Ballerina Integration (BI) file structure and includes:
 
@@ -89,7 +89,7 @@ The generated Ballerina package follows the standard Ballerina Integration (BI) 
 - **Configuration files** (`Config.toml`, `Ballerina.toml`) for the new project.
 - **Organized code structure** with separate files for connections, functions, types, and main logic.
 
-### Step 8: Review the migration summary
+### Step 7: Review the migration summary
 
 - The migration assessment/summary report provides the following percentages:
     1. **Component conversion percentage** - Shows the proportion of MuleSoft components successfully converted to Ballerina.
@@ -98,7 +98,7 @@ The generated Ballerina package follows the standard Ballerina Integration (BI) 
 - The report includes a **Manual work estimation** section, which provides an estimated time required to review the migrated code, address TODOs, and complete the migration process.
 - The report also features sections for **Element blocks that require manual conversion** and **DataWeave expressions that require manual conversion**, listing all Mule component blocks and DataWeave scripts unsupported by the current tool version and requiring manual conversion. These items are marked as TODOs in the appropriate locations within the generated Ballerina package.
 
-### Step 9: Address the TODO items
+### Step 8: Address the TODO items
 
 During conversion, if there are any unsupported Mule XML tags, they are included in the generated Ballerina code as TODO comments. You may need to do the conversion for them manually.
 
@@ -235,7 +235,7 @@ conversion samples, see:
 - [DataWeave 2.0 Mappings](https://github.com/wso2/integration-bi-migration-assistant/blob/main/mule/docs/dataweave-mappings-v4.md)
 
 ## Limitations
-- **Multi-project migration is not currently supported** through the VS Code extension UI. For batch migration of multiple MuleSoft projects, use the CLI tool [migrate-mule](https://central.ballerina.io/wso2/tool_migrate_mule/latest) separately.
+- Multi-project migration is not currently supported through the VS Code extension UI. For batch migration of multiple MuleSoft projects, use the CLI tool [migrate-mule](https://central.ballerina.io/wso2/tool_migrate_mule/latest) separately.
 - Some moderate to advanced MuleSoft features may require manual adjustments after migration.
 
 ???+ note  "Disclaimer"
