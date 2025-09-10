@@ -1,54 +1,108 @@
 # TIBCO BusinessWorks Migration Tool
 
-This guide explains how to use the [migrate-tibco](https://central.ballerina.io/wso2/tool_migrate_tibco/latest) tool to convert
-[TIBCO BusinessWorks](https://docs.tibco.com/products/tibco-activematrix-businessworks) integrations into Ballerina packages compatible with the [WSO2 Integrator: BI](https://wso2.com/integrator/bi/).
+This guide explains how to use the integrated migration feature in WSO2 Integrator: BI to convert [TIBCO BusinessWorks](https://docs.tibco.com/products/tibco-activematrix-businessworks) integrations into Ballerina packages.
+
 ## Tool overview
 
-The tool accepts either a BusinessWorks project directory or a standalone process file as input and generates an equivalent Ballerina package that can be opened in the BI.
+The migration tool is now integrated directly into the WSO2 Integrator: BI, providing a user-friendly wizard interface for converting TIBCO BusinessWorks projects. The tool accepts either a BusinessWorks project directory or a standalone process file as input and generates equivalent Ballerina packages that can be opened directly in WSO2 Integrator: BI.
+
+The migration wizard provides:
+
+- **Interactive project selection** with file picker support.
+- **Real-time migration status** with detailed logs.
+- **Migration coverage reports** showing conversion success rates.
+- **Automated project creation** with the converted Ballerina code.
 
 ## Supported BusinessWorks versions
 
 The migration tool supports both BusinessWorks 5 and BusinessWorks 6 projects.
 
-## Installation
-
-Execute the command below to pull the `migrate-tibco` tool from Ballerina Central
-```bash
-$ bal tool pull migrate-tibco
-```
-
 ## Usage
+Follow the steps below to migrate your TIBCO BusinessWorks application using the integrated migration wizard.
 
-### Command syntax
+### Step 1: Prepare your input
 
-```bash
-$ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directory>] [-k|--keep-structure] [-v|--verbose] [-d|--dry-run] [-m|--multi-root]
-```
+You can migrate a complete TIBCO BusinessWorks project or a standalone process file:
 
-### Parameters
+- **For TIBCO BusinessWorks projects**: Ensure your project follows the standard BusinessWorks structure
+- **For standalone process files**: You can directly use any valid BusinessWorks process file.
 
-- **source-project-directory-or-file** - Required. The TIBCO BusinessWorks project directory or process file needs to be migrated.
-- **-o or --out** - *Optional*. The directory where the new Ballerina package will be created. If the directory does not exist, the tool will create it for you. If not provided,
-  - If source-project-directory-or-file is a directory it will create new directory named `${source-project-directory-or-file}_converted` in the root of source-project-directory-or-file.
-  - if source-project-directory-or-file is a file, it will create a new directory named `${root}_converted` in the parent of the root directory where root is the directory containing the given file.
-- **-k or --keep-structure** - *Optional*. If specified, preserves the original process structure during migration. By default, this option is disabled.
-- **-v or --verbose** - *Optional*. Enable verbose output during conversion.
-- **-d or --dry-run** - *Optional*. Run the parsing and analysis phases and generate the `report.html` file without generating the Ballerina package.
-- **-m or --multi-root** - *Optional*. Treat each child directory as a separate project and convert all of them. The source must be a directory containing multiple TIBCO projects.
+### Step 2: Launch the migration wizard
+<a href="{{base_path}}/assets/img/developer-guides/migration-tools/welcome-screen.png"><img src="{{base_path}}/assets/img/developer-guides/migration-tools/welcome-screen.png" alt="Welcome Screen" width="70%"></a>
+
+1. **Open WSO2 Integrator: BI** in VS Code
+2. **Access the welcome page** - If not automatically displayed, you can access it through the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`) and search for "BI: Open Welcome"
+
+
+3. **Click "Import External Integration"** in the "Import External Integration" section
+
+### Step 3: Select source platform and project
+<a href="{{base_path}}/assets/img/developer-guides/migration-tools/tibco-select-platform.png"><img src="{{base_path}}/assets/img/developer-guides/migration-tools/tibco-select-platform.png" alt="TIBCO Platform Selection" width="70%"></a>
+
+1. **Choose TIBCO** as your source platform from the available options
+2. **Select your project** using the file picker:
+    - For TIBCO BusinessWorks projects: Select the project root directory
+    - For standalone process files: Select the individual process file
+3. **Configure TIBCO settings** if available in the wizard
+4. **Click "Start Migration"** to begin the conversion process
+
+### Step 4: Monitor migration progress and review results
+
+#### During Migration: Real-time Progress Monitoring
+<a href="{{base_path}}/assets/img/developer-guides/migration-tools/tibco-migrate-progress.png"><img src="{{base_path}}/assets/img/developer-guides/migration-tools/tibco-migrate-progress.png" alt="Migration Progress" width="70%"></a>
+
+While the migration is ongoing, you will see:
+
+- Real-time migration status updates
+- Detailed logs of the conversion process
+- Progress indication showing current migration step
+
+#### After Migration: Coverage Report and Results  
+<a href="{{base_path}}/assets/img/developer-guides/migration-tools/tibco-migrate-success.png"><img src="{{base_path}}/assets/img/developer-guides/migration-tools/tibco-migrate-success.png" alt="Migration Success" width="70%"></a>
+
+Once the migration process completes, the same page updates to show:
+
+- **Migration Coverage**: Percentage showing successful conversion rate
+- **Total code lines**: Number of lines processed
+- **Migratable vs Non-migratable code lines**: Breakdown of conversion success
+- **View Full Report**: Click this button to view the detailed migration report in your browser
+- **Save Report**: Click this button to save the migration report to your local file system for future reference
+
+### Step 5: Create and open the Ballerina project
+
+1. **Configure your integration project**:
+   - Enter an **Integration Name**
+   - Specify the **Package Name** for the Ballerina package
+   - **Select Integration Path** where the project will be created
+   - Choose whether to create a new directory using the package name
+2. **Click "Create and Open Project"** to generate the Ballerina integration project with the converted code
+
+### Step 6: Review migration output
+
+The generated Ballerina package follows the standard Ballerina Integration (BI) file structure and includes:
+- **Generated Ballerina code** with your converted TIBCO BusinessWorks logic
+- **Configuration files** (`Config.toml`, `Ballerina.toml`) for the new project
+- **Organized code structure** with separate files for connections, functions, types, and main logic
+
+**Note**: The migration report is no longer automatically saved to the project directory. Instead, use the "View Full Report" button during the migration process to view the report, or "Save Report" to save it to your desired location.
+
+### Step 7: Review the migration summary
+
+The migration report provides comprehensive metrics:
+1. **Component conversion percentage** - Shows the proportion of TIBCO components successfully converted to Ballerina
+2. **Overall project conversion percentage** – Indicates the total migration success
+3. **Manual work estimation** - Estimated time required to review migrated code and address TODOs
+4. **Activities requiring manual conversion** - Lists unsupported TIBCO activities
+
+### Step 8: Address the TODO items
+
+During conversion, if there are any unsupported TIBCO activities or components, they are included in the generated Ballerina code as TODO comments. You may need to do the conversion for them manually.
 
 ## Examples
 
 ### Migrating TIBCO BusinessWorks 5 process
 
-#### Step 1: Pull the migration tool
-
-1. Pull `migrate-tibco` tool for Ballerina Central using the following command.
-
-    ```bash
-    $ bal tool pull migrate-tibco
-    ```
-
-#### Step 2: Run the migration tool
+#### Step 1: Prepare the migration files
 
 1. Create new directory named `tibco-hello-world` with following two files.
 
@@ -115,32 +169,22 @@ $ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directo
     </ns0:httpSharedResource>
     ```
 
-2. Execute the following command. This will create the `converted` directory and create a Ballerina package inside it.
+2. **Run the migration wizard**
+   1. Open WSO2 Integrator: BI in VS Code
+   2. Click "Import External Integration" on the welcome page
+   3. Select "TIBCO" as the source platform
+   4. Use the file picker to select the `tibco-hello-world` project directory
+   5. Click "Start Migration" to begin the conversion process
+   6. Configure your integration project details and click "Create and Open Project"
 
-    ```bash
-    bal migrate-tibco <tibco-hello-world> -o converted
-    ```
+#### Step 3: Review the generated code
 
-#### Step 3: Open in BI
-
-1. Open VS Code inside the `converted` directory
-    ```bash
-    $ code ./converted
-    ```
-2. Click the **BI** icon on the left side bar to open the Ballerina package in BI.
+The migration wizard will create a new Ballerina project with the converted code, which you can immediately start working with in the BI interface.
 
 
 ### Migrating TIBCO BusinessWorks 6 process
 
-#### Step 1: Pull the migration tool
-
-1. Pull `migrate-tibco` tool for Ballerina Central using the following command.
-
-    ```bash
-    $ bal tool pull migrate-tibco
-    ```
-
-#### Step 2: Run the migration tool
+#### Step 1: Prepare the migration files
 
 1. Create new directory named `tibco-hello-world` with following process file.
 
@@ -373,30 +417,20 @@ $ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directo
     </bpws:process>
     ```
 
-2. Execute the following command. This will create the `converted` directory and create a Ballerina package inside it.
+2. **Run the migration wizard**
+   1. Open WSO2 Integrator: BI in VS Code
+   2. Click "Import External Integration" on the welcome page
+   3. Select "TIBCO" as the source platform
+   4. Use the file picker to select the `tibco-hello-world` project directory
+   5. Click "Start Migration" to begin the conversion process
+   6. Configure your integration project details and click "Create and Open Project"
 
-    ```bash
-    bal migrate-tibco <tibco-hello-world> -o converted
-    ```
+#### Step 3: Review the generated code
 
-#### Step 3: Open in BI
-
-1. Open VS Code inside the `converted` directory
-    ```bash
-    $ code ./converted
-    ```
-2. Click the **BI** icon on the left side bar to open the Ballerina package in BI.
-
-## Output
-
-### Migration summary
-
-- When you run the tool, it will generate `report.html` file in the output directory with a summary containing information about activities it failed to convert and time estimation for manually converting them.
+The migration wizard will create a new Ballerina project with the converted code, which you can immediately start working with in the BI interface.
 
 ## Limitations
-
-### Ballerina compiler version
-
+- **Multi-project migration is not currently supported** through the VS Code extension UI. For batch migration of multiple TIBCO projects, use the CLI tool separately.
 - Tool generates code assuming target compiler version is 2201.12.0 or later.
 
 ### Unhandled activities
