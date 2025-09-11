@@ -38,7 +38,7 @@ You can migrate a complete MuleSoft project, a standalone Mule `.xml` configurat
 3. **Click "Import External Integration"** in the "Import External Integration" section.
 
 ### Step 3: Select source platform and project
-<a href="{{base_path}}/assets/img/developer-guides/migration-tools/mule-select-platform.png"><img src="{{base_path}}/assets/img/developer-guides/migration-tools/mule-select-platform.png" alt="Welcome Screen" width="70%"></a>
+<a href="{{base_path}}/assets/img/developer-guides/migration-tools/mule-select-platform.png"><img src="{{base_path}}/assets/img/developer-guides/migration-tools/mule-select-platform.png" alt="MuleSoft Platform Selection" width="70%"></a>
 
 1. **Choose MuleSoft** as your source platform from the available options.
 2. **Select your project** using the file picker:
@@ -72,7 +72,7 @@ Once the migration process completes, the same page updates to show:
 - **Save Report**: Click this button to save the migration report to your local file system for future reference.
 
 ### Step 5: Create and open the Ballerina project
-<a href="{{base_path}}/assets/img/developer-guides/migration-tools/mule-create-open.png"><img src="{{base_path}}/assets/img/developer-guides/migration-tools/mule-create-open.png" alt="Migration Success" width="70%"></a>
+<a href="{{base_path}}/assets/img/developer-guides/migration-tools/create-open.png"><img src="{{base_path}}/assets/img/developer-guides/migration-tools/create-open.png" alt="Create and Open Project" width="70%"></a>
 
 1. **Configure your integration project**:
     - Enter an **Integration Name**.
