@@ -108,7 +108,7 @@ This setup leverages `Fluent Bit` to forward logs to an `OTEL Collector`, which 
    services:
      otelcol:
        image: otel/opentelemetry-collector-contrib:0.132.0
-       container_name: otelcol
+       container_name: moesif-otel-collector
        command: ["--config", "/etc/otelcol.yaml"]
        environment:
          MOESIF_APP_ID: "<MOESIF_APPLICATION_ID>"
@@ -279,7 +279,7 @@ This setup leverages `Fluent Bit` to forward logs to an `OTEL Collector`, which 
    format = "json"
 
    [[ballerina.log.destinations]]
-   # Replace /path/to/your/bi/logs with the absolute path to the Ballerina application's log directory
+   # Replace /path/to/your/bi/logs with the absolute path to the BI application's log directory
    path = "/path/to/your/bi/logs/app.log"
    ```
 
