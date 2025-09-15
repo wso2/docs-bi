@@ -18,7 +18,7 @@ $ docker run -d -p 13133:13133 -p 16686:16686 -p 4317:4317 jaegertracing/opentel
 
 ## Step 2 - Import Ballerina Jaeger extension
 
-To include the Jaeger extension into the executable, the `ballerinax/jaeger` module needs to be imported into your Ballerina project `main.bal` file.
+Create the sample [shop service](/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service). To include the Jaeger extension into the executable, the `ballerinax/jaeger` module needs to be imported into your Ballerina project `main.bal` file.
 
 ```ballerina
 import ballerinax/jaeger as _;

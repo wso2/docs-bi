@@ -66,7 +66,7 @@
             {"name": "Overview", "url": "observability-and-monitoring/overview"},
             {"name": "Monitoring with WSO2 Integrator: ICP", "url": "observability-and-monitoring/monitoring-with-wso2-integrator-icp"},
             {"name": "Observability with Devant", "url": "observability-and-monitoring/observability-with-devant"},
-            {"name": "Supporting Observability Tools and Platforms", "url": "observability-and-monitoring/supported-observability-tools-and-platforms/overview"}
+            {"name": "Supported Observability Tools and Platforms", "url": "observability-and-monitoring/supported-observability-tools-and-platforms/overview"}
         ]
     },
     {

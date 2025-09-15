@@ -11,7 +11,7 @@ To configure the API key in Newrelic:
 
 ## Step 2 - Import the New Relic extension
 
-To include the New Relic extension into the executable, the `ballerinax/newrelic` module needs to be imported into your BI project. Navigate to **file explorer** and add the following to `main.bal` file.
+Create the sample [shop service](/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service). To include the New Relic extension into the executable, the `ballerinax/newrelic` module needs to be imported into your BI project. Navigate to **file explorer** and add the following to `main.bal` file.
 
 ```ballerina
 import ballerinax/newrelic as _;
