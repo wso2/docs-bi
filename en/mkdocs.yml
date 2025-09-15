@@ -160,6 +160,7 @@ nav:
         - Datadog: observability-and-monitoring/supported-observability-tools-and-platforms/datadog.md
         - Elastic Stack: observability-and-monitoring/supported-observability-tools-and-platforms/elastic-stack.md
         - OpenSearch: observability-and-monitoring/supported-observability-tools-and-platforms/opensearch.md
+        - Moesif: observability-and-monitoring/supported-observability-tools-and-platforms/moesif.md
   - References:
       - "Enterprise Integrations Patterns": references/enterprise-integrations-patterns.md
       - "System Requirements": references/system-requirements.md
@@ -245,4 +246,4 @@ extra:
       link: https://www.linkedin.com/company/wso2
   # site_version: Uncomment to specify a version
   base_path: https://wso2.github.io/docs-bi
-  # base_path: http://localhost:8000
+#  base_path: http://localhost:8000

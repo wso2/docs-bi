@@ -212,3 +212,4 @@ The following sections contain guides to set up and observe BI programs in each 
 * [Observe metrics and tracing using Datadog](/observability-and-monitoring/supported-observability-tools-and-platforms/datadog)
 * [Observe logs using Elastic Stack](/observability-and-monitoring/supported-observability-tools-and-platforms/elastic-stack)
 * [Observe metrics, traces and logs using OpenSearch](/observability-and-monitoring/supported-observability-tools-and-platforms/opensearch)
+* [Observe metrics, traces and logs using Moesif](/observability-and-monitoring/supported-observability-tools-and-platforms/moesif)
