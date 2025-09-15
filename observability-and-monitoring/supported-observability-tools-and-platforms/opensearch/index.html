@@ -2313,8 +2313,6 @@
 </ul>
 <div class="highlight"><pre><span></span><code>    .
     |____config
-    |       |____ballerina
-    |       |     |____Config.toml
     |       |____dashboards
     |       |       |____opensearch_dashboards.yml
     |       |____data-prepper
@@ -2351,6 +2349,9 @@
 
 <h2 id="step-2-set-up-bi-application-for-observability">Step 2 - Set up BI application for observability<a class="headerlink" href="#step-2-set-up-bi-application-for-observability" title="Permanent link">&para;</a></h2>
 <ul>
+<li>
+<p>Create the sample <a href="/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service">shop service</a>.</p>
+</li>
 <li>
 <p>Navigate to <strong>file explorer</strong> view and add the following to <code>main.bal</code>.</p>
 <div class="highlight"><pre><span></span><code>import ballerinax/metrics.logs as _;
