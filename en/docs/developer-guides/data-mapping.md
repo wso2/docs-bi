@@ -192,7 +192,7 @@ To map the first phone number from the `phoneNumbers` array in the input to the 
 ## Step 9: Run the integration
 
 1. Click the **Run** button in the top-right corner to run the integration.
-2. Confirm the **Test with Try it Client** prompt. The integration starts serving at [http://localhost:9090/transform](http://localhost:9090/transform).
+2. Confirm the **Test with Try it Client** prompt. The integration starts running and serving at [http://localhost:9090/transform](http://localhost:9090/transform).
 3. Verify the integration by sending a POST request to the `/transform` endpoint with the following JSON payload.
 
     ```bash
