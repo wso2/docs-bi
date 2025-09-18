@@ -88,7 +88,7 @@ The flow is as follows.
 1. In the design view, click on the **Add Artifact** button.
 2. Select **HTTP Service** under the **Integration as API** category.
 3. Select the **+ Listeners** option from the **Listeners** dropdown to add a new listener.
-4. Enter the listener name as `healthListener`, `8290` as the port and click on the **Save** button.
+4. Enter the listener name as `healthListener`, `8290` as the port and click on the **Create** button.
 5. Add the service base path as `/healthcare` and select the **Design from Scratch** option as the **The contract of the service**.
 6. Click on the **Create** button to create the new service with the specified configurations.
 
@@ -100,15 +100,14 @@ The flow is as follows.
 
     <a href="{{base_path}}/assets/img/integration-guides/integration-as-api//service-orchestration/add-type.gif"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api//service-orchestration/add-type.gif" alt="Add Type" width="70%"></a>
 
-2. Click on **+ Add Type** to add a new type
- Generate record types corresponding to the response from the hospital backend service by providing a sample of the expected JSON payload. The values are given below.
+2. Click on **+ Add Type** to add a new type. Use expected JSON samples as follows to create types for the hospital appointment scenario, and make sure to select the JSON option from the format dropdown when creating them. The values are given below.
     
-    | Type   | Name               | Sample JSON value                                                                                                                                                                                                                                                                                             | Make Separate Record Definition |
-    |--------|--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------|
-    | Record | ReservationRequest | ```{"patient":{"name":"John Doe","dob":"1940-03-19","ssn":"234-23-525","address":"California","phone":"8770586755","email":"johndoe@gmail.com","cardNo":"7844481124110331"},"doctor":"thomas collins","hospital_id":"grandoaks","hospital":"grand oak community hospital","appointment_date":"2024-11-06"}``` | ☑️                              |
-    | Record | ReservationStatus  | ```{"appointmentNo":1, "doctorName":"thomas collins", "patient":"John Doe", "actualFee":7000.0, "discount":20, "discounted":5600.0, "paymentID":"e560ea82-1c42-4972-a471-af5c1ad4995f", "status":"settled"}```                                                                                                | ☑️                              |
-    | Record | Appointment        | ```{"appointmentNumber":12345,"doctor":{"name":"Dr. Alice Carter","hospital":"Green Valley Hospital","category":"Cardiology","availability":"Mon-Fri, 9 AM - 5 PM","fee":200},"patientName":"Emma Johnson","hospital":"Green Valley Hospital","confirmed":true,"appointmentDate":"2024-11-20T10:00:00"}```    | ☑️                              |
-    | Record | Fee                | ```{"patientName":"Emma Johnson","doctorName":"Dr. Alice Carter","actualFee":"150.00"}```                                                                                                                                                                                                                     |                                 |
+    | Name               | Sample JSON value |
+    |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+    | ReservationRequest | ```{"patient":{"name":"John Doe","dob":"1940-03-19","ssn":"234-23-525","address":"California","phone":"8770586755","email":"johndoe@gmail.com","cardNo":"7844481124110331"},"doctor":"thomas collins","hospital_id":"grandoaks","hospital":"grand oak community hospital","appointment_date":"2024-11-06"}``` |
+    | ReservationStatus  | ```{"appointmentNo":1, "doctorName":"thomas collins", "patient":"John Doe", "actualFee":7000.0, "discount":20, "discounted":5600.0, "paymentID":"e560ea82-1c42-4972-a471-af5c1ad4995f", "status":"settled"}``` |
+    | Appointment        | ```{"appointmentNumber":12345,"doctor":{"name":"Dr. Alice Carter","hospital":"Green Valley Hospital","category":"Cardiology","availability":"Mon-Fri, 9 AM - 5 PM","fee":200},"patientName":"Emma Johnson","hospital":"Green Valley Hospital","confirmed":true,"appointmentDate":"2024-11-20T10:00:00"}``` |
+    | Fee                | ```{"patientName":"Emma Johnson","doctorName":"Dr. Alice Carter","actualFee":"150.00"}``` |
      
 3. The final types will look like the following.   
 
