@@ -2,9 +2,9 @@
 
 This guide explains how to use the integrated migration feature in WSO2 Integrator: BI to convert [TIBCO BusinessWorks](https://docs.tibco.com/products/tibco-activematrix-businessworks) integrations into Ballerina packages.
 
-## Tool overview
+## Overview
 
-The migration tool is now integrated directly into the WSO2 Integrator: BI, providing a user-friendly wizard interface for converting TIBCO BusinessWorks projects. The tool accepts either a BusinessWorks project directory or a standalone process file as input and generates equivalent Ballerina packages that can be opened directly in WSO2 Integrator: BI.
+This migration support is directly integrated into WSO2 Integrator: BI, providing a user-friendly wizard interface for converting TIBCO BusinessWorks projects. The tool accepts either a BusinessWorks project directory or a standalone process file as input and, generates equivalent Ballerina packages that can be opened directly in WSO2 Integrator: BI.
 
 The migration wizard provides:
 
@@ -173,12 +173,12 @@ During conversion, if there are any unsupported TIBCO activities or components, 
     ```
 
 #### Step 2: Run the migration wizard
-   1. Open WSO2 Integrator: BI in VS Code.
-   2. Click "Import External Integration" on the welcome page.
-   3. Select "TIBCO" as the source platform.
-   4. Use the file picker to select the `tibco-hello-world` project directory.
-   5. Click "Start Migration" to begin the conversion process.
-   6. Configure your integration project details and click "Create and Open Project".
+1. Open WSO2 Integrator: BI in VS Code.
+2. Click "Import External Integration" on the welcome page.
+3. Select "TIBCO" as the source platform.
+4. Use the file picker to select the `tibco-hello-world` project directory.
+5. Click "Start Migration" to begin the conversion process.
+6. Configure your integration project details and click "Create and Open Project".
 
 #### Step 3: Review the generated code
 
@@ -421,12 +421,12 @@ The migration wizard will create a new Ballerina project with the converted code
     ```
 
 #### Step 2: Run the migration wizard
-    1. Open WSO2 Integrator: BI in VS Code.
-    2. Click "Import External Integration" on the welcome page.
-    3. Select "TIBCO" as the source platform.
-    4. Use the file picker to select the `tibco-hello-world` project directory.
-    5. Click "Start Migration" to begin the conversion process.
-    6. Configure your integration project details and click "Create and Open Project".
+1. Open WSO2 Integrator: BI in VS Code.
+2. Click "Import External Integration" on the welcome page.
+3. Select "TIBCO" as the source platform.
+4. Use the file picker to select the `tibco-hello-world` project directory.
+5. Click "Start Migration" to begin the conversion process.
+6. Configure your integration project details and click "Create and Open Project".
 
 #### Step 3: Review the generated code
 
