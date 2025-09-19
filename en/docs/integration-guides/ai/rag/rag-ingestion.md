@@ -9,7 +9,9 @@ By the end of this tutorial, you'll have created a complete ingestion flow that 
 
 ## Prerequisites
 
-To get started, you only need a markdown file that you want to ingest into the vector store. This tutorial uses an in-memory vector store for simplicity, but you can also use external vector stores like Pinecone, Milvus, or Weaviate.
+To get started, you need a knowledge file (in Markdown format) that you want to ingest into the vector store.
+
+> Note: This tutorial uses an in-memory vector store for simplicity, but you can also use external vector stores like Pinecone, Milvus, or Weaviate.
 
 !!! note "What is an In-Memory Vector Store?"
     An in-memory vector store holds your data (the chunked and embedded text) directly in your computer's active memory (RAM). This makes it very fast and easy to set up, as it requires no external databases or services. However, this data is temporary—it will be completely erased when you stop the integration or close the project. 
