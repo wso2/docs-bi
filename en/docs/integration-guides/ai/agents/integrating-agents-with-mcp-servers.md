@@ -55,7 +55,7 @@ You can further customize the MCP configuration to include additional weather to
 
 ## Interact with the agent
 
-After completing the above steps, your personal AI assistant agent is now ready to assist you with necessary tasks. Ballerina Integrator provides a built-in chat interface to interact with the agent.
+After completing the above steps, your personal AI assistant agent is now ready to assist you with necessary tasks. WSO2 Integrator: BI provides a built-in chat interface to interact with the agent.
 
 To start chatting with the agent:
 

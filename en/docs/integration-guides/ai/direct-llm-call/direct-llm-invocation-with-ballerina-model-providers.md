@@ -11,7 +11,7 @@ Follow the steps below to implement the integration.
 
 ### Step 1: Create a new integration project
 
-1. Click on the Ballerina Integrator icon on the sidebar.
+1. Click on the WSO2 Integrator: BI icon on the sidebar.
 2. Click on the **`Create New Integration`** button.
 3. Enter `BlogReviewer` as the project name.
 4. Select Project Directory and click on the **`Select Location`** button.
