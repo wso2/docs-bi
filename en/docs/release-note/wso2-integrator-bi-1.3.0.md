@@ -2,7 +2,7 @@
 
 ## What's new in this release?
 
-**WSO2 Integrator:BI 1.3.0** introduces the following features and enhancements:
+**WSO2 Integrator: BI 1.3.0** introduces the following features and enhancements:
 
 ??? note "New Welcome Page"
     A completely redesigned welcome page now supports advanced project creation options, including organization name and version information.
