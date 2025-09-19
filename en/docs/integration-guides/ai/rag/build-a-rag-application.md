@@ -1,5 +1,5 @@
 # Build a RAG Application
-This tutorial guides you through creating a Retrieval-Augmented Generation (RAG) system using the Ballerina Integrator. While there are several ways to structure a RAG workflow, we’ll focus on a typical two-phase approach: ingestion and retrieval.
+This tutorial guides you through creating a Retrieval-Augmented Generation (RAG) system using WSO2 Integrator: BI. While there are several ways to structure a RAG workflow, we’ll focus on a typical two-phase approach: ingestion and retrieval.
 
 ## RAG ingestion 
 This step is managed through [Devant](https://wso2.com/devant/docs/ai/rag-application/) and it focuses on preparing documents for efficient retrieval in the RAG system.
@@ -11,7 +11,7 @@ This step is managed through [Devant](https://wso2.com/devant/docs/ai/rag-applic
 We assume that you've already used [Devant](https://wso2.com/devant/docs/ai/rag-application/) to process and ingest the documents. Devant handles the entire ingestion process independently of the main application flow. The following steps of the tutorial focus solely on RAG retrieval.
 
 ## RAG retrieval 
-This tutorial focuses on implementing the retrieval component of a Retrieval-Augmented Generation (RAG) system using the [Ballerina Integrator](https://wso2.com/integrator/bi/).
+This tutorial focuses on implementing the retrieval component of a Retrieval-Augmented Generation (RAG) system using the [WSO2 Integrator: BI](https://wso2.com/integrator/bi/).
 
 - Convert the user's question into embeddings
 - Perform a similarity search in the vector database
