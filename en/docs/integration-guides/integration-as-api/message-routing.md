@@ -69,7 +69,7 @@ Here’s an overview of the process flow.
 1. In the design view, click on the **Add Artifact** button.
 2. Select **HTTP Service** under the **Integration as API** category.
 3. Select the **+ Listeners** option from the **Listeners** dropdown to add a new listener.
-4. Enter the listener name as `healthListener`, `8290` as the port and click on the **Save** button. 
+4. Enter the listener name as `healthListener`, `8290` as the port and click on the **Create** button. 
 5. Add the service base path as `/healthcare` and select the **Design from Scratch** option as the **The contract of the service**.
 6. Click on the **Create** button to create the new service with the specified configurations.
 
@@ -77,7 +77,7 @@ Here’s an overview of the process flow.
 
 1. Click on the **Add Artifacts** button and select **Type** in the **Other Artifacts** section.
 2. Click on **+ Add Type** to add a new type
-3. Add the **Record Name** as `ReservationRequest` and paste the following JSON payload. Select **Make Separate Record Definitions** and click on the **Import** button.
+3. Add the **Name** as `ReservationRequest` and paste the following JSON payload. Click on the **Import** button.
    ```json
     {
         "patient": {
