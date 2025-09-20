@@ -85,7 +85,7 @@
             {"name": "GitHub", "url": "https://github.com/wso2/product-ballerina-integrator/issues"},
             {"name": "Discord", "url": "https://discord.com/invite/wso2"},
             {"name": "Enterprise Support", "url": "https://wso2.com/subscription/"},
-            {"name": "Release Note", "url": "wso2-integrator-bi-release-notes/"}
+            {"name": "Release Note", "url": "wso2-integrator-bi-release-notes"}
         ]
     }
     ]
@@ -113,7 +113,7 @@
                     <ul class="links-list">
                         {% for link in tile.links %}
                         <li>
-                            {% if tile.title == "Community & Support" %}
+                            {% if tile.title == "Community & Support" and link.name != "Release Note" %}
                                 <a href="{{ link.url }}" target="_blank" class="link">{{ link.name }}</a>
                             {% else %}
                                 <a href="{{ base_path }}/{{ link.url }}" class="link">{{ link.name }}</a>

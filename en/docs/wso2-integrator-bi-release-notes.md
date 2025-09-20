@@ -35,63 +35,53 @@
 
 - [WSO2 Integrator: BI Issues](https://github.com/wso2/product-ballerina-integrator/milestone/11?closed=1)
 
+
+
 ## What's new in WSO2 Integrator: BI 1.2.0 release?
 
-??? note "Major Features"
-* **Enhanced Inline Data Mapper:** Redesigned for improved user experience with AI-driven mapping suggestions and a sub-mapping form.
-* **AI Copilot & RAG Workflows:** Upgraded AI Copilot now uses ballerina/ai packages, with low-code support added for advanced RAG workflows.
+??? note "Enhanced Inline Data Mapper"
+    The Inline Data Mapper was redesigned for a better user experience, featuring AI-driven mapping suggestions and a new sub-mapping form for complex data transformations.
 
-??? note "Added"
-* **AI Capabilities:** Support for Anthropic's Claude Sonnet v4 for code generation, Added Vector Knowledge Base node for RAG workflows, Configuration options for default AI model providers in the Flow Diagram.
-* **Editor & IDE Features:** New VSCode setting to manage the visibility of the Sequence Diagram, Option to include the current organization in search results.
+??? note "Data Mapper Improvements"
+    Improved search, label positioning, and performance. The Data Mapper now refreshes automatically when code changes. Multiple bugs in mapping generation and type resolution were fixed, resulting in a more robust transformation experience.
 
-??? note "Changes"
-* **Data Mapper:** Improved search, label positioning, and performance. Now refreshes automatically when code changes.
-* **AI & Copilot:** Streamlined flows for user-friendliness and enhanced agent capabilities with new packages.
-* **UI/UX:** Refined diagram rendering and title components for a more responsive interface.
+??? note "Advanced AI Capabilities"
+    Added low-code support for advanced RAG (Retrieval-Augmented Generation) workflows. Integrated Anthropic's Claude Sonnet v4 for code generation. Introduced a Vector Knowledge Base node for RAG workflows and new configuration options for default AI model providers in the Flow Diagram.
 
-??? note "Fixed"
-* **Data Mapper:** Corrected rendering issues and various bugs in mapping generation and type resolution.
-* **AI & Copilot:** Resolved re-rendering bugs and authentication flow issues.
-* **Configuration:** Fixed issues with Config.toml management and fast-run command failures.
-* **IDE Stability:** Addressed UI freezing, improved state management, and enhanced project handling in multi-root workspaces.
+??? note "AI Copilot"
+    Upgraded the AI Copilot to use ballerina/ai packages, streamlining flows for greater user-friendliness and agent capability. Resolved re-rendering bugs and authentication flow issues for a smoother AI experience.
+
+??? note "Editor & IDE Improvements"
+    Added a new VSCode setting to manage Sequence Diagram visibility and an option to include the current organization in search results. Improved state management, addressed UI freezing, and enhanced project handling in multi-root workspaces for a more stable development environment.
 
 ## Fixed issues
 
 - [WSO2 Integrator: BI Issues](https://github.com/wso2/product-ballerina-integrator/milestone/8?closed=1)
 
+
+
 ## What's new in WSO2 Integrator: BI 1.1.0 release?
 
-??? note "Major Features"
-* **Bundled Language Server:** Ballerina Language Server is now bundled with the extension, eliminating separate installation requirements and improving startup performance
-* **Configurable Editor v2:** Complete redesign of the configuration editor with enhanced UI/UX and improved functionality
-Type Editor Revamp: A redesign of the type editor to improve feature discoverability and deliver a better user experience
+??? note "Configurable Editor Redesign"
+    Complete redesign of the configuration editor with a modern UI/UX and improved functionality, making configuration management more intuitive and efficient.
 
-??? note "Added"
-* Enhanced AI file upload support with additional file types for improved analysis capabilities
-* Documentation display in Signature Help for a better developer experience during code completion
-* Enhanced service resource creation with comprehensive validation system for base paths, resource action calls, reserved keywords, and new UX for creating HTTP responses
+??? note "Type Editor & Diagram Upgrades"
+    The type editor was revamped for better feature discoverability and user experience. Type Diagram and GraphQL designer now offer improved visual presentation and clarity.
 
-??? note "Changed"
-* **Integration Management:** Refactored artifacts management and navigation
-* **UI Components:**
-Type Diagram and GraphQL designer with improved visual presentation
-* **Developer Experience:**
-Enhanced renaming editor functionality, enhanced Form and Input Editor with Markdown support, updated imported types display as view-only nodes for clarity
+??? note "Data Mapper Enhancements"
+    Fixed issues when working with complex data types from imported modules. Improved visualization of array types and nested data structures for more accurate data mapping.
 
-??? note "Fixed"
-* **Extension Stability:**
-Resolved extension startup and activation issues for reliable performance
-* **Data Mapping & Visualization:**
-Fixed issues when working with complex data types from imported modules, improved visualization of array types and nested data structures, enhanced connection line display in design diagrams.
-* **Testing & Debugging:**
-Fixed GraphQL testing functionality for seamless API testing, improved service testing support across different Ballerina versions, enhanced test explorer compatibility with legacy projects.
-* **Configuration Management:**
-Resolved configuration file editing and creation issues, fixed form rendering problems that could cause UI freezing.
-* **Cross-Platform Support:**
-Enhanced Windows compatibility for Java development kit integration, improved file path handling across different operating systems.
-* **User Interface:**
-Fixed theme-related display issues in command interfaces
+??? note "Bundled Language Server"
+    The Ballerina Language Server is now bundled with the extension, eliminating separate installation requirements and significantly improving startup performance.
+
+??? note "AI Copilot"
+    Enhanced AI file upload support with additional file types for improved analysis. Signature Help now displays documentation for a better developer experience during code completion. Enhanced service resource creation with a comprehensive validation system.
+
+??? note "HTTP Response UX Improvements"
+    Introduced a new user experience for creating HTTP responses, including support for selecting status code response types and defining custom headers.
+
+??? note "IDE & Extension Stability"
+    Refactored artifacts management and navigation. Resolved extension startup and activation issues for reliable performance. Improved state management and project handling in multi-root workspaces.
 
 ## Fixed issues
 

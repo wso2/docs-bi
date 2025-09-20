@@ -247,4 +247,4 @@ extra:
       link: https://www.linkedin.com/company/wso2
   # site_version: Uncomment to specify a version
   base_path: https://wso2.github.io/docs-bi
-  # base_path: http://localhost:8000/en/latest
+  # base_path: http://localhost:8000
