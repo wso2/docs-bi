@@ -165,7 +165,7 @@ nav:
       - "System Requirements": references/system-requirements.md
       - "AI Usage & Data Handling Guidelines": references/ai-usage-and-data-handling-guidelines.md
   - Release Notes:
-      - Release Note: release-note/wso2-integrator-bi-1.3.0.md
+      - Release Note: wso2-integrator-bi-release-notes.md
 
 # Markdown extensions configuration
 markdown_extensions:

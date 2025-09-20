@@ -85,7 +85,7 @@
             {"name": "GitHub", "url": "https://github.com/wso2/product-ballerina-integrator/issues"},
             {"name": "Discord", "url": "https://discord.com/invite/wso2"},
             {"name": "Enterprise Support", "url": "https://wso2.com/subscription/"},
-            {"name": "Release Note", "url": "release-note/wso2-integrator-bi-1.3.0/"}
+            {"name": "Release Note", "url": "wso2-integrator-bi-release-notes/"}
         ]
     }
     ]
