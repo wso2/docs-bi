@@ -160,6 +160,7 @@ nav:
         - Datadog: observability-and-monitoring/supported-observability-tools-and-platforms/datadog.md
         - Elastic Stack: observability-and-monitoring/supported-observability-tools-and-platforms/elastic-stack.md
         - OpenSearch: observability-and-monitoring/supported-observability-tools-and-platforms/opensearch.md
+        - Moesif: observability-and-monitoring/supported-observability-tools-and-platforms/moesif.md
   - References:
       - "Enterprise Integrations Patterns": references/enterprise-integrations-patterns.md
       - "System Requirements": references/system-requirements.md

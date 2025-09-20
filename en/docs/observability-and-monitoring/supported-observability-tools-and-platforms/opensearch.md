@@ -85,7 +85,7 @@ docker compose -f docker-compose.yml up -d
       logFilePath = "<PATH>/<TO>/opensearch-observability-dashboard/logs/ballerina/<SERVICE_NAME>/app.log"
       ```
     
-   These configurations enable metrics logs and traces in the Ballerina application and configures the Jaeger exporter.
+   These configurations enable metrics logs and traces in the BI application and configures the Jaeger exporter.
 
    The table below provides the descriptions of each configuration option and possible values that can be assigned.
 
