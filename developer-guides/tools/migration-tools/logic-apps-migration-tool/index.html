@@ -1162,7 +1162,7 @@
   
     <li class="md-nav__item">
       <a href="../../../ai-for-integration/build-an-http-service-with-wso2-copilot/" class="md-nav__link">
-        Build an HTTP Service With WSO2 Copilot
+        Build an HTTP Service With BI Copilot
       </a>
     </li>
   
@@ -1237,8 +1237,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../protocols-and-connectors/build-local-connectors/" class="md-nav__link">
-        Build Local Connectors
+      <a href="../../../protocols-and-connectors/build-custom-connectors/" class="md-nav__link">
+        Build Custom Connectors
       </a>
     </li>
   
@@ -2334,6 +2334,55 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          Release Notes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Release Notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../wso2-integrator-bi-release-notes/" class="md-nav__link">
+        Release Note
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -2582,7 +2631,7 @@
 <a href="https://azure.microsoft.com/en-us/products/logic-apps">Azure Logic Apps</a> integrations into Ballerina packages compatible with the <a href="https://wso2.com/integrator/bi/">WSO2 Integrator: BI</a>.</p>
 <h2 id="tool-overview">Tool overview<a class="headerlink" href="#tool-overview" title="Permanent link">&para;</a></h2>
 <p>The tool accepts either a project directory that contains multiple Logic Apps <code>.json</code> files or a single Logic Apps <code>.json</code> 
-file as input and produces an equivalent Ballerina Integrator application.</p>
+file as input and produces an equivalent WSO2 Integrator: BI project.</p>
 <h2 id="supported-logic-apps-versions">Supported Logic Apps versions<a class="headerlink" href="#supported-logic-apps-versions" title="Permanent link">&para;</a></h2>
 <p>The migration tool supports all the NuGet versions of Azure Logic Apps. 
 It is recommended to use the latest version of the Logic Apps JSON schema for the best results.</p>
@@ -2652,14 +2701,14 @@ Apps file.</p>
 <ul>
 <li>A new Ballerina package is created for each Logic Apps file with the same name as the input <code>.json</code> file, appended 
   with a <code>_ballerina</code> suffix.</li>
-<li>Created Ballerina package contains the Ballerina Integrator file structure.</li>
+<li>Created Ballerina package contains the WSO2 Integrator: BI file structure.</li>
 </ul>
 </li>
 <li>
 <p>For a single Logic Apps JSON file input:</p>
 <ul>
 <li>A new Ballerina package is created with the same name as the <code>.json</code> file, appended with a <code>_ballerina</code> suffix.</li>
-<li>Created Ballerina package contains the Ballerina Integrator file structure.</li>
+<li>Created Ballerina package contains the WSO2 Integrator: BI file structure.</li>
 </ul>
 </li>
 </ol>

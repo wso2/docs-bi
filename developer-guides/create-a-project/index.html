@@ -955,9 +955,40 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Create a Project
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Create a Project
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#steps-to-create-an-integration-project" class="md-nav__link">
+    Steps to Create an Integration Project
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1172,7 +1203,7 @@
   
     <li class="md-nav__item">
       <a href="../ai-for-integration/build-an-http-service-with-wso2-copilot/" class="md-nav__link">
-        Build an HTTP Service With WSO2 Copilot
+        Build an HTTP Service With BI Copilot
       </a>
     </li>
   
@@ -1247,8 +1278,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../protocols-and-connectors/build-local-connectors/" class="md-nav__link">
-        Build Local Connectors
+      <a href="../protocols-and-connectors/build-custom-connectors/" class="md-nav__link">
+        Build Custom Connectors
       </a>
     </li>
   
@@ -2121,6 +2152,55 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          Release Notes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Release Notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wso2-integrator-bi-release-notes/" class="md-nav__link">
+        Release Note
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -2140,6 +2220,21 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#steps-to-create-an-integration-project" class="md-nav__link">
+    Steps to Create an Integration Project
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -2172,31 +2267,43 @@
 
 
 <h1 id="create-a-project">Create a Project<a class="headerlink" href="#create-a-project" title="Permanent link">&para;</a></h1>
-<p>Project is the foundational unit where you define and manage your integration artifacts. Follow the below steps to create an integration project using the WSO2 Integrator: BI.</p>
+<p>A project in WSO2 Integrator: BI is the foundational workspace where you define, organize, and manage all your integration artifacts—such as services, data mappings, and connections.</p>
+<p>Follow the steps below to create your first integration project using WSO2 Integrator: BI.</p>
+<h2 id="steps-to-create-an-integration-project">Steps to Create an Integration Project<a class="headerlink" href="#steps-to-create-an-integration-project" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
-<p>Launch Visual Studio Code with the WSO2 Integrator: BI extension installed.</p>
+<p><strong>Launch Visual Studio Code</strong> with the WSO2 Integrator: BI extension enabled.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>Follow the <a href="https://wso2.github.io/docs-bi/get-started/install-wso2-integrator-bi/">Install WSO2 Integrator: BI</a> documentation for a complete installation guide.</p>
+<p>If you have not installed the extension, follow the <a href="https://wso2.github.io/docs-bi/get-started/install-wso2-integrator-bi/">Install WSO2 Integrator: BI</a> guide.</p>
 </div>
 </li>
 <li>
-<p>Click on the BI icon on the <strong>Activity Bar</strong> of the VS Code editor.</p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/create-project/bi-activity-icon.png"><img src="https://wso2.github.io/docs-bi/assets/img/developer-guides/create-project/bi-activity-icon.png" alt="Ballerina VS Code Extension" width="80%"></a></p>
+<p><strong>Open the BI Extension</strong></p>
+<p>Click the BI icon on the <strong>Activity Bar</strong> of the VS Code editor. This opens the WSO2 Integrator: BI view.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/create-project/bi-activity-icon.png"><img src="https://wso2.github.io/docs-bi/assets/img/developer-guides/create-project/bi-activity-icon.png" alt="Screenshot showing the BI extension icon in the VS Code Activity Bar" width="80%"></a></p>
 </li>
 <li>
-<p>Next, click on <strong>Create New Integration</strong>. </p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/create-project/create-a-project.png"><img src="https://wso2.github.io/docs-bi/assets/img/developer-guides/create-project/create-a-project.png" alt="Ballerina VS Code Extension" width="80%"></a></p>
-<p>Then enter a suitable name for the integration project and provide a location for it.</p>
+<p><strong>Create a New Integration Project</strong></p>
+<p>Click on <strong>Create New Integration</strong> in the BI view.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/create-project/create-a-project.png"><img src="https://wso2.github.io/docs-bi/assets/img/developer-guides/create-project/create-a-project.png" alt="Screenshot of the 'Create New Integration' button in the BI extension view" width="80%"></a></p>
 </li>
 <li>
-<p>It will open the home page of BI.</p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/create-project/bi-view.png"><img src="https://wso2.github.io/docs-bi/assets/img/developer-guides/create-project/bi-view.png" alt="Ballerina VS Code Extension" width="80%"></a></p>
+<p><strong>Name and Choose Location for Your Project</strong></p>
+<p>Enter a suitable name for your integration project and select a location to save it.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/create-project/add-project-name.png"><img src="https://wso2.github.io/docs-bi/assets/img/developer-guides/create-project/add-project-name.png" alt="Screenshot of dialog to enter project name and select location" width="80%"></a></p>
+<p><em>Expected outcome: A new integration project folder is created at your chosen location.</em></p>
+</li>
+<li>
+<p><strong>Access the BI Home Page</strong></p>
+<p>Once the project is created, the BI home page will open automatically in VS Code.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/create-project/bi-view.png"><img src="https://wso2.github.io/docs-bi/assets/img/developer-guides/create-project/bi-view.png" alt="Screenshot of the BI home page in VS Code after project creation" width="80%"></a></p>
+<p><em>Expected outcome: You should see the BI home page, ready for you to start developing integration artifacts.</em></p>
 </li>
 </ol>
+<hr />
 <p>Now, you can start creating your integration by developing artifacts. See the <a href="https://wso2.github.io/docs-bi/developer-guides/wso2-integrator-bi-artifacts/">WSO2 Integrator: BI Artifacts</a> to learn about the integration artifacts.</p>
-<p>Additionally, you can enhance your experience by incorporating AI-powered assistance with <a href="https://wso2.github.io/docs-bi/developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot/">WSO2 Copilot</a>.</p>
+<p>Additionally, you can enhance your experience by incorporating AI-powered assistance with <a href="https://wso2.github.io/docs-bi/developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot/">BI Copilot</a>.</p>
 
 
 

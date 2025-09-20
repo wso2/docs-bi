@@ -1268,7 +1268,7 @@
   
     <li class="md-nav__item">
       <a href="../../../developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot/" class="md-nav__link">
-        Build an HTTP Service With WSO2 Copilot
+        Build an HTTP Service With BI Copilot
       </a>
     </li>
   
@@ -1343,8 +1343,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../developer-guides/protocols-and-connectors/build-local-connectors/" class="md-nav__link">
-        Build Local Connectors
+      <a href="../../../developer-guides/protocols-and-connectors/build-custom-connectors/" class="md-nav__link">
+        Build Custom Connectors
       </a>
     </li>
   
@@ -2217,6 +2217,55 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          Release Notes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Release Notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../wso2-integrator-bi-release-notes/" class="md-nav__link">
+        Release Note
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -2413,7 +2462,7 @@ To accomplish this, you’ll build a REST service with a single resource in WSO2
 <li>In the design view, click on the <strong>Add Artifact</strong> button.</li>
 <li>Select <strong>HTTP Service</strong> under the <strong>Integration as API</strong> category.</li>
 <li>Select the <strong>+ Listeners</strong> option from the <strong>Listeners</strong> dropdown to add a new listener.</li>
-<li>Enter the listener name as <code>healthListener</code>, <code>8290</code> as the port and click on the <strong>Save</strong> button. </li>
+<li>Enter the listener name as <code>healthListener</code>, <code>8290</code> as the port and click on the <strong>Create</strong> button. </li>
 <li>Add the service base path as <code>/healthcare</code> and select the <strong>Design from Scratch</strong> option as the <strong>The contract of the service</strong>.</li>
 <li>Click on the <strong>Create</strong> button to create the new service with the specified configurations.</li>
 </ol>
@@ -2421,7 +2470,7 @@ To accomplish this, you’ll build a REST service with a single resource in WSO2
 <ol>
 <li>Click on the <strong>Add Artifacts</strong> button and select <strong>Type</strong> in the <strong>Other Artifacts</strong> section.</li>
 <li>Click on <strong>+ Add Type</strong> to add a new type</li>
-<li>Add the <strong>Record Name</strong> as <code>ReservationRequest</code> and paste the following JSON payload. Select <strong>Make Separate Record Definitions</strong> and click on the <strong>Import</strong> button.
+<li>Add the <strong>Name</strong> as <code>ReservationRequest</code> and paste the following JSON payload. Click on the <strong>Import</strong> button.
    <div class="highlight"><pre><span></span><code><span class="w"> </span><span class="p">{</span>
 <span class="w">     </span><span class="nt">&quot;patient&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">         </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;John Doe&quot;</span><span class="p">,</span>
