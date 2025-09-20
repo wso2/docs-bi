@@ -5,7 +5,7 @@ This guide explains how to use the [migrate-logicapps](https://central.ballerina
 
 ## Tool overview
 The tool accepts either a project directory that contains multiple Logic Apps `.json` files or a single Logic Apps `.json` 
-file as input and produces an equivalent Ballerina Integrator application.
+file as input and produces an equivalent WSO2 Integrator: BI project.
 
 ## Supported Logic Apps versions
 
@@ -84,11 +84,11 @@ Use one of the following commands based on your needs.
 1. For a directory with multiple Logic Apps JSON files as input:
     - A new Ballerina package is created for each Logic Apps file with the same name as the input `.json` file, appended 
       with a `_ballerina` suffix.
-    - Created Ballerina package contains the Ballerina Integrator file structure.
+    - Created Ballerina package contains the WSO2 Integrator: BI file structure.
 
 2. For a single Logic Apps JSON file input:
     - A new Ballerina package is created with the same name as the `.json` file, appended with a `_ballerina` suffix.
-    - Created Ballerina package contains the Ballerina Integrator file structure.
+    - Created Ballerina package contains the WSO2 Integrator: BI file structure.
 
 ### Step 4: Address the TODO comments and manual adjustments
 

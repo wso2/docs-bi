@@ -27,7 +27,7 @@ Follow the steps below to get started with testing in your BI project.
    Use the **Run Test** option to execute the newly added test case, or choose to run all the tests under the `DEFAULT_GROUP`.
 
 
-<a href="{{base_path}}/assets/img/developer-guides/testing/testting-a-function.gif"><img src="{{base_path}}/assets/img/developer-guides/testing/testting-a-function.gif" alt="Testing a simple function" width="80%"></a>
+<a href="{{base_path}}/assets/img/developer-guides/testing/testing-a-function.gif"><img src="{{base_path}}/assets/img/developer-guides/testing/testing-a-function.gif" alt="Testing a simple function" width="80%"></a>
 
 
 For further details on the Ballerina testframework you can refer to [Ballerina Testing Guide](https://ballerina.io/learn/test-ballerina-code/test-a-simple-function/).

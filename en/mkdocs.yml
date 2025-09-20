@@ -115,11 +115,11 @@ nav:
           Capturing Strand Dumps: developer-guides/debugging-and-troubleshooting/capturing-strand-dumps.md
           Profiling Runtime Performance: developer-guides/debugging-and-troubleshooting/profiling-runtime-performance.md
       - AI For Integration:
-        - Build an HTTP Service With WSO2 Copilot : developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot.md
+        - Build an HTTP Service With BI Copilot : developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot.md
       - Protocols and Connectors:
         - Overview of Connectors: developer-guides/protocols-and-connectors/overview-of-connectors.md
         - Supported Protocols: developer-guides/protocols-and-connectors/supported-protocols.md
-        - Build Local Connectors: developer-guides/protocols-and-connectors/build-local-connectors.md
+        - Build Custom Connectors: developer-guides/protocols-and-connectors/build-custom-connectors.md
       - Tools:
         - Migration Tools:
           - Mulesoft Migration Tool: developer-guides/tools/migration-tools/mulesoft-migration-tool.md
@@ -165,7 +165,8 @@ nav:
       - "Enterprise Integrations Patterns": references/enterprise-integrations-patterns.md
       - "System Requirements": references/system-requirements.md
       - "AI Usage & Data Handling Guidelines": references/ai-usage-and-data-handling-guidelines.md
-      
+  - Release Notes:
+      - Release Note: wso2-integrator-bi-release-notes.md
 
 # Markdown extensions configuration
 markdown_extensions:
@@ -246,4 +247,4 @@ extra:
       link: https://www.linkedin.com/company/wso2
   # site_version: Uncomment to specify a version
   base_path: https://wso2.github.io/docs-bi
-#  base_path: http://localhost:8000
+  # base_path: http://localhost:8000
