@@ -3,7 +3,7 @@
 ## Overview
 This guide explains how to create a simple integration to convert a JSON payload to an XML payload using WSO2 Integrator: BI. An HTTP service with a single resource (`toXml`) will be created to accept a JSON payload and return the XML representation of the payload.
 
-<a href="{{base_path}}/assets/img/integration-guides/integration-as-api///message-transformation/introduction.png"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api///message-transformation/introduction.png" alt="JSON to XML" width="70%"></a>
+<a href="{{base_path}}/assets/img/integration-guides/integration-as-api/message-transformation/introduction.png"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api/message-transformation/introduction.png" alt="JSON to XML" width="70%"></a>
 
 ## Step 1: Create a new integration project
 
@@ -13,7 +13,7 @@ This guide explains how to create a simple integration to convert a JSON payload
 4. Select project directory location by clicking on the **Select Location** button.
 5. Click on the **Create Integration** button to create the integration project.
 
-    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api///message-transformation/create-integration.gif"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api///message-transformation/create-integration.gif" alt="Create Integration" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/message-transformation/create-integration.gif"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api/message-transformation/create-integration.gif" alt="Create Integration" width="70%"></a>
 
 
 ## Step 2: Create a HTTP service
@@ -30,7 +30,7 @@ This guide explains how to create a simple integration to convert a JSON payload
 1. The service will have a default resource named `greeting` with the **GET** method. Click on three dots appear in front of the `/convert` service resource and select **Edit** from menu.
 2. Then click the edit button in front of `/greeting` resource.  
 
-    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api///message-transformation/edit-resource.gif"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api///message-transformation/edit-resource.gif" alt="Edit Resource" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/message-transformation/edit-resource.gif"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api/message-transformation/edit-resource.gif" alt="Edit Resource" width="70%"></a>
 
 3. Change the resource HTTP method to **POST**.
 4. Change the resource name as `toXml`.
@@ -38,7 +38,7 @@ This guide explains how to create a simple integration to convert a JSON payload
 6. Change the 201 response return type to `xml`.
 7. Click on the **Save** button to update the resource with the specified configurations.
 
-    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api///message-transformation/update-resource.gif"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api///message-transformation/update-resource.gif" alt="Update Resource" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/message-transformation/update-resource.gif"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api/message-transformation/update-resource.gif" alt="Update Resource" width="70%"></a>
 
 !!! info "Resource Method"
     To learn more about resources, see [Ballerina Resources](https://ballerina.io/learn/by-example/resource-methods/).
@@ -53,12 +53,12 @@ This guide explains how to create a simple integration to convert a JSON payload
 6. Change the **Variable Name** to `xmlResult`, **Variable Type** as `xml` and **JsonValue** to `input`.
 7. Click on the **Save** button to add the function call to the resource.
 
-    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api///message-transformation/add-variable.gif"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api///message-transformation/add-variable.gif" alt="Add Function Call" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/message-transformation/add-variable.gif"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api/message-transformation/add-variable.gif" alt="Add Function Call" width="70%"></a>
 
 8. Add a new node after the `fromJson` function call and select **Return** from the node panel.
 9. Select the `xmlResult` variable from the dropdown and click **Save**.
 
-    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api///message-transformation/add-return.png"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api///message-transformation/add-return.png" alt="Add Return" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/message-transformation/add-return.png"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api/message-transformation/add-return.png" alt="Add Return" width="70%"></a>
 
 !!! info "JSON to XML Conversion"
     To learn more about json to xml conversion, see [Ballerina JSON to XML conversion](https://ballerina.io/learn/by-example/xml-from-json-conversion/).
@@ -85,7 +85,7 @@ This guide explains how to create a simple integration to convert a JSON payload
         <car>Honda</car>
     </root>
     ```
-    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api///message-transformation/run-integration.png"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api///message-transformation/run-integration.png" alt="Run Integration" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/message-transformation/run-integration.png"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api/message-transformation/run-integration.png" alt="Run Integration" width="70%"></a>
 
 6. Additionally, the service can be tested using tools like [Postman](https://www.postman.com/) or [curl](https://curl.se/) by sending a POST request with a JSON payload to the service endpoint.
    ```curl
