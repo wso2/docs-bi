@@ -2516,7 +2516,7 @@ To implement this, you’ll build a REST service with a single resource in WSO2 
 <ol>
 <li>
 <p>Click on the <strong>Add Artifacts</strong> button and select <strong>Type</strong> in the <strong>Other Artifacts</strong> section.</p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/add-type.gif"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/add-type.gif" alt="Add Type" width="70%"></a></p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/add-type.gif"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/add-type.gif" alt="Add Type" width="70%"></a></p>
 </li>
 <li>
 <p>Click on <strong>+ Add Type</strong> to add a new type. Use expected JSON samples as follows to create types for the hospital appointment scenario, and make sure to select the JSON option from the format dropdown when creating them. The values are given below.</p>
@@ -2549,7 +2549,7 @@ To implement this, you’ll build a REST service with a single resource in WSO2 
 </li>
 <li>
 <p>The final types will look like the following.   </p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/types.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/types.png" alt="Types" width="70%"></a></p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/types.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/types.png" alt="Types" width="70%"></a></p>
 </li>
 </ol>
 <h2 id="step-4-add-connections">Step 4: Add connections<a class="headerlink" href="#step-4-add-connections" title="Permanent link">&para;</a></h2>
@@ -2558,11 +2558,11 @@ To implement this, you’ll build a REST service with a single resource in WSO2 
 <li>Search and select the <strong>HTTP Client</strong> connector.</li>
 <li>
 <p>Enter the <strong>Url</strong> as <code>http://localhost:9090</code>, <strong>Connection Name</strong> as <code>hospitalEp</code> and click on the <strong>Save</strong> button.</p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/add-connector.gif"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/add-connector.gif" alt="Add Connector" width="70%"></a></p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/add-connector.gif"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/add-connector.gif" alt="Add Connector" width="70%"></a></p>
 </li>
 <li>
 <p>Add another connector for the payment backend service with the URL <code>http://localhost:9090/healthcare/payments</code> and the name <code>paymentEp</code>.    </p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/connectors.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/connectors.png" alt="Connectors" width="70%"></a></p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/connectors.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/connectors.png" alt="Connectors" width="70%"></a></p>
 </li>
 </ol>
 <details class="info" open="open"><summary>HTTP Connector</summary><p>To learn more about HTTP client, see <a href="https://ballerina.io/learn/by-example/http-client-send-request-receive-response/">Ballerina HTTP Client</a>.
@@ -2577,11 +2577,11 @@ See supported client configurations in the <a href="https://central.ballerina.io
 <li>Change the 201 response return type to <code>ReservationStatus</code>.</li>
 <li>
 <p>Add a new response of type <strong>HttpNotFound</strong> under the responses.   </p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/resource.gif"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/resource.gif" alt="Resource" width="70%"></a></p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/resource.gif"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/resource.gif" alt="Resource" width="70%"></a></p>
 </li>
 <li>
 <p>Click on the <strong>Save</strong> button to save the resource.   </p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/resource-edit.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/resource-edit.png" alt="Resource" width="70%"></a></p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/resource-edit.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/resource-edit.png" alt="Resource" width="70%"></a></p>
 </li>
 </ol>
 <h2 id="step-6-make-the-appointment-request">Step 6: Make the appointment request<a class="headerlink" href="#step-6-make-the-appointment-request" title="Permanent link">&para;</a></h2>
@@ -2607,7 +2607,7 @@ See supported client configurations in the <a href="https://central.ballerina.io
 </code></pre></div></li>
 <li>
 <p>Click on the <strong>Save</strong> button to add the variable.   </p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/variable.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/variable.png" alt="Variable" width="70%"></a></p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/variable.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/variable.png" alt="Variable" width="70%"></a></p>
 </li>
 <li>
 <p>Click ➕ sign and select <strong>hospitalEp</strong> connector from the node panel and select <strong>post</strong> from the dropdown. Then, fill in the required fields with the values given below and click <strong>Save</strong>.</p>
@@ -2640,14 +2640,14 @@ See supported client configurations in the <a href="https://central.ballerina.io
 </li>
 <li>
 <p>The connector action will look like the following.   </p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/post-request.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/post-request.png" alt="Hospital Service Request" width="70%"></a>   </p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/post-request.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/post-request.png" alt="Hospital Service Request" width="70%"></a>   </p>
 </li>
 </ol>
 <h2 id="step-7-get-the-fee">Step 7: Get the fee<a class="headerlink" href="#step-7-get-the-fee" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
 <p>Declare an <strong>int</strong> variable named <code>appointmentNumber</code> with expression <code>appointment.appointmentNumber</code> after the hospital service request.  </p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/appointment.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/appointment.png" alt="Appointment Number" width="70%"></a>   </p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/appointment.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/appointment.png" alt="Appointment Number" width="70%"></a>   </p>
 </li>
 <li>
 <p>Let's add another connector invocation to get the fee for the appointment. Click on the ➕ sign and select <strong>hospitalServicesEp</strong> connector from the node panel.  </p>
@@ -2676,7 +2676,7 @@ See supported client configurations in the <a href="https://central.ballerina.io
 </tr>
 </tbody>
 </table>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/fee.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/fee.png" alt="Hospital Service Request" width="70%"></a></p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/fee.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/fee.png" alt="Hospital Service Request" width="70%"></a></p>
 </li>
 </ol>
 <h2 id="step-8-make-the-payment">Step 8: Make the payment<a class="headerlink" href="#step-8-make-the-payment" title="Permanent link">&para;</a></h2>
@@ -2693,11 +2693,11 @@ See supported client configurations in the <a href="https://central.ballerina.io
   card_number: reservation.patient.cardNo
  }
 </code></pre></div>
-   <a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/payment-request.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/payment-request.png" alt="Payment Request" width="70%"></a>  </p>
+   <a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/payment-request.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/payment-request.png" alt="Payment Request" width="70%"></a>  </p>
 </li>
 <li>
 <p>Let's add another connector action to make the payment. Click on the ➕ sign and select <strong>paymentEP</strong> connector from the node panel. Select <strong>post</strong> from the dropdown.   </p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/payment.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/payment.png" alt="Payment" width="70%"></a></p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/payment.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/payment.png" alt="Payment" width="70%"></a></p>
 </li>
 <li>
 <p>Then, fill in the required fields with the values given below and click <strong>Save</strong>.</p>
@@ -2733,7 +2733,7 @@ See supported client configurations in the <a href="https://central.ballerina.io
 </li>
 <li>
 <p>The final integration will look like the following.   </p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/final.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/final.png" alt="Return" width="70%"></a></p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/final.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/final.png" alt="Return" width="70%"></a></p>
 </li>
 </ol>
 <h2 id="step-9-run-the-service">Step 9: Run the service<a class="headerlink" href="#step-9-run-the-service" title="Permanent link">&para;</a></h2>
@@ -2775,7 +2775,7 @@ See supported client configurations in the <a href="https://central.ballerina.io
 <span class="w">  </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;settled&quot;</span>
 <span class="w"> </span><span class="p">}</span>
 </code></pre></div></p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/try-it.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api//service-orchestration/try-it.png" alt="Try it" width="70%"></a>   </p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/try-it.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/service-orchestration/try-it.png" alt="Try it" width="70%"></a>   </p>
 </li>
 <li>
 <p>You can also test the service using the curl command.
