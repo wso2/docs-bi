@@ -120,7 +120,7 @@ Your **Configurable Variables** view should now display:
 | inputCSV | string | `./input/customer_order_details.csv` |
 | outputXML | string | `./output/customer_order_details.xml` |
 
-> 💡 These configurables can now be used by the file connectors and the data mapper in later steps — allowing your integration to dynamically read and write files based on runtime settings.
+> These configurables can now be used by the file connectors and the data mapper in later steps — allowing your integration to dynamically read and write files based on runtime settings.
 
 
 ## Step 3: Create a Structure to Represent Each CSV Row
