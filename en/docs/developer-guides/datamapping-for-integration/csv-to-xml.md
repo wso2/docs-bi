@@ -92,6 +92,9 @@ This extension provides a low-code graphical environment to visually design, map
 
 > This is the entry point for all low-code projects in Ballerina Integrator.
 
+ <a href="{{base_path}}/assets/img/developer-guides/data-mapping/usecases/csv-to-xml/csv_to_xml1.gif"><img src="{{base_path}}/assets/img/developer-guides/data-mapping/usecases/csv-to-xml/csv_to_xml1.gif" alt="Create Integration" width="70%"></a>
+
+
 ## Step 2: Add Configurable Variables
 
 In this step, you define the input and output file paths as **configurable variables**.  
@@ -122,6 +125,7 @@ Your **Configurable Variables** view should now display:
 
 > 💡 These configurables can now be used by the file connectors and the data mapper in later steps — allowing your integration to dynamically read and write files based on runtime settings.
 
+<a href="{{base_path}}/assets/img/developer-guides/data-mapping/usecases/csv-to-xml/csv_to_xml2.gif"><img src="{{base_path}}/assets/img/developer-guides/data-mapping/usecases/csv-to-xml/csv_to_xml2.gif" alt="Add configurable file paths" width="70%"></a>
 
 ## Step 3: Create a Structure to Represent Each CSV Row
 
@@ -146,6 +150,8 @@ When the system reads the CSV file, it will treat every line (after the header) 
 
 > This step helps the Data Mapper understand the shape of your data —  
 > instead of dealing with raw text lines, it can now work with meaningful fields like `order_id`, `sku`, `qty`, and `price`.
+
+<a href="{{base_path}}/assets/img/developer-guides/data-mapping/usecases/csv-to-xml/csv_to_xml3.gif"><img src="{{base_path}}/assets/img/developer-guides/data-mapping/usecases/csv-to-xml/csv_to_xml3.gif" alt="Create a type to represent CSV structure" width="70%"></a>
 
 ## Step 4: Generate XML Types from a Sample Payload
 
@@ -198,12 +204,11 @@ The Integrator’s **Type Creator** reads this example and builds the correspond
         └─ price: decimal
    ```
 
-### Result
-
 You now have an **record type** that defines the exact structure of your output xml file.  
 This type will act as the **target structure** in the Data Mapper,  
 allowing each `CSV` record to be mapped directly into a `<Row>` element under `<Orders>`.
 
+<a href="{{base_path}}/assets/img/developer-guides/data-mapping/usecases/csv-to-xml/csv_to_xml4.gif"><img src="{{base_path}}/assets/img/developer-guides/data-mapping/usecases/csv-to-xml/csv_to_xml4.gif" alt="Create a type to represent XML structure" width="70%"></a>
 
 ## Step 5: Create an Automation and Set Up CSV Reading
 
@@ -373,3 +378,5 @@ This means the Automation will:
 ---
 
 > 💡 **Tip:** Always ensure the first row of your CSV file includes headers that match the `CSV` record field names. Otherwise, `fileReadCsv` will not correctly map the columns to your CSV record.
+
+<a href="{{base_path}}/assets/img/developer-guides/data-mapping/usecases/csv-to-xml/csv_to_xml5.gif"><img src="{{base_path}}/assets/img/developer-guides/data-mapping/usecases/csv-to-xml/csv_to_xml5.gif" alt="Add logic for reading the CSV file" width="70%"></a>
