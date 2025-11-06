@@ -2,8 +2,11 @@
 
 ## Overview 
 
-In this tutorial, you’ll create a service to process appointment requests for hospitals. The service will call multiple backend services sequentially, using data from each call to inform the next. This approach integrates several services into one, known as service orchestration.
-To implement this, you’ll build a REST service with a single resource in WSO2 Integrator: BI extension and then run the service. The resource will receive user requests, make the necessary backend calls, and respond with the appointment details.
+In this tutorial, you’ll create a service to process appointment requests for hospitals. 
+The service will call multiple backend services sequentially, using data from each call to inform the next. 
+This approach integrates several services into one, known as service orchestration.
+To implement this, you’ll build a REST service with a single resource in WSO2 Integrator: BI extension and then run the service. 
+The resource will receive user requests, make the necessary backend calls, and respond with the appointment details.
 
 The flow is as follows.
 
@@ -88,17 +91,19 @@ The flow is as follows.
 1. In the design view, click on the **Add Artifact** button.
 2. Select **HTTP Service** under the **Integration as API** category.
 3. Select the **+ Listeners** option from the **Listeners** dropdown to add a new listener.
-4. Enter the listener name as `healthListener`, `8290` as the port and click on the **Create** button.
-5. Add the service base path as `/healthcare` and select the **Design from Scratch** option as the **The contract of the service**.
-6. Click on the **Create** button to create the new service with the specified configurations.
+4. Add the service base path as `/healthcare` and select the **Design from Scratch** option as the **The contract of the service**.
+4. Enter the listener name as `healthListener`, `8290` as the port in Advanced Configurations.
+6. Click on the **Save** button to create the new service with the specified configurations.
 
-    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/create-service.png"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/create-service.png" alt="HTTP Service" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/create-service.png">
+    <img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/create-service.png" alt="HTTP Service" width="70%"></a>
 
 ## Step 3: Define types
 
 1. Click on the **Add Artifacts** button and select **Type** in the **Other Artifacts** section.
 
-    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/add-type.gif"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/add-type.gif" alt="Add Type" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/add-type.gif">
+    <img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/add-type.gif" alt="Add Type" width="70%"></a>
 
 2. Click on **+ Add Type** to add a new type. Use expected JSON samples as follows to create types for the hospital appointment scenario, and make sure to select the JSON option from the format dropdown when creating them. The values are given below.
     
@@ -119,11 +124,13 @@ The flow is as follows.
 2. Search and select the **HTTP Client** connector.
 3. Enter the **Url** as `http://localhost:9090`, **Connection Name** as `hospitalEp` and click on the **Save** button.
 
-    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/add-connector.gif"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/add-connector.gif" alt="Add Connector" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/add-connector.gif">
+    <img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/add-connector.gif" alt="Add Connector" width="70%"></a>
 
 4. Add another connector for the payment backend service with the URL `http://localhost:9090/healthcare/payments` and the name `paymentEp`.    
 
-    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/connectors.png"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/connectors.png" alt="Connectors" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/connectors.png">
+    <img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/connectors.png" alt="Connectors" width="70%"></a>
 
 ???+ info "HTTP Connector"
     To learn more about HTTP client, see [Ballerina HTTP Client](https://ballerina.io/learn/by-example/http-client-send-request-receive-response/).
@@ -131,18 +138,15 @@ The flow is as follows.
 
 ## Step 5: Design the resource
 
-1. The service will have a default resource named `greeting` with the **GET** method. Click on the three dots that appear in front of the `/healthCare` service resource and select **Edit** from the menu.
-2. Change the resource HTTP method to **POST**.
-3. Change the resource name as `categories/[string category]/reserve`.
-4. Add a payload parameter named `reservation` to the resource of type `ReservationRequest`.
-5. Change the 201 response return type to `ReservationStatus`.
-6. Add a new response of type **HttpNotFound** under the responses.   
-  
-    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/resource.gif"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/resource.gif" alt="Resource" width="70%"></a>
+1. Click **Add Resource** and select **POST** method.
+2. Set the resource path as `categories/[string category]/reserve`.
+3. Define the payload type as `ReservationRequest`.
+4. Change the 201 response return type to `ReservationStatus`.
+5. Add a new response of type **HttpNotFound** under the responses.   
+6. Click on the **Save** button to save the resource.   
 
-7. Click on the **Save** button to save the resource.   
-
-    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/resource-edit.png"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/resource-edit.png" alt="Resource" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/resource.gif">
+    <img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/resource.gif" alt="Resource" width="70%"></a>
 
 ## Step 6: Make the appointment request
 
@@ -168,7 +172,8 @@ The flow is as follows.
     ```
 6. Click on the **Save** button to add the variable.   
 
-    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/variable.png"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/variable.png" alt="Variable" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/variable.png">
+    <img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/variable.png" alt="Variable" width="70%"></a>
 
 7. Click ➕ sign and select **hospitalEp** connector from the node panel and select **post** from the dropdown. Then, fill in the required fields with the values given below and click **Save**.
 
@@ -176,18 +181,20 @@ The flow is as follows.
       |---------------|-----------------------------------------------------------------------------|
       | Variable Name | `appointment`                                                               |
       | Variable Type | `Appointment`                                                               |
-      | Resource Path | ``` string `/${reservation.hospital_id}/categories/${category}/reserve` ``` |
+      | Resource Path | ``` string `/${payload.hospital_id}/categories/${category}/reserve` ``` |
       | message       | `hospitalRequest`                                                           |
 
 8. The connector action will look like the following.   
 
-    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/post-request.png"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/post-request.png" alt="Hospital Service Request" width="70%"></a>   
+    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/post-request.png">
+    <img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/post-request.png" alt="Hospital Service Request" width="70%"></a>   
 
 ## Step 7: Get the fee 
 
 1. Declare an **int** variable named `appointmentNumber` with expression `appointment.appointmentNumber` after the hospital service request.  
 
-    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/appointment.png"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/appointment.png" alt="Appointment Number" width="70%"></a>   
+    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/appointment.png">
+    <img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/appointment.png" alt="Appointment Number" width="70%"></a>   
 
 2. Let's add another connector invocation to get the fee for the appointment. Click on the ➕ sign and select **hospitalServicesEp** connector from the node panel.  
 3. Select **get** from the dropdown. Then, fill in the required fields with the values given below and click **Save**.
@@ -196,9 +203,10 @@ The flow is as follows.
     |---------------|-----------------------------------------------------------------------------------------------|
     | Variable Name | `fee`                                                                                         |
     | Variable Type | `Fee`                                                                                         |
-    | Resource Path | ``` string `/${reservation.hospital_id}/categories/appointments/${appointmentNumber}/fee` ``` |
+    | Resource Path | ``` string `/${payload.hospital_id}/categories/appointments/${appointmentNumber}/fee` ``` |
 
-    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/fee.png"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/fee.png" alt="Hospital Service Request" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/fee.png">
+    <img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/fee.png" alt="Hospital Service Request" width="70%"></a>
 
 ## Step 8: Make the payment
 
@@ -214,11 +222,13 @@ The flow is as follows.
      card_number: reservation.patient.cardNo
     }
    ```
-   <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/payment-request.png"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/payment-request.png" alt="Payment Request" width="70%"></a>  
+   <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/payment-request.png">
+   <img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/payment-request.png" alt="Payment Request" width="70%"></a>  
 
 3. Let's add another connector action to make the payment. Click on the ➕ sign and select **paymentEP** connector from the node panel. Select **post** from the dropdown.   
 
-    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/payment.png"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/payment.png" alt="Payment" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/payment.png">
+    <img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/payment.png" alt="Payment" width="70%"></a>
 
 4. Then, fill in the required fields with the values given below and click **Save**.
 
@@ -232,7 +242,8 @@ The flow is as follows.
 5. Click on the ➕ sign and select **Return** from the node panel. Add the `status` variable to the return node.
 6. The final integration will look like the following.   
 
-    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/final.png"><img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/final.png" alt="Return" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/final.png">
+    <img src="{{base_path}}/assets/img/integration-guides/integration-as-api/service-orchestration/final.png" alt="Return" width="70%"></a>
 
 ## Step 9: Run the service
 
