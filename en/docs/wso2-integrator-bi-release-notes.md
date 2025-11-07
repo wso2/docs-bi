@@ -7,10 +7,10 @@
 ## New Features
 
 ??? note "MCP AI Integration"
-    Added support for MCP (Model Context Protocol) AI Integration, for exposing tools via a MCP service.
+    Added support for MCP (Model Context Protocol) AI Integration, for exposing tools via an MCP service.
 
 ??? note "Solace Event Integration"
-    Added support for Solace Event integration expanding supported event integration capabilities. The Event Integration flows have been redesigned to provide a more streamlined experience, complemented by AI-powered payload generation for faster development.
+    Added support for Solace Event integration, expanding supported event integration capabilities. The Event Integration flows have been redesigned to provide a more streamlined experience, complemented by AI-powered payload generation for faster development.
 
 ??? note "Improved Service Designer"
     Revamped the Service Designer view with better organization of listener and service properties. Features more readable listener names and improved metadata display, making service configuration more intuitive and accessible.
