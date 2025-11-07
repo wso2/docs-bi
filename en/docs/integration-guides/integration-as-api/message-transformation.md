@@ -19,7 +19,7 @@ An HTTP service with a single resource (`toXml`) will be created to accept a JSO
     <img src="{{base_path}}/assets/img/integration-guides/integration-as-api/message-transformation/create-integration.gif" alt="Create Integration" width="70%"></a>
 
 
-## Step 2: Create a HTTP service
+## Step 2: Create an HTTP service
 
 1. In the design view, click on the **Add Artifact** button.
 2. Select **HTTP Service** under the **Integration as API** category.

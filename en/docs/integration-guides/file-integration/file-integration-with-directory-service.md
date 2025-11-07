@@ -1,7 +1,7 @@
 # File Integration With Directory Service
 
 In this section, we will learn how to create a file integration using the WSO2 Integrator: BI. 
-The integration will listen to events in a directory and will be triggered when an file related event occurs.
+The integration will listen to events in a directory and will be triggered for file-related events.
 
 ## Step 1: Create a new integration project
 
@@ -36,10 +36,10 @@ The integration will listen to events in a directory and will be triggered when 
     <a href="{{base_path}}/assets/img/integration-guides/file-integration/add-log.gif">
     <img src="{{base_path}}/assets/img/integration-guides/file-integration/add-log.gif" alt="onCreate Function" width="70%"></a>
 
-7. Repeat the above steps to add the **onDelete** and **onModify** functions to the service.
-8. Add the log message as `"File deleted "+ event.name` in the **Msg** field for the **onDelete** function.
-9. Add the log message as `"File modified "+ event.name` in the **Msg** field for the **onModify** function.
-10. The final service will look like this:      
+6. Repeat the above steps to add the **onDelete** and **onModify** functions to the service.
+7. Add the log message as `"File deleted "+ event.name` in the **Msg** field for the **onDelete** function.
+8. Add the log message as `"File modified "+ event.name` in the **Msg** field for the **onModify** function.
+9. The final service will look like this:      
 
     <a href="{{base_path}}/assets/img/integration-guides/file-integration/final-service.png">
     <img src="{{base_path}}/assets/img/integration-guides/file-integration/final-service.png" alt="Final Service" width="70%"></a>

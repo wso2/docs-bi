@@ -13,7 +13,7 @@ Before you begin, make sure you have the following:
 
 ## Step 1: Develop File Integration in WSO2 Integrator: BI
 
-1. Create an open a empty integration project.
+1. Create an empty integration project.
 2. In the **Design View** click, on the **Add Artifact** button.
 3. Select **FTP Service**. Choosing the **File Integration**.
 4. Click on the **Save** button to create the ftp service with the specified configurations.
@@ -37,7 +37,7 @@ Before you begin, make sure you have the following:
     <a href="{{base_path}}/assets/img/get-started/develop-file-integration/add-foreach.gif">
     <img src="{{base_path}}/assets/img/get-started/develop-file-integration/add-foreach.gif" alt="Add Iterator" width="70%"></a>
 
-4. Under the **Foreach** node, add a **Log Info** node with the **Msg** as `"File added:" + addedFiles.name`. 
+4. Under the **Foreach** node, add a **Log Info** node with the **Msg** as `"File added:" + addedFile.name`. 
 
     <a href="{{base_path}}/assets/img/get-started/develop-file-integration/add-log.gif">
     <img src="{{base_path}}/assets/img/get-started/develop-file-integration/add-log.gif" alt="Add Log" width="70%"></a>

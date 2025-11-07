@@ -46,7 +46,7 @@ Refer to <a href="../install-wso2-integrator-bi/">Install WSO2 Integrator: BI</a
 ## Step 3: Design the integration
 
 1. Click on **Add Resource** button and select **GET** http method.
-2. Change the resouece path to `greeting` and click **Save** button.
+2. Change the resource path to `greeting` and click **Save** button.
 
       <a href="{{base_path}}/assets/img/get-started/develop-integration-as-api/add-resource.gif">
       <img src="{{base_path}}/assets/img/get-started/develop-integration-as-api/add-resource.gif" alt="Create Service" width="70%"></a>
@@ -72,9 +72,9 @@ Set `/zvdz/mi-qsg/v1.0` as **Path**, `epResult` as **Result** and `string` as **
 ## Step 4: Run the integration
 
 1. Click on the **Try It** button in top right corner to run the integration.
-2. If the integration is not running there will be notfication messaging asking to run integration.
-3. Click **Run Integration** if notification is apperared.
-3. Once the integration is started, Try-it will openup in the right side.
+2. If the integration is not running there will be notification messaging asking to run integration.
+3. Click **Run Integration** if notification is appeared.
+3. Once the integration is started, Try-it will open up on the right side.
 4. Click on the **Run** button to invoke the `greeting` resource.
 
       <a href="{{base_path}}/assets/img/get-started/develop-integration-as-api/run-integration.gif">
