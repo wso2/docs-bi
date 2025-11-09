@@ -1,4 +1,4 @@
-# File Integration With Directory Service
+# Quick Start: File Integration With Directory Service
 
 In this section, we will learn how to create a file integration using the WSO2 Integrator: BI. The integration will listen to events in a directory and will be triggered when an file related event occurs.
 
