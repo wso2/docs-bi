@@ -1,0 +1,14 @@
+[package]
+org = "wso2"
+name = "directory_service"
+version = "0.1.0"
+title = "directory-service"
+
+[build-options]
+sticky = true
+
+[[dependency]]
+org = "ballerina"
+name = "ftp"
+version = "2.16.0"
+repository = "local"
