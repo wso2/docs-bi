@@ -380,3 +380,185 @@ This means the Automation will:
 > 💡 **Tip:** Always ensure the first row of your CSV file includes headers that match the `CSV` record field names. Otherwise, `fileReadCsv` will not correctly map the columns to your CSV record.
 
 <a href="{{base_path}}/assets/img/developer-guides/data-mapping/usecases/csv-to-xml/csv_to_xml5.gif"><img src="{{base_path}}/assets/img/developer-guides/data-mapping/usecases/csv-to-xml/csv_to_xml5.gif" alt="Add logic for reading the CSV file" width="70%"></a>
+
+---
+## Step 8: Create the XML Output Variable and Open Data Mapper
+
+Now that the CSV data has been successfully read into the variable `csvRecords`, the next step is to prepare the XML output structure that the CSV will be transformed into. For this, you will declare a new variable of type `Orders` and open it in the Data Mapper.
+
+---
+
+### 1. Add a “Declare Variable” Node
+
+1. Click the **“+”** icon below the `io:fileReadCsv` node in the automation flow.
+2. In the right-hand panel under **Statement**, select **Declare Variable**.
+3. A new node placeholder titled *“Select node from node panel”* appears in the flow.
+
+This node will define a new variable to hold the transformed XML data.
+
+---
+
+### 2. Configure the Variable Details
+
+In the properties pane on the right:
+
+- **Name:** xmlRecord
+
+This variable name represents the XML output structure that will hold the mapped data.
+
+---
+
+### 3. Assign the Variable Type
+
+1. Click the **Type** field (marked with the blue `T` icon).
+2. Begin typing `Order`.
+3. From the dropdown suggestions, select **Orders**.
+
+This binds the variable to your predefined `Orders` record type, which defines the XML schema structure for the output.
+
+---
+
+### 4. Open the Data Mapper
+
+Once the variable name and type are defined:
+
+- Click **Open in Data Mapper** at the bottom right of the properties pane.
+
+This action opens the **Data Mapper** where you can map CSV fields to XML elements visually.
+
+---
+
+### 5. Explore the Data Mapper Interface
+
+Inside the Data Mapper view, you’ll see two main panels:
+
+#### Left Panel — Input Data
+- `csvRecords` → Type: `CSV[]`
+- `inputCSV` → Type: `string`
+- `outputXML` → Type: `string`
+
+#### Right Panel — Output Structure
+- `xmlRecord` → Type: `Orders`
+- `Row[]`
+    - `index` (int)
+    - `order_id` (string)
+    - `sku` (string)
+    - `qty` (int)
+    - `price` (decimal)
+
+This view provides a visual workspace to connect input CSV fields with XML output fields directly.
+
+---
+
+At this point, you have:
+
+1. Declared a new variable named **xmlRecord** of type **Orders**.
+2. Opened it inside the **Data Mapper**.
+3. Verified that both **csvRecords** (input) and **xmlRecord** (output) are available for mapping.
+
+You’re now ready to perform the visual mapping between CSV and XML data structures.
+
+---
+## Step 9: Map CSV Fields to XML Rows in the Data Mapper
+
+Now that you’ve opened the Data Mapper view, it’s time to visually connect the fields between your CSV input and XML output. This step transforms the tabular data structure into a hierarchical XML format.
+
+---
+
+### 1. Understand the Mapping Context
+
+On the **left**, you have:
+- `csvRecords` → Type: `CSV[]`
+    - Each item contains: `order_id`, `sku`, `qty`, and `price` (all as `string`).
+
+On the **right**, you have:
+- `xmlRecord` → Type: `Orders`
+    - Contains: `Row[]`
+        - Each `Row` has: `index (int)`, `order_id (string)`, `sku (string)`, `qty (int)`, and `price (decimal)`.
+---
+
+### 2. Start the Mapping by Linking the Record Arrays
+
+1. Drag from **`csvRecords`** (left) to **`Row`** (right).
+2. This creates a parent-level mapping between the two collections.
+
+If you see an error such as:
+> `incompatible types: expected 'Row[]', found 'CSV[]'`
+
+That’s expected — the data mapper is warning that nested mapping is required to handle field-level conversions.
+
+
+
+---
+
+### 3. Map Individual Fields
+
+1. Expand both `csvRecordsItem` and `RowItem`.
+2. Start connecting matching fields:
+    - `order_id` → `order_id`
+    - `sku` → `sku`
+    - `qty` → `qty`
+    - `price` → `price`
+
+You’ll notice that type mismatches occur for numeric fields (`qty`, `price`) since CSV data is read as strings.
+
+---
+
+### 4. Resolve Type Mismatches for Numeric Fields
+
+When connecting `qty` and `price`, errors like the following appear:
+> `incompatible types: expected 'int', found 'string'`  
+> `incompatible types: expected 'decimal', found 'string'`
+
+To fix this, use **type conversion expressions** directly in the Data Mapper:
+
+#### For `qty`:
+1. Click on the red error line between `qty` fields.
+2. In the expression editor at the top, replace it with:
+   ```ballerina
+   check int:fromString(csvRecordsItem.qty)
+   
+#### For `price`
+
+1. Click on the `price` connection in the mapping canvas.
+2. In the expression editor at the top, replace the existing mapping with the following conversion function:
+
+   ```ballerina
+   check decimal:fromString(csvRecordsItem.price)
+
+This ensures the string values from the CSV are safely parsed into numeric types before mapping.
+
+### 5. Add the Missing `index` Mapping
+
+The `index` field in the **Row** record is required and cannot be left unmapped.  
+If you skip it, the compiler will show this error:
+
+> `missing non-defaultable required record field 'index'`
+
+To fix this, we’ll dynamically calculate the index value for each CSV record.
+
+---
+
+#### Steps
+
+1. In the **Data Mapper**, click on the `index` field under the **Row** structure (right side).
+2. In the expression editor at the top, type the following expression:
+   ```ballerina
+   csvRecords.indexOf(csvRecordsItem)
+This retrieves the current record’s position in the csvRecords array (starting from 0).
+
+3. If you see an error like:
+
+> `incompatible types: expected 'int', found 'int?'`
+
+that means the result is an optional integer. To handle it safely, wrap it with `<int>`:
+
+   ```ballerina
+   <int>csvRecords.indexOf(csvRecordsItem)
+   ```
+
+Once applied, the red error indicator on the index mapping disappears.
+
+All lines in the mapper should now appear blue, indicating valid and complete mappings.
+
+Your data mapper now correctly converts CSV input into a fully-typed XML structure, with each record assigned an auto-generated index.
