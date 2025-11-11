@@ -1,12 +1,12 @@
-# Usecase: Read a CSV file and transform it to a XML and save as a file
+# Read a CSV file and transform it to a XML and save as a file
 
 ## Overview
-This is a **low-code** walkthrough that uses the **Ballerina Integrator Data Mapper** and file connectors to build an end-to-end pipeline — without writing code by hand. You will:
+This is a **low-code** walkthrough that uses the **Ballerina Integrator Data Mapper** and file APIs to build an end-to-end pipeline — without writing code by hand. You will:
 
 1. **Pick up files** (CSV) from a folder (e.g., `input/`).
 2. **Map** each CSV row to a `<Row>` element inside `<Orders>` using the Data Mapper **visual UI**.
-3. Add a **row number** as a child **`<index>` element**. Use the mapper’s **row position** function and set it to **1-based**.
-4. **Write** the result to a new XML file in an `output/` folder, and optionally **archive** or **error-route** the original CSV.
+3. Add a **row number** as a child **`<index>` element**. Use the mapper’s **row position** function and set it to **0-based**.
+4. **Write** the result to a new XML file in an `output/` folder.
 
 ### Input CSV Example
 
@@ -46,15 +46,14 @@ S003,P-2003,1,89.50
 ```
 
 ### What you’ll configure in the UI
-- **Source (CSV)**: delimiter `,`, header enabled, fields `order_id, sku, qty, price`.
+- **Source (CSV)**: delimiter `,` header enabled, fields `order_id, sku, qty, price`.
 - **Target (XML)**: root `Orders`, repeating child `Row` with children `index`, `order_id`, `sku`, `qty`, `price` — all as **elements**.
 - **Row loop**: create one `Row` per CSV data row.
-- **Index**: bind `index` to the mapper’s row position **+1** (to ensure 1-based numbering).
+- **Index**: bind `index` to the mapper’s row position (to ensure 0-based numbering).
 - **Type handling** (optional but recommended): cast `qty` to `int`, `price` to `decimal`; set defaults for missing/invalid values.
 - **File I/O**: 
-  - Inbound: read `*.csv` from `input/`.
-  - Outbound: write `orders_<timestamp>.xml` (or `orders.xml`) to `output/`.
-  - Post-processing: move processed CSV to `archive/`, route failures to `error/` with a note.
+  - Inbound: read `customer_order_details.csv` from `input/`.
+  - Outbound: write `customer_order_details.xml` to `output/`.
 
 ### Why this use case
 - Converts flat **CSV** order data into **XML** that downstream, XML-centric systems can validate and consume.
@@ -92,8 +91,9 @@ This extension provides a low-code graphical environment to visually design, map
 
 > This is the entry point for all low-code projects in Ballerina Integrator.
 
- <a href="{{base_path}}/assets/img/developer-guides/data-mapping/usecases/csv-to-xml/csv_to_xml1.gif"><img src="{{base_path}}/assets/img/developer-guides/data-mapping/usecases/csv-to-xml/csv_to_xml1.gif" alt="Create Integration" width="70%"></a>
+ <a href="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml1.gif"><img src="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml1.gif" alt="Create Integration" width="70%"></a>
 
+---
 
 ## Step 2: Add Configurable Variables
 
@@ -125,8 +125,9 @@ Your **Configurable Variables** view should now display:
 
 > These configurables can now be used by the file connectors and the data mapper in later steps — allowing your integration to dynamically read and write files based on runtime settings.
 
-<a href="{{base_path}}/assets/img/developer-guides/data-mapping/usecases/csv-to-xml/csv_to_xml2.gif"><img src="{{base_path}}/assets/img/developer-guides/data-mapping/usecases/csv-to-xml/csv_to_xml2.gif" alt="Add configurable file paths" width="70%"></a>
+<a href="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml2.gif"><img src="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml2.gif" alt="Add configurable file paths" width="70%"></a>
 
+---
 ## Step 3: Create a Structure to Represent Each CSV Row
 
 In this step, you’ll define a **structure** (called a *Type* in Ballerina) that describes what one row in your CSV file looks like.  
@@ -143,16 +144,18 @@ Think of it as creating a **template** so the Data Mapper can recognize each col
    | `qty` | Text (string) | The quantity ordered. |
    | `price` | Text (string) | The item price for that row. |
 
-4. Click **Save** once all fields are added.
+Click **Save** once all fields are added. 
 
-Your **CSV structure** now acts as the blueprint for reading each record from the file.  
+Your **CSV structure** now acts as the blueprint for reading each record from the file.
+
 When the system reads the CSV file, it will treat every line (after the header) as one `CSV` record containing these four fields.
 
 > This step helps the Data Mapper understand the shape of your data —  
 > instead of dealing with raw text lines, it can now work with meaningful fields like `order_id`, `sku`, `qty`, and `price`.
 
-<a href="{{base_path}}/assets/img/developer-guides/data-mapping/usecases/csv-to-xml/csv_to_xml3.gif"><img src="{{base_path}}/assets/img/developer-guides/data-mapping/usecases/csv-to-xml/csv_to_xml3.gif" alt="Create a type to represent CSV structure" width="70%"></a>
+<a href="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml3.gif"><img src="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml3.gif" alt="Create a type to represent CSV structure" width="70%"></a>
 
+---
 ## Step 4: Generate XML Types from a Sample Payload
 
 In this step, you’ll create the **XML output structure** automatically by **pasting a sample XML**.  
@@ -190,9 +193,11 @@ The Integrator’s **Type Creator** reads this example and builds the correspond
    </Orders>
    ```
 
-4. Click **Import** to load the sample XML into the type creator.  
-   The Integrator will automatically analyze the payload and infer the XML structure. 
-   The generated structure will appear as:
+Click **Import** to load the sample XML into the type creator. 
+
+The Integrator will automatically analyze the payload and infer the XML structure. 
+
+The generated structure will appear as:
 
    ```text
    Orders
@@ -208,8 +213,9 @@ You now have an **record type** that defines the exact structure of your output 
 This type will act as the **target structure** in the Data Mapper,  
 allowing each `CSV` record to be mapped directly into a `<Row>` element under `<Orders>`.
 
-<a href="{{base_path}}/assets/img/developer-guides/data-mapping/usecases/csv-to-xml/csv_to_xml4.gif"><img src="{{base_path}}/assets/img/developer-guides/data-mapping/usecases/csv-to-xml/csv_to_xml4.gif" alt="Create a type to represent XML structure" width="70%"></a>
+<a href="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml4.gif"><img src="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml4.gif" alt="Create a type to represent XML structure" width="70%"></a>
 
+---
 ## Step 5: Create an Automation and Set Up CSV Reading
 
 In this step, you’ll create an **Automation** entry point in WSO2 Integrator BI and configure it to **read a CSV file** from the path defined in your configurable variable (`inputCSV`).  
@@ -277,9 +283,10 @@ You’ll see options such as:
 Click **Call Function** to insert this node into the automation flow.
 
 ---
+
 ## Step 7: Use `fileReadCsv` to Load the CSV File into Memory
 
-Now that your Automation flow is open, the next step is to configure a **File Read Function** using the built-in `io:fileReadCsv()` operation.  
+Now that your Call Function flow is open, the next step is to configure a **CSV File Read Function** using the built-in `io:fileReadCsv()` operation.  
 This function reads CSV data from the path defined in your project’s configurables and loads it as a structured array of `CSV` records that can be mapped later.
 
 ---
@@ -379,9 +386,10 @@ This means the Automation will:
 
 > 💡 **Tip:** Always ensure the first row of your CSV file includes headers that match the `CSV` record field names. Otherwise, `fileReadCsv` will not correctly map the columns to your CSV record.
 
-<a href="{{base_path}}/assets/img/developer-guides/data-mapping/usecases/csv-to-xml/csv_to_xml5.gif"><img src="{{base_path}}/assets/img/developer-guides/data-mapping/usecases/csv-to-xml/csv_to_xml5.gif" alt="Add logic for reading the CSV file" width="70%"></a>
+<a href="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml5.gif"><img src="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml5.gif" alt="Create an automation" width="70%"></a>
 
 ---
+
 ## Step 8: Create the XML Output Variable and Open Data Mapper
 
 Now that the CSV data has been successfully read into the variable `csvRecords`, the next step is to prepare the XML output structure that the CSV will be transformed into. For this, you will declare a new variable of type `Orders` and open it in the Data Mapper.
@@ -458,6 +466,8 @@ At this point, you have:
 
 You’re now ready to perform the visual mapping between CSV and XML data structures.
 
+<a href="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml6.gif"><img src="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml6.gif" alt="Read the csv file" width="70%"></a>
+
 ---
 ## Step 9: Map CSV Fields to XML Rows in the Data Mapper
 
@@ -486,8 +496,6 @@ If you see an error such as:
 > `incompatible types: expected 'Row[]', found 'CSV[]'`
 
 That’s expected — the data mapper is warning that nested mapping is required to handle field-level conversions.
-
-
 
 ---
 
@@ -528,6 +536,8 @@ To fix this, use **type conversion expressions** directly in the Data Mapper:
 
 This ensures the string values from the CSV are safely parsed into numeric types before mapping.
 
+<a href="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml7.gif"><img src="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml7.gif" alt="Read CSV using io:fileReadCsv" width="70%"></a>
+
 ### 5. Add the Missing `index` Mapping
 
 The `index` field in the **Row** record is required and cannot be left unmapped.  
@@ -563,6 +573,10 @@ All lines in the mapper should now appear blue, indicating valid and complete ma
 
 Your data mapper now correctly converts CSV input into a fully-typed XML structure, with each record assigned an auto-generated index.
 
+<a href="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml8.gif"><img src="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml8.gif" alt="Read CSV using io:fileReadCsv" width="70%"></a>
+
+---
+
 ## Step 10: Convert the `Orders` record to XML and write it to the output file
 
 > Context: You already have **`xmlRecord : Orders`** populated by the Data Mapper. Now we’ll turn that record into XML and save it.
@@ -595,8 +609,10 @@ Click **Save**.
 Your flow should now show (top → bottom):
 - **io:fileReadCsv** → **Declare Variable (xmlRecord)** → **xmldata:toXml (xmlResultAsString)** → **io:fileWriteXml (outputXML, xmlResultAsString)** → **Error Handler**
 
-Make sure the input CSV file is in the correct location identified by the `inputCSV` location.
+Make sure the input [CSV file]({{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/files/customer_order_details.csv) is in the correct location identified by the `inputCSV` configurable.
 
 Run the integration. On success, the XML produced from `xmlRecord` will be written to the file path in **`outputXML`**.
+
+<a href="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml9.gif"><img src="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml9.gif" alt="map data between CSV and XML types" width="70%"></a>
 
 ---
