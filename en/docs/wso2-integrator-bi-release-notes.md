@@ -1,4 +1,4 @@
-# About major Release
+# About the Release
 
 # What's new in WSO2 Integrator: BI 1.4.0 release?
 
@@ -7,21 +7,21 @@
 ## New Features
 
 ??? note "MCP AI Integration"
-    Added support for MCP (Model Context Protocol) AI Integration, for exposing tools via an MCP service.
+    Added support for MCP (Model Context Protocol) AI Integration to expose tools via an MCP service.
 
 ??? note "Solace Event Integration"
     Added support for Solace Event integration, expanding supported event integration capabilities. The Event Integration flows have been redesigned to provide a more streamlined experience, complemented by AI-powered payload generation for faster development.
 
-??? note "Improved Service Designer"
+??? note "Service Designer Enhancements"
     Revamped the Service Designer view with better organization of listener and service properties. Features more readable listener names and improved metadata display, making service configuration more intuitive and accessible.
 
-??? note "Data Mapper"
+??? note "Data Mapper Enhancements"
     Introduced an intelligent Data Mapper powered by Large Language Models (LLMs), enabling more intuitive and efficient data transformation workflows with AI assistance. Enhanced breadcrumb labels for better navigation and refactored preview behavior for output-side arrays, resulting in a more predictable and user-friendly mapping experience.
 
 ??? note "GraphQL Designer Enhancements"
-    Added comprehensive Schema-based service generation support, allowing developers to generate GraphQL services directly from schemas. New features include GraphQL-based type suggestions, graphql ID support, and enhanced documentation capabilities on GraphQL fields for better API clarity.
+    Added comprehensive Schema-based service generation support, allowing developers to generate GraphQL services directly from schemas. New features include GraphQL-based type suggestions, GraphQL ID support, and enhanced documentation capabilities on GraphQL fields for better API clarity.
 
-??? note "Enhanced Expression Editor"
+??? note "Expression Editor Enhancements"
     Improved support for the expression editor with better usability and functionality, making it easier to create and manage expressions across different contexts.
 
 ??? note "Improved AI & Copilot Capabilities"
