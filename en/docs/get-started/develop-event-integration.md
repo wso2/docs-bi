@@ -32,7 +32,7 @@ Before you begin, make sure you have the following:
 
 5. Go to the **Design View** by clicking the Home icon on the top left corner and click **Add Artifact**.
 6. Select **RabbitMQ Event Integration**. Choosing the **Event Integration** from the Devant console disables the other options.
-7. Add `Orders` as the **Queue Name** and click **Create**. If there is no queue named `Orders` in RabbitMQ server, this will create a new queue with this name.
+7. Add `Orders` as the **Queue Name** and click **Create**. If there is no queue named `Orders` in the RabbitMQ server, this will create a new queue with this name.
 8. Select previously defined `host` and `port` configuration variables for the **Host** and **Port** and click Save.
     <a href="{{base_path}}/assets/img/get-started/develop-event-integration/add-event-listener.gif"><img src="{{base_path}}/assets/img/get-started/develop-event-integration/add-event-listener.gif" alt="Add Configurations" width="80%"></a>
 9. In the **Design** view, click the **Configure** button which will take you to the Configuration page for the Event Integration.
