@@ -39,7 +39,7 @@ Before you begin, make sure you have the following:
 10. Scroll down and find the fields `Username` and `Password` and set the corresponding configurables.
 11. Click **Save Changes** and go back to the Design view.
     <a href="{{base_path}}/assets/img/get-started/develop-event-integration/configure-event-integration.gif"><img src="{{base_path}}/assets/img/get-started/develop-event-integration/configure-event-integration.gif" alt="Configure Event Integration" width="80%"></a>
-12. Click the `+ Add Handler` button and select `onMessage` which will open up the handler configuration form.
+12. Click the `+ Add Handler` button and select `onMessage`, which will open up the handler configuration form.
 13. Click Save and it will redirect you to the flow diagram view.
     <a href="{{base_path}}/assets/img/get-started/develop-event-integration/configure-event-handler.gif"><img src="{{base_path}}/assets/img/get-started/develop-event-integration/configure-event-handler.gif" alt="Configure Event Handler" width="80%"></a>
 14. Click the plus icon after the **Start** node to open the node panel.
