@@ -45,8 +45,8 @@ Refer to <a href="../install-wso2-integrator-bi/">Install WSO2 Integrator: BI</a
 
 ## Step 3: Design the integration
 
-1. Click on **Add Resource** button and select **GET** http method.
-2. Change the resource path to `greeting` and click **Save** button.
+1. Click on **Add Resource** button and select **GET** HTTP method.
+2. Change the resource path to `greeting` and click the **Save** button.
 
       <a href="{{base_path}}/assets/img/get-started/develop-integration-as-api/add-resource.gif">
       <img src="{{base_path}}/assets/img/get-started/develop-integration-as-api/add-resource.gif" alt="Create Service" width="70%"></a>
@@ -57,7 +57,7 @@ Refer to <a href="../install-wso2-integrator-bi/">Install WSO2 Integrator: BI</a
 6. Add the URL `"https://apis.wso2.com"` to the connection URL field.
 7. Change the **Connection Name** to `externalEp` and click **Save**.
 8. Select **Connections** -> **externalEp** -> **get** from the node panel. 
-Set `/zvdz/mi-qsg/v1.0` as **Path**, `epResult` as **Result** and `string` as **Target Type**.
+Set `/zvdz/mi-qsg/v1.0` as **Path**, `epResult` as **Result**, and `string` as **Target Type**.
 9. Fill in the request details as below and click **Save**.
 
       <a href="{{base_path}}/assets/img/get-started/develop-integration-as-api/add-client.gif">
@@ -71,9 +71,9 @@ Set `/zvdz/mi-qsg/v1.0` as **Path**, `epResult` as **Result** and `string` as **
 
 ## Step 4: Run the integration
 
-1. Click on the **Try It** button in top right corner to run the integration.
-2. If the integration is not running there will be notification messaging asking to run integration.
-3. Click **Run Integration** if notification is appeared.
+1. Click on the **Try It** button in the top right corner to run the integration.
+2. If the integration is not running, there will be notification messaging asking to run the integration.
+3. Click **Run Integration** if a notification is appeared.
 3. Once the integration is started, Try-it will open up on the right side.
 4. Click on the **Run** button to invoke the `greeting` resource.
 

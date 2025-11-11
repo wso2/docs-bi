@@ -49,7 +49,7 @@ An HTTP service with a single resource (`toXml`) will be created to accept a JSO
 ## Step 4: Add the transformation logic
 
 1. Click on the `toXml` resource to navigate to the resource implementation designer view.
-2. Hover to the arrow after start and click the ➕ button to add a new action to the resource.
+2. Hover over the arrow after the start and click the ➕ button to add a new action to the resource.
 4. Select **Function Call** from the node panel.
 5. Search for `json to xml` and select the **fromJson** function from the suggestions.
 6. Set the **JsonValue** to `payload` from inputs.

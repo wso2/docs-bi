@@ -14,10 +14,9 @@ Before you begin, make sure you have the following:
 ## Step 1: Develop File Integration in WSO2 Integrator: BI
 
 1. Create an empty integration project.
-2. In the **Design View** click, on the **Add Artifact** button.
-3. Select **FTP Service**. Choosing the **File Integration**.
-4. Click on the **Save** button to create the ftp service with the specified configurations.
-5. Click the **Add Handler** and select **onFileChange** handler.
+2. Click on the **Add Artifact** button, then under **File Integration** select **FTP Service**.
+3. Click on the **Save** button to create the ftp service by filling the rquired fields.
+4. Click on the **Add Handler** and select **onFileChange** handler.
 
     <a href="{{base_path}}/assets/img/get-started/develop-file-integration/create-service.gif">
     <img src="{{base_path}}/assets/img/get-started/develop-file-integration/create-service.gif" alt="Configure FTP Service" width="70%"></a>

@@ -26,7 +26,7 @@ This guide shows how to build an integration that transforms a JSON payload into
 
 1. Click **Add Resource** and select **POST** method.
 2. Set the resource path as `transform`.
-3. Define the payload type as `Input` using the below JSON as set the variable name input.
+3. Configure the request payload by pasting the JSON sample below. Set the type name as `Input` and the variable name to `input`.
 
     ```json
     {
