@@ -2377,7 +2377,7 @@ With Ballerina, you can send a prompt along with a type descriptor, instructing 
 <li>Click on the WSO2 Integrator: BI icon on the sidebar.</li>
 <li>Click on the <strong><code>Create New Integration</code></strong> button.</li>
 <li>Enter <code>BlogReviewer</code> as the project name.</li>
-<li>Select Project Directory and click on the <strong><code>Select Location</code></strong> button.</li>
+<li>Click the <strong><code>Select Path</code></strong> button to set the Integration Path.</li>
 <li>Click on the <strong><code>Create New Integration</code></strong> button to create the integration project.</li>
 </ol>
 <h3 id="step-2-define-types">Step 2: Define types<a class="headerlink" href="#step-2-define-types" title="Permanent link">&para;</a></h3>
@@ -2386,7 +2386,7 @@ With Ballerina, you can send a prompt along with a type descriptor, instructing 
 <li>Click on <strong><code>+ Add Type</code></strong> to add a new type.</li>
 <li>Click on <strong><code>Import</code></strong> button in the top right corner of the type editor.</li>
 <li>
-<p>Use <code>Blog</code> as the <strong><code>Name</code></strong>. Then select <strong><code>JSON</code></strong> on the dropdown and paste the following JSON payload. Then Click on the <strong><code>Import</code></strong> button.</p>
+<p>Use <code>Blog</code> as the <strong><code>Name</code></strong>. Then select <strong><code>JSON</code></strong> from the dropdown and paste the following JSON payload. Then click the <strong><code>Import</code></strong> button.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tips for Growing a Beautiful Garden&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;content&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Spring is the perfect time to start your garden. Begin by preparing your soil with organic compost and ensure proper drainage. Choose plants suitable for your climate zone, and remember to water them regularly. Don&#39;t forget to mulch to retain moisture and prevent weeds.&quot;</span>
@@ -2410,41 +2410,36 @@ With Ballerina, you can send a prompt along with a type descriptor, instructing 
 </ol>
 <h3 id="step-3-create-an-http-service">Step 3: Create an HTTP service<a class="headerlink" href="#step-3-create-an-http-service" title="Permanent link">&para;</a></h3>
 <ol>
-<li>In the design view, click on the <strong><code>Add Artifact</code></strong> button.</li>
+<li>In the design view, click the <strong><code>Add Artifact</code></strong> button.</li>
 <li>Select <strong><code>HTTP Service</code></strong> under the <strong><code>Integration as API</code></strong> category.</li>
-<li>Select the <strong><code>Create and use the default HTTP listener (port: 9090)</code></strong> option from the <strong><code>Listeners</code></strong> dropdown.</li>
 <li>Select the <strong><code>Design from Scratch</code></strong> option as the <strong><code>Service Contract</code></strong> and use <code>/blogs</code> as the <strong><code>Service base path</code></strong>.</li>
 <li>
-<p>Click on the <strong><code>Create</code></strong> button to create the new service with the specified configurations.</p>
+<p>Click the <strong><code>Create</code></strong> button to create the new service with the specified configurations.</p>
 <p><a href="https://wso2.github.io/docs-bi/assets/img/learn/references/direct-llm-call/service_decl_direct_llm_call.png"><img src="https://wso2.github.io/docs-bi/assets/img/learn/references/direct-llm-call/service_decl_direct_llm_call.png" alt="HTTP Service" width="70%"></a></p>
 </li>
 <li>
-<p>The service will have a default resource named <code>greeting</code> with the <strong><code>GET</code></strong> method. Click on the three dots that appear in front of the <code>/blogs</code> service and select <strong><code>Edit</code></strong> from the menu.</p>
+<p>From the HTTP Service view, click <strong><code>+ Add Resource</code></strong> and select the <strong><code>POST</code></strong> method.</p>
 </li>
-<li>Then click the <strong><code>Edit</code></strong> button in front of <code>/greeting</code> resource.</li>
-<li>Change the resource HTTP method to <strong><code>POST</code></strong>.</li>
-<li>Change the resource name to <code>review</code>.</li>
-<li>Click on <strong><code>Add Payload</code></strong> and specify <code>blog</code> as the name and <code>Blog</code> as the type.</li>
-<li>Change the 201 response return type to <code>Review</code> and convert it to nilable type using type operators.</li>
+<li>Give the resource path as <code>review</code>.</li>
+<li>Click <strong><code>Define Payload</code></strong>, go to the third tab (<strong><code>Browse Existing Types</code></strong>), search for the type <code>Blog</code>, select it, and click <strong><code>Save</code></strong>.</li>
+<li>Under Responses, edit the 201 response and change its response body schema to Review using the Advanced Configurations section.</li>
 <li>
-<p>Click on the <strong><code>Save</code></strong> button to update the resource with the specified configurations.</p>
+<p>Click <strong><code>Save</code></strong> to create the resource with the specified configurations.</p>
 <p><a href="https://wso2.github.io/docs-bi/assets/img/learn/references/direct-llm-call/update_resource_direct_llm_call_docs.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/references/direct-llm-call/update_resource_direct_llm_call_docs.gif" alt="Create HTTP service" width="70%"></a></p>
 </li>
 </ol>
 <h3 id="step-4-implement-the-resource-logic">Step 4: Implement the resource logic<a class="headerlink" href="#step-4-implement-the-resource-logic" title="Permanent link">&para;</a></h3>
 <ol>
-<li>Click on the <code>review</code> resource to navigate to the resource implementation designer view.</li>
-<li>Hover over the arrow after start and click the ➕ button to add a new action to the resource.</li>
+<li>Once redirected to the <code>review</code> resource implementation designer view, follow these steps to implement the logic:</li>
+<li>Hover over the arrow after the Start node and click the ➕ button to add a new action to the resource.</li>
 <li>Select <strong><code>Model Provider</code></strong> from the node panel.</li>
-<li>Click on the <code>+ Add Model Provider</code>.</li>
-<li>Click on the <code>Default Model Provider (WSO2)</code>.</li>
-<li>Then add <code>model</code> as the name of the model provider and <code>ai:Wso2ModelProvider</code> as the result type.</li>
-<li>Then click on the <strong><code>Save</code></strong> button.</li>
-<li>Then click on the <code>model</code> variable under the <code>Model Providers</code> node.</li>
-<li>It will shows the list of available APIs from the model provider. Select the <code>generate</code> API from the list.</li>
+<li>Click <strong><code>+ Add Model Provider</code></strong>.</li>
+<li>Click <strong><code>Default Model Provider (WSO2)</code></strong>.</li>
+<li>Enter <code>model</code> as the name of the model provider and <code>ai:Wso2ModelProvider</code> as the result type, then click <strong><code>Save</code></strong>.</li>
+<li>Click the <code>model</code> variable under the <code>Model Providers</code> node.</li>
+<li>It will show the list of available APIs from the model provider. Select the <code>generate</code> API from the list.</li>
 <li>
-<p>Use the following prompt as the <strong><code>Prompt</code></strong> for reviewing blog usecase. Add the name of the result variable as <code>review</code>. Use <code>Review</code> as the return type and convert it to nilable type using type operators. 
-    Then click on the <strong><code>Save</code></strong> button.</p>
+<p>Use the following prompt as the <strong><code>Prompt</code></strong> for the blog review use case. Set the name of the result variable to <code>review</code>, use <code>Review</code> as the return type, and convert it to a nilable type using type operators. Then click <strong><code>Save</code></strong>.</p>
 <div class="highlight"><pre><span></span><code>You are an expert content reviewer for a blog site that 
     categorizes posts under the following categories: &quot;Gardening&quot;, &quot;Sports&quot;, &quot;Health&quot;, &quot;Technology&quot;, &quot;Travel&quot;
 
@@ -2461,8 +2456,8 @@ With Ballerina, you can send a prompt along with a type descriptor, instructing 
 
 Here is the blog post content:
 
-    Title: ${blog.title}
-    Content: ${blog.content}
+    Title: ${payload.title}
+    Content: ${payload.content}
 </code></pre></div>
 
 <p><a href="https://wso2.github.io/docs-bi/assets/img/learn/references/direct-llm-call/add_generate_call_direct_llm_docs.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/references/direct-llm-call/add_generate_call_direct_llm_docs.gif" alt="Implement resource logic"></a></p>

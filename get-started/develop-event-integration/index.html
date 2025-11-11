@@ -2362,37 +2362,17 @@
 <li>
 <p>Go to the <strong>Design View</strong> by clicking the Home icon on the top left corner and click <strong>Add Artifact</strong>.</p>
 </li>
-<li>Select <strong>RabbitMQ Event Handler</strong>. Choosing the <strong>Event Integration</strong> from the Devant console disables the other options.</li>
-<li>Provide the name of the <strong>RabbitMQ Configuration</strong> as <code>eventListener</code>.</li>
-<li>Select previously defined <code>host</code> and <code>port</code> configuration variables for the <strong>Host</strong> and <strong>Port</strong>.</li>
-<li>
-<p>Then, expand the <strong>Advanced Configurations</strong> and enter the following configurables. Then click <strong>Next</strong>.</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>username</strong></td>
-<td><code>username</code></td>
-</tr>
-<tr>
-<td><strong>password</strong></td>
-<td><code>password</code></td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>Add <code>Orders</code> as the <strong>Queue Name</strong> and click <strong>Create</strong>. If there is no queue named <code>Orders</code> in RabbitMQ server, this will create a new queue with this name. </p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/get-started/develop-event-integration/add-event-listener.gif"><img src="https://wso2.github.io/docs-bi/assets/img/get-started/develop-event-integration/add-event-listener.gif" alt="Add Configurations" width="80%"></a></p>
-</li>
-<li>
-<p>In the <strong>Design</strong> view, click the <code>onMessage</code> function box. It will redirect you to the flow diagram view.</p>
-</li>
+<li>Select <strong>RabbitMQ Event Integration</strong>. Choosing the <strong>Event Integration</strong> from the Devant console disables the other options.</li>
+<li>Add <code>Orders</code> as the <strong>Queue Name</strong> and click <strong>Create</strong>. If there is no queue named <code>Orders</code> in the RabbitMQ server, this will create a new queue with this name.</li>
+<li>Select previously defined <code>host</code> and <code>port</code> configuration variables for the <strong>Host</strong> and <strong>Port</strong> and click Save.
+    <a href="https://wso2.github.io/docs-bi/assets/img/get-started/develop-event-integration/add-event-listener.gif"><img src="https://wso2.github.io/docs-bi/assets/img/get-started/develop-event-integration/add-event-listener.gif" alt="Add Configurations" width="80%"></a></li>
+<li>In the <strong>Design</strong> view, click the <strong>Configure</strong> button, which will take you to the Configuration page for the Event Integration.</li>
+<li>Scroll down and find the fields <code>Username</code> and <code>Password</code> and set the corresponding configurables.</li>
+<li>Click <strong>Save Changes</strong> and go back to the Design view.
+    <a href="https://wso2.github.io/docs-bi/assets/img/get-started/develop-event-integration/configure-event-integration.gif"><img src="https://wso2.github.io/docs-bi/assets/img/get-started/develop-event-integration/configure-event-integration.gif" alt="Configure Event Integration" width="80%"></a></li>
+<li>Click the <code>+ Add Handler</code> button and select <code>onMessage</code>, which will open up the handler configuration form.</li>
+<li>Click Save, and it will redirect you to the flow diagram view.
+    <a href="https://wso2.github.io/docs-bi/assets/img/get-started/develop-event-integration/configure-event-handler.gif"><img src="https://wso2.github.io/docs-bi/assets/img/get-started/develop-event-integration/configure-event-handler.gif" alt="Configure Event Handler" width="80%"></a></li>
 <li>Click the plus icon after the <strong>Start</strong> node to open the node panel.</li>
 <li>
 <p>Add a <strong>Log Info</strong> node with the <strong>Msg</strong> as <code>message.toString()</code>. </p>
@@ -2401,7 +2381,7 @@
 </ol>
 <h2 id="step-2-run-the-integration-in-wso2-integrator-bi">Step 2: Run the integration in WSO2 Integrator: BI<a class="headerlink" href="#step-2-run-the-integration-in-wso2-integrator-bi" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Click <strong>Run</strong> in the top right corner to run the integration. This compiles the integration and runs it in the embedded Ballerina runtime.</li>
+<li>Click <strong>Run</strong> in the top-right corner to run the integration. This compiles the integration and runs it in the embedded Ballerina runtime.</li>
 </ol>
 
 
