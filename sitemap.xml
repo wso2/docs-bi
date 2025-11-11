@@ -365,4 +365,14 @@
          <lastmod>2025-11-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
+    <url>
+         <loc>https://bi.docs.wso2.com/usecases/datamapper/overview/</loc>
+         <lastmod>2025-11-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bi.docs.wso2.com/usecases/datamapper/read-csv-file-and-transform-to-xml-file/</loc>
+         <lastmod>2025-11-11</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
 </urlset>
