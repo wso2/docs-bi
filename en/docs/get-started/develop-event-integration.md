@@ -35,7 +35,7 @@ Before you begin, make sure you have the following:
 7. Add `Orders` as the **Queue Name** and click **Create**. If there is no queue named `Orders` in the RabbitMQ server, this will create a new queue with this name.
 8. Select previously defined `host` and `port` configuration variables for the **Host** and **Port** and click Save.
     <a href="{{base_path}}/assets/img/get-started/develop-event-integration/add-event-listener.gif"><img src="{{base_path}}/assets/img/get-started/develop-event-integration/add-event-listener.gif" alt="Add Configurations" width="80%"></a>
-9. In the **Design** view, click the **Configure** button which will take you to the Configuration page for the Event Integration.
+9. In the **Design** view, click the **Configure** button, which will take you to the Configuration page for the Event Integration.
 10. Scroll down and find the fields `Username` and `Password` and set the corresponding configurables.
 11. Click **Save Changes** and go back to the Design view.
     <a href="{{base_path}}/assets/img/get-started/develop-event-integration/configure-event-integration.gif"><img src="{{base_path}}/assets/img/get-started/develop-event-integration/configure-event-integration.gif" alt="Configure Event Integration" width="80%"></a>
@@ -49,4 +49,4 @@ Before you begin, make sure you have the following:
 
 ## Step 2: Run the integration in WSO2 Integrator: BI
 
-1. Click **Run** in the top right corner to run the integration. This compiles the integration and runs it in the embedded Ballerina runtime.
+1. Click **Run** in the top-right corner to run the integration. This compiles the integration and runs it in the embedded Ballerina runtime.
