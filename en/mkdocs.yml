@@ -165,6 +165,11 @@ nav:
       - "Enterprise Integrations Patterns": references/enterprise-integrations-patterns.md
       - "System Requirements": references/system-requirements.md
       - "AI Usage & Data Handling Guidelines": references/ai-usage-and-data-handling-guidelines.md
+  - Usecases:
+      - Datamapper usecases:
+          - Overview: usecases/datamapper/overview.md
+          - Read a CSV file and transform it to a XML and save as a file: usecases/datamapper/read-csv-file-and-transform-to-xml-file.md
+
   - Release Notes:
       - Release Note: wso2-integrator-bi-release-notes.md
 
