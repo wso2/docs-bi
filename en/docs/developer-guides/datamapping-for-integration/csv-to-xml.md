@@ -562,3 +562,41 @@ Once applied, the red error indicator on the index mapping disappears.
 All lines in the mapper should now appear blue, indicating valid and complete mappings.
 
 Your data mapper now correctly converts CSV input into a fully-typed XML structure, with each record assigned an auto-generated index.
+
+## Step 10: Convert the `Orders` record to XML and write it to the output file
+
+> Context: You already have **`xmlRecord : Orders`** populated by the Data Mapper. Now we’ll turn that record into XML and save it.
+
+### 1) Add **xmldata:toXml** to convert the record to XML
+1. Open the right-side **Functions** panel.
+2. Search for **`toXml`** (from **Standard Library → data.xmldata**).
+3. Click **toXml** to insert the node below the **Declare Variable** node.
+
+Configure the **toXml** node:
+- **Map Value**: `xmlRecord`
+- **Result**: `xmlResultAsString`
+- **Result Type**: `xml`
+
+> After saving, you should see `xmldata:toXml` in the flow with the result variable name **xmlResultAsString**.
+
+### 2) Add **io:fileWriteXml** to write the XML to disk
+1. With the **Functions** panel open, search for **`fileWriteXml`** (under **Imported Functions → io**).
+2. Click **fileWriteXml** to insert it after **xmldata:toXml**.
+
+Configure the **fileWriteXml** node:
+- **Path**: `outputXML`  _(this is your output file path variable/string.)_
+  - Toggle from Text to Expression by clicking on the Expression icon at the right top corner of the Path Textbox
+  - Choose the configurables and select outputXML
+- **Content**: `xmlResultAsString`
+
+Click **Save**.
+
+### 3) Verify the flow and run
+Your flow should now show (top → bottom):
+- **io:fileReadCsv** → **Declare Variable (xmlRecord)** → **xmldata:toXml (xmlResultAsString)** → **io:fileWriteXml (outputXML, xmlResultAsString)** → **Error Handler**
+
+Make sure the input CSV file is in the correct location identified by the `inputCSV` location.
+
+Run the integration. On success, the XML produced from `xmlRecord` will be written to the file path in **`outputXML`**.
+
+---
