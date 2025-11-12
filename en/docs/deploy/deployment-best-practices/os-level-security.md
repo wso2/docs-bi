@@ -34,5 +34,5 @@ Enable OS-level logging and review logs periodically to monitor user actions. Co
 
 ### Perform Regular Backups
 
-Back up all critical files and data regularly, and store them securely.
+Back up all the critical files and data regularly, and store them securely.
 

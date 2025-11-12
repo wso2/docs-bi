@@ -3,9 +3,12 @@
 ### 1. Apply Security Patches Regularly
 
 * **VSCode Plugin**: Always use the latest release for `WSO2 Integrator: BI` and `Ballerina` VSCode plugin.  
-* **Ballerina:** Use the latest patch release of the relevant Ballerina distribution version.  
-* Community users are encouraged to use the latest product versions to receive all the security issues resolved  
-* Subscribe to the official security mailing lists and follow WSO2/Ballerina release announcements.  
+* **Ballerina:** Use the latest patch release of the relevant Ballerina distribution version. 
+
+> Community users are encouraged to use the latest product versions to receive all resolved security issues.
+
+> Subscribe to the official security mailing lists and follow WSO2/Ballerina release announcements.  
+
 * **OS and Dependencies:** Keep the operating system, container base images, Java (JDK/JRE), and database clients updated with security patches.
 * **Automation:** Integrate patch checks into CI/CD pipelines and maintain a rollback plan for emergency patches.
 
@@ -64,7 +67,7 @@ When BI connects to external systems such as user stores, databases, or other AP
 
 ### 9. Logging and Monitoring
 
-* Add Comprehensive logs and telemetry, when correlated with access controls and alerting, enhance the ability to identify unauthorized usage or data exfiltration attempts in production environments.  
+* Comprehensive logs and telemetry, when correlated with access controls and alerting, enhance the ability to identify unauthorized usage or data exfiltration attempts in production environments.
 * Integrate with standardized observability tools (e.g., Prometheus, Jaeger, ELK Stack) so that you can unify your security-monitoring posture across BI deployment models.
 
 Follow the below guides to configure logging and observability.
