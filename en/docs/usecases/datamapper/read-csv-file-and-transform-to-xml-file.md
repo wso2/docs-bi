@@ -22,21 +22,21 @@ S003,P-2003,1,89.50
 ```xml
 <Orders>
   <Row>
-    <index>1</index>
+    <index>0</index>
     <order_id>S001</order_id>
     <sku>P-1001</sku>
     <qty>2</qty>
     <price>149.99</price>
   </Row>
   <Row>
-    <index>2</index>
+    <index>1</index>
     <order_id>S002</order_id>
     <sku>P-3001</sku>
     <qty>3</qty>
     <price>39.99</price>
   </Row>
   <Row>
-    <index>3</index>
+    <index>2</index>
     <order_id>S003</order_id>
     <sku>P-2003</sku>
     <qty>1</qty>
