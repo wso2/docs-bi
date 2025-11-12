@@ -1593,9 +1593,40 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Deploy as Docker Image
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Deploy as Docker Image
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#execute-the-docker-image" class="md-nav__link">
+    Execute the Docker image
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1790,6 +1821,96 @@
     <li class="md-nav__item">
       <a href="../../capacity-planning/performance-report-for-rest-services/" class="md-nav__link">
         Performance Report for REST Services
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+          Deployment Best Practices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_7">
+          <span class="md-nav__icon md-icon"></span>
+          Deployment Best Practices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment-best-practices/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment-best-practices/runtime-security/" class="md-nav__link">
+        Runtime Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment-best-practices/os-level-security/" class="md-nav__link">
+        OS Level Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment-best-practices/network-level-security/" class="md-nav__link">
+        Network Level Security
       </a>
     </li>
   
@@ -2289,6 +2410,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#execute-the-docker-image" class="md-nav__link">
+    Execute the Docker image
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2332,6 +2468,26 @@
 <p>The integration will be built as a Docker image and the image will be available in the local Docker registry.</p>
 </li>
 </ul>
+<p><em>Note: You can see the generated Dockerfile in</em> <code>/target/docker/&lt;integration-name&gt;</code>.</p>
+<h2 id="execute-the-docker-image">Execute the Docker image<a class="headerlink" href="#execute-the-docker-image" title="Permanent link">&para;</a></h2>
+<p>Follow the steps below to execute the Docker image.</p>
+<ol>
+<li>Execute the docker images command to verify if the Docker image is generated.</li>
+</ol>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>docker<span class="w"> </span>images
+REPOSITORY<span class="w">                                          </span>TAG<span class="w">                    </span>IMAGE<span class="w"> </span>ID<span class="w">       </span>CREATED<span class="w">          </span>SIZE
+fake_store_manager<span class="w">                                  </span>latest<span class="w">                 </span>e971e4336f71<span class="w">   </span><span class="m">58</span><span class="w"> </span>minutes<span class="w"> </span>ago<span class="w">   </span>237MB
+</code></pre></div>
+
+<ol>
+<li>
+<p>Execute the <code>docker run -d -v &lt;path/to/config&gt;/Config.toml:/home/ballerina/Config.toml -p 8090:8090 fake_store_manager:latest</code> command to run the generated Docker image.</p>
+</li>
+<li>
+<p>Call the <code>http://localhost:8090/store/products</code> API via try-it and see the output.</p>
+</li>
+</ol>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/deploy/docker-hosted-try-it.png"><img src="https://wso2.github.io/docs-bi/assets/img/deploy/docker-hosted-try-it.png" alt="Try-it docker hosted service" width="70%"></a></p>
 
 
 
