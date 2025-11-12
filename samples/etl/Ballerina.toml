@@ -1,0 +1,13 @@
+[package]
+org = "wso2"
+name = "etl"
+version = "0.1.0"
+title = "etl"
+
+[build-options]
+sticky = true
+
+[[dependency]]
+org = "ballerina"
+name = "ftp"
+version = "2.15.1"

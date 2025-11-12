@@ -1,0 +1,8 @@
+[package]
+org = "wso2"
+name = "data_validation"
+version = "0.1.0"
+title = "data-validation"
+
+[build-options]
+sticky = true

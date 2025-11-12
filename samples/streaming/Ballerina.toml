@@ -1,0 +1,8 @@
+[package]
+org = "wso2"
+name = "streaming"
+version = "0.1.0"
+title = "streaming"
+
+[build-options]
+sticky = true
