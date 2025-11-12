@@ -147,6 +147,11 @@ nav:
       - Capacity Planning:
         - Overview: deploy/capacity-planning/overview.md
         - Performance Report for REST Services: deploy/capacity-planning/performance-report-for-rest-services.md
+      - Deployment Best Practices:
+        - Overview: deploy/deployment-best-practices/overview.md
+        - Runtime Security: deploy/deployment-best-practices/runtime-security.md
+        - OS Level Security: deploy/deployment-best-practices/os-level-security.md
+        - Network Level Security: deploy/deployment-best-practices/network-level-security.md
   - Observability and Monitoring:
       - Overview: observability-and-monitoring/overview.md
       - "Monitoring with WSO2 Integrator: ICP": observability-and-monitoring/monitoring-with-wso2-integrator-icp.md
