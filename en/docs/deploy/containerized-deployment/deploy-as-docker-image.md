@@ -9,7 +9,7 @@ This guide explains how to deploy an integration as a Docker image.
 
 * The integration will be built as a Docker image and the image will be available in the local Docker registry.
 
-Also,  for reference the generated DockerFile can be found in /target/docker\<integration-name\>
+_Note: You can see the generated DockerFile in_ `/target/docker/<integration-name>`
 
 ## Execute the Docker image
 
