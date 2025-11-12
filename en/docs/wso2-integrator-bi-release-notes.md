@@ -1,5 +1,22 @@
 # About the Release
 
+# What's new in WSO2 Integrator: BI 1.5.0 release?
+
+**WSO2 Integrator: BI 1.5.0** introduces the following features and enhancements:
+
+## New Features
+
+??? note "Multi-Project Workspace Support"
+    Users can open and manage mono-repositories containing multiple projects, 
+    with comprehensive visual editing capabilities for complex integration scenarios across multiple projects.
+
+??? note "Natural Language Function Support"
+    Introduced natural language functions that allow users to directly invoke Large Language Models (LLMs) within integration flows.
+
+## Fixed issues
+
+- [WSO2 Integrator: BI Issues](https://github.com/wso2/product-ballerina-integrator/milestone/15?closed=1)
+
 # What's new in WSO2 Integrator: BI 1.4.0 release?
 
 **WSO2 Integrator: BI 1.4.0** introduces the following features and enhancements:
