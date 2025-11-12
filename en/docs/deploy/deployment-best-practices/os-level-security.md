@@ -18,11 +18,11 @@ Apply firewall rules to restrict access to TCP ports used for clustering (e.g., 
 
 ### Use Secure Shell (SSH)
 
-Always use Secure Shell (SSH) for remote server access and command execution. Follow these best practices when configuring SSH:
-Change the default SSH port to a non-standard, higher-numbered port.
-Disable direct root or administrator logins.
-Enable authentication via SSH keys instead of passwords.
-Display a legal or security banner before authentication to warn unauthorized users.
+* Always use Secure Shell (SSH) for remote server access and command execution. Follow these best practices when configuring SSH:
+* Change the default SSH port to a non-standard, higher-numbered port.
+* Disable direct root or administrator logins.
+* Enable authentication via SSH keys instead of passwords.
+* Display a legal or security banner before authentication to warn unauthorized users.
 
 ### Keep the System Up-to-Date
 

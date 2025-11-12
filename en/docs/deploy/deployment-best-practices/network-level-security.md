@@ -16,13 +16,15 @@ Enable and retain logs for all network components, including proxy servers, load
 
 ### Audit Open Ports and Services
 
-Conduct periodic network scans to identify open ports and active services. Ensure that only the ports necessary for your WSO2 products are accessible on both internal and external networks. Disable or monitor any additional open ports that are not explicitly required.  
- Refer to **Default Product Ports** for the complete list of ports used by WSO2 products.
+Conduct periodic network scans to identify open ports and active services. Ensure that only the ports necessary for your WSO2 products are accessible on both internal and external networks. Disable or monitor any additional open ports that are not explicitly required.
+ 
+> Refer to **Default Product Ports** for the complete list of ports used by WSO2 products.
 
 ### Enforce Device-Level Security
 
-Regularly inspect and validate the configuration and integrity of all network devices, including routers, switches, and firewalls. Verify routing tables, access control lists, and firewall rules for correctness and consistency.  
- Replace all default device credentials with strong, unique passwords before deploying devices in production.
+* Regularly inspect and validate the configuration and integrity of all network devices, including routers, switches, and firewalls. Verify routing tables, access control lists, and firewall rules for correctness and consistency.
+
+* Replace all default device credentials with strong, unique passwords before deploying devices in production.
 
 ### Apply Firmware Updates
 
