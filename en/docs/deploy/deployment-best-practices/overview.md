@@ -20,6 +20,6 @@ Network security covers the infrastructure and network-level protections for you
 
 [Learn more about network level security →](/deploy/deployment-best-practices/network-level-security)
 
-## Getting Started
+## Getting started
 
 Review each category above to understand the security considerations for your deployment. Implement these practices based on your specific environment, compliance requirements, and security policies. These guidelines are applicable to both cloud-native (containerized) and traditional VM-based deployments.
