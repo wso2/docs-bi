@@ -103,8 +103,8 @@ nav:
         - File Integration With Directory Service: integration-guides/file-integration/file-integration-with-directory-service.md
       - Usecases:
         - Datamapper usecases:
-          - Overview: usecases/datamapper/overview.md
-          - Read a CSV file and transform it to a XML and save as a file: usecases/datamapper/read-csv-file-and-transform-to-xml-file.md
+          - Overview: integration-guides/usecases/datamapper/overview.md
+          - Read a CSV file and transform it to a XML and save as a file: integration-guides/usecases/datamapper/read-csv-file-and-transform-to-xml-file.md
   - Developer Guides:
       - Create a Project: developer-guides/create-a-project.md
       - "WSO2 Integrator: BI Artifacts": developer-guides/wso2-integrator-bi-artifacts.md

@@ -19,7 +19,7 @@ Each use case in this section helps you understand how to:
 
 | Use Case                                                                                | Description |
 |-----------------------------------------------------------------------------------------|--------------|
-| [Read CSV File and Transform to XML File](./read-csv-file-and-transform-to-xml-file.md) | Demonstrates how to read a CSV file, map it to a structured `Orders` record, and convert it into XML output using an inline Data Mapper. |
+| [Read CSV File and Transform to XML File](read-csv-file-and-transform-to-xml-file.md) | Demonstrates how to read a CSV file, map it to a structured `Orders` record, and convert it into XML output using an inline Data Mapper. |
 | *Coming soon:* JSON to XML                                                              | Shows how to convert a nested JSON structure into XML with namespaces and attributes using the Data Mapper. |
 | *Coming soon:* XML to JSON                                                              | Illustrates how to map XML elements into a simplified JSON representation. |
 | *Coming soon:* CSV to JSON                                                              | Walks through mapping tabular data from a CSV file into structured JSON objects. |
@@ -38,8 +38,8 @@ Use the Data Mapper when you need to:
 
 ## Related Topics
 
-- [Data Mapping Quick Start](../../developer-guides/data-mapping.md)
-- [Design the Integrations](../../developer-guides/design-the-integrations.md)
-- [Create a Project](../../developer-guides/create-a-project.md)
+- [Data Mapping Quick Start](../../../developer-guides/data-mapping.md)
+- [Design the Integrations](../../../developer-guides/design-the-integrations.md)
+- [Create a Project](../../../developer-guides/create-a-project.md)
 
 ---
