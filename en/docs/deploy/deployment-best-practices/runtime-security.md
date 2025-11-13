@@ -21,12 +21,10 @@ Keeping all software components up to date is a critical part of maintaining run
 ## Manage secrets securely
 
 * Never hardcode passwords, tokens, or keys in source code, configuration files, or repositories.
-
 * Use platform-specific secret management systems such as:  
     * Kubernetes Secrets
     * HashiCorp Vault
     * AWS Secrets Manager or similar cloud stores.
-
 * Pass secrets into the BI runtime via configuration values.
 
 ## Change default ports and credentials
