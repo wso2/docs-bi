@@ -2,16 +2,15 @@
 
 ## Apply security patches regularly
 
-* **VS Code**: Always use the latest release for [Visual Studio Code](https://code.visualstudio.com/).
-* **VS Code Extensions**: Always use the latest release for [WSO2 Integrator: BI](https://marketplace.visualstudio.com/items?itemName=WSO2.ballerina-integrator) and [Ballerina](https://marketplace.visualstudio.com/items?itemName=WSO2.ballerina) VS Code extensions.
-* **Ballerina:** Use the latest patch release of the relevant Ballerina distribution version. 
+Keeping all software components up to date is a critical part of maintaining runtime security. Security patches often address newly discovered vulnerabilities that attackers can exploit if left unpatched.
 
-> Community users are encouraged to use the latest product versions to receive all resolved security issues.
-
-> Subscribe to the official security mailing lists and follow WSO2/Ballerina release announcements.  
-
-* **OS and Dependencies:** Keep the operating system, container base images, and database clients updated with security patches.
-* **Automation:** Integrate patch checks into CI/CD pipelines and maintain a rollback plan for emergency patches.
+| Category | Guidelines |
+|-----------|-------------|
+| **WSO2 Integrator: BI** | Always use the latest stable release of [Visual Studio Code](https://code.visualstudio.com/).<br><br>Keep [WSO2 Integrator: BI](https://marketplace.visualstudio.com/items?itemName=WSO2.ballerina-integrator) and [Ballerina](https://marketplace.visualstudio.com/items?itemName=WSO2.ballerina) extensions updated to ensure compatibility with the latest security and functionality enhancements. |
+| **Ballerina Distribution** | Use the latest patch release of the relevant [Ballerina distribution](https://ballerina.io/downloads/) to ensure runtime and library-level vulnerabilities are fixed.<br><br>Follow Ballerina and WSO2 product release notifications to stay informed about new security advisories. |
+| **Operating System and Dependencies** | Regularly apply security updates to the host operating system, *container base images*, and *runtime dependencies* (e.g., database clients, third-party libraries).<br><br>If deploying via Docker, track and update base image versions (e.g., `ubuntu`, `alpine`, or `ballerina`) to the latest stable, patched releases.|
+| **Automation and CI/CD Integration** | Integrate automated patch verification and dependency vulnerability scanning into CI/CD pipelines.<br><br>Use dependency management tools (e.g., *Dependabot*, *Renovate*) to receive automated pull requests for new patches.<br><br>Maintain a rollback plan and a staging environment to safely test patches before deploying to production. |
+| **Community and Security Feeds** | Follow [WSO2 Security Docs](https://security.docs.wso2.com/en/latest/) for timely notifications of vulnerabilities and fixes. |
 
 ## Use keystores and truststores correctly
 
