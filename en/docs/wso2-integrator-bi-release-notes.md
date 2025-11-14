@@ -4,7 +4,7 @@
 
 **WSO2 Integrator: BI 1.5.0** introduces the following features and enhancements:
 
-## New Features
+## New features
 
 ??? note "Multi-Project Workspace Support"
     Users can open and manage mono-repositories containing multiple projects, 
@@ -21,7 +21,7 @@
 
 **WSO2 Integrator: BI 1.4.0** introduces the following features and enhancements:
 
-## New Features
+## New features
 
 ??? note "MCP AI Integration"
     Added support for MCP (Model Context Protocol) AI Integration to expose tools via an MCP service.
