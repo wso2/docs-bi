@@ -106,12 +106,12 @@ These parameters make your integration portable and environment-agnostic — you
 
   4. Click **Save** once both configurables are defined.
 
-Your **Configurable Variables** view should now display:
+      Your **Configurable Variables** view should now display:
 
-| Name | Type | Default Value |
-|------|------|----------------|
-| inputCSV | string | `./input/customer_order_details.csv` |
-| outputXML | string | `./output/customer_order_details.xml` |
+      | Name | Type | Default Value |
+      |------|------|----------------|
+      | inputCSV | string | `./input/customer_order_details.csv` |
+      | outputXML | string | `./output/customer_order_details.xml` |
 
 > These configurables can now be used by the file connectors and the data mapper in later steps — allowing your integration to dynamically read and write files based on runtime settings.
 
@@ -211,8 +211,8 @@ This automation serves as the starting point of the data-transformation pipeline
 
   1. Open the “Entry Points” Panel
 
-From the **Project Explorer** on the left, expand the `customer_details_csv_to_xml` integration.  
-Click **Entry Points (+)** to add a new integration artifact.
+      From the **Project Explorer** on the left, expand the `customer_details_csv_to_xml` integration.  
+      Click **Entry Points (+)** to add a new integration artifact.
 
 
   2. Select “Automation” as the Entry Point
