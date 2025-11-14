@@ -46,7 +46,7 @@ Now let's start designing the integration by adding the necessary artifacts.
 
     <a href="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/http-service.png"><img src="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/http-service.png" alt="http service" width="80%"></a>
 
-4. Enter **healthcare** in the **Service Base Path**, then click **Create**.
+4. Enter `healthcare` in the **Service Base Path**, then click **Create**.
 
     <a href="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/base-path.png"><img src="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/base-path.png" alt="base path" width="80%"></a>
 
@@ -144,17 +144,17 @@ Now let's start designing the integration by adding the necessary artifacts.
     1.  Download and set up [WSO2 API Manager](https://wso2.com/api-management/).
     2.  Start the [API-M server](https://apim.docs.wso2.com/en/latest/install-and-setup/install/installing-the-product/running-the-api-m/).
 
-### Step 4: Run the application.
+### Step 4: Run the application
 
-6. Select the BI Extension icon and click the `Run` button to execute.
+1. Select the BI Extension icon and click the `Run` button to execute.
 
     <a href="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/run.png"><img src="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/run.png" alt="run-icon" width="80%"></a>
 
-7. After signing in to the API Publisher portal: `https://localhost:9443/publisher`, you can see the created service
+2. After signing in to the API Publisher portal: `https://localhost:9443/publisher`, you can see the created service.
 
     <a href="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/service.png"><img src="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/service.png" alt="service-in-APIM" width="80%"></a>
 
-8. After connecting to APIM, your integration service will appear as a managed API in the API Publisher portal. From there, you can configure and deploy the API, publish it to the Developer Portal, test it using the integrated API console, and allow consumers to subscribe and invoke the API securely.
+3. After connecting to APIM, your integration service will appear as a managed API in the API Publisher portal. From there, you can configure and deploy the API, publish it to the Developer Portal, test it using the integrated API console, and allow consumers to subscribe and invoke the API securely.
 
 !!! Tip
     For detailed instructions see [Invoke an API using the Integrated API Console](https://apim.docs.wso2.com/en/4.3.0/consume/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console/).
