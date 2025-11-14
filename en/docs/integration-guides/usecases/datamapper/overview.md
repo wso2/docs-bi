@@ -5,9 +5,10 @@ This section provides a collection of end-to-end transformation examples that de
 
 ---
 
-## What You’ll Learn
+## What you’ll learn
 
 Each use case in this section helps you understand how to:
+
 - Design input and output types in the Type Editor.
 - Use inline or reusable Data Mappers.
 - Apply mappings, aggregations, and expressions to manipulate data visually.
@@ -15,7 +16,7 @@ Each use case in this section helps you understand how to:
 
 ---
 
-## Available Use Cases
+## Available use cases
 
 | Use Case                                                                                | Description |
 |-----------------------------------------------------------------------------------------|--------------|
@@ -26,9 +27,10 @@ Each use case in this section helps you understand how to:
 
 ---
 
-## When to Use Data Mapper
+## When to use data mapper
 
 Use the Data Mapper when you need to:
+
 - Transform data between different payload formats (CSV, JSON, XML).
 - Build file processing or ETL-style integrations.
 - Create API payload transformations between client-facing and backend schemas.
@@ -36,7 +38,7 @@ Use the Data Mapper when you need to:
 
 ---
 
-## Related Topics
+## Related topics
 
 - [Data Mapping Quick Start](../../../developer-guides/data-mapping.md)
 - [Design the Integrations](../../../developer-guides/design-the-integrations.md)
