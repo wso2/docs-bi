@@ -1835,9 +1835,61 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Overview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Overview
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#runtime-security" class="md-nav__link">
+    Runtime security
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#os-level-security" class="md-nav__link">
+    OS level security
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-level-security" class="md-nav__link">
+    Network level security
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting started
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -2379,6 +2431,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#runtime-security" class="md-nav__link">
+    Runtime security
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#os-level-security" class="md-nav__link">
+    OS level security
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-level-security" class="md-nav__link">
+    Network level security
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting started
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -2410,12 +2498,18 @@
 
 
 <h1 id="best-practices-for-production-deployment">Best Practices for Production Deployment<a class="headerlink" href="#best-practices-for-production-deployment" title="Permanent link">&para;</a></h1>
-<p>Following are the guidelines for hardening the security for production deployment.</p>
-<ul>
-<li><a href="/deploy/deployment-best-practices/runtime-security">Runtime Security</a></li>
-<li><a href="/deploy/deployment-best-practices/os-level-security">OS level security</a></li>
-<li><a href="/deploy/deployment-best-practices/network-level-security">Network level security</a></li>
-</ul>
+<p>This section provides comprehensive security and operational best practices for deploying WSO2 Integrator: BI in production environments. Following these guidelines helps ensure your deployment is secure, resilient, and maintainable.</p>
+<h2 id="runtime-security">Runtime security<a class="headerlink" href="#runtime-security" title="Permanent link">&para;</a></h2>
+<p>Runtime security focuses on securing your BI application and the services it generates during execution, including application-level configurations, patches, secrets management, TLS/SSL protocols, and logging.</p>
+<p><a href="/deploy/deployment-best-practices/runtime-security">Learn more about runtime security →</a></p>
+<h2 id="os-level-security">OS level security<a class="headerlink" href="#os-level-security" title="Permanent link">&para;</a></h2>
+<p>Operating system security addresses the hardening of the underlying operating system where BI is deployed, covering user accounts, firewalls, SSH configuration, system updates, and monitoring.</p>
+<p><a href="/deploy/deployment-best-practices/os-level-security">Learn more about OS level security →</a></p>
+<h2 id="network-level-security">Network level security<a class="headerlink" href="#network-level-security" title="Permanent link">&para;</a></h2>
+<p>Network security covers the infrastructure and network-level protections for your BI deployment, including high availability, failover configurations, network logging, port auditing, and device security.</p>
+<p><a href="/deploy/deployment-best-practices/network-level-security">Learn more about network level security →</a></p>
+<h2 id="getting-started">Getting started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h2>
+<p>Review each category above to understand the security considerations for your deployment. Implement these practices based on your specific environment, compliance requirements, and security policies. These guidelines are applicable to both cloud-native (containerized) and traditional VM-based deployments.</p>
 
 
 

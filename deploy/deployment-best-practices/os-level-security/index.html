@@ -1889,56 +1889,56 @@
       
         <li class="md-nav__item">
   <a href="#run-wso2-processes-with-a-dedicated-user" class="md-nav__link">
-    Run WSO2 Processes with a Dedicated User
+    Run WSO2 processes with a dedicated user
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#minimize-installed-software" class="md-nav__link">
-    Minimize Installed Software
+    Minimize installed software
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#enable-the-firewall" class="md-nav__link">
-    Enable the Firewall
+    Enable the firewall
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#restrict-access-to-clustering-ports" class="md-nav__link">
-    Restrict Access to Clustering Ports
+    Restrict access to clustering ports
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#use-secure-shell-ssh" class="md-nav__link">
-    Use Secure Shell (SSH)
+    Use secure shell (SSH)
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#keep-the-system-up-to-date" class="md-nav__link">
-    Keep the System Up-to-Date
+    Keep the system up-to-date
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#monitor-user-activities" class="md-nav__link">
-    Monitor User Activities
+    Monitor user activities
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#perform-regular-backups" class="md-nav__link">
-    Perform Regular Backups
+    Perform regular backups
   </a>
   
 </li>
@@ -2467,56 +2467,56 @@
       
         <li class="md-nav__item">
   <a href="#run-wso2-processes-with-a-dedicated-user" class="md-nav__link">
-    Run WSO2 Processes with a Dedicated User
+    Run WSO2 processes with a dedicated user
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#minimize-installed-software" class="md-nav__link">
-    Minimize Installed Software
+    Minimize installed software
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#enable-the-firewall" class="md-nav__link">
-    Enable the Firewall
+    Enable the firewall
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#restrict-access-to-clustering-ports" class="md-nav__link">
-    Restrict Access to Clustering Ports
+    Restrict access to clustering ports
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#use-secure-shell-ssh" class="md-nav__link">
-    Use Secure Shell (SSH)
+    Use secure shell (SSH)
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#keep-the-system-up-to-date" class="md-nav__link">
-    Keep the System Up-to-Date
+    Keep the system up-to-date
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#monitor-user-activities" class="md-nav__link">
-    Monitor User Activities
+    Monitor user activities
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#perform-regular-backups" class="md-nav__link">
-    Perform Regular Backups
+    Perform regular backups
   </a>
   
 </li>
@@ -2554,16 +2554,16 @@
 
 
 <h1 id="os-level-security">OS level Security<a class="headerlink" href="#os-level-security" title="Permanent link">&para;</a></h1>
-<h3 id="run-wso2-processes-with-a-dedicated-user">Run WSO2 Processes with a Dedicated User<a class="headerlink" href="#run-wso2-processes-with-a-dedicated-user" title="Permanent link">&para;</a></h3>
+<h2 id="run-wso2-processes-with-a-dedicated-user">Run WSO2 processes with a dedicated user<a class="headerlink" href="#run-wso2-processes-with-a-dedicated-user" title="Permanent link">&para;</a></h2>
 <p>Use a dedicated OS-level user account to run WSO2 products. Assign only the minimum permissions necessary for running the product. Avoid using the root or administrator account, as these have full privileges by default and increase the risk of security breaches.</p>
-<h3 id="minimize-installed-software">Minimize Installed Software<a class="headerlink" href="#minimize-installed-software" title="Permanent link">&para;</a></h3>
+<h2 id="minimize-installed-software">Minimize installed software<a class="headerlink" href="#minimize-installed-software" title="Permanent link">&para;</a></h2>
 <p>Install only the software and packages required for your WSO2 product deployment. Unnecessary software can introduce vulnerabilities. Regularly review and monitor installed packages.</p>
-<p>Refer to the Installation Prerequisites for details on the minimum required software.</p>
-<h3 id="enable-the-firewall">Enable the Firewall<a class="headerlink" href="#enable-the-firewall" title="Permanent link">&para;</a></h3>
+<p>Refer to the <a href="/references/system-requirements">system requirements</a> for details on the minimum required software.</p>
+<h2 id="enable-the-firewall">Enable the firewall<a class="headerlink" href="#enable-the-firewall" title="Permanent link">&para;</a></h2>
 <p>Enable and configure a host-level firewall (e.g., iptables) to protect inbound and outbound connections. Only open the ports that are required for product functionality.</p>
-<h3 id="restrict-access-to-clustering-ports">Restrict Access to Clustering Ports<a class="headerlink" href="#restrict-access-to-clustering-ports" title="Permanent link">&para;</a></h3>
+<h2 id="restrict-access-to-clustering-ports">Restrict access to clustering ports<a class="headerlink" href="#restrict-access-to-clustering-ports" title="Permanent link">&para;</a></h2>
 <p>Apply firewall rules to restrict access to TCP ports used for clustering (e.g., ports 4000, 4001, etc.) so that they are accessible only to other nodes within the WSO2 product cluster. Prevent access from unrecognized or external hosts.</p>
-<h3 id="use-secure-shell-ssh">Use Secure Shell (SSH)<a class="headerlink" href="#use-secure-shell-ssh" title="Permanent link">&para;</a></h3>
+<h2 id="use-secure-shell-ssh">Use secure shell (SSH)<a class="headerlink" href="#use-secure-shell-ssh" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Always use Secure Shell (SSH) for remote server access and command execution. Follow these best practices when configuring SSH:</li>
 <li>Change the default SSH port to a non-standard, higher-numbered port.</li>
@@ -2571,11 +2571,11 @@
 <li>Enable authentication via SSH keys instead of passwords.</li>
 <li>Display a legal or security banner before authentication to warn unauthorized users.</li>
 </ul>
-<h3 id="keep-the-system-up-to-date">Keep the System Up-to-Date<a class="headerlink" href="#keep-the-system-up-to-date" title="Permanent link">&para;</a></h3>
-<p>Regularly apply security patches and updates for all installed packages, including the Java runtime. Test updates in a staging environment before deploying them to production.</p>
-<h3 id="monitor-user-activities">Monitor User Activities<a class="headerlink" href="#monitor-user-activities" title="Permanent link">&para;</a></h3>
+<h2 id="keep-the-system-up-to-date">Keep the system up-to-date<a class="headerlink" href="#keep-the-system-up-to-date" title="Permanent link">&para;</a></h2>
+<p>Regularly apply security patches and updates for all installed packages. Test updates in a staging environment before deploying them to production.</p>
+<h2 id="monitor-user-activities">Monitor user activities<a class="headerlink" href="#monitor-user-activities" title="Permanent link">&para;</a></h2>
 <p>Enable OS-level logging and review logs periodically to monitor user actions. Consider using a centralized logging or Security Information and Event Management (SIEM) solution for continuous monitoring.</p>
-<h3 id="perform-regular-backups">Perform Regular Backups<a class="headerlink" href="#perform-regular-backups" title="Permanent link">&para;</a></h3>
+<h2 id="perform-regular-backups">Perform regular backups<a class="headerlink" href="#perform-regular-backups" title="Permanent link">&para;</a></h2>
 <p>Back up all the critical files and data regularly, and store them securely.</p>
 
 
