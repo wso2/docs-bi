@@ -10,7 +10,8 @@ This guide shows how to build an integration that transforms a JSON payload into
 4. Select integration directory location by clicking on the **Select Path** button.
 5. Click on the **Create Integration** button to create the integration project.  
 
-    <a href="{{base_path}}/assets/img/developer-guides/data-mapping/create-integration.png"><img src="{{base_path}}/assets/img/developer-guides/data-mapping/create-integration.png" alt="Create Integration" width="70%"></a>
+    <a href="{{base_path}}/assets/img/developer-guides/data-mapping/create-integration.png">
+    <img src="{{base_path}}/assets/img/developer-guides/data-mapping/create-integration.png" alt="Create Integration" width="70%"></a>
 
 ## Step 2: Create an HTTP service
 
@@ -18,18 +19,14 @@ This guide shows how to build an integration that transforms a JSON payload into
 2. Select **HTTP Service** under the **Integration as API** category.
 3. Click on the **Create** button to create the new service with the default configurations.
 
-    <a href="{{base_path}}/assets/img/developer-guides/data-mapping/create-service.png"><img src="{{base_path}}/assets/img/developer-guides/data-mapping/create-service.png" alt="Create Service" width="70%"></a>
+    <a href="{{base_path}}/assets/img/developer-guides/data-mapping/create-service.png">
+    <img src="{{base_path}}/assets/img/developer-guides/data-mapping/create-service.png" alt="Create Service" width="70%"></a>
 
-## Step 3: Update the resource method
+## Step 3: Add the resource method
 
-1. Click the `Edit Resource` button.
-2. Change the resource HTTP method to **POST**.
-3. Change the resource path to `transform`.
-4. Add a new payload named `input` and click **Create New Type** to define the `Input` type.
-
-    <a href="{{base_path}}/assets/img/developer-guides/data-mapping/create-new-type.png"><img src="{{base_path}}/assets/img/developer-guides/data-mapping/create-new-type.png" alt="Create New Type" width="70%"></a>
-
-5. Switch to **Import** mode and provide the following JSON to create the BI type named `Input`.
+1. Click **Add Resource** and select **POST** method.
+2. Set the resource path as `transform`.
+3. Configure the request payload by pasting the JSON sample below. Set the type name as `Input` and the variable name to `input`.
 
     ```json
     {
@@ -53,12 +50,12 @@ This guide shows how to build an integration that transforms a JSON payload into
     }
     ```
 
-    <a href="{{base_path}}/assets/img/developer-guides/data-mapping/type-from-json.png"><img src="{{base_path}}/assets/img/developer-guides/data-mapping/type-from-json.png" alt="Create Type From JSON" width="70%"></a>
+    <a href="{{base_path}}/assets/img/developer-guides/data-mapping/create-new-type.gif">
+    <img src="{{base_path}}/assets/img/developer-guides/data-mapping/create-new-type.gif" alt="Create New Type" width="70%"></a>
 
-6. Click **Add** to save the payload configuration.
-7. Change the response body type of the `201` response to `Output`.
-8. To create the type named `Output`, click **Create New Type** within the **Message Body Type** editor.
-9. Switch to **Import** mode and provide the following JSON to create the BI type named `Output`.
+4. Change the response body schema of the `201` response to `Output`.
+5. To create the type named `Output`, click **Create New Type** within the **Message Body Type** editor.
+6. Switch to **Import** mode and provide the following JSON to create the BI type named `Output`.
 
     ```json
     {
@@ -80,10 +77,11 @@ This guide shows how to build an integration that transforms a JSON payload into
     }
     ```
 
-10. Click **Save** to apply the response configuration.
-11. Finally, click **Save** to update the resource with the specified configurations. 
-    
-    <a href="{{base_path}}/assets/img/developer-guides/data-mapping/edit-resource.png"><img src="{{base_path}}/assets/img/developer-guides/data-mapping/edit-resource.png" alt="Edit Resource" width="70%"></a>
+    <a href="{{base_path}}/assets/img/developer-guides/data-mapping/type-from-json.gif">
+    <img src="{{base_path}}/assets/img/developer-guides/data-mapping/type-from-json.gif" alt="Create Type From JSON" width="70%"></a>
+
+7. Click **Save** to apply the response configuration.
+8. Finally, click **Save** to update the resource with the specified configurations. 
 
 
 !!! info "Resource Method"

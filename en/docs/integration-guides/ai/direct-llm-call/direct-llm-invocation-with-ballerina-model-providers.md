@@ -14,7 +14,7 @@ Follow the steps below to implement the integration.
 1. Click on the WSO2 Integrator: BI icon on the sidebar.
 2. Click on the **`Create New Integration`** button.
 3. Enter `BlogReviewer` as the project name.
-4. Select Project Directory and click on the **`Select Location`** button.
+4. Click the **`Select Path`** button to set the Integration Path.
 5. Click on the **`Create New Integration`** button to create the integration project.
 
 ### Step 2: Define types
@@ -22,7 +22,7 @@ Follow the steps below to implement the integration.
 1. Click on the **`Add Artifacts`** button and select **`Type`** in the **`Other Artifacts`** section.
 2. Click on **`+ Add Type`** to add a new type.
 3. Click on **`Import`** button in the top right corner of the type editor.
-4. Use `Blog` as the **`Name`**. Then select **`JSON`** on the dropdown and paste the following JSON payload. Then Click on the **`Import`** button.
+4. Use `Blog` as the **`Name`**. Then select **`JSON`** from the dropdown and paste the following JSON payload. Then click the **`Import`** button.
 
     ```json
     {
@@ -46,36 +46,31 @@ Follow the steps below to implement the integration.
 
 
 ### Step 3: Create an HTTP service
-1. In the design view, click on the **`Add Artifact`** button.
+1. In the design view, click the **`Add Artifact`** button.
 2. Select **`HTTP Service`** under the **`Integration as API`** category.
-3. Select the **`Create and use the default HTTP listener (port: 9090)`** option from the **`Listeners`** dropdown.
-4. Select the **`Design from Scratch`** option as the **`Service Contract`** and use `/blogs` as the **`Service base path`**.
-5. Click on the **`Create`** button to create the new service with the specified configurations.
+3. Select the **`Design from Scratch`** option as the **`Service Contract`** and use `/blogs` as the **`Service base path`**.
+4. Click the **`Create`** button to create the new service with the specified configurations.
 
     <a href="{{base_path}}/assets/img/learn/references/direct-llm-call/service_decl_direct_llm_call.png"><img src="{{base_path}}/assets/img/learn/references/direct-llm-call/service_decl_direct_llm_call.png" alt="HTTP Service" width="70%"></a>
 
-6. The service will have a default resource named `greeting` with the **`GET`** method. Click on the three dots that appear in front of the `/blogs` service and select **`Edit`** from the menu.
-7. Then click the **`Edit`** button in front of `/greeting` resource.
-8. Change the resource HTTP method to **`POST`**.
-9. Change the resource name to `review`.
-10. Click on **`Add Payload`** and specify `blog` as the name and `Blog` as the type.
-11. Change the 201 response return type to `Review` and convert it to nilable type using type operators.
-12. Click on the **`Save`** button to update the resource with the specified configurations.
+5. From the HTTP Service view, click **`+ Add Resource`** and select the **`POST`** method.
+6. Give the resource path as `review`.
+7. Click **`Define Payload`**, go to the third tab (**`Browse Existing Types`**), search for the type `Blog`, select it, and click **`Save`**.
+8. Under Responses, edit the 201 response and change its response body schema to Review using the Advanced Configurations section.
+9. Click **`Save`** to create the resource with the specified configurations.
 
     <a href="{{base_path}}/assets/img/learn/references/direct-llm-call/update_resource_direct_llm_call_docs.gif"><img src="{{base_path}}/assets/img/learn/references/direct-llm-call/update_resource_direct_llm_call_docs.gif" alt="Create HTTP service" width="70%"></a>
 
 ### Step 4: Implement the resource logic
-1. Click on the `review` resource to navigate to the resource implementation designer view.
-2. Hover over the arrow after start and click the ➕ button to add a new action to the resource.
+1. Once redirected to the `review` resource implementation designer view, follow these steps to implement the logic:
+2. Hover over the arrow after the Start node and click the ➕ button to add a new action to the resource.
 3. Select **`Model Provider`** from the node panel.
-4. Click on the `+ Add Model Provider`.
-5. Click on the `Default Model Provider (WSO2)`.
-6. Then add `model` as the name of the model provider and `ai:Wso2ModelProvider` as the result type.
-7. Then click on the **`Save`** button.
-8. Then click on the `model` variable under the `Model Providers` node.
-9. It will shows the list of available APIs from the model provider. Select the `generate` API from the list.
-10. Use the following prompt as the **`Prompt`** for reviewing blog usecase. Add the name of the result variable as `review`. Use `Review` as the return type and convert it to nilable type using type operators. 
-    Then click on the **`Save`** button.
+4. Click **`+ Add Model Provider`**.
+5. Click **`Default Model Provider (WSO2)`**.
+6. Enter `model` as the name of the model provider and `ai:Wso2ModelProvider` as the result type, then click **`Save`**.
+7. Click the `model` variable under the `Model Providers` node.
+8. It will show the list of available APIs from the model provider. Select the `generate` API from the list.
+9. Use the following prompt as the **`Prompt`** for the blog review use case. Set the name of the result variable to `review`, use `Review` as the return type, and convert it to a nilable type using type operators. Then click **`Save`**.
 
     ```plaintext
     You are an expert content reviewer for a blog site that 
@@ -94,14 +89,14 @@ Follow the steps below to implement the integration.
 
     Here is the blog post content:
 
-        Title: ${blog.title}
-        Content: ${blog.content}
+        Title: ${payload.title}
+        Content: ${payload.content}
     ```
 
     <a href="{{base_path}}/assets/img/learn/references/direct-llm-call/add_generate_call_direct_llm_docs.gif"><img src="{{base_path}}/assets/img/learn/references/direct-llm-call/add_generate_call_direct_llm_docs.gif" alt="Implement resource logic"></a>
 
-11. Add a new node after the `generate` API call and select **`Return`** from the node panel.
-12. Select the `review` variable from the dropdown and click **`Save`**.
+10. Add a new node after the `generate` API call and select **`Return`** from the node panel.
+11. Select the `review` variable from the dropdown and click **`Save`**.
 
     <a href="{{base_path}}/assets/img/learn/references/direct-llm-call/return_node_direct_llm_call_docs.gif"><img src="{{base_path}}/assets/img/learn/references/direct-llm-call/return_node_direct_llm_call_docs.gif" alt="Add Return" width="70%"></a>
 
