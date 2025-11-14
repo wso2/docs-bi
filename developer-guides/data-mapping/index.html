@@ -1036,8 +1036,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-update-the-resource-method" class="md-nav__link">
-    Step 3: Update the resource method
+  <a href="#step-3-add-the-resource-method" class="md-nav__link">
+    Step 3: Add the resource method
   </a>
   
 </li>
@@ -2519,8 +2519,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-update-the-resource-method" class="md-nav__link">
-    Step 3: Update the resource method
+  <a href="#step-3-add-the-resource-method" class="md-nav__link">
+    Step 3: Add the resource method
   </a>
   
 </li>
@@ -2643,7 +2643,8 @@
 <li>Select integration directory location by clicking on the <strong>Select Path</strong> button.</li>
 <li>
 <p>Click on the <strong>Create Integration</strong> button to create the integration project.  </p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/data-mapping/create-integration.png"><img src="https://wso2.github.io/docs-bi/assets/img/developer-guides/data-mapping/create-integration.png" alt="Create Integration" width="70%"></a></p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/data-mapping/create-integration.png">
+<img src="https://wso2.github.io/docs-bi/assets/img/developer-guides/data-mapping/create-integration.png" alt="Create Integration" width="70%"></a></p>
 </li>
 </ol>
 <h2 id="step-2-create-an-http-service">Step 2: Create an HTTP service<a class="headerlink" href="#step-2-create-an-http-service" title="Permanent link">&para;</a></h2>
@@ -2652,20 +2653,16 @@
 <li>Select <strong>HTTP Service</strong> under the <strong>Integration as API</strong> category.</li>
 <li>
 <p>Click on the <strong>Create</strong> button to create the new service with the default configurations.</p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/data-mapping/create-service.png"><img src="https://wso2.github.io/docs-bi/assets/img/developer-guides/data-mapping/create-service.png" alt="Create Service" width="70%"></a></p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/data-mapping/create-service.png">
+<img src="https://wso2.github.io/docs-bi/assets/img/developer-guides/data-mapping/create-service.png" alt="Create Service" width="70%"></a></p>
 </li>
 </ol>
-<h2 id="step-3-update-the-resource-method">Step 3: Update the resource method<a class="headerlink" href="#step-3-update-the-resource-method" title="Permanent link">&para;</a></h2>
+<h2 id="step-3-add-the-resource-method">Step 3: Add the resource method<a class="headerlink" href="#step-3-add-the-resource-method" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Click the <code>Edit Resource</code> button.</li>
-<li>Change the resource HTTP method to <strong>POST</strong>.</li>
-<li>Change the resource path to <code>transform</code>.</li>
+<li>Click <strong>Add Resource</strong> and select <strong>POST</strong> method.</li>
+<li>Set the resource path as <code>transform</code>.</li>
 <li>
-<p>Add a new payload named <code>input</code> and click <strong>Create New Type</strong> to define the <code>Input</code> type.</p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/data-mapping/create-new-type.png"><img src="https://wso2.github.io/docs-bi/assets/img/developer-guides/data-mapping/create-new-type.png" alt="Create New Type" width="70%"></a></p>
-</li>
-<li>
-<p>Switch to <strong>Import</strong> mode and provide the following JSON to create the BI type named <code>Input</code>.</p>
+<p>Configure the request payload by pasting the JSON sample below. Set the type name as <code>Input</code> and the variable name to <code>input</code>.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;user&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;firstName&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">,</span>
@@ -2687,12 +2684,12 @@
 <span class="p">}</span>
 </code></pre></div>
 
-<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/data-mapping/type-from-json.png"><img src="https://wso2.github.io/docs-bi/assets/img/developer-guides/data-mapping/type-from-json.png" alt="Create Type From JSON" width="70%"></a></p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/data-mapping/create-new-type.gif">
+<img src="https://wso2.github.io/docs-bi/assets/img/developer-guides/data-mapping/create-new-type.gif" alt="Create New Type" width="70%"></a></p>
 </li>
 <li>
-<p>Click <strong>Add</strong> to save the payload configuration.</p>
+<p>Change the response body schema of the <code>201</code> response to <code>Output</code>.</p>
 </li>
-<li>Change the response body type of the <code>201</code> response to <code>Output</code>.</li>
 <li>To create the type named <code>Output</code>, click <strong>Create New Type</strong> within the <strong>Message Body Type</strong> editor.</li>
 <li>
 <p>Switch to <strong>Import</strong> mode and provide the following JSON to create the BI type named <code>Output</code>.</p>
@@ -2715,14 +2712,13 @@
 <span class="p">}</span>
 </code></pre></div>
 
+<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/data-mapping/type-from-json.gif">
+<img src="https://wso2.github.io/docs-bi/assets/img/developer-guides/data-mapping/type-from-json.gif" alt="Create Type From JSON" width="70%"></a></p>
 </li>
 <li>
 <p>Click <strong>Save</strong> to apply the response configuration.</p>
 </li>
-<li>
-<p>Finally, click <strong>Save</strong> to update the resource with the specified configurations. </p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/data-mapping/edit-resource.png"><img src="https://wso2.github.io/docs-bi/assets/img/developer-guides/data-mapping/edit-resource.png" alt="Edit Resource" width="70%"></a></p>
-</li>
+<li>Finally, click <strong>Save</strong> to update the resource with the specified configurations. </li>
 </ol>
 <div class="admonition info">
 <p class="admonition-title">Resource Method</p>

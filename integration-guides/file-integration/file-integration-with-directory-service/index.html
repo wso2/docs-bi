@@ -2498,7 +2498,8 @@
 
 
 <h1 id="file-integration-with-directory-service">File Integration With Directory Service<a class="headerlink" href="#file-integration-with-directory-service" title="Permanent link">&para;</a></h1>
-<p>In this section, we will learn how to create a file integration using the WSO2 Integrator: BI. The integration will listen to events in a directory and will be triggered when an file related event occurs.</p>
+<p>In this section, we will learn how to create a file integration using the WSO2 Integrator: BI. 
+The integration will listen to events in a directory and will be triggered for file-related events.</p>
 <h2 id="step-1-create-a-new-integration-project">Step 1: Create a new integration project<a class="headerlink" href="#step-1-create-a-new-integration-project" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Click on the <strong>BI</strong> icon on the sidebar.</li>
@@ -2511,24 +2512,29 @@
 <ol>
 <li>In the design view, click on the <strong>Add Artifact</strong> button.</li>
 <li>Select <strong>Directory Service</strong> under the <strong>File Integration</strong> category.</li>
-<li>Enter the listener name as <code>directoryListener</code>.</li>
-<li>Enter the path to the directory you want to monitor. For example, <code>"/home/user/Downloads"</code>.</li>
-<li>Click on the <strong>Next</strong> button to create the directory service.</li>
+<li>Enter the path to the directory you want to monitor. For example, <code>/user/home/Downloads</code>.</li>
 <li>
-<p>Keep the default listener in the <strong>Listener Configuration</strong> window and click on the <strong>Create</strong> button to create the directory service.</p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/file-integration/directory-service.gif"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/file-integration/directory-service.gif" alt="Create Directory Service" width="70%"></a></p>
+<p>Click on the <strong>Save</strong> button to create the directory service.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/file-integration/create-service.gif">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/file-integration/create-service.gif" alt="Create Directory Service" width="70%"></a></p>
 </li>
 </ol>
 <h2 id="step-3-configure-file-event-resources">Step 3: Configure file event resources<a class="headerlink" href="#step-3-configure-file-event-resources" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Navigate to the <code>directoryListener</code> service  under the <strong>Entry Points</strong> section and click on the <strong>+Function</strong>  button.</li>
-<li>Select <strong>onCreate</strong> from <strong>Available Functions</strong> dropdown and click on the <strong>Save</strong> button.</li>
-<li>Click on the <strong>onCreate</strong> function to navigate to the function implementation designer view.</li>
+<li>
+<p>Click <strong>Add Handler</strong> button and select <strong>onCreate</strong> handler.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/file-integration/add-function.gif">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/file-integration/add-function.gif" alt="onCreate Function" width="70%"></a></p>
+</li>
+<li>
+<p>Click on the <strong>onCreate</strong> function to navigate to the function implementation designer view.</p>
+</li>
 <li>Click on <strong>+</strong> and select <strong>Log Info</strong> from the node panel under <strong>Logging</strong> category.</li>
 <li>Add the log message as <code>"File created "+ event.name</code> in the <strong>Msg</strong> field.</li>
 <li>
 <p>Click on the <strong>Save</strong> button to add the log action to the function.</p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/file-integration/add-resource.gif"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/file-integration/add-resource.gif" alt="onCreate Function" width="70%"></a></p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/file-integration/add-log.gif">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/file-integration/add-log.gif" alt="onCreate Function" width="70%"></a></p>
 </li>
 <li>
 <p>Repeat the above steps to add the <strong>onDelete</strong> and <strong>onModify</strong> functions to the service.</p>
@@ -2537,7 +2543,8 @@
 <li>Add the log message as <code>"File modified "+ event.name</code> in the <strong>Msg</strong> field for the <strong>onModify</strong> function.</li>
 <li>
 <p>The final service will look like this:      </p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/file-integration/final-service.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/file-integration/final-service.png" alt="Final Service" width="70%"></a></p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/file-integration/final-service.png">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/file-integration/final-service.png" alt="Final Service" width="70%"></a></p>
 </li>
 </ol>
 <h2 id="step-4-run-the-integration">Step 4: Run the integration<a class="headerlink" href="#step-4-run-the-integration" title="Permanent link">&para;</a></h2>
@@ -2549,7 +2556,8 @@
 <li>Delete the file to trigger the <strong>onDelete</strong> event.</li>
 <li>
 <p>The log messages will be displayed in the console.   </p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/file-integration/run-integration.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/file-integration/run-integration.png" alt="Run Integration" width="70%"></a></p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/file-integration/run-integration.png">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/file-integration/run-integration.png" alt="Run Integration" width="70%"></a></p>
 </li>
 </ol>
 

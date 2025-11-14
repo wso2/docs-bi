@@ -2583,10 +2583,14 @@
 
 <h1 id="content-based-message-routing">Content-Based Message Routing<a class="headerlink" href="#content-based-message-routing" title="Permanent link">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-<p>In this tutorial, you'll create a service that allows users to reserve appointments at various hospitals. Requests will be directed to the appropriate hospital based on the request payload's content.
-To accomplish this, you’ll build a REST service with a single resource in WSO2 Integrator: BI extension. The resource will handle user requests, identify the hospital endpoint based on the hospital ID, forward the request to the specified hospital service to make the reservation, and return the reservation details.</p>
+<p>In this tutorial, you'll create a service that allows users to reserve appointments at various hospitals. 
+Requests will be directed to the appropriate hospital based on the request payload's content.
+To accomplish this, you’ll build a REST service with a single resource in WSO2 Integrator: BI extension. 
+The resource will handle user requests, identify the hospital endpoint based on the hospital ID, 
+forward the request to the specified hospital service to make the reservation, and return the reservation details.</p>
 <p>Here’s an overview of the process flow.</p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/introduction.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/introduction.png" alt="Message Routing" width="70%"></a></p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/introduction.png">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/introduction.png" alt="Message Routing" width="70%"></a></p>
 <ol>
 <li>
 <p>Receive a request with a JSON payload similar to the following.</p>
@@ -2649,9 +2653,13 @@ To accomplish this, you’ll build a REST service with a single resource in WSO2
 <li>In the design view, click on the <strong>Add Artifact</strong> button.</li>
 <li>Select <strong>HTTP Service</strong> under the <strong>Integration as API</strong> category.</li>
 <li>Select the <strong>+ Listeners</strong> option from the <strong>Listeners</strong> dropdown to add a new listener.</li>
-<li>Enter the listener name as <code>healthListener</code>, <code>8290</code> as the port and click on the <strong>Create</strong> button. </li>
 <li>Add the service base path as <code>/healthcare</code> and select the <strong>Design from Scratch</strong> option as the <strong>The contract of the service</strong>.</li>
-<li>Click on the <strong>Create</strong> button to create the new service with the specified configurations.</li>
+<li>Enter the listener name as <code>healthListener</code>, <code>8290</code> as the port in Advanced Configurations.</li>
+<li>
+<p>Click on the <strong>Save</strong> button to create the new service with the specified configurations.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/create-service.png">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/create-service.png" alt="Create Service" width="70%"></a></p>
+</li>
 </ol>
 <h2 id="step-3-define-types">Step 3: Define types<a class="headerlink" href="#step-3-define-types" title="Permanent link">&para;</a></h2>
 <ol>
@@ -2691,7 +2699,8 @@ To accomplish this, you’ll build a REST service with a single resource in WSO2
 </code></pre></div></li>
 <li>
 <p>The final Type diagram will look like below.     </p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/types.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/types.png" alt="Create Type" width="70%"></a></p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/types.png">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/types.png" alt="Create Type" width="70%"></a></p>
 </li>
 </ol>
 <h2 id="step-4-add-connectors">Step 4: Add connectors<a class="headerlink" href="#step-4-add-connectors" title="Permanent link">&para;</a></h2>
@@ -2701,7 +2710,8 @@ To accomplish this, you’ll build a REST service with a single resource in WSO2
 <li>Enter the connector name as <code>grandOakEp</code>, URL as <code>"http://localhost:9090/grandoak/categories"</code>.</li>
 <li>
 <p>Click on the <strong>Save</strong> button to create the new connector with the specified configurations.</p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/add-connector.gif"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/add-connector.gif" alt="Add Connector" width="70%"></a>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/add-connector.gif">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/add-connector.gif" alt="Add Connector" width="70%"></a>
 5. Repeat the above steps to add connectors for the <code>clemency</code> and <code>pinevalley</code> hospitals with the following configurations.</p>
 <table>
 <thead>
@@ -2724,7 +2734,8 @@ To accomplish this, you’ll build a REST service with a single resource in WSO2
 </li>
 <li>
 <p>The final connectors will look like below.     </p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/connectors.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/connectors.png" alt="Connectors" width="70%"></a></p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/connectors.png">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/connectors.png" alt="Connectors" width="70%"></a></p>
 </li>
 </ol>
 <details class="info" open="open"><summary>HTTP Connector</summary><p>To learn more about HTTP client, see <a href="https://ballerina.io/learn/by-example/http-client-send-request-receive-response/">Ballerina HTTP Client</a>.
@@ -2732,16 +2743,15 @@ See supported advanced client configurations in the <a href="https://central.bal
 </details>
 <h2 id="step-5-add-a-resource-method">Step 5: Add a resource method<a class="headerlink" href="#step-5-add-a-resource-method" title="Permanent link">&para;</a></h2>
 <ol>
-<li>The service will have a default resource named <code>greeting</code> with the <strong>GET</strong> method. Click on three dots appear in front of the <code>/healthCare</code> service resource and select <strong>Edit</strong> from menu.</li>
-<li>Then click the edit button in front of <code>/greeting</code> resource to edit the resource.</li>
-<li>Change the resource HTTP method to <strong>POST</strong>.</li>
-<li>Change the resource name as <code>categories/[string category]/reserve</code>.</li>
-<li>Add a payload parameter named <code>reservation</code> to the resource of type <code>ReservationRequest</code>.</li>
-<li>Change the 201 response return type to <code>ReservationResponse</code>.</li>
-<li>Add a new response of type <strong>HttpNotFound</strong> under the responses.</li>
+<li>Click <strong>Add Resource</strong> and select <strong>POST</strong> method.</li>
+<li>Set the resource path as <code>categories/[string category]/reserve</code>.</li>
+<li>Define the payload type as <code>ReservationRequest</code>.</li>
+<li>Change the 201 response return type to <code>ReservationStatus</code>.</li>
+<li>Add a new response of type <strong>HttpNotFound</strong> under the responses.   </li>
 <li>
-<p>Click on the <strong>Save</strong> button to update the resource with the specified configurations.</p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/update-resource.gif"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/update-resource.gif" alt="Update Resource" width="70%"></a></p>
+<p>Click on the <strong>Save</strong> button to save the resource.   </p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/resource.gif">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/resource.gif" alt="Update Resource" width="70%"></a></p>
 </li>
 </ol>
 <h2 id="step-6-add-the-routing-logic">Step 6: Add the routing logic<a class="headerlink" href="#step-6-add-the-routing-logic" title="Permanent link">&para;</a></h2>
@@ -2750,29 +2760,31 @@ See supported advanced client configurations in the <a href="https://central.bal
 <li>Delete the default <code>Return</code> action from the resource.</li>
 <li>Hover to the arrow after start and click the ➕ button to add a new action to the resource.</li>
 <li>Select <strong>Declare Variable</strong> from the node panel on the left. This variable will be used to store the request payload for the hospital service.</li>
-<li>Change the variable name to <code>hospitalRequset</code>, type as <code>json</code> and expression as below and click <strong>Save</strong>.
+<li>
+<p>Change the variable name to <code>hospitalRequset</code>, type as <code>json</code> and expression as below and click <strong>Save</strong>.
     <div class="highlight"><pre><span></span><code>{
-    patient: reservation.patient.toJson(),
-    doctor: reservation.doctor,
-    hospital: reservation.hospital,
-    appointment_date: reservation.appointment_date
+    patient: payload.patient.toJson(),
+    doctor: payload.doctor,
+    hospital: payload.hospital,
+    appointment_date: payload.appointment_date
 }
-</code></pre></div></li>
+</code></pre></div></p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/declare-variable.png">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/declare-variable.png" alt="Declare Variable" width="70%"></a></p>
+</li>
 <li>
 <p>Add <strong>If</strong> from the node panel after <code>hospitalRequest</code> variable. Enter the conditions as <strong>If</strong> <strong>Else If</strong> blocks as below for each hospital.</p>
 <ul>
-<li>grandOak -&gt; <code>reservation.hospital_id == "grandoak"</code></li>
-<li>clemency -&gt; <code>reservation.hospital_id == "clemency"</code></li>
-<li>pineValley -&gt; <code>reservation.hospital_id == "pinevalley"</code>  </li>
+<li>grandOak -&gt; <code>payload.hospital_id == "grandoak"</code></li>
+<li>clemency -&gt; <code>payload.hospital_id == "clemency"</code></li>
+<li>pineValley -&gt; <code>payload.hospital_id == "pinevalley"</code>  </li>
 </ul>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/add-if.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/add-if.png"" alt="Add If" width="70%"></a></p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/add-if.png">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/add-if.png" alt="Add If" width="70%"></a></p>
 </li>
 <li>
-<p>Select the <code>grandOakEP</code> condition true path ➕ sign and select <strong>grandOakEP</strong> connector from the node panel.</p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/add-connector-action.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/add-connector-action.png" alt="Add Connector Action" width="70%"></a></p>
-</li>
-<li>
-<p>Select <strong>post</strong> from the dropdown. Then, fill in the required fields with the values given below and click <strong>Save</strong>.</p>
+<p>Select the <code>grandOakEP</code> condition true path ➕ sign and select <strong>grandOakEP</strong> connector from the node panel and select <strong>post</strong> from the dropdown.
+ Then, fill in the required fields with the values given below.</p>
 <table>
 <thead>
 <tr>
@@ -2790,19 +2802,25 @@ See supported advanced client configurations in the <a href="https://central.bal
 <td><code>ReservationResponse</code></td>
 </tr>
 <tr>
-<td>Resource Path</td>
+<td>Path</td>
 <td><code>string `/${category}/reserve`</code></td>
 </tr>
 <tr>
-<td>message</td>
+<td>Message</td>
 <td><code>hospitalRequset</code></td>
 </tr>
 </tbody>
 </table>
 </li>
 <li>
+<p>Click <strong>Save</strong>.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/add-connector-action.png">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/add-connector-action.png" alt="Add Connector Action" width="70%"></a></p>
+</li>
+<li>
 <p>Click on the ➕ sign again and select <strong>Return</strong> from the node panel. Select the <code>oakEPResponse</code> variable from the dropdown and click <strong>Save</strong>.</p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/add-return.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/add-return.png" alt="Add Return" width="70%"></a></p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/add-return.png">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/add-return.png" alt="Add Return" width="70%"></a></p>
 </li>
 <li>
 <p>The steps above will add the routing logic for the <code>grandoak</code> hospital. A variable named <code>oakEPResponse</code> will store the response from the <code>grandoak</code> hospital service. The response will be returned to the client.</p>
@@ -2827,11 +2845,11 @@ See supported advanced client configurations in the <a href="https://central.bal
 <td><code>ReserveResponse</code></td>
 </tr>
 <tr>
-<td>Resource Path</td>
+<td>Path</td>
 <td><code>string `/${category}/reserve`</code></td>
 </tr>
 <tr>
-<td>message</td>
+<td>Message</td>
 <td><code>hospitalRequset</code></td>
 </tr>
 </tbody>
@@ -2854,11 +2872,11 @@ See supported advanced client configurations in the <a href="https://central.bal
 <td><code>ReserveResponse</code></td>
 </tr>
 <tr>
-<td>Resource Path</td>
+<td>Path</td>
 <td><code>string `/${category}/reserve`</code></td>
 </tr>
 <tr>
-<td>message</td>
+<td>Message</td>
 <td><code>hospitalRequset</code></td>
 </tr>
 </tbody>
@@ -2869,7 +2887,8 @@ See supported advanced client configurations in the <a href="https://central.bal
 </li>
 <li>
 <p>The final design will look like below.             </p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/final-design.png"><img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/final-design.png"" alt="Final Design" width="70%"></a></p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/final-design.png">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/integration-as-api/message-routing/final-design.png" alt="Final Design" width="70%"></a></p>
 </li>
 </ol>
 <h2 id="step-7-run-the-service">Step 7: Run the service<a class="headerlink" href="#step-7-run-the-service" title="Permanent link">&para;</a></h2>

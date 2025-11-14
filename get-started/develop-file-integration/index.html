@@ -526,8 +526,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-run-the-integration-in-wso2-integrator-bi" class="md-nav__link">
-    Step 2: Run the integration in WSO2 Integrator: BI
+  <a href="#step-2-log-add-file-events" class="md-nav__link">
+    Step 2: Log Add File Events
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-run-the-integration-in-wso2-integrator-bi" class="md-nav__link">
+    Step 3: Run the integration in WSO2 Integrator: BI
   </a>
   
 </li>
@@ -2459,8 +2466,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-run-the-integration-in-wso2-integrator-bi" class="md-nav__link">
-    Step 2: Run the integration in WSO2 Integrator: BI
+  <a href="#step-2-log-add-file-events" class="md-nav__link">
+    Step 2: Log Add File Events
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-run-the-integration-in-wso2-integrator-bi" class="md-nav__link">
+    Step 3: Run the integration in WSO2 Integrator: BI
   </a>
   
 </li>
@@ -2508,88 +2522,18 @@
 </ul>
 <h2 id="step-1-develop-file-integration-in-wso2-integrator-bi">Step 1: Develop File Integration in WSO2 Integrator: BI<a class="headerlink" href="#step-1-develop-file-integration-in-wso2-integrator-bi" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Choose the <strong>Integration Type</strong> as <code>File Integration</code> and click <strong>Create</strong>.</li>
+<li>Create an empty integration project.</li>
+<li>Click on the <strong>Add Artifact</strong> button, then under <strong>File Integration</strong> select <strong>FTP Service</strong>.</li>
+<li>Click on the <strong>Save</strong> button to create the ftp service by filling the rquired fields.</li>
+<li>
+<p>Click on the <strong>Add Handler</strong> and select <strong>onFileChange</strong> handler.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/get-started/develop-file-integration/create-service.gif">
+<img src="https://wso2.github.io/docs-bi/assets/img/get-started/develop-file-integration/create-service.gif" alt="Configure FTP Service" width="70%"></a></p>
+</li>
 </ol>
-<p>This redirects you to the <strong>Create New Integration in VS Code</strong> page. </p>
+<h2 id="step-2-log-add-file-events">Step 2: Log Add File Events<a class="headerlink" href="#step-2-log-add-file-events" title="Permanent link">&para;</a></h2>
 <ol>
-<li>
-<p>Click on the <strong>Configure</strong> button on the top-right side, and add the following configurables.</p>
-<table>
-<thead>
-<tr>
-<th>Configurable</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>host</code></td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td><code>username</code></td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td><code>password</code></td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td><code>path</code></td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td><code>pattern</code></td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/get-started/develop-file-integration/add-configurables.gif"><img src="https://wso2.github.io/docs-bi/assets/img/get-started/develop-file-integration/add-configurables.gif" alt="Add Configurations" width="80%"></a></p>
-</li>
-<li>
-<p>Go to the <strong>Design View</strong> by clicking the Home icon in the top left corner and click <strong>Add Artifact</strong>.</p>
-</li>
-<li>Select <strong>FTP Service</strong>. Choosing the <strong>File Integration</strong> from the Devant console disables the other options.</li>
-<li>Provide the name of the <strong>Listener Configuration</strong> as <code>weatherListener</code>.</li>
-<li>
-<p>Then expand the <strong>Advanced Configurations</strong> and enter the following configurables:</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Host</strong></td>
-<td><code>host</code></td>
-</tr>
-<tr>
-<td><strong>Auth</strong></td>
-<td><code>{ credentials: { username: username, password: password }}</code></td>
-</tr>
-<tr>
-<td><strong>Path</strong></td>
-<td><code>path</code></td>
-</tr>
-<tr>
-<td><strong>FileNamePattern</strong></td>
-<td><code>pattern</code></td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>Click <strong>Next</strong>, and you will see the created listener with the name <code>weatherListener</code>. </p>
-</li>
-<li>
-<p>Then click on <strong>Create</strong>. It will redirect you to the <strong>Service Designer</strong> view.</p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/get-started/develop-file-integration/setup-listener-and-service-configs.gif"><img src="https://wso2.github.io/docs-bi/assets/img/get-started/develop-file-integration/setup-listener-and-service-configs.gif" alt="Setup listener & service configs" width="80%"></a></p>
-</li>
-<li>
-<p>In the <strong>Design</strong> view, click the <code>onFileChange</code> function box. It will redirect you to the flow diagram view.</p>
-</li>
+<li>In the <strong>Design</strong> view, click the <code>onFileChange</code> function box. It will redirect you to the flow diagram view.</li>
 <li>Click the plus icon after the <strong>Start</strong> node to open the node panel.</li>
 <li>
 <p>Select <strong>Foreach</strong> and enter the following values in relevant fields:</p>
@@ -2603,7 +2547,7 @@
 <tbody>
 <tr>
 <td><strong>Variable Name</strong></td>
-<td><code>addFile</code></td>
+<td><code>addedFile</code></td>
 </tr>
 <tr>
 <td><strong>Variable Type</strong></td>
@@ -2615,13 +2559,16 @@
 </tr>
 </tbody>
 </table>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/get-started/develop-file-integration/add-foreach.gif">
+<img src="https://wso2.github.io/docs-bi/assets/img/get-started/develop-file-integration/add-foreach.gif" alt="Add Iterator" width="70%"></a></p>
 </li>
 <li>
-<p>Under the <strong>Foreach</strong> node, add a <strong>Log Info</strong> node with the <strong>Msg</strong> as <code>"File added:" + addedFiles.name</code>. </p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/get-started/develop-file-integration/implement-onfilechange.gif"><img src="https://wso2.github.io/docs-bi/assets/img/get-started/develop-file-integration/implement-onfilechange.gif" alt="Setup listener & service configs" width="80%"></a></p>
+<p>Under the <strong>Foreach</strong> node, add a <strong>Log Info</strong> node with the <strong>Msg</strong> as <code>"File added:" + addedFile.name</code>. </p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/get-started/develop-file-integration/add-log.gif">
+<img src="https://wso2.github.io/docs-bi/assets/img/get-started/develop-file-integration/add-log.gif" alt="Add Log" width="70%"></a></p>
 </li>
 </ol>
-<h2 id="step-2-run-the-integration-in-wso2-integrator-bi">Step 2: Run the integration in WSO2 Integrator: BI<a class="headerlink" href="#step-2-run-the-integration-in-wso2-integrator-bi" title="Permanent link">&para;</a></h2>
+<h2 id="step-3-run-the-integration-in-wso2-integrator-bi">Step 3: Run the integration in WSO2 Integrator: BI<a class="headerlink" href="#step-3-run-the-integration-in-wso2-integrator-bi" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Click <strong>Run</strong> in the top right corner to run the integration. This compiles the integration and runs it in the embedded Ballerina runtime.</li>
 </ol>
