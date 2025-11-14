@@ -99,6 +99,8 @@ nav:
         - Service Orchestration: integration-guides/integration-as-api/service-orchestration.md
         - Message Transformation: integration-guides/integration-as-api/message-transformation.md
         - Message Routing: integration-guides/integration-as-api/message-routing.md
+      - Integration Service As a Managed API:
+        - How to Expose an Integration Service as a Managed API: integration-guides/integration-service-as-a-managed-api/how-to-expose-an-integration-service-as-a-managed-api.md
       - File Integration:
         - File Integration With Directory Service: integration-guides/file-integration/file-integration-with-directory-service.md
   - Developer Guides:
@@ -246,5 +248,5 @@ extra:
     - type: linkedin
       link: https://www.linkedin.com/company/wso2
   # site_version: Uncomment to specify a version
-  base_path: https://wso2.github.io/docs-bi
-  # base_path: http://localhost:8000
+  #base_path: https://wso2.github.io/docs-bi
+  base_path: http://localhost:8000
