@@ -4,7 +4,7 @@
 
 In this tutorial, you'll define an integration service using WSO2 Integrator: BI Extension for Visual Studio Code (BI for VS Code) and expose it as a managed API to the API marketplace. API consumers then **discover** the API from the marketplace, **subscribe** to it, and **use it** for application development.
 
-<a href="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/exposing-servie-as-managed-api.png"><img src="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/exposing-servie-as-managed-api.png" alt="exposing integration service as a managed api"></a>
+<a href="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/exposing-service-as-managed-api.png"><img src="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/exposing-service-as-managed-api.png" alt="exposing integration service as a managed api"></a>
 
 This demonstrates how the integration components and API management components of WSO2 API Manager work together to enable API-led integration.
 
@@ -56,7 +56,7 @@ Now let's start designing the integration by adding the necessary artifacts.
 
 6. Select the **GET** method, enter the **Resource Path** as `querydoctor`, add the **Query Parameter** `category`, and click **Save**.
 
-    <a href="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/resource.png"><img src="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/resource.png" alt="resorce" width="80%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/resource.png"><img src="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/resource.png" alt="resource" width="80%"></a>
 
 7. Click on the **+** Button.
 
@@ -114,7 +114,7 @@ Now let's start designing the integration by adding the necessary artifacts.
 
     <a href="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/ui-config.png"><img src="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/ui-config.png" alt="configurations" width="80%"></a>
 
-    ```
+    ```conf
     [ballerinax.wso2.apim.catalog]
     serviceUrl="<Url of the service catalog endpoint>"
     tokenUrl="<Url of the token endpoint>"
@@ -129,7 +129,7 @@ Now let's start designing the integration by adding the necessary artifacts.
 
         These are some default values, but `clientId` and `clientSecret` should be replaced with your own.
 
-        ```
+        ```conf
         [ballerinax.wso2.apim.catalog]
         serviceUrl="https://127.0.0.1:9443/api/am/service-catalog/v1"
         tokenUrl="https://localhost:9443/oauth2/token"
