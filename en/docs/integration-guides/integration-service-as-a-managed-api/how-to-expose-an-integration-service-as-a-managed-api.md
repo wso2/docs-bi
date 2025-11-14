@@ -66,9 +66,9 @@ Now let's start designing the integration by adding the necessary artifacts.
 
     <a href="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/return-button.png"><img src="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/return-button.png" alt="return button" width="80%"></a>
 
-9. Give the expression’s example return value as follows, then click Save. as follows, then click **Save**.
+9. Provide the example return value as shown below, then click **Save**.
 
-    <a href="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/return-value.png"><img src="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/return-value.png" alt="return value" width="80%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/return-values.gif"><img src="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/return-values.gif" alt="return value" width="80%"></a>
 
     ```json
     [
@@ -96,21 +96,23 @@ Now let's start designing the integration by adding the necessary artifacts.
     ]
     ```
 
-10. Click on the `</>` Button.
+### Step 3: Creating Configuration for APIM
+
+1. Click on the `</>` Button.
 
     <a href="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/code-button.png"><img src="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/code-button.png" alt="code button" width="80%"></a>
 
-11. Add `import ballerinax/wso2.apim.catalog as _;` after the existing imports, then click the File View icon in the top-left corner.
+2. Add `import ballerinax/wso2.apim.catalog as _;` after the existing imports, then click the File View icon in the top-left corner.
 
     <a href="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/import.png"><img src="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/import.png" alt="import button" width="80%"></a>
 
-12. Select `Ballerina.toml` file and add `remoteManagement=true` after the existing `[build-options]`.
+3. Select `Ballerina.toml` file and add `remoteManagement=true` after the existing `[build-options]`.
 
-    <a href="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/build-options.png"><img src="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/build-options.png" alt="build-options" width="80%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/build-options.png"><img src="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/build-options.png" alt="build options" width="80%"></a>
 
-13. Create a `Config.toml` file if it does not exist, and add the following configurations (some default values are provided in the image).
+4. Use the BI Configurations `+` icon to add the following configurations, and save each of them.
 
-    <a href="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/config.png"><img src="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/config.png" alt="config" width="80%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/ui-config.png"><img src="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/ui-config.png" alt="configurations" width="80%"></a>
 
     ```
     [ballerinax.wso2.apim.catalog]
@@ -125,18 +127,34 @@ Now let's start designing the integration by adding the necessary artifacts.
     !!! Info
         See the [Create a Rest API](https://apim.docs.wso2.com/en/3.2.0/learn/design-api/create-api/create-a-rest-api/) documentation to learn how to get configurations.
 
-14. Let's start the API Manager runtime before starting the WSO2 Integrator: BI.
+        These are some default values, but `clientId` and `clientSecret` should be replaced with your own.
+
+        ```
+        [ballerinax.wso2.apim.catalog]
+        serviceUrl="https://127.0.0.1:9443/api/am/service-catalog/v1"
+        tokenUrl="https://localhost:9443/oauth2/token"
+        username="admin"
+        password="admin"
+        clientId="<clientId>"
+        clientSecret="<Client secret>"
+        ```
+
+5. Let's start the API Manager runtime before starting the WSO2 Integrator: BI.
 
     1.  Download and set up [WSO2 API Manager](https://wso2.com/api-management/).
     2.  Start the [API-M server](https://apim.docs.wso2.com/en/latest/install-and-setup/install/installing-the-product/running-the-api-m/).
 
-15. Select the BI Extension icon and click the `Run` button to execute.
+### Step 4: Run the application.
 
-    <a href="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/run.png"><img src="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/run.png" alt="run" width="80%"></a>
+6. Select the BI Extension icon and click the `Run` button to execute.
 
-15. After signing in to the API Publisher portal: `https://localhost:9443/publisher`, you can see the created service
+    <a href="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/run.png"><img src="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/run.png" alt="run-icon" width="80%"></a>
 
-    <a href="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/service.png"><img src="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/service.png" alt="service" width="80%"></a>
+7. After signing in to the API Publisher portal: `https://localhost:9443/publisher`, you can see the created service
+
+    <a href="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/service.png"><img src="{{base_path}}/assets/img/integration-guides/integration-service-as-a-managed-api/service.png" alt="service-in-APIM" width="80%"></a>
+
+8. After connecting to APIM, your integration service will appear as a managed API in the API Publisher portal. From there, you can configure and deploy the API, publish it to the Developer Portal, test it using the integrated API console, and allow consumers to subscribe and invoke the API securely.
 
 !!! Tip
     For detailed instructions see [Invoke an API using the Integrated API Console](https://apim.docs.wso2.com/en/4.3.0/consume/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console/).
