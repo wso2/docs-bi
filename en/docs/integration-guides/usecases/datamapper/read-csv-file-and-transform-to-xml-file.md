@@ -1,4 +1,4 @@
-# Read a CSV file and transform it to a XML and save as a file
+# Read a CSV File and Transform It to XML File
 
 ## Overview
 This is a low-code walkthrough that uses the Ballerina Integrator Data Mapper and file APIs to build an end-to-end pipeline — without writing code by hand. You will:
@@ -75,12 +75,12 @@ This extension provides a low-code graphical environment to visually design, map
 1. Launch VS Code and click the WSO2 Integrator: BI icon on the left sidebar.  
    You’ll be taken to the welcome page that introduces the integration workspace.
 
-2. Under the “Get Started Quickly” section, you’ll see three main options:
+2. Under the **Get Started Quickly** section, you’ll see three main options:
    - Create New Integration – start a new integration project from scratch using the graphical designer.
    - Import External Integration – bring in existing integrations from other platforms (e.g., MuleSoft, TIBCO).
    - Explore Pre-Built Samples – open existing templates or tutorials.
 
-3. Click Create New Integration.  
+3. Click **Create New Integration**.  
    This opens the integration creation wizard, where you can:
    - Define the integration name and location.  
    - Choose to start with a blank project or from a sample template.  
@@ -97,7 +97,7 @@ This extension provides a low-code graphical environment to visually design, map
 
 ## Step 2: Add Configurable Variables
 
-In this step, you define the input and output file paths as configurable variables.  
+In this step, you will define the input and output file paths as configurable variables.  
 These parameters make your integration portable and environment-agnostic — you can change file paths without editing the logic.
 
 1. In the **Project Explorer**, select **Configurations**.
@@ -225,7 +225,7 @@ This automation serves as the starting point of the data-transformation pipeline
 
 **1. Open the “Entry Points” Panel**
 
-From the **Project Explorer** on the left, expand the *customer_details_csv_to_xml* integration.  
+From the **Project Explorer** on the left, expand the `customer_details_csv_to_xml` integration.  
 Click **Entry Points (+)** to add a new integration artifact.
 
 ---
@@ -272,8 +272,8 @@ This is the default template for new automations.
 **2. Add the First Node**
 
 1. Hover your mouse below the **Start** node until a small **“+” button** appears.  
-2. Click **“+”** to add a new operation.  
-   The system briefly displays *“Generating next suggestion...”* — this means it’s fetching available node types.
+2. Click **+** to add a new operation.  
+   The system briefly displays `Generating next suggestion...` — this means it’s fetching available node types.
 
 ---
 
