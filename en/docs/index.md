@@ -55,7 +55,8 @@
             {"name": "Containerized Deployment", "url": "deploy/containerized-deployment/overview"},
             {"name": "VM-based Deployment", "url": "deploy/vm-based-deployment/overview"},
             {"name": "Managing Configurations", "url": "deploy/managing-configurations"},
-            {"name": "Capacity Planning", "url": "deploy/capacity-planning/overview"}
+            {"name": "Capacity Planning", "url": "deploy/capacity-planning/overview"},
+            {"name": "Deployment Best Practices", "url": "deploy/deployment-best-practices/overview"}
         ]
     }
     ],
