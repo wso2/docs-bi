@@ -16,28 +16,28 @@ The following steps outline the CI process of the de-centralized deployment:
 
 ### Step 2: Install prerequisites
 
-     - Visual Studio Code: Install <a href="https://code.visualstudio.com/">Visual Studio Code</a> if you don't have it already.
-     - WSO2 Integrator: BI Extension: Install the WSO2 Integrator: BI extension. Refer to <a href="../install-wso2-integrator-bi/">Install WSO2 Integrator: BI</a> for detailed instructions.
+- Visual Studio Code: Install <a href="https://code.visualstudio.com/">Visual Studio Code</a> if you don't have it already.
+- WSO2 Integrator: BI Extension: Install the WSO2 Integrator: BI extension. Refer to [Install WSO2 Integrator: BI](/get-started/install-wso2-integrator-bi) for detailed instructions.
 
 
 ### Step 3: Create and Implement BI Projects
 
-    - Create a new integration project using the BI VS Code extension.
-    - Implement business logic using the drag-and-drop designer or by writing Ballerina/DSL code.
+- Create a new integration project using the BI VS Code extension.
+- Implement business logic using the drag-and-drop designer or by writing Ballerina/DSL code.
 
-    ???+ Tip
-        Use shared modules or libraries for common logic and avoid duplication.
+???+ Tip
+    Use shared modules or libraries for common logic and avoid duplication.
 
 ### Step 4: Add integration tests to the consolidated project
-    - Use the `Test Explorer` of BI to write and execute tests for the consolidated project.    
+- Use the `Test Explorer` of BI to write and execute tests for the consolidated project.    
 
 ### Step 5: Create the executable JAR for the project
 
-    - Navigate to the Visualizer view by clicking on the BI icon on the sidebar.
-    - Click on the **Deploy on VM** under the **Deployment Options** section in the right panel.
-    - Click **Create Executable** button.       
-        <a href="{{base_path}}/assets/img/deploy/build-jar.gif"><img src="{{base_path}}/assets/img/deploy/build-jar.gif" alt="Build JAR" width="70%"></a> 
-    - The integration will be built as an executable JAR and the JAR file will be available in the `target\bin` directory of the project.
+- Navigate to the Visualizer view by clicking on the BI icon on the sidebar.
+- Click on the **Deploy on VM** under the **Deployment Options** section in the right panel.
+- Click **Create Executable** button.       
+    <a href="{{base_path}}/assets/img/deploy/build-jar.gif"><img src="{{base_path}}/assets/img/deploy/build-jar.gif" alt="Build JAR" width="70%"></a> 
+- The integration will be built as an executable JAR and the JAR file will be available in the `target\bin` directory of the project.
 
 ### Step 6: Publish the artifacts to the registry.
 
