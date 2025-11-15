@@ -1,4 +1,4 @@
-# Read a CSV File and Transform It to an XML File
+# Read a CSV File and Transform It to XML File
 
 ## Overview
 This is a low-code walkthrough that uses the Ballerina Integrator Data Mapper and file APIs to build an end-to-end pipeline — without writing code by hand. You will:
@@ -7,6 +7,13 @@ This is a low-code walkthrough that uses the Ballerina Integrator Data Mapper an
   2. Map each CSV row to a `<Row>` element inside `<Orders>` using the Data Mapper visual UI.
   3. Add a row number as a child `<index>` element. Use the mapper’s row position function and set it to 0-based.
   4. Write the result to a new XML file in an `output/` folder.
+
+### Why this use case
+
+  - Converts flat CSV order data into XML that downstream, XML-centric systems can validate and consume.
+  - Demonstrates record indexing as an element (`<index>`) for traceability back to the original row.
+  - Scales easily from a single file to batch folders or listener-based near-real-time ingestion.
+  
 
 ### Input CSV Example
 
@@ -45,12 +52,6 @@ S003,P-2003,1,89.50
 </Orders>
 ```
 
-### Why this use case
-
-  - Converts flat CSV order data into XML that downstream, XML-centric systems can validate and consume.
-  - Demonstrates record indexing as an element (`<index>`) for traceability back to the original row.
-  - Scales easily from a single file to batch folders or listener-based near-real-time ingestion.
-
 ## Prerequisites
 
 Before you begin, make sure you have the following:
@@ -65,16 +66,18 @@ WSO2 Integrator: BI extension provides a low-code graphical environment to visua
   1. Launch VS Code and click the WSO2 Integrator: BI icon on the left sidebar.  
     You’ll be taken to the welcome page that introduces the integration workspace.
 
-2. Under the **Get Started Quickly** section, you’ll see three main options:
-   - Create New Integration – start a new integration project from scratch using the graphical designer.
-   - Import External Integration – bring in existing integrations from other platforms (e.g., MuleSoft, TIBCO).
-   - Explore Pre-Built Samples – open existing templates or tutorials.
+  2. Under the **Get Started Quickly** section, you’ll see three main options:
 
-3. Click **Create New Integration**.  
+    - Create New Integration – start a new integration project from scratch using the graphical designer.
+    - Import External Integration – bring in existing integrations from other platforms (e.g., MuleSoft, TIBCO).
+    - Explore Pre-Built Samples – open existing templates or tutorials.
+
+  3. Click **Create New Integration**.  
    This opens the integration creation wizard, where you can:
-   - Define the integration name and location.  
-   - Choose to start with a blank project or from a sample template.  
-   - Initialize the workspace structure with folders for input/output mappings, resources, and configuration.
+
+    - Define the integration name and location.  
+    - Choose to start with a blank project or from a sample template.  
+    - Initialize the workspace structure with folders for input/output mappings, resources, and configuration.
 
   4. Once the project is created, you’ll enter the graphical integration designer view.  
     From here, you can start adding connectors, data mappings, and logic components to build your flow visually.
@@ -118,7 +121,7 @@ These parameters make your integration portable and environment-agnostic — you
 <a href="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml2.gif"><img src="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml2.gif" alt="Add configurable file paths" width="70%"></a>
 
 ---
-## Step 3: Create a structure to represent each CSV row
+## Step 3: Create a structure to represent each csv row
 
 In this step, you’ll define a structure (called a *Type* in Ballerina) that describes what one row in your CSV file looks like.  
 Think of it as creating a template so the Data Mapper can recognize each column by name and map them correctly to the XML later.
@@ -146,7 +149,7 @@ When the system reads the CSV file, it will treat every line (after the header) 
 <a href="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml3.gif"><img src="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml3.gif" alt="Create a type to represent CSV structure" width="70%"></a>
 
 ---
-## Step 4: Generate XML types from a sample payload
+## Step 4: Generate xml types from a sample payload
 
 In this step, you’ll create the XML output structure automatically by pasting a sample XML.  
 The Integrator’s Type Creator reads this example and builds the corresponding type definitions for you.
@@ -197,7 +200,7 @@ The generated structure will appear as:
         └─ price: decimal
    ```
 
-You now have a record type that defines the exact structure of your output XML file.  
+You now have an record type that defines the exact structure of your output xml file.  
 This type will act as the target structure in the Data Mapper, allowing each `CSV` record to be mapped directly into a `<Row>` element under `<Orders>`.
 
 <a href="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml4.gif"><img src="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml4.gif" alt="Create a type to represent XML structure" width="70%"></a>
@@ -226,7 +229,7 @@ This automation serves as the starting point of the data-transformation pipeline
 
       A page titled **Automation – An automation that can be invoked periodically or manually** appears.  
       Click the blue **Create** button to add a new Automation flow.  
-      You may optionally expand **Advanced Configurations** to adjust scheduling or trigger settings, but for this tutorial, we keep the defaults.
+      You may optionally expand *Optional Configurations* to adjust scheduling or trigger settings, but for this tutorial we keep defaults.
 
       The tool shows a brief **“Creating…”** indicator, and then a new canvas opens.
 
