@@ -1,4 +1,4 @@
-# Read a CSV File and Transform It to XML File
+# Read a CSV File and Transform It to an XML File
 
 ## Overview
 This is a low-code walkthrough that uses the Ballerina Integrator Data Mapper and file APIs to build an end-to-end pipeline — without writing code by hand. You will:
@@ -118,7 +118,7 @@ These parameters make your integration portable and environment-agnostic — you
 <a href="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml2.gif"><img src="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml2.gif" alt="Add configurable file paths" width="70%"></a>
 
 ---
-## Step 3: Create a structure to represent each csv row
+## Step 3: Create a structure to represent each CSV row
 
 In this step, you’ll define a structure (called a *Type* in Ballerina) that describes what one row in your CSV file looks like.  
 Think of it as creating a template so the Data Mapper can recognize each column by name and map them correctly to the XML later.
@@ -146,7 +146,7 @@ When the system reads the CSV file, it will treat every line (after the header) 
 <a href="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml3.gif"><img src="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml3.gif" alt="Create a type to represent CSV structure" width="70%"></a>
 
 ---
-## Step 4: Generate xml types from a sample payload
+## Step 4: Generate XML types from a sample payload
 
 In this step, you’ll create the XML output structure automatically by pasting a sample XML.  
 The Integrator’s Type Creator reads this example and builds the corresponding type definitions for you.
@@ -197,7 +197,7 @@ The generated structure will appear as:
         └─ price: decimal
    ```
 
-You now have an record type that defines the exact structure of your output xml file.  
+You now have a record type that defines the exact structure of your output XML file.  
 This type will act as the target structure in the Data Mapper, allowing each `CSV` record to be mapped directly into a `<Row>` element under `<Orders>`.
 
 <a href="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml4.gif"><img src="{{base_path}}/assets/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml4.gif" alt="Create a type to represent XML structure" width="70%"></a>
@@ -226,7 +226,7 @@ This automation serves as the starting point of the data-transformation pipeline
 
       A page titled **Automation – An automation that can be invoked periodically or manually** appears.  
       Click the blue **Create** button to add a new Automation flow.  
-      You may optionally expand *Optional Configurations* to adjust scheduling or trigger settings, but for this tutorial we keep defaults.
+      You may optionally expand **Advanced Configurations** to adjust scheduling or trigger settings, but for this tutorial, we keep the defaults.
 
       The tool shows a brief **“Creating…”** indicator, and then a new canvas opens.
 
