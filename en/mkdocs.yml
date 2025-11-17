@@ -170,6 +170,7 @@ nav:
       - "Enterprise Integrations Patterns": references/enterprise-integrations-patterns.md
       - "System Requirements": references/system-requirements.md
       - "AI Usage & Data Handling Guidelines": references/ai-usage-and-data-handling-guidelines.md
+      - "Connector Development Guide": references/connector-development-guidelines.md
   - Usecases:
       - Datamapper usecases:
           - Overview: usecases/datamapper/overview.md
