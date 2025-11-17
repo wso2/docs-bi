@@ -386,6 +386,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://bi.docs.wso2.com/references/connector-development-guidelines/</loc>
+         <lastmod>2025-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://bi.docs.wso2.com/references/enterprise-integrations-patterns/</loc>
          <lastmod>2025-11-17</lastmod>
          <changefreq>daily</changefreq>
