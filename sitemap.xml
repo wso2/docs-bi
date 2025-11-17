@@ -311,6 +311,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://bi.docs.wso2.com/integration-guides/usecases/datamapper/overview/</loc>
+         <lastmod>2025-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bi.docs.wso2.com/integration-guides/usecases/datamapper/read-csv-file-and-transform-to-xml-file/</loc>
+         <lastmod>2025-11-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://bi.docs.wso2.com/observability-and-monitoring/monitoring-with-wso2-integrator-icp/</loc>
          <lastmod>2025-11-17</lastmod>
          <changefreq>daily</changefreq>
@@ -382,16 +392,6 @@
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/references/system-requirements/</loc>
-         <lastmod>2025-11-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://bi.docs.wso2.com/usecases/datamapper/overview/</loc>
-         <lastmod>2025-11-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://bi.docs.wso2.com/usecases/datamapper/read-csv-file-and-transform-to-xml-file/</loc>
          <lastmod>2025-11-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
