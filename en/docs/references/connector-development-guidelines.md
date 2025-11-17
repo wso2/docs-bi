@@ -124,6 +124,8 @@ For REST API-based services, follow these steps:
 
 8. **Write documentation**: Provide comprehensive documentation for users on how to use the connector, including getting started guides, examples and API references.
 
+For more information on developing OAS-based connectors, please refer to the [Create Your First Connector with Ballerina](https://ballerina.io/learn/create-your-first-connector-with-ballerina/) guide. 
+
 ### Handwritten connectors
 
 Handwritten connectors are used when wrapping external SDKs or when the API does not have a suitable specification.
