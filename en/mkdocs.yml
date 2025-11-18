@@ -101,6 +101,10 @@ nav:
         - Message Routing: integration-guides/integration-as-api/message-routing.md
       - File Integration:
         - File Integration With Directory Service: integration-guides/file-integration/file-integration-with-directory-service.md
+      - Use Cases:
+        - Data Mapper:
+          - Overview: integration-guides/usecases/datamapper/overview.md
+          - Read a CSV File and Transform It to an XML File: integration-guides/usecases/datamapper/read-csv-file-and-transform-to-xml-file.md
   - Developer Guides:
       - Create a Project: developer-guides/create-a-project.md
       - "WSO2 Integrator: BI Artifacts": developer-guides/wso2-integrator-bi-artifacts.md
@@ -177,7 +181,6 @@ nav:
           - Read a CSV file and transform it to a XML and save as a file: usecases/datamapper/read-csv-file-and-transform-to-xml-file.md
       - Integration Service As a Managed API:
           - How to Expose an Integration Service as a Managed API: usecases/integration-service-as-a-managed-api/how-to-expose-an-integration-service-as-a-managed-api.md
-
   - Release Notes:
       - Release Note: wso2-integrator-bi-release-notes.md
       - "Connector Development Guidelines": references/connector-development-guidelines.md
