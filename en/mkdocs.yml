@@ -99,8 +99,6 @@ nav:
         - Service Orchestration: integration-guides/integration-as-api/service-orchestration.md
         - Message Transformation: integration-guides/integration-as-api/message-transformation.md
         - Message Routing: integration-guides/integration-as-api/message-routing.md
-      - Integration Service As a Managed API:
-        - How to Expose an Integration Service as a Managed API: integration-guides/integration-service-as-a-managed-api/how-to-expose-an-integration-service-as-a-managed-api.md
       - File Integration:
         - File Integration With Directory Service: integration-guides/file-integration/file-integration-with-directory-service.md
   - Developer Guides:
@@ -176,6 +174,8 @@ nav:
       - Datamapper usecases:
           - Overview: usecases/datamapper/overview.md
           - Read a CSV file and transform it to a XML and save as a file: usecases/datamapper/read-csv-file-and-transform-to-xml-file.md
+      - Integration Service As a Managed API:
+          - How to Expose an Integration Service as a Managed API: usecases/integration-service-as-a-managed-api/how-to-expose-an-integration-service-as-a-managed-api.md
 
   - Release Notes:
       - Release Note: wso2-integrator-bi-release-notes.md
