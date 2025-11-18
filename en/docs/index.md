@@ -77,7 +77,8 @@
         "links": [
             {"name": "Enterprise Integration Patterns", "url": "references/enterprise-integrations-patterns/"},
             {"name": "System requirements", "url": "references/system-requirements/"},
-            {"name": "AI Usage and Data Handling Guidelines", "url": "references/ai-usage-and-data-handling-guidelines/"}
+            {"name": "AI Usage and Data Handling Guidelines", "url": "references/ai-usage-and-data-handling-guidelines/"},
+            {"name": "Connector Development Guidelines", "url": "references/connector-development-guidelines/"}
         ]
     },
     {
