@@ -2989,14 +2989,18 @@ This function reads CSV data from the path defined in your project’s configura
 <ol>
 <li>
 <p>Open the Function Search Panel</p>
-<p>In the right-side <strong>Functions</strong> panel, scroll or search for a CSV-related function:
-1. Click inside the <strong>Search library functions</strong> field.<br />
-2. Type <strong>csv</strong> to filter the standard library.<br />
-3. You’ll see a list under <strong>data.csv</strong> and <strong>io</strong> modules containing functions like:
-  - <code>parseStream</code>
-  - <code>parseString</code>
-  - <code>fileReadCsv</code>
-  - <code>fileWriteCsv</code></p>
+<p>In the right-side <strong>Functions</strong> panel, scroll or search for a CSV-related function:</p>
+<ol>
+<li>Click inside the <strong>Search library functions</strong> field.  </li>
+<li>Type <strong>csv</strong> to filter the standard library.  </li>
+<li>You’ll see a list under <strong>data.csv</strong> and <strong>io</strong> modules containing functions like:<ul>
+<li><code>parseStream</code></li>
+<li><code>parseString</code></li>
+<li><code>fileReadCsv</code></li>
+<li><code>fileWriteCsv</code></li>
+</ul>
+</li>
+</ol>
 </li>
 <li>
 <p>Select <code>io:fileReadCsv</code></p>
@@ -3055,10 +3059,12 @@ the first entry of the CSV file should contain matching headers.”</em></p>
 </li>
 <li>
 <p>Open the Value Picker</p>
-<p>Once in <strong>Expression</strong> mode:
-- A blue <strong>ƒx</strong> button appears to the left of the input field.<br />
-- Click that icon to open the <strong>Value Picker</strong> dropdown.<br />
-- The picker shows several categories:</p>
+<p>Once in <strong>Expression</strong> mode:</p>
+<ol>
+<li>A blue <strong>ƒx</strong> button appears to the left of the input field.  </li>
+<li>Click that icon to open the <strong>Value Picker</strong> dropdown.  </li>
+<li>
+<p>The picker shows several categories:</p>
 <ul>
 <li><code>Create Value</code></li>
 <li><code>Inputs</code></li>
@@ -3066,6 +3072,8 @@ the first entry of the CSV file should contain matching headers.”</em></p>
 <li><strong>Configurables</strong> </li>
 <li><code>Functions</code></li>
 </ul>
+</li>
+</ol>
 </li>
 <li>
 <p>From the <strong>Configurables</strong> section, select <strong><code>inputCSV</code></strong> (this is the configurable variable that stores the file path for the input CSV).</p>
@@ -3175,13 +3183,23 @@ This ensures the system interprets each row of the CSV as a structured <code>CSV
 <ol>
 <li>
 <p>Understand the Mapping Context</p>
-<p>On the <strong>left</strong>, you have:
-  - <code>csvRecords</code> → Type: <code>CSV[]</code>
-      - Each item contains: <code>order_id</code>, <code>sku</code>, <code>qty</code>, and <code>price</code> (all as <code>string</code>).</p>
-<p>On the <strong>right</strong>, you have:
-  - <code>xmlRecord</code> → Type: <code>Orders</code>
-      - Contains: <code>Row[]</code>
-          - Each <code>Row</code> has: <code>index (int)</code>, <code>order_id (string)</code>, <code>sku (string)</code>, <code>qty (int)</code>, and <code>price (decimal)</code>.</p>
+<p>On the <strong>left</strong>, you have:</p>
+<ul>
+<li><code>csvRecords</code> → Type: <code>CSV[]</code><ul>
+<li>Each item contains: <code>order_id</code>, <code>sku</code>, <code>qty</code>, and <code>price</code> (all as <code>string</code>).</li>
+</ul>
+</li>
+</ul>
+<p>On the <strong>right</strong>, you have:</p>
+<ul>
+<li><code>xmlRecord</code> → Type: <code>Orders</code><ul>
+<li>Contains: <code>Row[]</code><ul>
+<li>Each <code>Row</code> has: <code>index (int)</code>, <code>order_id (string)</code>, <code>sku (string)</code>, <code>qty (int)</code>, and <code>price (decimal)</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </li>
 <li>
 <p>Start the Mapping by Linking the Record Arrays</p>
