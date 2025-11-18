@@ -1,4 +1,4 @@
-## GitHub Action for CI/CD integration
+# GitHub Action for CI/CD integration
 
 The [Ballerina GitHub](https://github.com/marketplace/actions/ballerina-action) Action enables seamless automation of CI/CD workflows for WSO2 Integrator: BI projects hosted on GitHub. This action can be used to build and push Ballerina packages that serve as integration artifacts in WSO2 Integrator: BI.
 
