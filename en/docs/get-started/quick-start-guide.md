@@ -6,7 +6,7 @@ BI combines a visual design interface, AI-assisted development, and seamless low
 
 Whether you’re modernizing legacy systems or building cloud-native services, BI provides a productive and scalable path to integration, helping teams drive digital transformation with clarity, speed, and confidence.
 
-<a href="{{base_path}}/assets/img/get-started/introduction/bi.png"><img src="{{base_path}}/assets/img/get-started/introduction/bi.png" alt="BI" width="90%" style="padding-top: 60px" ></a>
+<a href="{{base_path}}/assets/img/get-started/introduction/bi.webp"><img src="{{base_path}}/assets/img/get-started/introduction/bi.webp" alt="BI" width="90%" style="padding-top: 60px" ></a>
 
 This quick start guide introduces five core integration types, each with a dedicated hands-on walkthrough.
 
