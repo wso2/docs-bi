@@ -24,7 +24,7 @@ Start with a basic HTTP service using default configurations.
 
 <a href="{{base_path}}/assets/img/deploy/run-integration.gif"><img src="{{base_path}}/assets/img/deploy/run-integration.gif" alt="Create Config.toml" width="70%"></a>
 
-This concept of configurables can be used to hold environment specific variables that needs to be updated at the time of execution.
+This concept of configurables can be used to hold environment-specific variables that need to be updated at the time of execution.
 
 ## Configuring a consolidated package
 
@@ -34,14 +34,14 @@ Consider the following step-by-step guide to configure a consolidated package th
 
 ### Initial service configurations
 
-##### Courses service (`Config.toml`)
+Courses service (`Config.toml`)
 
 ```toml
 [sampleorg.courses]
 app_port = 8081
 ```
 
-##### Assessment service (`Config.toml`)
+Assessment service (`Config.toml`)
 
 ```toml
 [sampleorg.assessments]

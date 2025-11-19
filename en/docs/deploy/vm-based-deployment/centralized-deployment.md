@@ -88,7 +88,7 @@ Refer to [publish to Ballerina Central repository](https://ballerina.io/learn/pu
 bal push --repository local
 ```
 
-Refer [use custom repositories for packages management](https://ballerina.io/learn/manage-dependencies/#use-custom-repositories-for-package-management) for more information about
+Refer [use custom repositories for packages management](https://ballerina.io/learn/manage-dependencies/#use-custom-repositories-for-package-management) for more information.
 
 #### Publish to custom repositories
 
