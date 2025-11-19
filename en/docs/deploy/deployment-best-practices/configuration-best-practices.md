@@ -1,4 +1,4 @@
-# Production Configuration Management Guide
+# Configuration Best Practices
 
 This guide covers configuration management strategies across deployment models (VM-based, containerized, Kubernetes) and CI/CD pipelines. Core principle: configuration is injected at runtime, never embedded in artifacts.
 
