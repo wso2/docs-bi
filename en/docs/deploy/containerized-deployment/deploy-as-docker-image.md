@@ -18,7 +18,7 @@ Follow the steps below to execute the Docker image.
 1. Execute the docker images command to verify if the Docker image is generated.
 
 ```bash
-$ docker images
+docker images
 REPOSITORY                                          TAG                    IMAGE ID       CREATED          SIZE
 fake_store_manager                                  latest                 e971e4336f71   58 minutes ago   237MB
 ```

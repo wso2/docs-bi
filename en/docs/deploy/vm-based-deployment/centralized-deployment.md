@@ -46,16 +46,16 @@ Build the project and create a self-contained executable and deployable `.jar` a
 
 Or use Ballerina CLI to pack to use the packages in consolidated package.
 
-```
-$ bal pack
+```bash
+bal pack
 ```
 
 #### Step 6: Publish artifacts
 
 After packing the project, publish the generated artifacts to a shared artifact repository (e.g., Ballerina Central, GitHub Packages, Nexus, or internal registry).
 
-  ```
-  $ bal push
+  ```bash
+  bal push
   ```
 
 ##### Publish to Ballerina Central
@@ -65,27 +65,27 @@ After packing the project, publish the generated artifacts to a shared artifact 
   2. Navigate to the **Dashboard** and acquire an access token.
   3. Download and place the `Settings.toml` file in your home repository (`<USER_HOME>/.ballerina/`). If you already have a `Settings.toml` file configured in your home repository, follow the other option and copy the access token into the `Settings.toml` as follows.
 
-    ```
+    ```toml
     [central]
     accesstoken="<token>"
     ```
 
     > If you are working in a context where it is not possible to save the `Settings.toml` file (e.g., within a CI/CD pipeline) you can set the access token via the `BALLERINA_CENTRAL_ACCESS_TOKEN` environment variable.
-    ```
+    ```bash
     export BALLERINA_CENTRAL_ACCESS_TOKEN="<token>"
     ```
   4. Publish the package
 
-    ```
-    $ bal push
+    ```bash
+    bal push
     ```
 
 Refer to [publish to Ballerina Central repository](https://ballerina.io/learn/publish-packages-to-ballerina-central/#publish-a-package-to-ballerina-central) for more configuration and information.
 
 ##### Publish to local repository
 
-```
-$ bal push --repository local
+```bash
+bal push --repository local
 ```
 
 Refer [use custom repositories for packages management](https://ballerina.io/learn/manage-dependencies/#use-custom-repositories-for-package-management) for more information about
@@ -116,20 +116,20 @@ The deployment repository acts as the central hub for production-ready integrati
 - Go to the terminal on VS Code and install the `Ballerina consolidate packages` tool
 
 ```bash
-$ bal tool pull consolidate-packages
+bal tool pull consolidate-packages
 ```
 
 - Pull integration artifacts from the source/artifact repositories to create a consolidated project
 
 ```bash
-$ bal consolidate-packages new --package-path <consolidated-project-path> <comma-separated-list-of-package-names>
+bal consolidate-packages new --package-path <consolidated-project-path> <comma-separated-list-of-package-names>
 ```
 
 > Use consolidated-packages with exact package versions and `--repository=local` option to create a new consolidated package with the packages published in local repository.
 
 > e.g.
-```
-$ bal consolidate-packages new --package-path lms_service sampleorg/lsm_assessments:0.1.0,sampleorg/lms_courses:0.1.0 --repository=local
+```bash
+bal consolidate-packages new --package-path lms_service sampleorg/lsm_assessments:0.1.0,sampleorg/lms_courses:0.1.0 --repository=local
 ```
 
 ???+ Tip

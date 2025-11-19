@@ -54,17 +54,17 @@ app_port = 8082
 
 Use the following commands to prepare packages for consolidation.
 
-```
-$ bal pack
-$ bal push --repository local
+```bash
+bal pack
+bal push --repository local
 ```
 
 ### Step 2: Create a consolidated package
 
 Consolidate multiple packages into a single deployment unit.
 
-```
-$ bal consolidate-packages new --package-path lms sampleorg/assessments:0.1.0,sampleorg/courses:0.1.0 --repository=local
+```bash
+bal consolidate-packages new --package-path lms sampleorg/assessments:0.1.0,sampleorg/courses:0.1.0 --repository=local
 ```
 
 This creates a new consolidated package named `lms` containing both services.
@@ -77,14 +77,14 @@ You can provide configuration values through either configuration files or CLI a
 
 Create a `Config.toml` file using the following format to add configuration values.
 
-```
+```toml
 [org-name.module-name]
 variable-name = "value"
 ```
 
 Example configuration for both services:
 
-```
+```toml
 [sampleorg.assessments]
 app_port = 9091
 
@@ -96,12 +96,12 @@ app_port = 9092
     The configuration file is not required to reside within the package directory and can be split across multiple files. Specify file paths using the `BAL_CONFIG_FILES` environment variable.
 
     For Windows:
-    ```
+    ```batch
     set BAL_CONFIG_FILES=<path-to-config1.toml>;<path-to-config2.toml>
     ```
 
     For Linux/macOS:
-    ```
+    ```bash
     export BAL_CONFIG_FILES=<path-to-config1.toml>;<path-to-config2.toml>
     ```
 
@@ -111,8 +111,8 @@ Pass configuration values directly when running the consolidated package using t
 
 e.g. Running the consolidated package with configuration
 
-```
-$ bal run lms -- -Csampleorg.courses.app_port=9092 -Csampleorg.assessments.app_port=9091
+```bash
+bal run lms -- -Csampleorg.courses.app_port=9092 -Csampleorg.assessments.app_port=9091
 ```
 
 For detailed configuration options, refer to [Provide values to configurable variables](https://ballerina.io/learn/provide-values-to-configurable-variables/) in the Ballerina documentation.
