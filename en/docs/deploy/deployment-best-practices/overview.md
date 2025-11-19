@@ -20,6 +20,12 @@ Network security covers the infrastructure and network-level protections for you
 
 [Learn more about network level security →](/deploy/deployment-best-practices/network-level-security)
 
+## Configuration best practices
+
+Adhering to secure configuration practices is essential for minimizing vulnerabilities in your BI deployment. This includes managing sensitive data, applying security patches, and following secure coding standards.
+
+[Learn more about configuration best practices →](/deploy/deployment-best-practices/configuration-best-practices)
+
 ## Getting started
 
 Review each category above to understand the security considerations for your deployment. Implement these practices based on your specific environment, compliance requirements, and security policies. These guidelines are applicable to both cloud-native (containerized) and traditional VM-based deployments.
