@@ -140,7 +140,7 @@ $ bal consolidate-packages new --package-path lms_service sampleorg/lsm_assessme
 
 #### Step 4: Create the executable JAR for the project
 
-- Use `bal buil` command in the consolidated project to build.
+- Use `bal build` command in the consolidated project to build.
 - The integration will be built as an executable JAR, and the JAR file will be available in the `target\bin` directory of the project.
 
 The generated Ballerina artifact can be deployed to the target environment, configuring necessary environment variables and system settings.
