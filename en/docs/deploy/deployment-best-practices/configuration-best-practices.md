@@ -180,7 +180,7 @@ Promote independently from general configuration:
 
 ## Configuration Best Practices
 
-Separation: Configuration separate from code and artifacts
+Separation: Configuration should be separate from code and artifacts
 
 #### Precedence Management
 

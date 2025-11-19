@@ -93,7 +93,7 @@ app_port = 9092
 ```
 
 ???+ Note
-    The configuration file does not required to reside within the package directory and can be split across multiple files. Specify file paths using the `BAL_CONFIG_FILES` environment variable.
+    The configuration file is not required to reside within the package directory and can be split across multiple files. Specify file paths using the `BAL_CONFIG_FILES` environment variable.
 
     For Windows:
     ```
