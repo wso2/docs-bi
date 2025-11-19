@@ -8,6 +8,8 @@ Consider the following step-by-step guide to configure a Ballerina package that 
 
 ### Step 1: Create an HTTP service using the default configurations
 
+Start with a basic HTTP service using default configurations.
+
 ### Step 2: Create required types and configurable variables
 
 * Create a type `Greeting` that holds the greeting information.
@@ -26,46 +28,62 @@ This concept of configurables can be used to hold environment specific variables
 
 ## Configuring a consolidated package
 
-Consider the following step-by-step guide to configure a consolidated package that contains two packages. Below are the `Config.toml` of each package.
+For scenarios involving multiple packages, consolidated packages allow you to manage configurations across services in a single deployment unit. The following example shows two services: a Courses service and an Assessment service, each with their own configuration files.
 
-* Courses service
+Consider the following step-by-step guide to configure a consolidated package that contains two packages. 
+
+### Initial service configurations
+
+##### Courses service (`Config.toml`)
+
 ```toml
 [sampleorg.courses]
 app_port = 8081
 ```
-* Assessment service
+
+##### Assessment service (`Config.toml`)
+
 ```toml
 [sampleorg.assessments]
 app_port = 8082
 ```
 
-> Here the local respository is used to publish these packages.
+> These packages are published to the local repository for this example.
 
-### Step 1: Pack and publish the artifacts
+### Step 1: Pack and publish artifacts
 
-Use `bal pack` and `bal push --repository local` to publish the package to the local repository.
-
-### Step 2: Create a new consolidated package
-
-Use the following command to create a new consolidated package. (Here, `lms` is the new consolidated package)
+Use the following commands to prepare packages for consolidation.
 
 ```
-bal consolidate-packages new --package-path lms sampleorg/assessments:0.1.0,sampleorg/courses:0.1.0 --repository=local
+$ bal pack
+$ bal push --repository local
 ```
 
-### Step 3: Provide configuration values
+### Step 2: Create a consolidated package
 
-#### Provide configuration values via configuration file
+Consolidate multiple packages into a single deployment unit.
 
-Create a `Config.toml` file add the configurations.
-The following format is used to provide the package information of a variable in the `Config.toml`.
+```
+$ bal consolidate-packages new --package-path lms sampleorg/assessments:0.1.0,sampleorg/courses:0.1.0 --repository=local
+```
+
+This creates a new consolidated package named `lms` containing both services.
+
+### Step 3: Configure the consolidated package
+
+You can provide configuration values through either configuration files or CLI arguments.
+
+#### Via configuration file
+
+Create a `Config.toml` file using the following format to add configuration values.
 
 ```
 [org-name.module-name]
 variable-name = "value"
 ```
 
-e.g.
+Example configuration for both services:
+
 ```
 [sampleorg.assessments]
 app_port = 9091
@@ -74,8 +92,8 @@ app_port = 9091
 app_port = 9092
 ```
 
-???+ Tip
-    Configuration file does not necessarily to be resides within the package and it doesn't have to be a single file. You can provide the paths of the configuration files via `BAL_CONFIG_FILES` environment variable.
+???+ Note
+    The configuration file does not required to reside within the package directory and can be split across multiple files. Specify file paths using the `BAL_CONFIG_FILES` environment variable.
 
     For Windows:
     ```
@@ -87,17 +105,14 @@ app_port = 9092
     export BAL_CONFIG_FILES=<path-to-config1.toml>;<path-to-config2.toml>
     ```
 
-#### Provide configuration values via CLI command
+#### Via CLI arguments
 
-Use `-C<config-key>=<confg-value>` to provide configurations.
+Pass configuration values directly when running the consolidated package using the `-C` flag.
 
 e.g. Running the consolidated package with configuration
 
 ```
-bal run lms -- -Csampleorg.courses.app_port=9092 -Csampleorg.assessments.app_port=9091
+$ bal run lms -- -Csampleorg.courses.app_port=9092 -Csampleorg.assessments.app_port=9091
 ```
 
-Refer [Provide values to configurable variables](https://ballerina.io/learn/provide-values-to-configurable-variables/) for more information.
-
-
-
+For detailed configuration options, refer to [Provide values to configurable variables](https://ballerina.io/learn/provide-values-to-configurable-variables/) in the Ballerina documentation.
