@@ -26,7 +26,7 @@ The source repository is responsible for the **continuous integration (CI)** pro
 #### Step 3: Create and implement BI projects
 
 - Create a new integration project using the BI VS Code extension.
-- Add a description to README
+- Add a meaningful description to the README
 
 > The README is required when you publish a package to a repository. You can edit the content to add a meaningful description about the integration project.
 
@@ -80,7 +80,7 @@ After packing the project, publish the generated artifacts to a shared artifact 
     bal push
     ```
 
-Refer to [publish to Ballerina Central repository](https://ballerina.io/learn/publish-packages-to-ballerina-central/#publish-a-package-to-ballerina-central) for more configuration and information.
+Refer to [Publish to Ballerina Central repository](https://ballerina.io/learn/publish-packages-to-ballerina-central/#publish-a-package-to-ballerina-central) for more configuration and information.
 
 ##### Publish to local repository
 
@@ -92,9 +92,9 @@ See [Use custom repositories for packages management](https://ballerina.io/learn
 
 #### Publish to custom repositories
 
-BI supports maven repositories such as [Nexus](https://www.sonatype.com/products/sonatype-nexus-repository), [Artifactory](https://jfrog.com/artifactory/) and [Github packages](https://docs.github.com/en/packages). 
+BI supports maven repositories such as [Nexus](https://www.sonatype.com/products/sonatype-nexus-repository), [Artifactory](https://jfrog.com/artifactory/) and [GitHub packages](https://docs.github.com/en/packages). 
 
-Follow [using custom repositories for package management](https://ballerina.io/learn/manage-dependencies/#use-custom-repositories-for-package-management) to learn more about setting up custom repositories to publish packages.
+Follow [Using custom repositories for package management](https://ballerina.io/learn/manage-dependencies/#use-custom-repositories-for-package-management) to learn more about setting up custom repositories to publish packages.
 
 
 ???+ Tip
@@ -141,6 +141,6 @@ bal consolidate-packages new --package-path <consolidated-project-path> <comma-s
 #### Step 4: Create the executable JAR for the project
 
 - Use `bal build` command in the consolidated project to build.
-- The integration will be built as an executable JAR, and the JAR file will be available in the `target\bin` directory of the project.
+- The integration will be built as an executable JAR, and the JAR file will be available in the `target/bin` directory of the project.
 
 The generated Ballerina artifact can be deployed to the target environment, configuring necessary environment variables and system settings.

@@ -29,7 +29,7 @@ The following steps outline the CI process of the de-centralized deployment:
     Use shared modules or libraries for common logic and avoid duplication.
 
 ### Step 4: Add integration tests (Optional)
-- Use the `Test Explorer` of BI to write and execute tests for the consolidated project.    
+- Use the `Test Explorer` of BI to write and execute tests for the project.    
 
 ### Step 5: Create the executable JAR for the project
 
