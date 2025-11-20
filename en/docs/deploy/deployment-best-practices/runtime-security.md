@@ -4,9 +4,16 @@
 
 Keeping all software components up to date is a critical part of maintaining runtime security. Security patches often address newly discovered vulnerabilities that attackers can exploit if left unpatched.
 
+### Development environment
+
 | Category | Guidelines |
 |-----------|-------------|
-| **WSO2 Integrator: BI** | Always use the latest stable release of [Visual Studio Code](https://code.visualstudio.com/).<br><br>Keep [WSO2 Integrator: BI](https://marketplace.visualstudio.com/items?itemName=WSO2.ballerina-integrator) and [Ballerina](https://marketplace.visualstudio.com/items?itemName=WSO2.ballerina) extensions updated to ensure compatibility with the latest security and functionality enhancements. |
+| **Development Tools** | Always use the latest stable release of [Visual Studio Code](https://code.visualstudio.com/).<br><br>Keep [WSO2 Integrator: BI](https://marketplace.visualstudio.com/items?itemName=WSO2.ballerina-integrator) and [Ballerina](https://marketplace.visualstudio.com/items?itemName=WSO2.ballerina) extensions updated to ensure compatibility with the latest security and functionality enhancements. |
+
+### Production runtime
+
+| Category | Guidelines |
+|-----------|-------------|
 | **Ballerina Distribution** | Use the latest patch release of the relevant [Ballerina distribution](https://ballerina.io/downloads/) to ensure runtime and library-level vulnerabilities are fixed.<br><br>Follow Ballerina and WSO2 product release notifications to stay informed about new security advisories. |
 | **Operating System and Dependencies** | Regularly apply security updates to the host operating system, *container base images*, and *runtime dependencies* (e.g., database clients, third-party libraries).<br><br>If deploying via Docker, track and update base image versions (e.g., `ubuntu`, `alpine`, or `ballerina`) to the latest stable, patched releases.|
 | **Automation and CI/CD Integration** | Integrate automated patch verification and dependency vulnerability scanning into CI/CD pipelines.<br><br>Use dependency management tools (e.g., *Dependabot*, *Renovate*) to receive automated pull requests for new patches.<br><br>Maintain a rollback plan and a staging environment to safely test patches before deploying to production. |
@@ -29,9 +36,13 @@ Keeping all software components up to date is a critical part of maintaining run
 
 ## Change default ports and credentials
 
-* Change all default listener ports used by BI components and generated Ballerina services.  
-  Example: modify configurations or `Config.toml` to run on custom, non-standard ports.  
-* Disable unused ports and protocols to minimize the attack surface.  
+* Change all default listener ports used by BI components and generated Ballerina services.
+  Example: modify configurations or `Config.toml` to run on custom, non-standard ports.
+  ```toml
+  [ballerina.http.listeners]
+  port = 9443
+  ```
+* Disable unused ports and protocols to minimize the attack surface.
 * Replace any default credentials used by admin or management consoles.
 
 ## Secure communication with external services
@@ -94,4 +105,4 @@ Since Ballerina runs on the JVM, tune the JVM for security and stability:
 * **Network Segmentation:** Place BI and databases on private networks/VPCs.  
 * **Audit and Compliance:** Periodically audit configurations and review access logs.  
 * **Backup and Recovery:** Encrypt and test backups regularly.  
-* **Validate the code with scan tool:** Use [Ballerina scan tool](https://bi.docs.wso2.com/developer-guides/tools/other-tools/scan-tool/) to identify potential issues such as code smells, bugs, and vulnerabilities.
+* **Validate the code with scan tool:** Use [Ballerina scan tool](/developer-guides/tools/other-tools/scan-tool) to identify potential issues such as code smells, bugs, and vulnerabilities.
