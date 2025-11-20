@@ -18,6 +18,7 @@
         "links": [
             {"name": "Design the Integrations", "url": "developer-guides/design-the-integrations/"},
             {"name": "Data Mapping", "url": "developer-guides/data-mapping/"},
+            {"name": "Integration Service as a Managed API", "url": "usecases/integration-service-as-a-managed-api/how-to-expose-an-integration-service-as-a-managed-api/"},
             {"name": "Testing", "url": "developer-guides/test-the-integrations/"},
             {"name": "Debugging & Troubleshooting", "url": "developer-guides/debugging-and-troubleshooting/overview"},
             {"name": "Protocols and Connectors", "url": "developer-guides/protocols-and-connectors/overview-of-connectors/"},
