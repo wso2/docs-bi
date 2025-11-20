@@ -281,13 +281,14 @@ This function reads CSV data from the path defined in your project’s configura
   1. Open the Function Search Panel
 
     In the right-side **Functions** panel, scroll or search for a CSV-related function:
+
     1. Click inside the **Search library functions** field.  
     2. Type **csv** to filter the standard library.  
     3. You’ll see a list under **data.csv** and **io** modules containing functions like:
-      - `parseStream`
-      - `parseString`
-      - `fileReadCsv`
-      - `fileWriteCsv`
+        - `parseStream`
+        - `parseString`
+        - `fileReadCsv`
+        - `fileWriteCsv`
 
 
   2. Select `io:fileReadCsv`
@@ -329,15 +330,16 @@ This function reads CSV data from the path defined in your project’s configura
       2. Open the Value Picker
 
         Once in **Expression** mode:
-        - A blue **ƒx** button appears to the left of the input field.  
-        - Click that icon to open the **Value Picker** dropdown.  
-        - The picker shows several categories:
 
-          - `Create Value`
-          - `Inputs`
-          - `Variables`
-          - **Configurables** 
-          - `Functions`
+        1.  A blue **ƒx** button appears to the left of the input field.  
+        2.  Click that icon to open the **Value Picker** dropdown.  
+        3.  The picker shows several categories:
+
+            - `Create Value`
+            - `Inputs`
+            - `Variables`
+            - **Configurables** 
+            - `Functions`
 
 
       3. From the **Configurables** section, select **`inputCSV`** (this is the configurable variable that stores the file path for the input CSV).
@@ -459,10 +461,12 @@ Now that you’ve opened the Data Mapper view, it’s time to visually connect t
   1. Understand the Mapping Context
 
       On the **left**, you have:
+      
       - `csvRecords` → Type: `CSV[]`
           - Each item contains: `order_id`, `sku`, `qty`, and `price` (all as `string`).
 
       On the **right**, you have:
+      
       - `xmlRecord` → Type: `Orders`
           - Contains: `Row[]`
               - Each `Row` has: `index (int)`, `order_id (string)`, `sku (string)`, `qty (int)`, and `price (decimal)`.
