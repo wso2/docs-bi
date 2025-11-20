@@ -60,10 +60,9 @@ After packing the project, publish the generated artifacts to a shared artifact 
 
 ##### Publish to Ballerina Central
 
-
-  1. Create an account on [Ballerina Central](https://central.ballerina.io/)
-  2. Navigate to the **Dashboard** and acquire an access token.
-  3. Download and place the `Settings.toml` file in your home repository (`<USER_HOME>/.ballerina/`). If you already have a `Settings.toml` file configured in your home repository, follow the other option and copy the access token into the `Settings.toml` as follows.
+1. Create an account on [Ballerina Central](https://central.ballerina.io/)
+2. Navigate to the **Dashboard** and acquire an access token.
+3. Download and place the `Settings.toml` file in your home repository (`<USER_HOME>/.ballerina/`). If you already have a `Settings.toml` file configured in your home repository, follow the other option and copy the access token into the `Settings.toml` as follows.
 
     ```toml
     [central]
@@ -74,7 +73,8 @@ After packing the project, publish the generated artifacts to a shared artifact 
     ```bash
     export BALLERINA_CENTRAL_ACCESS_TOKEN="<token>"
     ```
-  4. Publish the package
+
+4. Publish the package
 
     ```bash
     bal push
@@ -115,15 +115,15 @@ The deployment repository acts as the central hub for production-ready integrati
 #### Step 2: Fetch and consolidate artifacts
 - Go to the terminal on VS Code and install the `Ballerina consolidate packages` tool
 
-```bash
-bal tool pull consolidate-packages
-```
+    ```bash
+    bal tool pull consolidate-packages
+    ```
 
 - Pull integration artifacts from the source/artifact repositories to create a consolidated project
 
-```bash
-bal consolidate-packages new --package-path <consolidated-project-path> <comma-separated-list-of-package-names>
-```
+    ```bash
+    bal consolidate-packages new --package-path <consolidated-project-path> <comma-separated-list-of-package-names>
+    ```
 
 ???+ Note
     Use consolidated-packages with exact package versions and `--repository=local` option to create a new consolidated package with the packages published in local repository.
