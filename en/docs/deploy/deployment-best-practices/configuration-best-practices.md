@@ -178,11 +178,13 @@ Promote independently from general configuration:
 4. Validate connectivity to new endpoints
 5. Document changes in audit log
 
-## Configuration best practices
+## Common best practices
 
-Separation: Configuration should be separate from code and artifacts
+### Separation
 
-#### Precedence management
+Configuration should be separate from code and artifacts
+
+### Precedence management
 
 Leverage configuration precedence order correctly:
 
@@ -191,14 +193,14 @@ Leverage configuration precedence order correctly:
 3. TOML files
 4. Embedded defaults (lowest priority)
 
-#### Secrets security
+### Secrets security
 
 - Never commit secrets to version control
 - Use platform secret management (Vault, K8s Secrets, CI/CD secrets)
 - Rotate secrets regularly
 - Audit all secret access
 
-#### Validation
+### Validation
 
 Validate configuration at startup
 
@@ -206,7 +208,7 @@ Validate configuration at startup
 - Validate value ranges and formats
 - Fail fast on invalid configuration
 
-#### Documentation
+### Documentation
 
 Maintain endpoint and configuration documentation
 

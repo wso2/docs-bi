@@ -88,7 +88,7 @@ Refer to [publish to Ballerina Central repository](https://ballerina.io/learn/pu
 bal push --repository local
 ```
 
-Refer [use custom repositories for packages management](https://ballerina.io/learn/manage-dependencies/#use-custom-repositories-for-package-management) for more information.
+See [Use custom repositories for packages management](https://ballerina.io/learn/manage-dependencies/#use-custom-repositories-for-package-management) for more information.
 
 #### Publish to custom repositories
 
@@ -129,7 +129,7 @@ bal consolidate-packages new --package-path <consolidated-project-path> <comma-s
 
 > e.g.
 ```bash
-bal consolidate-packages new --package-path lms_service sampleorg/lsm_assessments:0.1.0,sampleorg/lms_courses:0.1.0 --repository=local
+bal consolidate-packages new --package-path lms_service sampleorg/lms_assessments:0.1.0,sampleorg/lms_courses:0.1.0 --repository=local
 ```
 
 ???+ Tip

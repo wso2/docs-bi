@@ -109,7 +109,7 @@ app_port = 9092
 
 Pass configuration values directly when running the consolidated package using the `-C` flag.
 
-e.g. Running the consolidated package with configuration
+For example: Running the consolidated package with configuration
 
 ```bash
 bal run lms -- -Csampleorg.courses.app_port=9092 -Csampleorg.assessments.app_port=9091
