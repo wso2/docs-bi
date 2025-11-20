@@ -125,12 +125,12 @@ bal tool pull consolidate-packages
 bal consolidate-packages new --package-path <consolidated-project-path> <comma-separated-list-of-package-names>
 ```
 
-> Use consolidated-packages with exact package versions and `--repository=local` option to create a new consolidated package with the packages published in local repository.
-
-> e.g.
-```bash
-bal consolidate-packages new --package-path lms_service sampleorg/lms_assessments:0.1.0,sampleorg/lms_courses:0.1.0 --repository=local
-```
+???+ Note
+    Use consolidated-packages with exact package versions and `--repository=local` option to create a new consolidated package with the packages published in local repository.
+    For example:
+    ```bash
+    bal consolidate-packages new --package-path lms_service sampleorg/lms_assessments:0.1.0,sampleorg/lms_courses:0.1.0 --repository=local
+    ```
 
 ???+ Tip
     Visit the [Consolidate-packages tool](https://ballerina.io/learn/consolidate-packages-tool/) for more information on how to consolidate Ballerina packages.
