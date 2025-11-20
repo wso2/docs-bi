@@ -10,7 +10,7 @@ The following steps outline the CI process of the de-centralized deployment:
 
 ### Step 1: Prepare the server environment 
 
-* Provision the VM or Bare Metal Server.
+* Provision the VM or Bare-metal Server.
 * Ensure the server meets the hardware requirements for your application (CPU, memory, disk space, etc.).
 * Configure the server OS (Linux is recommended for production).
 
