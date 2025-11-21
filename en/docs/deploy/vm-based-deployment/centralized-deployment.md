@@ -28,7 +28,8 @@ The source repository is responsible for the **continuous integration (CI)** pro
 - Create a new integration project using the BI VS Code extension.
 - Add a meaningful description to the README
 
-> The README is required when you publish a package to a repository. You can edit the content to add a meaningful description about the integration project.
+???+ Note
+    The README is required when you publish a package to a repository. You can edit the content to add a meaningful description about the integration project.
 
 - Implement business logic using the drag-and-drop designer or by writing Ballerina/DSL code.
 
@@ -69,10 +70,11 @@ After packing the project, publish the generated artifacts to a shared artifact 
     accesstoken="<token>"
     ```
 
-    > If you are working in a context where it is not possible to save the `Settings.toml` file (e.g., within a CI/CD pipeline) you can set the access token via the `BALLERINA_CENTRAL_ACCESS_TOKEN` environment variable.
-    ```bash
-    export BALLERINA_CENTRAL_ACCESS_TOKEN="<token>"
-    ```
+    ???+ Note
+        If you are working in a context where it is not possible to save the `Settings.toml` file (e.g., within a CI/CD pipeline) you can set the access token via the `BALLERINA_CENTRAL_ACCESS_TOKEN` environment variable.
+        ```bash
+        export BALLERINA_CENTRAL_ACCESS_TOKEN="<token>"
+        ```
 
 4. Publish the package
 

@@ -17,7 +17,7 @@ Install only the software and packages required for your WSO2 product deployment
 Refer to the [system requirements](/references/system-requirements) for details on the minimum required software.
 
 ## Enable the firewall
-Enable and configure a host-level firewall (e.g., iptables, ufw, or firewalld) to protect inbound and outbound connections. Only open the ports that are required for product functionality.
+Enable and configure a host-level firewall (e.g., iptables, UFW, or firewalld) to protect inbound and outbound connections. Only open the ports that are required for product functionality.
 
 ## Restrict access to clustering ports
 

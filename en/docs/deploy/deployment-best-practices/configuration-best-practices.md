@@ -31,7 +31,7 @@ Each service maintains its own configuration independently.
 Each service's systemd file references its own configuration via `BAL_CONFIG_FILES`.
 
 #### Management
-Services deployed and configured independently. Good for teams owning individual services.
+Services are deployed and configured independently. Good for teams owning individual services.
 
 ## Containerized deployments
 
@@ -46,7 +46,7 @@ Services deployed and configured independently. Good for teams owning individual
 
 ### Docker Compose pattern
 
-Use environment files (`.env.development`, `.env.production`) to define environment-specific values. Mount configuration files as read-only volumes. Each environment has separate config directory.
+Use environment files (`.env.development`, `.env.production`) to define environment-specific values. Mount configuration files as read-only volumes. Each environment has a separate config directory.
 
 ### Docker Swarm
 
@@ -74,7 +74,7 @@ Sensitive data
 
 1. ConfigMap volumes mount as read-only files at `/etc/config/`
 2. Secret volumes mount with restricted permissions at `/etc/secrets/`
-3. Individual values injected as environment variables
+3. Individual values are injected as environment variables
 
 ### Environment management with kustomize
 
@@ -90,7 +90,7 @@ Deploy with: `kubectl apply -k overlays/production/`
 ## CI/CD configuration handling
 
 ### Build process
-Build WITHOUT configuration files. Create deployment artifacts independent of environment.
+Build WITHOUT the configuration files. Create deployment artifacts independent of environment.
 
 ### Deployment process  
 Each stage applies environment-specific configuration before updating the application:
@@ -105,7 +105,7 @@ Each stage applies environment-specific configuration before updating the applic
 - Each environment has separate secrets
 
 ### Pattern across platforms
-GitHub Actions, GitLab CI, Jenkins follow the same: build once, configure per environment, deploy many times.
+GitHub Actions, GitLab CI, and Jenkins follow the same: build once, configure per environment, deploy many times.
 
 ## Configuration promotion
 
@@ -117,7 +117,7 @@ Configuration flows through environments: development → staging → production
 2. Backup existing target configuration
 3. Copy with environment-specific transformations
 4. Validate transformed configuration
-5. Apply to target environment
+5. Apply to the target environment
 6. Audit log all changes
 
 ### Transformations
@@ -165,24 +165,24 @@ auth_service = "https://auth.example.com"
 During application startup:
 
 - Read `endpoints.toml`
-- Select correct endpoint block based on `ENVIRONMENT` variable
-- Use selected endpoint for all outbound connections
+- Select the correct endpoint block based on the `ENVIRONMENT` variable
+- Use the selected endpoint for all outbound connections
 
 ### Endpoint promotion
 
-Promote independently from general configuration:
+Promote independently from the general configuration:
 
 1. Extract source environment endpoint block
 2. Transform domain/URLs to target pattern
-3. Apply to target environment
+3. Apply to the target environment
 4. Validate connectivity to new endpoints
-5. Document changes in audit log
+5. Document changes in the audit log
 
 ## Common best practices
 
 ### Separation
 
-Configuration should be separate from code and artifacts
+Configuration should be separate from code and artifacts.
 
 ### Precedence management
 
@@ -202,7 +202,7 @@ Leverage configuration precedence order correctly:
 
 ### Validation
 
-Validate configuration at startup
+Validate the configuration at startup.
 
 - Check required values present
 - Validate value ranges and formats
@@ -210,7 +210,7 @@ Validate configuration at startup
 
 ### Documentation
 
-Maintain endpoint and configuration documentation
+Maintain the endpoint and the configuration documentation.
 
 - Example configuration files (Config.toml.example)
 - Endpoint registry showing all external/internal endpoints
@@ -218,7 +218,7 @@ Maintain endpoint and configuration documentation
 
 ### Auditability
 
-Log all configuration changes
+Log all configuration changes.
 
 - Who changed what
 - When changes occurred
