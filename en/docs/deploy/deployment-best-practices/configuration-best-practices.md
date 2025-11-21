@@ -35,7 +35,7 @@ Services are deployed and configured independently. Good for teams owning indivi
 
 ## Containerized deployments
 
-!!! Warning
+!!! warning
     Do NOT include `Config.toml` in the container image.
 
 ### Configuration injection methods
