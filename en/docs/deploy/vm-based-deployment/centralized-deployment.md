@@ -26,7 +26,7 @@ The source repository is responsible for the **continuous integration (CI)** pro
 #### Step 3: Create and implement BI projects
 
 - Create a new integration project using the BI VS Code extension.
-- Add a meaningful description to the README
+- Add a meaningful description to the README.
 
 ???+ Note
     The README is required when you publish a package to a repository. You can edit the content to add a meaningful description about the integration project.
@@ -45,7 +45,7 @@ Build the project and create a self-contained executable and deployable `.jar` a
 
 <a href="/assets/img/deploy/build-executable.png"><img src="/assets/img/deploy/build-executable.png" alt="Build JAR" ></a>
 
-Or use Ballerina CLI to pack to use the packages in consolidated package.
+Alternatively, use the Ballerina CLI to pack the artifacts for use in a consolidated package.
 
 ```bash
 bal pack
@@ -55,9 +55,9 @@ bal pack
 
 After packing the project, publish the generated artifacts to a shared artifact repository (e.g., Ballerina Central, GitHub Packages, Nexus, or internal registry).
 
-  ```bash
-  bal push
-  ```
+```bash
+bal push
+```
 
 ##### Publish to Ballerina Central
 
@@ -94,7 +94,7 @@ See [Use custom repositories for packages management](https://ballerina.io/learn
 
 #### Publish to custom repositories
 
-BI supports maven repositories such as [Nexus](https://www.sonatype.com/products/sonatype-nexus-repository), [Artifactory](https://jfrog.com/artifactory/) and [GitHub packages](https://docs.github.com/en/packages). 
+BI supports Maven repositories such as [Nexus](https://www.sonatype.com/products/sonatype-nexus-repository), [Artifactory](https://jfrog.com/artifactory/) and [GitHub packages](https://docs.github.com/en/packages). 
 
 Follow [Using custom repositories for package management](https://ballerina.io/learn/manage-dependencies/#use-custom-repositories-for-package-management) to learn more about setting up custom repositories to publish packages.
 
@@ -115,7 +115,13 @@ The deployment repository acts as the central hub for production-ready integrati
 - Ensure external dependencies (databases, message brokers, etc.) are configured.
 
 #### Step 2: Fetch and consolidate artifacts
-- Go to the terminal on VS Code and install the `Ballerina consolidate packages` tool
+- Go to the terminal on VS Code and install the `consolidate-packages` tool
+
+    ```bash
+    bal tool pull consolidate-packages
+    ```
+
+- Go to the terminal on VS Code and install the `consolidate-packages` tool
 
     ```bash
     bal tool pull consolidate-packages
@@ -142,7 +148,7 @@ The deployment repository acts as the central hub for production-ready integrati
 
 #### Step 4: Create the executable JAR for the project
 
-- Use `bal build` command in the consolidated project to build.
+- Use the `bal build` command to build the consolidated project.
 - The integration will be built as an executable JAR, and the JAR file will be available in the `target/bin` directory of the project.
 
 The generated Ballerina artifact can be deployed to the target environment, configuring necessary environment variables and system settings.
