@@ -1974,6 +1974,26 @@
     Apply security patches regularly
   </a>
   
+    <nav class="md-nav" aria-label="Apply security patches regularly">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development-environment" class="md-nav__link">
+    Development environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-runtime" class="md-nav__link">
+    Production runtime
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2084,6 +2104,20 @@
     <li class="md-nav__item">
       <a href="../network-level-security/" class="md-nav__link">
         Network Level Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration-best-practices/" class="md-nav__link">
+        Configuration Best Practices
       </a>
     </li>
   
@@ -2511,6 +2545,26 @@
     Apply security patches regularly
   </a>
   
+    <nav class="md-nav" aria-label="Apply security patches regularly">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#development-environment" class="md-nav__link">
+    Development environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#production-runtime" class="md-nav__link">
+    Production runtime
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2625,6 +2679,7 @@
 <h1 id="runtime-security">Runtime Security<a class="headerlink" href="#runtime-security" title="Permanent link">&para;</a></h1>
 <h2 id="apply-security-patches-regularly">Apply security patches regularly<a class="headerlink" href="#apply-security-patches-regularly" title="Permanent link">&para;</a></h2>
 <p>Keeping all software components up to date is a critical part of maintaining runtime security. Security patches often address newly discovered vulnerabilities that attackers can exploit if left unpatched.</p>
+<h3 id="development-environment">Development environment<a class="headerlink" href="#development-environment" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
@@ -2634,9 +2689,20 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>WSO2 Integrator: BI</strong></td>
+<td><strong>Development Tools</strong></td>
 <td>Always use the latest stable release of <a href="https://code.visualstudio.com/">Visual Studio Code</a>.<br><br>Keep <a href="https://marketplace.visualstudio.com/items?itemName=WSO2.ballerina-integrator">WSO2 Integrator: BI</a> and <a href="https://marketplace.visualstudio.com/items?itemName=WSO2.ballerina">Ballerina</a> extensions updated to ensure compatibility with the latest security and functionality enhancements.</td>
 </tr>
+</tbody>
+</table>
+<h3 id="production-runtime">Production runtime<a class="headerlink" href="#production-runtime" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Guidelines</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td><strong>Ballerina Distribution</strong></td>
 <td>Use the latest patch release of the relevant <a href="https://ballerina.io/downloads/">Ballerina distribution</a> to ensure runtime and library-level vulnerabilities are fixed.<br><br>Follow Ballerina and WSO2 product release notifications to stay informed about new security advisories.</td>
@@ -2674,9 +2740,12 @@
 </ul>
 <h2 id="change-default-ports-and-credentials">Change default ports and credentials<a class="headerlink" href="#change-default-ports-and-credentials" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Change all default listener ports used by BI components and generated Ballerina services.<br />
-  Example: modify configurations or <code>Config.toml</code> to run on custom, non-standard ports.  </li>
-<li>Disable unused ports and protocols to minimize the attack surface.  </li>
+<li>Change all default listener ports used by BI components and generated Ballerina services.
+  Example: modify configurations or <code>Config.toml</code> to run on custom, non-standard ports.
+  <div class="highlight"><pre><span></span><code><span class="k">[ballerina.http.listeners]</span>
+<span class="n">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9443</span>
+</code></pre></div></li>
+<li>Disable unused ports and protocols to minimize the attack surface.</li>
 <li>Replace any default credentials used by admin or management consoles.</li>
 </ul>
 <h2 id="secure-communication-with-external-services">Secure communication with external services<a class="headerlink" href="#secure-communication-with-external-services" title="Permanent link">&para;</a></h2>
@@ -2737,7 +2806,7 @@
 <li><strong>Network Segmentation:</strong> Place BI and databases on private networks/VPCs.  </li>
 <li><strong>Audit and Compliance:</strong> Periodically audit configurations and review access logs.  </li>
 <li><strong>Backup and Recovery:</strong> Encrypt and test backups regularly.  </li>
-<li><strong>Validate the code with scan tool:</strong> Use <a href="https://bi.docs.wso2.com/developer-guides/tools/other-tools/scan-tool/">Ballerina scan tool</a> to identify potential issues such as code smells, bugs, and vulnerabilities.</li>
+<li><strong>Validate the code with scan tool:</strong> Use <a href="/developer-guides/tools/other-tools/scan-tool">Ballerina scan tool</a> to identify potential issues such as code smells, bugs, and vulnerabilities.</li>
 </ul>
 
 

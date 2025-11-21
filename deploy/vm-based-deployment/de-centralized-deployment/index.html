@@ -1819,15 +1819,15 @@
       
         <li class="md-nav__item">
   <a href="#continuous-integration-ci" class="md-nav__link">
-    Continuous Integration (CI)
+    Continuous integration (CI)
   </a>
   
-    <nav class="md-nav" aria-label="Continuous Integration (CI)">
+    <nav class="md-nav" aria-label="Continuous integration (CI)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#step-1-prepare-the-server-environment" class="md-nav__link">
-    Step 1: Prepare the Server Environment
+    Step 1: Prepare the server environment
   </a>
   
 </li>
@@ -1841,14 +1841,14 @@
         
           <li class="md-nav__item">
   <a href="#step-3-create-and-implement-bi-projects" class="md-nav__link">
-    Step 3: Create and Implement BI Projects
+    Step 3: Create and implement BI projects
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-4-add-integration-tests-to-the-consolidated-project" class="md-nav__link">
-    Step 4: Add integration tests to the consolidated project
+  <a href="#step-4-add-integration-tests-optional" class="md-nav__link">
+    Step 4: Add integration tests (Optional)
   </a>
   
 </li>
@@ -1874,7 +1874,7 @@
       
         <li class="md-nav__item">
   <a href="#continuous-deployment-cd" class="md-nav__link">
-    Continuous Deployment (CD)
+    Continuous deployment (CD)
   </a>
   
 </li>
@@ -2062,6 +2062,20 @@
     <li class="md-nav__item">
       <a href="../../deployment-best-practices/network-level-security/" class="md-nav__link">
         Network Level Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment-best-practices/configuration-best-practices/" class="md-nav__link">
+        Configuration Best Practices
       </a>
     </li>
   
@@ -2486,15 +2500,15 @@
       
         <li class="md-nav__item">
   <a href="#continuous-integration-ci" class="md-nav__link">
-    Continuous Integration (CI)
+    Continuous integration (CI)
   </a>
   
-    <nav class="md-nav" aria-label="Continuous Integration (CI)">
+    <nav class="md-nav" aria-label="Continuous integration (CI)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#step-1-prepare-the-server-environment" class="md-nav__link">
-    Step 1: Prepare the Server Environment
+    Step 1: Prepare the server environment
   </a>
   
 </li>
@@ -2508,14 +2522,14 @@
         
           <li class="md-nav__item">
   <a href="#step-3-create-and-implement-bi-projects" class="md-nav__link">
-    Step 3: Create and Implement BI Projects
+    Step 3: Create and implement BI projects
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-4-add-integration-tests-to-the-consolidated-project" class="md-nav__link">
-    Step 4: Add integration tests to the consolidated project
+  <a href="#step-4-add-integration-tests-optional" class="md-nav__link">
+    Step 4: Add integration tests (Optional)
   </a>
   
 </li>
@@ -2541,7 +2555,7 @@
       
         <li class="md-nav__item">
   <a href="#continuous-deployment-cd" class="md-nav__link">
-    Continuous Deployment (CD)
+    Continuous deployment (CD)
   </a>
   
 </li>
@@ -2580,42 +2594,41 @@
 
 <h1 id="de-centralized-deployment">De-centralized Deployment<a class="headerlink" href="#de-centralized-deployment" title="Permanent link">&para;</a></h1>
 <p>The de-centralized deployment offers a straightforward approach, ideal for simpler applications or when direct control over individual deployments is preferred. In this method, BI artifacts are developed and published to a registry (a storage location for deployable components). The deployment process retrieves these artifacts and deploys them to the target environment, ensuring all necessary dependencies and configurations are included.</p>
-<h2 id="continuous-integration-ci">Continuous Integration (CI)<a class="headerlink" href="#continuous-integration-ci" title="Permanent link">&para;</a></h2>
+<h2 id="continuous-integration-ci">Continuous integration (CI)<a class="headerlink" href="#continuous-integration-ci" title="Permanent link">&para;</a></h2>
 <p>Continuous Integration (CI) in de-centralized deployment streamlines development by automating the building, testing, and publishing of individual BI artifacts, ensuring faster feedback and fewer integration issues.</p>
 <p>The following steps outline the CI process of the de-centralized deployment:</p>
-<h3 id="step-1-prepare-the-server-environment">Step 1: Prepare the Server Environment<a class="headerlink" href="#step-1-prepare-the-server-environment" title="Permanent link">&para;</a></h3>
+<h3 id="step-1-prepare-the-server-environment">Step 1: Prepare the server environment<a class="headerlink" href="#step-1-prepare-the-server-environment" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Provision the VM or Bare Metal Server.</li>
+<li>Provision the VM or Bare-metal Server.</li>
 <li>Ensure the server meets the hardware requirements for your application (CPU, memory, disk space, etc.).</li>
 <li>Configure the server OS (Linux is recommended for production).</li>
 </ul>
 <h3 id="step-2-install-prerequisites">Step 2: Install prerequisites<a class="headerlink" href="#step-2-install-prerequisites" title="Permanent link">&para;</a></h3>
-<pre class="codehilite"><code class="linenums"> - Visual Studio Code: Install &lt;a href=&quot;https://code.visualstudio.com/&quot;&gt;Visual Studio Code&lt;/a&gt; if you don't have it already.
- - WSO2 Integrator: BI Extension: Install the WSO2 Integrator: BI extension. Refer to &lt;a href=&quot;../install-wso2-integrator-bi/&quot;&gt;Install WSO2 Integrator: BI&lt;/a&gt; for detailed instructions.</code></pre>
-
-
-<h3 id="step-3-create-and-implement-bi-projects">Step 3: Create and Implement BI Projects<a class="headerlink" href="#step-3-create-and-implement-bi-projects" title="Permanent link">&para;</a></h3>
-<pre class="codehilite"><code class="linenums">- Create a new integration project using the BI VS Code extension.
-- Implement business logic using the drag-and-drop designer or by writing Ballerina/DSL code.
-
-???+ Tip
-    Use shared modules or libraries for common logic and avoid duplication.</code></pre>
-
-
-<h3 id="step-4-add-integration-tests-to-the-consolidated-project">Step 4: Add integration tests to the consolidated project<a class="headerlink" href="#step-4-add-integration-tests-to-the-consolidated-project" title="Permanent link">&para;</a></h3>
-<pre class="codehilite"><code class="linenums">- Use the `Test Explorer` of BI to write and execute tests for the consolidated project.</code></pre>
-
-
+<ul>
+<li>Visual Studio Code: Install <a href="https://code.visualstudio.com/">Visual Studio Code</a> if you don't have it already.</li>
+<li>WSO2 Integrator: BI Extension: Install the WSO2 Integrator: BI extension. Refer to <a href="/get-started/install-wso2-integrator-bi">Install WSO2 Integrator: BI</a> for detailed instructions.</li>
+</ul>
+<h3 id="step-3-create-and-implement-bi-projects">Step 3: Create and implement BI projects<a class="headerlink" href="#step-3-create-and-implement-bi-projects" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Create a new integration project using the BI VS Code extension.</li>
+<li>Implement business logic using the drag-and-drop designer or by writing Ballerina/DSL code.</li>
+</ul>
+<details class="tip" open="open"><summary>Tip</summary><p>Use shared modules or libraries for common logic and avoid duplication.</p>
+</details>
+<h3 id="step-4-add-integration-tests-optional">Step 4: Add integration tests (Optional)<a class="headerlink" href="#step-4-add-integration-tests-optional" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Use the <code>Test Explorer</code> of BI to write and execute tests for the project.    </li>
+</ul>
 <h3 id="step-5-create-the-executable-jar-for-the-project">Step 5: Create the executable JAR for the project<a class="headerlink" href="#step-5-create-the-executable-jar-for-the-project" title="Permanent link">&para;</a></h3>
-<pre class="codehilite"><code class="linenums">- Navigate to the Visualizer view by clicking on the BI icon on the sidebar.
-- Click on the **Deploy on VM** under the **Deployment Options** section in the right panel.
-- Click **Create Executable** button.       
-    &lt;a href=&quot;https://wso2.github.io/docs-bi/assets/img/deploy/build-jar.gif&quot;&gt;&lt;img src=&quot;https://wso2.github.io/docs-bi/assets/img/deploy/build-jar.gif&quot; alt=&quot;Build JAR&quot; width=&quot;70%&quot;&gt;&lt;/a&gt; 
-- The integration will be built as an executable JAR and the JAR file will be available in the `target\bin` directory of the project.</code></pre>
-
-
+<ul>
+<li>Navigate to the Visualizer view by clicking on the BI icon on the sidebar.</li>
+<li>Click on the <strong>Deploy on VM</strong> under the <strong>Deployment Options</strong> section in the right panel.</li>
+<li>Click <strong>Create Executable</strong> button.     <br />
+    <a href="https://wso2.github.io/docs-bi/assets/img/deploy/build-jar.gif"><img src="https://wso2.github.io/docs-bi/assets/img/deploy/build-jar.gif" alt="Build JAR" width="70%"></a> </li>
+<li>The integration will be built as an executable JAR and the JAR file will be available in the <code>target\bin</code> directory of the project.</li>
+</ul>
 <h3 id="step-6-publish-the-artifacts-to-the-registry">Step 6: Publish the artifacts to the registry.<a class="headerlink" href="#step-6-publish-the-artifacts-to-the-registry" title="Permanent link">&para;</a></h3>
-<h2 id="continuous-deployment-cd">Continuous Deployment (CD)<a class="headerlink" href="#continuous-deployment-cd" title="Permanent link">&para;</a></h2>
+<h2 id="continuous-deployment-cd">Continuous deployment (CD)<a class="headerlink" href="#continuous-deployment-cd" title="Permanent link">&para;</a></h2>
 <p>The Continuous Deployment (CD) process in a de-centralized setup involves automating the deployment of Ballerina artifacts to the target environment. This typically involves using a deployment workflow or pipeline to retrieve the built artifacts from the registry, configure the target environment, deploy the application, and verify its successful deployment.</p>
 
 
