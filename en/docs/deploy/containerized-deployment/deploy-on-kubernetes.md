@@ -14,7 +14,7 @@ This guide explains how to deploy an integration in a Kubernetes cluster.
 
     - Specify the container image details by creating a `Cloud.toml` file.
 
-    ```
+    ```toml
     [container.image]
     repository="wso2inc" # Docker hub repository name.
     name="greeter" # container name
@@ -55,8 +55,8 @@ This guide explains how to deploy an integration in a Kubernetes cluster.
 ## Step 3:  Push the Docker image
 
     Execute the command below to push the created Docker image into Docker Hub for the cluster to get access to the previously built container.
-    ```
-    $ docker push wso2inc/greeter:latest
+    ```bash
+    docker push wso2inc/greeter:latest
     ```
 
     ???+ Note
@@ -73,8 +73,8 @@ This guide explains how to deploy an integration in a Kubernetes cluster.
 
     Execute the command below to deploy the application into the Kubernetes cluster.
 
-    ```
-    $ kubectl apply -f /home/example/greeter/target/kubernetes/greeter
+    ```bash
+    kubectl apply -f /home/example/greeter/target/kubernetes/greeter
     ```
     You view the output below.
 

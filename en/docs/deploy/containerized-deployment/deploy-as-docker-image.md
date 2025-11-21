@@ -18,9 +18,14 @@ Follow the steps below to execute the Docker image.
 1. Execute the docker images command to verify if the Docker image is generated.
 
 ```bash
-$ docker images
-REPOSITORY                                          TAG                    IMAGE ID       CREATED          SIZE
-fake_store_manager                                  latest                 e971e4336f71   58 minutes ago   237MB
+docker images
+```
+
+The output will be similar to the following:
+
+```bash
+REPOSITORY                                          TAG                    IMAGE ID             CREATED                SIZE
+fake_store_manager                          latest                 e971e4336f71   58 minutes ago   237MB
 ```
 
 2. Execute the `docker run -d -v <path/to/config>/Config.toml:/home/ballerina/Config.toml -p 8090:8090 fake_store_manager:latest` command to run the generated Docker image.

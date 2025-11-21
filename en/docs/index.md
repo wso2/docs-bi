@@ -118,14 +118,14 @@
                             {% if tile.title == "Community & Support" and link.name != "Release Note" %}
                                 <a href="{{ link.url }}" target="_blank" class="link">{{ link.name }}</a>
                             {% else %}
-                                <a href="{{ base_path }}/{{ link.url }}" class="link">{{ link.name }}</a>
+                                <a href="{{ link.url }}" class="link">{{ link.name }}</a>
                             {% endif %}
                         </li>
                         {% endfor %}
                     </ul>
                     {% if tile.more_btn %}
                     <div class="button-container">
-                        <a href="{{base_path}}/{{ tile.more_btn.url }}" class="view-all-button">{{ tile.more_btn.name }}</a>
+                        <a href="{{ tile.more_btn.url }}" class="view-all-button">{{ tile.more_btn.name }}</a>
                     </div>
                     {% endif %}
                 </div>

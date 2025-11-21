@@ -4,17 +4,27 @@
 
 Use a dedicated OS-level user account to run WSO2 products. Assign only the minimum permissions necessary for running the product. Avoid using the root or administrator account, as these have full privileges by default and increase the risk of security breaches.
 
+Recommended permissions for the dedicated user:
+
+* Read and execute access to the application directory
+* Read and write access to the log directory
+* Read access to configuration files
+* No sudo or administrative privileges
+
 ## Minimize installed software
 Install only the software and packages required for your WSO2 product deployment. Unnecessary software can introduce vulnerabilities. Regularly review and monitor installed packages.
 
 Refer to the [system requirements](/references/system-requirements) for details on the minimum required software.
 
 ## Enable the firewall
-Enable and configure a host-level firewall (e.g., iptables) to protect inbound and outbound connections. Only open the ports that are required for product functionality.
+Enable and configure a host-level firewall (e.g., iptables, UFW, or firewalld) to protect inbound and outbound connections. Only open the ports that are required for product functionality.
 
 ## Restrict access to clustering ports
 
-Apply firewall rules to restrict access to TCP ports used for clustering (e.g., ports 4000, 4001, etc.) so that they are accessible only to other nodes within the WSO2 product cluster. Prevent access from unrecognized or external hosts.
+Apply firewall rules to restrict access to TCP ports used for clustering so that they are accessible only to other nodes within the WSO2 product cluster. Prevent access from unrecognized or external hosts.
+
+!!! note
+    The actual clustering ports depend on your product configuration. Verify the ports used in your deployment before configuring firewall rules.
 
 ## Use secure shell (SSH)
 
@@ -34,4 +44,18 @@ Enable OS-level logging and review logs periodically to monitor user actions. Co
 
 ## Perform regular backups
 
-Back up all the critical files and data regularly, and store them securely.
+Back up all critical files and data regularly, and store them securely.
+
+Critical files to include in backups:
+
+* Configuration files (e.g., `Config.toml`, environment-specific configurations)
+* Keystores and truststores
+* Database exports
+* Custom scripts and deployment artifacts
+
+Backup recommendations:
+
+* Perform daily backups for production environments
+* Store backups in encrypted, geographically-distributed storage
+* Test backup restoration procedures periodically
+* Implement access controls for backup storage

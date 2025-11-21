@@ -156,6 +156,7 @@ nav:
         - Runtime Security: deploy/deployment-best-practices/runtime-security.md
         - OS Level Security: deploy/deployment-best-practices/os-level-security.md
         - Network Level Security: deploy/deployment-best-practices/network-level-security.md
+        - Configuration Best Practices: deploy/deployment-best-practices/configuration-best-practices.md
   - Observability and Monitoring:
       - Overview: observability-and-monitoring/overview.md
       - "Monitoring with WSO2 Integrator: ICP": observability-and-monitoring/monitoring-with-wso2-integrator-icp.md

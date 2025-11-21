@@ -6,17 +6,17 @@ Implement high availability (HA) and failover configurations to ensure continuou
 
 * **Cloud-native deployments:** Achieve high availability through the container orchestration platform (e.g., Kubernetes).
 
-* **VM-based deployments:** Use a minimum of two nodes configured for failover to maintain service continuity.
+* **VM-based deployments:** Deploy a minimum of two nodes configured for active-active or active-passive failover to maintain service continuity. For critical production environments with strict availability SLAs, consider three or more nodes.
 
 Continuously monitor the health and performance of all nodes within the cluster. Track key metrics such as resource utilization, response time anomalies, and the volume of incoming network connections. Effective monitoring helps you determine when to add failover instances or adjust network routing to prevent service disruptions.
 
 ## Maintain network-level logging
 
-Enable and retain logs for all network components, including proxy servers, load balancers, and other critical infrastructure devices. Regularly review these logs to detect abnormal behavior, unauthorized access attempts, or configuration changes.
+Enable and retain logs for all network components, including proxy servers, load balancers, and other critical infrastructure devices. Review these logs regularly to detect abnormal behavior, unauthorized access attempts, or configuration changes.
 
 ## Audit open ports and services
 
-Conduct periodic network scans to identify open ports and active services. Ensure that only the ports necessary for your WSO2 products are accessible on both internal and external networks. Disable or monitor any additional open ports that are not explicitly required.
+Conduct periodic network scans to identify open ports and active services. Use tools such as nmap, netstat, or ss for port scanning. Ensure that only the ports necessary for your WSO2 products are accessible on both internal and external networks. Disable or monitor any additional open ports that are not explicitly required.
 
 ## Enforce device-level security
 
