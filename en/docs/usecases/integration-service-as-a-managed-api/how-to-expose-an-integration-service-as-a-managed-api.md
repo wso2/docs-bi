@@ -236,7 +236,7 @@ Now let's start designing the integration by adding the necessary artifacts.
     ```
 
     !!! Info
-        See the [Create a Rest API](https://apim.docs.wso2.com/en/3.2.0/learn/design-api/create-api/create-a-rest-api/) documentation to learn how to get configurations.
+        See the [Create a Rest API](https://apim.docs.wso2.com/en/latest/manage-apis/design/create-api/create-rest-api/create-a-rest-api/) documentation to learn how to get configurations.
 
         These are some default values, but `clientId` and `clientSecret` should be replaced with your own.
 
