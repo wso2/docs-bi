@@ -240,15 +240,15 @@ Now let's start designing the integration by adding the necessary artifacts.
 
         These are some default values, but `clientId` and `clientSecret` should be replaced with your own.
 
-        ```conf
-        [ballerinax.wso2.apim.catalog]
-        serviceUrl="https://127.0.0.1:9443/api/am/service-catalog/v1"
-        tokenUrl="https://localhost:9443/oauth2/token"
-        username="admin"
-        password="admin"
-        clientId="<clientId>"
-        clientSecret="<Client secret>"
-        ```
+    ```conf
+    [ballerinax.wso2.apim.catalog]
+    serviceUrl="https://127.0.0.1:9443/api/am/service-catalog/v1"
+    tokenUrl="https://localhost:9443/oauth2/token"
+    username="admin"
+    password="admin"
+    clientId="<clientId>"
+    clientSecret="<Client secret>"
+    ```
 
 5. Start the API Manager runtime before starting the WSO2 Integrator: BI.
 
@@ -280,4 +280,4 @@ Now let's start designing the integration by adding the necessary artifacts.
 3. After connecting to APIM, your integration service will appear as a managed API in the API Publisher portal. From there, you can configure and deploy the API, publish it to the Developer Portal, test it using the integrated API console, and allow consumers to subscribe and invoke the API securely.
 
 !!! Tip
-    For detailed instructions, see [Invoke an API using the Integrated API Console](https://apim.docs.wso2.com/en/4.3.0/consume/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console/).
+    For detailed instructions, see [Invoke an API using the Integrated API Console](https://apim.docs.wso2.com/en/latest/consume/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console/).
