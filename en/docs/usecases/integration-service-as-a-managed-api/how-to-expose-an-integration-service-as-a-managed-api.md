@@ -24,7 +24,7 @@ You need Visual Studio Code (VS Code) with the <a target="_blank" href="https://
 
 Follow the instructions given in this section to create and configure the required artifacts.
 
-#### Create an Integration project
+#### Create an integration project
 
 The Integration project will contain all the required artifacts for the integration solution.
 
@@ -50,7 +50,7 @@ The Integration project will contain all the required artifacts for the integrat
 
 Now let's start designing the integration by adding the necessary artifacts.
 
-#### Create HTTP Service 
+#### Create HTTP service 
 
 1. Navigate to **WSO2 Integrator: BI Project Design**.
 
