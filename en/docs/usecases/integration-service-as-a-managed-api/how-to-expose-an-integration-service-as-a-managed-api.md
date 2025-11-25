@@ -236,7 +236,7 @@ Now let's start designing the integration by adding the necessary artifacts.
     ```
 
     !!! Info
-        See the [Create a Rest API](https://apim.docs.wso2.com/en/latest/manage-apis/design/create-api/create-rest-api/create-a-rest-api/) documentation to learn how to get configurations.
+        See the [Create a Rest API](https://apim.docs.wso2.com/en/4.6.0/manage-apis/design/create-api/create-rest-api/create-a-rest-api/) documentation to learn how to get configurations.
 
         These are some default values, but `clientId` and `clientSecret` should be replaced with your own.
 
@@ -253,7 +253,7 @@ Now let's start designing the integration by adding the necessary artifacts.
 5. Start the API Manager runtime before starting the WSO2 Integrator: BI.
 
     1.  Download and set up [WSO2 API Manager](https://wso2.com/api-management/).
-    2.  Start the [API-M server](https://apim.docs.wso2.com/en/latest/install-and-setup/install/installing-the-product/running-the-api-m/).
+    2.  Start the [API-M server](https://apim.docs.wso2.com/en/4.6.0/install-and-setup/install/installing-the-product/running-the-api-m/).
 
 ### Step 4: Run the application
 
@@ -280,4 +280,4 @@ Now let's start designing the integration by adding the necessary artifacts.
 3. After connecting to APIM, your integration service will appear as a managed API in the API Publisher portal. From there, you can configure and deploy the API, publish it to the Developer Portal, test it using the integrated API console, and allow consumers to subscribe and invoke the API securely.
 
 !!! Tip
-    For detailed instructions, see [Invoke an API using the Integrated API Console](https://apim.docs.wso2.com/en/latest/consume/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console/).
+    For detailed instructions, see [Invoke an API using the Integrated API Console](https://apim.docs.wso2.com/en/4.6.0/consume/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console/).
