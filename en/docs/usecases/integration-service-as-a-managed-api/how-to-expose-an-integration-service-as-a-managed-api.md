@@ -37,9 +37,9 @@ The Integration project will contain all the required artifacts for the integrat
 
 2. Click the WSO2 Integrator: BI icon on the Activity Bar of VS Code.
 
-    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/bi-vscode-extension.png">
+    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/bi-vscode-extension.gif">
         <img
-            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/bi-vscode-extension.png"
+            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/bi-vscode-extension.gif"
             alt="BI VS Code Extension"
             width="80%"
         />
@@ -47,9 +47,9 @@ The Integration project will contain all the required artifacts for the integrat
 
 3. Click **Create New Integration**.
 
-    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/create-new-integration.png">
+    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/create-new-integration.gif">
         <img
-            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/create-new-integration.png"
+            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/create-new-integration.gif"
             alt="Create new integration"
             width="80%"
         />
@@ -61,9 +61,9 @@ The Integration project will contain all the required artifacts for the integrat
 
 5. Provide a location under **Select Path**.
 
-    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/create-new-project-integration-first.png">
+    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/create-new-project-integration-first.gif">
         <img
-            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/create-new-project-integration-first.png"
+            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/create-new-project-integration-first.gif"
             alt="create new project"
             width="80%"
         />
@@ -79,9 +79,9 @@ Now let's start designing the integration by adding the necessary artifacts.
 
 2. Click on the **+ Add Artifact** Button.
 
-    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/add-artifact-icon.png">
+    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/add-artifact-icon.gif">
         <img
-            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/add-artifact-icon.png"
+            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/add-artifact-icon.gif"
             alt="add artifact"
             width="80%"
         />
@@ -89,9 +89,9 @@ Now let's start designing the integration by adding the necessary artifacts.
 
 3. Click **HTTP Service** under **Integration as API**.
 
-    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/http-service.png">
+    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/http-service.gif">
         <img
-            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/http-service.png"
+            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/http-service.gif"
             alt="http service"
             width="80%"
         />
@@ -99,9 +99,9 @@ Now let's start designing the integration by adding the necessary artifacts.
 
 4. Enter `healthcare` in the **Service Base Path**, then click **Create**.
 
-    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/base-path.png">
+    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/base-path.gif">
         <img
-            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/base-path.png"
+            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/base-path.gif"
             alt="base path"
             width="80%"
         />
@@ -109,9 +109,9 @@ Now let's start designing the integration by adding the necessary artifacts.
 
 5. Click on the **+ Add Resource** Button.
 
-    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/add-resource.png">
+    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/add-resource.gif">
         <img
-            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/add-resource.png"
+            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/add-resource.gif"
             alt="add resource"
             width="80%"
         />
@@ -119,9 +119,9 @@ Now let's start designing the integration by adding the necessary artifacts.
 
 6. Select the **GET** method, enter the **Resource Path** as `querydoctor`, add the **Query Parameter** `category`, and click **Save**.
 
-    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/resource.png">
+    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/resource.gif">
         <img
-            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/resource.png"
+            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/resource.gif"
             alt="resource"
             width="80%"
         />
@@ -129,9 +129,9 @@ Now let's start designing the integration by adding the necessary artifacts.
 
 7. Click on the **+** Button.
 
-    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/plus-button.png">
+    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/plus-button.gif">
         <img
-            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/plus-button.png"
+            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/plus-button.gif"
             alt="plus button"
             width="80%"
         />
@@ -139,9 +139,9 @@ Now let's start designing the integration by adding the necessary artifacts.
 
 8. Click on the **Return** Button.
 
-    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/return-button.png">
+    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/return-button.gif">
         <img
-            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/return-button.png"
+            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/return-button.gif"
             alt="return button"
             width="80%"
         />
@@ -187,9 +187,9 @@ Now let's start designing the integration by adding the necessary artifacts.
 
 1. Click on the `</>` Button.
 
-    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/code-button.png">
+    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/code-button.gif">
         <img
-            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/code-button.png"
+            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/code-button.gif"
             alt="code button"
             width="80%"
         />
@@ -197,19 +197,19 @@ Now let's start designing the integration by adding the necessary artifacts.
 
 2. Add `import ballerinax/wso2.apim.catalog as _;` after the existing imports, then click the File View icon in the top-left corner.
 
-    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/import.png">
+    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/import.gif">
         <img
-            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/import.png"
+            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/import.gif"
             alt="import button"
             width="80%"
         />
     </a>
 
-3. Select `Ballerina.toml` file and add `remoteManagement=true` after the existing `[build-options]`.
+3. Select `Ballerina.toml` file and add `remoteManagement = true` after the existing `[build-options]`.
 
-    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/build-options.png">
+    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/build-options.gif">
         <img
-            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/build-options.png"
+            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/build-options.gif"
             alt="build options"
             width="80%"
         />
@@ -217,9 +217,9 @@ Now let's start designing the integration by adding the necessary artifacts.
 
 4. Use the BI Configurations `+` icon to add the following configurations, and save each of them.
 
-    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/ui-config.png">
+    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/ui-config.gif">
         <img
-            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/ui-config.png"
+            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/ui-config.gif"
             alt="configurations"
             width="80%"
         />
@@ -259,9 +259,9 @@ Now let's start designing the integration by adding the necessary artifacts.
 
 1. Select the BI Extension icon and click the **Run** button to execute.
 
-    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/run.png">
+    <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/run.gif">
         <img
-            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/run.png"
+            src="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/run.gif"
             alt="run-icon"
             width="80%"
         />

@@ -177,8 +177,8 @@ nav:
       - "Connector Development Guidelines": references/connector-development-guidelines.md
   - Usecases:
       - Datamapper usecases:
-          - Overview: usecases/datamapper/overview.md
-          - Read a CSV file and transform it to a XML and save as a file: usecases/datamapper/read-csv-file-and-transform-to-xml-file.md
+          - Overview: integration-guides/usecases/datamapper/overview.md
+          - Read a CSV file and transform it to a XML and save as a file: integration-guides/usecases/datamapper/read-csv-file-and-transform-to-xml-file.md
       - Integration Service As a Managed API:
           - How to Expose an Integration Service as a Managed API: usecases/integration-service-as-a-managed-api/how-to-expose-an-integration-service-as-a-managed-api.md
   - Release Notes:
