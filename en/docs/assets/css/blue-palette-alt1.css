@@ -82,7 +82,6 @@
 .md-content a {
     color: var(--md-typeset-a-color);
     font-weight: bold;
-    text-decoration: underline;
 }
 
 .md-content a:hover {
@@ -91,22 +90,18 @@
 
 .md-nav__link:hover {
     color: var(--md-typeset-a-color);
-    text-decoration: underline;
 }
 
 .md-nav__link--active {
     color: var(--md-nav-link-color);
     font-weight: bold;
-    text-decoration: underline;
 }
 
 .md-tabs__link:hover {
     color: var(--md-typeset-a-color);
-    text-decoration: underline;
 }
 
 .md-tabs__link--active {
     color: var(--md-nav-link-color);
     font-weight: bold;
-    text-decoration: underline;
 }
