@@ -24,6 +24,10 @@ Connectors are available for accessing storage, queueing, and database services 
 
 BI provides connectors for integrating with widely used SaaS platforms. These enable smooth data flow between your integration and business-critical tools like Salesforce (`ballerinax/salesforce`), Twilio (`ballerinax/twilio`), GitHub (`ballerinax/github`), and Stripe (`ballerinax/stripe`). Many additional SaaS connectors are available to meet your integration needs.
 
+## 🤖 AI Connectors
+
+BI provides connectors to incorporate large language models (LLMs), embeddings, image generation, vector search, and retrieval-augmented generation (RAG) directly into the integration workflow, such as OpenAI (`ballerinax/openai.chat`), Pinecone vector database (`ballerinax/pinecone.vector`), etc. 
+
 ## Using Connectors in BI
 
 To use a connector in your integration:
