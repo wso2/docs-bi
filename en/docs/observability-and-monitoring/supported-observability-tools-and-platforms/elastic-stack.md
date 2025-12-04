@@ -93,7 +93,7 @@ Elasticsearch and Kibana are provided as <a href="https://www.elastic.co/cloud" 
     
     The `-v` flag is used for bind mounting, where the container will read the file from the host machine. Provide the path to the `ballerina.log` file to be bind-mounted to the filebeat container.
 
-## Step 2 - Run Ballerina Service
+## Step 2 - Run Ballerina service
 
 Create the sample [shop service](/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service) and run it using the `Run` option in BI.
 

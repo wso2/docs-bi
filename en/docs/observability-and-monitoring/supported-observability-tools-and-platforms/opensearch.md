@@ -2,7 +2,7 @@
 
 The sample [shop service](/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service) will be used in this guide. Follow the steps given below to observe BI tracing, metrics, and logs in [OpenSearch](https://opensearch.org/).
 
-## Step 1 - Set up OpenSearch Deployment
+## Step 1 - Set up OpenSearch deployment
 
 * Main components:
       * Sample Service: service application that is being observed.
@@ -165,7 +165,7 @@ Open the OpenSearch Dashboard in your browser at [http://localhost:5601](http://
 
       <a href="{{base_path}}/assets/img/observability/supported-tools/service-details-opensearch.png"><img src="{{base_path}}/assets/img/observability/supported-tools/service-details-opensearch.png" alt="Service details in OpenSearch" width="70%"></a>
 
-## Step 6 - View metrics on OpenSearch Dashboard
+## Step 6 - View metrics on OpenSearch dashboard
 
 Open the OpenSearch Dashboard in your browser at `http://localhost:5601` and navigate to the **Dashboards** tab under **OpenSearch Dashboards** section.
 
@@ -175,7 +175,7 @@ Then click on the **Integration metrics dashboard** to view the metrics.
 
 <a href="{{base_path}}/assets/img/observability/supported-tools/opensearch-metrics-dashboard-charts.png"><img src="{{base_path}}/assets/img/observability/supported-tools/opensearch-metrics-dashboard-charts.png" alt="OpenSearch metrics dashboard" width="70%"></a>
 
-## Step 7 - View logs on OpenSearch Dashboard
+## Step 7 - View logs on OpenSearch dashboard
 
 Open the OpenSearch Dashboard in your browser at [http://localhost:5601](http://localhost:5601) and navigate to the **Dashboards** tab under **OpenSearch Dashboards** section.
 

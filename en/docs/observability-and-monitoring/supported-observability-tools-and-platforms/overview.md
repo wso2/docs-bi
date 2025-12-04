@@ -18,7 +18,7 @@ BI provides built-in support for observability across its runtime. Integration s
 
 This guide explains how to enable and configure observability in BI using a simplified integration example. This integration sample is used to demonstrate the supported observability and monitoring tools in the next sections.
 
-## Example: Observing a Sample Integration Service
+## Example: Observing a sample integration service
 
 ### Create a sample service
 
@@ -149,7 +149,7 @@ Let’s consider an example where an integration service handles product managem
 
 <a href="{{base_path}}/assets/img/deploy/observability_1.gif"><img src="{{base_path}}/assets/img/deploy/observability_1.gif" alt="Create Observability Demo Service" width="70%"></a>
 
-### Enable Observability for the project
+### Enable observability for the project
 
 Observability can be enabled in a BI project by adding the following section to the `Ballerina.toml` file by navigating to the **file explorer** view.
 
@@ -158,7 +158,7 @@ Observability can be enabled in a BI project by adding the following section to 
 observabilityIncluded=true
 ```
 
-### Setting up runtime configurations for Observability
+### Setting up runtime configurations for observability
 
 To enable observability (both metrics and tracing) in the BI runtime, use the following configurations in the `Ballerina.toml` file.
 

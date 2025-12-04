@@ -38,7 +38,7 @@ Hot deployments refer to the process of updating or redeploying software compone
 
 Here the hot deployment strategy works by orchestrating multiple service instances through a NGINX load balancer, allowing you to update and restart services without interrupting user traffic. The load balancer automatically routes requests away from instances undergoing updates and back to them once they are healthy again.
 
-### Common Load Balancing Strategies:
+### Common load balancing strategies:
 
 #### **1. Active-Active**
 
