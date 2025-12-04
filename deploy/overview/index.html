@@ -1662,10 +1662,10 @@
         
           <li class="md-nav__item">
   <a href="#common-load-balancing-strategies" class="md-nav__link">
-    Common Load Balancing Strategies:
+    Common load balancing strategies:
   </a>
   
-    <nav class="md-nav" aria-label="Common Load Balancing Strategies:">
+    <nav class="md-nav" aria-label="Common load balancing strategies:">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2552,10 +2552,10 @@
         
           <li class="md-nav__item">
   <a href="#common-load-balancing-strategies" class="md-nav__link">
-    Common Load Balancing Strategies:
+    Common load balancing strategies:
   </a>
   
-    <nav class="md-nav" aria-label="Common Load Balancing Strategies:">
+    <nav class="md-nav" aria-label="Common load balancing strategies:">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2708,7 +2708,7 @@ Best for modern, automated environments, BI built integrations run in Docker con
 <h2 id="hot-deployment-strategies">Hot Deployment Strategies<a class="headerlink" href="#hot-deployment-strategies" title="Permanent link">&para;</a></h2>
 <p>Hot deployments refer to the process of updating or redeploying software components with zero downtime and maintaining high availability in production systems.</p>
 <p>Here the hot deployment strategy works by orchestrating multiple service instances through a NGINX load balancer, allowing you to update and restart services without interrupting user traffic. The load balancer automatically routes requests away from instances undergoing updates and back to them once they are healthy again.</p>
-<h3 id="common-load-balancing-strategies">Common Load Balancing Strategies:<a class="headerlink" href="#common-load-balancing-strategies" title="Permanent link">&para;</a></h3>
+<h3 id="common-load-balancing-strategies">Common load balancing strategies:<a class="headerlink" href="#common-load-balancing-strategies" title="Permanent link">&para;</a></h3>
 <h4 id="1-active-active"><strong>1. Active-Active</strong><a class="headerlink" href="#1-active-active" title="Permanent link">&para;</a></h4>
 <p>All instances actively serve traffic simultaneously. NGINX uses passive health monitoring through <code>max_fails</code> and <code>fail_timeout</code> directives. When an instance fails to respond successfully <code>max_fails</code> times within the <code>fail_timeout</code> window, NGINX temporarily removes it from the load balancing pool.</p>
 <p>This passive approach relies on actual client requests to detect server failures, meaning the load balancer only discovers problems when real traffic encounters them. Passive monitoring is reactive and depends on the natural flow of requests to identify unhealthy servers. The default load balancing method is round-robin, distributing requests evenly across all available servers, though this can be changed to other algorithms like least connections or IP hash based on application requirements.</p>

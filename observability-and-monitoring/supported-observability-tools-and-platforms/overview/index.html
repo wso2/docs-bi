@@ -2145,10 +2145,10 @@
       
         <li class="md-nav__item">
   <a href="#example-observing-a-sample-integration-service" class="md-nav__link">
-    Example: Observing a Sample Integration Service
+    Example: Observing a sample integration service
   </a>
   
-    <nav class="md-nav" aria-label="Example: Observing a Sample Integration Service">
+    <nav class="md-nav" aria-label="Example: Observing a sample integration service">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2160,14 +2160,14 @@
         
           <li class="md-nav__item">
   <a href="#enable-observability-for-the-project" class="md-nav__link">
-    Enable Observability for the project
+    Enable observability for the project
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#setting-up-runtime-configurations-for-observability" class="md-nav__link">
-    Setting up runtime configurations for Observability
+    Setting up runtime configurations for observability
   </a>
   
 </li>
@@ -2493,10 +2493,10 @@
       
         <li class="md-nav__item">
   <a href="#example-observing-a-sample-integration-service" class="md-nav__link">
-    Example: Observing a Sample Integration Service
+    Example: Observing a sample integration service
   </a>
   
-    <nav class="md-nav" aria-label="Example: Observing a Sample Integration Service">
+    <nav class="md-nav" aria-label="Example: Observing a sample integration service">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2508,14 +2508,14 @@
         
           <li class="md-nav__item">
   <a href="#enable-observability-for-the-project" class="md-nav__link">
-    Enable Observability for the project
+    Enable observability for the project
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#setting-up-runtime-configurations-for-observability" class="md-nav__link">
-    Setting up runtime configurations for Observability
+    Setting up runtime configurations for observability
   </a>
   
 </li>
@@ -2574,7 +2574,7 @@
 <h2 id="observability-in-bi">Observability in BI<a class="headerlink" href="#observability-in-bi" title="Permanent link">&para;</a></h2>
 <p>BI provides built-in support for observability across its runtime. Integration services, APIs, and connectors emit rich telemetry data that can be exported to standard monitoring tools.</p>
 <p>This guide explains how to enable and configure observability in BI using a simplified integration example. This integration sample is used to demonstrate the supported observability and monitoring tools in the next sections.</p>
-<h2 id="example-observing-a-sample-integration-service">Example: Observing a Sample Integration Service<a class="headerlink" href="#example-observing-a-sample-integration-service" title="Permanent link">&para;</a></h2>
+<h2 id="example-observing-a-sample-integration-service">Example: Observing a sample integration service<a class="headerlink" href="#example-observing-a-sample-integration-service" title="Permanent link">&para;</a></h2>
 <h3 id="create-a-sample-service">Create a sample service<a class="headerlink" href="#create-a-sample-service" title="Permanent link">&para;</a></h3>
 <p>Let’s consider an example where an integration service handles product management and ordering. The goal is to observe how it behaves under real-world usage.</p>
 <ol>
@@ -2703,13 +2703,13 @@ service /shop on new http:Listener(8090) {
 </li>
 </ol>
 <p><a href="https://wso2.github.io/docs-bi/assets/img/deploy/observability_1.gif"><img src="https://wso2.github.io/docs-bi/assets/img/deploy/observability_1.gif" alt="Create Observability Demo Service" width="70%"></a></p>
-<h3 id="enable-observability-for-the-project">Enable Observability for the project<a class="headerlink" href="#enable-observability-for-the-project" title="Permanent link">&para;</a></h3>
+<h3 id="enable-observability-for-the-project">Enable observability for the project<a class="headerlink" href="#enable-observability-for-the-project" title="Permanent link">&para;</a></h3>
 <p>Observability can be enabled in a BI project by adding the following section to the <code>Ballerina.toml</code> file by navigating to the <strong>file explorer</strong> view.</p>
 <div class="highlight"><pre><span></span><code>[build-options]
 observabilityIncluded=true
 </code></pre></div>
 
-<h3 id="setting-up-runtime-configurations-for-observability">Setting up runtime configurations for Observability<a class="headerlink" href="#setting-up-runtime-configurations-for-observability" title="Permanent link">&para;</a></h3>
+<h3 id="setting-up-runtime-configurations-for-observability">Setting up runtime configurations for observability<a class="headerlink" href="#setting-up-runtime-configurations-for-observability" title="Permanent link">&para;</a></h3>
 <p>To enable observability (both metrics and tracing) in the BI runtime, use the following configurations in the <code>Ballerina.toml</code> file.</p>
 <div class="highlight"><pre><span></span><code>[ballerina.observe]
 enabled = true
