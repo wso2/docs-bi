@@ -355,7 +355,7 @@ This means the Automation will:
 
 1. Start execution.  
 2. Use `fileReadCsv` to read the input file located at the path stored in `inputCSV`.  
-3. Store the resulting CSV records in the variable `csvData` for later mapping.
+3. Store the resulting CSV records in the variable `csvRecords` for later mapping.
 
     !!! info
         Always ensure the first row of your CSV file includes headers that match the `CSV` record field names. Otherwise, `fileReadCsv` will not correctly map the columns to your CSV record.
