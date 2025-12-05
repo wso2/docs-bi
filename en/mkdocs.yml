@@ -126,6 +126,7 @@ nav:
         - Build Custom Connectors: developer-guides/protocols-and-connectors/build-custom-connectors.md
       - Tools:
         - Migration Tools:
+          - Overview: developer-guides/tools/migration-tools/overview.md
           - Mulesoft Migration Tool: developer-guides/tools/migration-tools/mulesoft-migration-tool.md
           - TIBCO BusinessWorks Migration Tool: developer-guides/tools/migration-tools/tibco-businessworks-migration-tool.md
           - Azure Logic Apps Migration Tool: developer-guides/tools/migration-tools/logic-apps-migration-tool.md
