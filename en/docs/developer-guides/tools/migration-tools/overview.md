@@ -14,9 +14,7 @@ Migration tools in BI support:
 
 - Coverage report – Generate detailed reports on migration progress, including successfully migrated components and areas requiring manual intervention.
 
-Migration tools help organizations modernize their integration infrastructure, reduce technical debt, and leverage the benefits of BI's cloud-native capabilities.
-
-Migration tools help accelerate platform transitions by automating the conversion of integration artifacts. The following are the main migration tools supported by BI:
+These migration tools help organizations modernize their integration infrastructure, reduce technical debt, and accelerate platform transitions by automating the conversion of integration artifacts while leveraging BI's cloud-native capabilities. The following are the main migration tools supported by BI:
 
 - [MuleSoft Migration Tool](mulesoft-migration-tool.md): A tool for migrating [MuleSoft](https://www.mulesoft.com/) integration projects to BI, supporting conversion of Mule flows, connectors, and configurations.
 
