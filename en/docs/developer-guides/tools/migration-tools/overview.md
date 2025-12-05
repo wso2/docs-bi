@@ -14,8 +14,6 @@ Migration tools in BI support:
 
 **Assessment and Analysis** – Evaluate migration complexity and identify potential issues before starting the migration process.
 
-**Code Generation** – Generate Ballerina code that implements the same integration logic as the source platform.
-
 Migration tools help organizations modernize their integration infrastructure, reduce technical debt, and leverage the benefits of BI's cloud-native capabilities.
 
 ## Migration tools supported by BI
