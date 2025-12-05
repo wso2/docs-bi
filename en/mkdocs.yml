@@ -102,6 +102,8 @@ nav:
       - File Integration:
         - File Integration With Directory Service: integration-guides/file-integration/file-integration-with-directory-service.md
       - Use Cases:
+        - Integration Service As a Managed API:
+          - How to Expose an Integration Service as a Managed API: integration-guides/usecases/integration-service-as-a-managed-api/how-to-expose-an-integration-service-as-a-managed-api.md
         - Data Mapper:
           - Overview: integration-guides/usecases/datamapper/overview.md
           - Read a CSV File and Transform It to an XML File: integration-guides/usecases/datamapper/read-csv-file-and-transform-to-xml-file.md
