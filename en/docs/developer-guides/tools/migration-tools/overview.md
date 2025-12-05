@@ -10,9 +10,9 @@ BI provides specialized migration tools to help organizations transition from le
 
 Migration tools in BI support:
 
-Automated conversion – Transform platform-specific integration artifacts into BI-compatible code.
+- Automated conversion – Transform platform-specific integration artifacts into BI-compatible code.
 
-Coverage report – Generate detailed reports on migration progress, including successfully migrated components and areas requiring manual intervention.
+- Coverage report – Generate detailed reports on migration progress, including successfully migrated components and areas requiring manual intervention.
 
 Migration tools help organizations modernize their integration infrastructure, reduce technical debt, and leverage the benefits of BI's cloud-native capabilities.
 
