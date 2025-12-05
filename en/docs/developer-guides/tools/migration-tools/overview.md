@@ -12,7 +12,7 @@ Migration tools in BI support:
 
 **Automated Conversion** – Transform platform-specific integration artifacts into BI-compatible code.
 
-**Assessment and Analysis** – Evaluate migration complexity and identify potential issues before starting the migration process.
+**Coverage Report** – Generate detailed reports on migration progress, including successfully migrated components and areas requiring manual intervention.
 
 Migration tools help organizations modernize their integration infrastructure, reduce technical debt, and leverage the benefits of BI's cloud-native capabilities.
 
@@ -22,14 +22,8 @@ This outlines the migration tools available for BI and provides guidance on how 
 
 Migration tools help accelerate platform transitions by automating the conversion of integration artifacts. The following are the main migration tools supported by BI:
 
-- **[MuleSoft Migration Tool](https://www.mulesoft.com/)**: A tool for migrating MuleSoft integration projects to BI, supporting conversion of Mule flows, connectors, and configurations.
+- [MuleSoft Migration Tool](mulesoft-migration-tool.md): A tool for migrating [MuleSoft](https://www.mulesoft.com/) integration projects to BI, supporting conversion of Mule flows, connectors, and configurations.
 
-- **[TIBCO BusinessWorks Migration Tool](https://www.tibco.com/products/tibco-businessworks)**: A tool for migrating TIBCO BusinessWorks integration projects to BI, converting process definitions and activities.
+- [TIBCO BusinessWorks Migration Tool](tibco-businessworks-migration-tool.md): A tool for migrating [TIBCO BusinessWorks](https://www.tibco.com/products/tibco-businessworks) integration projects to BI, converting process definitions and activities.
 
-- **[Azure Logic Apps Migration Tool](https://azure.microsoft.com/en-us/products/logic-apps/)**: A tool for migrating Azure Logic Apps workflows to BI, transforming workflow definitions and connectors.
-
-The following sections contain guides to migrate integration projects from each of the platforms mentioned above to BI.
-
-- [MuleSoft Migration Tool](mulesoft-migration-tool.md)
-- [TIBCO BusinessWorks Migration Tool](tibco-businessworks-migration-tool.md)
-- [Azure Logic Apps Migration Tool](logic-apps-migration-tool.md)
+- [Azure Logic Apps Migration Tool](logic-apps-migration-tool.md): A tool for migrating [Azure Logic Apps](https://azure.microsoft.com/en-us/products/logic-apps/) workflows to BI, transforming workflow definitions and connectors.
