@@ -4,7 +4,6 @@ Migration is the process of transferring integration solutions from one platform
 
 In BI, migration tools help accelerate the adoption of WSO2 Integrator: BI by simplifying the migration of existing integrations from other platforms. These tools automate the conversion of integration artifacts, reducing manual effort and minimizing migration risks.
 
-## Migration in BI
 
 BI provides specialized migration tools to help organizations transition from legacy integration platforms to modern, cloud-native architectures. These tools analyze existing integration projects, convert platform-specific artifacts, and generate equivalent BI implementations.
 
