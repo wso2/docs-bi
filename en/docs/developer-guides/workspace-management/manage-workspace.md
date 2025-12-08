@@ -14,12 +14,12 @@ Once you have a workspace, you can continue adding integrations to organize your
 
 3\. Add details:
 
-- Enter the integration name 
-- Give a package name
+- Provide the integration name 
+- Provide a package name
    
 <a href="{{base_path}}/assets/img/developer-guides/workspace/create-integration.png"><img src="../../../assets/img/developer-guides/workspace/create-integration.png" alt="Create Integration" width="80%"></a>
 
-4\. Click Add Integration to add it to your integration, The new integration is added to your workspace and appears in the workspace navigator.
+4\. Click **"Add Integration"** to add it to your workspace, The new integration is added to your workspace and appears in the workspace navigator.
 
 <a href="{{base_path}}/assets/img/developer-guides/workspace/add-integration.gif"><img src="../../../assets/img/developer-guides/workspace/add-integration.gif" alt="Add Integration" width="80%"></a>
 
@@ -34,13 +34,13 @@ If you started with a standalone integration and now need to add another integra
 
 2\. Click the **"+"** button next to the title WSO2 Integrator: BI at the top of the activity bar (left-side panel)
 
-<a href="{{base_path}}/assets/img/developer-guides/workspace/standalone-project-add.png"><img src="../../../assets/img/developer-guides/workspace/standalone-project-add.png" alt="Converte Integration to Workspace" width="30%"></a>
+<a href="{{base_path}}/assets/img/developer-guides/workspace/standalone-project-add.png"><img src="../../../assets/img/developer-guides/workspace/standalone-project-add.png" alt="Convert Integration to Workspace" width="30%"></a>
 
 3\. Add details to Convert to Workspace & Add Integration form:
 
-- Enter the workspace name 
-- Enter the integration name 
-- Give a package name
+- Provide the workspace name 
+- Provide the integration name 
+- Provide a package name
 
 <a href="{{base_path}}/assets/img/developer-guides/workspace/convert-integration-to-workspace.gif"><img src="../../../assets/img/developer-guides/workspace/convert-integration-to-workspace.gif" alt="Add Integration to Workspace" width="80%"></a>
 
@@ -50,7 +50,7 @@ If you started with a standalone integration and now need to add another integra
 
 Hover over an integration you want to delete on the workspace overview page, Click the Delete button.
 
-<a href="{{base_path}}/assets/img/developer-guides/workspace/delete-integration.gif"><img src="../../../assets/img/developer-guides/workspace/delete-integration.gif" alt="Converte Integration to Workspace" width="80%"></a>
+<a href="{{base_path}}/assets/img/developer-guides/workspace/delete-integration.gif"><img src="../../../assets/img/developer-guides/workspace/delete-integration.gif" alt="Delete Integration from Workspace" width="80%"></a>
 
 ## Navigating to an integration
 

@@ -21,7 +21,6 @@
             {"name": "Testing", "url": "developer-guides/test-the-integrations/"},
             {"name": "Debugging & Troubleshooting", "url": "developer-guides/debugging-and-troubleshooting/overview"},
             {"name": "Workspace Management", "url": "developer-guides/workspace-management/overview"},
-            {"name": "Create Integration", "url": "developer-guides/workspace-management/create-integration"},
             {"name": "Protocols and Connectors", "url": "developer-guides/protocols-and-connectors/overview-of-connectors/"},
             {"name": "Integration Tools", "url": "developer-guides/tools/integration-tools/health-tool/"},
             {"name": "Migration Tools", "url": "developer-guides/tools/migration-tools/mulesoft-migration-tool"},

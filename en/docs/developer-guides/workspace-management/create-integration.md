@@ -1,3 +1,4 @@
+# Create an Integration
 
 ## Creating an Integration Without Workspace
 When you need to build a simple, standalone integration, you can create it directly without setting up a workspace. This streamlined approach is ideal for independent services.
@@ -10,8 +11,8 @@ When you need to build a simple, standalone integration, you can create it direc
 
 3\. Fill in **Create Your Integration** details and click **Create Integration**:
 
-- Enter the integration name
-- Give a package name 
+- Provide the integration name
+- Provide a package name 
 - Select the path 
 - Provide the organization name and version in **“Optional Configurations”** (Optional)
 
@@ -29,8 +30,8 @@ Creating an integration within a workspace provides better organization and enab
 
 2\. Click on the **“Create New Integration”** button, add details:
 
-- Enter the integration name 
-- Give a package name 
+- Provide the integration name 
+- Provide a package name 
 - Select the path
 
 3\. Expand **“Optional Configurations”** and enable  **“Create as workspace”** option
