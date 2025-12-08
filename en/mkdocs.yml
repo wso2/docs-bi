@@ -118,6 +118,10 @@ nav:
           Remote Debugging Integrations: developer-guides/debugging-and-troubleshooting/remote-debugging-integrations.md
           Capturing Strand Dumps: developer-guides/debugging-and-troubleshooting/capturing-strand-dumps.md
           Profiling Runtime Performance: developer-guides/debugging-and-troubleshooting/profiling-runtime-performance.md
+      - Workspace Management:
+          Overview: developer-guides/workspace-management/overview.md
+          Create Integration: developer-guides/workspace-management/create-integration.md
+          Manage Workspace: developer-guides/workspace-management/manage-workspace.md
       - AI For Integration:
         - Build an HTTP Service With BI Copilot : developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot.md
       - Protocols and Connectors:
