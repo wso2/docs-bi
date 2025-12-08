@@ -105,6 +105,7 @@ nav:
         - Data Mapper:
           - Overview: integration-guides/usecases/datamapper/overview.md
           - Read a CSV File and Transform It to an XML File: integration-guides/usecases/datamapper/read-csv-file-and-transform-to-xml-file.md
+        - Building HTTP REST API for Hotel Reservation: integration-guides/usecases/http/building-http-rest-api-for-hotel-reservation.md  
   - Developer Guides:
       - Create a Project: developer-guides/create-a-project.md
       - "WSO2 Integrator: BI Artifacts": developer-guides/wso2-integrator-bi-artifacts.md
