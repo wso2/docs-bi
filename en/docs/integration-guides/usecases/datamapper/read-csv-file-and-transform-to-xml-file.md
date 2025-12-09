@@ -219,7 +219,7 @@ This automation serves as the starting point of the data-transformation pipeline
       Click **Entry Points (+)** to add a new integration artifact.
 
 
-  2. Select "Automation" as the Entry Point
+  2. Select **Automation** as the Entry Point
 
       The **Artifacts** palette opens.  
       Under the **Automation** section (top of the list), click **Automation**.  
