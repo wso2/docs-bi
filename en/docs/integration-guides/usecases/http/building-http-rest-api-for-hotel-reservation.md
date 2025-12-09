@@ -120,11 +120,12 @@ In this step, you'll create the HTTP service that will host all your REST API en
 
 1. In the design view, click **+ Add Artifact**.
 2. Select **HTTP Service** under **Integration as API**.
-3. Configure the service:
-   - **Service Base Path**: `/hotel`
-   - **Listener**: Create new listener with port `8290`
-   - **Service Contract**: Design from Scratch
-   - **Media Type Prefix**: `vnd.hotel.resort` (for domain-specific media type)
+3. Configure the service with the following settings:
+
+    - **Service Base Path**: `/hotel`
+    - **Listener**: Create new listener with port `8290`
+    - **Service Contract**: Design from Scratch
+
 4. Click **Create** to generate the service.
 
 Your service will be accessible at `http://localhost:8290/hotel`
@@ -138,146 +139,36 @@ Your service will be accessible at `http://localhost:8290/hotel`
 This is the well-known URL the only URL users need to know to start using your API. All other URLs will be discovered through hypermedia links.
 
 1. Click **+ Add Resource** in the HTTP service.
-2. Configure the resource:
-   - **HTTP Method**: GET
-   - **Resource Path**: `locations`
-   - **Return Type**: Create a new type `Locations` as an array of `Location`
-   - **Caching**: Enable `@http:Cache` for performance
+2. Configure the resource with the following settings:
+
+    - **HTTP Method**: GET
+    - **Resource Path**: `locations`
+    - **Return Type**: Create a new type `Locations` as an array of `Location`
+
 3. Click **Save**.
 
-### Implement the resource logic
-
-1. Click on the `locations` resource to open the designer.
-2. Delete the default return statement.
-3. Add a **Declare Variable** node:
-   - **Variable Name**: `locationList`
-   - **Type**: Array of Location
-   - **Value**: 
-     ```ballerina
-     [
-       {name: "Alps Resort", id: "l1000", address: "123 Mountain Road, Switzerland"},
-       {name: "Lake View Resort", id: "l2000", address: "456 Lake Shore, Switzerland"}
-     ]
-     ```
-
-4. Add another **Declare Variable** for response with links:
-   ```ballerina
-   {
-     locations: locationList,
-     _links: {
-       room: {
-         href: "/hotel/locations/{id}/rooms",
-         methods: ["GET"],
-         types: ["application/vnd.hotel.resort+json"]
-       }
-     }
-   }
-   ```
-
-5. Add a **Return** node to return the response.
-
-<a href="{{base_path}}/assets/usecases/http-reservation/img/locations_resource.gif"><img src="{{base_path}}/assets/usecases/http-reservation/img/locations_resource.gif" alt="Locations Resource" width="70%"></a>
+<a href="{{base_path}}/assets/usecases/http-reservation/img/create_resource.gif"><img src="{{base_path}}/assets/usecases/http-reservation/img/create_resource.gif" alt="Create Resource" width="70%"></a>
 
 ---
 
-## Step 5: Add the rooms resource
-
-This resource shows available rooms at a specific location. It includes a hypermedia link to the reservation endpoint.
-
-1. Click **+ Add Resource**.
-2. Configure:
-   - **HTTP Method**: GET
-   - **Resource Path**: `locations/[string id]/rooms`
-   - **Query Parameters**: Add `startDate` and `endDate` (both string type)
-   - **Return Type**: Create `Rooms` type (array of `Room`)
-   - **Error Responses**: Add `http:NotFound` for invalid location IDs
-3. Click **Save**.
-
-### Implement the resource logic
-
-1. Click on the resource to open the designer.
-2. Add validation logic to check if the location exists.
-3. Create the response with available rooms and a link to reservations:
-   ```ballerina
-   {
-     rooms: [
-       {
-         id: "r1000",
-         category: "DELUXE",
-         capacity: 5,
-         wifi: true,
-         status: "AVAILABLE",
-         currency: "USD",
-         price: 200.00,
-         count: 3
-       }
-     ],
-     _links: {
-       reservation: {
-         href: "/hotel/reservations",
-         methods: ["POST"],
-         types: ["application/vnd.hotel.resort+json"]
-       }
-     }
-   }
-   ```
-
-<a href="{{base_path}}/assets/usecases/http-reservation/img/rooms_resource.gif"><img src="{{base_path}}/assets/usecases/http-reservation/img/rooms_resource.gif" alt="Rooms Resource" width="70%"></a>
-
----
-
-## Step 6: Add the reservations resource
+## Step 5: Add the reservations resource
 
 This resource creates a new reservation and provides links to edit, cancel, or complete payment.
 
 1. Click **+ Add Resource**.
-2. Configure:
-   - **HTTP Method**: POST
-   - **Resource Path**: `reservations`
-   - **Request Payload**: `ReservationRequest` type
-   - **Return Type**: `ReservationReceipt` with status `201 Created`
-   - **Error Responses**: Add `http:Conflict` for unavailable rooms
+2. Configure with the following settings:
+
+    - **HTTP Method**: POST
+    - **Resource Path**: `reservations`
+    - **Request Payload**: `ReservationRequest` type
+    - **Return Type**: `ReservationReceipt` with status `201 Created`
+
 3. Click **Save**.
 
-### Implement the resource logic
-
-1. Validate room availability.
-2. Generate a unique reservation ID.
-3. Calculate the total cost.
-4. Return the reservation receipt with hypermedia links:
-   ```ballerina
-   {
-     id: reservationId,
-     expiryDate: "2025-07-01",
-     lastUpdated: time:utcToString(time:utcNow()),
-     currency: "USD",
-     total: totalCost,
-     reservation: payload,
-     state: "VALID",
-     _links: {
-       cancel: {
-         href: string `/hotel/reservations/${reservationId}`,
-         methods: ["DELETE"]
-       },
-       edit: {
-         href: string `/hotel/reservations/${reservationId}`,
-         methods: ["PUT"]
-       },
-       payment: {
-         href: string `/hotel/payments/${reservationId}`,
-         methods: ["POST"]
-       }
-     }
-   }
-   ```
-
-> Notice how the response includes three possible next actions: cancel, edit, or pay. The client doesn't need to know these URLs in advance — the server provides them.
-
-<a href="{{base_path}}/assets/usecases/http-reservation/img/reservations_resource.gif"><img src="{{base_path}}/assets/usecases/http-reservation/img/reservations_resource.gif" alt="Reservations Resource" width="70%"></a>
-
+<a href="{{base_path}}/assets/usecases/http-reservation/img/reservation_request.gif"><img src="{{base_path}}/assets/usecases/http-reservation/img/reservation_request.gif" alt="Reservation Request" width="70%"></a>
 ---
 
-## Step 7: Add edit and cancel reservation resources
+## Step 6: Add edit and cancel reservation resources
 
 These optional resources allow users to modify or cancel reservations before payment.
 
@@ -297,42 +188,7 @@ These optional resources allow users to modify or cancel reservations before pay
 
 ---
 
-## Step 8: Add the payment resource
-
-This is the final step in the workflow. Once payment is successful, the reservation is confirmed and no further links are returned (terminal state).
-
-1. Click **+ Add Resource**.
-2. Configure:
-   - **HTTP Method**: POST
-   - **Resource Path**: `payments/[string id]`
-   - **Request Payload**: `Payment` type
-   - **Return Type**: `PaymentReceipt`
-   - **Error Responses**: `http:NotFound`, `http:Conflict`
-3. Click **Save**.
-
-### Implement the resource logic
-
-1. Validate the reservation exists.
-2. Process the payment.
-3. Update room status to "RESERVED".
-4. Return payment receipt **without links** (indicating workflow completion):
-   ```ballerina
-   {
-     id: paymentId,
-     currency: "USD",
-     total: reservationTotal,
-     lastUpdated: time:utcToString(time:utcNow()),
-     rooms: reservedRooms
-   }
-   ```
-
-> **Important**: The payment receipt doesn't include `_links`. This signals to the client that the reservation workflow is complete.
-
-<a href="{{base_path}}/assets/usecases/http-reservation/img/payment_resource.gif"><img src="{{base_path}}/assets/usecases/http-reservation/img/payment_resource.gif" alt="Payment Resource" width="70%"></a>
-
----
-
-## Step 9: Run and test the API
+## Step 7: Run and test the API
 
 1. Click the **Run** button in the BI extension.
 2. Wait for the service to start on port 8290.
@@ -426,8 +282,6 @@ Response has no links (workflow complete):
   "rooms": [{"id": "r1000", "status": "RESERVED"}]
 }
 ```
-
-<a href="{{base_path}}/assets/usecases/http-reservation/img/test_api.gif"><img src="{{base_path}}/assets/usecases/http-reservation/img/test_api.gif" alt="Test API" width="70%"></a>
 
 ---
 
