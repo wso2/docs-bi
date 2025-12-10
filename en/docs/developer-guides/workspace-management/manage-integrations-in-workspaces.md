@@ -8,7 +8,7 @@ Once you have a workspace, you can continue adding integrations to organize your
 
    <a href="{{base_path}}/assets/img/developer-guides/workspace/open-workspace.gif"><img src="../../../assets/img/developer-guides/workspace/open-workspace.gif" alt="Select Workspace" width="80%"></a>
 
-2\. Click the **"+"** button next to the title WSO2 Integrator: BI at the top of the activity bar (left-side panel) or the **“+ Add Integration”** button on the workspace title bar.
+2\. Click the **+** button next to the title WSO2 Integrator: BI at the top of the activity bar (left-side panel) or the **+ Add Integration** button on the workspace title bar.
 
    <a href="{{base_path}}/assets/img/developer-guides/workspace/add-integration-to-workspace.png"><img src="../../../assets/img/developer-guides/workspace/add-integration-to-workspace.png" alt="Add Integration to Workspace" width="80%"></a>
 
@@ -30,7 +30,7 @@ If you started with a standalone integration and now need to add another integra
 
 1\. Open the standalone integration
 
-2\. Click the **"+"** button next to the title WSO2 Integrator: BI at the top of the activity bar (left-side panel)
+2\. Click the **+** button next to the title WSO2 Integrator: BI at the top of the activity bar (left-side panel)
 
 <a href="{{base_path}}/assets/img/developer-guides/workspace/standalone-project-add.png"><img src="../../../assets/img/developer-guides/workspace/standalone-project-add.png" alt="Convert Integration to Workspace" width="30%"></a>
 

@@ -2,7 +2,7 @@
 WSO2 Integrator: BI introduces workspaces – a powerful way to organize and manage complex integration projects through an intuitive graphical interface.
 
 ???+ Note
-  This feature is available from WSO2 Integrator: BI 1.5.0 onwards and Ballerina version 2201.13.0+.
+    This feature is available from WSO2 Integrator: BI 1.5.0 onwards and Ballerina version 2201.13.0+.
 
 ## What is a workspace?
 A workspace is a collection of integration packages that can be organized and managed together in a single structure. This allows you to organize multiple related integrations in a single project structure. It provides a centralized environment where you can develop, manage, and maintain interdependent integrations.
