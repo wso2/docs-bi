@@ -1,4 +1,4 @@
-# Building an HTTP REST API for Hotel Room Reservation
+# Build an HTTP REST API for Hotel Reservation
 
 ## Overview
 
@@ -14,7 +14,7 @@ The API implements Richardson Maturity Model Level 3, making it self-descriptive
 - Teaches creating self-descriptive APIs that require minimal external documentation
 - Provides a real-world hotel reservation workflow
 
-### API Workflow
+### API workflow
 
 1. **GET /locations** - Browse available resort locations (entry point)
 2. **GET /locations/{id}/rooms** - Check room availability at a location
@@ -53,7 +53,7 @@ In this step, you'll define the structure of data that flows through your API lo
 1. In the **Project Explorer**, click **Types** and then **+ Add Type**.
 2. Select **JSON** format and paste sample payloads to auto-generate types.
 
-### Create the following types:
+### Create the data types
 
 **Type: Location**
 ```json
@@ -136,7 +136,7 @@ Your service will be accessible at `http://localhost:8290/hotel`
 
 ## Step 4: Add the locations resource (entry point)
 
-This is the well-known URL the only URL users need to know to start using your API. All other URLs will be discovered through hypermedia links.
+This is the well-known URL, the only URL users need to know to start using your API. All other URLs will be discovered through hypermedia links.
 
 1. Click **+ Add Resource** in the HTTP service.
 2. Configure the resource with the following settings:
@@ -285,16 +285,16 @@ Response has no links (workflow complete):
 
 ---
 
-## Understanding REST principles in this use case
+## Understand REST principles in this use case
 
-### Hypermedia As The Engine Of Application State (HATEOAS)
+### Hypermedia as the engine of application state (HATEOAS)
 
 The API uses hypermedia links (`_links`) to guide clients through the workflow:
 
-- **Self-descriptive**: Each response tells you what actions are available next
-- **Discoverable**: Clients don't need to memorize URL patterns
-- **Loosely coupled**: Server can change URLs without breaking clients
-- **Evolvable**: New features appear as new links
+- Self-descriptive: Each response tells you what actions are available next
+- Discoverable: Clients don't need to memorize URL patterns
+- Loosely coupled: Server can change URLs without breaking clients
+- Evolvable: New features appear as new links
 
 ### Addressable resources
 
@@ -307,10 +307,10 @@ Each entity has a unique URL:
 ### Uniform interface
 
 Standard HTTP methods with consistent semantics:
-- **GET**: Safe and cacheable — retrieves data without side effects
-- **POST**: Creates new resources or triggers actions
-- **PUT**: Updates existing resources idempotently
-- **DELETE**: Removes resources
+- GET: Safe and cacheable — retrieves data without side effects
+- POST: Creates new resources or triggers actions
+- PUT: Updates existing resources idempotently
+- DELETE: Removes resources
 
 ### Stateless communication
 
@@ -324,11 +324,11 @@ The custom media type `application/vnd.hotel.resort+json` identifies this API's 
 
 ## Benefits of this REST approach
 
-1. **No URL construction needed**: Clients follow server-provided links instead of building URLs
-2. **Self-documenting workflow**: Links show available actions at each step
-3. **Flexible evolution**: Add new state transitions without breaking existing clients
-4. **Reduced coupling**: Clients aren't tied to specific URL patterns
-5. **Similar to web browsing**: Navigate through states like clicking links on a website
+1. No URL construction needed: Clients follow server-provided links instead of building URLs
+2. Self-documenting workflow: Links show available actions at each step
+3. Flexible evolution: Add new state transitions without breaking existing clients
+4. Reduced coupling: Clients aren't tied to specific URL patterns
+5. Similar to web browsing: Navigate through states like clicking links on a website
 
 ---
 
@@ -336,10 +336,10 @@ The custom media type `application/vnd.hotel.resort+json` identifies this API's 
 
 You've built a Richardson Maturity Model Level 3 REST API using WSO2 Integrator: BI that demonstrates:
 
-- **True REST architecture** with hypermedia controls
-- **Self-descriptive API** that guides users through workflows
-- **Proper HTTP semantics** for all operations
-- **Discoverable design** requiring only one well-known entry point
-- **Stateless, scalable architecture** suitable for production use
+- True REST architecture with hypermedia controls
+- Self-descriptive API that guides users through workflows
+- Proper HTTP semantics for all operations
+- Discoverable design requiring only one well-known entry point
+- Stateless, scalable architecture suitable for production use
 
 This approach creates APIs that are as intuitive to use as websites, requiring minimal documentation beyond the entry point URL and business domain knowledge.
