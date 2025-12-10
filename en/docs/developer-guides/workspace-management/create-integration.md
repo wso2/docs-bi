@@ -1,6 +1,6 @@
 # Create an Integration
 
-## Creating an Integration Without Workspace
+## Creating an integration without workspace
 When you need to build a simple, standalone integration, you can create it directly without setting up a workspace. This streamlined approach is ideal for independent services.
 
 **Steps:**
@@ -21,7 +21,7 @@ Now you will see the BI home page.
 <a href="{{base_path}}/assets/img/developer-guides/workspace/create-integration-hq.gif"><img src="../../../assets/img/developer-guides/workspace/create-integration-hq.gif" alt="Create Integration Without Workspace" width="80%"></a>
 
 
-## Creating an Integration With Workspace
+## Creating an integration with workspace
 Creating an integration within a workspace provides better organization and enables advanced features for managing multiple related integrations.
 
 **Steps:**

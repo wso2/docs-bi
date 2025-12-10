@@ -1,6 +1,6 @@
 # Managing Integrations in Workspaces
 
-## Adding an Integration to an Existing Workspace
+## Adding an integration to an existing workspace
 
 Once you have a workspace, you can continue adding integrations to organize your project.
 
@@ -24,7 +24,7 @@ Once you have a workspace, you can continue adding integrations to organize your
 <a href="{{base_path}}/assets/img/developer-guides/workspace/add-integration.gif"><img src="../../../assets/img/developer-guides/workspace/add-integration.gif" alt="Add Integration" width="80%"></a>
 
 
-## Adding an integration by converting a standalone Integration to a workspace
+## Adding an integration by converting a standalone integration to a workspace
 
 If you started with a standalone integration and now need to add another integration by converting your integration to a workspace.
 
