@@ -1,6 +1,6 @@
-# Managing Integrations in Workspaces
+# Manage Integrations in Workspaces
 
-## Adding an integration to an existing workspace
+## Add an integration to an existing workspace
 
 Once you have a workspace, you can continue adding integrations to organize your project.
 
@@ -19,16 +19,14 @@ Once you have a workspace, you can continue adding integrations to organize your
    
 <a href="{{base_path}}/assets/img/developer-guides/workspace/create-integration.png"><img src="../../../assets/img/developer-guides/workspace/create-integration.png" alt="Create Integration" width="80%"></a>
 
-4\. Click **"Add Integration"** to add it to your workspace, The new integration is added to your workspace and appears in the workspace navigator.
+4\. Click **Add Integration** to add it to your workspace, The new integration is added to your workspace and appears in the workspace navigator.
 
 <a href="{{base_path}}/assets/img/developer-guides/workspace/add-integration.gif"><img src="../../../assets/img/developer-guides/workspace/add-integration.gif" alt="Add Integration" width="80%"></a>
 
 
-## Adding an integration by converting a standalone integration to a workspace
+## Add an integration by converting a standalone integration to a workspace
 
 If you started with a standalone integration and now need to add another integration by converting your integration to a workspace.
-
-**Steps:**
 
 1\. Open the standalone integration
 
@@ -44,15 +42,13 @@ If you started with a standalone integration and now need to add another integra
 
 <a href="{{base_path}}/assets/img/developer-guides/workspace/convert-integration-to-workspace.gif"><img src="../../../assets/img/developer-guides/workspace/convert-integration-to-workspace.gif" alt="Add Integration to Workspace" width="80%"></a>
 
-## Deleting an integration
+## Delete an integration
 
-**Steps:**
-
-Hover over an integration you want to delete on the workspace overview page, Click the Delete button.
+Hover over an integration you want to delete on the workspace overview page, Click the **Delete** button.
 
 <a href="{{base_path}}/assets/img/developer-guides/workspace/delete-integration.gif"><img src="../../../assets/img/developer-guides/workspace/delete-integration.gif" alt="Delete Integration from Workspace" width="80%"></a>
 
-## Navigating to an integration
+## Navigate to an integration
 
 To access a specific integration to manage artifacts. Click the diagram icon (Show overview) of an integration in the activity panel or click a particular integration from the workspace overview page.
 
