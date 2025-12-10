@@ -42,7 +42,6 @@
         "links": [
             {"name": "AI Agents and other Gen AI Integrations", "url": "integration-guides/ai/agents"},
             {"name": "Integration as API", "url": "integration-guides/integration-as-api/service-orchestration/"},
-            {"name": "Integration Service as a Managed API", "url": "integration-guides/usecases/integration-service-as-a-managed-api/how-to-expose-an-integration-service-as-a-managed-api/"},
             {"name": "File Integration", "url": "integration-guides/file-integration/file-integration-with-directory-service/"}
         ]
     },

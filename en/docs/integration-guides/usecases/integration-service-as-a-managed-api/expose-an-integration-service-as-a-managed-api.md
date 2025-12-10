@@ -1,8 +1,8 @@
-# How to Expose an Integration Service as a Managed API
+# Expose an Integration Service as a Managed API
 
 ## What you'll build
 
-In this tutorial, you'll define an integration service using WSO2 Integrator: BI and expose it as a managed API to the API marketplace. API consumers then **discover** the API from the marketplace, **subscribe** to it, and **use it** for application development.
+In this tutorial, you'll define an integration service using WSO2 Integrator: BI and expose it as a managed API to the API marketplace. API consumers then discover the API from the marketplace, subscribe to it, and use it for application development.
 
 <a href="{{base_path}}/assets/usecases/integration-service-as-a-managed-api/exposing-service-as-managed-api.png">
     <img
@@ -22,7 +22,7 @@ Follow the steps given below to build this use case and try it out.
 You need Visual Studio Code (VS Code) with the <a target="_blank" href="https://marketplace.visualstudio.com/items?itemName=WSO2.ballerina-integrator">WSO2 Integrator: BI</a> extension installed.
 
 !!! Info
-    See the [Install WSO2 Integrator: BI for VS Code](https://bi.docs.wso2.com/get-started/install-wso2-integrator-bi/) documentation to learn how to install WSO2 Integrator: BI for VS Code.
+    See the [Install WSO2 Integrator: BI](https://bi.docs.wso2.com/get-started/install-wso2-integrator-bi/) to learn how to install WSO2 Integrator: BI for VS Code.
 
 
 ### Step 2: Develop the integration artifacts
@@ -236,7 +236,7 @@ Now let's start designing the integration by adding the necessary artifacts.
     ```
 
     !!! Info
-        See the [Create a Rest API](https://apim.docs.wso2.com/en/4.6.0/manage-apis/design/create-api/create-rest-api/create-a-rest-api/) documentation to learn how to get configurations.
+        See the [Create a Rest API](https://apim.docs.wso2.com/en/latest/manage-apis/design/create-api/create-rest-api/create-a-rest-api/) documentation to learn how to get configurations.
 
         These are some default values, but `clientId` and `clientSecret` should be replaced with your own.
 
@@ -253,7 +253,7 @@ Now let's start designing the integration by adding the necessary artifacts.
 5. Start the API Manager runtime before starting the WSO2 Integrator: BI.
 
     1.  Download and set up [WSO2 API Manager](https://wso2.com/api-management/).
-    2.  Start the [API-M server](https://apim.docs.wso2.com/en/4.6.0/install-and-setup/install/installing-the-product/running-the-api-m/).
+    2.  Start the [API-M server](https://apim.docs.wso2.com/en/latest/install-and-setup/install/installing-the-product/running-the-api-m/).
 
 ### Step 4: Run the application
 
@@ -280,4 +280,4 @@ Now let's start designing the integration by adding the necessary artifacts.
 3. After connecting to APIM, your integration service will appear as a managed API in the API Publisher portal. From there, you can configure and deploy the API, publish it to the Developer Portal, test it using the integrated API console, and allow consumers to subscribe and invoke the API securely.
 
 !!! Tip
-    For detailed instructions, see [Invoke an API using the Integrated API Console](https://apim.docs.wso2.com/en/4.6.0/consume/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console/).
+    For detailed instructions, see [Invoke an API using the Integrated API Console](https://apim.docs.wso2.com/en/latest/consume/invoke-apis/invoke-apis-using-tools/invoke-an-api-using-the-integrated-api-console/).
