@@ -27,38 +27,41 @@ In this tutorial, you'll create an AI-powered math tutor assistant capable of ha
 ### Step 3: Configure the agent behavior
 
 1. Click on the **AI Agent** box to open the agent configuration settings.
-2. Define the agent's **Role** and provide **Instructions** in natural language. These instructions will guide the agent’s behavior and tasks.
+2. Define the agent's **Role** and provide **Instructions** in natural language. These instructions will guide the agent's behavior and tasks.
 3. Click **Save** to finalize and complete the agent behavior configuration.
 
     <a href="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-chat-agents/3.configure-behaviour.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-chat-agents/3.configure-behaviour.gif" alt="Configure the Agent Behavior" width="70%"></a>
 
 ### Step 4: Configure the agent model
 
-By default, the AI agent is configured to use the **Default Model Provider (WSO2)**. This provider uses a WSO2-hosted LLM model. To use it, you must log in to **BI Copilot** and configure the default model provider as follows:
+By default, the AI agent is configured to use the **Default Model Provider (WSO2)**. This provider uses a WSO2-hosted LLM. To use it, you must log in to **BI Copilot** and configure the default model provider as follows:
 
 - Press `Ctrl/Cmd + Shift + P` to open the VS Code Command Palette.
 - Run the command: **`Ballerina: Configure default WSO2 model provider`**.
 
-If you want to use a different model provider (for example, **OpenAI**, **Anthropic**, or **Mistral**), follow the steps below.
+If you want to use a different model provider, for example to configure OpenAI as the model provider, follow the steps below.
 
-1. Locate the circle with the **WSO2 logo** connected to the **AI Agent** box. This circle represents the LLM model used by the agent.
+1. Locate the circle with the **WSO2 logo** connected to the **AI Agent** box. This circle represents the LLM used by the agent.
+
+    <a href="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-chat-agents/4.configure-model-provider.png"><img src="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-chat-agents/4.configure-model-provider.png" alt="Configure the Agent Model" width="50%"></a>
+
 2. Click the circle to open the model configuration options.
 3. Click **Create New Model Provider**.
 4. Select **OpenAI Model Provider** from the list.
 5. Configure the model provider with the required details.
 
     !!! note
-        Since the API key is sensitive, it’s recommended to externalize it by using a configurable value. This helps prevent accidentally committing it to your version control system and ensures it’s kept secure without being exposed. To learn more, see [Configurations]({{base_path}}/get-started/key-concepts/#configurations).
+        Since the API key is sensitive, it's recommended to externalize it by using a configurable value. This helps prevent accidentally committing it to your version control system and ensures it's kept secure without being exposed. To learn more, see [Configurations]({{base_path}}/get-started/key-concepts/#configurations).
       
     - Switch the **API Key** field from **Text** mode to **Expression** mode using the toggle above the field.
     - Click the **API Key** input field to open the **Expression Helper**.
-    - In the **Expression Helper**, select **Configurables** (the fourth option).
+    - In the **Expression Helper**, select **Configurables**.
     - Click **+ New Configurable** to define a new configurable.
     - Set the **Name** to `openAiApiKey` and the **Type** to `string`.
     - Click **Save** to create the configurable.
 
 5. In the **Model Type** dropdown, select `gpt-4.1`.
-6. Click **Save** to complete the LLM model configuration.    
+6. Click **Save** to complete the LLM configuration.    
 
     <a href="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-chat-agents/4.configure-model.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-chat-agents/4.configure-model.gif" alt="Configure the Agent Model" width="70%"></a>
 
@@ -73,7 +76,7 @@ If you want to use a different model provider (for example, **OpenAI**, **Anthro
 
 ### Step 6: Add tools to the agent
 
-WSO2 Integrator: BI allows you to create tools using existing functions. It also supports automatically generating [tools from connector actions](/integration-guides/ai/agents/integrating-agents-with-external-endpoints) or OpenAPI specifications by leveraging BI’s capability to generate local connectors from an OpenAPI spec.
+WSO2 Integrator: BI allows you to create tools using existing functions. It also supports automatically generating [tools from connector actions](/integration-guides/ai/agents/integrating-agents-with-external-endpoints) or OpenAPI specifications by leveraging BI's capability to generate local connectors from an OpenAPI spec.
 
 However, in this tutorial, we will create simple functions to perform arithmetic operations and use them as tools.
 
@@ -111,7 +114,7 @@ To start chatting with the agent:
 
 ### Step 8: Debug agent responses with tracing
 
-To better understand how the agent arrives at its responses, you can enable **tracing**. Tracing provides a detailed view of the agent’s reasoning flow, including tool invocations and intermediate steps used to generate the final answer.
+To better understand how the agent arrives at its responses, you can enable **tracing**. Tracing provides a detailed view of the agent's reasoning flow, including tool invocations and intermediate steps used to generate the final answer.
 
 #### Using the built-in tracing feature
 
@@ -122,7 +125,7 @@ WSO2 Integrator: BI provides a built-in tracing capability that can be enabled d
 3. Click the **Chat** button located at the top-left corner of the interface.
 4. When prompted, click **Run Integration** to start the integration with tracing enabled.
 5. Interact with the agent by asking a question.
-6. Click the **Show Logs** button under the agent's response to view the detailed trace, which includes the agent’s execution steps, tool calls, and intermediate reasoning details.
+6. Click the **Show Logs** button under the agent's response to view the detailed trace, which includes the agent's execution steps, tool calls, and intermediate reasoning details.
 
 <a href="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-chat-agents/8.tracing.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-chat-agents/8.tracing.gif" alt="Using the built-in tracing feature" width="70%"></a>
 
