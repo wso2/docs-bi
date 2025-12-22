@@ -36,7 +36,7 @@ In this tutorial, you'll create an AI-powered math tutor assistant capable of ha
 
 By default, the AI agent is configured to use the **Default Model Provider (WSO2)**, which uses a WSO2-hosted LLM. To use this provider, you must sign in to **BI Copilot**. When creating the agent, you will be prompted to sign in to BI Copilot. After signing in, configure the default model provider as follows:
 
-- Press `Ctrl/Cmd + Shift + P` to open the VS Code Command Palette.
+- Press `Ctrl/Cmd` + `Shift` + `P` to open the VS Code Command Palette.
 - Run the command: **`Ballerina: Configure default WSO2 model provider`**.
 
 If you want to use a different model provider, for example to configure **OpenAI** as the model provider, follow the steps below.
