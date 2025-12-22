@@ -34,12 +34,12 @@ In this tutorial, you'll create an AI-powered math tutor assistant capable of ha
 
 ### Step 4: Configure the agent model
 
-By default, the AI agent is configured to use the **Default Model Provider (WSO2)**. This provider uses a WSO2-hosted LLM. To use it, you must log in to **BI Copilot** and configure the default model provider as follows:
+By default, the AI agent is configured to use the **Default Model Provider (WSO2)**, which uses a WSO2-hosted LLM. To use this provider, you must sign in to **BI Copilot**. When creating the agent, you will be prompted to sign in to BI Copilot. After signing in, configure the default model provider as follows:
 
 - Press `Ctrl/Cmd + Shift + P` to open the VS Code Command Palette.
 - Run the command: **`Ballerina: Configure default WSO2 model provider`**.
 
-If you want to use a different model provider, for example to configure OpenAI as the model provider, follow the steps below.
+If you want to use a different model provider, for example to configure **OpenAI** as the model provider, follow the steps below.
 
 1. Locate the circle with the **WSO2 logo** connected to the **AI Agent** box. This circle represents the LLM used by the agent.
 
@@ -121,7 +121,7 @@ To better understand how the agent arrives at its responses, you can enable **tr
 WSO2 Integrator: BI provides a built-in tracing capability that can be enabled directly from the VS Code interface. Once enabled, you can view detailed execution logs for each agent interaction.
 
 1. Press `Ctrl/Cmd` + `Shift` + `P` to open the VS Code Command Palette.
-2. Run the command: `Ballerina: Enable Tracing`.
+2. Run the command: **`Ballerina: Enable Tracing`**.
 3. Click the **Chat** button located at the top-left corner of the interface.
 4. When prompted, click **Run Integration** to start the integration with tracing enabled.
 5. Interact with the agent by asking a question.
