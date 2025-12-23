@@ -57,7 +57,7 @@ S003,P-2003,1,89.50
 Before you begin, make sure you have the following:
 
   - <b>Visual Studio Code</b>: Install <a href="https://code.visualstudio.com/">Visual Studio Code</a> if you don't have it already.
-  - <b>WSO2 Integrator: BI Extension</b>: Install the WSO2 Integrator: BI extension. Refer to <a href="../install-wso2-integrator-bi/">Install WSO2 Integrator: BI</a> for detailed instructions.
+  - <b>WSO2 Integrator: BI Extension</b>: Install the WSO2 Integrator: BI extension. Refer to <a href="{{base_path}}/get-started/install-wso2-integrator-bi/">Install WSO2 Integrator: BI</a> for detailed instructions.
 
 ## Step 1: Creating a new integration project
 
