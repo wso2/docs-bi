@@ -242,7 +242,7 @@ In this step, you will add a TCP Service to your integration to handle TCP clien
 ### Configure the log expression
 
 1. Click **Expression** in the properties panel.
-2. Enter `"string ${self.username} connected"` in the field.
+2. Enter `string ${self.username} connected` in the field.
 3. Click **Save**.
 
 <a href="{{base_path}}/assets/integration-guides/usecases/tcp-chat-service/img/log-new-client.gif">
