@@ -53,7 +53,10 @@ jobs:
 
   run_claude:
     runs-on: ubuntu-latest
-    if: contains(github.event.comment.body, '@wso2-engineering-bot')
+    if: |
+      contains(github.event.comment.body, '@wso2-engineering-bot') &&
+      (github.event.comment.author_association == 'OWNER' ||
+       github.event.comment.author_association == 'MEMBER')
     steps:
       - name: Checkout original repository
         uses: actions/checkout@v4
@@ -69,8 +72,8 @@ jobs:
           git remote -v
           
           # Configure git for commits
-          git config user.name ${{secrets.DOC_FIXING_AGENT_GIT_USER_NAME}}
-          git config user.email ${{secrets.DOC_FIXING_AGENT_GIT_USER_EMAIL}}
+          git config user.name "${{secrets.DOC_FIXING_AGENT_GIT_USER_NAME}}"
+          git config user.email "${{secrets.DOC_FIXING_AGENT_GIT_USER_EMAIL}}"
 
       - name: Prepare system prompt with environment variables
         id: prepare_prompt
@@ -88,10 +91,13 @@ jobs:
           # Process the system prompt with variable substitution
           SYSTEM_PROMPT=$(envsubst < ${{github.workspace}}/.github/claude/system_prompt.txt)
           
-          # Save to GitHub env
-          echo "SYSTEM_PROMPT<<EOF" >> $GITHUB_ENV
+          # Generate unique delimiter to prevent collision
+          DELIMITER="EOF_$(date +%s)_$$"
+          
+          # Save to GitHub env with unique delimiter
+          echo "SYSTEM_PROMPT<<${DELIMITER}" >> $GITHUB_ENV
           echo "$SYSTEM_PROMPT" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
+          echo "${DELIMITER}" >> $GITHUB_ENV
           
           # Also set these for Claude
           echo "ISSUE_NUMBER=$ISSUE_NUMBER" >> $GITHUB_ENV
