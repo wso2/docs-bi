@@ -1,4 +1,4 @@
-# Request-Reply with Azure Event Hub
+# Kafka Request-Reply Pattern with Azure Event Hub
 
 In this tutorial, you will learn how to build a simple request-reply messaging pattern using Azure Event Hub with the Kafka event handler and WSO2 Integrator: BI. You'll create two services that communicate bidirectionally through Event Hub topics.
 
@@ -15,6 +15,8 @@ The system consists of two services communicating through Azure Event Hub:
 
 - **Request Service**: Exposes an HTTP endpoint to trigger requests, sends messages to the requests topic, and listens on the responses topic for replies.
 - **Reply Service**: Listens on the requests topic, processes incoming messages, and publishes responses to the responses topic.
+
+<a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/architecture-diagram.png"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/architecture-diagram.png" alt="Architecture Diagram" width="70%"></a>
 
 ### Request-Reply Pattern
 
@@ -340,7 +342,7 @@ The Reply Service listens for incoming requests and sends back responses. We bui
 4. Enter the project name as `ReplyService`.
 5. Select project directory and click on the **Create Integration** button.
 
-    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/1-create-reply-service-project.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/1-create-reply-service-project.gif" alt="Create Reply Service Project" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/1-create-reply-service-project.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/1-create-reply-service-project.gif" alt="Create Reply Service Project" width="70%"></a>
 
 ### Step 2: Create the Kafka Producer connection
 
@@ -374,10 +376,7 @@ The producer sends response messages back to the Request Service.
 
 5. Click **Save**.
 
-    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/2-create-kafka-producer-connection.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/2-create-kafka-producer-connection.gif" alt="Create Kafka Producer Connection" width="70%"></a>
-
-!!! note
-    GIF not available due to: [https://github.com/wso2/product-ballerina-integrator/issues/2171](https://github.com/wso2/product-ballerina-integrator/issues/2171). Used Ballerina side to add the config. Added a screenshot instead.
+    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/2-create-kafka-producer-connection.png"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/2-create-kafka-producer-connection.png" alt="Create Kafka Producer Connection" width="70%"></a>
 
 ### Step 3: Create the Kafka Event Handler
 
@@ -390,6 +389,9 @@ The producer sends response messages back to the Request Service.
     | Bootstrap Servers | `<namespace>.servicebus.windows.net:9093` |
     | Topic | `requests` |
 
+
+   <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/3-create-kafka-event-handler.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/3-create-kafka-event-handler.gif" alt="Create Kafka Event Handler" width="70%"></a>
+
 4. Click **Save**, then **Configure** to add consumer settings:
 
     | Setting | Value |
@@ -400,17 +402,19 @@ The producer sends response messages back to the Request Service.
     | requestTimeout | `60` |
     | sessionTimeout | `30` |
 
+   <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/3-2-create-kafka-event-handler.png"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/3-2-create-kafka-event-handler.png" alt="Create Kafka Event Handler" width="70%"></a>
+
 5. For `additionalProperties`, add the same SASL configuration:
 
-    | Key | Value |
-    |-----|-------|
-    | `sasl.mechanism` | `PLAIN` |
-    | `sasl.jaas.config` | (same JAAS config as producer) |
+   | Key | Value |
+   |-----|-------|
+   | `sasl.mechanism` | `PLAIN` |
+   | `sasl.jaas.config` | (same JAAS config as producer) |
 
 6. Click **+ Add Handler** and select `onConsumerRecord` with `kafka:BytesConsumerRecord`.
 7. Click **Save** to open the flow diagram.
 
-    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/3-create-kafka-event-handler.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/3-create-kafka-event-handler.gif" alt="Create Kafka Event Handler" width="70%"></a>
+   <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/3-3-create-kafka-event-handler.png"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/3-3-create-kafka-event-handler.png" alt="Create Kafka Event Handler" width="70%"></a>
 
 ### Step 4: Implement the Reply Logic
 
@@ -422,7 +426,7 @@ In the `onConsumerRecord` flow:
     - Variable Name: `message`.
     - Variable Type: `kafka:BytesConsumerRecord`.
 
-    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/4-add-foreach-block.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/4-add-foreach-block.gif" alt="Add ForEach Block" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/4-add-foreach-block.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/4-add-foreach-block.gif" alt="Add ForEach Block" width="70%"></a>
 
 2. **Deserialize the Request Message**
     - Click **+** → Select function `fromBytes`.
@@ -430,13 +434,13 @@ In the `onConsumerRecord` flow:
     - Type: `string`.
     - Expression: `message.value.value`.
 
-    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/5-deserialize-request-message.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/5-deserialize-request-message.gif" alt="Deserialize Request Message" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/5-deserialize-request-message.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/5-deserialize-request-message.gif" alt="Deserialize Request Message" width="70%"></a>
 
 3. **Log the Request**
     - Click **+** → Search for `log` → Select `printInfo`.
     - Message: `string `[Reply Service] Received request: ${requestContent}``.
 
-    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/6-log-request.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/6-log-request.gif" alt="Log the Request" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/6-log-request.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/6-log-request.gif" alt="Log the Request" width="70%"></a>
 
 4. **Create the Response**
     - Click **+** → Select **Declare variable**.
@@ -444,7 +448,7 @@ In the `onConsumerRecord` flow:
     - Type: `string`.
     - Expression: `string `Response to: "${requestContent}" | Status: OK``.
 
-    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/7-create-response-variable.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/7-create-response-variable.gif" alt="Create Response Variable" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/7-create-response-variable.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/7-create-response-variable.gif" alt="Create Response Variable" width="70%"></a>
 
 5. **Send the Response**
     - Click **+** → Select `responseProducer` → Choose `send`.
@@ -453,13 +457,13 @@ In the `onConsumerRecord` flow:
       { topic: "responses", value: responseContent.toBytes() }
       ```
 
-    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/8-send-response.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/8-send-response.gif" alt="Send Response" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/8-send-response.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/8-send-response.gif" alt="Send Response" width="70%"></a>
 
 6. **Log the Response**
     - Click **+** → Select `printInfo`.
     - Message: `string `[Reply Service] Sent response: ${responseContent}``.
 
-    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/9-log-response.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/9-log-response.gif" alt="Log Response" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/9-log-response.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/9-log-response.gif" alt="Log Response" width="70%"></a>
 
 ## Building the Request Service
 
@@ -469,7 +473,7 @@ The Request Service exposes an HTTP endpoint to trigger requests and listens for
 
 Create a new integration named `RequestService` following the same steps as for the Reply Service.
 
-<a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/10-create-request-service-project.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/10-create-request-service-project.gif" alt="Create Request Service Project" width="70%"></a>
+<a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/10-create-request-service-project.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/10-create-request-service-project.gif" alt="Create Request Service Project" width="70%"></a>
 
 ### Step 2: Create the Kafka Producer connection
 
@@ -486,12 +490,15 @@ Create a new integration named `RequestService` following the same steps as for 
 3. Configure:
     - Path: `/api`
     - Port: `8080`
+      
+   <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/11-create-http-service.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/11-create-http-service.gif" alt="Create HTTP Service" width="70%"></a>
+
 4. Add a resource:
-    - Method: `POST`
-    - Path: `/request`
+     - Method: `POST`
+     - Path: `/request`
     - Payload: `string`
 
-    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/11-create-http-service.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/11-create-http-service.gif" alt="Create HTTP Service" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/11-2-create-http-service.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/11-2-create-http-service.gif" alt="Create HTTP Service" width="70%"></a>
 
 ### Step 4: Implement the Request Logic
 
@@ -500,7 +507,7 @@ In the HTTP `POST /request` resource flow:
 1. **Log the Request**
     - Add `printInfo`: `string `[Request Service] Sending request: ${payload}``.
 
-    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/12-log-request.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/12-log-request.gif" alt="Log Request" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/12-log-request.png"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/12-log-request.png" alt="Log Request" width="70%"></a>
 
 2. **Send to Kafka**
     - Call `requestProducer->send`:
@@ -508,14 +515,14 @@ In the HTTP `POST /request` resource flow:
       { topic: "requests", value: payload.toBytes() }
       ```
 
-    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/13-send-to-kafka.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/13-send-to-kafka.gif" alt="Send to Kafka" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/13-send-to-kafka.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/13-send-to-kafka.gif" alt="Send to Kafka" width="70%"></a>
 
 3. **Return Response**
     ```ballerina
     string `Request sent successfully: ${payload}`
     ```
 
-    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/14-return-response.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/14-return-response.gif" alt="Return Response" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/14-return-response.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/14-return-response.gif" alt="Return Response" width="70%"></a>
 
 ### Step 5: Create the Response Listener
 
@@ -525,10 +532,13 @@ In the HTTP `POST /request` resource flow:
     - Group ID: `request-service-group`
     - Security Protocol: `kafka:PROTOCOL_SASL_SSL`
     - `additionalProperties` with `sasl.mechanism` and `sasl.jaas.config`
+   
+    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/15-create-response-listener.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/15-create-response-listener.gif" alt="Create Response Listener" width="70%"></a>
+
 3. Click **+ Add Handler** and select `onConsumerRecord` with `kafka:BytesConsumerRecord`.
 4. Click **Save** to open the flow diagram.
 
-    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/15-create-response-listener.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/15-create-response-listener.gif" alt="Create Response Listener" width="70%"></a>
+   <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/15-2-create-response-listener.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/15-2-create-response-listener.gif" alt="Create Response Listener" width="70%"></a>
 
 In the `onConsumerRecord` flow:
 
@@ -538,16 +548,20 @@ In the `onConsumerRecord` flow:
     - Variable Name: `message`.
     - Variable Type: `kafka:BytesConsumerRecord`.
 
+   <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/15-3-create-response-listener.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/15-3-create-response-listener.gif" alt="Create Response Listener" width="70%"></a>
+
 2. **Deserialize the Response Message**
     - Click **+** → Select function `fromBytes`.
     - Name: `responseContent`.
     - Type: `string`.
     - Expression: `message.value.value`.
 
+   <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/15-4-create-response-listener.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/15-4-create-response-listener.gif" alt="Create Response Listener" width="70%"></a>
+
 3. **Log the Response**
     - Message: `string `[Request Service] Received response: ${responseContent}``.
 
-    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/16-log-received-response.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/request-reply-with-azure-event-hub/16-log-received-response.gif" alt="Log Received Response" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/16-log-received-response.png"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/16-log-received-response.png" alt="Log Received Response" width="70%"></a>
 
 ## Running the Services
 
