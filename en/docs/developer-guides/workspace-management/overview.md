@@ -32,5 +32,5 @@ Whether you're building a single integration or orchestrating a complex microser
 
 Follow the below links to learn more about creating , managing workspaces and integrations:
 
-- [Creating an Integration](/developer-guides/workspace-management/create-integration)
-- [Managing Integrations in Workspaces](/developer-guides/workspace-management/manage-workspace/)
+- [Creating an Integration](/developer-guides/workspace-management/create-an-integration)
+- [Managing Integrations in Workspaces](/developer-guides/workspace-management/manage-integrations-in-workspaces/)
