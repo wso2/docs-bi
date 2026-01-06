@@ -39,3 +39,7 @@ Creating an integration within a workspace provides better organization and enab
   <a href="{{base_path}}/assets/img/developer-guides/workspace/workspace_details.png"><img src="../../../assets/img/developer-guides/workspace/workspace_details.png" alt="Expand Workspace Details Form" width="80%"></a>
 
 4\. Click **Create Integration** to initialize your integration
+
+Now, you can start creating your integration by developing artifacts. See the [WSO2 Integrator: BI Artifacts]({{base_path}}/developer-guides/wso2-integrator-bi-artifacts/) to learn about the integration artifacts.
+
+Additionally, you can enhance your experience by incorporating AI-powered assistance with [BI Copilot]({{base_path}}/developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot/).

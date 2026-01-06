@@ -16,11 +16,11 @@
         "title": "Developer Guides",
         "icon": "🛠️ ",
         "links": [
+            {"name": "Create Integrations", "url": "developer-guides/overview"},
             {"name": "Design the Integrations", "url": "developer-guides/design-the-integrations/"},
             {"name": "Data Mapping", "url": "developer-guides/data-mapping/"},
             {"name": "Testing", "url": "developer-guides/test-the-integrations/"},
             {"name": "Debugging & Troubleshooting", "url": "developer-guides/debugging-and-troubleshooting/overview"},
-            {"name": "Workspace Management", "url": "developer-guides/workspace-management/overview"},
             {"name": "Protocols and Connectors", "url": "developer-guides/protocols-and-connectors/overview-of-connectors/"},
             {"name": "Integration Tools", "url": "developer-guides/tools/integration-tools/health-tool/"},
             {"name": "Migration Tools", "url": "developer-guides/tools/migration-tools/mulesoft-migration-tool"},
