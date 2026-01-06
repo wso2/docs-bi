@@ -1,8 +1,8 @@
 # Testing
 
-BI has a built-in robust test framework, which allows you to ensure that your applications are reliable. The Ballerina powered testframework provides support for assertions, data providers, mocking, and code coverage features, which enable programmers to write comprehensive tests.
+BI has a built-in robust test framework, which allows you to ensure that your applications are reliable. The Ballerina-powered test framework provides support for assertions, data providers, mocking, and code coverage features, which enable programmers to write comprehensive tests.
 
-## Test a Simple Function
+## Test a simple function
 
 Follow the steps below to get started with testing in your BI project.
 
@@ -30,4 +30,4 @@ Follow the steps below to get started with testing in your BI project.
 <a href="{{base_path}}/assets/img/developer-guides/testing/testing-a-function.gif"><img src="{{base_path}}/assets/img/developer-guides/testing/testing-a-function.gif" alt="Testing a simple function" width="80%"></a>
 
 
-For further details on the Ballerina testframework you can refer to [Ballerina Testing Guide](https://ballerina.io/learn/test-ballerina-code/test-a-simple-function/).
+For further details on the Ballerina test framework, you can refer to [Ballerina Testing Guide](https://ballerina.io/learn/test-ballerina-code/test-a-simple-function/).

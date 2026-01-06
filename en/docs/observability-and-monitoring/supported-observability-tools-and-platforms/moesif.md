@@ -1,6 +1,6 @@
 # Observe metrics, traces and logs using Moesif
 
-The sample [shop service](/learn/overview-of-ballerina-observability/#example-observe-a-ballerina-service) will be used in this guide.
+The sample [shop service](/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service) will be used in this guide.
 
 Follow the steps given below to view BI metrics, traces and logs in [Moesif](https://www.moesif.com/).
 
