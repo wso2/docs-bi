@@ -73,22 +73,34 @@ jobs:
                 messages: [{role: "user", content: $prompt}]
                 }')
 
-                # Call Claude API with required anthropic-version header
-                RESPONSE=$(curl -s https://api.anthropic.com/v1/messages \
+                # Call Claude API with required anthropic-version header and capture HTTP status
+                RESPONSE_FILE=$(mktemp)
+                HTTP_STATUS=$(curl -s -w "%{http_code}" -o "$RESPONSE_FILE" https://api.anthropic.com/v1/messages \
                 -H "Content-Type: application/json" \
                 -H "x-api-key: $ANTHROPIC_API_KEY" \
                 -H "anthropic-version: 2023-06-01" \
                 -d "$DATA")
 
-                echo "Claude response: $RESPONSE"
+                RESPONSE_BODY=$(cat "$RESPONSE_FILE")
+                rm -f "$RESPONSE_FILE"
 
-                CATEGORY=$(echo "$RESPONSE" | jq -r '.content[0].text' | tr -d '\n' | tr '[:upper:]' '[:lower:]')
+                echo "Claude response status: $HTTP_STATUS"
+                echo "Claude response body: $RESPONSE_BODY"
+
+                # Fail early on non-2xx responses
+                if [[ "$HTTP_STATUS" -lt 200 || "$HTTP_STATUS" -ge 300 ]]; then
+                  echo "Claude API call failed with status $HTTP_STATUS"
+                  exit 1
+                fi
+
+                # Extract category safely; default to empty on parse errors
+                CATEGORY=$(echo "$RESPONSE_BODY" | jq -er '.content[0].text' 2>/dev/null | tr -d '\n' | tr '[:upper:]' '[:lower:]') || CATEGORY=""
                 echo "Claude classified the issue as: $CATEGORY"
 
-                # Add claude:queue label if a valid category is returned
+                # Add AI-Agent/Queued label if a valid category is returned
                 if [[ "$CATEGORY" != "" && "$CATEGORY" != "null" && "$CATEGORY" != "none" ]]; then
-                echo "Adding claude:queue label"
+                echo "Adding AI-Agent/Queued label"
                 gh issue edit $ISSUE_NUMBER --add-label "AI-Agent/Queued" --repo ${{ github.repository }}
                 else
-                echo "No valid category returned. Not adding label."
+                echo "No valid category returned or parsing failed. Not adding label."
                 fi
