@@ -29,8 +29,8 @@ Each response includes `_links` that guide users to the next possible actions, m
 
 Before you begin, make sure you have the following:
 
-- **Visual Studio Code**: Install <a href="https://code.visualstudio.com/">Visual Studio Code</a> if you don't have it already.
-- **WSO2 Integrator: BI Extension**: Install the WSO2 Integrator: BI extension. Refer to <a href="{{base_path}}/get-started/install-wso2-integrator-bi/">Install WSO2 Integrator: BI</a> for detailed instructions.
+- **Visual Studio Code**: Install [Visual Studio Code](https://code.visualstudio.com/) if you don't have it already.
+- **WSO2 Integrator: BI Extension**: Install the WSO2 Integrator: BI extension. Refer to [Install WSO2 Integrator: BI]({{base_path}}/get-started/install-wso2-integrator-bi/) for detailed instructions.
 
 ## Step 1: Create a new integration project
 
@@ -43,8 +43,6 @@ WSO2 Integrator: BI extension provides a low-code graphical environment to visua
 5. Click **Create Integration** to initialize the workspace.
 
 <a href="{{base_path}}/assets/usecases/http-reservation/img/create_project.gif"><img src="{{base_path}}/assets/usecases/http-reservation/img/create_project.gif" alt="Create Integration Project" width="70%"></a>
-
----
 
 ## Step 2: Define data types for the API
 
@@ -112,8 +110,6 @@ In this step, you'll define the structure of data that flows through your API lo
 
 <a href="{{base_path}}/assets/usecases/http-reservation/img/define_types.gif"><img src="{{base_path}}/assets/usecases/http-reservation/img/define_types.gif" alt="Define Data Types" width="70%"></a>
 
----
-
 ## Step 3: Create the HTTP service
 
 In this step, you'll create the HTTP service that will host all your REST API endpoints.
@@ -132,8 +128,6 @@ Your service will be accessible at `http://localhost:8290/hotel`
 
 <a href="{{base_path}}/assets/usecases/http-reservation/img/create_service.gif"><img src="{{base_path}}/assets/usecases/http-reservation/img/create_service.gif" alt="Create HTTP Service" width="70%"></a>
 
----
-
 ## Step 4: Add the locations resource (entry point)
 
 This is the well-known URL, the only URL users need to know to start using your API. All other URLs will be discovered through hypermedia links.
@@ -148,8 +142,6 @@ This is the well-known URL, the only URL users need to know to start using your 
 3. Click **Save**.
 
 <a href="{{base_path}}/assets/usecases/http-reservation/img/create_resource.gif"><img src="{{base_path}}/assets/usecases/http-reservation/img/create_resource.gif" alt="Create Resource" width="70%"></a>
-
----
 
 ## Step 5: Add the reservations resource
 
@@ -166,7 +158,6 @@ This resource creates a new reservation and provides links to edit, cancel, or c
 3. Click **Save**.
 
 <a href="{{base_path}}/assets/usecases/http-reservation/img/reservation_request.gif"><img src="{{base_path}}/assets/usecases/http-reservation/img/reservation_request.gif" alt="Reservation Request" width="70%"></a>
----
 
 ## Step 6: Add edit and cancel reservation resources
 
@@ -185,8 +176,6 @@ These optional resources allow users to modify or cancel reservations before pay
 3. **Error Response**: `http:NotFound` for invalid IDs
 
 <a href="{{base_path}}/assets/usecases/http-reservation/img/edit_cancel_resources.gif"><img src="{{base_path}}/assets/usecases/http-reservation/img/edit_cancel_resources.gif" alt="Edit and Cancel Resources" width="70%"></a>
-
----
 
 ## Step 7: Run and test the API
 
@@ -283,8 +272,6 @@ Response has no links (workflow complete):
 }
 ```
 
----
-
 ## Understand REST principles in this use case
 
 ### Hypermedia as the engine of application state (HATEOAS)
@@ -298,7 +285,8 @@ The API uses hypermedia links (`_links`) to guide clients through the workflow:
 
 ### Addressable resources
 
-Each entity has a unique URL:
+Each entity has a unique URL
+
 - Locations: `/hotel/locations`
 - Rooms: `/hotel/locations/{id}/rooms`
 - Reservations: `/hotel/reservations/{id}`
@@ -306,8 +294,9 @@ Each entity has a unique URL:
 
 ### Uniform interface
 
-Standard HTTP methods with consistent semantics:
-- GET: Safe and cacheable — retrieves data without side effects
+Standard HTTP methods with consistent semantics
+
+- GET: Safe and cacheable retrieves data without side effects
 - POST: Creates new resources or triggers actions
 - PUT: Updates existing resources idempotently
 - DELETE: Removes resources
@@ -320,8 +309,6 @@ Each request contains all necessary information. The server doesn't remember pre
 
 The custom media type `application/vnd.hotel.resort+json` identifies this API's domain and helps clients understand the expected data structures.
 
----
-
 ## Benefits of this REST approach
 
 1. No URL construction needed: Clients follow server-provided links instead of building URLs
@@ -329,8 +316,6 @@ The custom media type `application/vnd.hotel.resort+json` identifies this API's 
 3. Flexible evolution: Add new state transitions without breaking existing clients
 4. Reduced coupling: Clients aren't tied to specific URL patterns
 5. Similar to web browsing: Navigate through states like clicking links on a website
-
----
 
 ## Summary
 
