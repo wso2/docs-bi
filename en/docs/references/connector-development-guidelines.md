@@ -9,6 +9,7 @@ This guide outlines the complete lifecycle for developing Ballerina connectors f
 Package names should use lowercase letters and be descriptive of the service or API being integrated. The name should clearly indicate the external system the connector interacts with.
 
 **Examples:**
+
 - `ballerinax/salesforce`
 - `ballerinax/stripe`
 - `ballerinax/mongodb`
@@ -22,10 +23,12 @@ Submodules should be named in lowercase letters and should reflect the sub-funct
 Hierarchical package names are recommended when you need to distinguish between multiple connectors for the same vendor or service provider. This approach is particularly useful for SaaS products with independent API versioning.
 
 **When to use hierarchical packages:**
+
 - When dealing with the same vendor but different services (e.g., `ballerinax/azure.cosmosdb` vs `ballerinax/azure.storage`)
 - When a SaaS product has multiple independent APIs with separate versioning (e.g., `ballerinax/salesforce.bulk` vs `ballerinax/salesforce.soap`)
 
 **Examples:**
+
 - `ballerinax/azure.cosmosdb`
 - `ballerinax/azure.storage`
 - `ballerinax/salesforce.bulk`
@@ -49,6 +52,7 @@ Connectors are developed in dedicated GitHub repositories following a consistent
 **Repository Pattern:** `module-[org-name]-[connector-name]`
 
 **Examples:**
+
 - `module-ballerinax-azure.cosmosdb`
 - `module-ballerinax-salesforce`
 - `module-ballerinax-stripe`
@@ -131,6 +135,7 @@ For more information on developing OAS-based connectors, please refer to the [Cr
 Handwritten connectors are used when wrapping external SDKs or when the API does not have a suitable specification.
 
 **Characteristics:**
+
 - Wrap external SDKs with Ballerina code
 - Typically require minimal implementation
 - Operations should be stateless and independent
@@ -179,6 +184,7 @@ Connectors written entirely in Ballerina are GraalVM-compatible only if all thei
 ### Mixed dependencies
 
 Connectors with native code or Java dependencies require:
+
 - Explicit GraalVM compatibility verification
 - Documentation of compatibility status
 - Testing with GraalVM native image builds
