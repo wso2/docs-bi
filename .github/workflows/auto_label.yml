@@ -20,10 +20,10 @@ jobs:
             ANTHROPIC_API_KEY: ${{ secrets.DOC_FIXING_AGENT_ANTHROPIC_API_KEY }}
             GITHUB_TOKEN: ${{ secrets.DOC_FIXING_AGENT_GITHUB_TOKEN }}
             ISSUE_NUMBER: ${{ github.event.issue.number }}
-            
-            ISSUE_TITLE: ${{ github.event.issue.title }}
-            ISSUE_BODY: ${{ github.event.issue.body }}
         run: |
+            ISSUE_TITLE=$(gh issue view $ISSUE_NUMBER --json title -q '.title' --repo ${{ github.repository }})
+            ISSUE_BODY=$(gh issue view $ISSUE_NUMBER --json body -q '.body' --repo ${{ github.repository }})
+            
             echo "Checking if issue has assignee or is in Hacktoberfest project..."
 
             # Get issue details
@@ -67,10 +67,13 @@ jobs:
             Title: $ISSUE_TITLE
             Body: $ISSUE_BODY"
 
-                DATA=$(jq -n --arg prompt "$PROMPT" '{
+                DATA=$(jq -n \
+                  --arg title "$ISSUE_TITLE" \
+                  --arg body "$ISSUE_BODY" \
+                  '{
                 model: "claude-sonnet-4-5-20250929",
                 max_tokens: 50,
-                messages: [{role: "user", content: $prompt}]
+                messages: [{role: "user", content: ("You are a GitHub issue classifier for documentation fixes..." + "\n\nTitle: " + $title + "\nBody: " + $body)}]
                 }')
 
                 # Call Claude API with required anthropic-version header and capture HTTP status
