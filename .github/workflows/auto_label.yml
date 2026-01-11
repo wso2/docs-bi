@@ -68,12 +68,13 @@ jobs:
             Body: $ISSUE_BODY"
 
                 DATA=$(jq -n \
+                  --arg prompt "$PROMPT" \
                   --arg title "$ISSUE_TITLE" \
                   --arg body "$ISSUE_BODY" \
                   '{
                 model: "claude-sonnet-4-5-20250929",
                 max_tokens: 50,
-                messages: [{role: "user", content: ("You are a GitHub issue classifier for documentation fixes..." + "\n\nTitle: " + $title + "\nBody: " + $body)}]
+                messages: [{role: "user", content: ($prompt + "\n\nTitle: " + $title + "\nBody: " + $body)}]
                 }')
 
                 # Call Claude API with required anthropic-version header and capture HTTP status
