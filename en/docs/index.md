@@ -17,7 +17,7 @@
         "icon": "🛠️ ",
         "links": [
             {"name": "Design the Integrations", "url": "developer-guides/design-the-integrations/"},
-            {"name": "Data Mapping", "url": "developer-guides/data-mapping/"},
+            {"name": "Data Mapping", "url": "developer-guides/data-mapping/manual-data-mapping/"},
             {"name": "Testing", "url": "developer-guides/test-the-integrations/"},
             {"name": "Debugging & Troubleshooting", "url": "developer-guides/debugging-and-troubleshooting/overview"},
             {"name": "Protocols and Connectors", "url": "developer-guides/protocols-and-connectors/overview-of-connectors/"},
@@ -33,7 +33,8 @@
         "icon": "🤖",
         "links": [
             {"name": "AI Agents and other Gen AI Integrations", "url": "integration-guides/ai/agents"},
-            {"name": "AI for Integration", "url": "developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot/"}
+            {"name": "AI for Integration", "url": "developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot/"},
+            {"name": "AI Data Mapping", "url": "developer-guides/data-mapping/ai-data-mapping/"},
         ]
     },
     {
