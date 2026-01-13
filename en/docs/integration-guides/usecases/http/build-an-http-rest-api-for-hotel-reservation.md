@@ -25,6 +25,8 @@ The API implements Richardson Maturity Model Level 3, making it self-descriptive
 
 Each response includes `_links` that guide users to the next possible actions, making the API self-navigating.
 
+<a href="{{base_path}}/assets/usecases/http-reservation/img/snowpeak_diagram.png"><img src="{{base_path}}/assets/usecases/http-reservation/img/snowpeak_diagram.png" alt="Snowpeak Diagram" width="70%"></a>
+
 ## Prerequisites
 
 Before you begin, make sure you have the following:
