@@ -24,7 +24,7 @@ In this tutorial, you’ll create an HTTP service to add key-value pairs to a Re
 
       <a href="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/prompt.gif"><img src="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/prompt.gif" alt="AI Prompt" width="70%"></a>
 
-3. Click on **+ Add to Integration** button to add the generated integration to the project.
+3. As shown, click on **Keep** if the generated integration is as expected. Otherwise, you can keep generating until you get the desired integration.
 4. The generated integration will look like below:  
 
       <a href="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/generated-integration.png"><img src="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/generated-integration.png" alt="Generated integration" width="70%"></a>
@@ -35,7 +35,7 @@ In this tutorial, you’ll create an HTTP service to add key-value pairs to a Re
    ```text
     Add a resource to get the value of a key from Redis.
    ```
-2. Click on **+ Add to Integration** button to add the generated integration to the project.
+2. Click on **Keep** button after reviewing the generated integration to add it to the project.
 3. The generated integration will look like below:  
 
       <a href="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/get.png"><img src="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/get.png" alt="Add get resource" width="70%"></a>
@@ -55,41 +55,28 @@ In this tutorial, you’ll create an HTTP service to add key-value pairs to a Re
 1. In the `Design View`, click on the **Configure** button on the top-right side.
 2. Set `redisHost` value to `localhost`.
 3. Set `redisPort` value to `6379`.   
+4. Set `redisPassword` value to `""`.   
 
 > **Note:** No need to set the above values if the configurable variables are generated with default values.
 
-      <a href="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/configuration.gif"><img src="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/configuration.gif" alt="Configurations" width="70%"></a>
+   <a href="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/config.gif"><img src="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/config.gif" alt="Configurations" width="70%"></a>
 
-## Step 5: Generate the curl commands
-
-1. Add the following prompt and press `Enter` to generate the curl command to add key-value pairs to the Redis server.:
-   ```text
-    Generate a curl command to add key-value pairs to the Redis server.
-   ```
-
-      <a href="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/post.png"><img src="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/post.png" alt="Curl Add" width="70%"></a>
-
-2. Add the following prompt and press `Enter` to generate the curl command to get the value of a key from the Redis server.:
-   ```text
-    Generate a curl command to get the value of a key from the Redis server.
-   ```
-
-## Step 6: Test the integration
+## Step 5: Test the integration
 
 1. Click on the **Run** button to start the integration.
-2. Execute the generated `curl` commands to add a key-value pair.
+2. Tweak and Execute the generated `curl` commands from the AI response to add a key-value pair.
    ```curl
-      curl -X POST http://localhost:8080/cache/add \
-        -H "Content-Type: application/json" \
-        -d '{"key": "BI", "value": "BI is an AI-assisted integration platform."}' 
+   curl -X POST http://localhost:8080/cache/add -H "Content-Type: application/json" -d '{"key": "BI", "value": "BI is an AI-assisted integration platform."}' 
+   {"message":"Successfully added to cache", "key":"BI"}
    ```
+   
 3. Execute the generated `curl` command to get the value of the key.
    ```curl
-      curl http://localhost:8080/cache/get?key=BI
+   curl http://localhost:8080/cache/BI
    ```  
 4. The response will be the value of the key `BI` stored in the Redis server.
    ```text
-   BI is an AI-assisted integration platform.%
+   BI is an AI-assisted integration platform.
    ```
 
 ## Step 7: Stop the integration
