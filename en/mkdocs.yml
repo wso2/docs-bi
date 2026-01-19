@@ -102,6 +102,9 @@ nav:
         - Message Routing: integration-guides/integration-as-api/message-routing.md
       - File Integration:
         - File Integration With Directory Service: integration-guides/file-integration/file-integration-with-directory-service.md
+      - Event Integration:
+        - Change Data Capture (CDC):
+          - Fraud Detection System with CDC for Microsoft SQL Server: integration-guides/event-integration/cdc/fraud-detection-system-with-cdc-for-mssql.md
       - Use Cases:
         - Expose an Integration Service as a Managed API: integration-guides/usecases/integration-service-as-a-managed-api/expose-an-integration-service-as-a-managed-api.md
         - Data Mapper:
