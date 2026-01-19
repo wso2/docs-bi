@@ -1,5 +1,31 @@
 # About the Release
 
+# What's new in WSO2 Integrator: BI 1.6.0 release?
+
+**WSO2 Integrator: BI 1.6.0** introduces the following features and enhancements:
+
+## New features
+
+??? note "Copilot Agent Mode"
+    Introduced a comprehensive Agent Mode with design capabilities, automatic code integration, task approval workflows, and diagnostic tools.
+    Added support for dynamic OpenAPI connector generation and chat checkpoints for enhanced AI-driven development workflows.
+
+??? note "Enhanced Connectors Support"
+    Revamped the Connectors view with support for Persist and WSDL connections. Improved connector generation workflows for more streamlined integration development.
+
+??? note "Advanced Expression Editor"
+    Expanded expression support with new editors for String Templates, SQL expressions, booleans, numbers, enums, and maps, providing comprehensive expression creation capabilities across different data types.
+
+??? note "Data Mapper Enhancements"
+    Enhanced mapping capabilities with a "Group by" option, visual icons for mapping options, and support for all primitive type conversions, making complex data transformations more intuitive and efficient.
+
+??? note "CDC for Microsoft SQL Server"
+    Introduced Change Data Capture for Microsoft SQL Server under the event integration section, enabling real-time data synchronization and event-driven integration patterns.
+
+## Fixed issues
+
+- [WSO2 Integrator: BI Issues](https://github.com/wso2/product-ballerina-integrator/milestone/17?closed=1)
+
 # What's new in WSO2 Integrator: BI 1.5.0 release?
 
 **WSO2 Integrator: BI 1.5.0** introduces the following features and enhancements:
