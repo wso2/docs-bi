@@ -6,7 +6,7 @@ This guide shows how to build an integration that transforms a JSON payload into
 
 1. Click on the **BI** icon on the sidebar.
 2. Click on the **Create New Integration** button.
-3. Enter the integration name as `Transformer`.
+3. Enter the integration name as `datamapper`.
 4. Select integration directory location by clicking on the **Select Path** button.
 5. Click on the **Create Integration** button to create the integration project.  
 
