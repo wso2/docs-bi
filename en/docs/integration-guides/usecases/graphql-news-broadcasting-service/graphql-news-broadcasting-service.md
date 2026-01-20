@@ -67,7 +67,7 @@ The GraphQL service will define the endpoints and the data structure for broadca
 
 1. Navigate to the **WSO2 Integrator: BI Project Design** view.
 
-2. Click on the **+ Add Artifact** button.
+2. Select the **+ Add Artifact** button.
 
 3. Click **GraphQL Service** under the **Integration as API** section.
 
@@ -150,7 +150,7 @@ Before defining the service operations, you need to create a data structure that
 
 ### Step 5: Define GraphQL operations and logic
 
-Once the news data type is defined, you need to configure the GraphQL operations and implement the logic to retrieve the news items.
+After the news data type is defined, you need to configure the GraphQL operations and implement the logic to retrieve the news items.
 
 1.  Navigate back to the **GraphQL Diagram** view for the `/news` service.
 
@@ -212,7 +212,7 @@ Next, you need to create a mutation that allows users to publish news items to t
 
 ### Step 7: Implement the publishNews mutation logic
 
-Once the mutation is defined, you need to implement the logic to process the incoming news item and map it to your data structure.
+After the mutation is defined, you need to implement the logic to process the incoming news item and map it to your data structure.
 
 1.  In the **GraphQL Operations** view, click the **Edit** (pencil) icon next to the `publishNews` mutation.
 
@@ -227,7 +227,7 @@ Once the mutation is defined, you need to implement the logic to process the inc
 
 4.  Click the **+** icon below the variable declaration and select the **Return** button from the **Control** section.
 
-5.  In the **Return** pane, click the **Expression** field, go to **Variables**, and select the `newNews` variable you just created.
+5.  In the **Return** pane, click the **Expression** field, go to **Variables**, and select the `newNews` variable that you created.
 
 6.  Click **Save** to complete the implementation of the mutation logic.
 
@@ -454,7 +454,7 @@ In this final development step, you will refine the service class methods and co
 
 ### Step 15: Run and test the service
 
-Once the implementation is complete, you can run the service and use the integrated GraphiQL explorer to test the real-time broadcasting functionality.
+After the implementation is complete, you can run the service and use the integrated GraphiQL explorer to test the real-time broadcasting functionality.
 
 1.  Click the **Run** icon on the BI Project Design view to execute the project.
 2.  In the terminal, wait for the compilation to finish and for the GraphQL service to start.
