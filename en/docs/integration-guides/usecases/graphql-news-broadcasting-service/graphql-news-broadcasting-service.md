@@ -328,7 +328,7 @@ After visually creating the service class, you need to add the initialization lo
     }
     ```
 
-4.  Ensure the `newsItems` variable is marked as `private final` to maintain data integrity within the service class.
+4.  Ensure the `newsItems` variable is marked as `private` to maintain data integrity within the service class.
 
 <a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/finalize_service_class_code.gif">
     <img
