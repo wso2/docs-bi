@@ -1,85 +1,42 @@
-# File Integration Overview
+## Overview
 
-WSO2 Integrator: BI provides comprehensive file integration capabilities that enable you to build integrations for file-based data exchange scenarios.
+The File Integration in WSO2 Integrator: BI allows you to build integrations that interact with local or network file systems and remote servers using protocols such as FTP, FTPS, and SFTP.
 
-## Key Capabilities
+You can configure integrations to detect new files based on filters, execute logic to transform their content, and then route the resulting data to other systems such as databases, APIs, or message brokers.
 
-### Directory Service Integration
-Monitor local or remote directories for file events and trigger automated workflows when files are created, modified, or deleted.
+???+ Tip "Getting Started"
+    Start with the [Quickstart Guide](../get-started/develop-file-integration.md) to create your first file integration.
 
-### File Protocol Support
-BI supports multiple file transfer protocols:
-- **Local File System** - Direct access to local directories and files
-- **FTP/FTPS** - File Transfer Protocol with optional SSL/TLS encryption
-- **SFTP** - SSH File Transfer Protocol for secure file transfers
+## Key Components
 
-### File Transformation
-Transform files between different formats using the built-in Data Mapper.
+- **Local Files Integration:** Monitors a local directory for new or modified files and triggers an integration flow.
 
-## Common Use Cases
+- **FTP / SFTP Integration:** Polls remote servers for new or updated files and triggers integration flows.
 
-### Data Migration
-Transfer and transform data between systems using file-based exchange formats.
+- **FTP Connection:** Provides operations to interact with remote servers over FTP, FTPS or SFTP protocol, including listing, reading, writing, moving, and deleting files.
 
-### ETL Pipelines
-Extract data from files, transform it to the required format, and load it into target systems.
+## Common Scenarios
 
-### File-Based Integration
-Integrate with legacy systems or partners that rely on file-based data exchange.
+- **Extract, Transform, and Load (ETL):** Read files (CSV, XML, JSON) from a source, map the data, and load it into a target system like a database, data warehouse, or API.
 
-### Automated Reporting
-Generate and distribute reports by processing data files on a schedule.
+- **Data Validation and Routing:** Monitor a directory for incoming files, validate them against a schema or business rules, and route valid data to one system (e.g., a Kafka topic) while moving invalid files to an error location.
 
-### Data Archival
-Archive files to long-term storage after processing or based on retention policies.
+- **Trigger File Processing:** Watch for a "marker" or "trigger" file (e.g., `_SUCCESS`, `.ready`). When it appears, process the corresponding data file (e.g., `data.csv`). This ensures large files are not read until they are fully written.
 
-## Getting Started
+- **Secure Archival and Transfer:** Retrieve files from a source directory, encrypt the output, and transfer the secured file to a remote partner server, archiving the original for retention.
 
-### New to File Integration?
+## When to Use File Integration
 
-Start with the **[Quickstart Guide](../get-started/develop-file-integration.md)** to create your first file integration in minutes. This hands-on tutorial walks you through building a simple directory monitoring service.
+Use the file integration features for:
 
-### Documentation Structure
-
-Once you're familiar with the basics, explore the documentation based on your needs:
-
-**File Integration Sources** - Learn how to connect to different file sources and initialize integrations:
-- **[Local Directory](local-directory.md)** - Monitor and process files on local file systems
-- **[FTP](ftp-integration.md)** - Connect to remote FTP and FTPS servers
-- **[SFTP](sftp-integration.md)** - Secure file transfers using SSH protocol
-
-Each source page shows you how to set up connections, configure options, handle events, and work with common patterns.
-
-**Guides** - Step-by-step tutorials for common file integration use cases:
-- **[File Integration With Directory Service](guides/file-integration-with-directory-service.md)** - Build an event-driven file processor
-
-Guides walk you through complete scenarios from start to finish, perfect for learning by doing.
-
-**[Troubleshooting](troubleshooting.md)** - Solutions to common issues with file integrations
-
-## Architecture Patterns
-
-### Event-Driven Pattern
-Use directory services to trigger integrations based on file system events.
-
-### Polling Pattern
-Periodically check directories or remote servers for new files to process.
-
-### Request-Response Pattern
-Expose file operations as APIs that can be invoked on-demand.
-
-## Best Practices
-
-- Use appropriate file protocols based on security requirements
-- Implement proper error handling for file operations
-- Consider file size and processing time when designing workflows
-- Use file locking mechanisms to prevent concurrent access issues
-- Implement monitoring and logging for file integration workflows
-- Plan for file archival and cleanup strategies
+- **Batch processing** workflows.
+- **Bulk snapshot handoffs** where flat files provide simple versioning and auditability, decouple producer/consumer availability, and are cost-effective for large payloads.
+- **Scheduled data exchanges** (e.g., end-of-day reports).
+- **Integrating with legacy systems** or partner systems that rely on file-based data transfer.
+- Workflows that require **file-based compliance and archiving**.
 
 ## Next Steps
 
-1. **[Get Started with the Quickstart Guide](../get-started/develop-file-integration.md)** - Build your first file integration
-2. **Choose a File Source** - [Local Directory](local-directory.md) | [FTP](ftp-integration.md) | [SFTP](sftp-integration.md)
-3. **Follow the Guide** - [Directory Service Tutorial](guides/file-integration-with-directory-service.md)
-4. **Get Help** - [Troubleshooting](troubleshooting.md)
+* **File Sources:** Set up integrations for [Local Files](local-directory.md), [FTP](ftp-integration.md), or [SFTP](sftp-integration.md)
+* **Guides:** [File Integration With Directory Service](guides/file-integration-with-directory-service.md)
+* **Troubleshooting:** [Diagnose common issues](troubleshooting.md)
