@@ -45,7 +45,7 @@ In this tutorial, you'll create an AI-powered math tutor assistant capable of ha
 4. Next, provide the OpenAI API key in the **API Key** input field.
 
     !!! note
-        Since the API key is sensitive, it’s recommended to externalize it by using a configurable value. This helps prevent accidentally committing it to your version control system and ensures it’s kept secure without being exposed. To learn more, see [Configurations]({{base_path}}/get-started/key-concepts/#configurations).
+        Since the API key is sensitive, it’s recommended to externalize it by using a configurable value. This helps prevent accidentally committing it to your version control system and ensures it’s kept secure without being exposed. To learn more, see [Configurations]({{base_path}}/deploy/managing-configurations).
       
     - Click the **API Key** input field to open the **Expression Helper** window.  
     - In the top bar, go to the **Configurables** tab (the third option).  
