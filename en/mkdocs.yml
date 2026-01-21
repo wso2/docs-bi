@@ -100,8 +100,6 @@ nav:
         - Service Orchestration: integration-guides/integration-as-api/service-orchestration.md
         - Message Transformation: integration-guides/integration-as-api/message-transformation.md
         - Message Routing: integration-guides/integration-as-api/message-routing.md
-      - File Integration:
-        - File Integration With Directory Service: integration-guides/file-integration/file-integration-with-directory-service.md
       - Event Integration:
         - Change Data Capture (CDC):
           - Fraud Detection System with CDC for Microsoft SQL Server: integration-guides/event-integration/cdc/fraud-detection-system-with-cdc-for-mssql.md
@@ -110,6 +108,15 @@ nav:
         - Data Mapper:
           - Overview: integration-guides/usecases/datamapper/overview.md
           - Read a CSV File and Transform It to an XML File: integration-guides/usecases/datamapper/read-csv-file-and-transform-to-xml-file.md
+  - File Integration:
+      - Overview: file-integration/overview.md
+      - File Sources:
+        - Local Directory: file-integration/local-directory.md
+        - FTP: file-integration/ftp-integration.md
+        - SFTP: file-integration/sftp-integration.md
+      - Guides:
+        - File Integration With Directory Service: file-integration/guides/file-integration-with-directory-service.md
+      - Troubleshooting: file-integration/troubleshooting.md
   - Developer Guides:
       - Create a Project: developer-guides/create-a-project.md
       - "WSO2 Integrator: BI Artifacts": developer-guides/wso2-integrator-bi-artifacts.md

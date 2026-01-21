@@ -37,12 +37,21 @@
         ]
     },
     {
+        "title": "File Integration",
+        "icon": "📁",
+        "links": [
+            {"name": "Overview", "url": "file-integration/overview/"},
+            {"name": "File Sources", "url": "file-integration/local-directory/"},
+            {"name": "Guides", "url": "file-integration/guides/file-integration-with-directory-service/"},
+            {"name": "Troubleshooting", "url": "file-integration/troubleshooting/"}
+        ]
+    },
+    {
         "title": "Integration Guides",
         "icon": "📚",
         "links": [
             {"name": "AI Agents and other Gen AI Integrations", "url": "integration-guides/ai/agents"},
             {"name": "Integration as API", "url": "integration-guides/integration-as-api/service-orchestration/"},
-            {"name": "File Integration", "url": "integration-guides/file-integration/file-integration-with-directory-service/"},
             {"name": "Event Integration", "url": "integration-guides/event-integration/cdc/fraud-detection-system-with-cdc-for-mssql"}
         ]
     },
