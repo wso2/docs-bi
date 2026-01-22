@@ -124,6 +124,7 @@ nav:
         - Build an HTTP Service With BI Copilot : developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot.md
       - Protocols and Connectors:
         - Overview of Connectors: developer-guides/protocols-and-connectors/overview-of-connectors.md
+        - Using Connectors: developer-guides/protocols-and-connectors/how-to-use-connetors.md
         - Supported Protocols: developer-guides/protocols-and-connectors/supported-protocols.md
         - Build Custom Connectors: developer-guides/protocols-and-connectors/build-custom-connectors.md
       - Tools:
