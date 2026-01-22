@@ -28,7 +28,7 @@ To begin building your integration, you need to create a new project and configu
     </a>
 
 
-## Create a connection before building an integration
+## Create a connection before building the automation flow
 
 If you know which external systems your integration will use such as Salesforce, HTTP APIs, or databases you can create the required connections in advance.
 
@@ -37,6 +37,10 @@ Use this approach when
 * You have a clear design before you start.
 * You plan to reuse the same connection across multiple integrations.
 * You want to avoid interruptions while you design the data flow.
+
+
+!!! note
+    If you've already created the integration, open its Design view to add connections. Otherwise, [create the integration first](#create-a-new-integration) before proceeding.
 
 In this guide, you will learn how to create a new HTTP connection, use it within an automation flow, and run the application to verify the integration.
 
