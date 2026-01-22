@@ -1,4 +1,4 @@
-# How To Use Connetors
+# How To Use Connectors
 
 A connection in WSO2 Integrator: BI is a reusable configuration that defines how an integration securely connects to an external system. It encapsulates all connection-related details, such as:
 
