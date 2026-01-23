@@ -111,9 +111,10 @@ nav:
   - File Integration:
       - Overview: file-integration/overview.md
       - File Sources:
-        - Local Directory: file-integration/local-directory.md
-        - FTP: file-integration/ftp-integration.md
-        - SFTP: file-integration/sftp-integration.md
+        - Local Files: file-integration/sources/local-directory.md
+        - FTP: file-integration/sources/ftp-integration.md
+        - FTPS: file-integration/sources/ftps-integration.md
+        - SFTP: file-integration/sources/sftp-integration.md
       - Guides:
         - File Integration With Directory Service: file-integration/guides/file-integration-with-directory-service.md
       - Troubleshooting: file-integration/troubleshooting.md

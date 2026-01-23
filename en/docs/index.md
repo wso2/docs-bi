@@ -41,7 +41,7 @@
         "icon": "📁",
         "links": [
             {"name": "Overview", "url": "file-integration/overview/"},
-            {"name": "File Sources", "url": "file-integration/local-directory/"},
+            {"name": "File Sources", "url": "file-integration/sources/local-directory/"},
             {"name": "Guides", "url": "file-integration/guides/file-integration-with-directory-service/"},
             {"name": "Troubleshooting", "url": "file-integration/troubleshooting/"}
         ]
