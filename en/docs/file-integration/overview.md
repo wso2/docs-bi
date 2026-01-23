@@ -37,6 +37,7 @@ Use the file integration features for:
 
 ## Next Steps
 
+* **Quick Start:** [Local Files Integration](quickstart.md)
 * **File Sources:** Set up integrations for [Local Files](sources/local-directory.md), [FTP](sources/ftp-integration.md), [FTPS](sources/ftps-integration.md), or [SFTP](sources/sftp-integration.md)
 * **Guides:** [File Integration With Directory Service](guides/file-integration-with-directory-service.md)
 * **Troubleshooting:** [Diagnose common issues](troubleshooting.md)

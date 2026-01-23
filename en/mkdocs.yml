@@ -110,6 +110,7 @@ nav:
           - Read a CSV File and Transform It to an XML File: integration-guides/usecases/datamapper/read-csv-file-and-transform-to-xml-file.md
   - File Integration:
       - Overview: file-integration/overview.md
+      - Quick Start: file-integration/quickstart.md
       - File Sources:
         - Local Files: file-integration/sources/local-directory.md
         - FTP: file-integration/sources/ftp-integration.md
