@@ -48,8 +48,8 @@ Since you're working in the same project where you completed the ingestion tutor
 
 1. Click on the newly created `POST` resource to open it in the flow diagram view.
 2. Hover over the flow line and click the **+** icon.
-3. Select **Vector Knowledge Bases** under the **AI** section.
-4. In the **Vector Knowledge Bases** section, click on `knowledgeBase`.
+3. Select **Knowledge Bases** under the **AI** section.
+4. In the **Knowledge Bases** section, click on `knowledgeBase`.
 5. Click on **retrieve** to open the configuration panel.
 6. Set the **Query** input to the `userQuery` variable.
 7. Set the **Result** to `context` to store the matched chunks in a variable named `context`.
