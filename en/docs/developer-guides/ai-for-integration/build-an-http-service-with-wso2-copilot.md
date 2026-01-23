@@ -64,7 +64,7 @@ In this tutorial, you’ll create an HTTP service to add key-value pairs to a Re
 ## Step 5: Test the integration
 
 1. Click on the **Run** button to start the integration.
-2. Tweak and Execute the generated `curl` commands from the AI response to add a key-value pair.
+2. Tweak and execute the generated `curl` commands from the AI response to add a key-value pair.
    ```curl
    curl -X POST http://localhost:8080/cache/add -H "Content-Type: application/json" -d '{"key": "BI", "value": "BI is an AI-assisted integration platform."}' 
    {"message":"Successfully added to cache", "key":"BI"}
