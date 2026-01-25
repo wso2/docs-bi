@@ -6,8 +6,8 @@ This guide demonstrates how to build a file-based ETL (Extract, Transform, Load)
 
 Retail stores generate daily sales reports as JSON files and upload them to a central FTP server. Your integration must automatically detect new files, parse the sales data, and insert each item as a separate row in a database.
 
-<a href="{{base_path}}/assets/img/integration-guides/file-integration/sales-data-sync/architecture.png">
-<img src="{{base_path}}/assets/img/integration-guides/file-integration/sales-data-sync/architecture.png" alt="Sales Data Sync Architecture Diagram" width="90%"></a>
+<a href="{{base_path}}/assets/img/file-integration/sales-data-sync/architecture.png">
+<img src="{{base_path}}/assets/img/file-integration/sales-data-sync/architecture.png" alt="Sales Data Sync Architecture Diagram" width="90%"></a>
 
 **Flow:**
 
@@ -144,11 +144,18 @@ EOF"
 4. Select Project Directory and click on **Select Location**.
 5. Click **Create New Integration** to create the project.
 
-### Step 2: Create an FTP service
+    <a href="{{base_path}}/assets/img/file-integration/sales-data-sync/1-create-integration.gif">
+    <img src="{{base_path}}/assets/img/file-integration/sales-data-sync/1-create-integration.gif" alt="Create Integration Project" width="70%"></a>
+
+### Step 2: Create an FTP Integration
 
 1. In the design view, click on the **Add Artifact** button.
 2. Select **FTP / SFTP** under the **File Integration** category.
 3. Select **FTP** as the protocol.
+   
+    <a href="{{base_path}}/assets/img/file-integration/sales-data-sync/2-select-ftp-integration.gif">
+    <img src="{{base_path}}/assets/img/file-integration/sales-data-sync/2-select-ftp-integration.gif" alt="Select FTP Integration" width="70%"></a>
+
 4. Fill in the connection properties:
 
     | Property | Value |
@@ -159,6 +166,9 @@ EOF"
     | Authentication | Basic Authentication |
     | Username | `ftpuser` |
     | Password | `ftppass` |
+
+    <a href="{{base_path}}/assets/img/file-integration/sales-data-sync/3-ftp-configure.gif">
+    <img src="{{base_path}}/assets/img/file-integration/sales-data-sync/3-ftp-configure.gif" alt="Configure FTP Connection" width="70%"></a>
 
 5. Click **Create** to create the FTP service.
 
@@ -172,9 +182,16 @@ EOF"
 6. Rename the type name as `SalesReport` and click **Import Type**.
 7. Click **Save**.
 8. This shows the implementation designer by default.
-9. Add a **Log Info** action with the message: `Processing file from store ${content.storeId}`
+9. Add a **Log Info** action. In the **Msg** field, type `Processing file from store ` and use the **Helper Panel** to select **Inputs** -> **content** -> **storeId**.
 
-??? Tip The import binds the JSON to specific types. You can view these in the **Types** section in the left panel.
+    <a href="{{base_path}}/assets/img/file-integration/sales-data-sync/4-file-handler.gif">
+    <img src="{{base_path}}/assets/img/file-integration/sales-data-sync/4-file-handler.gif" alt="Add File Handler" width="70%"></a>
+
+???+ Tip 
+     Import binds JSON to specific types. You can view these in the **Types** section in the left panel.
+
+<a href="{{base_path}}/assets/img/file-integration/sales-data-sync/4-types-view.png">
+<img src="{{base_path}}/assets/img/file-integration/sales-data-sync/4-types-view.png" alt="Types View" width="70%"></a>
 
 ### Step 4: Add a MySQL connection
 
@@ -189,6 +206,10 @@ EOF"
     | Password | `root@123` |
     | Database | `sales_db` |
     | Port | 3307 |
+
+    <a href="{{base_path}}/assets/img/file-integration/sales-data-sync/5-mysql-connection.gif">
+    <img src="{{base_path}}/assets/img/file-integration/sales-data-sync/5-mysql-connection.gif" alt="Add MySQL Connection" width="70%"></a>
+
 4. Click **Save Connection**.
 
 ### Step 5: Implement business logic
@@ -197,6 +218,10 @@ EOF"
 2. For **Collection**, use the **Helper Panel** to select **Inputs** -> **content** -> **items**.
 3. Add `item` as the **Variable Name** and `ItemsItem` as **Variable Type**.
 4. Click **Save**.
+
+    <a href="{{base_path}}/assets/img/file-integration/sales-data-sync/6-create-for-loop.gif">
+    <img src="{{base_path}}/assets/img/file-integration/sales-data-sync/6-create-for-loop.gif" alt="Create Foreach Loop" width="70%"></a>
+
 5. Click **+** inside the foreach loop.
 6. Select the `mysqlClient` connection and choose **Execute** operation.
 7. Add the following partial SQL query:
@@ -214,6 +239,9 @@ EOF"
             ${item.itemId}, ${item.quantity}, ${item.totalAmount})
     ```
 
+    <a href="{{base_path}}/assets/img/file-integration/sales-data-sync/7-execute-stement.gif">
+    <img src="{{base_path}}/assets/img/file-integration/sales-data-sync/7-execute-stement.gif" alt="Add Execute Statement" width="70%"></a>
+
 9.  Click **Save**.
 
 ### Step 6: Add post processing logic - success
@@ -222,7 +250,10 @@ EOF"
 2. Select **Move** operation.
 3. For **Source Path**, use the **Helper Panel** to select **Inputs** -> **fileInfo** -> **pathDecoded**.
 4. For **Destination Path**, type `/sales/processed/` and use the **Helper Panel** to select **Inputs** -> **fileInfo** -> **name**.
-5. Click **+** and add a **Log Info** action with the message: `File moved to processed: ${fileInfo.name}`
+5. Click **+** and add a **Log Info** action. In the **Msg** field, type `File moved to processed: ` and use the **Helper Panel** to select **Inputs** -> **fileInfo** -> **name**.
+
+    <a href="{{base_path}}/assets/img/file-integration/sales-data-sync/8-post-processing-success.gif">
+    <img src="{{base_path}}/assets/img/file-integration/sales-data-sync/8-post-processing-success.gif" alt="Add Post Processing Success" width="70%"></a>
 
 ### Step 7: Add post processing logic - failure
 
@@ -232,7 +263,10 @@ EOF"
 4. Select **Move** operation.
 5. For **Source Path**, use the **Helper Panel** to select **Inputs** -> **fileInfo** -> **pathDecoded**.
 6. For **Destination Path**, type `/sales/error/` and use the **Helper Panel** to select **Inputs** -> **fileInfo** -> **name**.
-7. Click **+** and add a **Log Info** action with the message: `File moved to error: ${fileInfo.name}`
+7. Click **+** and add a **Log Info** action. In the **Msg** field, type `File moved to error: ` and use the **Helper Panel** to select **Inputs** -> **fileInfo** -> **name**.
+
+    <a href="{{base_path}}/assets/img/file-integration/sales-data-sync/9-post-processing-error.gif">
+    <img src="{{base_path}}/assets/img/file-integration/sales-data-sync/9-post-processing-error.gif" alt="Add Post Processing Error" width="70%"></a>
 
 ## Run and test
 
@@ -245,6 +279,7 @@ EOF"
 
 1. Check the BI logs for processing messages:
     - `Processing sales report: store42-2024-01-15.json`
+    - `File moved to processed: store42-2024-01-15.json`
 
 2. Verify data in MySQL:
 
