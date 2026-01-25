@@ -117,7 +117,7 @@ nav:
         - FTPS: file-integration/sources/ftps-integration.md
         - SFTP: file-integration/sources/sftp-integration.md
       - Guides:
-        - File Integration With Directory Service: file-integration/guides/file-integration-with-directory-service.md
+        - Sales Data Sync with FTP: file-integration/guides/sales-data-sync-with-ftp-file-integration.md
       - Troubleshooting: file-integration/troubleshooting.md
   - Developer Guides:
       - Create a Project: developer-guides/create-a-project.md

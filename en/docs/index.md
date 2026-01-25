@@ -43,7 +43,7 @@
             {"name": "Overview", "url": "file-integration/overview/"},
             {"name": "Quick Start", "url": "file-integration/quickstart/"},
             {"name": "File Sources", "url": "file-integration/sources/local-directory/"},
-            {"name": "Guides", "url": "file-integration/guides/file-integration-with-directory-service/"},
+            {"name": "Guides", "url": "file-integration/guides/sales-data-sync-with-ftp-file-integration/"},
             {"name": "Troubleshooting", "url": "file-integration/troubleshooting/"}
         ]
     },
