@@ -25,7 +25,7 @@ FTP integration allows you to connect to remote FTP servers to upload, download,
     - **No Authentication**: For anonymous FTP access
     - **Basic Authentication**: Enter username and password
 
-    ???+ Tip Use Configurable Variables
+    ???+ Tip "Use Configurable Variables"
         Use configurable variables for connection properties (e.g., `ftpHost`, `ftpUsername`, `ftpPassword`) so they can be changed at deployment time without code changes. See [Managing Configurations](../../deploy/managing-configurations.md) for more details.
 
 6. Click on the **Create** button to create the FTP service.

@@ -187,8 +187,8 @@ EOF"
     <a href="{{base_path}}/assets/img/file-integration/sales-data-sync/4-file-handler.gif">
     <img src="{{base_path}}/assets/img/file-integration/sales-data-sync/4-file-handler.gif" alt="Add File Handler" width="70%"></a>
 
-???+ Tip 
-     Import binds JSON to specific types. You can view these in the **Types** section in the left panel.
+???+ Tip "Import binds JSON to specific types"
+     You can view these in the **Types** section in the left panel.
 
 <a href="{{base_path}}/assets/img/file-integration/sales-data-sync/4-types-view.png">
 <img src="{{base_path}}/assets/img/file-integration/sales-data-sync/4-types-view.png" alt="Types View" width="70%"></a>

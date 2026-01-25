@@ -32,7 +32,7 @@ SFTP (SSH File Transfer Protocol) integration allows you to securely connect to 
     | Private Key Path | Path to the private key file |
     | Private Key Password | Password for the private key file |
 
-    ???+ Tip Use Configurable Variables
+    ???+ Tip "Use Configurable Variables"
         Use configurable variables for connection properties (e.g., `sftpHost`, `sftpUsername`, `sftpPrivateKeyPath`) so they can be changed at deployment time without code changes. See [Managing Configurations](../../deploy/managing-configurations.md) for more details.
 
 7. Click on the **Create** button to create the SFTP service.
