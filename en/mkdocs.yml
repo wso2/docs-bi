@@ -118,6 +118,7 @@ nav:
         - SFTP: file-integration/sources/sftp-integration.md
       - Guides:
         - Sales Data Sync with FTP: file-integration/guides/sales-data-sync-with-ftp-file-integration.md
+        - Contractor Timesheet Validation: file-integration/guides/contractor-timesheet-validation.md
       - Troubleshooting: file-integration/troubleshooting.md
   - Developer Guides:
       - Create a Project: developer-guides/create-a-project.md
