@@ -15,12 +15,16 @@ The integration will listen to events in a directory and will be triggered for f
     <img src="{{base_path}}/assets/img/file-integration/quickstart/1-create-integration.gif" alt="Create Integration Project" width="70%"></a>
 
 
-## Step 2: Create an Directory service
+## Step 2: Create a Local Files Integration
 
 1. In the design view, click on the **Add Artifact** button.
 2. Select **Local Files** under the **File Integration** category.
 3. Enter the path to the directory you want to monitor. For example, `/user/home/Downloads`.
-4. Click on the **Create** button to create the directory service.
+
+    ???+ Tip Use Configurable Variables
+        Use a configurable variable for the path (e.g., `monitorPath`) so it can be changed at deployment time without code changes. See [Managing Configurations](../../deploy/managing-configurations.md) for more details.
+
+4. Click on the **Create** button to create the Local Files Integration.
 
     <a href="{{base_path}}/assets/img/file-integration/quickstart/2-add-local-files-integration.gif">
     <img src="{{base_path}}/assets/img/file-integration/quickstart/2-add-local-files-integration.gif" alt="Local Files Integration" width="70%"></a>
@@ -34,15 +38,15 @@ The integration will listen to events in a directory and will be triggered for f
 
 2. Click on the **onCreate** function to navigate to the function implementation designer view.
 3. Click on **+** and select **Log Info** from the node panel under **Logging** category.
-4. Add the log message as `"File created "+ event.name` in the **Msg** field.
+4. In the **Msg** field, type `File created ` and use the **Helper Panel** to select **Inputs** -> **event** -> **name**.
 5. Click on the **Save** button to add the log action to the function.
 
     <a href="{{base_path}}/assets/img/file-integration/quickstart/4-implement-service.gif">
     <img src="{{base_path}}/assets/img/file-integration/quickstart/4-implement-service.gif" alt="onCreate Function" width="70%"></a>
 
 6. Repeat the above steps to add the **onDelete** and **onModify** functions to the service.
-7. Add the log message as `"File deleted "+ event.name` in the **Msg** field for the **onDelete** function.
-8. Add the log message as `"File modified "+ event.name` in the **Msg** field for the **onModify** function.
+7. For the **onDelete** function, type `File deleted ` in the **Msg** field and use the **Helper Panel** to select **Inputs** -> **event** -> **name**.
+8. For the **onModify** function, type `File modified ` in the **Msg** field and use the **Helper Panel** to select **Inputs** -> **event** -> **name**.
 9. The final service will look like this:
 
     <a href="{{base_path}}/assets/img/file-integration/quickstart/5-add-resource.png">
