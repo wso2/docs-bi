@@ -21,7 +21,7 @@ The integration will listen to events in a directory and will be triggered for f
 2. Select **Local Files** under the **File Integration** category.
 3. Enter the path to the directory you want to monitor. For example, `/user/home/Downloads`.
 
-    ???+ Tip Use Configurable Variables
+    ???+ Tip "Use Configurable Variables"
         Use a configurable variable for the path (e.g., `monitorPath`) so it can be changed at deployment time without code changes. See [Managing Configurations](../../deploy/managing-configurations.md) for more details.
 
 4. Click on the **Create** button to create the Local Files Integration.
