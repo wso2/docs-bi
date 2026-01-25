@@ -16,122 +16,166 @@
  * under the License.
  */
 
-/*
-* Handle opening external links in a new tab
-*/
-/* 
- * Initialize highlightjs 
- */
-hljs.initHighlightingOnLoad();
-(function() {
-    if(document.querySelector('.tab-selector')){
-        document.querySelector('.tab-selector').addEventListener('click', function(e) {
-            // Show hide tab content next to the clicked tab
-            var tabContentToShow = e.target.nextElementSibling;
-            if(tabContentToShow.style.display === 'none') {
-                tabContentToShow.style.display = 'block';
-            } else {
-                tabContentToShow.style.display = 'none';
-            }
-        });
-    }
-})();
+// Initialize version dropdown
+function initVersionDropdown() {
+  const dropdown = document.querySelector('.md-header__version-select-dropdown');
+  
+  if (dropdown) {
+    // Add a click event listener to the dropdown link
+    const dropdownLink = dropdown.querySelector('.dropdown-link');
 
-(function() {
-    var links = document.links;
-    for (var i = 0, linksLength = links.length; i < linksLength; i++) {
-        if (links[i].hostname != window.location.hostname) {
-            links[i].target = "_blank";
-            links[i].setAttribute("rel", "noopener noreferrer");
-            links[i].className += " externalLink";
-        } else {
-            links[i].className += " localLink";
-        }
+    if (dropdownLink) {
+      // Remove any existing event listeners by cloning
+      const newDropdownLink = dropdownLink.cloneNode(true);
+      dropdownLink.parentNode.replaceChild(newDropdownLink, dropdownLink);
+      
+      newDropdownLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        dropdown.classList.toggle('open');
+      });
     }
-    var jsonTreeInputs = document.getElementsByClassName('jsonTreeInput');
-    if(jsonTreeInputs && jsonTreeInputs.length > 0){
-        for( var i=0; i < jsonTreeInputs.length; i++){
-            try {
-                var jsonTreeInput = jsonTreeInputs[i];
-                var jsonTreeOutput = jsonTreeInput.previousElementSibling;
-                var level = jsonTreeInput.getAttribute('data-level');
-                var levelInteger = level ? parseInt(level) : 1;
-                var formatter = new JSONFormatter(JSON.parse(jsonTreeInput.innerHTML), levelInteger, { hoverPreviewEnabled: false });
-                jsonTreeOutput.innerHTML = '';
-                jsonTreeOutput.appendChild(formatter.render());
-                jsonTreeInput.style.display = 'none';
-            } catch (e) {
-                console.error(e);
-            } 
-        }
-        
-    }
-    
-})();
 
-/*
- * Initialize custom dropdown component
-
-var dropdowns = document.getElementsByClassName('md-tabs__dropdown-link');
-var dropdownItems = document.getElementsByClassName('mb-tabs__dropdown-item');
-
-function indexInParent(node) {
-    var children = node.parentNode.childNodes;
-    var num = 0;
-    for (var i=0; i < children.length; i++) {
-         if (children[i]==node) return num;
-         if (children[i].nodeType==1) num++;
-    }
-    return -1;
+    // Add a click event listener to close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!dropdown.contains(event.target)) {
+        dropdown.classList.remove('open');
+      }
+    });
+  }
 }
 
-for (var i = 0; i < dropdowns.length; i++) {
-    var el = dropdowns[i];
-    var openClass = 'open';
+// Run after DOM is ready - single initialization only
+if (typeof window.versionDropdownInitialized === 'undefined') window.versionDropdownInitialized = false;
+document.addEventListener('DOMContentLoaded', function() {
+  if (!window.versionDropdownInitialized) {
+    initVersionDropdown();
+    window.versionDropdownInitialized = true;
+  }
+});
 
-    el.onclick = function () {
-        if (this.parentElement.classList) {
-            this.parentElement.classList.toggle(openClass);
-        } else {
-            var classes = this.parentElement.className.split(' ');
-            var existingIndex = classes.indexOf(openClass);
+// Wrap tabbed content and nav items in DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Add a class to content tabs that has multiple child elements rather than a code block
+  document.querySelectorAll('.tabbed-content').forEach(tabbedContent => {
+    const tabbedBlocks = Array.from(tabbedContent.querySelectorAll('.tabbed-block'));
+    
+    // Check if each .tabbed-block has more than 1 child or if its immediate child is not .highlight
+    const shouldAddClass = tabbedBlocks.some(tabbedBlock => 
+      tabbedBlock.children.length > 1 || !tabbedBlock.firstElementChild.classList.contains('highlight')
+    );
 
-            if (existingIndex >= 0)
-                classes.splice(existingIndex, 1);
-            else
-                classes.push(openClass);
+    if (shouldAddClass) {
+      tabbedContent.classList.add('tab_with_no_code');
+    }
+  });
 
-            this.parentElement.className = classes.join(' ');
-        }
-    };
-};
+  // Toggle active state of nested nav items
+  const activeNavItems = document.querySelectorAll('.md-nav__list > .md-nav__item.md-nav__item--active.md-nav__item--nested');
+  
+  if (activeNavItems) {
+    activeNavItems.forEach((item) => {
+      const checkbox = item.querySelector('input[type="checkbox"].md-nav__toggle.md-toggle');
+      
+      if (checkbox) {
+        checkbox.checked = true;
+      }
+    });
+  }
+});
+
+/*
+ * Handle opening external links in a new tab
+ * and initialize JSON tree formatter
+ */
+document.addEventListener('DOMContentLoaded', function() {
+  // Open external links in new tab
+  var links = document.links;
+  for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+    if (links[i].hostname != window.location.hostname) {
+      links[i].target = "_blank";
+      links[i].setAttribute("rel", "noopener noreferrer");
+      links[i].className += " externalLink";
+    } else {
+      links[i].className += " localLink";
+    }
+  }
+  
+  // Initialize JSON tree formatter
+  var jsonTreeInputs = document.getElementsByClassName('jsonTreeInput');
+  if(jsonTreeInputs && jsonTreeInputs.length > 0){
+        for( var i=0; i < jsonTreeInputs.length; i++){
+      try {
+        var jsonTreeInput = jsonTreeInputs[i];
+        var jsonTreeOutput = jsonTreeInput.previousElementSibling;
+        var level = jsonTreeInput.getAttribute('data-level');
+        var levelInteger = level ? parseInt(level) : 1;
+        var formatter = new JSONFormatter(JSON.parse(jsonTreeInput.innerHTML), levelInteger, { hoverPreviewEnabled: false });
+        jsonTreeOutput.innerHTML = '';
+        jsonTreeOutput.appendChild(formatter.render());
+        jsonTreeInput.style.display = 'none';
+      } catch (e) {
+        console.error(e);
+      }
+    }
+  }
+});
+
+// Set last vsited valid page in session storage
+window.addEventListener("DOMContentLoaded", function () {
+  fetch(window.location.href, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then((response) => {
+    if (response.status !== 404) {
+      sessionStorage.setItem("lastValidPage", window.location.href);
+    }
+  });
+});
 
 /* 
  * Reading versions
+ */
+if (typeof window.versionsLoaded === 'undefined') window.versionsLoaded = false;
+window.addEventListener('DOMContentLoaded', function() {
+  if (window.versionsLoaded) return;
+  window.versionsLoaded = true;
+  
+  var pageHeader = document.getElementById('page-header');
+  var docSetLang = pageHeader.getAttribute('data-lang') == null ? 'en' : pageHeader.getAttribute('data-lang');
 
-var pageHeader = document.getElementById('page-header');
-var docSetLang = (pageHeader && pageHeader.getAttribute('data-lang')) || 'en';
+  (window.location.pathname.split('/')[1] !== docSetLang) ? 
+      docSetLang = '' :
+      docSetLang = docSetLang + '/';
 
-(window.location.pathname.split('/')[1] !== docSetLang) ? 
-    docSetLang = '' :
-    docSetLang = docSetLang + '/';
+  var docSetUrl = window.location.origin + '/' + docSetLang;
+  
+  // Try to load from local first, fallback to remote
+  var versionsUrl = docSetUrl + 'versions/assets/versions.json';
+  
+  var request = new XMLHttpRequest();
 
-var docSetUrl = window.location.origin + '/' + docSetLang;
-var request = new XMLHttpRequest();
+  request.open('GET', versionsUrl, true);
+  
+  // Add error handler
+  request.onerror = function() {
+    console.error("Failed to load versions.json. CORS or network error.");
+    // For development, you can add mock data here
+    console.log("You can create a local versions.json file at: /en/versions/assets/versions.json");
+  };
 
-request.open('GET', docSetUrl +
-             'versions/assets/versions.json', true);
+  request.onload = function() {
+    if (request.status >= 200 && request.status < 400) {
 
-request.onload = function() {
-  if (request.status >= 200 && request.status < 400) {
-
-      var data = JSON.parse(request.responseText);
+        var data = JSON.parse(request.responseText);
       var dropdown =  document.getElementById('version-select-dropdown');
       var checkVersionsPage = document.getElementById('current-version-stable');
       
       /* 
        * Appending versions to the version selector dropdown 
-
+       */
       if (dropdown){
           data.list.sort().forEach(function(key, index){
               var versionData = data.all[key];
@@ -148,8 +192,6 @@ request.onload = function() {
                   else {
                       url = docSetUrl + url;
                   }
-
-                  liElem.className = 'md-tabs__item mb-tabs__dropdown';
                   liElem.innerHTML =  '<a href="' + url + '" target="' + 
                       target + '">' + key + '</a>';
 
@@ -163,7 +205,7 @@ request.onload = function() {
       
       /* 
        * Appending versions to the version tables in versions page
-
+       */
       if (checkVersionsPage){
           var previousVersions = [];
 
@@ -210,132 +252,8 @@ request.onload = function() {
   } else {
       console.error("We reached our target server, but it returned an error");
   }
-};
+  };
 
-request.onerror = function() {
-    console.error("There was a connection error of some sort");
-};
-
-request.send();
-
- */
-
-/*
- * Handle TOC toggle
- */
-var tocBtn = document.querySelector('.md-sidebar.md-sidebar--secondary #tocToggleBtn');
-var tocClass = document.getElementsByTagName('main')[0];
-
-if (tocBtn) {
-    tocBtn.onclick = function () {
-        event.preventDefault();
-        tocClass.classList.toggle('hide-toc');
-        if (tocBtn.innerHTML === "keyboard_arrow_right") {
-            tocBtn.innerHTML = "keyboard_arrow_left";
-        } else {
-            tocBtn.innerHTML = "keyboard_arrow_right";
-        }
-    };
-}
-
-/*
- * TOC position highlight on scroll
- */
-var observeeList = document.querySelectorAll(".md-sidebar__inner > .md-nav--secondary .md-nav__link");
-var listElems = document.querySelectorAll(".md-sidebar__inner > .md-nav--secondary > ul li");
-var config = { attributes: true, childList: true, subtree: true };
-
-var callback = function(mutationsList, observer) {
-    for(var mutation of mutationsList) {
-        if (mutation.type == 'attributes') {
-            mutation.target.parentNode.setAttribute(mutation.attributeName,
-                mutation.target.getAttribute(mutation.attributeName));
-            scrollerPosition(mutation);
-        }
-    }
-};
-
-var observer = new MutationObserver(callback);
-
-if (listElems.length > 0) {
-    listElems[0].classList.add('active');
-}
-
-for (var i = 0; i < observeeList.length; i++) {
-    var el = observeeList[i];
-
-    observer.observe(el, config);
-
-    el.onclick = function(e) {
-        listElems.forEach(function(elm) {
-            if (elm.classList) {
-                elm.classList.remove('active');
-            }
-        });
-
-        e.target.parentNode.classList.add('active');
-    }
-}
-
-function scrollerPosition(mutation) {
-    var blurList = document.querySelectorAll(".md-sidebar__inner > .md-nav--secondary > ul li > .md-nav__link[data-md-state='blur']");
-
-    listElems.forEach(function(el) {
-        if (el.classList) {
-            el.classList.remove('active');
-        }
-    });
-
-    if (blurList.length > 0) {
-        if (mutation.target.getAttribute('data-md-state') === 'blur') {
-            if (mutation.target.parentNode.querySelector('ul li')) {
-                mutation.target.parentNode.querySelector('ul li').classList.add('active');
-            } else {
-                setActive(mutation.target.parentNode);
-            }
-        } else {
-            mutation.target.parentNode.classList.add('active');
-        }
-    } else {
-        if (listElems.length > 0) {
-            listElems[0].classList.add('active');
-        }
-    }
-}
-
-function setActive(parentNode, i) {
-    i = i || 0;
-    if (i === 5) {
-        return;
-    }
-    if (parentNode.nextElementSibling) {
-        parentNode.nextElementSibling.classList.add('active');
-        return;
-    }
-    setActive(parentNode.parentNode.parentNode.parentNode, ++i);
-}
-
-
-/*
- * Handle edit icon on scroll
- */
-var editIcon = document.getElementById('editIcon');
-
-window.addEventListener('scroll', function() {
-    var scrollPosition = window.scrollY || document.documentElement.scrollTop;
-    if (scrollPosition >= 90) {
-        editIcon.classList.add('active');
-    } else {
-        editIcon.classList.remove('active');
-    }
+  request.send();
 });
 
-/*
- * Fixes the issue related to clicking on anchors and landing somewhere below it
- */
-
-window.addEventListener("hashchange", function () {
-
-    window.scrollTo(window.scrollX, window.scrollY - 90, 'smooth');
-
-});
