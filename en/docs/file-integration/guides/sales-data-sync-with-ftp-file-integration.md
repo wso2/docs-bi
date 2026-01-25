@@ -2,6 +2,10 @@
 
 This guide demonstrates how to build a file-based ETL (Extract, Transform, Load) workflow using WSO2 Integrator: BI. You will create an integration that monitors an FTP server for incoming JSON sales report files, parses the sales data, and loads each item into a MySQL database.
 
+Try this in Devant:
+
+[![Deploy to Devant](https://openindevant.choreoapps.dev/images/DeployDevant.svg)](https://console.devant.dev/new?gh=wso2/integration-samples/tree/main/ballerina-integrator/sales-data-sync&t=file)
+
 ## Scenario
 
 Retail stores generate daily sales reports as JSON files and upload them to a central FTP server. Your integration must automatically detect new files, parse the sales data, and insert each item as a separate row in a database.
@@ -16,11 +20,6 @@ Retail stores generate daily sales reports as JSON files and upload them to a ce
 3. Each sale item is inserted as a separate row in MySQL `Sales` table
 4. Processed files are moved to `/sales/processed/`
 5. If any errors are encountered while processing, files are moved to `/sales/error`
-
-Try this in Devant:
-
-[![Deploy to Devant](https://openindevant.choreoapps.dev/images/DeployDevant.svg)](https://console.devant.dev/new?gh=wso2/integration-samples/tree/main/ballerina-integrator/sales-data-sync&t=file)
-
 
 ## Prerequisites
 
