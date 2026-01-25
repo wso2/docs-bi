@@ -5,7 +5,7 @@ The File Integration in WSO2 Integrator: BI allows you to build integrations tha
 You can configure integrations to detect new files based on filters, execute logic to transform their content, and then route the resulting data to other systems such as databases, APIs, or message brokers.
 
 ???+ Tip "Getting Started"
-    Start with the [Quickstart Guide](../get-started/develop-file-integration.md) to create your first file integration.
+    Start with the [Quickstart Guide](./quickstart.md) to create your first file integration.
 
 ## Key Components
 
