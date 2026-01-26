@@ -243,6 +243,11 @@ extra:
     material:
       jinja2content: true
     generator: false
+    expanded_navs:
+    - title: Get started
+      options: [verticle-line]
+    - title: Integration Guides
+      options: [verticle-line]
     nav_icons:
       Home:
         icon: octicons/home-16
