@@ -149,6 +149,7 @@
       {% if is_expanded_section %}
         <!-- Check for auto-collapse behavior configuration -->
         {% set should_collapse_list = [] %}
+        {% set should_stay_expanded_list = [] %}
         {% if config.extra.nav_behaviors and config.extra.nav_behaviors.auto_collapse %}
           {% for behavior_config in config.extra.nav_behaviors.auto_collapse %}
             {% if behavior_config.title == nav_item.title %}
@@ -160,7 +161,6 @@
                     {% set current_url = current_url[len(normalized_base_path):] %}
                   {% endif %}
                 {% set current_page = page.file.src_path %}
-                {% set should_stay_expanded_list = [] %}
                 {% if behavior_config.stay_expanded_when_url_starts_with %}
                   {% for stay_pattern in behavior_config.stay_expanded_when_url_starts_with %}
                     {% if current_url.startswith(stay_pattern) %}
@@ -175,7 +175,7 @@
                     {% endif %}
                   {% endfor %}
                 {% endif %}
-                {% if not should_stay_expanded and behavior_config.collapse_when_url_starts_with %}
+                {% if should_stay_expanded_list|length == 0 and behavior_config.collapse_when_url_starts_with %}
                   {% for url_pattern in behavior_config.collapse_when_url_starts_with %}
                     {% if current_url.startswith(url_pattern) %}
                       {% set _ = should_collapse_list.append(1) %}
