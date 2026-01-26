@@ -50,7 +50,7 @@ theme:
            name: Switch to light mode
     logo: assets/img/logo-for-light.svg
     logo_light: assets/img/logo.svg
-    favicon: assets/img/logo.svg
+    favicon: assets/img/favicon.png
     features:
        - navigation.indexes
        - navigation.path
@@ -243,6 +243,31 @@ extra:
     material:
       jinja2content: true
     generator: false
+    nav_icons:
+      Home:
+        icon: octicons/home-16
+        level: 1
+      Get started:
+        icon: octicons/rocket-16
+        level: 1
+      Integration Guides:
+        icon: octicons/shield-check-16
+        level: 1
+      Developer Guides:
+        icon: octicons/browser-16
+        level: 1
+      Deploy:
+        icon: octicons/server-16
+        level: 1
+      Observability and Monitoring:
+        icon: octicons/graph-16
+        level: 1
+      References:
+        icon: octicons/hubot-16
+        level: 1
+      Release Notes:
+        icon: octicons/pencil-16
+        level: 1
     social:
         - icon: fontawesome/brands/github-alt
           link: https://github.com/wso2
