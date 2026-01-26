@@ -160,18 +160,18 @@
                     {% set current_url = current_url[len(normalized_base_path):] %}
                   {% endif %}
                 {% set current_page = page.file.src_path %}
-                {% set should_stay_expanded = false %}
-                {% if behavior_config.stay_expanded_when_url_starts_with and not should_stay_expanded %}
+                {% set should_stay_expanded_list = [] %}
+                {% if behavior_config.stay_expanded_when_url_starts_with %}
                   {% for stay_pattern in behavior_config.stay_expanded_when_url_starts_with %}
-                      {% if current_url.startswith(stay_pattern) %}
-                      {% set should_stay_expanded = true %}
+                    {% if current_url.startswith(stay_pattern) %}
+                      {% set _ = should_stay_expanded_list.append(1) %}
                     {% endif %}
                   {% endfor %}
                 {% endif %}
-                {% if not should_stay_expanded and behavior_config.stay_expanded_on_pages %}
+                {% if behavior_config.stay_expanded_on_pages %}
                   {% for stay_page in behavior_config.stay_expanded_on_pages %}
                     {% if current_page == stay_page %}
-                      {% set should_stay_expanded = true %}
+                      {% set _ = should_stay_expanded_list.append(1) %}
                     {% endif %}
                   {% endfor %}
                 {% endif %}
@@ -186,7 +186,7 @@
             {% endif %}
           {% endfor %}
         {% endif %}
-        {% if should_stay_expanded %}
+        {% if should_stay_expanded_list|length > 0 %}
           {% set checked_attr = "checked" %}
         {% elif should_collapse_list|length > 0 %}
           {% set checked_attr = "" %}

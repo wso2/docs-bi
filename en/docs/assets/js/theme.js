@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   // Open external links in new tab
   var links = document.links;
-  for (var i = 0, linksLength = links.length; i < linksLength; i++) {
+  for (let j = 0, linksLength = links.length; i < linksLength; i++) {
     if (links[i].hostname != window.location.hostname) {
       links[i].target = "_blank";
       links[i].setAttribute("rel", "noopener noreferrer");
@@ -104,9 +104,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize JSON tree formatter
   var jsonTreeInputs = document.getElementsByClassName('jsonTreeInput');
   if(jsonTreeInputs && jsonTreeInputs.length > 0){
-        for( var i=0; i < jsonTreeInputs.length; i++){
+        for( var j=0; j < jsonTreeInputs.length; j++){
       try {
-        var jsonTreeInput = jsonTreeInputs[i];
+        var jsonTreeInput = jsonTreeInputs[j];
         var jsonTreeOutput = jsonTreeInput.previousElementSibling;
         var level = jsonTreeInput.getAttribute('data-level');
         var levelInteger = level ? parseInt(level) : 1;

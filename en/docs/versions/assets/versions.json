@@ -5,7 +5,7 @@
     ],
     "all": {
       "latest": {
-        "doc": "http://localhost:8000",
+        "doc": "https://bi.docs.wso2.com/",
         "notes": "get-started/quick-start-guide"
       }
     }
