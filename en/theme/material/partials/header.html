@@ -18,9 +18,9 @@
 
 {% set class = "md-header" %}
 {% if "navigation.tabs.sticky" in features %}
-  {% set class = class ~ " md-header--shadow md-header--lifted" %}
+{% set class = class ~ " md-header--shadow md-header--lifted" %}
 {% elif "navigation.tabs" not in features %}
-  {% set class = class ~ " md-header--shadow" %}
+{% set class = class ~ " md-header--shadow" %}
 {% endif %}
 <header class="{{ class }}" data-md-component="header" id="page-header">
   <nav class="md-header__inner md-grid" aria-label="{{ lang.t('header') }}">
@@ -84,7 +84,7 @@
           <input class="md-option" data-md-color-media="{{ option.media }}" data-md-color-scheme="{{ scheme | replace(' ', '-') }}" data-md-color-primary="{{ option.primary | replace(' ', '-') }}" data-md-color-accent="{{ option.accent | replace(' ', '-') }}" {% if option.toggle %} aria-label="{{ option.toggle.name }}" {% else %} aria-hidden="true" {% endif %} type="radio" name="__palette" id="__palette_{{ loop.index }}">
           {% if option.toggle %}
             <label class="md-header__button md-icon md-theme-switch md-icon--hover" title="{{ option.toggle.name }}" for="__palette_{{ loop.index0 or loop.length }}" hidden>
-              {% include "/" ~ option.toggle.icon ~ "" %}
+              {% include ".icons/" ~ option.toggle.icon ~ ".svg" %}
             </label>
           {% endif %}
         {% endfor %}
