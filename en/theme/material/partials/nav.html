@@ -20,7 +20,8 @@
 
 <!-- Determine class according to configuration -->
 {% set class = "md-nav md-nav--primary" %}
-{% if "navigation.tabs" in features or page_meta.template in config.extra.isolated_templates %}
+{% set isolated_templates = config.extra.isolated_templates | default([]) %}
+{% if "navigation.tabs" in features or page_meta.template in isolated_templates %}
   {% set class = class ~ " md-nav--lifted" %}
 {% endif %}
 {% if "toc.integrate" in features %}

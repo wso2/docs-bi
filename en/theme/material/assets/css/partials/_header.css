@@ -197,7 +197,6 @@
 .md-header__version-select-dropdown .dropdown-link .icon svg {
   display: inline-block;
   fill: var(--md-default-fg-color);
-  width: 0.5rem;
   margin-left: .1rem;
   height: 12px;
   width: 12px;
