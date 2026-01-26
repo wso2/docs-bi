@@ -46,11 +46,10 @@ auto_collapse:
     collapse_when_url_starts_with:
       # Collapse when visiting other sections
       - get-started/
-    stay_expanded_on_pages:
-      - index.md
-
-  # GROUP 2: API Developer Portal - Collapsed everywhere except own pages
-  - title: API Developer Portal
+      - integration-guides/
+      - deploy/
+      - observability-and-monitoring/
+      - references/
     stay_expanded_when_url_starts_with:
       # Stay expanded only in own section
       - developer-guides/
