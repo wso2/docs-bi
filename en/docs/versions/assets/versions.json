@@ -1,0 +1,12 @@
+{
+    "current": "latest",
+    "list": [
+      "latest"
+    ],
+    "all": {
+      "latest": {
+        "doc": "http://localhost:8000",
+        "notes": "get-started/quick-start-guide"
+      }
+    }
+}
