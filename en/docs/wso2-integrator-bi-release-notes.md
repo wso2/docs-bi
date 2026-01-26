@@ -20,7 +20,7 @@
     Enhanced mapping capabilities with a "Group by" option, visual icons for mapping options, and support for all primitive type conversions, making complex data transformations more intuitive and efficient.
 
 ??? note "CDC for Microsoft SQL Server"
-    Introduced Change Data Capture for Microsoft SQL Server under the event integration section, enabling real-time data synchronization and event-driven integration patterns.
+    Added Change Data Capture support for Microsoft SQL Server, allowing capture and propagation of database changes in real time, enabling event-driven architectures and low-latency data synchronization.
 
 ## Fixed issues
 
