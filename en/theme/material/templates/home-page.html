@@ -35,21 +35,21 @@
 <div class="md-content">
   <article class="md-content__inner md-typeset">
     <div class="md-home-search-container">
-      <h1 class="md-home-search-input-label">WSO2 API Manager Documentation</h1>
+      <h1 class="md-home-search-input-label">WSO2 Integrator: BI Documentation</h1>
       {% include "partials/search.html" %}
 
     </div>
     <div class="description-section"
       style="display: flex; flex-direction: row; align-items: flex-start; margin-top: 30px;">
       <p>
-        WSO2 API Manager is a complete platform for building, integrating, and exposing your digital services as
-        managed APIs in the cloud, on-premise, and hybrid architectures to drive your digital transformation strategy.
+        WSO2 Integrator: BI is a complete platform for building intelligent integrations, automations, and AI-powered applications.
+        Build integrations with AI agents, RAG applications, service orchestrations, file integrations, and more.
       </p>
     </div>
 
     {{ page.content }}
 
-    <a href="{{base_path}}/en/4.6.0/get-started/api-manager-quick-start-guide/" target="_blank" rel="noopener"
+    <a href="{{base_path}}/en/get-started/quick-start-guide/" rel="noopener"
       class="quickstart-cta">
 
       <div class="cta-icon">
@@ -57,9 +57,8 @@
       </div>
 
       <div class="cta-content">
-        <span class="cta-title">New to API Manager?</span>
-        <span class="cta-desc">Take our 15-minute quick start guide to design, deploy, and consume your first
-          API.</span>
+        <span class="cta-title">New to WSO2 Integrator: BI?</span>
+        <span class="cta-desc">Take our quick start guide to build your first integration.</span>
       </div>
     </a>
 
@@ -69,24 +68,23 @@
 
         <div>
           <div class="components-section-header">
-            <h2>Design & Manage APIs</h2>
-            <p>Build, iterate, and apply policies to your APIs and API products.</p>
+            <h2>Get Started</h2>
+            <p>Install and create your first integrations.</p>
           </div>
           <div class="components-card">
             <div>
               <div class="md-column-grid-item-header-icon icon-color-4">
-                {{ home_card_icon("octicons/pencil-16") }}
+                {{ home_card_icon("octicons/download-16") }}
               </div>
-              <h3>API Design</h3>
+              <h3>Installation</h3>
               <div class="components-card-content">
-                Toolkit to design, document, and mock REST, GraphQL, and AsyncAPI specifications. Create AI APIs and use the AI-powered Design Assistant to generate APIs from natural language.
+                Download and install WSO2 Integrator: BI on your local machine or server. Get started with the tools and runtime.
               </div>
             </div>
             <div class="components-card-footer">
 
-              <a href="{{base_path}}/en/4.6.0/api-design-manage/design/design-api-overview/" target="_blank"
-                rel="noopener" class="components-resource-link">
-                Design APIs Overview <span>&rarr;</span>
+              <a href="{{base_path}}/en/get-started/install-wso2-integrator-bi/" rel="noopener" class="components-resource-link">
+                Install WSO2 Integrator: BI <span>&rarr;</span>
               </a>
             </div>
           </div>
@@ -94,25 +92,24 @@
 
         <div>
           <div class="components-section-header">
-            <h2>Discover APIs</h2>
-            <p>Explore and subscribe to APIs and MCP Servers.</p>
+            <h2>Developer Guides</h2>
+            <p>Learn how to develop and test integrations.</p>
           </div>
           <div class="components-card">
             <div>
               <div class="md-column-grid-item-header-icon icon-color-4">
-                {{ home_card_icon("octicons/browser-16") }}
+                {{ home_card_icon("octicons/code-16") }}
               </div>
-              <h3>API Developer Portal</h3>
+              <h3>Create Projects</h3>
               <div class="components-card-content">
-                The hub for Application Developers. Discover a catalog of available APIs and MCP Servers, subscribe your applications,
-                and manage your API keys and credentials.
+                Learn how to create integration projects, design integrations, and test them locally.
               </div>
             </div>
             <div class="components-card-footer">
 
-              <a href="{{base_path}}/en/4.6.0/api-developer-portal/consume-api-overview/" target="_blank" rel="noopener"
+              <a href="{{base_path}}/en/developer-guides/create-a-project/" rel="noopener"
                 class="components-resource-link">
-                Consume APIs Overview <span>&rarr;</span>
+                Create a Project <span>&rarr;</span>
               </a>
             </div>
           </div>
@@ -120,111 +117,30 @@
       </div>
 
       <div class="components-section-header">
-        <h2>Run APIs</h2>
-        <p>Deploy and manage the runtime environment for your API traffic.</p>
-      </div>
-
-      <div class="components-grid-2">
-        <div class="components-card">
-          <div>
-            <div class="md-column-grid-item-header-icon icon-color-4">
-              {{ home_card_icon("octicons/server-16") }}
-            </div>
-            <h3>API Gateway</h3>
-            <div class="components-card-content">
-              Secure, manage, and scale your API traffic. Learn to deploy the runtime, enforce security policies, and
-              manage deployments.
-            </div>
-          </div>
-          <div class="components-card-footer">
-
-            <a href="{{base_path}}/en/4.6.0/api-gateway/overview-of-the-api-gateway/" target="_blank" rel="noopener"
-              class="components-resource-link">
-              Universal Gateway Overview <span>&rarr;</span>
-            </a>
-
-            <a href="{{base_path}}/en/4.6.0/api-gateway/federated-gateways/overview/" target="_blank" rel="noopener"
-              class="components-resource-link">
-              Federated Gateways Overview <span>&rarr;</span>
-            </a>
-
-          </div>
-        </div>
-
-        <div class="components-card">
-          <div>
-            <div class="md-column-grid-item-header-icon icon-color-4">
-              {{ home_card_icon("octicons/hubot-16") }}
-            </div>
-            <h3>AI Gateway</h3>
-            <div class="components-card-content">
-              Enterprise-grade gateway for AI workloads. Secure, monitor, and control access to LLMs and AI services with cost controls, multi-provider routing, observability, and policy enforcement. Transform APIs into AI-callable tools and manage AI interactions with centralized governance.
-            </div>
-          </div>
-          <div class="components-card-footer">
-
-            <a href="{{base_path}}/en/4.6.0/ai-gateway/ai-gateway-overview/" target="_blank" rel="noopener"
-              class="components-resource-link">
-              AI Gateway Overview <span>&rarr;</span>
-            </a>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="components-section-header">
-        <h2>Govern APIs</h2>
-        <p>Oversee and control the security, usage, and automation of your API ecosystem.</p>
+        <h2>Integration Guides</h2>
+        <p>Build AI agents, integrations, and automations.</p>
       </div>
 
       <div class="components-grid-3">
         <div class="components-card">
           <div>
             <div class="md-column-grid-item-header-icon icon-color-4">
-              {{ home_card_icon("octicons/shield-check-16") }}
+              {{ home_card_icon("octicons/hubot-16") }}
             </div>
-            <h3>API Security</h3>
+            <h3>AI Agents & Gen AI</h3>
             <div class="components-card-content">
-              Secure APIs with design-time audits and runtime enforcement. Manage authentication, authorization, and
-              tokens using the Key Manager.
-            </div>
-          </div>
-          <div class="components-card-footer">
-            <a href="{{base_path}}/en/4.6.0/api-security/runtime/api-authentication/api-authentication-overview/"
-              target="_blank" rel="noopener" class="components-resource-link">
-              Authentication Overview <span>&rarr;</span>
-            </a>
-            <a href="{{base_path}}/en/4.6.0/api-security/runtime/authorization/api-authorization/" target="_blank"
-              rel="noopener" class="components-resource-link">
-              Authorization Overview <span>&rarr;</span>
-            </a>
-            <a href="{{base_path}}/en/4.6.0/api-security/key-management/key-manager-overview/" target="_blank" rel="noopener"
-              class="components-resource-link">
-              Key Manager Overview <span>&rarr;</span>
-            </a>
-
-          </div>
-        </div>
-        <div class="components-card">
-          <div>
-            <div class="md-column-grid-item-header-icon icon-color-4">
-              {{ home_card_icon("octicons/graph-16") }}
-            </div>
-            <h3>API Analytics & Monetization</h3>
-            <div class="components-card-content">
-              Track usage, monitor performance, and configure billing. Gain insights and govern your API products.
+              Build AI agents, RAG applications, and integrate with LLMs. Use natural functions and MCP servers for AI-powered integrations.
             </div>
           </div>
           <div class="components-card-footer">
 
-            <a href="{{base_path}}/en/4.6.0/monitoring/api-analytics/analytics-overview/" target="_blank" rel="noopener"
+            <a href="{{base_path}}/en/integration-guides/ai/agents/introduction-to-chat-agents/" rel="noopener"
               class="components-resource-link">
-              Analytics Overview <span>&rarr;</span>
+              Chat Agents <span>&rarr;</span>
             </a>
-
-            <a href="{{base_path}}/en/4.6.0/monitoring/api-monetization/monetizing-an-api/" target="_blank"
-              rel="noopener" class="components-resource-link">
-              Monetization How-to Guide <span>&rarr;</span>
+            <a href="{{base_path}}/en/integration-guides/ai/rag/rag-ingestion/" rel="noopener"
+              class="components-resource-link">
+              RAG Applications <span>&rarr;</span>
             </a>
 
           </div>
@@ -235,55 +151,120 @@
             <div class="md-column-grid-item-header-icon icon-color-4">
               {{ home_card_icon("octicons/workflow-16") }}
             </div>
-            <h3>APIOps</h3>
+            <h3>Integration as API</h3>
             <div class="components-card-content">
-              Automate your API lifecycle and governance. Use the command-line tool to script operations and enforce
-              standards.
+              Build service orchestrations, message transformations, and routing integrations to expose your integrations as APIs.
             </div>
           </div>
           <div class="components-card-footer">
-            <a href="{{base_path}}/en/4.6.0/apiops/cli/ci-cd-with-wso2-api-management/" target="_blank" rel="noopener"
+
+            <a href="{{base_path}}/en/integration-guides/integration-as-api/service-orchestration/" rel="noopener"
               class="components-resource-link">
-              CI/CD for APIs Overview <span>&rarr;</span>
-            </a>
-            <a href="{{base_path}}/en/4.6.0/install-and-setup/setup/api-controller/getting-started-with-wso2-api-controller/"
-              target="_blank" rel="noopener" class="components-resource-link">
-              API Controller Quickstart <span>&rarr;</span>
+              Service Orchestration <span>&rarr;</span>
             </a>
 
           </div>
         </div>
 
+        <div class="components-card">
+          <div>
+            <div class="md-column-grid-item-header-icon icon-color-4">
+              {{ home_card_icon("octicons/file-16") }}
+            </div>
+            <h3>File Integration</h3>
+            <div class="components-card-content">
+              Integrate with file systems and directories. Read, write, and transform files in various formats.
+            </div>
+          </div>
+          <div class="components-card-footer">
 
+            <a href="{{base_path}}/en/integration-guides/file-integration/file-integration-with-directory-service/" rel="noopener"
+              class="components-resource-link">
+              File Integration Overview <span>&rarr;</span>
+            </a>
+
+          </div>
+        </div>
       </div>
 
       <div class="components-section-header">
-        <h2>Administration</h2>
-        <p>Configure and manage the core system, tenants, and other entities.</p>
+        <h2>Deploy & Monitor</h2>
+        <p>Deploy your integrations and monitor their performance.</p>
+      </div>
+
+      <div class="components-grid-2">
+        <div class="components-card">
+          <div>
+            <div class="md-column-grid-item-header-icon icon-color-4">
+              {{ home_card_icon("octicons/server-16") }}
+            </div>
+            <h3>Deployment</h3>
+            <div class="components-card-content">
+              Deploy your integrations to containers, VMs, or cloud platforms. Learn about deployment best practices and configurations.
+            </div>
+          </div>
+          <div class="components-card-footer">
+
+            <a href="{{base_path}}/en/deploy/overview/" rel="noopener"
+              class="components-resource-link">
+              Deployment Overview <span>&rarr;</span>
+            </a>
+
+            <a href="{{base_path}}/en/deploy/containerized-deployment/overview/" rel="noopener"
+              class="components-resource-link">
+              Containerized Deployment <span>&rarr;</span>
+            </a>
+
+          </div>
+        </div>
+
+        <div class="components-card">
+          <div>
+            <div class="md-column-grid-item-header-icon icon-color-4">
+              {{ home_card_icon("octicons/graph-16") }}
+            </div>
+            <h3>Observability</h3>
+            <div class="components-card-content">
+              Monitor your integrations with observability tools. Track metrics, traces, and logs with Prometheus, Jaeger, and more.
+            </div>
+          </div>
+          <div class="components-card-footer">
+
+            <a href="{{base_path}}/en/observability-and-monitoring/overview/" rel="noopener"
+              class="components-resource-link">
+              Observability Overview <span>&rarr;</span>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="components-section-header">
+        <h2>References</h2>
+        <p>System requirements, patterns, and guidelines.</p>
       </div>
 
       <div style="max-width: 50%;">
         <div class="components-card">
           <div>
             <div class="md-column-grid-item-header-icon icon-color-4">
-              {{ home_card_icon("octicons/person-16") }}
+              {{ home_card_icon("octicons/book-16") }}
             </div>
 
-            <h3>Administration & Governance</h3>
+            <h3>Documentation & References</h3>
             <div class="components-card-content">
-              Configure the platform: manage users, tenants, and system-wide policies like rate limiting. Register
-              Gateways and Key Managers.
+              Access system requirements, enterprise integration patterns, AI usage guidelines, and connector development references.
             </div>
           </div>
           <div class="components-card-footer">
 
-            <a href="{{base_path}}/en/4.6.0/administer/admin-overview/" target="_blank" rel="noopener"
+            <a href="{{base_path}}/en/references/system-requirements/" rel="noopener"
               class="components-resource-link">
-              Administration Overview <span>&rarr;</span>
+              System Requirements <span>&rarr;</span>
             </a>
-            <a href="{{base_path}}/en/4.6.0/administer/governance/overview/" target="_blank" rel="noopener"
+            <a href="{{base_path}}/en/references/enterprise-integrations-patterns/" rel="noopener"
               class="components-resource-link">
-              Governance Overview <span>&rarr;</span>
+              Integration Patterns <span>&rarr;</span>
             </a>
 
           </div>
