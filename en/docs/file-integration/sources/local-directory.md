@@ -21,7 +21,7 @@ Local files integration allows you to monitor directories for file events and tr
 
 4. Click on the **Create** button to create the directory service.
 
-## Next Steps
+## Next steps
 
 - [FTP](ftp-integration.md)
 - [FTPS](ftps-integration.md)

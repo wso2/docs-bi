@@ -2,9 +2,9 @@
 
 This guide helps diagnose and resolve common issues with file integration in WSO2 Integrator: BI, covering local directory monitoring, FTP, FTPS, and SFTP connections.
 
-## FTP Connection Issues
+## FTP connection issues
 
-### 1. FTP Server Not Available
+### 1. FTP server not available
 
 **Symptoms:**
 - Connection failures when starting the integration
@@ -25,7 +25,7 @@ error: Failed to initialize File server connector. Could not connect to FTP serv
 2. Check network connectivity and firewall rules
 3. Verify the `ftpHost` and `ftpPort` configuration values
 
-### 2. Invalid FTP Credentials
+### 2. Invalid FTP credentials
 
 **Symptoms:**
 - Authentication failures during connection
@@ -46,7 +46,7 @@ error: Failed to initialize File server connector. Could not connect to FTP serv
 2. Ensure the FTP user account is active and has proper permissions
 3. Test credentials manually using an FTP client
 
-### 3. Invalid/Non-existent Directory Path
+### 3. Invalid/non-existent directory path
 
 **Symptoms:**
 - Integration fails to start
@@ -70,9 +70,9 @@ error: Failed to initialize File server connector. Could not determine the type 
    ```
 3. Verify directory permissions and user access rights
 
-## File Detection Issues
+## File detection issues
 
-### 1. Wrong File Name Pattern
+### 1. Wrong file name pattern
 
 **Symptoms:**
 - Application starts successfully without errors
@@ -105,16 +105,16 @@ error: Failed to initialize File server connector. Could not determine the type 
 2. Remember that pattern uses regex syntax (`.` matches any character, `*` means zero or more)
 3. Test pattern matching with sample files
 
-## Getting Help
+## Getting help
 
 If you're still experiencing issues after trying the solutions above:
 
-### 1. Community Support
+### 1. Community support
 
 - **[Discord Community](https://discord.com/invite/ballerinalang)** - Get help from the community
 - **[Stack Overflow](https://stackoverflow.com/questions/tagged/ballerina)** - Search for existing solutions
 
-### 2. Enterprise Support
+### 2. Enterprise support
 
 - **[WSO2 Support Portal](https://wso2.com/subscription/)** - For enterprise customers
 - **Professional Services** - For implementation assistance

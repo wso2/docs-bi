@@ -37,7 +37,7 @@ SFTP (SSH File Transfer Protocol) integration allows you to securely connect to 
 
 7. Click on the **Create** button to create the SFTP service.
 
-## Next Steps
+## Next steps
 
 - [Local Files](local-directory.md)
 - [FTP](ftp-integration.md)
