@@ -2,7 +2,7 @@
 
 The sample [shop service](/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service) will be used in this guide. Follow the steps given below to observe BI tracing and metrics in [New Relic](https://newrelic.com/).
 
-## Step 1 - Create a New Relic account and  an API key
+## Step 1 - Create a New Relic account and an API key
 
 Sign up and Generate an API Key in New Relic.
 
@@ -21,7 +21,7 @@ New Relic extension has an `Opentelemetry GRPC Span Exporter` which will push tr
 
 New Relic extension pushes metrics in New Relic metric format to the New Relic server endpoint (https://metric-api.newrelic.com/metric/v1).
 
-## Step 3 - Configure runtime configurations for Observability
+## Step 3 - Configure runtime configurations for observability
 
 Tracing and metrics can be enabled in your BI project using configurations similar to the following. Navigate to **file explorer** and add the following to `Config.toml` file.
 

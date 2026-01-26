@@ -16,7 +16,7 @@ Observability platforms allow developers and operators to gain insight into syst
 
 BI provides built-in support for observability across its runtime. Integration services, APIs, and connectors emit rich telemetry data that can be exported to standard monitoring tools.
 
-## Available Observability Options
+## Available observability options
 
 BI supports multiple options for observing and monitoring deployed integrations. Depending on the deployment environment and the level of visibility required, you can choose from the following observability solutions.
 
@@ -40,7 +40,7 @@ This is ideal for teams that manage integrations across hybrid or distributed en
 
 Devant observability is suitable for cloud-native teams looking for a fully managed, intelligent monitoring experience. Refer to [Observability with Devant](/observability-and-monitoring/observability-with-devant) for further details.
 
-### 3. **Integration with Third-Party Observability Tools**
+### 3. **Integration with third-party observability tools**
 
 BI is designed to work seamlessly with standard observability stacks. You can integrate your deployments with tools like,
 

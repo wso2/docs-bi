@@ -52,7 +52,7 @@ The WSO2 Integrator: BI runtime is tested with the following operating systems:
 | Red Hat Enterprise Linux | 9   |
 | MacOS                    | 14.6      |
 
-### Tested Java Runtime Environments
+### Tested Java runtime environments
 
 The WSO2 Integrator: BI runtime is tested with the following JREs:
 

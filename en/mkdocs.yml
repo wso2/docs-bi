@@ -95,6 +95,7 @@ nav:
           - Introduction to Inline Agents: integration-guides/ai/agents/introduction-to-inline-agents.md
           - Integrating Agents with MCP Servers: integration-guides/ai/agents/integrating-agents-with-mcp-servers.md
           - Integrating Agents with External Endpoints: integration-guides/ai/agents/integrating-agents-with-external-endpoints.md
+        - MCP Service: integration-guides/ai/mcp-service/mcp-service.md
       - Integration As API:
         - Service Orchestration: integration-guides/integration-as-api/service-orchestration.md
         - Message Transformation: integration-guides/integration-as-api/message-transformation.md
@@ -102,6 +103,7 @@ nav:
       - File Integration:
         - File Integration With Directory Service: integration-guides/file-integration/file-integration-with-directory-service.md
       - Use Cases:
+        - Expose an Integration Service as a Managed API: integration-guides/usecases/integration-service-as-a-managed-api/expose-an-integration-service-as-a-managed-api.md
         - Data Mapper:
           - Overview: integration-guides/usecases/datamapper/overview.md
           - Read a CSV File and Transform It to an XML File: integration-guides/usecases/datamapper/read-csv-file-and-transform-to-xml-file.md
@@ -129,6 +131,7 @@ nav:
         - Build Custom Connectors: developer-guides/protocols-and-connectors/build-custom-connectors.md
       - Tools:
         - Migration Tools:
+          - Overview: developer-guides/tools/migration-tools/overview.md
           - Mulesoft Migration Tool: developer-guides/tools/migration-tools/mulesoft-migration-tool.md
           - TIBCO BusinessWorks Migration Tool: developer-guides/tools/migration-tools/tibco-businessworks-migration-tool.md
           - Azure Logic Apps Migration Tool: developer-guides/tools/migration-tools/logic-apps-migration-tool.md
@@ -179,7 +182,6 @@ nav:
       - "System Requirements": references/system-requirements.md
       - "AI Usage & Data Handling Guidelines": references/ai-usage-and-data-handling-guidelines.md
       - "Connector Development Guidelines": references/connector-development-guidelines.md
-
   - Release Notes:
       - Release Note: wso2-integrator-bi-release-notes.md
 
