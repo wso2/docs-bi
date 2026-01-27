@@ -50,7 +50,7 @@ In this tutorial, you’ll create an HTTP service to add key-value pairs to a Re
 
       <a href="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/docker.png"><img src="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/docker.png" alt="Start Redis" width="70%"></a>
 
-## Step 6: Configure the Redis client
+## Step 5: Configure the Redis client
 
 1. In the `Design View`, click on the **Configure** button on the top-right side.
 2. Set `redisHost` value to `localhost`.
@@ -61,7 +61,7 @@ In this tutorial, you’ll create an HTTP service to add key-value pairs to a Re
 
    <a href="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/config.gif"><img src="{{base_path}}/assets/img/developer-guides/ai-for-integration/http-service-with-copilot/config.gif" alt="Configurations" width="70%"></a>
 
-## Step 5: Test the integration
+## Step 6: Test the integration
 
 1. Click on the **Run** button to start the integration.
 2. Tweak and execute the generated `curl` commands from the AI response to add a key-value pair.
