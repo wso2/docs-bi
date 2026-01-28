@@ -33,5 +33,47 @@
         {% include ".icons/" ~ icon ~ ".svg" %}
       </button>
     </div>
+    <div class="md-header__link">
+      <button class="md-typeset md-button md-button--link md-button--small md-button--flex md-button--discord"
+              onclick="javascript:window.open('https://www.linkedin.com/company/wso2', '_blank', 'noopener')">
+        <div class="md-icon">
+          {% set icon = "fontawesome/brands/linkedin-in" %}
+          {% include ".icons/" ~ icon ~ ".svg" %}
+        </div>
+      </button>
+      <button class="md-header__button md-icon md-icon--hover md-button--asgardeo-mini"
+              onclick="javascript:window.open('https://www.linkedin.com/company/wso2', '_blank', 'noopener')">
+        {% set icon = "fontawesome/brands/linkedin-in" %}
+        {% include ".icons/" ~ icon ~ ".svg" %}
+      </button>
+    </div>
+    <div class="md-header__link">
+      <button class="md-typeset md-button md-button--link md-button--small md-button--flex md-button--discord"
+              onclick="javascript:window.open('https://www.youtube.com/user/WSO2TechFlicks', '_blank', 'noopener')">
+        <div class="md-icon">
+          {% set icon = "fontawesome/brands/youtube" %}
+          {% include ".icons/" ~ icon ~ ".svg" %}
+        </div>
+      </button>
+      <button class="md-header__button md-icon md-icon--hover md-button--asgardeo-mini"
+              onclick="javascript:window.open('https://www.youtube.com/user/WSO2TechFlicks', '_blank', 'noopener')">
+        {% set icon = "fontawesome/brands/youtube" %}
+        {% include ".icons/" ~ icon ~ ".svg" %}
+      </button>
+  </div>
+  <div class="md-header__link">
+      <button class="md-typeset md-button md-button--link md-button--small md-button--flex md-button--discord"
+              onclick="javascript:window.open('https://twitter.com/intent/follow?screen_name=wso2', '_blank', 'noopener')">
+        <div class="md-icon">
+          {% set icon = "fontawesome/brands/twitter" %}
+          {% include ".icons/" ~ icon ~ ".svg" %}
+        </div>
+      </button>
+      <button class="md-header__button md-icon md-icon--hover md-button--asgardeo-mini"
+              onclick="javascript:window.open('https://twitter.com/intent/follow?screen_name=wso2', '_blank', 'noopener')">
+        <span class="md-icon">
+          {% include ".icons/fontawesome/brands/x-twitter.svg" %}
+        </span>
+      </button>
   </div>
 </div>
