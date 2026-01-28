@@ -282,7 +282,7 @@ extra:
           link: https://www.linkedin.com/company/wso2
         - icon: fontawesome/brands/youtube
           link: https://www.youtube.com/user/WSO2TechFlicks
-        - icon: en/theme/material/.icons/fontawesome/brands/x-twitter.svg
+        - icon: fontawesome/brands/x-twitter
           link: https://twitter.com/intent/follow?screen_name=wso2
     # site_version: Uncomment to specify a version
     base_path: https://wso2.github.io/docs-bi
