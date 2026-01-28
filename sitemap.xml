@@ -2,422 +2,422 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://bi.docs.wso2.com/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/page-not-found/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/wso2-integrator-bi-release-notes/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/deploy/deploy-to-devant/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/deploy/managing-configurations/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/deploy/overview/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/deploy/capacity-planning/overview/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/deploy/capacity-planning/performance-report-for-rest-services/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/deploy/containerized-deployment/deploy-as-docker-image/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/deploy/containerized-deployment/deploy-on-kubernetes/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/deploy/containerized-deployment/overview/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/deploy/deployment-best-practices/configuration-best-practices/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/deploy/deployment-best-practices/network-level-security/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/deploy/deployment-best-practices/os-level-security/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/deploy/deployment-best-practices/overview/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/deploy/deployment-best-practices/runtime-security/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/deploy/vm-based-deployment/centralized-deployment/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/deploy/vm-based-deployment/de-centralized-deployment/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/deploy/vm-based-deployment/deploy-on-vm-as-executable-jar/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/deploy/vm-based-deployment/github-action-for-cicd/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/deploy/vm-based-deployment/overview/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/developer-guides/create-a-project/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/developer-guides/data-mapping/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/developer-guides/design-the-integrations/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/developer-guides/test-the-integrations/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/developer-guides/try-the-integration/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/developer-guides/wso2-integrator-bi-artifacts/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/developer-guides/debugging-and-troubleshooting/capturing-strand-dumps/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/developer-guides/debugging-and-troubleshooting/debugging-within-the-editor/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/developer-guides/debugging-and-troubleshooting/overview/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/developer-guides/debugging-and-troubleshooting/profiling-runtime-performance/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/developer-guides/debugging-and-troubleshooting/remote-debugging-integrations/</loc>
-         <lastmod>2026-01-23</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://bi.docs.wso2.com/developer-guides/protocols-and-connectors/build-custom-connectors/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/developer-guides/protocols-and-connectors/overview-of-connectors/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/developer-guides/protocols-and-connectors/supported-protocols/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/developer-guides/tools/integration-tools/edi-tool/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/developer-guides/tools/integration-tools/health-tool/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/developer-guides/tools/migration-tools/logic-apps-migration-tool/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/developer-guides/tools/migration-tools/mulesoft-migration-tool/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/developer-guides/tools/migration-tools/overview/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/developer-guides/tools/migration-tools/tibco-businessworks-migration-tool/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/developer-guides/tools/other-tools/scan-tool/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/get-started/develop-ai-agent/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/get-started/develop-automation/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/get-started/develop-event-integration/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/get-started/develop-file-integration/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/get-started/develop-integration-as-api/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/get-started/install-wso2-integrator-bi/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/get-started/quick-start-guide/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/integration-guides/ai/agents/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/integration-guides/ai/agents/integrating-agents-with-external-endpoints/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/integration-guides/ai/agents/integrating-agents-with-mcp-servers/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/integration-guides/ai/agents/introduction-to-chat-agents/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/integration-guides/ai/agents/introduction-to-inline-agents/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/integration-guides/ai/direct-llm-call/direct-llm-invocation-with-ballerina-model-providers/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/integration-guides/ai/mcp-service/mcp-service/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/integration-guides/ai/natural-functions/natural-functions/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/integration-guides/ai/rag/build-a-rag-application/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/integration-guides/ai/rag/rag-ingestion/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/integration-guides/ai/rag/rag-query/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bi.docs.wso2.com/integration-guides/event-integration/cdc/fraud-detection-system-with-cdc-for-mssql/</loc>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/integration-guides/file-integration/file-integration-with-directory-service/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/integration-guides/integration-as-api/message-routing/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/integration-guides/integration-as-api/message-transformation/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/integration-guides/integration-as-api/service-orchestration/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/integration-guides/usecases/datamapper/overview/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/integration-guides/usecases/datamapper/read-csv-file-and-transform-to-xml-file/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/integration-guides/usecases/integration-service-as-a-managed-api/expose-an-integration-service-as-a-managed-api/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/observability-and-monitoring/monitoring-with-wso2-integrator-icp/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/observability-and-monitoring/observability-with-devant/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/observability-and-monitoring/overview/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/observability-and-monitoring/supported-observability-tools-and-platforms/datadog/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/observability-and-monitoring/supported-observability-tools-and-platforms/elastic-stack/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/observability-and-monitoring/supported-observability-tools-and-platforms/jaeger/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/observability-and-monitoring/supported-observability-tools-and-platforms/moesif/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/observability-and-monitoring/supported-observability-tools-and-platforms/new-relic/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/observability-and-monitoring/supported-observability-tools-and-platforms/opensearch/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/observability-and-monitoring/supported-observability-tools-and-platforms/overview/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/observability-and-monitoring/supported-observability-tools-and-platforms/prometheus/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/observability-and-monitoring/supported-observability-tools-and-platforms/zipkin/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/references/ai-usage-and-data-handling-guidelines/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/references/connector-development-guidelines/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/references/enterprise-integrations-patterns/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/references/system-requirements/</loc>
-         <lastmod>2026-01-23</lastmod>
+         <lastmod>2026-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

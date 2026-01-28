@@ -931,12 +931,94 @@
       
       
         <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
-          Use Cases
+          Event Integration
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Event Integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4_1" id="__nav_3_4_1_label" tabindex="0">
+          Change Data Capture (CDC)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Change Data Capture (CDC)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration-guides/event-integration/cdc/fraud-detection-system-with-cdc-for-mssql/" class="md-nav__link">
+        Fraud Detection System with CDC for Microsoft SQL Server
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+          Use Cases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_5">
           <span class="md-nav__icon md-icon"></span>
           Use Cases
         </label>
@@ -967,17 +1049,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_2" >
       
       
       
-        <label class="md-nav__link" for="__nav_3_4_2" id="__nav_3_4_2_label" tabindex="0">
+        <label class="md-nav__link" for="__nav_3_5_2" id="__nav_3_5_2_label" tabindex="0">
           Data Mapper
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_2_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_3_4_2">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_5_2">
           <span class="md-nav__icon md-icon"></span>
           Data Mapper
         </label>
@@ -1345,20 +1427,6 @@
     <li class="md-nav__item">
       <a href="../developer-guides/protocols-and-connectors/supported-protocols/" class="md-nav__link">
         Supported Protocols
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../developer-guides/protocols-and-connectors/build-custom-connectors/" class="md-nav__link">
-        Build Custom Connectors
       </a>
     </li>
   
@@ -2475,21 +2543,39 @@
 
 
 <h1 id="about-the-release">About the Release<a class="headerlink" href="#about-the-release" title="Permanent link">&para;</a></h1>
+<h1 id="whats-new-in-wso2-integrator-bi-160-release">What's new in WSO2 Integrator: BI 1.6.0 release?<a class="headerlink" href="#whats-new-in-wso2-integrator-bi-160-release" title="Permanent link">&para;</a></h1>
+<p><strong>WSO2 Integrator: BI 1.6.0</strong> introduces the following features and enhancements:</p>
+<h2 id="new-features">New features<a class="headerlink" href="#new-features" title="Permanent link">&para;</a></h2>
+<details class="note"><summary>Copilot Agent Mode</summary><p>Introduced a comprehensive Agent Mode with design capabilities, automatic code integration, task approval workflows, and diagnostic tools.
+Added support for dynamic OpenAPI connector generation and chat checkpoints for enhanced AI-driven development workflows.</p>
+</details>
+<details class="note"><summary>Enhanced Connectors Support</summary><p>Revamped the Connectors view with support for Persist and WSDL connections. Improved connector generation workflows for more streamlined integration development.</p>
+</details>
+<details class="note"><summary>Advanced Expression Editor</summary><p>Expanded expression support with new editors for String Templates, SQL expressions, booleans, numbers, enums, and maps, providing comprehensive expression creation capabilities across different data types.</p>
+</details>
+<details class="note"><summary>Data Mapper Enhancements</summary><p>Enhanced mapping capabilities with a "Group by" option, visual icons for mapping options, and support for all primitive type conversions, making complex data transformations more intuitive and efficient.</p>
+</details>
+<details class="note"><summary>CDC for Microsoft SQL Server</summary><p>Added Change Data Capture support for Microsoft SQL Server, allowing capture and propagation of database changes in real time, enabling event-driven architectures and low-latency data synchronization.</p>
+</details>
+<h2 id="fixed-issues">Fixed issues<a class="headerlink" href="#fixed-issues" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://github.com/wso2/product-ballerina-integrator/milestone/17?closed=1">WSO2 Integrator: BI Issues</a></li>
+</ul>
 <h1 id="whats-new-in-wso2-integrator-bi-150-release">What's new in WSO2 Integrator: BI 1.5.0 release?<a class="headerlink" href="#whats-new-in-wso2-integrator-bi-150-release" title="Permanent link">&para;</a></h1>
 <p><strong>WSO2 Integrator: BI 1.5.0</strong> introduces the following features and enhancements:</p>
-<h2 id="new-features">New features<a class="headerlink" href="#new-features" title="Permanent link">&para;</a></h2>
+<h2 id="new-features_1">New features<a class="headerlink" href="#new-features_1" title="Permanent link">&para;</a></h2>
 <details class="note"><summary>Multi-Project Workspace Support</summary><p>Users can open and manage mono-repositories containing multiple projects, 
 with comprehensive visual editing capabilities for complex integration scenarios across multiple projects.</p>
 </details>
 <details class="note"><summary>Natural Language Function Support</summary><p>Introduced natural language functions that allow users to directly invoke Large Language Models (LLMs) within integration flows.</p>
 </details>
-<h2 id="fixed-issues">Fixed issues<a class="headerlink" href="#fixed-issues" title="Permanent link">&para;</a></h2>
+<h2 id="fixed-issues_1">Fixed issues<a class="headerlink" href="#fixed-issues_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://github.com/wso2/product-ballerina-integrator/milestone/15?closed=1">WSO2 Integrator: BI Issues</a></li>
 </ul>
 <h1 id="whats-new-in-wso2-integrator-bi-140-release">What's new in WSO2 Integrator: BI 1.4.0 release?<a class="headerlink" href="#whats-new-in-wso2-integrator-bi-140-release" title="Permanent link">&para;</a></h1>
 <p><strong>WSO2 Integrator: BI 1.4.0</strong> introduces the following features and enhancements:</p>
-<h2 id="new-features_1">New features<a class="headerlink" href="#new-features_1" title="Permanent link">&para;</a></h2>
+<h2 id="new-features_2">New features<a class="headerlink" href="#new-features_2" title="Permanent link">&para;</a></h2>
 <details class="note"><summary>MCP AI Integration</summary><p>Added support for MCP (Model Context Protocol) AI Integration to expose tools via an MCP service.</p>
 </details>
 <details class="note"><summary>Solace Event Integration</summary><p>Added support for Solace Event integration, expanding supported event integration capabilities. The Event Integration flows have been redesigned to provide a more streamlined experience, complemented by AI-powered payload generation for faster development.</p>
@@ -2506,7 +2592,7 @@ with comprehensive visual editing capabilities for complex integration scenarios
 </details>
 <details class="note"><summary>UI &amp; UX Enhancements</summary><p>Updated the Helper Pane UI and navigation with refined styles in the Resource form. The expression helper now supports different modes for various use cases, and the Type Editor has been improved for better type management. These changes contribute to a cleaner, more efficient development experience.</p>
 </details>
-<h2 id="fixed-issues_1">Fixed issues<a class="headerlink" href="#fixed-issues_1" title="Permanent link">&para;</a></h2>
+<h2 id="fixed-issues_2">Fixed issues<a class="headerlink" href="#fixed-issues_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://github.com/wso2/product-ballerina-integrator/milestone/14?closed=1">WSO2 Integrator: BI Issues</a></li>
 </ul>
@@ -2530,7 +2616,7 @@ with comprehensive visual editing capabilities for complex integration scenarios
 </details>
 <details class="note"><summary>Improved User Experience</summary><p>Comprehensive UX improvements, including collapsible node palette groupings, a cleaner UI, better connector flows, and improved record rendering.</p>
 </details>
-<h2 id="fixed-issues_2">Fixed issues<a class="headerlink" href="#fixed-issues_2" title="Permanent link">&para;</a></h2>
+<h2 id="fixed-issues_3">Fixed issues<a class="headerlink" href="#fixed-issues_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://github.com/wso2/product-ballerina-integrator/milestone/11?closed=1">WSO2 Integrator: BI Issues</a></li>
 </ul>
@@ -2545,7 +2631,7 @@ with comprehensive visual editing capabilities for complex integration scenarios
 </details>
 <details class="note"><summary>Editor &amp; IDE Improvements</summary><p>Added a new VSCode setting to manage Sequence Diagram visibility and an option to include the current organization in search results. Improved state management, addressed UI freezing, and enhanced project handling in multi-root workspaces for a more stable development environment.</p>
 </details>
-<h2 id="fixed-issues_3">Fixed issues<a class="headerlink" href="#fixed-issues_3" title="Permanent link">&para;</a></h2>
+<h2 id="fixed-issues_4">Fixed issues<a class="headerlink" href="#fixed-issues_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://github.com/wso2/product-ballerina-integrator/milestone/8?closed=1">WSO2 Integrator: BI Issues</a></li>
 </ul>
@@ -2564,7 +2650,7 @@ with comprehensive visual editing capabilities for complex integration scenarios
 </details>
 <details class="note"><summary>IDE &amp; Extension Stability</summary><p>Refactored artifacts management and navigation. Resolved extension startup and activation issues for reliable performance. Improved state management and project handling in multi-root workspaces.</p>
 </details>
-<h2 id="fixed-issues_4">Fixed issues<a class="headerlink" href="#fixed-issues_4" title="Permanent link">&para;</a></h2>
+<h2 id="fixed-issues_5">Fixed issues<a class="headerlink" href="#fixed-issues_5" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://github.com/wso2/product-ballerina-integrator/milestone/6?closed=1">WSO2 Integrator: BI Issues</a></li>
 </ul>

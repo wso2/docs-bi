@@ -1,0 +1,4257 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for WSO2 Integrator: BI">
+      
+      
+        <meta name="author" content="WSO2">
+      
+      
+        <link rel="canonical" href="https://bi.docs.wso2.com/integration-guides/event-integration/cdc/fraud-detection-system-with-cdc-for-mssql/">
+      
+      
+        <link rel="prev" href="../../../file-integration/file-integration-with-directory-service/">
+      
+      
+        <link rel="next" href="../../../usecases/integration-service-as-a-managed-api/expose-an-integration-service-as-a-managed-api/">
+      
+      <link rel="icon" href="../../../../images/bi-logo.svg">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
+    
+    
+      
+        <title>Fraud Detection System with CDC for Microsoft SQL Server - WSO2 Integrator: BI Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.7bf56d0a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Added the font from google fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap" rel="stylesheet">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/lib/highlightjs/styles/vs.min.css">
+    
+      <link rel="stylesheet" href="../../../../assets/css/blue-palette-alt1.css">
+    
+      <link rel="stylesheet" href="../../../../assets/css/mitheme.css">
+    
+      <link rel="stylesheet" href="../../../../assets/css/custom.css">
+    
+      <link rel="stylesheet" href="../../../../assets/lib/json-formatter/json-formatter.css">
+    
+      <link rel="stylesheet" href="../../../../assets/css/config-catalog.css">
+    
+      <link rel="stylesheet" href="../../../../assets/lib/fontawesome-free-6.3.0-web/css/all.min.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){
+    w[l]=w[l]||[];w[l].push({
+        'gtm.start':
+            new Date().getTime(),event:'gtm.js'
+    });var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.setAttributeNode(d.createAttribute('data-ot-ignore'));j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5CR98L58');</script>
+<!-- End Google Tag Manager -->
+
+    
+    
+<meta name="google-site-verification" content="pRwRUP0jDUECheRt5DziuVd3gSs2UTw6EhL4nud3NMk" />
+
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#building-a-fraud-detection-system-with-change-data-capture-cdc-for-microsoft-sql-server" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      <!--
+ * Copyright (c) 2024, WSO2 LLC. (http://www.wso2.com) All Rights Reserved.
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+
+
+
+
+<header class="md-header md-header--shadow" data-md-component="header" id="page-header" data-url="" data-lang="en">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="WSO2 Integrator: BI Documentation"
+       class="md-header__button md-logo" aria-label="WSO2 Integrator: BI Documentation" data-md-component="logo">
+      
+  <img src="../../../../images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WSO2 Integrator: BI Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fraud Detection System with CDC for Microsoft SQL Server
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    <form class="md-header__option" data-md-component="palette">
+      
+      
+      <input class="md-option" data-md-color-media="(prefers-color-scheme)"
+             data-md-color-scheme="default"
+             data-md-color-primary=""
+             data-md-color-accent="" 
+             aria-label="Switch to dark mode"  type="radio" name="__palette"
+             id="__palette_1">
+      
+      <label class="md-header__button md-icon" title="Switch to dark mode"
+             for="__palette_3" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"/></svg>
+      </label>
+      
+      
+      
+      <input class="md-option" data-md-color-media="(prefers-color-scheme: light)"
+             data-md-color-scheme="default"
+             data-md-color-primary=""
+             data-md-color-accent="" 
+             aria-label="Switch to system preference"  type="radio" name="__palette"
+             id="__palette_2">
+      
+      <label class="md-header__button md-icon" title="Switch to system preference"
+             for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+      
+      
+      
+      <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)"
+             data-md-color-scheme="slate"
+             data-md-color-primary=""
+             data-md-color-accent="" 
+             aria-label="Switch to light mode"  type="radio" name="__palette"
+             id="__palette_3">
+      
+      <label class="md-header__button md-icon" title="Switch to light mode"
+             for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+      
+      
+    </form>
+    
+    
+    
+    <label class="md-header__button md-icon" for="__search">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+    </label>
+    <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+    <div class="md-header__source">
+      <a href="https://github.com/wso2/docs-bi" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wso2/docs-ballerina-integrator
+  </div>
+</a>
+    </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="WSO2 Integrator: BI Documentation" class="md-nav__button md-logo" aria-label="WSO2 Integrator: BI Documentation" data-md-component="logo">
+      
+  <img src="../../../../images/logo.svg" alt="logo">
+
+    </a>
+    WSO2 Integrator: BI Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/wso2/docs-bi" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    wso2/docs-ballerina-integrator
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Get started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Get started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../get-started/quick-start-guide/" class="md-nav__link">
+        Quick Start Guide
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../get-started/install-wso2-integrator-bi/" class="md-nav__link">
+        Install WSO2 Integrator: BI
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+          Develop Integrations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Develop Integrations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../get-started/develop-automation/" class="md-nav__link">
+        Develop Automation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../get-started/develop-ai-agent/" class="md-nav__link">
+        Develop AI Agent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../get-started/develop-integration-as-api/" class="md-nav__link">
+        Develop Integration as API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../get-started/develop-event-integration/" class="md-nav__link">
+        Develop Event Integration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../get-started/develop-file-integration/" class="md-nav__link">
+        Develop File Integration
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Integration Guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Integration Guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          AI Agents and Other Gen AI Integrations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          AI Agents and Other Gen AI Integrations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_1" id="__nav_3_1_1_label" tabindex="0">
+          Direct LLM Invocation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          Direct LLM Invocation
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/natural-functions/natural-functions/" class="md-nav__link">
+        Natural functions(Beta)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/direct-llm-call/direct-llm-invocation-with-ballerina-model-providers/" class="md-nav__link">
+        Model providers
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_2" id="__nav_3_1_2_label" tabindex="0">
+          RAG
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          RAG
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/rag/rag-ingestion/" class="md-nav__link">
+        Rag Ingestion
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/rag/rag-query/" class="md-nav__link">
+        Rag Query
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
+          Agents
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Agents
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/agents/" class="md-nav__link">
+        Agents Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/agents/introduction-to-chat-agents/" class="md-nav__link">
+        Introduction to Chat Agents
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/agents/introduction-to-inline-agents/" class="md-nav__link">
+        Introduction to Inline Agents
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/agents/integrating-agents-with-mcp-servers/" class="md-nav__link">
+        Integrating Agents with MCP Servers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/agents/integrating-agents-with-external-endpoints/" class="md-nav__link">
+        Integrating Agents with External Endpoints
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ai/mcp-service/mcp-service/" class="md-nav__link">
+        MCP Service
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          Integration As API
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Integration As API
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../integration-as-api/service-orchestration/" class="md-nav__link">
+        Service Orchestration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../integration-as-api/message-transformation/" class="md-nav__link">
+        Message Transformation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../integration-as-api/message-routing/" class="md-nav__link">
+        Message Routing
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          File Integration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          File Integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../file-integration/file-integration-with-directory-service/" class="md-nav__link">
+        File Integration With Directory Service
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          Event Integration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          Event Integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4_1" id="__nav_3_4_1_label" tabindex="0">
+          Change Data Capture (CDC)
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_3_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          Change Data Capture (CDC)
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Fraud Detection System with CDC for Microsoft SQL Server
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Fraud Detection System with CDC for Microsoft SQL Server
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-overview" class="md-nav__link">
+    Architecture Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-software" class="md-nav__link">
+    Required Software
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-microsoft-sql-server-using-docker" class="md-nav__link">
+    Setting up Microsoft SQL Server Using Docker
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting up Microsoft SQL Server Using Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites-for-docker-setup" class="md-nav__link">
+    Prerequisites for Docker Setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-specific-docker-commands" class="md-nav__link">
+    Platform-Specific Docker Commands
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-sql-server-is-running" class="md-nav__link">
+    Verify SQL Server is Running
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-sql-server" class="md-nav__link">
+    Accessing SQL Server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-cdc-on-sql-server-database" class="md-nav__link">
+    Enable CDC on SQL Server Database
+  </a>
+  
+    <nav class="md-nav" aria-label="Enable CDC on SQL Server Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-connect-to-sql-server" class="md-nav__link">
+    Step 1: Connect to SQL Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Connect to SQL Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-azure-data-studio-recommended-cross-platform" class="md-nav__link">
+    Option A: Azure Data Studio (Recommended - Cross-platform)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-sqlcmd-command-line" class="md-nav__link">
+    Option B: sqlcmd (Command-line)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-c-vs-code-with-sql-server-extension" class="md-nav__link">
+    Option C: VS Code with SQL Server Extension
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-execute-cdc-setup-scripts" class="md-nav__link">
+    Step 2: Execute CDC Setup Scripts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-cdc-setup" class="md-nav__link">
+    Understanding CDC Setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-test-cdc-is-working" class="md-nav__link">
+    Step 3: Test CDC is Working
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-credentials-for-sending-emails" class="md-nav__link">
+    Generate Credentials for Sending Emails
+  </a>
+  
+    <nav class="md-nav" aria-label="Generate Credentials for Sending Emails">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-a-google-cloud-project" class="md-nav__link">
+    Step 1: Create a Google Cloud Project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-enable-gmail-api" class="md-nav__link">
+    Step 2: Enable Gmail API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-configure-oauth-consent-screen" class="md-nav__link">
+    Step 3: Configure OAuth Consent Screen
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Configure OAuth Consent Screen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#app-information" class="md-nav__link">
+    App Information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scopes" class="md-nav__link">
+    Scopes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-users" class="md-nav__link">
+    Test Users
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-create-oauth-20-credentials" class="md-nav__link">
+    Step 4: Create OAuth 2.0 Credentials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-generate-refresh-token" class="md-nav__link">
+    Step 5: Generate Refresh Token
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Generate Refresh Token">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-oauth-20-playground" class="md-nav__link">
+    Using OAuth 2.0 Playground
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    Next Steps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fraud-detection-system" class="md-nav__link">
+    Fraud Detection System
+  </a>
+  
+    <nav class="md-nav" aria-label="Fraud Detection System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-a-new-integration" class="md-nav__link">
+    Step 1: Create a new integration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-the-gmail-client" class="md-nav__link">
+    Step 2: Create the Gmail client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-create-a-cdc-event-listener-for-microsoft-sql-server" class="md-nav__link">
+    Step 3: Create a CDC event listener for Microsoft SQL Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-identify-and-notify-of-fraudulent-transactions" class="md-nav__link">
+    Step 4: Identify and notify of fraudulent transactions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-add-values-to-the-configurable-variables" class="md-nav__link">
+    Step 5: Add values to the configurable variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-the-integration" class="md-nav__link">
+    Testing the Integration
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing the Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-prerequisites" class="md-nav__link">
+    Test Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-scenario-1-normal-transaction-no-alert-expected" class="md-nav__link">
+    Test Scenario 1: Normal Transaction (No Alert Expected)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-scenario-2-fraudulent-transaction-alert-expected" class="md-nav__link">
+    Test Scenario 2: Fraudulent Transaction (Alert Expected)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-test-issues" class="md-nav__link">
+    Troubleshooting Test Issues
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+          Use Cases
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_5">
+          <span class="md-nav__icon md-icon"></span>
+          Use Cases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../usecases/integration-service-as-a-managed-api/expose-an-integration-service-as-a-managed-api/" class="md-nav__link">
+        Expose an Integration Service as a Managed API
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_5_2" id="__nav_3_5_2_label" tabindex="0">
+          Data Mapper
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Data Mapper
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../usecases/datamapper/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../usecases/datamapper/read-csv-file-and-transform-to-xml-file/" class="md-nav__link">
+        Read a CSV File and Transform It to an XML File
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Developer Guides
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Developer Guides
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../developer-guides/create-a-project/" class="md-nav__link">
+        Create a Project
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../developer-guides/wso2-integrator-bi-artifacts/" class="md-nav__link">
+        WSO2 Integrator: BI Artifacts
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../developer-guides/design-the-integrations/" class="md-nav__link">
+        Design the Integrations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../developer-guides/data-mapping/" class="md-nav__link">
+        Data Mapping
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../developer-guides/try-the-integration/" class="md-nav__link">
+        Try the Integration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../developer-guides/test-the-integrations/" class="md-nav__link">
+        Testing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+          Debugging & Troubleshooting
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_7">
+          <span class="md-nav__icon md-icon"></span>
+          Debugging & Troubleshooting
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../developer-guides/debugging-and-troubleshooting/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../developer-guides/debugging-and-troubleshooting/debugging-within-the-editor/" class="md-nav__link">
+        Debugging within the Editor
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../developer-guides/debugging-and-troubleshooting/remote-debugging-integrations/" class="md-nav__link">
+        Remote Debugging Integrations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../developer-guides/debugging-and-troubleshooting/capturing-strand-dumps/" class="md-nav__link">
+        Capturing Strand Dumps
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../developer-guides/debugging-and-troubleshooting/profiling-runtime-performance/" class="md-nav__link">
+        Profiling Runtime Performance
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+          AI For Integration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_8">
+          <span class="md-nav__icon md-icon"></span>
+          AI For Integration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot/" class="md-nav__link">
+        Build an HTTP Service With BI Copilot
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+          Protocols and Connectors
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_9">
+          <span class="md-nav__icon md-icon"></span>
+          Protocols and Connectors
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../developer-guides/protocols-and-connectors/overview-of-connectors/" class="md-nav__link">
+        Overview of Connectors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../developer-guides/protocols-and-connectors/supported-protocols/" class="md-nav__link">
+        Supported Protocols
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+          Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_10">
+          <span class="md-nav__icon md-icon"></span>
+          Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_10_1" id="__nav_4_10_1_label" tabindex="0">
+          Migration Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_10_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_10_1">
+          <span class="md-nav__icon md-icon"></span>
+          Migration Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../developer-guides/tools/migration-tools/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../developer-guides/tools/migration-tools/mulesoft-migration-tool/" class="md-nav__link">
+        Mulesoft Migration Tool
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../developer-guides/tools/migration-tools/tibco-businessworks-migration-tool/" class="md-nav__link">
+        TIBCO BusinessWorks Migration Tool
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../developer-guides/tools/migration-tools/logic-apps-migration-tool/" class="md-nav__link">
+        Azure Logic Apps Migration Tool
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_10_2" id="__nav_4_10_2_label" tabindex="0">
+          Integration Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_10_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_10_2">
+          <span class="md-nav__icon md-icon"></span>
+          Integration Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../developer-guides/tools/integration-tools/health-tool/" class="md-nav__link">
+        Health Tool
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../developer-guides/tools/integration-tools/edi-tool/" class="md-nav__link">
+        EDI Tool
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_10_3" id="__nav_4_10_3_label" tabindex="0">
+          Other Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_10_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4_10_3">
+          <span class="md-nav__icon md-icon"></span>
+          Other Tools
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../developer-guides/tools/other-tools/scan-tool/" class="md-nav__link">
+        Scan Tool
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          Deploy
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Deploy
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/deploy-to-devant/" class="md-nav__link">
+        Deploy to Devant
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+          Containerized Deployment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Containerized Deployment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/containerized-deployment/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/containerized-deployment/deploy-as-docker-image/" class="md-nav__link">
+        Deploy as Docker Image
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/containerized-deployment/deploy-on-kubernetes/" class="md-nav__link">
+        Deploy on Kubernetes
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+          VM-based Deployment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          VM-based Deployment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/vm-based-deployment/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/vm-based-deployment/deploy-on-vm-as-executable-jar/" class="md-nav__link">
+        Deploy on VM as Executable JAR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/vm-based-deployment/centralized-deployment/" class="md-nav__link">
+        Centralized Deployment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/vm-based-deployment/de-centralized-deployment/" class="md-nav__link">
+        Decentralized Deployment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/vm-based-deployment/github-action-for-cicd/" class="md-nav__link">
+        GitHub Action for CICD
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/managing-configurations/" class="md-nav__link">
+        Managing configurations
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+          Capacity Planning
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_6">
+          <span class="md-nav__icon md-icon"></span>
+          Capacity Planning
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/capacity-planning/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/capacity-planning/performance-report-for-rest-services/" class="md-nav__link">
+        Performance Report for REST Services
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+          Deployment Best Practices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5_7">
+          <span class="md-nav__icon md-icon"></span>
+          Deployment Best Practices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/deployment-best-practices/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/deployment-best-practices/runtime-security/" class="md-nav__link">
+        Runtime Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/deployment-best-practices/os-level-security/" class="md-nav__link">
+        OS Level Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/deployment-best-practices/network-level-security/" class="md-nav__link">
+        Network Level Security
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../deploy/deployment-best-practices/configuration-best-practices/" class="md-nav__link">
+        Configuration Best Practices
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Observability and Monitoring
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Observability and Monitoring
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observability-and-monitoring/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observability-and-monitoring/monitoring-with-wso2-integrator-icp/" class="md-nav__link">
+        Monitoring with WSO2 Integrator: ICP
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observability-and-monitoring/observability-with-devant/" class="md-nav__link">
+        Observability with Devant
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_4" id="__nav_6_4_label" tabindex="0">
+          Supported Observability Tools and Platforms
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_4">
+          <span class="md-nav__icon md-icon"></span>
+          Supported Observability Tools and Platforms
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observability-and-monitoring/supported-observability-tools-and-platforms/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observability-and-monitoring/supported-observability-tools-and-platforms/prometheus/" class="md-nav__link">
+        Prometheus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observability-and-monitoring/supported-observability-tools-and-platforms/jaeger/" class="md-nav__link">
+        Jaeger
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observability-and-monitoring/supported-observability-tools-and-platforms/zipkin/" class="md-nav__link">
+        Zipkin
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observability-and-monitoring/supported-observability-tools-and-platforms/new-relic/" class="md-nav__link">
+        New Relic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observability-and-monitoring/supported-observability-tools-and-platforms/datadog/" class="md-nav__link">
+        Datadog
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observability-and-monitoring/supported-observability-tools-and-platforms/elastic-stack/" class="md-nav__link">
+        Elastic Stack
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observability-and-monitoring/supported-observability-tools-and-platforms/opensearch/" class="md-nav__link">
+        OpenSearch
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../observability-and-monitoring/supported-observability-tools-and-platforms/moesif/" class="md-nav__link">
+        Moesif
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          References
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          References
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../references/enterprise-integrations-patterns/" class="md-nav__link">
+        Enterprise Integrations Patterns
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../references/system-requirements/" class="md-nav__link">
+        System Requirements
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../references/ai-usage-and-data-handling-guidelines/" class="md-nav__link">
+        AI Usage & Data Handling Guidelines
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../references/connector-development-guidelines/" class="md-nav__link">
+        Connector Development Guidelines
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          Release Notes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Release Notes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../wso2-integrator-bi-release-notes/" class="md-nav__link">
+        Release Note
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-overview" class="md-nav__link">
+    Architecture Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+    <nav class="md-nav" aria-label="Prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-software" class="md-nav__link">
+    Required Software
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-microsoft-sql-server-using-docker" class="md-nav__link">
+    Setting up Microsoft SQL Server Using Docker
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting up Microsoft SQL Server Using Docker">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites-for-docker-setup" class="md-nav__link">
+    Prerequisites for Docker Setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-specific-docker-commands" class="md-nav__link">
+    Platform-Specific Docker Commands
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-sql-server-is-running" class="md-nav__link">
+    Verify SQL Server is Running
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accessing-sql-server" class="md-nav__link">
+    Accessing SQL Server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-cdc-on-sql-server-database" class="md-nav__link">
+    Enable CDC on SQL Server Database
+  </a>
+  
+    <nav class="md-nav" aria-label="Enable CDC on SQL Server Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-connect-to-sql-server" class="md-nav__link">
+    Step 1: Connect to SQL Server
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 1: Connect to SQL Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-a-azure-data-studio-recommended-cross-platform" class="md-nav__link">
+    Option A: Azure Data Studio (Recommended - Cross-platform)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-b-sqlcmd-command-line" class="md-nav__link">
+    Option B: sqlcmd (Command-line)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-c-vs-code-with-sql-server-extension" class="md-nav__link">
+    Option C: VS Code with SQL Server Extension
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-execute-cdc-setup-scripts" class="md-nav__link">
+    Step 2: Execute CDC Setup Scripts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#understanding-cdc-setup" class="md-nav__link">
+    Understanding CDC Setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-test-cdc-is-working" class="md-nav__link">
+    Step 3: Test CDC is Working
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generate-credentials-for-sending-emails" class="md-nav__link">
+    Generate Credentials for Sending Emails
+  </a>
+  
+    <nav class="md-nav" aria-label="Generate Credentials for Sending Emails">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-a-google-cloud-project" class="md-nav__link">
+    Step 1: Create a Google Cloud Project
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-enable-gmail-api" class="md-nav__link">
+    Step 2: Enable Gmail API
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-configure-oauth-consent-screen" class="md-nav__link">
+    Step 3: Configure OAuth Consent Screen
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 3: Configure OAuth Consent Screen">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#app-information" class="md-nav__link">
+    App Information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scopes" class="md-nav__link">
+    Scopes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-users" class="md-nav__link">
+    Test Users
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-create-oauth-20-credentials" class="md-nav__link">
+    Step 4: Create OAuth 2.0 Credentials
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-generate-refresh-token" class="md-nav__link">
+    Step 5: Generate Refresh Token
+  </a>
+  
+    <nav class="md-nav" aria-label="Step 5: Generate Refresh Token">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-oauth-20-playground" class="md-nav__link">
+    Using OAuth 2.0 Playground
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#next-steps" class="md-nav__link">
+    Next Steps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fraud-detection-system" class="md-nav__link">
+    Fraud Detection System
+  </a>
+  
+    <nav class="md-nav" aria-label="Fraud Detection System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-create-a-new-integration" class="md-nav__link">
+    Step 1: Create a new integration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-create-the-gmail-client" class="md-nav__link">
+    Step 2: Create the Gmail client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-create-a-cdc-event-listener-for-microsoft-sql-server" class="md-nav__link">
+    Step 3: Create a CDC event listener for Microsoft SQL Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-identify-and-notify-of-fraudulent-transactions" class="md-nav__link">
+    Step 4: Identify and notify of fraudulent transactions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-add-values-to-the-configurable-variables" class="md-nav__link">
+    Step 5: Add values to the configurable variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-the-integration" class="md-nav__link">
+    Testing the Integration
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing the Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#test-prerequisites" class="md-nav__link">
+    Test Prerequisites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-scenario-1-normal-transaction-no-alert-expected" class="md-nav__link">
+    Test Scenario 1: Normal Transaction (No Alert Expected)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-scenario-2-fraudulent-transaction-alert-expected" class="md-nav__link">
+    Test Scenario 2: Fraudulent Transaction (Alert Expected)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting-test-issues" class="md-nav__link">
+    Troubleshooting Test Issues
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+                  
+
+  
+    <a href="https://github.com/wso2/docs-bi/edit/main/en/docs/integration-guides/event-integration/cdc/fraud-detection-system-with-cdc-for-mssql.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/wso2/docs-bi/raw/main/en/docs/integration-guides/event-integration/cdc/fraud-detection-system-with-cdc-for-mssql.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
+    </a>
+  
+
+
+<h1 id="building-a-fraud-detection-system-with-change-data-capture-cdc-for-microsoft-sql-server">Building a Fraud Detection System with Change Data Capture (CDC) for Microsoft SQL Server<a class="headerlink" href="#building-a-fraud-detection-system-with-change-data-capture-cdc-for-microsoft-sql-server" title="Permanent link">&para;</a></h1>
+<h2 id="architecture-overview">Architecture Overview<a class="headerlink" href="#architecture-overview" title="Permanent link">&para;</a></h2>
+<p>In this tutorial, you will learn how to use Change Data Capture for Microsoft SQL Server in WSO2 Integrator: BI. You'll create an integration that:</p>
+<ul>
+<li>Consumes events generated for new database table entries that contain financial transactions</li>
+<li>Identifies any fraudulent transactions using the given criteria. For the sake of simplicity, the criterion for a potentially fraudulent transaction has been chosen as <strong>transaction amount &gt; 10000.00</strong></li>
+<li>Sends an email to the company security engineer or the security email group, informing them about the fraudulent transaction</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>BI uses Debezium for Change Data Capture. To learn more about the Debezium connector for Microsoft SQL Server, refer to the <a href="https://debezium.io/documentation/reference/stable/connectors/sqlserver.html">Debezium connector for SQL Server</a>.</p>
+</div>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/mssql-fraud-detection-architecture.png">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/mssql-fraud-detection-architecture.png" alt="Fraud Detection Architecture Diagram" width="90%"></a></p>
+<p>This tutorial demonstrates how to:</p>
+<ul>
+<li>Set up an SQL Server server instance in the local environment</li>
+<li>Enable CDC on an SQL Server database and specific tables</li>
+<li>Create a Google Cloud Platform Project and generate credentials for sending emails</li>
+<li>Receive and process events for database table entry creations</li>
+</ul>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h3 id="required-software">Required Software<a class="headerlink" href="#required-software" title="Permanent link">&para;</a></h3>
+<p>Before you begin, ensure you have:</p>
+<ol>
+<li><strong>WSO2 Integrator: BI</strong> installed and running: <a href="https://marketplace.visualstudio.com/items?itemName=WSO2.ballerina-integrator">WSO2 Integrator: BI - Visual Studio Marketplace</a></li>
+<li><strong>Docker</strong></li>
+</ol>
+<h2 id="setting-up-microsoft-sql-server-using-docker">Setting up Microsoft SQL Server Using Docker<a class="headerlink" href="#setting-up-microsoft-sql-server-using-docker" title="Permanent link">&para;</a></h2>
+<p>Docker provides the easiest way to run SQL Server across different platforms, including macOS, Windows, and Linux.</p>
+<h3 id="prerequisites-for-docker-setup">Prerequisites for Docker Setup<a class="headerlink" href="#prerequisites-for-docker-setup" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Docker installed and running</li>
+<li>Minimum 2GB RAM available for the container</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For ARM-based Macs (Apple Silicon - M1, M2, etc), you need to enable Rosetta emulation for x86. In Docker Desktop, select "Use Rosetta for x86/amd64 emulation on Apple Silicon" in settings.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/docker-desktop-rosetta-settings.png">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/docker-desktop-rosetta-settings.png" alt="Docker Desktop Rosetta Settings" width="70%"></a></p>
+<p>If you're using Rancher Desktop, go to <strong>Preferences -&gt; Virtual Machine -&gt; Emulation</strong>, select <strong>VZ</strong>, and select the "Enable Rosetta Support" checkbox.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/rancher-desktop-rosetta-settings.png">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/rancher-desktop-rosetta-settings.png" alt="Rancher Desktop Rosetta Settings" width="70%"></a></p>
+</div>
+<h3 id="platform-specific-docker-commands">Platform-Specific Docker Commands<a class="headerlink" href="#platform-specific-docker-commands" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>sqlserver<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-e<span class="w"> </span><span class="s2">&quot;ACCEPT_EULA=Y&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-e<span class="w"> </span><span class="s2">&quot;SA_PASSWORD=YourStrong@Passw0rd&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-e<span class="w"> </span><span class="s2">&quot;MSSQL_PID=Developer&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-e<span class="w"> </span><span class="s2">&quot;MSSQL_AGENT_ENABLED=true&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span><span class="m">1433</span>:1433<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>mcr.microsoft.com/mssql/server:2022-latest
+</code></pre></div>
+
+<p><strong>Understanding the Docker Command:</strong></p>
+<ul>
+<li><code>-d</code>: Run container in detached mode (background)</li>
+<li><code>--name sqlserver</code>: Names the container for easy reference</li>
+<li><code>-e "ACCEPT_EULA=Y"</code>: Accepts the End User License Agreement</li>
+<li><code>-e "SA_PASSWORD=..."</code>: Sets the Docker password for the <code>sa</code> (System Administrator) account</li>
+<li><code>-e "MSSQL_PID=Developer"</code>: Specifies Developer Edition (x86/x64 only)</li>
+<li><code>-e "MSSQL_AGENT_ENABLED=true"</code>: Enables SQL Server Agent (required for CDC)</li>
+<li><code>-p 1433:1433</code>: Maps port 1433 from container to host</li>
+</ul>
+<p>For more information about Docker, refer to the official <a href="https://docs.docker.com/">Docker Documentation</a>.</p>
+<h3 id="verify-sql-server-is-running">Verify SQL Server is Running<a class="headerlink" href="#verify-sql-server-is-running" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check if container is running</span>
+docker<span class="w"> </span>ps
+
+<span class="c1"># View SQL Server logs</span>
+docker<span class="w"> </span>logs<span class="w"> </span>sqlserver
+
+<span class="c1"># Look for this message in logs:</span>
+<span class="c1"># &quot;SQL Server is now ready for client connections&quot;</span>
+</code></pre></div>
+
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/sql-server-logs.gif">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/sql-server-logs.gif" alt="SQL Server Logs Output" width="70%"></a></p>
+<h3 id="accessing-sql-server">Accessing SQL Server<a class="headerlink" href="#accessing-sql-server" title="Permanent link">&para;</a></h3>
+<p>Once running, you can connect to SQL Server using:</p>
+<ul>
+<li><strong>Server</strong>: <code>localhost,1433</code> or <code>localhost</code></li>
+<li><strong>Username</strong>: <code>sa</code></li>
+<li><strong>Password</strong>: The password you set in the Docker command</li>
+<li><strong>Authentication</strong>: SQL Server Authentication</li>
+</ul>
+<h2 id="enable-cdc-on-sql-server-database">Enable CDC on SQL Server Database<a class="headerlink" href="#enable-cdc-on-sql-server-database" title="Permanent link">&para;</a></h2>
+<p>Now that SQL Server is running, you need to create the database, table, and enable Change Data Capture.</p>
+<h3 id="step-1-connect-to-sql-server">Step 1: Connect to SQL Server<a class="headerlink" href="#step-1-connect-to-sql-server" title="Permanent link">&para;</a></h3>
+<p>Choose one of these tools to connect to your SQL Server instance:</p>
+<h4 id="option-a-azure-data-studio-recommended-cross-platform">Option A: Azure Data Studio (Recommended - Cross-platform)<a class="headerlink" href="#option-a-azure-data-studio-recommended-cross-platform" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Download from <a href="https://aka.ms/azuredatastudio">https://aka.ms/azuredatastudio</a></li>
+<li>Install and open Azure Data Studio</li>
+<li>Click "New Connection"</li>
+<li>Enter connection details:<ul>
+<li><strong>Server</strong>: <code>localhost,1433</code></li>
+<li><strong>Authentication type</strong>: SQL Login</li>
+<li><strong>User name</strong>: <code>sa</code></li>
+<li><strong>Password</strong>: Your SA password</li>
+<li><strong>Trust server certificate</strong>: ✓ (checked)</li>
+</ul>
+</li>
+<li>Click "Connect"</li>
+</ol>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/azure-data-studio-connection.gif">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/azure-data-studio-connection.gif" alt="Azure Data Studio Connection" width="70%"></a></p>
+<h4 id="option-b-sqlcmd-command-line">Option B: sqlcmd (Command-line)<a class="headerlink" href="#option-b-sqlcmd-command-line" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="c1"># If running via Docker</span>
+docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>sqlserver<span class="w"> </span>/opt/mssql-tools18/bin/sqlcmd<span class="w"> </span>-S<span class="w"> </span>localhost<span class="w"> </span>-U<span class="w"> </span>sa<span class="w"> </span>-P<span class="w"> </span><span class="s2">&quot;YourStrong@Passw0rd&quot;</span><span class="w"> </span>-C
+</code></pre></div>
+
+<h4 id="option-c-vs-code-with-sql-server-extension">Option C: VS Code with SQL Server Extension<a class="headerlink" href="#option-c-vs-code-with-sql-server-extension" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Install the "SQL Server (mssql)" extension in VS Code</li>
+<li>Use Command Palette (Cmd/Ctrl+Shift+P) -&gt; "MS SQL: Connect"</li>
+<li>Enter connection details</li>
+</ol>
+<h3 id="step-2-execute-cdc-setup-scripts">Step 2: Execute CDC Setup Scripts<a class="headerlink" href="#step-2-execute-cdc-setup-scripts" title="Permanent link">&para;</a></h3>
+<p>Once connected, execute the following SQL commands to set up the database and enable CDC:</p>
+<div class="highlight"><pre><span></span><code><span class="c1">-- ============================================</span>
+<span class="c1">-- STEP 1: Create the database</span>
+<span class="c1">-- ============================================</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">finance_db</span><span class="p">;</span>
+<span class="k">GO</span>
+
+<span class="n">USE</span><span class="w"> </span><span class="n">finance_db</span><span class="p">;</span>
+<span class="k">GO</span>
+
+<span class="c1">-- ============================================</span>
+<span class="c1">-- STEP 2: Create the transactions table</span>
+<span class="c1">-- ============================================</span>
+<span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">dbo</span><span class="p">.</span><span class="n">transactions</span><span class="w"> </span><span class="p">(</span>
+<span class="w">    </span><span class="n">tx_id</span><span class="w"> </span><span class="n">NVARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+<span class="w">    </span><span class="n">user_id</span><span class="w"> </span><span class="n">NVARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">amount</span><span class="w"> </span><span class="nb">FLOAT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">status</span><span class="w"> </span><span class="n">NVARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="n">created_at</span><span class="w"> </span><span class="nb">BIGINT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span>
+<span class="p">);</span>
+<span class="k">GO</span>
+
+<span class="c1">-- ============================================</span>
+<span class="c1">-- STEP 3: Enable CDC on the database</span>
+<span class="c1">-- ============================================</span>
+<span class="c1">-- This creates the CDC schema and enables CDC infrastructure</span>
+<span class="k">EXEC</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">sp_cdc_enable_db</span><span class="p">;</span>
+<span class="k">GO</span>
+
+<span class="c1">-- ============================================</span>
+<span class="c1">-- STEP 4: Verify CDC is enabled on database</span>
+<span class="c1">-- ============================================</span>
+<span class="k">SELECT</span>
+<span class="w">    </span><span class="n">name</span><span class="p">,</span>
+<span class="w">    </span><span class="n">is_cdc_enabled</span><span class="p">,</span>
+<span class="w">    </span><span class="k">CASE</span>
+<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">is_cdc_enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;CDC is enabled&#39;</span>
+<span class="w">        </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">&#39;CDC is not enabled&#39;</span>
+<span class="w">    </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">cdc_status</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">databases</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;finance_db&#39;</span><span class="p">;</span>
+<span class="c1">-- Expected result: is_cdc_enabled = 1</span>
+<span class="k">GO</span>
+
+<span class="c1">-- ============================================</span>
+<span class="c1">-- STEP 5: Enable CDC on the transactions table</span>
+<span class="c1">-- ============================================</span>
+<span class="c1">-- This creates change tracking tables for the transactions table</span>
+<span class="k">EXEC</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">sp_cdc_enable_table</span>
+<span class="w">    </span><span class="o">@</span><span class="n">source_schema</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;dbo&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="o">@</span><span class="n">source_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;transactions&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="o">@</span><span class="n">role_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<span class="w">    </span><span class="o">@</span><span class="n">supports_net_changes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="k">GO</span>
+
+<span class="c1">-- ============================================</span>
+<span class="c1">-- STEP 6: Verify CDC is enabled on the table</span>
+<span class="c1">-- ============================================</span>
+<span class="k">SELECT</span>
+<span class="w">    </span><span class="n">name</span><span class="p">,</span>
+<span class="w">    </span><span class="n">is_tracked_by_cdc</span><span class="p">,</span>
+<span class="w">    </span><span class="k">CASE</span>
+<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="n">is_tracked_by_cdc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39; CDC is tracking this table&#39;</span>
+<span class="w">        </span><span class="k">ELSE</span><span class="w"> </span><span class="s1">&#39; CDC is not tracking this table&#39;</span>
+<span class="w">    </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">tracking_status</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">tables</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;transactions&#39;</span><span class="p">;</span>
+<span class="c1">-- Expected result: is_tracked_by_cdc = 1</span>
+<span class="k">GO</span>
+
+<span class="c1">-- ============================================</span>
+<span class="c1">-- STEP 7: View CDC change tables</span>
+<span class="c1">-- ============================================</span>
+<span class="c1">-- This shows the change table created by CDC</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cdc</span><span class="p">.</span><span class="n">change_tables</span><span class="p">;</span>
+<span class="c1">-- You should see: dbo_transactions</span>
+<span class="k">GO</span>
+
+<span class="c1">-- ============================================</span>
+<span class="c1">-- STEP 8: Verify SQL Server Agent is Running</span>
+<span class="c1">-- ============================================</span>
+<span class="c1">-- CDC uses SQL Server Agent jobs to capture changes</span>
+<span class="k">SELECT</span>
+<span class="w">    </span><span class="n">servicename</span><span class="p">,</span>
+<span class="w">    </span><span class="n">status_desc</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">dm_server_services</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">servicename</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%Agent%&#39;</span><span class="p">;</span>
+<span class="c1">-- Expected: status_desc should be &#39;Running&#39;</span>
+<span class="k">GO</span>
+
+<span class="c1">-- Alternative verification</span>
+<span class="k">EXEC</span><span class="w"> </span><span class="n">master</span><span class="p">.</span><span class="n">dbo</span><span class="p">.</span><span class="n">xp_servicecontrol</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;QueryState&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;SQLServerAGENT&#39;</span><span class="p">;</span>
+<span class="c1">-- Expected: Should return &#39;Running.&#39;</span>
+<span class="k">GO</span>
+
+<span class="c1">-- ============================================</span>
+<span class="c1">-- STEP 9: View CDC capture jobs</span>
+<span class="c1">-- ============================================</span>
+<span class="k">EXEC</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">sp_cdc_help_jobs</span><span class="p">;</span>
+<span class="c1">-- You should see capture and cleanup jobs listed</span>
+<span class="k">GO</span>
+
+<span class="c1">-- Check job status in msdb</span>
+<span class="k">SELECT</span>
+<span class="w">    </span><span class="n">j</span><span class="p">.</span><span class="n">name</span><span class="p">,</span>
+<span class="w">    </span><span class="n">j</span><span class="p">.</span><span class="n">enabled</span><span class="p">,</span>
+<span class="w">    </span><span class="n">j</span><span class="p">.</span><span class="n">date_created</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">msdb</span><span class="p">.</span><span class="n">dbo</span><span class="p">.</span><span class="n">sysjobs</span><span class="w"> </span><span class="n">j</span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">j</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;cdc.finance_db%&#39;</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">j</span><span class="p">.</span><span class="n">name</span><span class="p">;</span>
+<span class="c1">-- Expected: enabled = 1 for both jobs</span>
+<span class="k">GO</span>
+</code></pre></div>
+
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/execute-cdc-setup-script.gif">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/execute-cdc-setup-script.gif" alt="Azure Data Studio Execute CDC Setup" width="70%"></a></p>
+<h3 id="understanding-cdc-setup">Understanding CDC Setup<a class="headerlink" href="#understanding-cdc-setup" title="Permanent link">&para;</a></h3>
+<p><strong>What happens when you enable CDC?</strong></p>
+<ol>
+<li>
+<p><strong>Database Level</strong> (<code>sp_cdc_enable_db</code>):</p>
+<ul>
+<li>Creates the CDC schema</li>
+<li>Creates CDC system tables</li>
+<li>Sets up infrastructure for change tracking</li>
+</ul>
+</li>
+<li>
+<p><strong>Table Level</strong> (<code>sp_cdc_enable_table</code>):</p>
+<ul>
+<li>Creates a change table: <code>cdc.dbo_transactions_CT</code></li>
+<li>This table stores all INSERT, UPDATE, and DELETE operations</li>
+<li>Captures the state of data before and after changes</li>
+</ul>
+</li>
+</ol>
+<p><strong>Parameters Explained:</strong></p>
+<ul>
+<li><code>@source_schema</code>: Schema of the table to track (typically <code>dbo</code>)</li>
+<li><code>@source_name</code>: Name of the table to track</li>
+<li><code>@role_name = NULL</code>: No security role required to read changes (development only)</li>
+<li><code>@supports_net_changes = 1</code>: Enables net change queries (shows final state after multiple changes)</li>
+</ul>
+<h3 id="step-3-test-cdc-is-working">Step 3: Test CDC is Working<a class="headerlink" href="#step-3-test-cdc-is-working" title="Permanent link">&para;</a></h3>
+<p>Insert a test transaction to verify CDC is capturing changes:</p>
+<div class="highlight"><pre><span></span><code><span class="n">USE</span><span class="w"> </span><span class="n">finance_db</span><span class="p">;</span>
+<span class="k">GO</span>
+
+<span class="c1">-- Insert a test transaction</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">dbo</span><span class="p">.</span><span class="n">transactions</span><span class="w"> </span><span class="p">(</span><span class="n">tx_id</span><span class="p">,</span><span class="w"> </span><span class="n">user_id</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="p">,</span><span class="w"> </span><span class="n">created_at</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;TEST001&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;USER123&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">15000</span><span class="p">.</span><span class="mi">00</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;pending&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1234567890</span><span class="p">);</span>
+<span class="k">GO</span>
+
+<span class="c1">-- Query the CDC change table to see if the INSERT was captured</span>
+<span class="c1">-- Wait a few seconds for CDC to process the change</span>
+<span class="n">WAITFOR</span><span class="w"> </span><span class="n">DELAY</span><span class="w"> </span><span class="s1">&#39;00:00:05&#39;</span><span class="p">;</span>
+<span class="k">GO</span>
+
+<span class="c1">-- View changes captured by CDC</span>
+<span class="k">SELECT</span>
+<span class="w">    </span><span class="n">__$start_lsn</span><span class="p">,</span>
+<span class="w">    </span><span class="n">__$operation</span><span class="p">,</span>
+<span class="w">    </span><span class="k">CASE</span><span class="w"> </span><span class="n">__$operation</span>
+<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;DELETE&#39;</span>
+<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;INSERT&#39;</span>
+<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;UPDATE (before)&#39;</span>
+<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="s1">&#39;UPDATE (after)&#39;</span>
+<span class="w">    </span><span class="k">END</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">operation_type</span><span class="p">,</span>
+<span class="w">    </span><span class="n">tx_id</span><span class="p">,</span>
+<span class="w">    </span><span class="n">user_id</span><span class="p">,</span>
+<span class="w">    </span><span class="n">amount</span><span class="p">,</span>
+<span class="w">    </span><span class="n">status</span><span class="p">,</span>
+<span class="w">    </span><span class="n">created_at</span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">cdc</span><span class="p">.</span><span class="n">dbo_transactions_CT</span>
+<span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">__$start_lsn</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+<span class="c1">-- You should see your INSERT operation (operation = 2)</span>
+<span class="k">GO</span>
+</code></pre></div>
+
+<p>If you see the inserted record with <code>operation = 2</code>, CDC is working correctly!</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/azure-data-studio-cdc-verification.gif">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/azure-data-studio-cdc-verification.gif" alt="Azure Data Studio CDC Verification" width="70%"></a></p>
+<h3 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h3>
+<p>If you don't see any records in <code>cdc.dbo_transactions_CT</code>:</p>
+<p><strong>1. Verify SQL Server Agent is Running (Most Common Issue)</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">EXEC</span><span class="w"> </span><span class="n">master</span><span class="p">.</span><span class="n">dbo</span><span class="p">.</span><span class="n">xp_servicecontrol</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;QueryState&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;SQLServerAGENT&#39;</span><span class="p">;</span>
+<span class="c1">-- Must return &#39;Running.&#39;</span>
+</code></pre></div>
+
+<p>If the agent isn't running, you forgot to include <code>-e 'MSSQL_AGENT_ENABLED=true'</code> when starting the container. Stop and remove the container, then recreate it with the correct environment variable:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Stop and remove the container</span>
+docker<span class="w"> </span>stop<span class="w"> </span>sqlserver
+docker<span class="w"> </span>rm<span class="w"> </span>sqlserver
+
+<span class="c1"># Start with SQL Server Agent enabled</span>
+docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>sqlserver<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-e<span class="w"> </span><span class="s1">&#39;ACCEPT_EULA=Y&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-e<span class="w"> </span><span class="s1">&#39;SA_PASSWORD=YourStrong@Passw0rd&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-e<span class="w"> </span><span class="s1">&#39;MSSQL_PID=Developer&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-e<span class="w"> </span><span class="s1">&#39;MSSQL_AGENT_ENABLED=true&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-p<span class="w"> </span><span class="m">1433</span>:1433<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>mcr.microsoft.com/mssql/server:2022-latest
+</code></pre></div>
+
+<p><strong>2. Check for Errors in SQL Server Logs</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">EXEC</span><span class="w"> </span><span class="n">sp_readerrorlog</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;cdc&#39;</span><span class="p">;</span>
+<span class="k">EXEC</span><span class="w"> </span><span class="n">sp_readerrorlog</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;agent&#39;</span><span class="p">;</span>
+</code></pre></div>
+
+<p><strong>3. Manually Start the Capture Job</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">EXEC</span><span class="w"> </span><span class="n">sys</span><span class="p">.</span><span class="n">sp_cdc_start_job</span><span class="w"> </span><span class="s1">&#39;capture&#39;</span><span class="p">;</span>
+</code></pre></div>
+
+<h2 id="generate-credentials-for-sending-emails">Generate Credentials for Sending Emails<a class="headerlink" href="#generate-credentials-for-sending-emails" title="Permanent link">&para;</a></h2>
+<p>To send fraud alert emails, you need to set up Gmail API access using OAuth 2.0. This section guides you through creating a Google Cloud Project and generating the necessary credentials.</p>
+<h3 id="step-1-create-a-google-cloud-project">Step 1: Create a Google Cloud Project<a class="headerlink" href="#step-1-create-a-google-cloud-project" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Navigate to the <a href="https://console.cloud.google.com/">Google Cloud Console</a></li>
+<li>Sign in with your Google account</li>
+<li>Click on the project dropdown at the top (says "Select a project")</li>
+<li>Click the "New Project" button</li>
+<li>Enter project details:<ul>
+<li><strong>Project name</strong>: <code>MSSQL CDC Fraud Detection</code> (or your preferred name)</li>
+<li><strong>Organization</strong>: Leave default (or select if you have one)</li>
+</ul>
+</li>
+<li>Click "Create"</li>
+<li>Wait for the project to be created (takes a few seconds)</li>
+<li>Select the newly created project from the project dropdown</li>
+</ol>
+<h3 id="step-2-enable-gmail-api">Step 2: Enable Gmail API<a class="headerlink" href="#step-2-enable-gmail-api" title="Permanent link">&para;</a></h3>
+<ol>
+<li>In the Google Cloud Console, ensure your project is selected</li>
+<li>Navigate to "APIs &amp; Services" -&gt; "Library" (from the left sidebar)</li>
+<li>In the search bar, type "Gmail API"</li>
+<li>Click on "Gmail API" from the search results</li>
+<li>Click the "Enable" button</li>
+<li>Wait for the API to be enabled</li>
+</ol>
+<h3 id="step-3-configure-oauth-consent-screen">Step 3: Configure OAuth Consent Screen<a class="headerlink" href="#step-3-configure-oauth-consent-screen" title="Permanent link">&para;</a></h3>
+<p>Before creating credentials, you must configure the OAuth consent screen.</p>
+<ol>
+<li>Navigate to "APIs &amp; Services" -&gt; "OAuth consent screen"</li>
+<li>Click on "Get Started"</li>
+</ol>
+<h4 id="app-information">App Information<a class="headerlink" href="#app-information" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Fill in the required fields:<ul>
+<li><strong>App name</strong>: <code>MSSQL CDC Fraud Detector</code></li>
+<li><strong>User support email</strong>: Select your email from the dropdown</li>
+<li><strong>Audience</strong>: External</li>
+<li><strong>Contact Information</strong>: Type in your email address</li>
+<li>Check <strong>I agree to the Google API Services: User Data Policy</strong></li>
+</ul>
+</li>
+<li>Click "Create"</li>
+</ol>
+<h4 id="scopes">Scopes<a class="headerlink" href="#scopes" title="Permanent link">&para;</a></h4>
+<ol>
+<li>On the "Data Access" page, click "Add or Remove Scopes"</li>
+<li>In the filter box, search for <code>gmail.send</code></li>
+<li>Select the checkbox for:<ul>
+<li><code>https://www.googleapis.com/auth/gmail.send</code> - Send email on your behalf</li>
+</ul>
+</li>
+<li>Click "Update" at the bottom</li>
+<li>Click "Save"</li>
+</ol>
+<h4 id="test-users">Test Users<a class="headerlink" href="#test-users" title="Permanent link">&para;</a></h4>
+<ol>
+<li>On the "Audience" page, click "+ Add Users"</li>
+<li>Enter the Gmail address you'll use to send fraud alerts (your email)</li>
+<li>Click "Save"</li>
+</ol>
+<p>Your OAuth consent screen is now configured!</p>
+<h3 id="step-4-create-oauth-20-credentials">Step 4: Create OAuth 2.0 Credentials<a class="headerlink" href="#step-4-create-oauth-20-credentials" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Navigate to "APIs &amp; Services" -&gt; "Credentials"</li>
+<li>Click "+ Create Credentials" at the top</li>
+<li>Select "OAuth client ID"</li>
+<li>Configure the OAuth client:<ul>
+<li><strong>Application type</strong>: Select "Web Application" from the dropdown</li>
+<li><strong>Name</strong>: <code>MSSQL CDC Web Client</code> (or your preferred name)</li>
+<li><strong>Authorized redirect URIs</strong>: <code>https://developers.google.com/oauthplayground</code></li>
+</ul>
+</li>
+<li>Click "Create"</li>
+<li>A pop-up appears with your credentials:<ul>
+<li><strong>Client ID</strong>: Copy this and save it securely</li>
+<li><strong>Client Secret</strong>: Copy this and save it securely</li>
+</ul>
+</li>
+<li>Click "Download JSON" to download the credentials file (optional but recommended for backup)</li>
+<li>Click "OK" to close the pop-up</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Store these credentials securely. You'll need them in the next step.</p>
+</div>
+<h3 id="step-5-generate-refresh-token">Step 5: Generate Refresh Token<a class="headerlink" href="#step-5-generate-refresh-token" title="Permanent link">&para;</a></h3>
+<p>The refresh token is a long-lived token that allows your application to send emails without repeated authorization.</p>
+<h4 id="using-oauth-20-playground">Using OAuth 2.0 Playground<a class="headerlink" href="#using-oauth-20-playground" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Navigate to <a href="https://developers.google.com/oauthplayground">Google OAuth 2.0 Playground</a></li>
+<li><strong>Configure OAuth Client:</strong><ul>
+<li>Click the <strong>Settings</strong> icon (gear icon) in the top-right corner</li>
+<li>Check the box for "Use your own OAuth credentials"</li>
+<li>Enter your credentials from Step 4:<ul>
+<li><strong>OAuth Client ID</strong>: Paste your Client ID</li>
+<li><strong>OAuth Client secret</strong>: Paste your Client Secret</li>
+</ul>
+</li>
+<li>Close the settings</li>
+</ul>
+</li>
+<li><strong>Select API Scope:</strong><ul>
+<li>In the left panel under "Step 1: Select &amp; authorize APIs"</li>
+<li>Scroll down or search for "Gmail API v1"</li>
+<li>Expand it and select:<ul>
+<li> <code>https://www.googleapis.com/auth/gmail.send</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Authorize APIs:</strong><ul>
+<li>Click the blue "Authorize APIs" button at the bottom</li>
+<li>You'll be redirected to Google sign-in</li>
+<li>Select the Google account you added as a test user</li>
+<li>You may see a warning "This app isn't verified" - click "Continue" -&gt; "Continue"</li>
+</ul>
+</li>
+<li><strong>Exchange Authorization Code:</strong><ul>
+<li>You'll be redirected back to the Playground</li>
+<li>The page now shows "Step 2: Exchange authorization code for tokens"</li>
+<li>Click the blue "Exchange authorization code for tokens" button</li>
+</ul>
+</li>
+<li><strong>Copy Refresh Token:</strong><ul>
+<li>In the response, you'll see:<ul>
+<li><code>access_token</code>: (Short-lived, expires in 1 hour)</li>
+<li><code>refresh_token</code>: <strong>This is what you need!</strong></li>
+</ul>
+</li>
+<li>Copy the <code>refresh_token</code> value and save it securely</li>
+</ul>
+</li>
+</ol>
+<h3 id="next-steps">Next Steps<a class="headerlink" href="#next-steps" title="Permanent link">&para;</a></h3>
+<p>You now have:</p>
+<ul>
+<li>SQL Server running with a <code>finance_db</code> database</li>
+<li>CDC enabled on the <code>transactions</code> table</li>
+<li>Gmail API credentials ready to send fraud alerts</li>
+</ul>
+<p>Proceed to the <strong>Fraud Detection System</strong> section of the tutorial to build the integration!</p>
+<h2 id="fraud-detection-system">Fraud Detection System<a class="headerlink" href="#fraud-detection-system" title="Permanent link">&para;</a></h2>
+<h3 id="step-1-create-a-new-integration">Step 1: Create a new integration<a class="headerlink" href="#step-1-create-a-new-integration" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Open VS Code with <strong>WSO2 Integrator: BI</strong> installed.</li>
+<li>Click on the <strong>BI</strong> icon on the sidebar.</li>
+<li>Click on the <strong>Create New Integration</strong> button.</li>
+<li>Enter the project name as <code>FraudDetectionSystem</code>.</li>
+<li>Select the project directory location by clicking on the <strong>Select Path</strong> button.</li>
+<li>Click the <strong>Create Integration</strong> button to generate the integration project.</li>
+<li>Create the project. BI will take some time to set up your workspace once the project is created.</li>
+</ol>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/create-integration-project.gif">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/create-integration-project.gif" alt="Create Integration Project" width="70%"></a></p>
+<h3 id="step-2-create-the-gmail-client">Step 2: Create the Gmail client<a class="headerlink" href="#step-2-create-the-gmail-client" title="Permanent link">&para;</a></h3>
+<p>In this step, you create a Gmail client, which will be used to publish alerts on any fraudulent transactions.</p>
+<ol>
+<li>Click the <strong>+</strong> (plus) button next to <strong>Connections</strong> in the left-hand panel.</li>
+<li>In the search bar, search for "gmail", and select the <strong>Gmail</strong> connector. This will open a form.</li>
+<li>
+<p>Click on the <strong>Config</strong> field text box, which will open a Record Configuration form. Select <strong>ConnectionConfig</strong>, and select <strong>OAuth2RefreshTokenGrantConfig</strong>. The content right-side text box should resemble the one below.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="err">au</span><span class="kc">t</span><span class="err">h</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="err">re</span><span class="kc">fres</span><span class="err">hToke</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="err">clie</span><span class="kc">nt</span><span class="err">Id</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="err">clie</span><span class="kc">nt</span><span class="err">Secre</span><span class="kc">t</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+</li>
+<li>
+<p>Click in front of the <strong>refreshToken</strong> field, and remove the double quotes (<code>""</code>). Select <strong>Configurables</strong> from the pop-up, and select <strong>+ New Configurable</strong>. Add the following values in the New Configurable page and save.</p>
+<ul>
+<li>Variable Name - <code>gmailRefreshToken</code></li>
+<li>Variable Type - <code>string</code></li>
+</ul>
+</li>
+<li>
+<p>Create and add configurable variables to the following fields as well.</p>
+<table>
+<thead>
+<tr>
+<th>Variable Name</th>
+<th>Variable Type</th>
+<th>Record Field</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>gmailRefreshToken</td>
+<td>string</td>
+<td>refreshToken (already created)</td>
+</tr>
+<tr>
+<td>gmailClientId</td>
+<td>string</td>
+<td>clientId</td>
+</tr>
+<tr>
+<td>gmailClientSecret</td>
+<td>string</td>
+<td>clientSecret</td>
+</tr>
+</tbody>
+</table>
+<p>The constructed record should resemble the one below. Save it.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="err">au</span><span class="kc">t</span><span class="err">h</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="err">re</span><span class="kc">fres</span><span class="err">hToke</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="err">gmailRe</span><span class="kc">fres</span><span class="err">hToke</span><span class="kc">n</span><span class="p">,</span>
+<span class="w">        </span><span class="err">clie</span><span class="kc">nt</span><span class="err">Id</span><span class="p">:</span><span class="w"> </span><span class="err">gmailClie</span><span class="kc">nt</span><span class="err">Id</span><span class="p">,</span>
+<span class="w">        </span><span class="err">clie</span><span class="kc">nt</span><span class="err">Secre</span><span class="kc">t</span><span class="p">:</span><span class="w"> </span><span class="err">gmailClie</span><span class="kc">nt</span><span class="err">Secre</span><span class="kc">t</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+
+</li>
+<li>
+<p>Click on the <strong>Save Connection</strong> button to create the Gmail connector.</p>
+</li>
+</ol>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/create-gmail-connection.gif">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/create-gmail-connection.gif" alt="Create Gmail Connection" width="70%"></a></p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Configurables in BI enable you to modify the behavior of a program using external inputs without changing the source code. To learn more about configurable variables, please refer to <a href="https://bi.docs.wso2.com/deploy/managing-configurations/">https://bi.docs.wso2.com/deploy/managing-configurations/</a></p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>To learn more about the BI Gmail connector, please refer to <a href="https://central.ballerina.io/ballerinax/googleapis.gmail">googleapis.gmail - Ballerina Central</a>.</p>
+</div>
+<h3 id="step-3-create-a-cdc-event-listener-for-microsoft-sql-server">Step 3: Create a CDC event listener for Microsoft SQL Server<a class="headerlink" href="#step-3-create-a-cdc-event-listener-for-microsoft-sql-server" title="Permanent link">&para;</a></h3>
+<p>Here, you create a CDC listener that listens to and notifies of any new entries in the <code>transactions</code> table in the SQL Server database.</p>
+<ol>
+<li>In the design view, click the <strong>+ Add Artifact</strong> button.</li>
+<li>Select <strong>CDC for Microsoft SQL Server</strong> under the <strong>Event Integration</strong> topic.</li>
+<li>
+<p>Create and add configurable variables for the following fields in the form.</p>
+<table>
+<thead>
+<tr>
+<th>Variable Name</th>
+<th>Variable Type</th>
+<th>Default Value</th>
+<th>Form Field</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mssqlHost</td>
+<td>string</td>
+<td>"localhost"</td>
+<td>Host</td>
+</tr>
+<tr>
+<td>mssqlPort</td>
+<td>int</td>
+<td>1433</td>
+<td>Port</td>
+</tr>
+<tr>
+<td>mssqlUsername</td>
+<td>string</td>
+<td></td>
+<td>Username</td>
+</tr>
+<tr>
+<td>mssqlPassword</td>
+<td>string</td>
+<td></td>
+<td>Password</td>
+</tr>
+<tr>
+<td>mssqlDatabase</td>
+<td>string</td>
+<td>"finance_db"</td>
+<td>Databases</td>
+</tr>
+<tr>
+<td>mssqlTxTable</td>
+<td>string</td>
+<td>"finance_db.dbo.transactions"</td>
+<td>Table</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>BI Artifact CDC for Microsoft SQL Server supports capturing changes from multiple databases, schemas, and tables. However, it is recommended to specify only one database, schema, and table per artifact.</p>
+<p>To capture changes from multiple tables in the same database, create additional artifacts that reference the same database connection. This approach reuses the underlying database connection while keeping each artifact focused on a single table.</p>
+</div>
+</li>
+<li>
+<p>Expand the <strong>Advanced Configurations</strong> section, and click on the <strong>Options</strong> text box. This will open the Record Configuration form. Here, select the following fields, add the respective values, and click save.</p>
+<ul>
+<li>snapshotMode - <code>"no_data"</code></li>
+<li>skippedOperations - <code>[cdc:TRUNCATE, cdc:UPDATE, cdc:DELETE]</code></li>
+</ul>
+<p>This is how the options field should look once you have added the above fields.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nx">snapshotMode</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;no_data&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">skippedOperations</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">cdc</span><span class="o">:</span><span class="nx">TRUNCATE</span><span class="p">,</span><span class="w"> </span><span class="nx">cdc</span><span class="o">:</span><span class="nx">UPDATE</span><span class="p">,</span><span class="w"> </span><span class="nx">cdc</span><span class="o">:</span><span class="nx">DELETE</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>This configuration is set to capture only new data insertions. The <code>snapshotMode</code> is set to <code>no_data</code> to skip capturing existing data in the table and only monitor new changes going forward. The <code>skippedOperations</code> array excludes TRUNCATE, UPDATE, and DELETE operations, meaning that only INSERT operations (new entries) are captured. This setup is ideal when you only need to track newly created records rather than the complete current state of the table.</p>
+</div>
+</li>
+<li>
+<p>Click on the <strong>Create</strong> button to save the Microsoft SQL Server CDC Service form.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/create-cdc-service.gif">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/create-cdc-service.gif" alt="Create CDC Service" width="70%"></a></p>
+</li>
+<li>
+<p>On the next page, click <strong>+ Add Handler</strong> and select <strong>onCreate</strong>. For any new entry in the observed database table, the <code>onCreate</code> handler will be invoked.</p>
+</li>
+<li>
+<p>On the next page, select <strong>+ Define Database Entry</strong>, and the <strong>Create Type Schema</strong> tab will be selected by default. Set the schema name to <code>Transaction</code>. Add the following as the fields and save. Use the <strong>+</strong> sign to add new fields.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tx_id</td>
+<td>string</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>string</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>float</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>int</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Save the current form.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/add-oncreate-handler.gif">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/add-oncreate-handler.gif" alt="Add onCreate Handler" width="70%"></a></p>
+</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The database entry defines the expected structure of the event payload. This allows easy access to the payload in the integration logic.</p>
+</div>
+<h3 id="step-4-identify-and-notify-of-fraudulent-transactions">Step 4: Identify and notify of fraudulent transactions<a class="headerlink" href="#step-4-identify-and-notify-of-fraudulent-transactions" title="Permanent link">&para;</a></h3>
+<p>Now, you will write the flow for identifying and alerting the security team upon receiving a new database entry creation event.</p>
+<ol>
+<li>Click on the <strong>onCreate</strong> handler to access the flow diagram of the onCreate handler.</li>
+<li>
+<p>Add a new node using the <strong>+</strong> (plus) sign, scroll down in the opened up side panel, select <strong>Log Info</strong> under the <strong>Logging</strong> topic, and add the following log.</p>
+<div class="highlight"><pre><span></span><code>Create transaction event received. Transaction Id: ${afterEntry.tx_id}
+</code></pre></div>
+
+</li>
+<li>
+<p>Add a new <strong>If</strong> condition node. Add <code>afterEntry.amount &gt; 10000.00</code> as the condition, and save.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/fraud-detection-flow-1.gif">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/fraud-detection-flow-1.gif" alt="Add onCreate Handler" width="70%"></a></p>
+</li>
+<li>
+<p>Add a new <strong>Declare Variable</strong> node within the if branch, with the following values.</p>
+<ul>
+<li>Name - <code>fraudAlert</code></li>
+<li>Type - <code>string</code></li>
+<li>Expression - <code>"Fraud detected in transaction " + afterEntry.toJsonString()</code></li>
+</ul>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/fraud-detection-flow-1.gif">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/fraud-detection-flow-1.gif" alt="Add onCreate Handler" width="70%"></a></p>
+</li>
+<li>
+<p>Add another new node within the if condition. Expand <strong>gmailClient</strong> under the <strong>Connections</strong> section, and select the option <strong>Sends the specified message to the recipients in the To, Cc, and Bcc headers</strong>.</p>
+</li>
+<li>
+<p>Set the <strong>UserId</strong> field value to <code>me</code>. In the <strong>Payload</strong> field, open up the Record Configuration form, and select fields <strong>to</strong>, <strong>subject</strong>, <strong>bodyInText</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="kc">t</span><span class="err">o</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="err">subjec</span><span class="kc">t</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">bodyI</span><span class="kc">n</span><span class="err">Tex</span><span class="kc">t</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+</li>
+<li>
+<p>In the <strong>to</strong> field, select <strong>Configurables</strong> in the expression helper, create a new configurable, and use it.</p>
+<ul>
+<li>Name - <code>mailRecipient</code></li>
+<li>Type - <code>string</code></li>
+</ul>
+</li>
+<li>
+<p>Add <code>"Fraud Alert: Suspicious Transaction Detected"</code> as the <strong>subject</strong>, and <code>fraudAlert</code> as <strong>bodyInText</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nx">to</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">mailRecipient</span><span class="p">],</span>
+<span class="w">    </span><span class="nx">subject</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Fraud Alert: Suspicious Transaction Detected&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">bodyInText</span><span class="o">:</span><span class="w"> </span><span class="nx">fraudAlert</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/fraud-detection-flow-3.gif">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/fraud-detection-flow-3.gif" alt="Fraud Detection Flow Diagram" width="70%"></a></p>
+</li>
+<li>
+<p>Add a <strong>Log Info</strong> node within the if block.</p>
+<ul>
+<li>Msg - <code>Email sent. Message ID: ${gmailMessage.id}</code></li>
+</ul>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/fraud-detection-flow-4.gif">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/fraud-detection-flow-4.gif" alt="Fraud Detection Flow Diagram" width="70%"></a></p>
+</li>
+</ol>
+<h3 id="step-5-add-values-to-the-configurable-variables">Step 5: Add values to the configurable variables<a class="headerlink" href="#step-5-add-values-to-the-configurable-variables" title="Permanent link">&para;</a></h3>
+<p>In this step, you add the actual values to the configurable variables.</p>
+<ol>
+<li>Open the <strong>Configurations</strong> section from the left panel.</li>
+<li>
+<p>Add values to the following fields.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Value in the current setup</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mssqlHost</td>
+<td>The hostname of the SQL Server instance</td>
+<td>localhost</td>
+</tr>
+<tr>
+<td>mssqlPort</td>
+<td>The port number of the SQL Server instance</td>
+<td>1433</td>
+</tr>
+<tr>
+<td>mssqlUsername</td>
+<td>The username for the SQL Server connection</td>
+<td>sa</td>
+</tr>
+<tr>
+<td>mssqlPassword</td>
+<td>The password for the SQL Server connection</td>
+<td>YourStrong@Passw0rd</td>
+</tr>
+<tr>
+<td>mssqlDatabase</td>
+<td>Name of the database to capture changes from</td>
+<td>finance_db</td>
+</tr>
+<tr>
+<td>mssqlTxTable</td>
+<td>The fully qualified name of the table to capture events from, in the format of <code>&lt;database&gt;.&lt;schema&gt;.&lt;table&gt;</code></td>
+<td>finance_db.dbo.transactions</td>
+</tr>
+<tr>
+<td>gmailRefreshToken</td>
+<td>A long-lived token for the Google Cloud Platform application that authenticates the user</td>
+<td></td>
+</tr>
+<tr>
+<td>gmailClientId</td>
+<td>A public identifier for the Google Cloud Platform application</td>
+<td></td>
+</tr>
+<tr>
+<td>gmailClientSecret</td>
+<td>A private secret for the Google Cloud Platform application</td>
+<td></td>
+</tr>
+<tr>
+<td>mailRecipient</td>
+<td>The recipient of the fraud alert email, the security email group, or the email of the security engineer.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/configurable-variables.png">
+<img src="https://wso2.github.io/docs-bi/assets/img/integration-guides/event-integration/cdc/configurable-variables.png" alt="Configurable Variables" width="70%"></a></p>
+<p>You have now successfully created the Fraud Detection System. Click the ▶️ <strong>Run</strong> button to run the integration.</p>
+<h2 id="testing-the-integration">Testing the Integration<a class="headerlink" href="#testing-the-integration" title="Permanent link">&para;</a></h2>
+<p>Once your integration is running, you can test it by inserting transactions into the SQL Server database. The following test cases demonstrate how the fraud detection system responds to different scenarios.</p>
+<h3 id="test-prerequisites">Test Prerequisites<a class="headerlink" href="#test-prerequisites" title="Permanent link">&para;</a></h3>
+<p>Before running the tests, ensure:</p>
+<ul>
+<li>Your Fraud Detection integration is running in VS Code</li>
+<li>SQL Server is running with CDC enabled on the <code>finance_db.transactions</code> table</li>
+<li>Gmail credentials are properly configured</li>
+<li>You have access to the recipient's email inbox to verify fraud alerts</li>
+</ul>
+<h3 id="test-scenario-1-normal-transaction-no-alert-expected">Test Scenario 1: Normal Transaction (No Alert Expected)<a class="headerlink" href="#test-scenario-1-normal-transaction-no-alert-expected" title="Permanent link">&para;</a></h3>
+<p>This test inserts a legitimate transaction with an amount below the fraud threshold. No email alert should be sent.</p>
+<div class="highlight"><pre><span></span><code><span class="n">USE</span><span class="w"> </span><span class="n">finance_db</span><span class="p">;</span>
+<span class="k">GO</span>
+
+<span class="c1">-- Insert a normal transaction (amount &lt;= 10000.00)</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">dbo</span><span class="p">.</span><span class="n">transactions</span><span class="w"> </span><span class="p">(</span><span class="n">tx_id</span><span class="p">,</span><span class="w"> </span><span class="n">user_id</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="p">,</span><span class="w"> </span><span class="n">created_at</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;TX001&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;USER001&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">5000</span><span class="p">.</span><span class="mi">00</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;completed&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1704067200</span><span class="p">);</span>
+<span class="k">GO</span>
+
+<span class="c1">-- Verify the transaction was inserted</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dbo</span><span class="p">.</span><span class="n">transactions</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">tx_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;TX001&#39;</span><span class="p">;</span>
+<span class="k">GO</span>
+</code></pre></div>
+
+<p><strong>Expected Result:</strong></p>
+<ul>
+<li>The transaction appears in the database</li>
+<li>No fraud alert email is sent</li>
+<li>Integration logs show: "Create transaction event received. Transaction Id: TX001"</li>
+</ul>
+<h3 id="test-scenario-2-fraudulent-transaction-alert-expected">Test Scenario 2: Fraudulent Transaction (Alert Expected)<a class="headerlink" href="#test-scenario-2-fraudulent-transaction-alert-expected" title="Permanent link">&para;</a></h3>
+<p>This test inserts a transaction exceeding the fraud threshold of $10,000.00. An email alert should be sent.</p>
+<div class="highlight"><pre><span></span><code><span class="n">USE</span><span class="w"> </span><span class="n">finance_db</span><span class="p">;</span>
+<span class="k">GO</span>
+
+<span class="c1">-- Insert a fraudulent transaction (amount &gt; 10000.00)</span>
+<span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">dbo</span><span class="p">.</span><span class="n">transactions</span><span class="w"> </span><span class="p">(</span><span class="n">tx_id</span><span class="p">,</span><span class="w"> </span><span class="n">user_id</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="n">status</span><span class="p">,</span><span class="w"> </span><span class="n">created_at</span><span class="p">)</span>
+<span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;TX002&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;USER002&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">15000</span><span class="p">.</span><span class="mi">00</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;pending&#39;</span><span class="p">,</span><span class="w"> </span><span class="mi">1704070800</span><span class="p">);</span>
+<span class="k">GO</span>
+
+<span class="c1">-- Verify the transaction was inserted</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">dbo</span><span class="p">.</span><span class="n">transactions</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">tx_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;TX002&#39;</span><span class="p">;</span>
+<span class="k">GO</span>
+</code></pre></div>
+
+<p><strong>Expected Result:</strong></p>
+<ul>
+<li>The transaction appears in the database</li>
+<li>A fraud alert email is sent to the configured recipient</li>
+<li>Email subject: "Fraud Alert: Suspicious Transaction Detected"</li>
+<li>Email body contains: "Fraud detected in transaction" with full transaction details</li>
+<li>Integration logs show: "Email sent. Message ID: [message_id]"</li>
+</ul>
+<h3 id="troubleshooting-test-issues">Troubleshooting Test Issues<a class="headerlink" href="#troubleshooting-test-issues" title="Permanent link">&para;</a></h3>
+<p>If you don't receive fraud alert emails or see expected behavior:</p>
+<p><strong>1. Check Integration Logs in VS Code:</strong>
+   - Look for "Create transaction event received" messages
+   - Verify fraud detection logic is executing for amounts &gt; $10,000
+   - Check for any error messages related to the Gmail API</p>
+<p><strong>2. Verify CDC is Capturing Changes:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">cdc</span><span class="p">.</span><span class="n">dbo_transactions_CT</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">__$start_lsn</span><span class="w"> </span><span class="k">DESC</span><span class="p">;</span>
+</code></pre></div>
+
+<p>You should see records with <code>__$operation = 2</code> (INSERT)</p>
+<p><strong>3. Confirm SQL Server Agent is running</strong> with the following SQL command. Must return 'Running.'</p>
+<div class="highlight"><pre><span></span><code><span class="k">EXEC</span><span class="w"> </span><span class="n">master</span><span class="p">.</span><span class="n">dbo</span><span class="p">.</span><span class="n">xp_servicecontrol</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;QueryState&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;SQLServerAGENT&#39;</span><span class="p">;</span>
+</code></pre></div>
+
+<p><strong>4. Check Email Configuration:</strong>
+   - Verify all Gmail configurable variables are set correctly
+   - Ensure the test user's email is added in Google Cloud Console
+   - Check spam/junk folder for fraud alert emails</p>
+<p><strong>5. Wait for CDC Processing:</strong></p>
+<p>CDC may take a few seconds to process changes. Wait 5-10 seconds after inserting transactions before checking for emails.</p>
+<hr />
+<p>You can find the fully completed integration <a href="https://github.com/wso2/integration-samples/tree/main/ballerina-integrator/frauddetectionsystem">here</a>.</p>
+
+
+
+
+
+                
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5CR98L58" height="0" width="0"
+                  style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+      
+        <footer class="md-footer">
+  
+  
+  <nav class="md-footer__inner md-grid" aria-label="Footer" >
+    
+    
+    <a href="../../../file-integration/file-integration-with-directory-service/" class="md-footer__link md-footer__link--prev" aria-label="Previous: File Integration With Directory Service" rel="prev">
+      <div class="md-footer__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </div>
+      <div class="md-footer__title">
+        <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Previous
+                </span>
+          File Integration With Directory Service
+        </div>
+      </div>
+    </a>
+    
+    
+    
+    <a href="../../../usecases/integration-service-as-a-managed-api/expose-an-integration-service-as-a-managed-api/" class="md-footer__link md-footer__link--next" aria-label="Next: Expose an Integration Service as a Managed API" rel="next">
+      <div class="md-footer__title">
+        <div class="md-ellipsis">
+                <span class="md-footer__direction">
+                  Next
+                </span>
+          Expose an Integration Service as a Managed API
+        </div>
+      </div>
+      <div class="md-footer__button md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+      </div>
+    </a>
+    
+  </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  <div class="footer-copyright-left">
+  
+    <div class="md-copyright__highlight">
+      WSO2 Integrator: BI - Documentation
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+  </div>
+  <div class="footer-copyright-right">
+    <div class="footer-copyright-top">
+      Copyright &copy; <a href="https://wso2.com/">WSO2</a> LLC (2025)
+    </div>
+    <div class="footer-copyright-bottom">
+      Content licensed under <a href="https://creativecommons.org/licenses/by/4.0">CC By 4.0.</a> | Sample code
+      licensed under <a href="http://www.apache.org/licenses/">Apache 2.0</a>.
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.copy", "content.action.edit", "content.action.view", "navigation.path", "navigation.top"], "search": "../../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+      
+        <script src="../../../../assets/lib/highlightjs/highlight.min.js"></script>
+      
+        <script src="../../../../assets/lib/json-formatter/json-formatter.umd.js"></script>
+      
+        <script src="../../../../assets/js/mitheme.js"></script>
+      
+    
+  </body>
+</html>
