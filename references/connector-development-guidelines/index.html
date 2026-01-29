@@ -3195,24 +3195,30 @@
 <h2 id="naming-conventions">Naming conventions<a class="headerlink" href="#naming-conventions" title="Permanent link">&para;</a></h2>
 <h3 id="package-names">Package names<a class="headerlink" href="#package-names" title="Permanent link">&para;</a></h3>
 <p>Package names should use lowercase letters and be descriptive of the service or API being integrated. The name should clearly indicate the external system the connector interacts with.</p>
-<p><strong>Examples:</strong>
-- <code>ballerinax/salesforce</code>
-- <code>ballerinax/stripe</code>
-- <code>ballerinax/mongodb</code></p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li><code>ballerinax/salesforce</code></li>
+<li><code>ballerinax/stripe</code></li>
+<li><code>ballerinax/mongodb</code></li>
+</ul>
 <h3 id="submodules">Submodules<a class="headerlink" href="#submodules" title="Permanent link">&para;</a></h3>
 <p>Submodules should be named in lowercase letters and should reflect the sub-functionality they contain. Submodules should primarily organize code structure within a single connector package. Avoid defining multiple sub-clients in each submodule.</p>
 <h3 id="hierarchical-packages">Hierarchical packages<a class="headerlink" href="#hierarchical-packages" title="Permanent link">&para;</a></h3>
 <p>Hierarchical package names are recommended when you need to distinguish between multiple connectors for the same vendor or service provider. This approach is particularly useful for SaaS products with independent API versioning.</p>
-<p><strong>When to use hierarchical packages:</strong>
-- When dealing with the same vendor but different services (e.g., <code>ballerinax/azure.cosmosdb</code> vs <code>ballerinax/azure.storage</code>)
-- When a SaaS product has multiple independent APIs with separate versioning (e.g., <code>ballerinax/salesforce.bulk</code> vs <code>ballerinax/salesforce.soap</code>)</p>
-<p><strong>Examples:</strong>
-- <code>ballerinax/azure.cosmosdb</code>
-- <code>ballerinax/azure.storage</code>
-- <code>ballerinax/salesforce.bulk</code>
-- <code>ballerinax/salesforce.commons</code>
-- <code>ballerinax/openai.chat</code>
-- <code>ballerinax/googleapis.gmail</code></p>
+<p><strong>When to use hierarchical packages:</strong></p>
+<ul>
+<li>When dealing with the same vendor but different services (e.g., <code>ballerinax/azure.cosmosdb</code> vs <code>ballerinax/azure.storage</code>)</li>
+<li>When a SaaS product has multiple independent APIs with separate versioning (e.g., <code>ballerinax/salesforce.bulk</code> vs <code>ballerinax/salesforce.soap</code>)</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<ul>
+<li><code>ballerinax/azure.cosmosdb</code></li>
+<li><code>ballerinax/azure.storage</code></li>
+<li><code>ballerinax/salesforce.bulk</code></li>
+<li><code>ballerinax/salesforce.commons</code></li>
+<li><code>ballerinax/openai.chat</code></li>
+<li><code>ballerinax/googleapis.gmail</code></li>
+</ul>
 <h3 id="best-practices">Best practices<a class="headerlink" href="#best-practices" title="Permanent link">&para;</a></h3>
 <ul>
 <li><strong>Clarity and readability</strong>: Use simple nouns that clearly represent the service. Package names should be clear and descriptive, making it easy for developers to understand the purpose of each package. Names like <code>azureEventHub</code> or <code>azure_event_hub</code> are not idiomatic in Ballerina.</li>
@@ -3225,10 +3231,12 @@
 <h2 id="repository-setup">Repository setup<a class="headerlink" href="#repository-setup" title="Permanent link">&para;</a></h2>
 <p>Connectors are developed in dedicated GitHub repositories following a consistent naming pattern:</p>
 <p><strong>Repository Pattern:</strong> <code>module-[org-name]-[connector-name]</code></p>
-<p><strong>Examples:</strong>
-- <code>module-ballerinax-azure.cosmosdb</code>
-- <code>module-ballerinax-salesforce</code>
-- <code>module-ballerinax-stripe</code></p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li><code>module-ballerinax-azure.cosmosdb</code></li>
+<li><code>module-ballerinax-salesforce</code></li>
+<li><code>module-ballerinax-stripe</code></li>
+</ul>
 <p>This structure allows for independent versioning, testing, and release cycles for each connector.</p>
 <h2 id="project-structure">Project structure<a class="headerlink" href="#project-structure" title="Permanent link">&para;</a></h2>
 <p>A standard connector library includes the following components:</p>
@@ -3301,11 +3309,13 @@
 <p>For more information on developing OAS-based connectors, please refer to the <a href="https://ballerina.io/learn/create-your-first-connector-with-ballerina/">Create Your First Connector with Ballerina</a> guide. </p>
 <h3 id="handwritten-connectors">Handwritten connectors<a class="headerlink" href="#handwritten-connectors" title="Permanent link">&para;</a></h3>
 <p>Handwritten connectors are used when wrapping external SDKs or when the API does not have a suitable specification.</p>
-<p><strong>Characteristics:</strong>
-- Wrap external SDKs with Ballerina code
-- Typically require minimal implementation
-- Operations should be stateless and independent
-- Must include a <code>spec.md</code> file describing functionality</p>
+<p><strong>Characteristics:</strong></p>
+<ul>
+<li>Wrap external SDKs with Ballerina code</li>
+<li>Typically require minimal implementation</li>
+<li>Operations should be stateless and independent</li>
+<li>Must include a <code>spec.md</code> file describing functionality</li>
+</ul>
 <h3 id="specification-requirements">Specification requirements<a class="headerlink" href="#specification-requirements" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
@@ -3342,10 +3352,12 @@
 <h3 id="pure-ballerina-connectors">Pure Ballerina connectors<a class="headerlink" href="#pure-ballerina-connectors" title="Permanent link">&para;</a></h3>
 <p>Connectors written entirely in Ballerina are GraalVM-compatible only if all their dependencies are also compatible.</p>
 <h3 id="mixed-dependencies">Mixed dependencies<a class="headerlink" href="#mixed-dependencies" title="Permanent link">&para;</a></h3>
-<p>Connectors with native code or Java dependencies require:
-- Explicit GraalVM compatibility verification
-- Documentation of compatibility status
-- Testing with GraalVM native image builds</p>
+<p>Connectors with native code or Java dependencies require:</p>
+<ul>
+<li>Explicit GraalVM compatibility verification</li>
+<li>Documentation of compatibility status</li>
+<li>Testing with GraalVM native image builds</li>
+</ul>
 <h2 id="observability">Observability<a class="headerlink" href="#observability" title="Permanent link">&para;</a></h2>
 <p>Once a connector is developed, it is important to verify that it includes appropriate observability features for monitoring and tracing in production environments.</p>
 <h3 id="metrics">Metrics<a class="headerlink" href="#metrics" title="Permanent link">&para;</a></h3>
