@@ -106,17 +106,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bi.docs.wso2.com/developer-guides/create-a-project/</loc>
-         <lastmod>2026-01-29</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://bi.docs.wso2.com/developer-guides/data-mapping/</loc>
          <lastmod>2026-01-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/developer-guides/design-the-integrations/</loc>
+         <lastmod>2026-01-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bi.docs.wso2.com/developer-guides/overview/</loc>
          <lastmod>2026-01-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -207,6 +207,16 @@
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/developer-guides/tools/other-tools/scan-tool/</loc>
+         <lastmod>2026-01-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bi.docs.wso2.com/developer-guides/workspace-management/create-an-integration/</loc>
+         <lastmod>2026-01-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bi.docs.wso2.com/developer-guides/workspace-management/manage-integrations-in-workspaces/</loc>
          <lastmod>2026-01-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
