@@ -34,4 +34,4 @@ Use the Data Mapper when you need to:
 
 - [Data Mapping Quick Start](../../../developer-guides/data-mapping.md)
 - [Design the Integrations](../../../developer-guides/design-the-integrations.md)
-- [Create a Project](../../../developer-guides/create-a-project.md)
+- [Create a Project](../../../developer-guides/overview.md)
