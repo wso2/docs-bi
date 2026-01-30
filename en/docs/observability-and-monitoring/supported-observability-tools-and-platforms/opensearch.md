@@ -65,8 +65,6 @@ docker compose -f docker-compose.yml up -d
       import ballerinax/jaeger as _;
       ```
 
-
-
 * Navigate to **file explorer** view and enable observability by adding the following section to the `Ballerina.toml`.
 
       ```toml

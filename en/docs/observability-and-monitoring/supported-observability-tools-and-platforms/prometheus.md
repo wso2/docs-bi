@@ -122,7 +122,7 @@ $ curl -X GET http://localhost:8090/shop/order/0
 
 ## Step 7 - View metrics on the Prometheus server
 
-Go to <http://localhost:19090/> and check whether you can see the Prometheus graph.
+Go to <http://localhost:9090/> and check whether you can see the Prometheus graph.
 BI metrics should appear in the Prometheus graph's metrics list when the BI service is started.
 
 <a href="{{base_path}}/assets/img/observability/supported-tools/ballerina-metrics-listed-in-prometheus.png"><img src="{{base_path}}/assets/img/observability/supported-tools/ballerina-metrics-listed-in-prometheus.png" alt="BI metrics listed in Prometheus" width="70%"></a>

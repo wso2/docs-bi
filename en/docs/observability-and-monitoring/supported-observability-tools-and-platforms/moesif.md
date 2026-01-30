@@ -20,9 +20,9 @@ After you log into Moesif Portal, get your `Moesif Application ID` during the on
    import ballerinax/moesif as _;
    ```
 
-* Tracing and metrics can be enabled in your BI project using configurations similar to the following.  Navigate to **file explorer** and add the following to the `Config.toml` file.
+* Navigate to **file explorer** view and enable observability by adding the following section to the `Ballerina.toml`.
 
-   ```
+   ```toml
    [build-options]
    observabilityIncluded=true
    ```
