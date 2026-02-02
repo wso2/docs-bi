@@ -2365,29 +2365,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-configure-runtime-configurations-for-observability" class="md-nav__link">
-    Step 3 - Configure runtime configurations for observability
+  <a href="#step-3-enable-observability-for-the-project" class="md-nav__link">
+    Step 3 - Enable observability for the project
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-run-the-bi-service" class="md-nav__link">
-    Step 4 - Run the BI service
+  <a href="#step-4-configure-runtime-configurations-for-observability" class="md-nav__link">
+    Step 4 - Configure runtime configurations for observability
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-send-requests" class="md-nav__link">
-    Step 5 - Send requests
+  <a href="#step-5-run-the-bi-service" class="md-nav__link">
+    Step 5 - Run the BI service
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-6-view-distributed-tracing-on-the-zipkin-server" class="md-nav__link">
-    Step 6 - View distributed tracing on the Zipkin server
+  <a href="#step-6-send-requests" class="md-nav__link">
+    Step 6 - Send requests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-view-distributed-tracing-on-the-zipkin-server" class="md-nav__link">
+    Step 7 - View distributed tracing on the Zipkin server
   </a>
   
 </li>
@@ -2665,29 +2672,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-configure-runtime-configurations-for-observability" class="md-nav__link">
-    Step 3 - Configure runtime configurations for observability
+  <a href="#step-3-enable-observability-for-the-project" class="md-nav__link">
+    Step 3 - Enable observability for the project
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-run-the-bi-service" class="md-nav__link">
-    Step 4 - Run the BI service
+  <a href="#step-4-configure-runtime-configurations-for-observability" class="md-nav__link">
+    Step 4 - Configure runtime configurations for observability
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-send-requests" class="md-nav__link">
-    Step 5 - Send requests
+  <a href="#step-5-run-the-bi-service" class="md-nav__link">
+    Step 5 - Run the BI service
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-6-view-distributed-tracing-on-the-zipkin-server" class="md-nav__link">
-    Step 6 - View distributed tracing on the Zipkin server
+  <a href="#step-6-send-requests" class="md-nav__link">
+    Step 6 - Send requests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-view-distributed-tracing-on-the-zipkin-server" class="md-nav__link">
+    Step 7 - View distributed tracing on the Zipkin server
   </a>
   
 </li>
@@ -2740,7 +2754,13 @@
 </code></pre></div>
 
 <p>Zipkin extension has a <code>Zipkin Span Exporter</code> which will push tracing data as batches to the Zipkin server endpoint (default - http://localhost:9411) in Zipkin format.</p>
-<h2 id="step-3-configure-runtime-configurations-for-observability">Step 3 - Configure runtime configurations for observability<a class="headerlink" href="#step-3-configure-runtime-configurations-for-observability" title="Permanent link">&para;</a></h2>
+<h2 id="step-3-enable-observability-for-the-project">Step 3 - Enable observability for the project<a class="headerlink" href="#step-3-enable-observability-for-the-project" title="Permanent link">&para;</a></h2>
+<p>Observability can be enabled in a BI project by adding the following section to the <code>Ballerina.toml</code> file by navigating to the <strong>file explorer</strong> view.</p>
+<div class="highlight"><pre><span></span><code><span class="k">[build-options]</span>
+<span class="n">observabilityIncluded</span><span class="o">=</span><span class="kc">true</span>
+</code></pre></div>
+
+<h2 id="step-4-configure-runtime-configurations-for-observability">Step 4 - Configure runtime configurations for observability<a class="headerlink" href="#step-4-configure-runtime-configurations-for-observability" title="Permanent link">&para;</a></h2>
 <p>Tracing can be enabled in your BI project using configurations similar to the following in your <code>Config.toml</code> file.</p>
 <div class="highlight"><pre><span></span><code><span class="k">[ballerina.observe]</span>
 <span class="n">tracingEnabled</span><span class="o">=</span><span class="kc">true</span>
@@ -2804,7 +2824,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="step-4-run-the-bi-service">Step 4 - Run the BI service<a class="headerlink" href="#step-4-run-the-bi-service" title="Permanent link">&para;</a></h2>
+<h2 id="step-5-run-the-bi-service">Step 5 - Run the BI service<a class="headerlink" href="#step-5-run-the-bi-service" title="Permanent link">&para;</a></h2>
 <p>When BI observability is enabled, the BI runtime collects tracing data and traces will be published to Zipkin.</p>
 <p>Run the the BI service. </p>
 <div class="highlight"><pre><span></span><code>Compiling source
@@ -2814,7 +2834,7 @@ Running executable
 ballerina: started publishing traces to Zipkin on http://localhost:9411
 </code></pre></div>
 
-<h2 id="step-5-send-requests">Step 5 - Send requests<a class="headerlink" href="#step-5-send-requests" title="Permanent link">&para;</a></h2>
+<h2 id="step-6-send-requests">Step 6 - Send requests<a class="headerlink" href="#step-6-send-requests" title="Permanent link">&para;</a></h2>
 <p>Send requests to <a href="http://localhost:8090/shop/products">http://localhost:8090/shop/products</a>.</p>
 <p>Example cURL commands:</p>
 <p><div class="highlight"><pre><span></span><code>$ curl -X GET http://localhost:8090/shop/products
@@ -2836,7 +2856,7 @@ ballerina: started publishing traces to Zipkin on http://localhost:9411
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>$ curl -X GET http://localhost:8090/shop/order/0
 </code></pre></div></p>
-<h2 id="step-6-view-distributed-tracing-on-the-zipkin-server">Step 6 - View distributed tracing on the Zipkin server<a class="headerlink" href="#step-6-view-distributed-tracing-on-the-zipkin-server" title="Permanent link">&para;</a></h2>
+<h2 id="step-7-view-distributed-tracing-on-the-zipkin-server">Step 7 - View distributed tracing on the Zipkin server<a class="headerlink" href="#step-7-view-distributed-tracing-on-the-zipkin-server" title="Permanent link">&para;</a></h2>
 <p>Go to <a href="http://localhost:9411">http://localhost:9411</a> and load the web UI of Zipkin to make sure it is functioning properly. You can select the service for which you need tracing information find traces.</p>
 <p>The image below is the sample tracing information you can see in Zipkin.</p>
 <p><a href="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/zipkin-tracing-dashboard.png"><img src="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/zipkin-tracing-dashboard.png" alt="BI metrics listed in Prometheus" width="70%"></a></p>

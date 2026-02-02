@@ -2809,6 +2809,13 @@ import ballerinax/jaeger as _;
 
 </li>
 <li>
+<p>Navigate to <strong>file explorer</strong> view and enable observability by adding the following section to the <code>Ballerina.toml</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">[build-options]</span>
+<span class="n">observabilityIncluded</span><span class="o">=</span><span class="kc">true</span>
+</code></pre></div>
+
+</li>
+<li>
 <p>Navigate to <strong>file explorer</strong> view and create the <code>Config.toml</code> file in the package directory to set the runtime configurations as follows.</p>
 <div class="highlight"><pre><span></span><code><span class="k">[ballerina.observe]</span>
 <span class="n">metricsLogsEnabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>

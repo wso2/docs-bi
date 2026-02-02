@@ -2337,29 +2337,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-configure-runtime-configurations-for-observability" class="md-nav__link">
-    Step 3 - Configure runtime configurations for observability
+  <a href="#step-3-enable-observability-for-the-project" class="md-nav__link">
+    Step 3 - Enable observability for the project
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-run-the-bi-service" class="md-nav__link">
-    Step 4 - Run the BI service
+  <a href="#step-4-configure-runtime-configurations-for-observability" class="md-nav__link">
+    Step 4 - Configure runtime configurations for observability
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-send-requests" class="md-nav__link">
-    Step 5 - Send requests
+  <a href="#step-5-run-the-bi-service" class="md-nav__link">
+    Step 5 - Run the BI service
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-6-view-metrics-on-the-prometheus-server" class="md-nav__link">
-    Step 6 - View metrics on the Prometheus server
+  <a href="#step-6-send-requests" class="md-nav__link">
+    Step 6 - Send requests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-view-metrics-on-the-prometheus-server" class="md-nav__link">
+    Step 7 - View metrics on the Prometheus server
   </a>
   
 </li>
@@ -2672,29 +2679,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-configure-runtime-configurations-for-observability" class="md-nav__link">
-    Step 3 - Configure runtime configurations for observability
+  <a href="#step-3-enable-observability-for-the-project" class="md-nav__link">
+    Step 3 - Enable observability for the project
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-run-the-bi-service" class="md-nav__link">
-    Step 4 - Run the BI service
+  <a href="#step-4-configure-runtime-configurations-for-observability" class="md-nav__link">
+    Step 4 - Configure runtime configurations for observability
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-send-requests" class="md-nav__link">
-    Step 5 - Send requests
+  <a href="#step-5-run-the-bi-service" class="md-nav__link">
+    Step 5 - Run the BI service
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-6-view-metrics-on-the-prometheus-server" class="md-nav__link">
-    Step 6 - View metrics on the Prometheus server
+  <a href="#step-6-send-requests" class="md-nav__link">
+    Step 6 - Send requests
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-view-metrics-on-the-prometheus-server" class="md-nav__link">
+    Step 7 - View metrics on the Prometheus server
   </a>
   
 </li>
@@ -2781,7 +2795,13 @@ add the target as <code>host.docker.internal:9797</code> to access the localhost
 </code></pre></div>
 
 <p>To support Prometheus as the metrics reporter, an HTTP endpoint starts with the context of <code>/metrics</code> in the default port <code>9797</code> when starting the service in BI.</p>
-<h2 id="step-3-configure-runtime-configurations-for-observability">Step 3 - Configure runtime configurations for observability<a class="headerlink" href="#step-3-configure-runtime-configurations-for-observability" title="Permanent link">&para;</a></h2>
+<h2 id="step-3-enable-observability-for-the-project">Step 3 - Enable observability for the project<a class="headerlink" href="#step-3-enable-observability-for-the-project" title="Permanent link">&para;</a></h2>
+<p>Observability can be enabled in a BI project by adding the following section to the <code>Ballerina.toml</code> file by navigating to the <strong>file explorer</strong> view.</p>
+<div class="highlight"><pre><span></span><code><span class="k">[build-options]</span>
+<span class="n">observabilityIncluded</span><span class="o">=</span><span class="kc">true</span>
+</code></pre></div>
+
+<h2 id="step-4-configure-runtime-configurations-for-observability">Step 4 - Configure runtime configurations for observability<a class="headerlink" href="#step-4-configure-runtime-configurations-for-observability" title="Permanent link">&para;</a></h2>
 <p>You can set up Prometheus for your BI project using configurations similar to the following in the <code>Config.toml</code> file. Navigate to <strong>file explorer</strong> and add the following to the <code>Config.toml</code> file.</p>
 <div class="highlight"><pre><span></span><code><span class="k">[ballerina.observe]</span>
 <span class="n">metricsEnabled</span><span class="o">=</span><span class="kc">true</span>
@@ -2806,7 +2826,7 @@ add the target as <code>host.docker.internal:9797</code> to access the localhost
 <td><code>ballerinax.prometheus.port</code></td>
 <td>The value of the port to which the '/metrics' service will bind. This service will be used by Prometheus to scrape the information of the BI service.</td>
 <td><code>9797</code></td>
-<td>Any suitable value for port 0 - 0 - 65535. However, within that range, ports <code>0</code> - <code>1023</code> are generally reserved for specific purposes. Therefore, it is advisable to select a port outside that range.</td>
+<td>Any suitable value for port 0 - 65535. However, within that range, ports <code>0</code> - <code>1023</code> are generally reserved for specific purposes. Therefore, it is advisable to select a port outside that range.</td>
 </tr>
 <tr>
 <td><code>ballerinax.prometheus.host</code></td>
@@ -2816,7 +2836,7 @@ add the target as <code>host.docker.internal:9797</code> to access the localhost
 </tr>
 </tbody>
 </table>
-<h2 id="step-4-run-the-bi-service">Step 4 - Run the BI service<a class="headerlink" href="#step-4-run-the-bi-service" title="Permanent link">&para;</a></h2>
+<h2 id="step-5-run-the-bi-service">Step 5 - Run the BI service<a class="headerlink" href="#step-5-run-the-bi-service" title="Permanent link">&para;</a></h2>
 <p>When observability is enabled, the BI runtime exposes internal metrics via an HTTP endpoint (<code>/metrics</code>) for metrics monitoring, and the metrics will be published to Prometheus. Prometheus should be configured to scrape metrics from the metrics HTTP endpoint in BI.</p>
 <p>Start the BI service and you'll notice an output similar to the following.</p>
 <div class="highlight"><pre><span></span><code>Compiling source
@@ -2826,7 +2846,7 @@ Running executable
 ballerina: started Prometheus HTTP listener 0.0.0.0:9797
 </code></pre></div>
 
-<h2 id="step-5-send-requests">Step 5 - Send requests<a class="headerlink" href="#step-5-send-requests" title="Permanent link">&para;</a></h2>
+<h2 id="step-6-send-requests">Step 6 - Send requests<a class="headerlink" href="#step-6-send-requests" title="Permanent link">&para;</a></h2>
 <p>Send requests to <code>http://localhost:8090/shop/products</code>.</p>
 <p>Example cURL commands:</p>
 <p><div class="highlight"><pre><span></span><code>$ curl -X GET http://localhost:8090/shop/products
@@ -2848,8 +2868,8 @@ ballerina: started Prometheus HTTP listener 0.0.0.0:9797
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>$ curl -X GET http://localhost:8090/shop/order/0
 </code></pre></div></p>
-<h2 id="step-6-view-metrics-on-the-prometheus-server">Step 6 - View metrics on the Prometheus server<a class="headerlink" href="#step-6-view-metrics-on-the-prometheus-server" title="Permanent link">&para;</a></h2>
-<p>Go to <a href="http://localhost:19090/">http://localhost:19090/</a> and check whether you can see the Prometheus graph.
+<h2 id="step-7-view-metrics-on-the-prometheus-server">Step 7 - View metrics on the Prometheus server<a class="headerlink" href="#step-7-view-metrics-on-the-prometheus-server" title="Permanent link">&para;</a></h2>
+<p>Go to <a href="http://localhost:9090/">http://localhost:9090/</a> and check whether you can see the Prometheus graph.
 BI metrics should appear in the Prometheus graph's metrics list when the BI service is started.</p>
 <p><a href="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/ballerina-metrics-listed-in-prometheus.png"><img src="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/ballerina-metrics-listed-in-prometheus.png" alt="BI metrics listed in Prometheus" width="70%"></a></p>
 <p><a href="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/ballerina-metrics-in-graph.png"><img src="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/ballerina-metrics-in-graph.png" alt="BI metric in graph format" width="70%"></a></p>

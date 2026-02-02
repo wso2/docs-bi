@@ -2379,36 +2379,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-configure-runtime-configurations-for-observability" class="md-nav__link">
-    Step 3 - Configure runtime configurations for observability
+  <a href="#step-3-enable-observability-for-the-project" class="md-nav__link">
+    Step 3 - Enable observability for the project
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-run-the-bi-service" class="md-nav__link">
-    Step 4 - Run the BI service
+  <a href="#step-4-configure-runtime-configurations-for-observability" class="md-nav__link">
+    Step 4 - Configure runtime configurations for observability
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-send-requests" class="md-nav__link">
-    Step 5 - Send requests
+  <a href="#step-5-run-the-bi-service" class="md-nav__link">
+    Step 5 - Run the BI service
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-6-view-metrics-on-the-new-relic-platform" class="md-nav__link">
-    Step 6 - View metrics on the New Relic platform
+  <a href="#step-6-send-requests" class="md-nav__link">
+    Step 6 - Send requests
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-7-view-tracing-on-the-new-relic-platform" class="md-nav__link">
-    Step 7 - View tracing on the New Relic platform
+  <a href="#step-7-view-metrics-on-the-new-relic-platform" class="md-nav__link">
+    Step 7 - View metrics on the New Relic platform
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-8-view-tracing-on-the-new-relic-platform" class="md-nav__link">
+    Step 8 - View tracing on the New Relic platform
   </a>
   
 </li>
@@ -2672,36 +2679,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-3-configure-runtime-configurations-for-observability" class="md-nav__link">
-    Step 3 - Configure runtime configurations for observability
+  <a href="#step-3-enable-observability-for-the-project" class="md-nav__link">
+    Step 3 - Enable observability for the project
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-run-the-bi-service" class="md-nav__link">
-    Step 4 - Run the BI service
+  <a href="#step-4-configure-runtime-configurations-for-observability" class="md-nav__link">
+    Step 4 - Configure runtime configurations for observability
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-send-requests" class="md-nav__link">
-    Step 5 - Send requests
+  <a href="#step-5-run-the-bi-service" class="md-nav__link">
+    Step 5 - Run the BI service
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-6-view-metrics-on-the-new-relic-platform" class="md-nav__link">
-    Step 6 - View metrics on the New Relic platform
+  <a href="#step-6-send-requests" class="md-nav__link">
+    Step 6 - Send requests
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-7-view-tracing-on-the-new-relic-platform" class="md-nav__link">
-    Step 7 - View tracing on the New Relic platform
+  <a href="#step-7-view-metrics-on-the-new-relic-platform" class="md-nav__link">
+    Step 7 - View metrics on the New Relic platform
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-8-view-tracing-on-the-new-relic-platform" class="md-nav__link">
+    Step 8 - View tracing on the New Relic platform
   </a>
   
 </li>
@@ -2753,7 +2767,13 @@
 
 <p>New Relic extension has an <code>Opentelemetry GRPC Span Exporter</code> which will push tracing data as batches to the New Relic server endpoint (https://otlp.nr-data.net:4317) in opentelemetry format.</p>
 <p>New Relic extension pushes metrics in New Relic metric format to the New Relic server endpoint (https://metric-api.newrelic.com/metric/v1).</p>
-<h2 id="step-3-configure-runtime-configurations-for-observability">Step 3 - Configure runtime configurations for observability<a class="headerlink" href="#step-3-configure-runtime-configurations-for-observability" title="Permanent link">&para;</a></h2>
+<h2 id="step-3-enable-observability-for-the-project">Step 3 - Enable observability for the project<a class="headerlink" href="#step-3-enable-observability-for-the-project" title="Permanent link">&para;</a></h2>
+<p>Observability can be enabled in a BI project by adding the following section to the <code>Ballerina.toml</code> file by navigating to the <strong>file explorer</strong> view.</p>
+<div class="highlight"><pre><span></span><code><span class="k">[build-options]</span>
+<span class="n">observabilityIncluded</span><span class="o">=</span><span class="kc">true</span>
+</code></pre></div>
+
+<h2 id="step-4-configure-runtime-configurations-for-observability">Step 4 - Configure runtime configurations for observability<a class="headerlink" href="#step-4-configure-runtime-configurations-for-observability" title="Permanent link">&para;</a></h2>
 <p>Tracing and metrics can be enabled in your BI project using configurations similar to the following. Navigate to <strong>file explorer</strong> and add the following to <code>Config.toml</code> file.</p>
 <div class="highlight"><pre><span></span><code><span class="k">[ballerina.observe]</span>
 <span class="n">tracingEnabled</span><span class="o">=</span><span class="kc">true</span>
@@ -2826,7 +2846,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="step-4-run-the-bi-service">Step 4 - Run the BI service<a class="headerlink" href="#step-4-run-the-bi-service" title="Permanent link">&para;</a></h2>
+<h2 id="step-5-run-the-bi-service">Step 5 - Run the BI service<a class="headerlink" href="#step-5-run-the-bi-service" title="Permanent link">&para;</a></h2>
 <p>When observability is enabled, the BI runtime collects tracing and metrics data and both metrics and traces will be published to New Relic.</p>
 <p>Start the service.</p>
 <div class="highlight"><pre><span></span><code>Compiling source
@@ -2837,7 +2857,7 @@ ballerina: started publishing traces to New Relic on https://otlp.nr-data.net:43
 ballerina: started publishing metrics to New Relic on https://metric-api.newrelic.com/metric/v1
 </code></pre></div>
 
-<h2 id="step-5-send-requests">Step 5 - Send requests<a class="headerlink" href="#step-5-send-requests" title="Permanent link">&para;</a></h2>
+<h2 id="step-6-send-requests">Step 6 - Send requests<a class="headerlink" href="#step-6-send-requests" title="Permanent link">&para;</a></h2>
 <p>Send requests to <a href="http://localhost:8090/shop/products">http://localhost:8090/shop/products</a>.</p>
 <p>Example cURL commands:</p>
 <p><div class="highlight"><pre><span></span><code>$ curl -X GET http://localhost:8090/shop/products
@@ -2859,11 +2879,11 @@ ballerina: started publishing metrics to New Relic on https://metric-api.newreli
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>$ curl -X GET http://localhost:8090/shop/order/0
 </code></pre></div></p>
-<h2 id="step-6-view-metrics-on-the-new-relic-platform">Step 6 - View metrics on the New Relic platform<a class="headerlink" href="#step-6-view-metrics-on-the-new-relic-platform" title="Permanent link">&para;</a></h2>
+<h2 id="step-7-view-metrics-on-the-new-relic-platform">Step 7 - View metrics on the New Relic platform<a class="headerlink" href="#step-7-view-metrics-on-the-new-relic-platform" title="Permanent link">&para;</a></h2>
 <p>You can view the metrics that were published to the New Relic platform in the New Relic query builder. You can view the metrics query data in graphical format, as shown below.</p>
 <p><a href="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/newrelic-metric-query-builder.png"><img src="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/newrelic-metric-query-builder.png" alt="New Relic metric Query Builder" width="70%"></a></p>
 <p>You can create a dashboard from the metrics provided by BI in the New Relic platform.</p>
-<h2 id="step-7-view-tracing-on-the-new-relic-platform">Step 7 - View tracing on the New Relic platform<a class="headerlink" href="#step-7-view-tracing-on-the-new-relic-platform" title="Permanent link">&para;</a></h2>
+<h2 id="step-8-view-tracing-on-the-new-relic-platform">Step 8 - View tracing on the New Relic platform<a class="headerlink" href="#step-8-view-tracing-on-the-new-relic-platform" title="Permanent link">&para;</a></h2>
 <p>You can view the traces that were published to the New Relic platform in New Relic traces. </p>
 <p><a href="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/newrelic-tracing.png"><img src="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/newrelic-tracing.png" alt="Ballerina traces on New Relic" width="70%"></a></p>
 <p><a href="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/newrelic-span-tags.png"><img src="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/newrelic-span-tags.png" alt="Span tags on New Relic" width="70%"></a></p>

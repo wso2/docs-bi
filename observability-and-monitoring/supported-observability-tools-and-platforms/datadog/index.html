@@ -2400,36 +2400,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-configure-bi-runtime-configurations" class="md-nav__link">
-    Step 4 - Configure BI runtime configurations
+  <a href="#step-4-enable-observability-for-the-project" class="md-nav__link">
+    Step 4 - Enable observability for the project
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-run-the-service" class="md-nav__link">
-    Step 5 - Run the service
+  <a href="#step-5-configure-bi-runtime-configurations" class="md-nav__link">
+    Step 5 - Configure BI runtime configurations
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-6-send-requests" class="md-nav__link">
-    Step 6 - Send requests
+  <a href="#step-6-run-the-service" class="md-nav__link">
+    Step 6 - Run the service
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-7-view-metrics-on-datadog" class="md-nav__link">
-    Step 7 - View metrics on Datadog
+  <a href="#step-7-send-requests" class="md-nav__link">
+    Step 7 - Send requests
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-8-view-tracing-on-datadog" class="md-nav__link">
-    Step 8 - View tracing on Datadog
+  <a href="#step-8-view-metrics-on-datadog" class="md-nav__link">
+    Step 8 - View metrics on Datadog
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-9-view-tracing-on-datadog" class="md-nav__link">
+    Step 9 - View tracing on Datadog
   </a>
   
 </li>
@@ -2686,36 +2693,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-4-configure-bi-runtime-configurations" class="md-nav__link">
-    Step 4 - Configure BI runtime configurations
+  <a href="#step-4-enable-observability-for-the-project" class="md-nav__link">
+    Step 4 - Enable observability for the project
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-5-run-the-service" class="md-nav__link">
-    Step 5 - Run the service
+  <a href="#step-5-configure-bi-runtime-configurations" class="md-nav__link">
+    Step 5 - Configure BI runtime configurations
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-6-send-requests" class="md-nav__link">
-    Step 6 - Send requests
+  <a href="#step-6-run-the-service" class="md-nav__link">
+    Step 6 - Run the service
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-7-view-metrics-on-datadog" class="md-nav__link">
-    Step 7 - View metrics on Datadog
+  <a href="#step-7-send-requests" class="md-nav__link">
+    Step 7 - Send requests
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-8-view-tracing-on-datadog" class="md-nav__link">
-    Step 8 - View tracing on Datadog
+  <a href="#step-8-view-metrics-on-datadog" class="md-nav__link">
+    Step 8 - View metrics on Datadog
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-9-view-tracing-on-datadog" class="md-nav__link">
+    Step 9 - View tracing on Datadog
   </a>
   
 </li>
@@ -2834,7 +2848,13 @@ import ballerinax/jaeger as _;
 
 <p>To support Prometheus as the metrics reporter, an HTTP endpoint starts with the context of <code>/metrics</code> in default port 9797 when starting the Ballerina service.</p>
 <p>Jaeger extension has an <code>Opentelemetry GRPC Span Exporter</code> which will push tracing data as batches to the endpoint (default - http://localhost:4317) in opentelemetry format.</p>
-<h2 id="step-4-configure-bi-runtime-configurations">Step 4 - Configure BI runtime configurations<a class="headerlink" href="#step-4-configure-bi-runtime-configurations" title="Permanent link">&para;</a></h2>
+<h2 id="step-4-enable-observability-for-the-project">Step 4 - Enable observability for the project<a class="headerlink" href="#step-4-enable-observability-for-the-project" title="Permanent link">&para;</a></h2>
+<p>Observability can be enabled in a BI project by adding the following section to the <code>Ballerina.toml</code> file by navigating to the <strong>file explorer</strong> view.</p>
+<div class="highlight"><pre><span></span><code><span class="k">[build-options]</span>
+<span class="n">observabilityIncluded</span><span class="o">=</span><span class="kc">true</span>
+</code></pre></div>
+
+<h2 id="step-5-configure-bi-runtime-configurations">Step 5 - Configure BI runtime configurations<a class="headerlink" href="#step-5-configure-bi-runtime-configurations" title="Permanent link">&para;</a></h2>
 <p>Tracing and metrics can be enabled in your BI project using configurations similar to the following.  Navigate to <strong>file explorer</strong> and add the following to the <code>Config.toml</code> file.</p>
 <div class="highlight"><pre><span></span><code><span class="k">[ballerina.observe]</span>
 <span class="n">tracingEnabled</span><span class="o">=</span><span class="kc">true</span>
@@ -2916,7 +2936,7 @@ import ballerinax/jaeger as _;
 </tr>
 </tbody>
 </table>
-<h2 id="step-5-run-the-service">Step 5 - Run the service<a class="headerlink" href="#step-5-run-the-service" title="Permanent link">&para;</a></h2>
+<h2 id="step-6-run-the-service">Step 6 - Run the service<a class="headerlink" href="#step-6-run-the-service" title="Permanent link">&para;</a></h2>
 <p>When observability is enabled, the BI runtime collects tracing and metrics data and will be published to Datadog.</p>
 <p>Start the BI service using the <code>Run</code> option in the top right corner. You will see the following logs.</p>
 <div class="highlight"><pre><span></span><code>Compiling source
@@ -2927,7 +2947,7 @@ ballerina: started Prometheus HTTP listener 0.0.0.0:9797
 ballerina: started publishing traces to Jaeger on localhost:4317
 </code></pre></div>
 
-<h2 id="step-6-send-requests">Step 6 - Send requests<a class="headerlink" href="#step-6-send-requests" title="Permanent link">&para;</a></h2>
+<h2 id="step-7-send-requests">Step 7 - Send requests<a class="headerlink" href="#step-7-send-requests" title="Permanent link">&para;</a></h2>
 <p>Send requests to <a href="http://localhost:8090/shop/products">http://localhost:8090/shop/products</a>.</p>
 <p>Example cURL commands:</p>
 <p><div class="highlight"><pre><span></span><code>$ curl -X GET http://localhost:8090/shop/products
@@ -2949,7 +2969,7 @@ ballerina: started publishing traces to Jaeger on localhost:4317
 </code></pre></div>
 <div class="highlight"><pre><span></span><code>$ curl -X GET http://localhost:8090/shop/order/0
 </code></pre></div></p>
-<h2 id="step-7-view-metrics-on-datadog">Step 7 - View metrics on Datadog<a class="headerlink" href="#step-7-view-metrics-on-datadog" title="Permanent link">&para;</a></h2>
+<h2 id="step-8-view-metrics-on-datadog">Step 8 - View metrics on Datadog<a class="headerlink" href="#step-8-view-metrics-on-datadog" title="Permanent link">&para;</a></h2>
 <p>You can observe the metrics in the Datadog platform under the <code>Metrics</code> tab in the left navigation.</p>
 <p><a href="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/datadog-metrics-explorer.png"><img src="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/datadog-metrics-explorer.png " alt="Metrics Explorer in Datadog" width="70%"></a></p>
 <p>You can add filters and use functions in the Datadog to visualize what you want with the metrics provided by BI.</p>
@@ -2959,7 +2979,7 @@ ballerina: started publishing traces to Jaeger on localhost:4317
 <p>The Ballerina Dashboard in the Datadog will be displayed as below.</p>
 <p><a href="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/datadog-metrics-dashboard-1.png"><img src="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/datadog-metrics-dashboard-1.png" alt="Ballerina Dashboard in Datadog" width="70%"></a></p>
 <p><a href="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/datadog-metrics-dashboard-2.png"><img src="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/datadog-metrics-dashboard-2.png" alt="Ballerina Dashboard in Datadog" width="70%"></a></p>
-<h2 id="step-8-view-tracing-on-datadog">Step 8 - View tracing on Datadog<a class="headerlink" href="#step-8-view-tracing-on-datadog" title="Permanent link">&para;</a></h2>
+<h2 id="step-9-view-tracing-on-datadog">Step 9 - View tracing on Datadog<a class="headerlink" href="#step-9-view-tracing-on-datadog" title="Permanent link">&para;</a></h2>
 <p>To view traces of the BI application, go to <strong>APM → Traces</strong> in the Datadog.</p>
 <p><a href="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/datadog-trace-explorer.png"><img src="https://wso2.github.io/docs-bi/assets/img/observability/supported-tools/datadog-trace-explorer.png" alt="Trace Explorer in Datadog" width="70%"></a></p>
 <p>You can filter the traces with the service name, resource, operation name, span kind, etc.</p>
