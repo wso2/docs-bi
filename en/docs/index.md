@@ -16,7 +16,7 @@
         "title": "Developer Guides",
         "icon": "🛠️ ",
         "links": [
-            {"name": "Create Integrations", "url": "developer-guides/overview"},
+            {"name": "Create Integrations", "url": "developer-guides/create-integrations/overview"},
             {"name": "Design the Integrations", "url": "developer-guides/design-the-integrations/"},
             {"name": "Data Mapping", "url": "developer-guides/data-mapping/"},
             {"name": "Testing", "url": "developer-guides/test-the-integrations/"},

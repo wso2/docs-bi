@@ -16,7 +16,7 @@ When you need to build a simple, standalone integration, you can create it direc
 
 Now you will see the BI home page.
 
-<a href="{{base_path}}/assets/img/developer-guides/workspace/create-integration-hq.gif"><img src="../../../assets/img/developer-guides/workspace/create-integration-hq.gif" alt="Create Integration Without Workspace" width="80%"></a>
+<a href="{{base_path}}/assets/img/developer-guides/create-integrations/create-integration-hq.gif"><img src="../../../assets/img/developer-guides/create-integrations/create-integration-hq.gif" alt="Create Integration Without Workspace" width="80%"></a>
 
 
 ## Create an integration with workspace
@@ -35,8 +35,8 @@ Creating an integration within a workspace provides better organization and enab
 - Provide relevant workspace name
 - Provide the organization name and version (Optional):
 
-  <a href="{{base_path}}/assets/img/developer-guides/workspace/expand_workspace.png"><img src="../../../assets/img/developer-guides/workspace/expand_workspace.png" alt="Expand Workspace Details Form" width="80%"></a>
-  <a href="{{base_path}}/assets/img/developer-guides/workspace/workspace_details.png"><img src="../../../assets/img/developer-guides/workspace/workspace_details.png" alt="Expand Workspace Details Form" width="80%"></a>
+  <a href="{{base_path}}/assets/img/developer-guides/create-integrations/expand_workspace.png"><img src="../../../assets/img/developer-guides/create-integrations/expand_workspace.png" alt="Expand Workspace Details Form" width="80%"></a>
+  <a href="{{base_path}}/assets/img/developer-guides/create-integrations/workspace_details.png"><img src="../../../assets/img/developer-guides/create-integrations/workspace_details.png" alt="Expand Workspace Details Form" width="80%"></a>
 
 4\. Click **Create Integration** to initialize your integration
 
