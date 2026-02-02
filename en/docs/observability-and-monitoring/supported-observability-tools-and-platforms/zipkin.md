@@ -25,7 +25,16 @@ import ballerinax/zipkin as _;
 
 Zipkin extension has a `Zipkin Span Exporter` which will push tracing data as batches to the Zipkin server endpoint (default - http://localhost:9411) in Zipkin format.
 
-## Step 3 - Configure runtime configurations for observability
+## Step 3 - Enable observability for the project
+
+Observability can be enabled in a BI project by adding the following section to the `Ballerina.toml` file by navigating to the **file explorer** view.
+
+```toml
+[build-options]
+observabilityIncluded=true
+```
+
+## Step 4 - Configure runtime configurations for observability
 
 Tracing can be enabled in your BI project using configurations similar to the following in your `Config.toml` file.
 
@@ -54,7 +63,7 @@ ballerinax.zipkin. samplerParam | It is a floating value. Based on the sampler t
 ballerinax.zipkin. reporterFlushInterval | The Zipkin client will be sending the spans to the agent at this interval. | 2000 | Any positive integer value.
 ballerinax.zipkin. reporterBufferSize | Queue size of the Zipkin client. | 2000 | Any positive integer value.
 
-## Step 4 - Run the BI service
+## Step 5 - Run the BI service
 
 When BI observability is enabled, the BI runtime collects tracing data and traces will be published to Zipkin.
 
@@ -68,7 +77,7 @@ Running executable
 ballerina: started publishing traces to Zipkin on http://localhost:9411
 ```
 
-## Step 5 - Send requests
+## Step 6 - Send requests
  
 Send requests to <http://localhost:8090/shop/products>.
 
@@ -98,7 +107,7 @@ $ curl -X POST http://localhost:8090/shop/order \
 $ curl -X GET http://localhost:8090/shop/order/0
 ```
 
-## Step 6 - View distributed tracing on the Zipkin server
+## Step 7 - View distributed tracing on the Zipkin server
 
 Go to <http://localhost:9411> and load the web UI of Zipkin to make sure it is functioning properly. You can select the service for which you need tracing information find traces.
 

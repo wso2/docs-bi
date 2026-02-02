@@ -21,7 +21,16 @@ New Relic extension has an `Opentelemetry GRPC Span Exporter` which will push tr
 
 New Relic extension pushes metrics in New Relic metric format to the New Relic server endpoint (https://metric-api.newrelic.com/metric/v1).
 
-## Step 3 - Configure runtime configurations for observability
+## Step 3 - Enable observability for the project
+
+Observability can be enabled in a BI project by adding the following section to the `Ballerina.toml` file by navigating to the **file explorer** view.
+
+```toml
+[build-options]
+observabilityIncluded=true
+```
+
+## Step 4 - Configure runtime configurations for observability
 
 Tracing and metrics can be enabled in your BI project using configurations similar to the following. Navigate to **file explorer** and add the following to `Config.toml` file.
 
@@ -54,7 +63,7 @@ ballerinax.newrelic. tracingReporterBufferSize | Queue size of the New Relic tra
 ballerinax.newrelic. metricReporterFlushInterval | The New Relic client will be sending the metrics to the agent at this interval.               | 15000 | Any positive integer value.
 ballerinax.newrelic. metricReporterClientTimeout | Queue size of the New Relic metric client.                                                    | 10000 | Any positive integer value.
 
-## Step 4 - Run the BI service
+## Step 5 - Run the BI service
 
 When observability is enabled, the BI runtime collects tracing and metrics data and both metrics and traces will be published to New Relic.
 
@@ -70,7 +79,7 @@ ballerina: started publishing traces to New Relic on https://otlp.nr-data.net:43
 ballerina: started publishing metrics to New Relic on https://metric-api.newrelic.com/metric/v1
 ```
 
-## Step 5 - Send requests
+## Step 6 - Send requests
  
 Send requests to <http://localhost:8090/shop/products>.
 
@@ -100,7 +109,7 @@ $ curl -X POST http://localhost:8090/shop/order \
 $ curl -X GET http://localhost:8090/shop/order/0
 ```
 
-## Step 6 - View metrics on the New Relic platform
+## Step 7 - View metrics on the New Relic platform
 
 You can view the metrics that were published to the New Relic platform in the New Relic query builder. You can view the metrics query data in graphical format, as shown below.
 
@@ -108,7 +117,7 @@ You can view the metrics that were published to the New Relic platform in the Ne
 
 You can create a dashboard from the metrics provided by BI in the New Relic platform.
 
-## Step 7 - View tracing on the New Relic platform
+## Step 8 - View tracing on the New Relic platform
 
 You can view the traces that were published to the New Relic platform in New Relic traces. 
 
