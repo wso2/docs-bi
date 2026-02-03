@@ -112,9 +112,9 @@ nav:
           - Read a CSV File and Transform It to an XML File: integration-guides/usecases/datamapper/read-csv-file-and-transform-to-xml-file.md
   - Developer Guides:
       - Create Integrations:
-          Overview: developer-guides/overview.md
-          Create an Integration: developer-guides/workspace-management/create-an-integration.md
-          Manage Workspace: developer-guides/workspace-management/manage-integrations-in-workspaces.md
+          Overview: developer-guides/create-integrations/overview.md
+          Create an Integration: developer-guides/create-integrations/create-an-integration.md
+          Manage Integrations in Workspaces: developer-guides/create-integrations/manage-integrations-in-workspaces.md
       - "WSO2 Integrator: BI Artifacts": developer-guides/wso2-integrator-bi-artifacts.md
       - Design the Integrations: developer-guides/design-the-integrations.md
       - Data Mapping: developer-guides/data-mapping.md
