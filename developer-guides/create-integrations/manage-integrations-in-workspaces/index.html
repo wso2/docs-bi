@@ -12,20 +12,20 @@
         <meta name="author" content="WSO2">
       
       
-        <link rel="canonical" href="https://bi.docs.wso2.com/developer-guides/workspace-management/create-an-integration/">
+        <link rel="canonical" href="https://bi.docs.wso2.com/developer-guides/create-integrations/manage-integrations-in-workspaces/">
       
       
-        <link rel="prev" href="../../overview/">
+        <link rel="prev" href="../create-an-integration/">
       
       
-        <link rel="next" href="../manage-integrations-in-workspaces/">
+        <link rel="next" href="../../wso2-integrator-bi-artifacts/">
       
       <link rel="icon" href="../../../images/bi-logo.svg">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
     
     
       
-        <title>Create an Integration - WSO2 Integrator: BI Documentation</title>
+        <title>Manage Integrations in Workspaces - WSO2 Integrator: BI Documentation</title>
       
     
     
@@ -105,7 +105,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#create-an-integration" class="md-skip">
+        <a href="#manage-integrations-in-workspaces" class="md-skip">
           Skip to content
         </a>
       
@@ -158,7 +158,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Create an Integration
+              Manage Integrations in Workspaces
             
           </span>
         </div>
@@ -1181,8 +1181,22 @@
   
   
     <li class="md-nav__item">
-      <a href="../../overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../create-an-integration/" class="md-nav__link">
+        Create an Integration
       </a>
     </li>
   
@@ -1205,12 +1219,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Create an Integration
+          Manage Integrations in Workspaces
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Create an Integration
+        Manage Integrations in Workspaces
       </a>
       
         
@@ -1229,15 +1243,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-an-integration-without-workspace" class="md-nav__link">
-    Create an integration without workspace
+  <a href="#add-an-integration-to-an-existing-workspace" class="md-nav__link">
+    Add an integration to an existing workspace
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-an-integration-with-workspace" class="md-nav__link">
-    Create an integration with workspace
+  <a href="#add-an-integration-by-converting-a-standalone-integration-to-a-workspace" class="md-nav__link">
+    Add an integration by converting a standalone integration to a workspace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-an-integration" class="md-nav__link">
+    Delete an integration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigate-to-an-integration" class="md-nav__link">
+    Navigate to an integration
   </a>
   
 </li>
@@ -1246,20 +1274,6 @@
   
 </nav>
       
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../manage-integrations-in-workspaces/" class="md-nav__link">
-        Manage Workspace
-      </a>
     </li>
   
 
@@ -2623,15 +2637,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-an-integration-without-workspace" class="md-nav__link">
-    Create an integration without workspace
+  <a href="#add-an-integration-to-an-existing-workspace" class="md-nav__link">
+    Add an integration to an existing workspace
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#create-an-integration-with-workspace" class="md-nav__link">
-    Create an integration with workspace
+  <a href="#add-an-integration-by-converting-a-standalone-integration-to-a-workspace" class="md-nav__link">
+    Add an integration by converting a standalone integration to a workspace
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-an-integration" class="md-nav__link">
+    Delete an integration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigate-to-an-integration" class="md-nav__link">
+    Navigate to an integration
   </a>
   
 </li>
@@ -2652,7 +2680,7 @@
                   
 
   
-    <a href="https://github.com/wso2/docs-bi/edit/main/en/docs/developer-guides/workspace-management/create-an-integration.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/wso2/docs-bi/edit/main/en/docs/developer-guides/create-integrations/manage-integrations-in-workspaces.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -2661,46 +2689,46 @@
     
       
     
-    <a href="https://github.com/wso2/docs-bi/raw/main/en/docs/developer-guides/workspace-management/create-an-integration.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/wso2/docs-bi/raw/main/en/docs/developer-guides/create-integrations/manage-integrations-in-workspaces.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-<h1 id="create-an-integration">Create an Integration<a class="headerlink" href="#create-an-integration" title="Permanent link">&para;</a></h1>
-<h2 id="create-an-integration-without-workspace">Create an integration without workspace<a class="headerlink" href="#create-an-integration-without-workspace" title="Permanent link">&para;</a></h2>
-<p>When you need to build a simple, standalone integration, you can create it directly without setting up a workspace. This streamlined approach is ideal for independent services.</p>
-<p>1. Launch WSO2 Integrator: BI and navigate to the integrations view.</p>
-<p>2. Click the <strong>Create New Integration</strong> button.</p>
-<p>3. Fill in <strong>Create Your Integration</strong> details and click <strong>Create Integration</strong>.</p>
-<ul>
-<li>Provide the integration name</li>
-<li>Provide a package name </li>
-<li>Select the path </li>
-<li>Provide the organization name and version in <strong>Optional Configurations</strong> (Optional)</li>
-</ul>
-<p>Now you will see the BI home page.</p>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/workspace/create-integration-hq.gif"><img src="../../../assets/img/developer-guides/workspace/create-integration-hq.gif" alt="Create Integration Without Workspace" width="80%"></a></p>
-<h2 id="create-an-integration-with-workspace">Create an integration with workspace<a class="headerlink" href="#create-an-integration-with-workspace" title="Permanent link">&para;</a></h2>
-<p>Creating an integration within a workspace provides better organization and enables advanced features for managing multiple related integrations.</p>
-<p>1. Launch WSO2 Integrator: BI and navigate to the integrations view</p>
-<p>2. Click on the <strong>Create New Integration</strong> button, add details:</p>
+<h1 id="manage-integrations-in-workspaces">Manage Integrations in Workspaces<a class="headerlink" href="#manage-integrations-in-workspaces" title="Permanent link">&para;</a></h1>
+<h2 id="add-an-integration-to-an-existing-workspace">Add an integration to an existing workspace<a class="headerlink" href="#add-an-integration-to-an-existing-workspace" title="Permanent link">&para;</a></h2>
+<p>Once you have a workspace, you can continue adding integrations to organize your project.</p>
+<p>1. Open your workspace</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/create-integrations/open-workspace.gif"><img src="../../../assets/img/developer-guides/create-integrations/open-workspace.gif" alt="Select Workspace" width="80%"></a></p>
+<p>2. Click the <strong>+</strong> button next to the title WSO2 Integrator: BI at the top of the activity bar (left-side panel) or the <strong>+ Add Integration</strong> button on the workspace title bar.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/create-integrations/add-integration-to-workspace.png"><img src="../../../assets/img/developer-guides/create-integrations/add-integration-to-workspace.png" alt="Add Integration to Workspace" width="80%"></a></p>
+<p>3. Add details:</p>
 <ul>
 <li>Provide the integration name </li>
-<li>Provide a package name </li>
-<li>Select the path</li>
+<li>Provide a package name</li>
 </ul>
-<p>3. Expand <strong>Optional Configurations</strong> and enable  <strong>Create as workspace</strong> option</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/create-integrations/create-integration.png"><img src="../../../assets/img/developer-guides/create-integrations/create-integration.png" alt="Create Integration" width="80%"></a></p>
+<p>4. Click <strong>Add Integration</strong> to add it to your workspace, The new integration is added to your workspace and appears in the workspace navigator.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/create-integrations/add-integration.gif"><img src="../../../assets/img/developer-guides/create-integrations/add-integration.gif" alt="Add Integration" width="80%"></a></p>
+<h2 id="add-an-integration-by-converting-a-standalone-integration-to-a-workspace">Add an integration by converting a standalone integration to a workspace<a class="headerlink" href="#add-an-integration-by-converting-a-standalone-integration-to-a-workspace" title="Permanent link">&para;</a></h2>
+<p>If you started with a standalone integration and now need to add another integration by converting your integration to a workspace.</p>
+<p>1. Open the standalone integration</p>
+<p>2. Click the <strong>+</strong> button next to the title WSO2 Integrator: BI at the top of the activity bar (left-side panel)</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/create-integrations/standalone-project-add.png"><img src="../../../assets/img/developer-guides/create-integrations/standalone-project-add.png" alt="Convert Integration to Workspace" width="30%"></a></p>
+<p>3. Add details to Convert to Workspace &amp; Add Integration form:</p>
 <ul>
-<li>Provide relevant workspace name</li>
-<li>Provide the organization name and version (Optional):</li>
+<li>Provide the workspace name </li>
+<li>Provide the integration name </li>
+<li>Provide a package name</li>
 </ul>
-<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/workspace/expand_workspace.png"><img src="../../../assets/img/developer-guides/workspace/expand_workspace.png" alt="Expand Workspace Details Form" width="80%"></a>
-  <a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/workspace/workspace_details.png"><img src="../../../assets/img/developer-guides/workspace/workspace_details.png" alt="Expand Workspace Details Form" width="80%"></a></p>
-<p>4. Click <strong>Create Integration</strong> to initialize your integration</p>
-<p>Now, you can start creating your integration by developing artifacts. See the <a href="https://wso2.github.io/docs-bi/developer-guides/wso2-integrator-bi-artifacts/">WSO2 Integrator: BI Artifacts</a> to learn about the integration artifacts.</p>
-<p>Additionally, you can enhance your experience by incorporating AI-powered assistance with <a href="https://wso2.github.io/docs-bi/developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot/">BI Copilot</a>.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/create-integrations/convert-integration-to-workspace.gif"><img src="../../../assets/img/developer-guides/create-integrations/convert-integration-to-workspace.gif" alt="Add Integration to Workspace" width="80%"></a></p>
+<h2 id="delete-an-integration">Delete an integration<a class="headerlink" href="#delete-an-integration" title="Permanent link">&para;</a></h2>
+<p>Hover over an integration you want to delete on the workspace overview page, Click the <strong>Delete</strong> button.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/create-integrations/delete-integration.gif"><img src="../../../assets/img/developer-guides/create-integrations/delete-integration.gif" alt="Delete Integration from Workspace" width="80%"></a></p>
+<h2 id="navigate-to-an-integration">Navigate to an integration<a class="headerlink" href="#navigate-to-an-integration" title="Permanent link">&para;</a></h2>
+<p>To access a specific integration to manage artifacts. Click the diagram icon (Show overview) of an integration in the activity panel or click a particular integration from the workspace overview page.</p>
+<p><a href="https://wso2.github.io/docs-bi/assets/img/developer-guides/create-integrations/navigate-integration.gif"><img src="../../../assets/img/developer-guides/create-integrations/navigate-integration.gif" alt="Navigate Integration" width="80%"></a></p>
 
 
 
@@ -2732,7 +2760,7 @@
   <nav class="md-footer__inner md-grid" aria-label="Footer" >
     
     
-    <a href="../../overview/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview" rel="prev">
+    <a href="../create-an-integration/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Create an Integration" rel="prev">
       <div class="md-footer__button md-icon">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </div>
@@ -2741,20 +2769,20 @@
                 <span class="md-footer__direction">
                   Previous
                 </span>
-          Overview
+          Create an Integration
         </div>
       </div>
     </a>
     
     
     
-    <a href="../manage-integrations-in-workspaces/" class="md-footer__link md-footer__link--next" aria-label="Next: Manage Workspace" rel="next">
+    <a href="../../wso2-integrator-bi-artifacts/" class="md-footer__link md-footer__link--next" aria-label="Next: WSO2 Integrator: BI Artifacts" rel="next">
       <div class="md-footer__title">
         <div class="md-ellipsis">
                 <span class="md-footer__direction">
                   Next
                 </span>
-          Manage Workspace
+          WSO2 Integrator: BI Artifacts
         </div>
       </div>
       <div class="md-footer__button md-icon">
