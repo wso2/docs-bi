@@ -31,40 +31,39 @@ copyright: "WSO2 Integrator: BI - Documentation"
 
 # Configuration
 theme:
-  name: material
-  custom_dir: theme/material
-  logo: images/logo.svg
-  favicon: images/bi-logo.svg
-  features:
-    - content.code.copy
-    - content.action.edit
-    - content.action.view
-    - navigation.path
-    - navigation.top
-  #highlightjs: true
-  feature:
-    tabs: true
-  language: 'en'
-  palette:
-    # Palette toggle for automatic mode
-    - media: "(prefers-color-scheme)"
-      toggle:
-        icon: material/brightness-auto
-        name: Switch to dark mode
-
-    # Palette toggle for light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      toggle:
-        icon: material/brightness-7
-        name: Switch to system preference
-
-    # Palette toggle for dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
+    name: material
+    custom_dir: theme/material
+    font: false
+    toc: false
+    palette:
+      # Palette toggle for light mode
+       - media: "(prefers-color-scheme: light)"
+         scheme: default 
+         toggle:
+          icon: material/brightness-4
+          name: Switch to dark mode
+      # Palette toggle for dark mode
+       - media: "(prefers-color-scheme: dark)"
+         scheme: slate
+         toggle:
+           icon: material/brightness-7
+           name: Switch to light mode
+    logo: assets/img/logo-for-light.svg
+    logo_light: assets/img/logo.svg
+    favicon: assets/img/favicon.png
+    features:
+       - navigation.indexes
+       - navigation.path
+       - navigation.top
+       - navigation.footer
+       - navigation.instant.progress
+       - content.code.copy
+       - content.action.edit
+       - content.action.view
+       - content.tabs.link
+       - search.suggest
+       - search.share
+    language: 'en'
 
 # Strict Mode
 strict: false # Set to true to break the build if there are warnings
@@ -121,11 +120,11 @@ nav:
       - Try the Integration: developer-guides/try-the-integration.md
       - Testing: developer-guides/test-the-integrations.md
       - Debugging & Troubleshooting:
-          Overview: developer-guides/debugging-and-troubleshooting/overview.md
-          Debugging within the Editor: developer-guides/debugging-and-troubleshooting/debugging-within-the-editor.md
-          Remote Debugging Integrations: developer-guides/debugging-and-troubleshooting/remote-debugging-integrations.md
-          Capturing Strand Dumps: developer-guides/debugging-and-troubleshooting/capturing-strand-dumps.md
-          Profiling Runtime Performance: developer-guides/debugging-and-troubleshooting/profiling-runtime-performance.md
+        - Overview: developer-guides/debugging-and-troubleshooting/overview.md
+        - Debugging within the Editor: developer-guides/debugging-and-troubleshooting/debugging-within-the-editor.md
+        - Remote Debugging Integrations: developer-guides/debugging-and-troubleshooting/remote-debugging-integrations.md
+        - Capturing Strand Dumps: developer-guides/debugging-and-troubleshooting/capturing-strand-dumps.md
+        - Profiling Runtime Performance: developer-guides/debugging-and-troubleshooting/profiling-runtime-performance.md
       - AI For Integration:
         - Build an HTTP Service With BI Copilot : developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot.md
       - Protocols and Connectors:
@@ -190,16 +189,12 @@ nav:
 # Markdown extensions configuration
 markdown_extensions:
   - markdown.extensions.admonition
-  - markdown.extensions.codehilite:
-      linenums: true
-      use_pygments: false
   - markdown.extensions.def_list
   - markdown.extensions.footnotes
-  - markdown.extensions.meta
+  - admonition
   - markdown.extensions.toc:
       permalink: true
-  - markdown_include.include:
-      base_path: docs
+      toc_depth: 3
   - pymdownx.arithmatex
   - pymdownx.betterem:
       smart_enable: all
@@ -220,50 +215,75 @@ markdown_extensions:
   - pymdownx.tilde
   - pymdownx.snippets:
       base_path: docs
+  - markdown_include.include:
+      base_path: docs
   - attr_list
 
 # Plugins configuration
 plugins:
-  - search
-  - markdownextradata: {}
-  - exclude:
-      glob:
-        - wip/*
-  - redirects:
-      redirect_maps:
+    - search:
+        lang: ['en']
+    - markdownextradata: {}
+    - exclude:
+          glob:
+              - wip/*
+    - redirects:
+          redirect_maps: {}
 
 # Extra configuration
 extra_css:
-  # You can select a different theme for syntax highlighting by simply
-  # selecting a different css file below from the available list.
-  - assets/lib/highlightjs/styles/vs.min.css
-  # Make sure to activate only one palette at a time.
-  # If all the palettes are commented out, the default material theme palette will take over
-  - assets/css/blue-palette-alt1.css
-  # - assets/css/blue-palette-alt2.css
-  # - assets/css/blue-palette.css
-  # - assets/css/green-palette.css
-  # - assets/css/orange-palette.css
-  - assets/css/mitheme.css
-  - assets/css/custom.css
-  - assets/lib/json-formatter/json-formatter.css
-  - assets/css/config-catalog.css
-  - assets/lib/fontawesome-free-6.3.0-web/css/all.min.css
-#  - assets/css/redoc.css
+    - assets/lib/highlightjs/default.min.css
+    - assets/css/theme.css
+    - assets/lib/json-formatter/json-formatter.css
 extra_javascript:
-  - assets/lib/highlightjs/highlight.min.js
-  - assets/lib/json-formatter/json-formatter.umd.js
-  - assets/js/mitheme.js
-  # - assets/lib/backtotop/js/util.js
-  # - assets/lib/backtotop/js/main.js
+    - assets/lib/json-formatter/json-formatter.umd.js
+    - assets/lib/highlightjs/highlight.min.js
+    - assets/js/theme.js
 extra:
-  social:
-    - type: github
-      link: https://github.com/wso2
-    - type: twitter
-      link: https://twitter.com/wso2
-    - type: linkedin
-      link: https://www.linkedin.com/company/wso2
-  # site_version: Uncomment to specify a version
-  base_path: https://wso2.github.io/docs-bi
-  #base_path: http://localhost:8000
+    material:
+      jinja2content: true
+    generator: false
+    expanded_navs:
+    - title: Get started
+      options: [verticle-line]
+    - title: Integration Guides
+      options: [verticle-line]
+    nav_icons:
+      Home:
+        icon: octicons/home-16
+        level: 1
+      Get started:
+        icon: octicons/rocket-16
+        level: 1
+      Integration Guides:
+        icon: octicons/shield-check-16
+        level: 1
+      Developer Guides:
+        icon: octicons/browser-16
+        level: 1
+      Deploy:
+        icon: octicons/server-16
+        level: 1
+      Observability and Monitoring:
+        icon: octicons/graph-16
+        level: 1
+      References:
+        icon: octicons/hubot-16
+        level: 1
+      Release Notes:
+        icon: octicons/pencil-16
+        level: 1
+    social:
+        - icon: fontawesome/brands/github-alt
+          link: https://github.com/wso2
+        - icon: fontawesome/brands/twitter
+          link: https://twitter.com/wso2
+        - icon: fontawesome/brands/linkedin-in
+          link: https://www.linkedin.com/company/wso2
+        - icon: fontawesome/brands/youtube
+          link: https://www.youtube.com/user/WSO2TechFlicks
+        - icon: fontawesome/brands/x-twitter
+          link: https://twitter.com/intent/follow?screen_name=wso2
+    # site_version: Uncomment to specify a version
+    base_path: https://wso2.github.io/docs-bi
+    #base_path: http://localhost:8000
