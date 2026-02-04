@@ -17,28 +17,28 @@
 -->
 
 {% macro nav_icon(icon) %}
-<span class="icon">
-  {% if icon.endswith(".svg") or icon.endswith(".png") %}
-  {% include icon %}
-  {% else %}
-  {% include ".icons/" ~ icon ~ ".svg" %}
-  {% endif %}
-</span>
+  <span class="icon">
+    {% if icon.endswith(".svg") or icon.endswith(".png") %}
+    {% include icon %}
+    {% else %}
+    {% include ".icons/" ~ icon ~ ".svg" %}
+    {% endif %}
+  </span>
 {% endmacro %}
 
 {% macro nav_chip(type) %}
-{% if type == "ai" %}
-<span class="chip chip-ai">
-  <span class="icon" title="Powered with AI">{% include "assets/libs/custom-icons/sparkles-fill.svg" %}</span>
-  <span class="text">Powered with AI</span>
-</span>
-{% else %}
-<span class="md-chip md-chip--nav md-chip--{{ type|lower }}">
-  <span class="md-chip__label">
-    {{ type }}
-  </span>
-</span>
-{% endif %}
+  {% if type == "ai" %}
+    <span class="chip chip-ai">
+      <span class="icon" title="Powered with AI">{% include "assets/libs/custom-icons/sparkles-fill.svg" %}</span>
+      <span class="text">Powered with AI</span>
+    </span>
+  {% else %}
+    <span class="md-chip md-chip--nav md-chip--{{ type|lower }}">
+      <span class="md-chip__label">
+        {{ type }}
+      </span>
+    </span>
+  {% endif %}
 {% endmacro %}
 
 <!-- Wrap everything with a macro to reduce file roundtrips (see #2213) -->
@@ -209,32 +209,32 @@ nav_item_icon.level == level %}
   {% endif %}
 
   <!-- Active checkbox expands items contained within nested section -->
-      <input
-        class="md-nav__toggle md-toggle {{ indeterminate }}"
-        type="checkbox"
-        id="{{ path }}"
-        {{ checked_attr }}
-        {{ disabled }}
-      />
+    <input
+      class="md-nav__toggle md-toggle {{ indeterminate }}"
+      type="checkbox"
+      id="{{ path }}"
+      {{ checked_attr }}
+      {{ disabled }}
+    />
 
   <!-- Determine all nested items that are index pages -->
   {% set indexes = [] %}
   {% if "navigation.indexes" in features %}
-  {% for nav_item in nav_item.children %}
-  {% if nav_item.is_index and not index is defined %}
-  {% set _ = indexes.append(nav_item) %}
-  {% endif %}
-  {% endfor %}
+    {% for nav_item in nav_item.children %}
+      {% if nav_item.is_index and not index is defined %}
+        {% set _ = indexes.append(nav_item) %}
+      {% endif %}
+    {% endfor %}
   {% endif %}
 
   <!-- Render toggle to expand nested items -->
   {% if not indexes %}
-        <label
-          class="md-nav__link {{ hide_sub_nav }}" 
-          for="{{ path }}"
-          id="{{ path }}_label"
-          tabindex="0"
-        >
+    <label
+      class="md-nav__link {{ hide_sub_nav }}" 
+      for="{{ path }}"
+      id="{{ path }}_label"
+      tabindex="0"
+    >
     <span>
       {% if icon %}
       {{ nav_icon(icon) }}
@@ -333,19 +333,19 @@ nav_item_icon.level == level %}
         id="__toc"
       />
 
-  <!-- Hack: see partials/toc.html for more information -->
-  {% set first = toc | first %}
-  {% if first and first.level == 1 %}
-  {% set toc = first.children %}
-  {% endif %}
+      <!-- Hack: see partials/toc.html for more information -->
+      {% set first = toc | first %}
+      {% if first and first.level == 1 %}
+        {% set toc = first.children %}
+      {% endif %}
 
-  <!-- Render table of contents, if not empty -->
-  {% if toc %}
-  <label class="md-nav__link md-nav__link--active" for="__toc">
-    {{ nav_item.title }}
-    <span class="md-nav__icon md-icon"></span>
-  </label>
-  {% endif %}
+      <!-- Render table of contents, if not empty -->
+      {% if toc %}
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        {{ nav_item.title }}
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      {% endif %}
       <a
         href="{{ nav_item.url | url }}"
         class="md-nav__link md-nav__link--active"
