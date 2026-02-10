@@ -1740,57 +1740,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
-    Implementation
-  </a>
-  
-    <nav class="md-nav" aria-label="Implementation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#step-1-create-a-new-integration-project" class="md-nav__link">
     Step 1: Create a new integration project
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#step-2-define-types" class="md-nav__link">
     Step 2: Define types
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#step-3-create-an-http-service" class="md-nav__link">
     Step 3: Create an HTTP service
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#step-4-implement-the-resource-logic" class="md-nav__link">
     Step 4: Implement the resource logic
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#step-5-configure-default-wso2-model-provider" class="md-nav__link">
     Step 5: Configure default WSO2 model provider
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#step-6-run-the-integration" class="md-nav__link">
     Step 6: Run the integration
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -8618,57 +8605,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#implementation" class="md-nav__link">
-    Implementation
-  </a>
-  
-    <nav class="md-nav" aria-label="Implementation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#step-1-create-a-new-integration-project" class="md-nav__link">
     Step 1: Create a new integration project
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#step-2-define-types" class="md-nav__link">
     Step 2: Define types
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#step-3-create-an-http-service" class="md-nav__link">
     Step 3: Create an HTTP service
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#step-4-implement-the-resource-logic" class="md-nav__link">
     Step 4: Implement the resource logic
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#step-5-configure-default-wso2-model-provider" class="md-nav__link">
     Step 5: Configure default WSO2 model provider
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#step-6-run-the-integration" class="md-nav__link">
     Step 6: Run the integration
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -8708,9 +8682,7 @@
 <p>In this tutorial, you will create an integration that makes a direct call to a Large Language Model (LLM) using Ballerina’s model providers. Direct LLM calls are designed for simple, stateless interactions where conversational history is not required, giving you fine-grained control over each request.
 With Ballerina, you can send a prompt along with a type descriptor, instructing the LLM to generate a response that automatically conforms to your desired type-safe format (e.g., JSON, Ballerina records, integers). This eliminates manual parsing and ensures structured, predictable outputs.</p>
 <p>In this tutorial, you’ll leverage this capability to analyze blog content—prompting the LLM to return a structured review, including a suggested category and a rating, using the default WSO2 model provider.</p>
-<h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h2>
-<p>Follow the steps below to implement the integration.</p>
-<h3 id="step-1-create-a-new-integration-project">Step 1: Create a new integration project<a class="headerlink" href="#step-1-create-a-new-integration-project" title="Permanent link">&para;</a></h3>
+<h2 id="step-1-create-a-new-integration-project">Step 1: Create a new integration project<a class="headerlink" href="#step-1-create-a-new-integration-project" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Click on the WSO2 Integrator: BI icon on the sidebar.</li>
 <li>Click on the <strong><code>Create New Integration</code></strong> button.</li>
@@ -8718,7 +8690,7 @@ With Ballerina, you can send a prompt along with a type descriptor, instructing 
 <li>Click the <strong><code>Select Path</code></strong> button to set the Integration Path.</li>
 <li>Click on the <strong><code>Create New Integration</code></strong> button to create the integration project.</li>
 </ol>
-<h3 id="step-2-define-types">Step 2: Define types<a class="headerlink" href="#step-2-define-types" title="Permanent link">&para;</a></h3>
+<h2 id="step-2-define-types">Step 2: Define types<a class="headerlink" href="#step-2-define-types" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Click on the <strong><code>Add Artifacts</code></strong> button and select <strong><code>Type</code></strong> in the <strong><code>Other Artifacts</code></strong> section.</li>
 <li>Click on <strong><code>+ Add Type</code></strong> to add a new type.</li>
@@ -8746,7 +8718,7 @@ With Ballerina, you can send a prompt along with a type descriptor, instructing 
 <p><a href="https://wso2.github.io/docs-bi/assets/img/learn/references/direct-llm-call/types_direct_llm_call.png"><img src="https://wso2.github.io/docs-bi/assets/img/learn/references/direct-llm-call/types_direct_llm_call.png" alt="Define types" width="70%"></a></p>
 </li>
 </ol>
-<h3 id="step-3-create-an-http-service">Step 3: Create an HTTP service<a class="headerlink" href="#step-3-create-an-http-service" title="Permanent link">&para;</a></h3>
+<h2 id="step-3-create-an-http-service">Step 3: Create an HTTP service<a class="headerlink" href="#step-3-create-an-http-service" title="Permanent link">&para;</a></h2>
 <ol>
 <li>In the design view, click the <strong><code>Add Artifact</code></strong> button.</li>
 <li>Select <strong><code>HTTP Service</code></strong> under the <strong><code>Integration as API</code></strong> category.</li>
@@ -8766,7 +8738,7 @@ With Ballerina, you can send a prompt along with a type descriptor, instructing 
 <p><a href="https://wso2.github.io/docs-bi/assets/img/learn/references/direct-llm-call/update_resource_direct_llm_call_docs.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/references/direct-llm-call/update_resource_direct_llm_call_docs.gif" alt="Create HTTP service" width="70%"></a></p>
 </li>
 </ol>
-<h3 id="step-4-implement-the-resource-logic">Step 4: Implement the resource logic<a class="headerlink" href="#step-4-implement-the-resource-logic" title="Permanent link">&para;</a></h3>
+<h2 id="step-4-implement-the-resource-logic">Step 4: Implement the resource logic<a class="headerlink" href="#step-4-implement-the-resource-logic" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Once redirected to the <code>review</code> resource implementation designer view, follow these steps to implement the logic:</li>
 <li>Hover over the arrow after the Start node and click the ➕ button to add a new action to the resource.</li>
@@ -8808,7 +8780,7 @@ Here is the blog post content:
 <p><a href="https://wso2.github.io/docs-bi/assets/img/learn/references/direct-llm-call/return_node_direct_llm_call_docs.gif"><img src="https://wso2.github.io/docs-bi/assets/img/learn/references/direct-llm-call/return_node_direct_llm_call_docs.gif" alt="Add Return" width="70%"></a></p>
 </li>
 </ol>
-<h3 id="step-5-configure-default-wso2-model-provider">Step 5: Configure default WSO2 model provider<a class="headerlink" href="#step-5-configure-default-wso2-model-provider" title="Permanent link">&para;</a></h3>
+<h2 id="step-5-configure-default-wso2-model-provider">Step 5: Configure default WSO2 model provider<a class="headerlink" href="#step-5-configure-default-wso2-model-provider" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Ballerina supports direct calls to Large Language Models (LLMs) with various providers, such as OpenAI, Azure OpenAI, and Anthropic. This demonstration focuses on using the Default Model Provider (WSO2). To begin, you need to configure its settings:<ul>
 <li>Press <code>Ctrl/Cmd + Shift + P</code> to open the VS Code command palette.</li>
@@ -8817,7 +8789,7 @@ Here is the blog post content:
 </ul>
 </li>
 </ol>
-<h3 id="step-6-run-the-integration">Step 6: Run the integration<a class="headerlink" href="#step-6-run-the-integration" title="Permanent link">&para;</a></h3>
+<h2 id="step-6-run-the-integration">Step 6: Run the integration<a class="headerlink" href="#step-6-run-the-integration" title="Permanent link">&para;</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Response May Vary</p>
 <p>Since this integration involves an LLM (Large Language Model) call, the response values may not always be identical across different executions.</p>
