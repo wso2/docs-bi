@@ -15,12 +15,12 @@ To get started, make sure you have completed the following steps:
     
     If you used an external vector store like Pinecone, Milvus, or Weaviate in the ingestion tutorial, you can create a separate project and configure the same external vector store connection.
 
-### Step 1: Open your existing integration project
+## Step 1: Open your existing integration project
 
 1. Open the `rag_ingestion` project that you created in the [RAG Ingestion Tutorial]({{base_path}}/integration-guides/ai/rag/rag-ingestion).
 2. When you run this integration, the ingestion automation will execute first, automatically loading your data into the in-memory vector store before the HTTP service becomes available.
 
-### Step 2: Create an HTTP service
+## Step 2: Create an HTTP service
 
 1. In the design view, click on the **Add Artifact** button.
 2. Select **HTTP Service** under the **Integration as API** category.
@@ -31,7 +31,7 @@ To get started, make sure you have completed the following steps:
 
     <a href="{{base_path}}/assets/img/integration-guides/ai/rag/rag-query/create-an-http-service.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/rag/rag-query/create-an-http-service.gif" alt="Create an HTTP service" width="70%"></a>
 
-### Step 3: Update the resource method
+## Step 3: Update the resource method
 
 1. The service will have a default resource named `greeting` with the **GET** method. Click the edit button next to the `/greeting` resource.
 2. Change the HTTP method to **POST**.
@@ -42,7 +42,7 @@ To get started, make sure you have completed the following steps:
 
     <a href="{{base_path}}/assets/img/integration-guides/ai/rag/rag-query/update-the-resource-method.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/rag/rag-query/update-the-resource-method.gif" alt="Update the resource method" width="70%"></a>
 
-### Step 4: Retrieve data from the knowledge base
+## Step 4: Retrieve data from the knowledge base
 
 Since you're working in the same project where you completed the ingestion tutorial, the vector knowledge base `knowledgeBase` that you created earlier is already available. You can use it to retrieve relevant chunks based on the user query.
 
@@ -60,7 +60,7 @@ Since you're working in the same project where you completed the ingestion tutor
 !!! note "Using External Vector Stores"
     If you have an external vector store (Pinecone, Milvus, Weaviate, etc.) with pre-ingested content, you can create a new vector knowledge base by clicking **+ Add Vector Knowledge Base** and following the instructions in [Step 5 of the RAG Ingestion Tutorial]({{base_path}}/integration-guides/ai/rag/rag-ingestion/#step-5-create-a-vector-knowledge-base). Make sure to configure the same vector store and embedding provider settings that were used during ingestion.
 
-### Step 5: Augment the user query with retrieved content
+## Step 5: Augment the user query with retrieved content
 
 WSO2 Integrator: BI includes a built-in function to augment the user query with retrieved context from the knowledge base. We'll use that in this step.
 
@@ -73,7 +73,7 @@ WSO2 Integrator: BI includes a built-in function to augment the user query with 
 
     <a href="{{base_path}}/assets/img/integration-guides/ai/rag/rag-query/augment-user-query.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/rag/rag-query/augment-user-query.gif" alt="Augment the user query with retrieved content" width="70%"></a>
 
-### Step 6: Connect to an LLM provider
+## Step 6: Connect to an LLM provider
 
 After augmenting the query with retrieved context, we can now pass it to an LLM for a grounded response. WSO2 Integrator: BI provides an abstraction called `Model Provider` to connect with various LLM services.
 
@@ -86,7 +86,7 @@ After augmenting the query with retrieved context, we can now pass it to an LLM 
 
     <a href="{{base_path}}/assets/img/integration-guides/ai/rag/rag-query/create-a-model-provider.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/rag/rag-query/create-a-model-provider.gif" alt="Connect to an LLM provider" width="70%"></a>
 
-### Step 7: Generate the response
+## Step 7: Generate the response
 
 Now send the augmented query to the LLM to generate the grounded response.
 
@@ -102,7 +102,7 @@ Now send the augmented query to the LLM to generate the grounded response.
 !!! note "Understanding the Expression"
     The expression `check augmentedUserMsg.content.ensureType()` extracts the augmented query content and ensures it's in the correct string format that the LLM expects. The `check` keyword handles any potential type conversion errors.
 
-### Step 8: Return the response from the service resource
+## Step 8: Return the response from the service resource
 
 1. Hover over the flow line and click the **+** icon.
 2. Under the **Control** section, click on **Return**.
@@ -111,7 +111,7 @@ Now send the augmented query to the LLM to generate the grounded response.
     <a href="{{base_path}}/assets/img/integration-guides/ai/rag/rag-query/return-the-response-from-service-resource.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/rag/rag-query/return-the-response-from-service-resource.gif" alt="Return the response from the service resource" width="70%"></a>
 
 
-### Step 9: Configure default WSO2 providers and run the integration
+## Step 9: Configure default WSO2 providers and run the integration
 
 1. As the workflow uses the `Default Model Provider (WSO2)` and `Default Embedding Provider (WSO2)`, you need to configure its settings:
     - Press `Ctrl/Cmd + Shift + P` to open the VS Code command palette.

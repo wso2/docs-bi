@@ -5,11 +5,7 @@ With Ballerina, you can send a prompt along with a type descriptor, instructing 
 
 In this tutorial, you’ll leverage this capability to analyze blog content—prompting the LLM to return a structured review, including a suggested category and a rating, using the default WSO2 model provider.
 
-## Implementation
-
-Follow the steps below to implement the integration.
-
-### Step 1: Create a new integration project
+## Step 1: Create a new integration project
 
 1. Click on the WSO2 Integrator: BI icon on the sidebar.
 2. Click on the **`Create New Integration`** button.
@@ -17,7 +13,7 @@ Follow the steps below to implement the integration.
 4. Click the **`Select Path`** button to set the Integration Path.
 5. Click on the **`Create New Integration`** button to create the integration project.
 
-### Step 2: Define types
+## Step 2: Define types
 
 1. Click on the **`Add Artifacts`** button and select **`Type`** in the **`Other Artifacts`** section.
 2. Click on **`+ Add Type`** to add a new type.
@@ -45,7 +41,7 @@ Follow the steps below to implement the integration.
     <a href="{{base_path}}/assets/img/learn/references/direct-llm-call/types_direct_llm_call.png"><img src="{{base_path}}/assets/img/learn/references/direct-llm-call/types_direct_llm_call.png" alt="Define types" width="70%"></a>
 
 
-### Step 3: Create an HTTP service
+## Step 3: Create an HTTP service
 1. In the design view, click the **`Add Artifact`** button.
 2. Select **`HTTP Service`** under the **`Integration as API`** category.
 3. Select the **`Design from Scratch`** option as the **`Service Contract`** and use `/blogs` as the **`Service base path`**.
@@ -61,7 +57,7 @@ Follow the steps below to implement the integration.
 
     <a href="{{base_path}}/assets/img/learn/references/direct-llm-call/update_resource_direct_llm_call_docs.gif"><img src="{{base_path}}/assets/img/learn/references/direct-llm-call/update_resource_direct_llm_call_docs.gif" alt="Create HTTP service" width="70%"></a>
 
-### Step 4: Implement the resource logic
+## Step 4: Implement the resource logic
 1. Once redirected to the `review` resource implementation designer view, follow these steps to implement the logic:
 2. Hover over the arrow after the Start node and click the ➕ button to add a new action to the resource.
 3. Select **`Model Provider`** from the node panel.
@@ -100,14 +96,14 @@ Follow the steps below to implement the integration.
 
     <a href="{{base_path}}/assets/img/learn/references/direct-llm-call/return_node_direct_llm_call_docs.gif"><img src="{{base_path}}/assets/img/learn/references/direct-llm-call/return_node_direct_llm_call_docs.gif" alt="Add Return" width="70%"></a>
 
-### Step 5: Configure default WSO2 model provider
+## Step 5: Configure default WSO2 model provider
 
 1. Ballerina supports direct calls to Large Language Models (LLMs) with various providers, such as OpenAI, Azure OpenAI, and Anthropic. This demonstration focuses on using the Default Model Provider (WSO2). To begin, you need to configure its settings:
     - Press `Ctrl/Cmd + Shift + P` to open the VS Code command palette.
     - Run the command: `Ballerina: Configure default WSO2 model provider`.
    This will automatically generate the required configuration entries.
 
-### Step 6: Run the integration
+## Step 6: Run the integration
 
 !!! warning "Response May Vary"
     Since this integration involves an LLM (Large Language Model) call, the response values may not always be identical across different executions.
