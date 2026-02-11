@@ -7,17 +7,14 @@ The tutorial uses a natural function to analyze blog content to suggest a suitab
     To learn more about natural programming and natural functions, see [Natural Language is Code: A hybrid approach with Natural Programming](https://blog.ballerina.io/posts/2025-04-26-introducing-natural-programming/).
 
 
-## Implementation
-Follow the steps below to implement the integration.
-
-### Step 1: Create a new integration project
+## Step 1: Create a new integration project
 1. Click on the **BI** icon on the sidebar.
 2. Click on the **`Create New Integration`** button.
 3. Enter `BlogReviewer` as the project name.
 4. Select Project Directory and click on the **`Select Location`** button.
 5. Click on the **`Create New Integration`** button to create the integration project.
 
-### Step 2: Define Types
+## Step 2: Define Types
 1. Click on the **`Add Artifacts`** button and select **`Type`** in the **`Other Artifacts`** section.
 2. Click on **`+ Add Type`** to add a new type and switch to the **`Import`** section. 
 3. Enter `Blog` as the **`Name`**, paste the following JSON payload, and then click the **`Import`** button.
@@ -43,7 +40,7 @@ Follow the steps below to implement the integration.
     <a href="{{base_path}}/assets/img/integration-guides/ai/natural-functions/types.png"><img src="{{base_path}}/assets/img/integration-guides/ai/natural-functions/types.png" alt="Types" width="70%"></a>
 
 
-### Step 3: Add a Natural Function
+## Step 3: Add a Natural Function
 1. Click on the **`Add Artifact`** button and select **`Natural Function`** under the **`Other Artifacts`** category.
 2. Use `reviewBlog` as the name of the function. Then click the **`Add Parameter`** button to add a parameter of type `Blog` named `blog`. Use `Review` as the return type and convert it to nilable type using type operators. Then click on the **`Create`** button.
 
@@ -76,7 +73,7 @@ Follow the steps below to implement the integration.
     <a href="{{base_path}}/assets/img/integration-guides/ai/natural-functions/natural-function-view.png"><img src="{{base_path}}/assets/img/integration-guides/ai/natural-functions/natural-function-view.png" alt="natural function view" width="70%"></a>
 
 
-### Step 4: Create an HTTP service
+## Step 4: Create an HTTP service
 1. In the design view, click on the **`Add Artifact`** button.
 2. Select **`HTTP Service`** under the **`Integration as API`** category.
 3. Select the **`Create and use the default HTTP listener (port: 9090)`** option from the **`Listeners`** dropdown.
@@ -95,7 +92,7 @@ Follow the steps below to implement the integration.
 
     <a href="{{base_path}}/assets/img/integration-guides/ai/natural-functions/update-resource.png"><img src="{{base_path}}/assets/img/integration-guides/ai/natural-functions/update-resource.png" alt="Resource" width="70%"></a>
 
-### Step 5: Implement the resource logic
+## Step 5: Implement the resource logic
 1. Click on the `review` resource to navigate to the resource implementation designer view.
 2. Hover over the arrow after start and click the ➕ button to add a new action to the resource.
 3. Select **`Call Natural Function`** from the node panel.
@@ -111,13 +108,13 @@ Follow the steps below to implement the integration.
 
 8. The resource implementation is now complete. The function `reviewBlog` is called with the `blog` content as input, and the `review` is returned as the response.
 
-### Step 6: Configure model for natural function
+## Step 6: Configure model for natural function
 1. Press `Ctrl + Shift + P` on Windows and Linux, or `Shift + ⌘ + P` on a Mac, and type `>Ballerina: Configure default model for natural functions (Experimental)` to configure the default model for natural functions. 
 
     <a href="{{base_path}}/assets/img/integration-guides/ai/natural-functions/configure-model.png"><img src="{{base_path}}/assets/img/integration-guides/ai/natural-functions/configure-model.png" alt="Configure Model" width="70%"></a>
 
 
-### Step 7: Run the integration
+## Step 7: Run the integration
 
 !!! warning "Response May Vary"
     Since this integration involves an LLM (Large Language Model) call, the response values may not always be identical across different executions.

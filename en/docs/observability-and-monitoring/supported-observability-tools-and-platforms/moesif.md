@@ -20,6 +20,13 @@ After you log into Moesif Portal, get your `Moesif Application ID` during the on
    import ballerinax/moesif as _;
    ```
 
+* Navigate to **file explorer** view and enable observability by adding the following section to the `Ballerina.toml`.
+
+   ```toml
+   [build-options]
+   observabilityIncluded=true
+   ```
+
 * Navigate to **file explorer** view and create the `Config.toml` file in the package directory to set the runtime configurations as follows.
 
    ```toml

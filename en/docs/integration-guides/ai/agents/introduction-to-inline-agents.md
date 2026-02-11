@@ -6,26 +6,21 @@ Unlike [chat agents](/integration-guides/ai/agents/introduction-to-chat-agents),
 
 In this example, we'll define a GraphQL schema with a query that invokes the inline agent to generate dynamic responses based on input parameters. The agent runs within the resolver logic and returns results directly as part of the GraphQL response.
 
-## Prerequisites
-
-- Sign up at [OpenAI](https://platform.openai.com/signup/).
-- Get an API key from the [API section](https://platform.openai.com/docs/api-reference/authentication).
-
 ### Step 1: Create a new integration project
 
-1. Click on the **BI** icon in the sidebar.
+1. Click on the **WSO2 Integrator: BI** icon in the sidebar.
 2. Click on the **Create New Integration** button.
 3. Enter the project name as `GraphqlService`.
-4. Select the project directory by clicking on the **Select Location** button.
+4. Select the project directory by clicking on the **Select Path** button.
 5. Click the **Create New Integration** button to generate the integration project.
 
     <a href="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-create-a-new-integration-project.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-create-a-new-integration-project.gif" alt="Create a new integration project" width="70%"></a>
 
 ### Step 2: Create a GraphQL service
 
-1. Click the **+** button on the WSO2 Integrator: BI side panel or navigate back to the design screen and click on **Add Artifact**.
+1. In WSO2 Integrator: BI design view, click **Add Artifact**.
 2. Select **GraphQL Service** under the **Integration as API** artifacts.
-3. Keep the default **Listener** and **Service base path** configurations, and click **Create**.
+3. Keep the default **Base path** and **Port** configurations, and click **Create**.
 
     <a href="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-create-a-graphql-service.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-create-a-graphql-service.gif" alt="Create a GraphQL service" width="70%"></a>
 
@@ -46,16 +41,19 @@ In this example, we'll define a GraphQL schema with a query that invokes the inl
 
 1. Click the created `task` operation in the side panel to navigate to the resolver editor view.
 2. Click the **+** button in the flow to open the side panel.
-3. Click **Agent** under **Statement**, which will navigate you to the agent creation panel.
-4. Update **Variable Name** to `response`. This is the variable where the agent's output will be stored.
-5. Update the **Role** and **Instructions** to configure the agent’s behavior.
-6. Provide the query parameter as the input for Query. This will serve as the command that the agent will execute.
+3. Click **Agent** under the **AI** section, which will navigate you to the agent creation panel.
+4. Update the **Role** and **Instructions** to configure the agent’s behavior.
+5. Switch from `Text` mode to `Expression` mode in the **Query** field and provide the `query` parameter as the input. This will serve as the command that the agent will execute.
+6. Update **Result** to `response`. This is where the agent's output will be stored.
 7. Click **Save**.
+
+    <a href="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-implement-resolver.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-implement-resolver.gif" alt="Implement the resolving logic with an inline agent" width="70%"></a>
+
 8. Next, configure the agent’s memory, model, and tools. For guidance, refer to the [Chat Agent](/integration-guides/ai/agents/introduction-to-chat-agents) configuration steps and the [Personal Assistant](/integration-guides/ai/agents/integrating-agents-with-external-endpoints) setup guide to make the agent function as a personal assistant.
 9. After configuring the agent, click the **+** button on the flow and select **Return** under **Control** from the side panel.
 10. For the **Expression**, provide the `response` variable as the input.
 
-    <a href="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-implement-resolver.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-implement-resolver.gif" alt="Implement the resolving logic with an inline agent" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-return-response.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-return-response.gif" alt="Implement the resolving logic with an inline agent" width="70%"></a>
 
 At this point, we've created a GraphQL resolver that takes a user-provided `query` as input, passes it to an inline agent for processing, and returns the agent’s `response` as the result of the resolver.
 

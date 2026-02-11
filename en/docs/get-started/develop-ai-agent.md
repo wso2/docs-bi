@@ -15,7 +15,7 @@ Before you begin, make sure you have the following:
     1. Sign up at [OpenAI](https://platform.openai.com/signup/).
     2. Get an API key from the [API section](https://platform.openai.com/docs/api-reference/authentication).
 
-### Step 1: Create a new integration project
+## Step 1: Create a new integration project
 
 1. Click on the **BI** icon in the sidebar.
 2. Click on the **Create New Integration** button.
@@ -25,7 +25,7 @@ Before you begin, make sure you have the following:
 
     <a href="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-create-a-new-integration-project.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-create-a-new-integration-project.gif" alt="Create a new integration project" width="70%"></a>
 
-### Step 2: Create a GraphQL service
+## Step 2: Create a GraphQL service
 
 1. Click the **+** button on the WSO2 Integrator: BI side panel or navigate back to the design screen and click on **Add Artifact**.
 2. Select **GraphQL Service** under the **Integration as API** artifacts.
@@ -33,7 +33,7 @@ Before you begin, make sure you have the following:
 
     <a href="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-create-a-graphql-service.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-create-a-graphql-service.gif" alt="Create a GraphQL service" width="70%"></a>
 
-### Step 3: Create a GraphQL resolver
+## Step 3: Create a GraphQL resolver
 
 1. Click the **+ Create Operations** button in the GraphQL design view.
 2. In the side panel, click the **+** button in the **Mutation** section to add a mutation operation.
@@ -46,7 +46,7 @@ Before you begin, make sure you have the following:
 
     <a href="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-create-a-graphql-resolver.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/agents/introduction-to-inline-agents/inline-agent-create-a-graphql-resolver.gif" alt="Create a GraphQL resolver" width="70%"></a>
 
-### Step 4: Implement the resolving logic with an inline agent
+## Step 4: Implement the resolving logic with an inline agent
 
 1. Click the created `task` operation in the side panel to navigate to the resolver editor view.
 2. Click the **+** button in the flow to open the side panel.
@@ -66,7 +66,7 @@ At this point, we've created a GraphQL resolver that takes a user-provided `quer
 !!! note
     You must implement a query operation to have a valid GraphQL service. Similar to creating the `task` operation in Step 3, add an operation named `greet` by pressing the **+** button in the **Query** section, without any input parameters. For the implementation, you can simply return a string literal saying `"welcome"`.
 
-### Step 5: Run the integration and query the agent
+## Step 5: Run the integration and query the agent
 
 1. Click on the **Run** button in the top-right corner to run the integration.
 2. Query the agent by sending the mutation request below.

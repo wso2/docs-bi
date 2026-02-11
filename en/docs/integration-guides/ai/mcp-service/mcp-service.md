@@ -14,7 +14,7 @@ Before you begin, ensure you have WSO2 Integrator: BI installed and configured i
 !!! note "What is an MCP Service?"
     An MCP service acts as a bridge between AI assistants and external systems. It exposes a set of tools—functions that AI assistants can call to perform specific tasks like fetching data, executing operations, or interacting with APIs. The AI assistant discovers available tools through the MCP protocol and invokes them as needed during conversations.
 
-### Step 1: Create a new integration project
+## Step 1: Create a new integration project
 
 1. Click on the **BI** icon in the sidebar.
 2. Click on the **Create New Integration** button.
@@ -24,7 +24,7 @@ Before you begin, ensure you have WSO2 Integrator: BI installed and configured i
 
     <a href="{{base_path}}/assets/img/integration-guides/ai/mcp/mcp-service/create-a-new-integration-project.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/mcp/mcp-service/create-a-new-integration-project.gif" alt="Create a new integration project" width="70%"></a>
 
-### Step 2: Create an MCP service
+## Step 2: Create an MCP service
 
 In WSO2 Integrator: BI, an MCP service is an artifact that exposes tools following the Model Context Protocol standard. AI assistants can connect to this service to discover and invoke the tools you define.
 
@@ -36,7 +36,7 @@ In WSO2 Integrator: BI, an MCP service is an artifact that exposes tools followi
 
     <a href="{{base_path}}/assets/img/integration-guides/ai/mcp/mcp-service/create-an-mcp-service.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/mcp/mcp-service/create-an-mcp-service.gif" alt="Create an MCP service" width="70%"></a>
 
-### Step 3: Define tools for the MCP service
+## Step 3: Define tools for the MCP service
 
 Tools are the core building blocks of an MCP service. Each tool represents a specific capability that AI assistants can invoke.
 
@@ -56,7 +56,7 @@ Tools are the core building blocks of an MCP service. Each tool represents a spe
 !!! note
     Tool descriptions are important—they help AI assistants understand when and how to use each tool. Write clear, concise descriptions that explain what the tool does and what input it expects.
 
-### Step 4: Implement tool logic
+## Step 4: Implement tool logic
 
 Now you'll implement the logic that executes when the tool is invoked. For this example, we'll use conditional logic to simulate weather data retrieval.
 
@@ -83,7 +83,7 @@ Now you'll implement the logic that executes when the tool is invoked. For this 
 !!! note
     This example uses simple conditional logic for demonstration purposes. In a real-world scenario, you would integrate with actual weather APIs using [HTTP connectors]({{base_path}}/developer-guides/protocols-and-connectors/overview-of-connectors/) or other data sources available in WSO2 Integrator: BI.
 
-### Step 5: Add more tools (optional)
+## Step 5: Add more tools (optional)
 
 You can extend your MCP service with additional tools to provide more capabilities.
 
@@ -92,7 +92,7 @@ You can extend your MCP service with additional tools to provide more capabiliti
 
     <a href="{{base_path}}/assets/img/integration-guides/ai/mcp/mcp-service/add-more-tools.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/mcp/mcp-service/add-more-tools.gif" alt="Add more tools" width="70%"></a>
 
-### Step 6: Test the MCP service
+## Step 6: Test the MCP service
 
 Once you have defined and implemented your tools, you can test the MCP service to ensure it works correctly.
 

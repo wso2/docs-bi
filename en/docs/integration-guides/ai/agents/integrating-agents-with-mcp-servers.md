@@ -8,7 +8,7 @@ Before you begin, ensure you have a running MCP Server connected to a weather se
 
 ## Create the AI agent
 
-Before integrating MCP capabilities, you must first create an AI agent. Follow **Steps 1 to 5** in the [Introduction to Chat Agents](/learn/ai/agents/introduction-to-chat-agents/) guide to set up your agent.
+Before integrating MCP capabilities, you must first create an AI agent. Follow **Steps 1 to 5** in the [Introduction to Chat Agents](/integration-guides/ai/agents/introduction-to-chat-agents/) guide to set up your agent.
 
 For this tutorial, you can configure the agent with the following **role** and **instructions**:
 
