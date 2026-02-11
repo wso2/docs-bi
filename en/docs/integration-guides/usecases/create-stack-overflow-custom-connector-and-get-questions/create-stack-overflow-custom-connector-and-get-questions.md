@@ -1,4 +1,4 @@
-# Create StackOverFlow Custom Connector And Get Questions
+# Create Stack Overflow Custom Connector And Get Questions
 
 ## Overview
 This is a low-code walkthrough that demonstrates how to use the WSO2 Integrator: BI extension to build an end-to-end integration with the Stack Exchange API—without writing code by hand. You will:
@@ -16,6 +16,7 @@ Before you begin, make sure you have the following:
   - <b>Visual Studio Code</b>: Install <a href="https://code.visualstudio.com/">Visual Studio Code</a> if you don't have it already.
   - <b>WSO2 Integrator: BI Extension</b>: Install the WSO2 Integrator: BI extension. Refer to <a href="{{base_path}}/get-started/install-wso2-integrator-bi/">Install WSO2 Integrator: BI</a> for detailed instructions.
   - <b>OpenAPI definition file</b>: Download or prepare the OpenAPI specification file for Stack Exchange API (for example, <a href="{{base_path}}/assets/integration-guides/usecases/create-stack-overflow-custom-connector-and-get-questions/files/stackexchange.yaml" download>stackexchange.yaml</a>).
+
 ## Step 1: Create a new integration project
 
 WSO2 Integrator: BI extension provides a low-code graphical environment to visually design and deploy integrations using Ballerina.
@@ -98,7 +99,7 @@ In this step, you will configure the custom connector to perform a specific oper
 
 ## Step 5: Print the API response
 
-In this final step, you will add a function to print the JSON payload received from the StackOverflow API to the system console for verification.
+In this step, you will add a function to print the JSON payload received from the StackOverflow API to the system console for verification.
 
 1. In the **Automation** diagram view, click the **+** icon on the flow line after the **get** node.
 2. In the right-side palette, select **Call Function**.
