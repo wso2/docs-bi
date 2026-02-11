@@ -165,7 +165,7 @@ Here’s an overview of the process flow.
 2. Delete the default `Return` action from the resource.
 3. Hover to the arrow after start and click the ➕ button to add a new action to the resource.
 4. Select **Declare Variable** from the node panel on the left. This variable will be used to store the request payload for the hospital service.
-5. Change the variable name to `hospitalRequset`, type as `json` and expression as below and click **Save**.
+5. Change the variable name to `hospitalRequest`, type as `json` and expression as below and click **Save**.
     ```ballerina
     {
         patient: payload.patient.toJson(),
@@ -194,7 +194,7 @@ Here’s an overview of the process flow.
     |Variable Name| `oakEPResponse`                       |
     |Variable Type| `ReservationResponse`                 |
     |Path| ```  string `/${category}/reserve` ``` |
-    |Message| `hospitalRequset`                     |
+    |Message| `hospitalRequest`                     |
 
 8. Click **Save**.
 
@@ -216,8 +216,8 @@ Here’s an overview of the process flow.
      |---|----------------------------------------|
     |Variable Name| `clemencyEPResponse`                   |
     |Variable Type| `ReserveResponse`                      |
-    |Path| ```  string `/${category}/reserve` ``` |
-    |Message| `hospitalRequset`                      |
+    |Path| `/${category}/reserve` |
+    |Message| `hospitalRequest`                      |
 
     **pinevalley:**
 
@@ -225,8 +225,8 @@ Here’s an overview of the process flow.
     |---|------------------------|
     |Variable Name| `pineValleyEPResponse` |
     |Variable Type| `ReserveResponse`      |
-    |Path| ```  string `/${category}/reserve` ``` |
-    |Message| `hospitalRequset`      |
+    |Path| `/${category}/reserve` |
+    |Message| `hospitalRequest`      |
 
 12. For the else condition, click on the `If` condition `Else` path ➕ sign and add a **Return** from the node panel. Enter `http:NOT_FOUND` as the value and click **Save**.             
 13. The final design will look like below.             

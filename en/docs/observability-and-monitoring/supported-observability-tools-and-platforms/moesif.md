@@ -1,6 +1,6 @@
 # Observe metrics, traces and logs using Moesif
 
-The sample [shop service](/learn/overview-of-ballerina-observability/#example-observe-a-ballerina-service) will be used in this guide.
+The sample [shop service](/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service) will be used in this guide.
 
 Follow the steps given below to view BI metrics, traces and logs in [Moesif](https://www.moesif.com/).
 
@@ -18,6 +18,13 @@ After you log into Moesif Portal, get your `Moesif Application ID` during the on
 
    ```ballerina
    import ballerinax/moesif as _;
+   ```
+
+* Navigate to **file explorer** view and enable observability by adding the following section to the `Ballerina.toml`.
+
+   ```toml
+   [build-options]
+   observabilityIncluded=true
    ```
 
 * Navigate to **file explorer** view and create the `Config.toml` file in the package directory to set the runtime configurations as follows.

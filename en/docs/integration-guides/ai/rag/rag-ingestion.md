@@ -16,7 +16,7 @@ To get started, you need a knowledge file (in Markdown format) that you want to 
 !!! note "What is an In-Memory Vector Store?"
     An in-memory vector store holds your data (the chunked and embedded text) directly in your computer's active memory (RAM). This makes it very fast and easy to set up, as it requires no external databases or services. However, this data is temporary—it will be completely erased when you stop the integration or close the project. 
 
-### Step 1: Create a new integration project
+## Step 1: Create a new integration project
 
 1. Click on the **BI** icon in the sidebar.
 2. Click on the **Create New Integration** button.
@@ -26,7 +26,7 @@ To get started, you need a knowledge file (in Markdown format) that you want to 
 
     <a href="{{base_path}}/assets/img/integration-guides/ai/rag/rag-ingestion/create-a-new-integration-project.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/rag/rag-ingestion/create-a-new-integration-project.gif" alt="Create a new integration project" width="70%"></a>
 
-### Step 2: Create an automation
+## Step 2: Create an automation
 
 In WSO2 Integrator: BI, an [automation]({{base_path}}/developer-guides/wso2-integrator-bi-artifacts/#automation) is a flow that runs automatically when the integration starts. We will use this to ensure our data is loaded and ingested into the knowledge base as soon as the application is running, making it ready for the query service.
 
@@ -36,7 +36,7 @@ In WSO2 Integrator: BI, an [automation]({{base_path}}/developer-guides/wso2-inte
 
     <a href="{{base_path}}/assets/img/integration-guides/ai/rag/rag-ingestion/create-an-automation.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/rag/rag-ingestion/create-an-automation.gif" alt="Create an automation" width="70%"></a>
 
-### Step 3: Create a text data loader
+## Step 3: Create a text data loader
 
 1. Hover over the flow line and click the **+** icon to open the side panel.
 2. Click on **Data Loader** from the **AI** section.
@@ -48,7 +48,7 @@ In WSO2 Integrator: BI, an [automation]({{base_path}}/developer-guides/wso2-inte
 
     <a href="{{base_path}}/assets/img/integration-guides/ai/rag/rag-ingestion/create-a-data-loader.gif"><img src="{{base_path}}/assets/img/integration-guides/ai/rag/rag-ingestion/create-a-data-loader.gif" alt="Create a data loader" width="70%"></a>
 
-### Step 4: Load data using the data loader
+## Step 4: Load data using the data loader
 
 1. In the **Data Loaders** section, click on `loader`.
 2. Click on **load** to open the configuration panel.
@@ -62,7 +62,7 @@ This step wraps the file content into a `ai:Document` record, preparing it for c
 !!! note
     In WSO2 Integrator: BI, an `ai:Document` is a generic container that wraps the content of any data source—such as a file, webpage, or database entry. It not only holds the main content but can also include additional metadata, which becomes useful during retrieval operations in RAG workflows. In this tutorial, no metadata is used.
 
-### Step 5: Create a vector knowledge base
+## Step 5: Create a vector knowledge base
 
 A vector knowledge base in WSO2 Integrator: BI acts as an interface to a vector store and manages the ingestion and retrieval of documents.
 
@@ -85,7 +85,7 @@ A vector knowledge base in WSO2 Integrator: BI acts as an interface to a vector 
 !!! important "Embedding Dimensions"
     The **Default Embedding Provider (WSO2)** generates dense vectors with **1536 dimensions**. If you're using an external vector store (Pinecone, Milvus, Weaviate, etc.), ensure your vector store index is configured to support 1536-dimensional vectors.
 
-### Step 6: Ingest data into the knowledge base
+## Step 6: Ingest data into the knowledge base
 
 1. In the **Vector Knowledge Bases** section, click on `knowledgeBase`.
 2. Click on **ingest** to open the configuration panel.
@@ -96,7 +96,7 @@ A vector knowledge base in WSO2 Integrator: BI acts as an interface to a vector 
 
 This step chunks the document and sends them to the vector store, converting each chunk into an embedding and storing them for future retrieval.
 
-### Step 7: Add a confirmation message
+## Step 7: Add a confirmation message
 
 1. Hover over the flow line and click the **+** icon.
 2. Select **Log Info** under the **Logging** section.
@@ -107,7 +107,7 @@ This step chunks the document and sends them to the vector store, converting eac
 
 This step will print a confirmation once the ingestion is complete.
 
-### Step 8: Configure default WSO2 provider and run the integration
+## Step 8: Configure default WSO2 provider and run the integration
 
 1. As the workflow uses the `Default Embedding Provider (WSO2)`, you need to configure its settings:
     - Press `Ctrl/Cmd + Shift + P` to open the VS Code command palette.
