@@ -63,8 +63,6 @@ WSO2 Integrator: BI extension provides a low-code graphical environment to visua
    />
 </a>
 
----
-
 ## Step 2: Create the TCP Service
 
 In this step, you will add a TCP Service to your integration to handle TCP client connections on a specific port.
@@ -83,8 +81,6 @@ In this step, you will add a TCP Service to your integration to handle TCP clien
       width="80%"
    />
 </a>
-
----
 
 ## Step 3: Rename the service and add a class variable
 
@@ -105,8 +101,6 @@ In this step, you will add a TCP Service to your integration to handle TCP clien
       width="80%"
    />
 </a>
-
----
 
 ## Step 4: Implement the onConnect logic
 
@@ -143,8 +137,6 @@ In this step, you will add a TCP Service to your integration to handle TCP clien
    />
 </a>
 
----
-
 ## Step 5: Convert incoming bytes to string
 
 ### Add a function call node
@@ -170,8 +162,6 @@ In this step, you will add a TCP Service to your integration to handle TCP clien
    />
 </a>
 
----
-
 ## Step 6: Declare a variable for the message
 
 ### Add a variable node
@@ -193,8 +183,6 @@ In this step, you will add a TCP Service to your integration to handle TCP clien
    />
 </a>
 
----
-
 ## Step 7: Handle new user registration
 
 ### Add a conditional check
@@ -214,8 +202,6 @@ In this step, you will add a TCP Service to your integration to handle TCP clien
       width="80%"
    />
 </a>
-
----
 
 ## Step 8: Assign the username
 
@@ -238,8 +224,6 @@ In this step, you will add a TCP Service to your integration to handle TCP clien
    />
 </a>
 
----
-
 ## Step 9: Log the new client connection
 
 ### Add the log node
@@ -261,8 +245,6 @@ In this step, you will add a TCP Service to your integration to handle TCP clien
    />
 </a>
 
----
-
 ## Step 10: Log the welcome message
 
 ### Add the log node
@@ -283,8 +265,6 @@ In this step, you will add a TCP Service to your integration to handle TCP clien
       width="80%"
    />
 </a>
-
----
 
 ## Step 11: Prompt the user for input
 
@@ -308,8 +288,6 @@ In this step, you will add a TCP Service to your integration to handle TCP clien
    />
 </a>
 
----
-
 ## Step 12: Terminate the execution flow
 
 ### Add the return statement
@@ -325,8 +303,6 @@ In this step, you will add a TCP Service to your integration to handle TCP clien
       width="80%"
    />
 </a>
-
----
 
 ## Step 13: Log the chat message
 
@@ -348,8 +324,6 @@ In this step, you will add a TCP Service to your integration to handle TCP clien
    />
 </a>
 
----
-
 ## Step 14: Send an acknowledgment to the client
 
 ### Add the write action
@@ -370,8 +344,6 @@ In this step, you will add a TCP Service to your integration to handle TCP clien
       width="80%"
    />
 </a>
-
----
 
 ## Step 15: Run and test the application
 
@@ -397,9 +369,5 @@ In this step, you will add a TCP Service to your integration to handle TCP clien
    />
 </a>
 
----
-
 ???+ tip "Note"
     You have successfully created a TCP chat service that can handle multiple concurrent client connections in real time.
-
----
