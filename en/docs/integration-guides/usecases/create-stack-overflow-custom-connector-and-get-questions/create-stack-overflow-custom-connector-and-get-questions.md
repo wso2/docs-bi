@@ -5,7 +5,7 @@ This is a low-code walkthrough that demonstrates how to use the WSO2 Integrator:
 
    1. Create a new integration project in Visual Studio Code.
    2. Add an automation artifact to define the integration logic.
-   3. Generate a custom StackOverflow connector from an OpenAPI definition.
+   3. Generate a custom Stack Overflow connector from an OpenAPI definition.
    4. Configure the connector to retrieve questions from Stack Overflow.
    5. Print the API response to the system console for verification.
 
@@ -55,7 +55,7 @@ In this step, you will add an Automation artifact to your integration, which all
    />
 </a>
 
-## Step 3: Create a StackOverflow connector
+## Step 3: Create a Stack Overflow connector
 
 In this step, you will generate a custom connector using an OpenAPI specification to integrate with the Stack Exchange API.
 
@@ -72,12 +72,12 @@ In this step, you will generate a custom connector using an OpenAPI specificatio
 <a href="{{base_path}}/assets/integration-guides/usecases/create-stack-overflow-custom-connector-and-get-questions/img/create-stackoverflow-connector.gif">
    <img
    src="{{base_path}}/assets/integration-guides/usecases/create-stack-overflow-custom-connector-and-get-questions/img/create-stackoverflow-connector.gif"
-      alt="Create StackOverflow connector"
+      alt="Create Stack Overflow connector"
       width="80%"
    />
 </a>
 
-## Step 4: Configure the StackOverflow operation
+## Step 4: Configure the Stack Overflow operation
 
 In this step, you will configure the custom connector to perform a specific operation, such as retrieving data from the Stack Exchange API.
 
@@ -92,14 +92,14 @@ In this step, you will configure the custom connector to perform a specific oper
 <a href="{{base_path}}/assets/integration-guides/usecases/create-stack-overflow-custom-connector-and-get-questions/img/configure-operation.gif">
    <img
    src="{{base_path}}/assets/integration-guides/usecases/create-stack-overflow-custom-connector-and-get-questions/img/configure-operation.gif"
-      alt="Configure StackOverflow operation"
+      alt="Configure Stack Overflow operation"
       width="80%"
    />
 </a>
 
 ## Step 5: Print the API response
 
-In this step, you will add a function to print the JSON payload received from the StackOverflow API to the system console for verification.
+In this step, you will add a function to print the JSON payload received from the Stack Overflow API to the system console for verification.
 
 1. In the **Automation** diagram view, click the **+** icon on the flow line after the **get** node.
 2. In the right-side palette, select **Call Function**.
@@ -125,7 +125,7 @@ In this final step, you will execute the automation and verify that the integrat
 1.  Select the **Run** icon (green play button) in the top-right corner of the editor to start the service.
 2.  Wait for the integrated terminal to open at the bottom of the screen.
 3.  The terminal will display the status `Executing task: bal run` followed by `Running executable`.
-4.  Verify that the JSON payload containing StackOverflow questions is printed to the console as expected.
+4.  Verify that the JSON payload containing Stack Overflow questions is printed to the console as expected.
 
 <a href="{{base_path}}/assets/integration-guides/usecases/create-stack-overflow-custom-connector-and-get-questions/img/run-and-test-application.gif">
    <img
