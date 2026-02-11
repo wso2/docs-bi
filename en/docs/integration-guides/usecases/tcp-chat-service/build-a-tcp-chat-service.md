@@ -9,6 +9,14 @@ This is a low-code walkthrough that uses the Ballerina Integrator TCP service an
 3. Send and receive messages between the chat service and connected clients.
 4. Handle client disconnections and manage the client connection lifecycle.
 
+<a href="{{base_path}}/assets/integration-guides/usecases/tcp-chat-service/img/chat-service.png">
+   <img
+   src="{{base_path}}/assets/integration-guides/usecases/tcp-chat-service/img/chat-service.png"
+      alt="Create integration"
+      width="80%"
+   />
+</a>
+
 ### Why this use case
 
 - Demonstrates real-time bidirectional communication using TCP sockets.
