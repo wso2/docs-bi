@@ -109,6 +109,7 @@ nav:
         - Data Mapper:
           - Overview: integration-guides/usecases/datamapper/overview.md
           - Read a CSV File and Transform It to an XML File: integration-guides/usecases/datamapper/read-csv-file-and-transform-to-xml-file.md
+        - Build an HTTP REST API for Hotel Reservation: integration-guides/usecases/http/build-an-http-rest-api-for-hotel-reservation.md
   - Developer Guides:
       - Create Integrations:
           Overview: developer-guides/create-integrations/overview.md
