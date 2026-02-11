@@ -63,7 +63,7 @@ WSO2 Integrator: BI extension provides a low-code graphical environment to visua
    />
 </a>
 
-## Step 2: Create the TCP Service
+## Step 2: Create the TCP service
 
 In this step, you will add a TCP Service to your integration to handle TCP client connections on a specific port.
 
