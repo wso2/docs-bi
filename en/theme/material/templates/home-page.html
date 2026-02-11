@@ -1,0 +1,337 @@
+<!--
+ * Copyright (c) 2023-2024, WSO2 LLC. (https://www.wso2.com).
+ *
+ * WSO2 LLC. licenses this file to you under the Apache License,
+ * Version 2.0 (the "License"); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied. See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+-->
+
+{% macro home_card_icon(icon) %}
+{% if icon.endswith(".svg") or icon.endswith(".png") %}
+{% include icon %}
+{% else %}
+{% include ".icons/" ~ icon ~ ".svg" %}
+{% endif %}
+{% endmacro %}
+
+{% extends "base.html" %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ 'assets/css/home.css' | url }}">
+{% endblock %}
+
+{% block container %}
+<div class="md-content">
+  <article class="md-content__inner md-typeset">
+    <div class="md-home-search-container">
+      <h1 class="md-home-search-input-label">WSO2 Integrator: BI Documentation</h1>
+      {% include "partials/search.html" %}
+
+    </div>
+    <div class="description-section"
+      style="display: flex; flex-direction: row; align-items: flex-start; margin-top: 30px;">
+      <p>
+        WSO2 Integrator: BI is a complete platform for building intelligent integrations, automations, and AI-powered applications.
+        Build integrations with AI agents, RAG applications, service orchestrations, file integrations, and more.
+      </p>
+    </div>
+
+    {{ page.content }}
+
+    <a href="{{base_path}}/get-started/quick-start-guide/" rel="noopener"
+      class="quickstart-cta">
+
+      <div class="cta-icon">
+        {{ home_card_icon("octicons/rocket-16") }}
+      </div>
+
+      <div class="cta-content">
+        <span class="cta-title">New to WSO2 Integrator: BI?</span>
+        <span class="cta-desc">Take our quick start guide to build your first integration.</span>
+      </div>
+    </a>
+
+    <div class="components-hub-container">
+
+      <div class="components-grid-split">
+
+        <div>
+          <div class="components-section-header">
+            <h2>Get Started</h2>
+            <p>Install and create your first integrations.</p>
+          </div>
+          <div class="components-card">
+            <div>
+              <div class="md-column-grid-item-header-icon icon-color-4">
+                {{ home_card_icon("octicons/download-16") }}
+              </div>
+              <h3>Installation</h3>
+              <div class="components-card-content">
+                Download and install WSO2 Integrator: BI on your local machine or server. Get started with the tools and runtime.
+              </div>
+            </div>
+            <div class="components-card-footer">
+
+              <a href="{{base_path}}/get-started/install-wso2-integrator-bi/" rel="noopener" class="components-resource-link">
+                Install WSO2 Integrator: BI <span>&rarr;</span>
+              </a>
+              <a href="{{base_path}}/get-started/quick-start-guide/" rel="noopener" class="components-resource-link">
+                Quick Start Guide <span>&rarr;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="components-section-header">
+            <h2>Developer Guides</h2>
+            <p>Learn how to develop and test integrations.</p>
+          </div>
+          <div class="components-card">
+            <div>
+              <div class="md-column-grid-item-header-icon icon-color-4">
+                {{ home_card_icon("octicons/code-16") }}
+              </div>
+              <h3>Project Development</h3>
+              <div class="components-card-content">
+                Learn how to create integration projects, design integrations, and use developer tools.
+              </div>
+            </div>
+            <div class="components-card-footer">
+
+              <a href="{{base_path}}/developer-guides/create-integrations/overview/" rel="noopener"
+                class="components-resource-link">
+                Create Integrations <span>&rarr;</span>
+              </a>
+              <a href="{{base_path}}/developer-guides/protocols-and-connectors/overview-of-connectors/" rel="noopener"
+                class="components-resource-link">
+                Protocols and Connectors <span>&rarr;</span>
+              </a>
+              <a href="{{base_path}}/developer-guides/tools/migration-tools/overview/" rel="noopener"
+                class="components-resource-link">
+                Migration Tools <span>&rarr;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="components-section-header">
+        <h2>Integration Guides</h2>
+        <p>Build AI agents, integrations, and automations.</p>
+      </div>
+
+      <div class="components-grid-2">
+        <div class="components-card">
+          <div>
+            <div class="md-column-grid-item-header-icon icon-color-4">
+              {{ home_card_icon("octicons/hubot-16") }}
+            </div>
+            <h3>AI Agents & Gen AI</h3>
+            <div class="components-card-content">
+              Build AI agents, RAG applications, and integrate with LLMs. Use natural functions and MCP servers for AI-powered integrations.
+            </div>
+          </div>
+          <div class="components-card-footer">
+
+            <a href="{{base_path}}/integration-guides/ai/agents/introduction-to-chat-agents/" rel="noopener"
+              class="components-resource-link">
+              Agents <span>&rarr;</span>
+            </a>
+            <a href="{{base_path}}/integration-guides/ai/rag/rag-ingestion/" rel="noopener"
+              class="components-resource-link">
+              RAG Applications <span>&rarr;</span>
+            </a>
+            <a href="{{base_path}}/integration-guides/ai/mcp-service/mcp-service/" rel="noopener"
+              class="components-resource-link">
+              MCP Service <span>&rarr;</span>
+            </a>
+
+          </div>
+        </div>
+
+        <div class="components-card">
+          <div>
+            <div class="md-column-grid-item-header-icon icon-color-4">
+              {{ home_card_icon("octicons/workflow-16") }}
+            </div>
+            <h3>Integration as API</h3>
+            <div class="components-card-content">
+              Build service orchestrations, message transformations, and routing integrations to expose your integrations as APIs.
+            </div>
+          </div>
+          <div class="components-card-footer">
+            <a href="{{base_path}}/integration-guides/integration-as-api/service-orchestration/" rel="noopener"
+              class="components-resource-link">
+              Service Orchestration <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="components-card-footer">
+            <a href="{{base_path}}/integration-guides/integration-as-api/message-transformation/" rel="noopener"
+              class="components-resource-link">
+              Message Transformation <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="components-card-footer">
+            <a href="{{base_path}}/integration-guides/integration-as-api/message-routing/" rel="noopener"
+              class="components-resource-link">
+              Message Routing <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="components-card">
+          <div>
+            <div class="md-column-grid-item-header-icon icon-color-4">
+              {{ home_card_icon("octicons/file-16") }}
+            </div>
+            <h3>File Integration</h3>
+            <div class="components-card-content">
+              Integrate with file systems and directories. Read, write, and transform files in various formats.
+            </div>
+          </div>
+          <div class="components-card-footer">
+
+            <a href="{{base_path}}/integration-guides/usecases/datamapper/read-csv-file-and-transform-to-xml-file/" rel="noopener"
+              class="components-resource-link">
+              Read a CSV File and Transform It to XML File<span>&rarr;</span>
+            </a>
+
+          </div>
+        </div>
+
+        <div class="components-card">
+          <div>
+            <div class="md-column-grid-item-header-icon icon-color-4">
+              {{ home_card_icon("octicons/file-16") }}
+            </div>
+            <h3>Use Cases</h3>
+            <div class="components-card-content">
+              Explore various use cases for integrations.
+            </div>
+          </div>
+          <div class="components-card-footer">
+
+            <a href="{{base_path}}/integration-guides/usecases/integration-service-as-a-managed-api/expose-an-integration-service-as-a-managed-api/" rel="noopener"
+              class="components-resource-link">
+              Expose an Integration Service as a Managed API <span>&rarr;</span>
+            </a>
+            <a href="{{base_path}}/integration-guides/usecases/datamapper/overview/" rel="noopener"
+              class="components-resource-link">
+              Data Mapper <span>&rarr;</span>
+            </a>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="components-section-header">
+        <h2>Deploy & Monitor</h2>
+        <p>Deploy your integrations and monitor their performance.</p>
+      </div>
+
+      <div class="components-grid-2">
+        <div class="components-card">
+          <div>
+            <div class="md-column-grid-item-header-icon icon-color-4">
+              {{ home_card_icon("octicons/server-16") }}
+            </div>
+            <h3>Deployment</h3>
+            <div class="components-card-content">
+              Deploy your integrations to containers, VMs, or cloud platforms. Learn about deployment best practices and configurations.
+            </div>
+          </div>
+          <div class="components-card-footer">
+
+            <a href="{{base_path}}/deploy/overview/" rel="noopener"
+              class="components-resource-link">
+              Deployment Overview <span>&rarr;</span>
+            </a>
+            <a href="{{base_path}}/deploy/deploy-to-devant/" rel="noopener"
+              class="components-resource-link">
+              Deploy to Devant <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="components-card">
+          <div>
+            <div class="md-column-grid-item-header-icon icon-color-4">
+              {{ home_card_icon("octicons/graph-16") }}
+            </div>
+            <h3>Observability</h3>
+            <div class="components-card-content">
+              Monitor your integrations with observability tools. Track metrics, traces, and logs with Prometheus, Jaeger, and more.
+            </div>
+          </div>
+          <div class="components-card-footer">
+            <a href="{{base_path}}/observability-and-monitoring/overview/" rel="noopener"
+              class="components-resource-link">
+              Observability Overview <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="components-card-footer">
+            <a href="{{base_path}}/observability-and-monitoring/monitoring-with-wso2-integrator-icp/" rel="noopener"
+              class="components-resource-link">
+              Monitoring with WSO2 Integrator: ICP <span>&rarr;</span>
+            </a>
+          </div>
+          <div class="components-card-footer">
+            <a href="{{base_path}}/observability-and-monitoring/observability-with-devant/" rel="noopener"
+              class="components-resource-link">
+              Observability with Devant <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="components-section-header">
+        <h2>References</h2>
+        <p>System requirements, patterns, and guidelines.</p>
+      </div>
+
+      <div style="max-width: 50%;">
+        <div class="components-card">
+          <div>
+            <div class="md-column-grid-item-header-icon icon-color-4">
+              {{ home_card_icon("octicons/book-16") }}
+            </div>
+
+            <h3>Documentation & References</h3>
+            <div class="components-card-content">
+              Access system requirements, enterprise integration patterns, AI usage guidelines, and connector development references.
+            </div>
+          </div>
+          <div class="components-card-footer">
+
+            <a href="{{base_path}}/references/system-requirements/" rel="noopener"
+              class="components-resource-link">
+              System Requirements <span>&rarr;</span>
+            </a>
+            <a href="{{base_path}}/references/enterprise-integrations-patterns/" rel="noopener"
+              class="components-resource-link">
+              Enterprise Integration Patterns <span>&rarr;</span>
+            </a>
+            <a href="{{base_path}}/wso2-integrator-bi-release-notes/" rel="noopener"
+              class="components-resource-link">
+              Release Note <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+</article>
+{% endblock %}

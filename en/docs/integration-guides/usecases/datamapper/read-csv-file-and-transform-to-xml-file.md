@@ -57,7 +57,7 @@ S003,P-2003,1,89.50
 Before you begin, make sure you have the following:
 
   - <b>Visual Studio Code</b>: Install <a href="https://code.visualstudio.com/">Visual Studio Code</a> if you don't have it already.
-  - <b>WSO2 Integrator: BI Extension</b>: Install the WSO2 Integrator: BI extension. Refer to <a href="../install-wso2-integrator-bi/">Install WSO2 Integrator: BI</a> for detailed instructions.
+  - <b>WSO2 Integrator: BI Extension</b>: Install the WSO2 Integrator: BI extension. Refer to <a href="{{base_path}}/get-started/install-wso2-integrator-bi/">Install WSO2 Integrator: BI</a> for detailed instructions.
 
 ## Step 1: Creating a new integration project
 
@@ -85,8 +85,6 @@ WSO2 Integrator: BI extension provides a low-code graphical environment to visua
 > This is the entry point for all low-code projects in Ballerina Integrator.
 
  <a href="{{base_path}}/assets/integration-guides/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml1.gif"><img src="{{base_path}}/assets/integration-guides/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml1.gif" alt="Create Integration" width="70%"></a>
-
----
 
 ## Step 2: Add configurable variables
 
@@ -120,7 +118,6 @@ These parameters make your integration portable and environment-agnostic — you
 
 <a href="{{base_path}}/assets/integration-guides/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml2.gif"><img src="{{base_path}}/assets/integration-guides/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml2.gif" alt="Add configurable file paths" width="70%"></a>
 
----
 ## Step 3: Create a structure to represent each csv row
 
 In this step, you’ll define a structure (called a *Type* in Ballerina) that describes what one row in your CSV file looks like.  
@@ -148,7 +145,6 @@ Instead of dealing with raw text lines, it can now work with meaningful fields l
 
 <a href="{{base_path}}/assets/integration-guides/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml3.gif"><img src="{{base_path}}/assets/integration-guides/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml3.gif" alt="Create a type to represent CSV structure" width="70%"></a>
 
----
 ## Step 4: Generate xml types from a sample payload
 
 In this step, you’ll create the XML output structure automatically by pasting a sample XML.  
@@ -206,7 +202,6 @@ This type will act as the target structure in the Data Mapper, allowing each `CS
 
 <a href="{{base_path}}/assets/integration-guides/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml4.gif"><img src="{{base_path}}/assets/integration-guides/usecases/datamapping/csv-to-xml-simple-mapping/img/csv_to_xml4.gif" alt="Create a type to represent XML structure" width="70%"></a>
 
----
 ## Step 5: Create an automation and set up CSV reading
 
 In this step, you’ll create an **Automation** entry point in WSO2 Integrator: BI and configure it to read a CSV file from the path defined in your configurable variable (`inputCSV`).  
@@ -584,4 +579,3 @@ Run the integration. On success, the XML produced from `xmlRecord` will be writt
 
 ???+ tip "Note"
     Now you have successfully converted a CSV file to a XML file.
----
