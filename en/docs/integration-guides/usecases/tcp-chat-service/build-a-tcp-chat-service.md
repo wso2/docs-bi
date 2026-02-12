@@ -53,7 +53,7 @@ WSO2 Integrator: BI extension provides a low-code graphical environment to visua
    4. Once the project is created, you'll enter the graphical integration designer view.
       From here, you can start adding listeners, data mappings, and logic components to build your flow visually.
 
-> This is the entry point for all low-code projects in Ballerina Integrator.
+> This is the entry point for all low-code projects in WSO2 Integrator: BI.
 
 <a href="{{base_path}}/assets/integration-guides/usecases/tcp-chat-service/img/create-integration.gif">
    <img
