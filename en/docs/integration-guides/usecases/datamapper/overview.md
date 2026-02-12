@@ -32,6 +32,6 @@ Use the Data Mapper when you need to:
 
 ## Related topics
 
-- [Data Mapping Quick Start](../../../developer-guides/data-mapping.md)
+- [Data Mapping Quick Start](../../../developer-guides/data-mapping/manual-data-mapping.md)
 - [Design the Integrations](../../../developer-guides/design-the-integrations.md)
 - [Create a Project](../../../developer-guides/overview.md)
