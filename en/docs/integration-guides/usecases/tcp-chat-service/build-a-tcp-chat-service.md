@@ -4,7 +4,7 @@
 
 This is a low-code walkthrough that uses the Ballerina Integrator TCP service and messaging capabilities to build an end-to-end real-time communication pipeline — without writing code by hand. You will:
 
-1. Create a TCP listener service that listens for incoming client connections on port 3000.
+1. Create a TCP listener service that listens for incoming client connections on port `3000`.
 2. Register client usernames and maintain active client connections.
 3. Send and receive messages between the chat service and connected clients.
 4. Handle client disconnections and manage the client connection lifecycle.
