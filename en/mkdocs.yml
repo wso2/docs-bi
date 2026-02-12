@@ -109,6 +109,7 @@ nav:
         - Data Mapper:
           - Overview: integration-guides/usecases/datamapper/overview.md
           - Read a CSV File and Transform It to an XML File: integration-guides/usecases/datamapper/read-csv-file-and-transform-to-xml-file.md
+        - TCP Chat Service: integration-guides/usecases/tcp-chat-service/build-a-tcp-chat-service.md
   - Developer Guides:
       - Create Integrations:
           Overview: developer-guides/create-integrations/overview.md
