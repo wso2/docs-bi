@@ -29,9 +29,9 @@ You need Visual Studio Code (VS Code) with the <a target="_blank" href="https://
 
 Follow the steps below to run and test this GraphQL News Broadcasting Service.
 
-### Step 1: Set up the workspace
+## Step 1: Set up the workspace
 
-#### Create an integration project
+### Create an integration project
 
 The integration project serves as the foundational workspace where you manage all your integration artifacts for the news broadcasting service.
 
@@ -49,19 +49,19 @@ The integration project serves as the foundational workspace where you manage al
 
 6. Click **Create Integration**.
 
-<a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/create_an_integration_project.gif">
-    <img
-        src="{{base_path}}/assets/usecases/graphql-news-broadcasting/create_an_integration_project.gif"
-        alt="create an integration project"
-        width="80%"
-    />
-</a>
+    <a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/create_an_integration_project.gif">
+        <img
+            src="{{base_path}}/assets/usecases/graphql-news-broadcasting/create_an_integration_project.gif"
+            alt="create an integration project"
+            width="80%"
+        />
+    </a>
 
-### Step 2: Develop the integration artifacts
+## Step 2: Develop the integration artifacts
 
 Follow the instructions given in this section to create and configure the required artifacts for the news broadcasting service.
 
-#### Create a GraphQL service
+### Create a GraphQL service
 
 The GraphQL service will define the endpoints and the data structure for broadcasting news updates.
 
@@ -79,15 +79,15 @@ The GraphQL service will define the endpoints and the data structure for broadca
 
 6. Leave the default **Port** as `8080` and click **Create**.
 
-<a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/create_a_graphql_service.gif">
-    <img
-        src="{{base_path}}/assets/usecases/graphql-news-broadcasting/create_a_graphql_service.gif"
-        alt="create a graphql service"
-        width="80%"
-    />
-</a>
+    <a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/create_a_graphql_service.gif">
+        <img
+            src="{{base_path}}/assets/usecases/graphql-news-broadcasting/create_a_graphql_service.gif"
+            alt="create a graphql service"
+            width="80%"
+        />
+    </a>
 
-### Step 3: Configure the GraphQL service logic
+## Step 3: Configure the GraphQL service logic
 
 After creating the service, you need to enable the GraphiQL interface and prepare the service for broadcasting logic.
 
@@ -112,15 +112,15 @@ After creating the service, you need to enable the GraphiQL interface and prepar
 
 4.  Navigate back to the **GraphQL Diagram** or **Project Design** view to see the updated service structure in the graphical editor.
 
-<a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/configure_service_logic.gif">
-    <img
-        src="{{base_path}}/assets/usecases/graphql-news-broadcasting/configure_service_logic.gif"
-        alt="configure service logic"
-        width="80%"
-    />
-</a>
+    <a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/configure_service_logic.gif">
+        <img
+            src="{{base_path}}/assets/usecases/graphql-news-broadcasting/configure_service_logic.gif"
+            alt="configure service logic"
+            width="80%"
+        />
+    </a>
 
-### Step 4: Create news data types
+## Step 4: Create news data types
 
 Before defining the service operations, you need to create a data structure that represents a news item.
 
@@ -140,15 +140,15 @@ Before defining the service operations, you need to create a data structure that
 
 6.  Click **Save**.
 
-<a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/create_news_data_types.gif">
-    <img
-        src="{{base_path}}/assets/usecases/graphql-news-broadcasting/create_news_data_types.gif"
-        alt="create news data types"
-        width="80%"
-    />
-</a>
+    <a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/create_news_data_types.gif">
+        <img
+            src="{{base_path}}/assets/usecases/graphql-news-broadcasting/create_news_data_types.gif"
+            alt="create news data types"
+            width="80%"
+        />
+    </a>
 
-### Step 5: Define GraphQL operations and logic
+## Step 5: Define GraphQL operations and logic
 
 After the news data type is defined, you need to configure the GraphQL operations and implement the logic to retrieve the news items.
 
@@ -180,7 +180,7 @@ After the news data type is defined, you need to configure the GraphQL operation
     />
 </a>
 
-### Step 6: Define the publishNews mutation
+## Step 6: Define the publishNews mutation
 
 Next, you need to create a mutation that allows users to publish news items to the service.
 
@@ -202,15 +202,15 @@ Next, you need to create a mutation that allows users to publish news items to t
 
 6.  Click **Save** to add the mutation to your GraphQL service.
 
-<a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/define_publish_news_mutation.gif">
-    <img
-        src="{{base_path}}/assets/usecases/graphql-news-broadcasting/define_publish_news_mutation.gif"
-        alt="define publish news mutation"
-        width="80%"
-    />
-</a>
+    <a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/define_publish_news_mutation.gif">
+        <img
+            src="{{base_path}}/assets/usecases/graphql-news-broadcasting/define_publish_news_mutation.gif"
+            alt="define publish news mutation"
+            width="80%"
+        />
+    </a>
 
-### Step 7: Implement the publishNews mutation logic
+## Step 7: Implement the publishNews mutation logic
 
 After the mutation is defined, you need to implement the logic to process the incoming news item and map it to your data structure.
 
@@ -231,15 +231,15 @@ After the mutation is defined, you need to implement the logic to process the in
 
 6.  Click **Save** to complete the implementation of the mutation logic.
 
-<a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/implement_mutation_logic.gif">
-    <img
-        src="{{base_path}}/assets/usecases/graphql-news-broadcasting/implement_mutation_logic.gif"
-        alt="implement mutation logic"
-        width="80%"
-    />
-</a>
+    <a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/implement_mutation_logic.gif">
+        <img
+            src="{{base_path}}/assets/usecases/graphql-news-broadcasting/implement_mutation_logic.gif"
+            alt="implement mutation logic"
+            width="80%"
+        />
+    </a>
 
-### Step 8: Complete the mutation logic in code
+## Step 8: Complete the mutation logic in code
 
 While the mutation structure is designed, you must add a final line of code in the source view to ensure that every newly published news item is actually persisted into your in-memory storage array.
 
@@ -264,15 +264,15 @@ While the mutation structure is designed, you must add a final line of code in t
     }
     ```
 
-<a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/complete_mutation_logic.gif">
-    <img
-        src="{{base_path}}/assets/usecases/graphql-news-broadcasting/complete_mutation_logic.gif"
-        alt="complete mutation logic"
-        width="80%"
-    />
-</a>
+    <a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/complete_mutation_logic.gif">
+        <img
+            src="{{base_path}}/assets/usecases/graphql-news-broadcasting/complete_mutation_logic.gif"
+            alt="complete mutation logic"
+            width="80%"
+        />
+    </a>
 
-### Step 9: Implement real-time broadcasting logic with a Service Class
+## Step 9: Implement real-time broadcasting logic with a Service Class
 
 To enable real-time broadcasting, you need to create a service class that manages the stream of news items delivered to subscribers.
 
@@ -297,15 +297,15 @@ To enable real-time broadcasting, you need to create a service class that manage
     * **Return Type**: Enter `record {| News value; |}|error?` to conform to the Ballerina stream iteration protocol.
     * Click **Save**.
 
-<a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/implement_service_class.gif">
-    <img
-        src="{{base_path}}/assets/usecases/graphql-news-broadcasting/implement_service_class.gif"
-        alt="implement service class"
-        width="80%"
-    />
-</a>
+    <a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/implement_service_class.gif">
+        <img
+            src="{{base_path}}/assets/usecases/graphql-news-broadcasting/implement_service_class.gif"
+            alt="implement service class"
+            width="80%"
+        />
+    </a>
 
-### Step 10: Finalize the Service Class in code
+## Step 10: Finalize the Service Class in code
 
 After visually creating the service class, you need to add the initialization logic and the iteration logic in the source view to enable the class to serve news items from the storage array.
 
@@ -330,15 +330,15 @@ After visually creating the service class, you need to add the initialization lo
 
 4.  Ensure the `newsItems` variable is marked as `private` to maintain data integrity within the service class.
 
-<a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/finalize_service_class_code.gif">
-    <img
-        src="{{base_path}}/assets/usecases/graphql-news-broadcasting/finalize_service_class_code.gif"
-        alt="finalize service class code"
-        width="80%"
-    />
-</a>
+    <a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/finalize_service_class_code.gif">
+        <img
+            src="{{base_path}}/assets/usecases/graphql-news-broadcasting/finalize_service_class_code.gif"
+            alt="finalize service class code"
+            width="80%"
+        />
+    </a>
 
-### Step 11: Implement the NewsGenerator stream logic
+## Step 11: Implement the NewsGenerator stream logic
 
 In this step, you will implement the logic for the `next` method within the `NewsGenerator` service class to handle how news items are delivered as a stream.
 
@@ -357,15 +357,15 @@ In this step, you will implement the logic for the `next` method within the `New
 
 6.  In the **Expression** field, click the variables icon or manually enter `()` to return nil (indicating the end of the stream if no items exist) and click **Save**.
 
-<a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/implement_stream_logic.gif">
-    <img
-        src="{{base_path}}/assets/usecases/graphql-news-broadcasting/implement_stream_logic.gif"
-        alt="implement stream logic"
-        width="80%"
-    />
-</a>
+    <a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/implement_stream_logic.gif">
+        <img
+            src="{{base_path}}/assets/usecases/graphql-news-broadcasting/implement_stream_logic.gif"
+            alt="implement stream logic"
+            width="80%"
+        />
+    </a>
 
-### Step 12: Implement the stream iteration logic
+## Step 12: Implement the stream iteration logic
 
 In this step, you will complete the `next` method by adding the logic to wait for new news items and shift them from the storage array to the subscriber.
 
@@ -393,15 +393,15 @@ In this step, you will complete the `next` method by adding the logic to wait fo
 
 8.  Click **Save** to finalize the stream generation logic.
 
-<a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/implement_stream_iteration.gif">
-    <img
-        src="{{base_path}}/assets/usecases/graphql-news-broadcasting/implement_stream_iteration.gif"
-        alt="implement stream iteration logic"
-        width="80%"
-    />
-</a>
+    <a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/implement_stream_iteration.gif">
+        <img
+            src="{{base_path}}/assets/usecases/graphql-news-broadcasting/implement_stream_iteration.gif"
+            alt="implement stream iteration logic"
+            width="80%"
+        />
+    </a>
 
-### Step 13: Define the GraphQL Subscription operation
+## Step 13: Define the GraphQL Subscription operation
 
 After implementing the internal streaming logic in the service class, you must define the subscription operation in the GraphQL service to make it accessible to clients.
 
@@ -415,15 +415,15 @@ After implementing the internal streaming logic in the service class, you must d
 
 5.  Click **Save** to finalize the subscription operation.
 
-<a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/define_subscription_operation.gif">
-    <img
-        src="{{base_path}}/assets/usecases/graphql-news-broadcasting/define_subscription_operation.gif"
-        alt="define subscription operation"
-        width="80%"
-    />
-</a>
+    <a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/define_subscription_operation.gif">
+        <img
+            src="{{base_path}}/assets/usecases/graphql-news-broadcasting/define_subscription_operation.gif"
+            alt="define subscription operation"
+            width="80%"
+        />
+    </a>
 
-### Step 14: Finalize the subscription implementation in code
+## Step 14: Finalize the subscription implementation in code
 
 In this final development step, you will refine the service class methods and connect the news storage to the GraphQL subscription resource using the Ballerina source view.
 
@@ -444,15 +444,15 @@ In this final development step, you will refine the service class methods and co
     }
     ```
 
-<a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/finalize_subscription_code.gif">
-    <img
-        src="{{base_path}}/assets/usecases/graphql-news-broadcasting/finalize_subscription_code.gif"
-        alt="finalize subscription code"
-        width="80%"
-    />
-</a>
+    <a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/finalize_subscription_code.gif">
+        <img
+            src="{{base_path}}/assets/usecases/graphql-news-broadcasting/finalize_subscription_code.gif"
+            alt="finalize subscription code"
+            width="80%"
+        />
+    </a>
 
-### Step 15: Run and test the service
+## Step 15: Run and test the service
 
 After the implementation is complete, you can run the service and use the integrated GraphiQL explorer to test the real-time broadcasting functionality.
 
@@ -490,10 +490,10 @@ After the implementation is complete, you can run the service and use the integr
         ```
 5.  Observe that when a mutation is executed, the subscription tab automatically receives the updated news broadcast.
 
-<a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/run_and_test.gif">
-    <img
-        src="{{base_path}}/assets/usecases/graphql-news-broadcasting/run_and_test.gif"
-        alt="run and test the service"
-        width="80%"
-    />
-</a>
+    <a href="{{base_path}}/assets/usecases/graphql-news-broadcasting/run_and_test.gif">
+        <img
+            src="{{base_path}}/assets/usecases/graphql-news-broadcasting/run_and_test.gif"
+            alt="run and test the service"
+            width="80%"
+        />
+    </a>
