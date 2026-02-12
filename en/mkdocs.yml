@@ -117,7 +117,9 @@ nav:
           Manage Integrations in Workspaces: developer-guides/create-integrations/manage-integrations-in-workspaces.md
       - "WSO2 Integrator: BI Artifacts": developer-guides/wso2-integrator-bi-artifacts.md
       - Design the Integrations: developer-guides/design-the-integrations.md
-      - Data Mapping: developer-guides/data-mapping.md
+      - Data Mapping: 
+          Manual Data Mapping: developer-guides/data-mapping/manual-data-mapping.md
+          AI Data Mapping: developer-guides/data-mapping/ai-data-mapping.md
       - Try the Integration: developer-guides/try-the-integration.md
       - Testing: developer-guides/test-the-integrations.md
       - Debugging & Troubleshooting:
