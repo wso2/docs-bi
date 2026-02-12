@@ -120,7 +120,7 @@ In this step, you will add a function to print the JSON payload received from th
 
 ## Step 6: Run and test the application
 
-In this final step, you will execute the automation and verify that the integration successfully retrieves and prints data from the StackOverflow API.
+In this final step, you will execute the automation and verify that the integration successfully retrieves and prints data from the Stack Overflow API.
 
 1.  Select the **Run** icon (green play button) in the top-right corner of the editor to start the service.
 2.  Wait for the integrated terminal to open at the bottom of the screen.
