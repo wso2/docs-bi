@@ -5,7 +5,7 @@ This is a low-code walkthrough that demonstrates how to use the WSO2 Integrator:
 
    1. Create a new integration project in Visual Studio Code.
    2. Add an automation artifact to define the integration logic.
-   3. Generate a custom Stack Overflow connector from an OpenAPI definition.
+   3. Create a Stack Overflow connection using an OpenAPI specification.
    4. Configure the connector to retrieve questions from Stack Overflow.
    5. Print the API response to the system console for verification.
 
@@ -55,9 +55,9 @@ In this step, you will add an Automation artifact to your integration, which all
    />
 </a>
 
-## Step 3: Create a Stack Overflow connector
+## Step 3: Create Stack Overflow Connection
 
-In this step, you will generate a custom connector using an OpenAPI specification to integrate with the Stack Exchange API.
+In this step, you will generate a stack overflow connection using an OpenAPI specification to integrate with the Stack Exchange API.
 
 1. In the **Automation** diagram view, click the **+** icon on the flow line between the **Start** and **Error Handler** nodes.
 2. In the right-side palette, select **Add Connection**.
@@ -68,6 +68,9 @@ In this step, you will generate a custom connector using an OpenAPI specificatio
 5. Click **Save Connector**.
 6. On the **Create Connection** screen, review the **Connection Details**.
 7. Click **Save Connection** to finalize the setup.
+
+???+ note
+      Completing these steps creates the Stack Overflow connection. As part of this process, the related connector is also generated automatically.
 
 <a href="{{base_path}}/assets/integration-guides/usecases/create-stack-overflow-custom-connector-and-get-questions/img/create-stackoverflow-connector.gif">
    <img
@@ -136,4 +139,4 @@ In this final step, you will execute the automation and verify that the integrat
 </a>
 
 ???+ tip "Success"
-      You have now successfully integrated with the Stack Exchange API using a low-code approach. The API response is printed to your console, and your automation is ready for further enhancements or deployment.
+   You have now successfully integrated with the Stack Exchange API using a low-code approach. The setup completes by creating both the connection and its connector. The API response is printed to your console, and your automation is ready for further enhancements or deployment.
