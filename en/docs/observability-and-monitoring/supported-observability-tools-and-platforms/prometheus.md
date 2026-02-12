@@ -48,7 +48,16 @@ import ballerinax/prometheus as _;
 
 To support Prometheus as the metrics reporter, an HTTP endpoint starts with the context of `/metrics` in the default port `9797` when starting the service in BI.
 
-## Step 3 - Configure runtime configurations for observability
+## Step 3 - Enable observability for the project
+
+Observability can be enabled in a BI project by adding the following section to the `Ballerina.toml` file by navigating to the **file explorer** view.
+
+```toml
+[build-options]
+observabilityIncluded=true
+```
+
+## Step 4 - Configure runtime configurations for observability
 You can set up Prometheus for your BI project using configurations similar to the following in the `Config.toml` file. Navigate to **file explorer** and add the following to the `Config.toml` file.
 
 ```toml
@@ -63,10 +72,10 @@ host="0.0.0.0"
 
 Configuration key | Description | Default value | Possible values 
 --- | --- | --- | --- 
-`ballerinax.prometheus.port` | The value of the port to which the '/metrics' service will bind. This service will be used by Prometheus to scrape the information of the BI service. | `9797` | Any suitable value for port 0 - 0 - 65535. However, within that range, ports `0` - `1023` are generally reserved for specific purposes. Therefore, it is advisable to select a port outside that range. 
+`ballerinax.prometheus.port` | The value of the port to which the '/metrics' service will bind. This service will be used by Prometheus to scrape the information of the BI service. | `9797` | Any suitable value for port 0 - 65535. However, within that range, ports `0` - `1023` are generally reserved for specific purposes. Therefore, it is advisable to select a port outside that range. 
 `ballerinax.prometheus.host` | The name of the host to which the '/metrics' service will bind. This service will be used by Prometheus to scrape the information of the BI service. | `0.0.0.0` | IP or Hostname or `0.0.0.0` of the node in which the BI service is running.
 
-## Step 4 - Run the BI service
+## Step 5 - Run the BI service
 
 When observability is enabled, the BI runtime exposes internal metrics via an HTTP endpoint (`/metrics`) for metrics monitoring, and the metrics will be published to Prometheus. Prometheus should be configured to scrape metrics from the metrics HTTP endpoint in BI.
 
@@ -81,7 +90,7 @@ Running executable
 ballerina: started Prometheus HTTP listener 0.0.0.0:9797
 ```
 
-## Step 5 - Send requests
+## Step 6 - Send requests
  
 Send requests to `http://localhost:8090/shop/products`.
 
@@ -111,9 +120,9 @@ $ curl -X POST http://localhost:8090/shop/order \
 $ curl -X GET http://localhost:8090/shop/order/0
 ```
 
-## Step 6 - View metrics on the Prometheus server
+## Step 7 - View metrics on the Prometheus server
 
-Go to <http://localhost:19090/> and check whether you can see the Prometheus graph.
+Go to <http://localhost:9090/> and check whether you can see the Prometheus graph.
 BI metrics should appear in the Prometheus graph's metrics list when the BI service is started.
 
 <a href="{{base_path}}/assets/img/observability/supported-tools/ballerina-metrics-listed-in-prometheus.png"><img src="{{base_path}}/assets/img/observability/supported-tools/ballerina-metrics-listed-in-prometheus.png" alt="BI metrics listed in Prometheus" width="70%"></a>

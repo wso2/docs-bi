@@ -26,9 +26,18 @@ import ballerinax/jaeger as _;
 
 Jaeger extension has an `Opentelemetry GRPC Span Exporter` which will push tracing data as batches to the Jaeger server endpoint (default - http://localhost:4317) in opentelemetry format.
 
-## Step 3 - Configure Ballerina runtime configurations
+## Step 3 - Enable observability for the project
 
-Tracing can be enabled in your Ballerina project using configurations similar to the following in your `Config.toml` file.
+Observability can be enabled in a BI project by adding the following section to the `Ballerina.toml` file by navigating to the **file explorer** view.
+
+```toml
+[build-options]
+observabilityIncluded=true
+```
+
+## Step 4 - Configure Ballerina runtime configurations
+
+Tracing can be enabled in your BI project using configurations similar to the following.  Navigate to **file explorer** and add the following to the `Config.toml` file.
 
 ```toml
 [ballerina.observe]
@@ -55,7 +64,7 @@ ballerinax.jaeger. samplerParam | It is a floating value. Based on the sampler t
 ballerinax.jaeger. reporterFlushInterval | The Jaeger client will be sending the spans to the agent at this interval. | 2000 | Any positive integer value.
 ballerinax.jaeger. reporterBufferSize | Queue size of the Jaeger client. | 1000 | Any positive integer value.
 
-## Step 4 - Run the BI service
+## Step 5 - Run the BI service
 
 When observability is enabled, the BI runtime collects tracing data and traces will be published to Jaeger.
 
@@ -69,7 +78,7 @@ Running executable
 ballerina: started publishing traces to Jaeger on localhost:4317
 ```
 
-## Step 5 - Send requests
+## Step 6 - Send requests
  
 Send requests to <http://localhost:8090/shop/products>.
 
@@ -99,7 +108,7 @@ $ curl -X POST http://localhost:8090/shop/order \
 $ curl -X GET http://localhost:8090/shop/order/0
 ```
 
-## Step 6 - View distributed tracing on the Jaeger server
+## Step 7 - View distributed tracing on the Jaeger server
 
 Go to <http://localhost:16686> and load the web UI of Jaeger to make sure it is functioning properly. You can select the service for which you need tracing information find traces.
 

@@ -99,7 +99,16 @@ To support Prometheus as the metrics reporter, an HTTP endpoint starts with the 
 
 Jaeger extension has an `Opentelemetry GRPC Span Exporter` which will push tracing data as batches to the endpoint (default - http://localhost:4317) in opentelemetry format.
 
-## Step 4 - Configure BI runtime configurations
+## Step 4 - Enable observability for the project
+
+Observability can be enabled in a BI project by adding the following section to the `Ballerina.toml` file by navigating to the **file explorer** view.
+
+```toml
+[build-options]
+observabilityIncluded=true
+```
+
+## Step 5 - Configure BI runtime configurations
 
 Tracing and metrics can be enabled in your BI project using configurations similar to the following.  Navigate to **file explorer** and add the following to the `Config.toml` file.
 
@@ -136,7 +145,7 @@ ballerinax.jaeger. samplerParam | It is a floating value. Based on the sampler t
 ballerinax.jaeger. reporterFlushInterval | The Jaeger client will be sending the spans to the agent at this interval. | 2000 | Any positive integer value.
 ballerinax.jaeger. reporterBufferSize | Queue size of the Jaeger client. | 1000 | Any positive integer value.
 
-## Step 5 - Run the service
+## Step 6 - Run the service
 
 When observability is enabled, the BI runtime collects tracing and metrics data and will be published to Datadog.
 
@@ -152,7 +161,7 @@ ballerina: started Prometheus HTTP listener 0.0.0.0:9797
 ballerina: started publishing traces to Jaeger on localhost:4317
 ```
 
-## Step 6 - Send requests
+## Step 7 - Send requests
  
 Send requests to <http://localhost:8090/shop/products>.
 
@@ -182,7 +191,7 @@ $ curl -X POST http://localhost:8090/shop/order \
 $ curl -X GET http://localhost:8090/shop/order/0
 ```
 
-## Step 7 - View metrics on Datadog
+## Step 8 - View metrics on Datadog
 
 You can observe the metrics in the Datadog platform under the `Metrics` tab in the left navigation.
 
@@ -202,7 +211,7 @@ The Ballerina Dashboard in the Datadog will be displayed as below.
 
 <a href="{{base_path}}/assets/img/observability/supported-tools/datadog-metrics-dashboard-2.png"><img src="{{base_path}}/assets/img/observability/supported-tools/datadog-metrics-dashboard-2.png" alt="Ballerina Dashboard in Datadog" width="70%"></a>
 
-## Step 8 - View tracing on Datadog
+## Step 9 - View tracing on Datadog
 
 To view traces of the BI application, go to **APM → Traces** in the Datadog.
 
