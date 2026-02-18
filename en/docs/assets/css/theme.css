@@ -25,6 +25,11 @@
 @import url('partials/_sidebar.css');
 @import url('partials/_header.css');
 
+html,
+body {
+    overflow-x: hidden;
+}
+
 :root {
     --md-main-content-max-width: 1400px;
     --md-border-radius: 8px;
