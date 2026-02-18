@@ -237,11 +237,13 @@ plugins:
 extra_css:
     - assets/lib/highlightjs/default.min.css
     - assets/css/theme.css
+    - assets/css/copy-page.css
     - assets/lib/json-formatter/json-formatter.css
 extra_javascript:
     - assets/lib/json-formatter/json-formatter.umd.js
     - assets/lib/highlightjs/highlight.min.js
     - assets/js/theme.js
+    - assets/js/copy-page.js
 extra:
     material:
       jinja2content: true
