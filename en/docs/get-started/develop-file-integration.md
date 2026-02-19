@@ -1,46 +1,65 @@
 # Develop File Integration
 
-## Overview
+In this section, we will learn how to create a file integration using the WSO2 Integrator: BI.
+The integration will listen to events in a directory and will be triggered for file-related events.
 
-In this guide, you will create a file integration that fetches recent weather data.
+## Step 1: Create a new integration project
 
-## Prerequisites
+1. Click on the **BI** icon on the sidebar.
+2. Click on the **Create New Integration** button.
+3. Enter the project name as `LocalFilesIntegration`.
+4. Select Project Directory and click on the **Select Location** button.
+5. Click on the **Create New Integration** button to create the integration project.
 
-Before you begin, make sure you have the following:
+    <a href="{{base_path}}/assets/img/get-started/develop-file-integration/1-create-integration.gif">
+    <img src="{{base_path}}/assets/img/get-started/develop-file-integration/1-create-integration.gif" alt="Create Integration Project" width="70%"></a>
 
-- <b>Visual Studio Code</b>: Install <a href="https://code.visualstudio.com/">Visual Studio Code</a> if you don't have it already.
-- <b>WSO2 Integrator: BI Extension</b>: Install the WSO2 Integrator: BI extension. Refer to <a href="../install-wso2-integrator-bi/">Install WSO2 Integrator: BI</a> for detailed instructions.
 
-## Step 1: Develop File Integration in WSO2 Integrator: BI
+## Step 2: Create a Local Files Integration
 
-1. Create an empty integration project.
-2. Click on the **Add Artifact** button, then under **File Integration** select **FTP Service**.
-3. Click on the **Save** button to create the ftp service by filling the rquired fields.
-4. Click on the **Add Handler** and select **onFileChange** handler.
+1. In the design view, click on the **Add Artifact** button.
+2. Select **Local Files** under the **File Integration** category.
+3. Enter the path to the directory you want to monitor. For example, `/user/home/Downloads`.
 
-    <a href="{{base_path}}/assets/img/get-started/develop-file-integration/create-service.gif">
-    <img src="{{base_path}}/assets/img/get-started/develop-file-integration/create-service.gif" alt="Configure FTP Service" width="70%"></a>
+    ???+ Tip "Use Configurable Variables"
+        Use a configurable variable for the path (e.g., `monitorPath`) so it can be changed at deployment time without code changes. See [Managing Configurations](../deploy/managing-configurations.md) for more details.
 
-## Step 2: Log Add File Events
+4. Click on the **Create** button to create the Local Files Integration.
 
-1. In the **Design** view, click the `onFileChange` function box. It will redirect you to the flow diagram view.
-2. Click the plus icon after the **Start** node to open the node panel.
-3. Select **Foreach** and enter the following values in relevant fields:
+    <a href="{{base_path}}/assets/img/get-started/develop-file-integration/2-add-local-files-integration.gif">
+    <img src="{{base_path}}/assets/img/get-started/develop-file-integration/2-add-local-files-integration.gif" alt="Local Files Integration" width="70%"></a>
 
-    | Field               | Value              |
-    |---------------------|--------------------|
-    | **Variable Name**   | `addedFile`        |
-    | **Variable Type**   | `var`              |
-    | **Collection**      | `event.addedFiles` |
+## Step 3: Configure file event resources
 
-    <a href="{{base_path}}/assets/img/get-started/develop-file-integration/add-foreach.gif">
-    <img src="{{base_path}}/assets/img/get-started/develop-file-integration/add-foreach.gif" alt="Add Iterator" width="70%"></a>
+1. Click **Add Handler** button and select **onCreate** handler.
 
-4. Under the **Foreach** node, add a **Log Info** node with the **Msg** as `"File added:" + addedFile.name`. 
+    <a href="{{base_path}}/assets/img/get-started/develop-file-integration/3-add-handler.gif">
+    <img src="{{base_path}}/assets/img/get-started/develop-file-integration/3-add-handler.gif" alt="onCreate Function" width="70%"></a>
 
-    <a href="{{base_path}}/assets/img/get-started/develop-file-integration/add-log.gif">
-    <img src="{{base_path}}/assets/img/get-started/develop-file-integration/add-log.gif" alt="Add Log" width="70%"></a>
+2. Click on the **onCreate** function to navigate to the function implementation designer view.
+3. Click on **+** and select **Log Info** from the node panel under **Logging** category.
+4. In the **Msg** field, type `File created ` and use the **Helper Panel** to select **Inputs** -> **event** -> **name**.
+5. Click on the **Save** button to add the log action to the function.
 
-## Step 3: Run the integration in WSO2 Integrator: BI
+    <a href="{{base_path}}/assets/img/get-started/develop-file-integration/4-implement-service.gif">
+    <img src="{{base_path}}/assets/img/get-started/develop-file-integration/4-implement-service.gif" alt="onCreate Function" width="70%"></a>
 
-1. Click **Run** in the top right corner to run the integration. This compiles the integration and runs it in the embedded Ballerina runtime.
+6. Repeat the above steps to add the **onDelete** and **onModify** functions to the service.
+7. For the **onDelete** function, type `File deleted ` in the **Msg** field and use the **Helper Panel** to select **Inputs** -> **event** -> **name**.
+8. For the **onModify** function, type `File modified ` in the **Msg** field and use the **Helper Panel** to select **Inputs** -> **event** -> **name**.
+9. The final service will look like this:
+
+    <a href="{{base_path}}/assets/img/get-started/develop-file-integration/5-add-resource.png">
+    <img src="{{base_path}}/assets/img/get-started/develop-file-integration/5-add-resource.png" alt="Final Service" width="70%"></a>
+
+## Step 4: Run the integration
+
+1. Click on the **Run** button in the top-right corner to run the integration.
+2. The integration will start listening to the events in the directory specified in step 2.
+3. Create a new file in the directory to trigger the **onCreate** event.
+4. Modify the file to trigger the **onModify** event.
+5. Delete the file to trigger the **onDelete** event.
+6. The log messages will be displayed in the console.
+
+    <a href="{{base_path}}/assets/img/get-started/develop-file-integration/6-run.png">
+    <img src="{{base_path}}/assets/img/get-started/develop-file-integration/6-run.png" alt="Run Integration" width="70%"></a>
