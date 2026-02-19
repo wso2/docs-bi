@@ -13,7 +13,7 @@ Retail stores generate daily sales reports as JSON files and upload them to a ce
 <a href="{{base_path}}/assets/img/integration-guides/usecases/file-integration/sales-data-sync-with-ftp-file-integration/architecture.png">
 <img src="{{base_path}}/assets/img/integration-guides/usecases/file-integration/sales-data-sync-with-ftp-file-integration/architecture.png" alt="Sales Data Sync Architecture Diagram" width="90%"></a>
 
-**Flow:**
+### Flow
 
 1. FTP listener monitors `/sales/new` directory for `.json` files
 2. Sales report is parsed and validated
@@ -23,10 +23,10 @@ Retail stores generate daily sales reports as JSON files and upload them to a ce
 
 ## Prerequisites
 
-- **WSO2 Integrator: BI** - Install from [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=WSO2.ballerina-integrator)
-- **Docker** - For running MySQL and FTP server containers
-- **MySQL Database** - Local or containerized instance
-- **FTP Server** - With read/write access to sales directories
+- WSO2 Integrator: BI - Install from [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=WSO2.ballerina-integrator)
+- Docker - For running MySQL and FTP server containers
+- MySQL Database - Local or containerized instance
+- FTP Server - With read/write access to sales directories
 
 ## Set up the environment
 
@@ -300,5 +300,5 @@ EOF"
 
 ## Deploy on Devant
 
-1. Deploy this integration on **Devant** as a **File Integration**.
+1. Deploy this integration on Devant as a File Integration.
 2. Configure the FTP and MySQL connection parameters with your production values.

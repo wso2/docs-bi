@@ -13,7 +13,7 @@ BuildRight Construction receives daily timesheet CSV files from TimeTrack Soluti
 <a href="{{base_path}}/assets/img/integration-guides/usecases/file-integration/contractor-timesheet-validation/architecture.png">
 <img src="{{base_path}}/assets/img/integration-guides/usecases/file-integration/contractor-timesheet-validation/architecture.png" alt="Contractor Timesheet Validation Architecture Diagram" width="90%"></a>
 
-**Flow:**
+### Flow
 
 1. FTP listener monitors `/timesheets/incoming` directory for `.csv` files
 2. Timesheet records are validated:
@@ -26,8 +26,8 @@ BuildRight Construction receives daily timesheet CSV files from TimeTrack Soluti
 
 ## Prerequisites
 
-- **WSO2 Integrator: BI** - Install from [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=WSO2.ballerina-integrator)
-- **Docker** - For running Kafka and FTP server containers
+- WSO2 Integrator: BI - Install from [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=WSO2.ballerina-integrator)
+- Docker - For running Kafka and FTP server containers
 
 ## Set up the environment
 
@@ -359,5 +359,5 @@ The file should be quarantined due to record count mismatch.
 
 ## Deploy on Devant
 
-1. Deploy this integration on **Devant** as a **File Integration**.
+1. Deploy this integration on Devant as a File Integration.
 2. Configure the FTP and Kafka connection parameters with your production values.
