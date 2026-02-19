@@ -261,7 +261,7 @@ extra:
         icon: octicons/rocket-16
         level: 1
       Integration Guides:
-        icon: octicons/shield-check-16
+        icon: octicons/workflow-16
         level: 1
       Developer Guides:
         icon: octicons/browser-16
@@ -273,7 +273,7 @@ extra:
         icon: octicons/graph-16
         level: 1
       References:
-        icon: octicons/hubot-16
+        icon: octicons/book-16
         level: 1
       Release Notes:
         icon: octicons/pencil-16
