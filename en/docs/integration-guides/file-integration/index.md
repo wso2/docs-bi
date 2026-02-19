@@ -11,7 +11,7 @@ You can configure integrations to detect new files based on filters, execute log
 
 - Local Files Integration: Monitors a local directory for new or modified files and triggers an integration flow.
 - FTP / SFTP Integration: Polls remote servers for new or updated files and triggers integration flows.
-- FTP Connection: Provides operations to interact with remote servers over FTP, FTPS or SFTP protocol, including listing, reading, writing, moving, and deleting files.
+- FTP Connection: Provides operations to interact with remote servers over FTP, FTPS, or SFTP protocol, including listing, reading, writing, moving, and deleting files.
 
 ## Common Scenarios
 

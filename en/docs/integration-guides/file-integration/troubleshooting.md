@@ -64,7 +64,7 @@ error: Failed to initialize File server connector. Could not determine the type 
 
 #### Resolution
 1. Create the required directories on the FTP server
-2. Ensure the path in listener configuration matches the actual FTP directory structure:
+2. Ensure the path in the listener configuration matches the actual FTP directory structure:
    ```ballerina
    path = "/sales/new"  // Must match FTP directory
    ```
@@ -92,13 +92,13 @@ error: Failed to initialize File server connector. Could not determine the type 
    ```
 2. Verify file names in the target directory:
 
-#### Common Pattern Examples
+   Common pattern examples:
 
-| Pattern | Matches | Does NOT Match |
-|---------|---------|----------------|
-| `.*.json` | `file.json`, `test.json` | `file.xml`, `data.txt` |
-| `.*.xml` | `file.xml`, `data.xml` | `file.json` |
-| `sales_.*.json` | `sales_2024.json` | `report_2024.json` |
+   | Pattern | Matches | Does NOT Match |
+   |---------|---------|----------------|
+   | `.*.json` | `file.json`, `test.json` | `file.xml`, `data.txt` |
+   | `.*.xml` | `file.xml`, `data.xml` | `file.json` |
+   | `sales_.*.json` | `sales_2024.json` | `report_2024.json` |
 
 #### Resolution
 1. Update the `fileNamePattern` to match your file naming convention

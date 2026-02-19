@@ -17,9 +17,9 @@ BuildRight Construction receives daily timesheet CSV files from TimeTrack Soluti
 
 1. FTP listener monitors `/timesheets/incoming` directory for `.csv` files
 2. Timesheet records are validated:
-    - Record count must match expected contractor headcount
+    - Record count must match the expected contractor headcount
     - All contractor IDs must exist in the valid contractor list
-    - Invalid records must not exceed 5% of total
+    - Invalid records must not exceed 5% of the total
 3. Valid records are sent to Kafka `contractor-payroll` topic
 4. Processed files are moved to `/timesheets/processed/`
 5. Files failing validation are moved to `/timesheets/quarantine/` for manual review
@@ -176,7 +176,7 @@ EOF"
 ### Step 4: Add record count validation
 
 1. Click **+** and add an **If** condition.
-2. Set the condition to check if record count matches expected:
+2. Set the condition to check if the record count matches the expected:
 
     ```ballerina
     content.length() != 5

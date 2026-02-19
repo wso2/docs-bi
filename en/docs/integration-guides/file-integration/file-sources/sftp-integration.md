@@ -1,8 +1,8 @@
 # SFTP Integration
 
-Learn how to create secure file integrations with SFTP servers using WSO2 Integrator: BI.
+Learn how to create secure file integrations with SFTP (SSH File Transfer Protocol) servers using WSO2 Integrator: BI.
 
-SFTP (SSH File Transfer Protocol) integration allows you to securely connect to remote servers over SSH. This is ideal for:
+SFTP integration allows you to securely connect to remote servers over SSH. This is ideal for:
 
 - Secure file transfers with encryption
 - Transferring sensitive data to/from remote servers

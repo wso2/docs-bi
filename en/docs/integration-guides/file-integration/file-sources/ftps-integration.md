@@ -1,8 +1,8 @@
 # FTPS Integration
 
-Learn how to create secure file integrations with FTPS servers using WSO2 Integrator: BI.
+Learn how to create secure file integrations with FTPS (FTP Secure) servers using WSO2 Integrator: BI.
 
-FTPS (FTP Secure) integration allows you to connect to remote FTP servers with SSL/TLS encryption. This is ideal for:
+FTPS integration allows you to connect to remote FTP servers with SSL/TLS encryption. This is ideal for:
 
 - Secure file transfers with encryption over FTP
 - Compliance requirements that mandate encrypted transfers

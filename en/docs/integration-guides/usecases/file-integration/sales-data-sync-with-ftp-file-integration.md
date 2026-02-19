@@ -1,4 +1,4 @@
-# Sales Data Sync with FTP File Integration
+# Sales Data Synchronization via FTP File Integration
 
 This guide demonstrates how to build a file-based ETL (Extract, Transform, Load) workflow using WSO2 Integrator: BI. You will create an integration that monitors an FTP server for incoming JSON sales report files, parses the sales data, and loads each item into a MySQL database.
 
@@ -222,7 +222,7 @@ EOF"
     <img src="{{base_path}}/assets/img/integration-guides/usecases/file-integration/sales-data-sync-with-ftp-file-integration/6-create-for-loop.gif" alt="Create Foreach Loop" width="70%"></a>
 
 5. Click **+** inside the foreach loop.
-6. Select the `mysqlClient` connection and choose **Execute** operation.
+6. Select the `mysqlClient` connection and choose the **Execute** operation.
 7. Add the following partial SQL query:
 
     ```sql
