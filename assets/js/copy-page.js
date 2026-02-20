@@ -21,15 +21,12 @@
 
         // Main Button
         const button = document.createElement('button');
-        button.className = 'copy-page-button';
+        button.className = 'copy-page-button md-content__button md-icon';
         button.type = 'button';
         button.setAttribute('aria-expanded', 'false');
         button.setAttribute('aria-haspopup', 'true');
-        button.innerHTML = `
-            ${Icons.Copy}
-            <span>Copy page</span>
-            ${Icons.Chevron}
-        `;
+        button.setAttribute('title', 'Copy page');
+        button.innerHTML = Icons.Copy;
 
         // Backdrop
         const backdrop = document.createElement('div');
@@ -177,10 +174,12 @@
                 await navigator.clipboard.writeText(markdown);
 
                 // Feedback
-                const span = button.querySelector('span');
-                const originalText = span.textContent;
-                span.textContent = 'Copied!';
-                setTimeout(() => span.textContent = originalText, 2000);
+                const originalTitle = button.getAttribute('title');
+                button.setAttribute('title', 'Copied!');
+
+                setTimeout(() => {
+                    button.setAttribute('title', originalTitle);
+                }, 2000);
             } catch (err) {
                 console.error('Failed to copy:', err);
             }
@@ -223,25 +222,66 @@
     function init() {
         if (document.querySelector('.copy-page-container')) return;
 
-        // Try to find Edit Link to derive markdown source
-        // We look for the specific edit icon or link pattern typically used by MkDocs Material
-        const editLink = document.querySelector('.md-content__button.md-icon[href*="/edit/"]');
+        // Find Edit button (usually for getting the raw URL)
+        const editButton = document.querySelector('.md-content__button.md-icon[href*="/edit/"]');
 
-        if (editLink) {
-            let rawUrl = editLink.href
+        // Find View Source button (href usually contains /raw/ or /blob/)
+        const viewButton = document.querySelector('.md-content__button.md-icon[href*="/raw/"]') ||
+            document.querySelector('.md-content__button.md-icon[href*="/blob/"]');
+
+        let rawUrl;
+        let insertionPoint = null;
+
+        // 1. Determine URL
+        if (editButton) {
+            rawUrl = editButton.href
                 .replace('github.com', 'raw.githubusercontent.com')
-                .replace('/edit/', '/');
-
-            // Insert button into body for floating position
-            const btn = createCopyPageButton(rawUrl);
-            document.body.appendChild(btn);
+                .replace('/edit/', '/')
+                .replace('/blob/', '/');
+        } else if (viewButton) {
+            rawUrl = viewButton.href
+                .replace('github.com', 'raw.githubusercontent.com')
+                .replace('/blob/', '/') // View might be blob, we want raw
+                .replace('/raw/', '/'); // If already raw, check structure
         } else {
-            // Check if it is the home page
+            // Fallback for homepage
             const homePageSearch = document.querySelector('.md-home-search-container');
             if (homePageSearch) {
-                const rawUrl = 'https://raw.githubusercontent.com/wso2/docs-bi/main/en/docs/index.md';
-                const btn = createCopyPageButton(rawUrl);
-                document.body.appendChild(btn);
+                rawUrl = 'https://raw.githubusercontent.com/wso2/docs-bi/main/en/docs/index.md';
+                // Try to find ANY button to append next to
+                insertionPoint = document.querySelector('.md-content__button');
+            }
+        }
+
+        // 2. Determine Insertion Point
+        // We want DOM order: [Edit, View, Copy] so Visual is [Copy, View, Edit]
+        // So we should insert AFTER 'viewButton' if it exists.
+        // If not, insert AFTER 'editButton'.
+
+        if (viewButton) {
+            insertionPoint = viewButton;
+        } else if (editButton) {
+            insertionPoint = editButton;
+        }
+
+        if (rawUrl) {
+            const btn = createCopyPageButton(rawUrl);
+
+            if (insertionPoint) {
+                // Insert AFTER the insertionPoint
+                if (insertionPoint.nextSibling) {
+                    insertionPoint.parentNode.insertBefore(btn, insertionPoint.nextSibling);
+                } else {
+                    insertionPoint.parentNode.appendChild(btn);
+                }
+            } else {
+                // Return to fallback insertion at top logic if no insertion point found
+                const contentInner = document.querySelector('.md-content__inner');
+                if (contentInner) {
+                    // For homepage or pages without other buttons, we want it at the top.
+                    // Especially important for homepage where it defaults to bottom otherwise.
+                    contentInner.insertBefore(btn, contentInner.firstChild);
+                }
             }
         }
     }
