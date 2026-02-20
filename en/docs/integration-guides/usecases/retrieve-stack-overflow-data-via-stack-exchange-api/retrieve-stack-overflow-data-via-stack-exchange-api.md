@@ -22,13 +22,12 @@ Before you begin, make sure you have the following:
 WSO2 Integrator: BI extension provides a low-code graphical environment to visually design and deploy integrations.
 
 1. Launch **VS Code** and click the **WSO2 Integrator: BI** icon on the left sidebar.
-2. On the welcome page, locate the **Get Started Quickly** section.
-3. Click the **Create New Integration** button to open the project creation wizard.
-4. In the **Integration Name** field, enter `stackoverflow`.
-5. Observe that the **Package Name** is automatically assigned as `stackoverflow`.
-6. Choose a project directory by clicking **Select Path**.
-7. Click the **Create Integration** button.
-8. Once the project is initialized, the **Explorer** pane will display the generated files, including `main.bal`, `Ballerina.toml`, and `types.bal`.
+2. Click the **Create New Integration** button to open the project creation wizard.
+3. In the **Integration Name** field, enter `stackoverflow`.
+4. Choose a project directory by clicking **Select Path**.
+5. Click the **Create Integration** button to initialize your integration project.
+
+The integration project will be created and ready for further configuration.
 
 <div style="text-align: center;">
    <a href="{{base_path}}/assets/integration-guides/usecases/retrieve-stack-overflow-data-via-stack-exchange-api/img/create-integration.gif">
@@ -88,7 +87,7 @@ In this step, you will generate a Stack Overflow connection using an OpenAPI spe
 
 ## Step 4: Configure the Stack Overflow operation
 
-In this step, you will configure the custom connector to perform a specific operation, such as retrieving data from the Stack Exchange API.
+In this step, you will use the connection actions to retrieve data from the Stack Exchange API.
 
 1. In the **Automation** diagram view, click the **+** icon on the flow line after the **Start** node.
 2. In the right-side palette under the **Connections** section, select the **stackoverflowClient** you created in the previous step.
