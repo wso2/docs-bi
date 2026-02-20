@@ -100,7 +100,13 @@ nav:
         - Message Transformation: integration-guides/integration-as-api/message-transformation.md
         - Message Routing: integration-guides/integration-as-api/message-routing.md
       - File Integration:
-        - File Integration With Directory Service: integration-guides/file-integration/file-integration-with-directory-service.md
+        - integration-guides/file-integration/index.md
+        - File Sources:
+          - Local Files Integration: integration-guides/file-integration/file-sources/local-files-integration.md
+          - FTP Integration: integration-guides/file-integration/file-sources/ftp-integration.md
+          - FTPS Integration: integration-guides/file-integration/file-sources/ftps-integration.md
+          - SFTP Integration: integration-guides/file-integration/file-sources/sftp-integration.md
+        - Troubleshooting: integration-guides/file-integration/troubleshooting.md
       - Event Integration:
         - Change Data Capture (CDC):
           - Fraud Detection System with CDC for Microsoft SQL Server: integration-guides/event-integration/cdc/fraud-detection-system-with-cdc-for-mssql.md
@@ -110,6 +116,9 @@ nav:
           - Overview: integration-guides/usecases/datamapper/overview.md
           - Read a CSV File and Transform It to an XML File: integration-guides/usecases/datamapper/read-csv-file-and-transform-to-xml-file.md
         - TCP Chat Service: integration-guides/usecases/tcp-chat-service/build-a-tcp-chat-service.md
+        - File Integration:
+          - Sales Data Synchronization via FTP File Integration: integration-guides/usecases/file-integration/sales-data-sync-with-ftp-file-integration.md
+          - Contractor Timesheet Validation: integration-guides/usecases/file-integration/contractor-timesheet-validation.md
   - Developer Guides:
       - Create Integrations:
           Overview: developer-guides/create-integrations/overview.md
