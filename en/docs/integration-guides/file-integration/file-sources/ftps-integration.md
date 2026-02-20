@@ -34,12 +34,12 @@ FTPS integration allows you to connect to remote FTP servers with SSL/TLS encryp
     | Cert Path | Path to the client certificate file |
     | Cert Password | Password for the certificate file |
 
-    ???+ Tip "Use Configurable Variables"
+    ???+ Tip "Use configurable variables"
         Use configurable variables for connection properties (e.g., `ftpsHost`, `ftpsUsername`, `ftpsPassword`) so they can be changed at deployment time without code changes. See [Managing Configurations](../../../deploy/managing-configurations.md) for more details.
 
-7. Click on the **Create** button to create the FTPS service.
+7. Click the **Create** button to create the FTPS service.
 
-## Next Steps
+## Next steps
 
 - [Local Files Integration](local-files-integration.md)
 - [FTP](ftp-integration.md)

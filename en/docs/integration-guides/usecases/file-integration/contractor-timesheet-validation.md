@@ -162,7 +162,7 @@ EOF"
 6. Rename the type name as `TimesheetRecord` and click **Import Type**.
 7. Click **Save**.
 8. This shows the implementation designer by default.
-9. Add a **Log Info** action. In the **Msg** field, type `Processing timesheet file with ` and use the **Helper Panel** to select **Inputs** -> **content** -> `length()` and append ` records`.
+9. Add a **Log Info** action. In the **Msg** field, type `Processing timesheet file with` followed by a space, and use the **Helper Panel** to select **Inputs** -> **content** -> `length()`, then append `records`.
 
     <a href="{{base_path}}/assets/img/integration-guides/usecases/file-integration/contractor-timesheet-validation/4-file-handler.gif">
     <img src="{{base_path}}/assets/img/integration-guides/usecases/file-integration/contractor-timesheet-validation/4-file-handler.gif" alt="Add File Handler" width="70%"></a>
@@ -262,18 +262,18 @@ EOF"
 
 8. Click **Save**.
 
-### Step 9: Add post processing logic - success
+### Step 9: Add post-processing logic - success
 
 1. Click **+** and select **caller** connection.
 2. Select **Move** operation.
 3. For **Source Path**, use the **Helper Panel** to select **Inputs** -> **fileInfo** -> **pathDecoded**.
 4. For **Destination Path**, type `/timesheets/processed/` and use the **Helper Panel** to select **Inputs** -> **fileInfo** -> **name**.
-5. Click **+** and add a **Log Info** action. In the **Msg** field, type `Successfully processed file: ` and use the **Helper Panel** to select **Inputs** -> **fileInfo** -> **name**.
+5. Click **+** and add a **Log Info** action. In the **Msg** field, type `Successfully processed file:` followed by a space, and use the **Helper Panel** to select **Inputs** -> **fileInfo** -> **name**.
 
     <a href="{{base_path}}/assets/img/integration-guides/usecases/file-integration/contractor-timesheet-validation/10-post-processing-success.gif">
     <img src="{{base_path}}/assets/img/integration-guides/usecases/file-integration/contractor-timesheet-validation/10-post-processing-success.gif" alt="Add Post Processing Success" width="70%"></a>
 
-### Step 10: Add post processing logic - failure
+### Step 10: Add post-processing logic - failure
 
 1. Click **Error Handler**.
 2. Delete the **Return error** node.
@@ -281,7 +281,7 @@ EOF"
 4. Select **Move** operation.
 5. For **Source Path**, use the **Helper Panel** to select **Inputs** -> **fileInfo** -> **pathDecoded**.
 6. For **Destination Path**, type `/timesheets/quarantine/` and use the **Helper Panel** to select **Inputs** -> **fileInfo** -> **name**.
-7. Click **+** and add a **Log Error** action. In the **Msg** field, type `File quarantined due to error: ` and use the **Helper Panel** to select **Inputs** -> **fileInfo** -> **name**.
+7. Click **+** and add a **Log Error** action. In the **Msg** field, type `File quarantined due to error:` followed by a space, and use the **Helper Panel** to select **Inputs** -> **fileInfo** -> **name**.
 
     <a href="{{base_path}}/assets/img/integration-guides/usecases/file-integration/contractor-timesheet-validation/11-post-processing-error.gif">
     <img src="{{base_path}}/assets/img/integration-guides/usecases/file-integration/contractor-timesheet-validation/11-post-processing-error.gif" alt="Add Post Processing Error" width="70%"></a>
@@ -359,5 +359,5 @@ The file should be quarantined due to record count mismatch.
 
 ## Deploy on Devant
 
-1. Deploy this integration on Devant as a File Integration.
+1. Deploy this integration on Devant as a **File Integration**.
 2. Configure the FTP and Kafka connection parameters with your production values.

@@ -5,7 +5,7 @@ Learn how to create secure file integrations with SFTP (SSH File Transfer Protoc
 SFTP integration allows you to securely connect to remote servers over SSH. This is ideal for:
 
 - Secure file transfers with encryption
-- Transferring sensitive data to/from remote servers
+- Transferring sensitive data to and from remote servers
 - Integrating with systems that require SSH-based authentication
 
 ## Develop an SFTP Integration
@@ -32,12 +32,12 @@ SFTP integration allows you to securely connect to remote servers over SSH. This
     | Private Key Path | Path to the private key file |
     | Private Key Password | Password for the private key file |
 
-    ???+ Tip "Use Configurable Variables"
+    ???+ Tip "Use configurable variables"
         Use configurable variables for connection properties (e.g., `sftpHost`, `sftpUsername`, `sftpPrivateKeyPath`) so they can be changed at deployment time without code changes. See [Managing Configurations](../../../deploy/managing-configurations.md) for more details.
 
-7. Click on the **Create** button to create the SFTP service.
+7. Click the **Create** button to create the SFTP service.
 
-## Next Steps
+## Next steps
 
 - [Local Files Integration](local-files-integration.md)
 - [FTP](ftp-integration.md)

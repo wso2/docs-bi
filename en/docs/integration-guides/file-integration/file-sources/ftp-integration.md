@@ -4,7 +4,7 @@ Learn how to create file integrations with FTP servers using WSO2 Integrator: BI
 
 FTP integration allows you to connect to remote FTP servers to upload, download, and manage files. This is ideal for:
 
-- Transferring files to/from remote servers
+- Transferring files to and from remote servers
 - Automated file synchronization with external systems
 - Batch file processing from remote locations
 
@@ -25,12 +25,12 @@ FTP integration allows you to connect to remote FTP servers to upload, download,
     - **No Authentication**: For anonymous FTP access
     - **Basic Authentication**: Enter username and password
 
-    ???+ Tip "Use Configurable Variables"
+    ???+ Tip "Use configurable variables"
         Use configurable variables for connection properties (e.g., `ftpHost`, `ftpUsername`, `ftpPassword`) so they can be changed at deployment time without code changes. See [Managing Configurations](../../../deploy/managing-configurations.md) for more details.
 
-6. Click on the **Create** button to create the FTP service.
+6. Click the **Create** button to create the FTP service.
 
-## Next Steps
+## Next steps
 
 - [Local Files Integration](local-files-integration.md)
 - [FTPS](ftps-integration.md)

@@ -2,20 +2,20 @@
 
 This guide helps diagnose and resolve common issues with file integration in WSO2 Integrator: BI, covering local directory monitoring, FTP, FTPS, and SFTP connections.
 
-## FTP Connection Issues
+## FTP connection issues
 
-### 1. FTP Server Not Available
+### 1. FTP server not available
 
 #### Symptoms
 - Connection failures when starting the integration
 - Timeout errors during connection attempts
 
-#### Error Message
+#### Error message
 ```
 error: Failed to initialize File server connector. Could not connect to FTP server on "localhost".
 ```
 
-#### Possible Causes
+#### Possible causes
 - FTP server is not running
 - FTP server is not reachable from the application host
 - Network firewall blocking FTP ports
@@ -25,18 +25,18 @@ error: Failed to initialize File server connector. Could not connect to FTP serv
 2. Check network connectivity and firewall rules
 3. Verify the `ftpHost` and `ftpPort` configuration values
 
-### 2. Invalid FTP Credentials
+### 2. Invalid FTP credentials
 
 #### Symptoms
 - Authentication failures during connection
 - Access denied messages
 
-#### Error Message
+#### Error message
 ```
 error: Failed to initialize File server connector. Could not connect to FTP server on "localhost".
 ```
 
-#### Possible Causes
+#### Possible causes
 - Incorrect FTP username
 - Incorrect FTP password
 - User account locked or disabled
@@ -46,18 +46,18 @@ error: Failed to initialize File server connector. Could not connect to FTP serv
 2. Ensure the FTP user account is active and has proper permissions
 3. Test credentials manually using an FTP client
 
-### 3. Invalid/Non-existent Directory Path
+### 3. Invalid or nonexistent directory path
 
 #### Symptoms
 - Integration fails to start
 - Directory access errors
 
-#### Error Message
+#### Error message
 ```
 error: Failed to initialize File server connector. Could not determine the type of file "ftp://ftpuser:***@localhost/sales/new"
 ```
 
-#### Possible Causes
+#### Possible causes
 - The configured `path` does not exist on the FTP server
 - Insufficient permissions to access the directory
 - Path syntax is incorrect (missing leading `/`)
@@ -70,9 +70,9 @@ error: Failed to initialize File server connector. Could not determine the type 
    ```
 3. Verify directory permissions and user access rights
 
-## File Detection Issues
+## File detection issues
 
-### 1. Wrong File Name Pattern
+### 1. Wrong file name pattern
 
 #### Symptoms
 - Application starts successfully without errors
@@ -80,12 +80,12 @@ error: Failed to initialize File server connector. Could not determine the type 
 - No log messages indicating file detection
 - Console shows "Running executable" with no further output
 
-#### Possible Causes
+#### Possible causes
 - `fileNamePattern` does not match the actual file names
 - Pattern syntax is incorrect
 - Case sensitivity issues
 
-#### Diagnosis Steps
+#### Diagnosis steps
 1. Check the configured pattern in your integration:
    ```ballerina
    fileNamePattern = ".*.json"  // Matches any .json file

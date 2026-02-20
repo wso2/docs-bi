@@ -181,7 +181,7 @@ EOF"
 6. Rename the type name as `SalesReport` and click **Import Type**.
 7. Click **Save**.
 8. This shows the implementation designer by default.
-9. Add a **Log Info** action. In the **Msg** field, type `Processing file from store ` and use the **Helper Panel** to select **Inputs** -> **content** -> **storeId**.
+9. Add a **Log Info** action. In the **Msg** field, type `Processing file from store` followed by a space, and use the **Helper Panel** to select **Inputs** -> **content** -> **storeId**.
 
     <a href="{{base_path}}/assets/img/integration-guides/usecases/file-integration/sales-data-sync-with-ftp-file-integration/4-file-handler.gif">
     <img src="{{base_path}}/assets/img/integration-guides/usecases/file-integration/sales-data-sync-with-ftp-file-integration/4-file-handler.gif" alt="Add File Handler" width="70%"></a>
@@ -238,23 +238,23 @@ EOF"
             ${item.itemId}, ${item.quantity}, ${item.totalAmount})
     ```
 
-    <a href="{{base_path}}/assets/img/integration-guides/usecases/file-integration/sales-data-sync-with-ftp-file-integration/7-execute-stement.gif">
-    <img src="{{base_path}}/assets/img/integration-guides/usecases/file-integration/sales-data-sync-with-ftp-file-integration/7-execute-stement.gif" alt="Add Execute Statement" width="70%"></a>
+    <a href="{{base_path}}/assets/img/integration-guides/usecases/file-integration/sales-data-sync-with-ftp-file-integration/7-execute-statement.gif">
+    <img src="{{base_path}}/assets/img/integration-guides/usecases/file-integration/sales-data-sync-with-ftp-file-integration/7-execute-statement.gif" alt="Add Execute Statement" width="70%"></a>
 
 9.  Click **Save**.
 
-### Step 6: Add post processing logic - success
+### Step 6: Add post-processing logic - success
 
 1. Click **+** and select **caller** connection.
 2. Select **Move** operation.
 3. For **Source Path**, use the **Helper Panel** to select **Inputs** -> **fileInfo** -> **pathDecoded**.
 4. For **Destination Path**, type `/sales/processed/` and use the **Helper Panel** to select **Inputs** -> **fileInfo** -> **name**.
-5. Click **+** and add a **Log Info** action. In the **Msg** field, type `File moved to processed: ` and use the **Helper Panel** to select **Inputs** -> **fileInfo** -> **name**.
+5. Click **+** and add a **Log Info** action. In the **Msg** field, type `File moved to processed:` followed by a space, and use the **Helper Panel** to select **Inputs** -> **fileInfo** -> **name**.
 
     <a href="{{base_path}}/assets/img/integration-guides/usecases/file-integration/sales-data-sync-with-ftp-file-integration/8-post-processing-success.gif">
     <img src="{{base_path}}/assets/img/integration-guides/usecases/file-integration/sales-data-sync-with-ftp-file-integration/8-post-processing-success.gif" alt="Add Post Processing Success" width="70%"></a>
 
-### Step 7: Add post processing logic - failure
+### Step 7: Add post-processing logic - failure
 
 1. Click **Error Handler**.
 2. Delete the **Return error** node.
@@ -262,7 +262,7 @@ EOF"
 4. Select **Move** operation.
 5. For **Source Path**, use the **Helper Panel** to select **Inputs** -> **fileInfo** -> **pathDecoded**.
 6. For **Destination Path**, type `/sales/error/` and use the **Helper Panel** to select **Inputs** -> **fileInfo** -> **name**.
-7. Click **+** and add a **Log Info** action. In the **Msg** field, type `File moved to error: ` and use the **Helper Panel** to select **Inputs** -> **fileInfo** -> **name**.
+7. Click **+** and add a **Log Info** action. In the **Msg** field, type `File moved to error:` followed by a space, and use the **Helper Panel** to select **Inputs** -> **fileInfo** -> **name**.
 
     <a href="{{base_path}}/assets/img/integration-guides/usecases/file-integration/sales-data-sync-with-ftp-file-integration/9-post-processing-error.gif">
     <img src="{{base_path}}/assets/img/integration-guides/usecases/file-integration/sales-data-sync-with-ftp-file-integration/9-post-processing-error.gif" alt="Add Post Processing Error" width="70%"></a>
