@@ -1,43 +1,31 @@
 /* Copy Page Feature CSS - Styled to match React implementation */
 
 .copy-page-container {
-    position: fixed;
-    top: 4rem;
-    /* Below header */
-    right: 14rem;
-    z-index: 100;
+    display: inline-block;
+    position: relative;
+    float: right;
+    margin-left: 0.5rem;
+    /* Spacing from other icons */
 }
 
-/* Main button */
+/* Main button - behaves like md-content__button */
 .copy-page-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 0.75rem;
-    font-size: 0.75rem;
-    font-weight: 500;
-
-    /* MkDocs Material Variables */
-    color: var(--md-default-fg-color);
-    background-color: var(--md-default-bg-color);
-    /* Needs background now since it floats */
-
-    border: 1px solid var(--md-default-fg-color--lighter);
-    border-radius: 50px;
-    /* Pill shape */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Shadow for depth */
+    display: inline-block;
     cursor: pointer;
-    transition: all 0.2s ease;
-    white-space: nowrap;
-    line-height: 1.2;
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--md-default-fg-color--light);
+    transition: color 0.25s;
 }
 
 .copy-page-button:hover {
-    background-color: var(--md-default-bg-color--lighter);
-    border-color: var(--md-default-fg-color);
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-    transform: translateY(-1px);
+    color: var(--md-default-fg-color);
+}
+
+/* Hide text span if any remains, though we will remove it in JS */
+.copy-page-button span:not(.md-icon) {
+    display: none;
 }
 
 /* Dropdown menu */
@@ -138,10 +126,13 @@
 
 @media (max-width: 768px) {
     .copy-page-container {
+        position: fixed;
+        float: none;
         top: auto;
         bottom: 1rem;
         left: 0.5rem;
         right: auto;
+        z-index: 100;
     }
 
     .copy-page-button {
