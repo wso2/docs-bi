@@ -321,7 +321,32 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://bi.docs.wso2.com/integration-guides/file-integration/file-integration-with-directory-service/</loc>
+         <loc>https://bi.docs.wso2.com/integration-guides/file-integration/</loc>
+         <lastmod>2026-02-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bi.docs.wso2.com/integration-guides/file-integration/troubleshooting/</loc>
+         <lastmod>2026-02-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bi.docs.wso2.com/integration-guides/file-integration/file-sources/ftp-integration/</loc>
+         <lastmod>2026-02-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bi.docs.wso2.com/integration-guides/file-integration/file-sources/ftps-integration/</loc>
+         <lastmod>2026-02-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bi.docs.wso2.com/integration-guides/file-integration/file-sources/local-files-integration/</loc>
+         <lastmod>2026-02-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bi.docs.wso2.com/integration-guides/file-integration/file-sources/sftp-integration/</loc>
          <lastmod>2026-02-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -347,6 +372,16 @@
     </url>
     <url>
          <loc>https://bi.docs.wso2.com/integration-guides/usecases/datamapper/read-csv-file-and-transform-to-xml-file/</loc>
+         <lastmod>2026-02-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bi.docs.wso2.com/integration-guides/usecases/file-integration/contractor-timesheet-validation/</loc>
+         <lastmod>2026-02-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://bi.docs.wso2.com/integration-guides/usecases/file-integration/sales-data-sync-with-ftp-file-integration/</loc>
          <lastmod>2026-02-20</lastmod>
          <changefreq>daily</changefreq>
     </url>
