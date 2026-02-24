@@ -1,3 +1,8 @@
+---
+title: "Observe metrics, traces and logs using Moesif"
+description: "Monitoring and analyzing API traffic and usage with Moesif."
+---
+
 # Observe metrics, traces and logs using Moesif
 
 The sample [shop service](/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service) will be used in this guide.

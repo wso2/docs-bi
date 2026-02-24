@@ -1,3 +1,8 @@
+---
+title: "File Integration Troubleshooting"
+description: "Common issues and troubleshooting tips for file-based integration projects."
+---
+
 # File Integration Troubleshooting
 
 This guide helps diagnose and resolve common issues with file integration in WSO2 Integrator: BI, covering local directory monitoring, FTP, FTPS, and SFTP connections.

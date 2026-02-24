@@ -1,3 +1,8 @@
+---
+title: "Observe metrics, traces, and logs using OpenSearch"
+description: "Leveraging OpenSearch for scalable log management and search capabilities."
+---
+
 # Observe metrics, traces, and logs using OpenSearch
 
 The sample [shop service](/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service) will be used in this guide. Follow the steps given below to observe BI tracing, metrics, and logs in [OpenSearch](https://opensearch.org/).

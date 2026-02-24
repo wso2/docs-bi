@@ -1,3 +1,8 @@
+---
+title: "Agents Overview"
+description: "Overview of building and managing AI agents using WSO2 Integrator: BI."
+---
+
 # Agents Overview
 
 WSO2 Integrator: BI enables developers to easily create intelligent AI agents powered by large language models (LLMs) and integrated with external APIs and services. These AI agents can automate complex workflows, interact with users through natural language, and seamlessly connect with systems like Gmail, Google Calendar, and more. Designed for low-code development and rapid integration, BI makes it simple to embed AI-driven logic into your applications, services, and business processes.

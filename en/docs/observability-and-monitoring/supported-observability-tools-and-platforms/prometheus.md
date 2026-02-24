@@ -1,3 +1,8 @@
+---
+title: "Observe metrics using Prometheus"
+description: "Configuring Prometheus for monitoring and alerting in your integration environment."
+---
+
 # Observe metrics using Prometheus
 
 The sample [shop service](/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service) will be used in this guide. Follow the steps given below to observe BI metrics in [Prometheus](https://prometheus.io/).

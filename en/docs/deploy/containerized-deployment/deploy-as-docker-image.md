@@ -1,3 +1,8 @@
+---
+title: "Deploy as a Docker Image"
+description: "Generating and managing Docker images for your integration applications."
+---
+
 # Deploy as a Docker Image
 
 This guide explains how to deploy an integration as a Docker image.

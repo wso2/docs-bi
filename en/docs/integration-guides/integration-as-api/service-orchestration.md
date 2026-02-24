@@ -1,3 +1,8 @@
+---
+title: "Service Orchestration"
+description: "How to orchestrate multiple services into a single unified API using WSO2 Integrator: BI."
+---
+
 # Service Orchestration
 
 ## Overview 

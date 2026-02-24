@@ -1,3 +1,8 @@
+---
+title: "Content-Based Message Routing"
+description: "Implementing conditional message routing logic for API integrations."
+---
+
 # Content-Based Message Routing
 
 ## Overview

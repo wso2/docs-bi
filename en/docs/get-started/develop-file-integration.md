@@ -1,3 +1,8 @@
+---
+title: "Develop File Integration"
+description: "Guide to creating integrations that process files from local or remote folders automatically."
+---
+
 # Develop File Integration
 
 This section shows you how to create a file integration using WSO2 Integrator: BI.

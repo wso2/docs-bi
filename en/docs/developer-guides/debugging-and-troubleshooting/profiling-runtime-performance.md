@@ -1,3 +1,8 @@
+---
+title: "Profiling Runtime Performance"
+description: "Techniques for profiling and optimizing the runtime performance of your integrations."
+---
+
 # Profiling Runtime Performance
 
 Improvements in your BI implementation might be required to increase its runtime performance, minimize code execution times, increase throughput, and reduce latency. To do that, you need to identify performance bottlenecks, implications of concurrent executions, which code segments take longer to execute, and areas to improve performance. This can be done by using a profiler.

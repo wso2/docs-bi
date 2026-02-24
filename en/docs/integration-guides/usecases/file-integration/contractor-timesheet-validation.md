@@ -1,3 +1,8 @@
+---
+title: "Contractor Timesheet Validation"
+description: "Automating contractor timesheet validation using file-based integration workflows."
+---
+
 # Contractor Timesheet Validation
 
 This guide demonstrates how to build a file-based validation workflow using WSO2 Integrator: BI. You will create an integration that monitors an FTP server for incoming CSV timesheet files, validates them against integrity rules, and routes valid records to Kafka for payroll processing.

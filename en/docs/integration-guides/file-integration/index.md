@@ -1,3 +1,8 @@
+---
+title: "File Integration"
+description: "Overview and core concepts of file-based integrations in WSO2 Integrator: BI."
+---
+
 # File Integration
 
 The File Integration in WSO2 Integrator: BI allows you to build integrations that interact with local or network file systems and remote servers using protocols such as FTP, FTPS, and SFTP.

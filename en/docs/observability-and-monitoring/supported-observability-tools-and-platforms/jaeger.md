@@ -1,3 +1,8 @@
+---
+title: "Observe tracing using Jaeger"
+description: "Setting up Jaeger for distributed tracing and performance analysis."
+---
+
 # Observe tracing using Jaeger
 
 The sample [shop service](/observability-and-monitoring/supported-observability-tools-and-platforms/overview/#example-observing-a-sample-integration-service) will be used in this guide. Follow the steps given below to observe tracing for BI application in [Jaeger](https://www.jaegertracing.io/).

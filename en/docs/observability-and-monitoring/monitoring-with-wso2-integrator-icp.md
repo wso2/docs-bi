@@ -1,3 +1,8 @@
+---
+title: "Monitoring with WSO2 Integrator: ICP"
+description: "Using WSO2 Integrator: ICP for comprehensive monitoring of your integration landscape."
+---
+
 # Monitoring with WSO2 Integrator: ICP
 
 The [WSO2 Integrator: ICP](https://wso2.com/integrator/icp/) monitors the runtime artifacts in a deployment. It provides a graphical view of the integration artifacts that are deployed.

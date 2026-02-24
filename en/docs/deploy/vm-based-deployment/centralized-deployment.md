@@ -1,3 +1,8 @@
+---
+title: "Centralized Deployment"
+description: "Configuring centralized deployment architectures for better management and visibility."
+---
+
 # Centralized Deployment
 
 Managing a large number of BI artifacts across different environments can become complex over time. Each integration flow or service, if deployed independently, can lead to higher operational overhead and increased resource consumption. **Centralized deployment** simplifies this by bundling all related integration artifacts into a single deployable unit, enabling more efficient resource utilization and streamlined deployments. This approach is ideal when multiple integration solutions need to be deployed and managed together across environments.

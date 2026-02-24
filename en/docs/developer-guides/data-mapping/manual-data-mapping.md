@@ -1,3 +1,8 @@
+---
+title: "Manual Data Mapping"
+description: "How to manually configure data mappings and transformations using the visual editor."
+---
+
 # Manual Data Mapping
 
 This guide shows how to build an integration that transforms a JSON payload into a different JSON structure using WSO2 Integrator: BI Data Mapper. You will create an HTTP service with a single resource (`transform`) to receive a JSON payload and return the transformed result.

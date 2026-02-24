@@ -1,3 +1,8 @@
+---
+title: "Deploy on a VM as an Executable JAR"
+description: "How to package and run integrations as executable JAR files on VMs."
+---
+
 # Deploy on a VM as an Executable JAR
 
 This guide explains how to deploy an integration as an executable JAR file.

@@ -1,3 +1,8 @@
+---
+title: "Remote Debugging Integrations"
+description: "Setting up remote debugging to troubleshoot integrations running on external servers."
+---
+
 # Remote Debugging Integrations
 
 You can debug an already running integration by attaching the debugger remotely. Follow the steps below to start a remote debug session:

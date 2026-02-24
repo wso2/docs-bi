@@ -1,3 +1,8 @@
+---
+title: "Best Practices for Production Deployment"
+description: "Key recommendations and best practices for deploying integrations in production."
+---
+
 # Best Practices for Production Deployment
 
 This section provides comprehensive security and operational best practices for deploying WSO2 Integrator: BI in production environments. Following these guidelines helps ensure your deployment is secure, resilient, and maintainable.

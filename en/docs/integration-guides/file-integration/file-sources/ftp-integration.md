@@ -1,3 +1,8 @@
+---
+title: "FTP Integration"
+description: "Configure FTP-based integrations for secure and efficient remote file transfers."
+---
+
 # FTP Integration
 
 Learn how to create file integrations with FTP servers using WSO2 Integrator: BI.
