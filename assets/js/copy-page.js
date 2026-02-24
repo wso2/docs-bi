@@ -25,6 +25,7 @@
         button.type = 'button';
         button.setAttribute('aria-expanded', 'false');
         button.setAttribute('aria-haspopup', 'true');
+        button.setAttribute('aria-label', 'Copy page');
         button.setAttribute('title', 'Copy page');
         button.innerHTML = Icons.Copy;
 
