@@ -1,3 +1,8 @@
+---
+title: "EDI Tool"
+description: "Handling Electronic Data Interchange (EDI) message formats within your integrations."
+---
+
 # EDI Tool
 
 The EDI tool provides the below set of command line tools to work with EDI files in BI.

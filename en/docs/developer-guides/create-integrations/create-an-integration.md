@@ -1,3 +1,8 @@
+---
+title: "Create an Integration"
+description: "Step-by-step instructions for creating and configuring new integration projects."
+---
+
 # Create an Integration
 
 ## Create an integration without workspace

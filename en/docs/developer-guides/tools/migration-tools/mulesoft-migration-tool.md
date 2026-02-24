@@ -1,3 +1,8 @@
+---
+title: "MuleSoft Migration Tool"
+description: "Step-by-step guide for migrating MuleSoft integrations to the BI platform."
+---
+
 # MuleSoft Migration Tool
 
 This guide explains how to convert existing [MuleSoft](https://www.mulesoft.com) applications into integrations compatible with WSO2 Integrator: BI.

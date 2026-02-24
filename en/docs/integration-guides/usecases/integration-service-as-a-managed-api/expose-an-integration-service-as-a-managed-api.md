@@ -1,3 +1,8 @@
+---
+title: "Expose an Integration Service as a Managed API"
+description: "How to expose WSO2 Integrator: BI services as enterprise-ready managed APIs."
+---
+
 # Expose an Integration Service as a Managed API
 
 ## What you'll build

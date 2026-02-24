@@ -1,3 +1,8 @@
+---
+title: "Local Files Integration"
+description: "Implement integrations with local file systems for automated data processing."
+---
+
 # Local Files Integration
 
 Learn how to create file integrations that monitor and process files in local directories using WSO2 Integrator: BI.

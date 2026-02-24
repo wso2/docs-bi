@@ -1,3 +1,8 @@
+---
+title: "Observe logs using Elastic Stack"
+description: "Setting up the Elastic Stack (ELK) for centralized logging and log analysis."
+---
+
 # Observe logs using Elastic Stack
 
 In BI, distributed logging and analysis are supported by the [Elastic Stack](https://www.elastic.co/elastic-stack). BI has a log module for logging into the console. To monitor the logs, the BI standard output needs to be redirected to a file.

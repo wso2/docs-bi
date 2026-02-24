@@ -1,3 +1,8 @@
+---
+title: "Building a Fraud Detection System with Change Data Capture (CDC) for Microsoft SQL Server"
+description: "Case study on building a fraud detection system using Change Data Capture (CDC) for Microsoft SQL Server."
+---
+
 # Building a Fraud Detection System with Change Data Capture (CDC) for Microsoft SQL Server
 
 ## Architecture Overview

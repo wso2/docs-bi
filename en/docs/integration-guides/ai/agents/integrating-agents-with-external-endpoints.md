@@ -1,3 +1,8 @@
+---
+title: "Integrating Agents with External Endpoints"
+description: "How to integrate AI agents with external HTTP endpoints to fetch or send data dynamically."
+---
+
 # Integrating Agents with External Endpoints
 
 In this tutorial, you’ll create an AI-powered personal assistant agent that integrates with Gmail and Google Calendar to help you efficiently manage emails, tasks, and schedules. You'll use the prebuilt WSO2 Integrator: BI connectors for seamless integration by turning their actions into agent tools.

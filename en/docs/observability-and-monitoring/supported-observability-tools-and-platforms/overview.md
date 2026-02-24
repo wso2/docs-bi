@@ -1,3 +1,8 @@
+---
+title: "Supported Observability Tools and Platforms"
+description: "Summary of the various third-party observability tools supported by the platform."
+---
+
 # Supported Observability Tools and Platforms
 
 Observability is a measure of how well the internal states of a system can be understood from its external outputs.

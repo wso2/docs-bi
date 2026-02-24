@@ -1,3 +1,8 @@
+---
+title: "TIBCO BusinessWorks Migration Tool"
+description: "How to use the migration tool to transition from TIBCO BusinessWorks to BI."
+---
+
 # TIBCO BusinessWorks Migration Tool
 
 This guide explains how to use the integrated migration feature in WSO2 Integrator: BI to convert [TIBCO BusinessWorks](https://docs.tibco.com/products/tibco-activematrix-businessworks) integrations into Ballerina packages.

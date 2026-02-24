@@ -1,3 +1,8 @@
+---
+title: "Scan Tool"
+description: "Using the Scan Tool to identify issues or vulnerabilities in your project files."
+---
+
 # Scan Tool
 
 The scan tool is a static code analysis tool that performs analysis on BI projects and identifies potential code smells, bugs, and vulnerabilities without executing them.

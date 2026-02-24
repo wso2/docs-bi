@@ -1,3 +1,8 @@
+---
+title: "Configuration Best Practices"
+description: "Best practices for managing and securing sensitive configuration data."
+---
+
 # Configuration Best Practices
 
 This guide covers configuration management strategies across deployment models (VM-based, containerized, Kubernetes) and CI/CD pipelines. Core principle: configuration is injected at runtime, never embedded in artifacts.

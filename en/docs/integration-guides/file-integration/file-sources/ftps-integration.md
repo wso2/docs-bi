@@ -1,3 +1,8 @@
+---
+title: "FTPS Integration"
+description: "Set up FTPS integrations to ensure secure file transport with SSL/TLS encryption."
+---
+
 # FTPS Integration
 
 Learn how to create secure file integrations with FTPS (FTP Secure) servers using WSO2 Integrator: BI.

@@ -1,3 +1,8 @@
+---
+title: "SFTP Integration"
+description: "Guide to building SFTP integrations for highly secure remote file management."
+---
+
 # SFTP Integration
 
 Learn how to create secure file integrations with SFTP (SSH File Transfer Protocol) servers using WSO2 Integrator: BI.

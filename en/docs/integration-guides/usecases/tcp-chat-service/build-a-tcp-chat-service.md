@@ -1,3 +1,8 @@
+---
+title: "Build a TCP chat service"
+description: "Step-by-step guide to building a custom TCP-based chat service."
+---
+
 # Build a TCP chat service
 
 ## Overview
