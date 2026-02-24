@@ -47,8 +47,6 @@ The Integration project will contain all the required artifacts for the integrat
 
 6. Click **Create Integration**.
 
-
-
     <a href="{{base_path}}/assets/integration-guides/usecases/integration-service-as-a-managed-api/create_an_integration_project.gif">
         <img
             src="{{base_path}}/assets/integration-guides/usecases/integration-service-as-a-managed-api/create_an_integration_project.gif"
@@ -177,7 +175,7 @@ Now let's start designing the integration by adding the necessary artifacts.
         />
     </a>
 
-4. Use the BI Configurations `+` icon to add the following configurations, and save each of them.
+4. Use the BI Configurations and select **View Configurations** under **Imported Libraries** to add the following configurations for `ballerinax/wso2.apim.catalog`. Save each configuration after adding it.
 
     <a href="{{base_path}}/assets/integration-guides/usecases/integration-service-as-a-managed-api/ui-config.gif">
         <img
@@ -189,12 +187,12 @@ Now let's start designing the integration by adding the necessary artifacts.
 
     ```conf
     [ballerinax.wso2.apim.catalog]
-    serviceUrl="<Url of the service catalog endpoint>"
-    tokenUrl="<Url of the token endpoint>"
-    username="<username>"
-    password="<password>"
-    clientId="<clientId>"
-    clientSecret="<Client secret>"
+    serviceUrl = "<Url of the service catalog endpoint>"
+    tokenUrl = "<Url of the token endpoint>"
+    username = "<username>"
+    password = "<password>"
+    clientId = "<clientId>"
+    clientSecret = "<clientSecret>"
     ```
 
     !!! Info
@@ -204,12 +202,12 @@ Now let's start designing the integration by adding the necessary artifacts.
 
     ```conf
     [ballerinax.wso2.apim.catalog]
-    serviceUrl="https://127.0.0.1:9443/api/am/service-catalog/v1"
-    tokenUrl="https://localhost:9443/oauth2/token"
-    username="admin"
-    password="admin"
-    clientId="<clientId>"
-    clientSecret="<Client secret>"
+    serviceUrl = "https://127.0.0.1:9443/api/am/service-catalog/v1"
+    tokenUrl = "https://localhost:9443/oauth2/token"
+    username = "admin"
+    password = "admin"
+    clientId = "<clientId>"
+    clientSecret = "<clientSecret>"
     ```
 
 5. Start the API Manager runtime before starting the WSO2 Integrator: BI.
