@@ -112,6 +112,7 @@ nav:
           - Fraud Detection System with CDC for Microsoft SQL Server: integration-guides/event-integration/cdc/fraud-detection-system-with-cdc-for-mssql.md
       - Use Cases:
         - Expose an Integration Service as a Managed API: integration-guides/usecases/integration-service-as-a-managed-api/expose-an-integration-service-as-a-managed-api.md
+        - Connect to a Remote Service using Custom Connector: integration-guides/usecases/retrieve-stack-overflow-data-via-stack-exchange-api/retrieve-stack-overflow-data-via-stack-exchange-api.md
         - Data Mapper:
           - Overview: integration-guides/usecases/datamapper/overview.md
           - Read a CSV File and Transform It to an XML File: integration-guides/usecases/datamapper/read-csv-file-and-transform-to-xml-file.md
