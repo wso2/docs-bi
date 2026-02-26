@@ -52,16 +52,6 @@ FLUSH PRIVILEGES;
 ```sql
 USE orders_db;
 
-CREATE TABLE IF NOT EXISTS orders (
-    order_id    VARCHAR(36)    NOT NULL,
-    customer_id VARCHAR(36)    NOT NULL,
-    item        VARCHAR(200)   NOT NULL,
-    amount      DECIMAL(10, 2) NOT NULL,
-    status      VARCHAR(20)    NOT NULL DEFAULT 'PLACED',
-    placed_at   DATETIME       NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (order_id)
-);
-
 CREATE TABLE IF NOT EXISTS customers (
     customer_id VARCHAR(36)  NOT NULL,
     name        VARCHAR(100) NOT NULL,
@@ -76,6 +66,18 @@ CREATE TABLE IF NOT EXISTS products (
     category     VARCHAR(50)  NOT NULL,
     price        DECIMAL(10, 2) NOT NULL,
     PRIMARY KEY (product_id)
+);
+
+CREATE TABLE orders (
+    order_id    VARCHAR(36)    NOT NULL,
+    customer_id VARCHAR(36)    NOT NULL,
+    product_id  VARCHAR(36)    NOT NULL,
+    amount      DECIMAL(10, 2) NOT NULL,
+    status      VARCHAR(20)    NOT NULL DEFAULT 'PLACED',
+    placed_at   DATETIME       NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (order_id),
+    FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
+    FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 ```
 
@@ -228,7 +230,7 @@ Add a `Foreach` control node:
 
 Inside the Foreach block:
 
-1. Add an `Update row in orders` action node from the `ordersDB` connection. Select `orderId` as the key and set its value to `order.orderId`. In the **Value** section, select `status` and set it to `"PROCESSING"`. Give the **Result** name as `updatedOrder`.
+1. Add an `Update row in orders` action node from the `ordersDB` connection. Select `orderId` as the key and set its value to `placedOrder.orderId`. In the **Value** section, select `status` and set it to `"PROCESSING"`. Give the **Result** name as `updatedOrder`.
 
 2. Add a `Log Info` statement node with the message:
 
@@ -277,9 +279,9 @@ Click on the run button to run the automation. It will ask you to create the nec
 On first run (with `ORD-001` and `ORD-002` in `PLACED` status) you should see:
 
 ```txt
-Order ORD-001 advanced to PROCESSING
-Order ORD-002 advanced to PROCESSING
-Done — processed 2 orders.
+msg="Order advanced to PROCESSING" orderId="ORD-001"
+msg="Order advanced to PROCESSING" orderId="ORD-002"
+msg="Done — processed orders" count=2
 ```
 
 Connect to MySQL and confirm both orders are now `PROCESSING`:
