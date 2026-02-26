@@ -7,7 +7,7 @@ description: "Use WSO2 Integrator: BI persist database connections to build a sc
 
 ## Overview
 
-An e-commerce system stores customer orders in a MySQL database. A scheduled automation runs periodically, picks up all newly placed orders, and advances them to `PROCESSING` status — simulating the first step in warehouse fulfilment.
+An e-commerce system stores customer orders in a MySQL database. A scheduled automation runs periodically, picks up all newly placed orders, and advances them to `PROCESSING` status — simulating the first step in warehouse fulfillment.
 
 This walkthrough shows how WSO2 Integrator: BI's **persist database connections** make it straightforward to build that automation. You will create one connector for the orders database and use the generated client to query and update rows in a scheduled main entry point.
 
@@ -29,9 +29,9 @@ This walkthrough shows how WSO2 Integrator: BI's **persist database connections*
 
 Before you begin, make sure you have the following:
 
-- <b>Visual Studio Code</b>: Install <a href="https://code.visualstudio.com/">Visual Studio Code</a> if you don't have it already.
-- <b>WSO2 Integrator: BI Extension</b>: Install the WSO2 Integrator: BI extension. Refer to <a href="{{base_path}}/get-started/install-wso2-integrator-bi/">Install WSO2 Integrator: BI</a> for detailed instructions.
-- <b>MySQL Server</b>: A running MySQL instance (version 8.0 or later) accessible on `localhost:3306`.
+- **Visual Studio Code**: Install [Visual Studio Code](https://code.visualstudio.com/) if you don't have it already.
+- **WSO2 Integrator: BI Extension**: Install the WSO2 Integrator: BI extension. Refer to [Install WSO2 Integrator: BI](https://bi.docs.wso2.com/get-started/install-wso2-integrator-bi/) for detailed instructions.
+- **MySQL Server**: A running MySQL instance (version 8.0 or later) accessible on `localhost:3306`.
 
 ### Set up the database
 
@@ -122,10 +122,10 @@ You should see all four rows with the statuses shown above.
 
 ## Step 1 — Create the Orders DB connector (MySQL)
 
-1. Click `+ Add Artifact`.
-2. Select `Connection` from **Other Artifacts**.
-3. Click `Connect to a Database`.
-4. In the **Introspect Database** form, select `MySQL` as the **Database Type** (the default) and enter the following connection details:
+1. Click **+ Add Artifact**.
+2. Select **Connection** from **Other Artifacts**.
+3. Click **Connect to a Database**.
+4. In the **Introspect Database** form, select **MySQL** as the **Database Type** (the default) and enter the following connection details:
 
       | Field | Value |
       | --- | --- |
@@ -135,9 +135,9 @@ You should see all four rows with the statuses shown above.
       | Username | `orders_user` |
       | Password | `orders_pass` |
 
-5. Click `Connect & Introspect Database`.
-6. In the **Select Tables** form, select all the tables and click `Continue to Connection Details`.
-7. In the **Create Connection** form, set the **Connection Name** to `ordersDB` and click `Save Connection`.
+5. Click **Connect & Introspect Database**.
+6. In the **Select Tables** form, select all the tables and click **Continue to Connection Details**.
+7. In the **Create Connection** form, set the **Connection Name** to `ordersDB` and click **Save Connection**.
 
       <a href="{{base_path}}/assets/integration-guides/usecases/database-automation/img/create-connector.gif">
          <img src="{{base_path}}/assets/integration-guides/usecases/database-automation/img/create-connector.gif"
@@ -146,7 +146,7 @@ You should see all four rows with the statuses shown above.
          />
       </a>
 
-8. Click on the created `ordersDB` connection and click on `View ER Diagram` to view the ER diagram.
+8. Click on the created `ordersDB` connection and click on **View ER Diagram** to view the ER diagram.
 
       <a href="{{base_path}}/assets/integration-guides/usecases/database-automation/img/view-er-diagram.gif">
          <img src="{{base_path}}/assets/integration-guides/usecases/database-automation/img/view-er-diagram.gif"
@@ -172,12 +172,12 @@ You should see all four rows with the statuses shown above.
 
 ## Step 2 — Build the automation
 
-1. Click `+ Add Artifact` and select `Automation` from **Automation**.
-2. Click `Create`.
+1. Click **+ Add Artifact** and select **Automation** from **Automation**.
+2. Click **Create**.
 
 ### Step 2.1 — Get PLACED orders
 
-1. Add a `Get rows from orders` action node from the `ordersDB` connection. Expand **Advanced Configurations** and set:
+1. Add a **Get rows from orders** action node from the **ordersDB** connection. Expand **Advanced Configurations** and set:
 
       | Setting | Value |
       | --- | --- |
@@ -185,7 +185,7 @@ You should see all four rows with the statuses shown above.
 
 2. Set the **Result** name to `placedOrders`.
 
-3. From the `Target Type` select the following fields:
+3. From the **Target Type** select the following fields:
 
       - `orderId`
       - `status`
@@ -199,19 +199,19 @@ You should see all four rows with the statuses shown above.
 
 ### Step 2.2 — Handle: no orders to process
 
-1. Add an `If` control node with the condition:
+1. Add an **If** control node with the condition:
 
       ```txt
       placedOrders.length() == 0
       ```
 
-2. Inside the If block, add a `Log Info` statement node with the message:
+2. Inside the If block, add a **Log Info** statement node with the message:
 
       ```txt
       No new orders to process.
       ```
 
-3. Add a `Return` control node to exit early.
+3. Add a **Return** control node to exit early.
 
 <a href="{{base_path}}/assets/integration-guides/usecases/database-automation/img/no-orders-check.gif">
    <img src="{{base_path}}/assets/integration-guides/usecases/database-automation/img/no-orders-check.gif"
@@ -222,7 +222,7 @@ You should see all four rows with the statuses shown above.
 
 ### Step 2.3 — Loop and update each order
 
-Add a `Foreach` control node:
+Add a **Foreach** control node:
 
 - Set its **Collection** to `placedOrders`
 - Set the **Result** name to `placedOrder`
@@ -230,9 +230,9 @@ Add a `Foreach` control node:
 
 Inside the Foreach block:
 
-1. Add an `Update row in orders` action node from the `ordersDB` connection. Select `orderId` as the key and set its value to `placedOrder.orderId`. In the **Value** section, select `status` and set it to `"PROCESSING"`. Give the **Result** name as `updatedOrder`.
+1. Add an **Update row in orders** action node from the **ordersDB** connection. Select **orderId** as the key and set its value to `placedOrder.orderId`. In the **Value** section, select **status** and set it to `"PROCESSING"`. Give the **Result** name as `updatedOrder`.
 
-2. Add a `Log Info` statement node with the message:
+2. Add a **Log Info** statement node with the message:
 
       ```txt
       Order advanced to PROCESSING
@@ -252,7 +252,7 @@ Inside the Foreach block:
 
 ### Step 2.4 — Log the summary
 
-After the Foreach block, add a `Log Info` statement node with the message:
+After the Foreach block, add a **Log Info** statement node with the message:
 
 ```txt
 Done — processing orders
@@ -267,7 +267,7 @@ Under **Advanced Configurations** set the following **Additional Values**:
 
 ## Running the automation
 
-Click on the run button to run the automation. It will ask you to create the necessary configuration to connect to the database. Click on `Create Config.toml` and add the database password to the associated configuration.
+Click on the run button to run the automation. It will ask you to create the necessary configuration to connect to the database. Click on **Create Config.toml** and add the database password to the associated configuration.
 
 <a href="{{base_path}}/assets/integration-guides/usecases/database-automation/img/run-automation.gif">
    <img src="{{base_path}}/assets/integration-guides/usecases/database-automation/img/run-automation.gif"
