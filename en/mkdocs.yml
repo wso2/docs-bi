@@ -110,7 +110,7 @@ nav:
           - Overview: integration-guides/usecases/datamapper/overview.md
           - Read a CSV File and Transform It to an XML File: integration-guides/usecases/datamapper/read-csv-file-and-transform-to-xml-file.md
         - TCP Chat Service: integration-guides/usecases/tcp-chat-service/build-a-tcp-chat-service.md
-        - Event Integration: integration-guides/usecases/solance-event-integration/building-a-e-commerce-order-notification-service-with-solace-event-integration.md
+        - Event Integration: integration-guides/usecases/solace-event-integration/building-a-e-commerce-order-notification-service-with-solace-event-integration.md
   - Developer Guides:
       - Create Integrations:
           Overview: developer-guides/create-integrations/overview.md
@@ -290,4 +290,4 @@ extra:
           link: https://twitter.com/intent/follow?screen_name=wso2
     # site_version: Uncomment to specify a version
     base_path: https://wso2.github.io/docs-bi
-   #base_path: http://localhost:8000
+    #base_path: http://localhost:8000

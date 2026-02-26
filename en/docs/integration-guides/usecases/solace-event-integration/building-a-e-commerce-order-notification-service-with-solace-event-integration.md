@@ -1,9 +1,9 @@
 # Building an E-commerce Order Notification Service with Solace Event Integration
 
 <div style="text-align: center;">
-   <a href="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/solace-event-integration-architecture.png">
+   <a href="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/solace-event-integration-architecture.png">
       <img
-      src="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/solace-event-integration-architecture.png"
+      src="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/solace-event-integration-architecture.png"
          alt="Architecture diagram of the E-commerce Order Notification Service"
          width="80%"
       />
@@ -37,8 +37,8 @@ solace/solace-pubsub-standard:latest
 
 * Access PubSub+ Manager at [http://localhost:8080](http://localhost:8080)  
 * Default credentials: admin/admin  
-* For detailed setup instructions, see: [https://docs.solace.com/Software-Broker/SW-Broker-Set-Up/Containers/Set-Up-Container-Image.htm](https://docs.solace.com/Software-Broker/SW-Broker-Set-Up/Containers/Set-Up-Container-Image.htm)  
-* Alternatively, if you prefer not to deploy Solace locally, you can use Solace PubSub+ Cloud (free tier): [https://console.solace.cloud/](https://console.solace.cloud/)
+* For detailed setup instructions, see: [Solace Broker container setup](https://docs.solace.com/Software-Broker/SW-Broker-Set-Up/Containers/Set-Up-Container-Image.htm)  
+* Alternatively, if you prefer not to deploy Solace locally, you can use [Solace PubSub+ Cloud (free tier)](https://console.solace.cloud/)
 
 ## Event structure
 
@@ -79,28 +79,17 @@ In this section, we'll set up the Solace broker infrastructure needed for our e-
 
 #### What we're setting up:
 
-* **Message VPN:** `ecommerce-vpn` \- isolated messaging environment for our application (Learn more about message VPNs [here](https://docs.solace.com/Get-Started/message-vpn.htm))  
+* **Message VPN:** `ecommerce-vpn` \- isolated messaging environment for our application (Learn more about message VPNs in the [Message VPNs documentation](https://docs.solace.com/Get-Started/message-vpn.htm))  
 * **Queue:** `fulfillment.orders.status` \- stores incoming order events.  
 * **Topic subscription:** `ecommerce/orders/*/status` \- routes events to the queue  
 * **User credentials:** for secure access to the broker
 
 Access the Web UI of Solace Software Event Broker, usually available at [http://localhost:8080](http://localhost:8080), and then follow these steps to configure your broker.
 
-#### Step 1: Create a message VPN
+### Step 1: Create a message VPN
 
-1. Click Change Vpn from the side panel.  
-2. Click \+ Message VPN.
-
-<div style="text-align: center;">
-   <a href="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/create-message-vpn.gif">
-      <img
-      src="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/create-message-vpn.gif"
-         alt="Process of creating a Message VPN in Solace"
-         width="80%"
-      />
-   </a>
-</div>
-
+1. Click **Change VPN** from the side panel.  
+2. Click **+ Message VPN**.
 3. Create a new Message VPN named `ecommerce-vpn`.  
 4. Configure with the following settings:  
    1. Basic Authentication: On  
@@ -108,76 +97,84 @@ Access the Web UI of Solace Software Event Broker, usually available at [http://
    3. Maximum Message Spool Usage: 100MB  
    4. Enabled: On
 
-![][image3]
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/create-message-vpn.gif">
+      <img
+      src="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/create-message-vpn.gif"
+         alt="Process of creating a Message VPN in Solace"
+         width="80%"
+      />
+   </a>
+</div>
 
-#### Step 2: Configure default user password
+### Step 2: Configure default user password
 
 1. Set the default user's password to: `password`.  
 2. Click Create and you will be navigated to the Message VPNs screen.  
 3. Click the newly created Message VPN, ecommerce-vpn.
 
 <div style="text-align: center;">
-   <a href="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/set-default-user-password.gif">
+   <a href="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/set-default-user-password.gif">
       <img
-      src="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/set-default-user-password.gif"
+      src="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/set-default-user-password.gif"
          alt="How to set the default user password in Solace"
          width="80%"
       />
    </a>
 </div>
 
-#### Step 3: Create client username
+### Step 3: Create client username
 
-1. Navigate to "Access Control" in the VPN settings.  
-2. Click “Client Usernames” in the top bar.  
-3. Click “+ Client Username” and create a new Client Username: `fulfillment-service`.  
+1. Navigate to **Access Control** in the VPN settings.  
+2. Click **Client Usernames** in the top bar.  
+3. Click **+ Client Username** and create a new Client Username: `fulfillment-service`.  
 4. Enable the created Client Username.  
-5. Click “Change Password” and set the password to: `fulfillment-pass`.  
-6. Click Apply.
+5. Click **Change Password** and set the password to: `fulfillment-pass`.  
+6. Click **Apply**.
 
 <div style="text-align: center;">
-   <a href="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/create-client-username.gif">
+   <a href="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/create-client-username.gif">
       <img
-      src="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/create-client-username.gif"
+      src="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/create-client-username.gif"
          alt="Creation of a client username in Solace"
          width="80%"
       />
    </a>
 </div>
 
-#### Step 4: Create queue
+### Step 4: Create queue
 
 1. Navigate to "Queues" in the VPN settings.  
 2. Create a new queue named: `fulfillment.orders.status`.  
 3. Confirm that incoming messages are enabled.
 
 <div style="text-align: center;">
-   <a href="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/create-fulfillment-orders-queue.gif">
+   <a href="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/create-fulfillment-orders-queue.gif">
       <img
-      src="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/create-fulfillment-orders-queue.gif"
+      src="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/create-fulfillment-orders-queue.gif"
          alt="Creation of the fulfillment orders status queue"
          width="80%"
       />
    </a>
 </div>
 
-#### Step 5: Add topic subscription
+### Step 5: Add topic subscription
 
 1. Click on the `fulfillment.orders.status` queue.  
 2. Navigate to the "Subscriptions" tab.  
 3. Click the “+ Subscription” and add the following subscription pattern: `ecommerce/orders/*/status`.
 
 <div style="text-align: center;">
-   <a href="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/add-topic-subscription.gif">
+   <a href="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/add-topic-subscription.gif">
       <img
-      src="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/add-topic-subscription.gif"
+      src="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/add-topic-subscription.gif"
          alt="Addition of a topic subscription to the queue"
          width="80%"
       />
    </a>
 </div>
 
-#### Step 6: Test with Try Me\!	
+### Step 6: Test with Try Me\!	
 
 The "Try Me\!" tool in the Solace Web UI allows you to publish and consume messages for testing purposes.
 
@@ -188,9 +185,9 @@ The "Try Me\!" tool in the Solace Web UI allows you to publish and consume messa
 5. Verify that the message is successfully queued in `fulfillment.orders.status`.
 
 <div style="text-align: center;">
-   <a href="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/publish-test-event-try-me.gif">
+   <a href="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/publish-test-event-try-me.gif">
       <img
-      src="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/publish-test-event-try-me.gif"
+      src="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/publish-test-event-try-me.gif"
          alt="How to use the Try Me! tool to publish a test event"
          width="80%"
       />
@@ -200,9 +197,9 @@ The "Try Me\!" tool in the Solace Web UI allows you to publish and consume messa
 You can verify this by either using the Subscriber section in Try Me\! or by looking at the queue in the Queues tab.
 
 <div style="text-align: center;">
-   <a href="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/verify-queued-message.gif">
+   <a href="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/verify-queued-message.gif">
       <img
-      src="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/verify-queued-message.gif"
+      src="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/verify-queued-message.gif"
          alt="Verifying that the test message has been queued"
          width="80%"
       />
@@ -213,37 +210,37 @@ You can verify this by either using the Subscriber section in Try Me\! or by loo
 
 Now that the Solace broker is configured, let's create an integration that consumes messages from the queue.
 
-#### Step 1: Create a new project
+### Step 1: Create a new project
 
 1. Open WSO2 Integrator: BI.  
 2. Create a new integration project.
 
 <div style="text-align: center;">
-   <a href="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/create-integration-project.gif">
+   <a href="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/create-integration-project.gif">
       <img
-      src="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/create-integration-project.gif"
+      src="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/create-integration-project.gif"
          alt="How to create a new integration project in WSO2 Integrator"
          width="80%"
       />
    </a>
 </div>
 
-#### Step 2: Add Solace Event Integration artifact
+### Step 2: Add Solace Event Integration artifact
 
 1. Click **\+ Add Artifact**.  
 2. Select **Solace Event Integration** from the Event Integration section in the Artifact List.
 
 <div style="text-align: center;">
-   <a href="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/add-solace-event-artifact.gif">
+   <a href="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/add-solace-event-artifact.gif">
       <img
-      src="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/add-solace-event-artifact.gif"
+      src="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/add-solace-event-artifact.gif"
          alt="Addition of the Solace Event Integration artifact"
          width="80%"
       />
    </a>
 </div>
 
-#### Step 3: Configure connection settings
+### Step 3: Configure connection settings
 
 1. Configure the initialization form with the following values:  
    1. Broker URL: `smf://localhost:55554`  
@@ -262,9 +259,9 @@ Now that the Solace broker is configured, let's create an integration that consu
       Since values such as Username and Password are sensitive, they should be set using Configurables. Once set, switch the Username and Password fields to expression mode using the toggle and select your Configurables from the helper pane.
 
 <div style="text-align: center;">
-   <a href="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/configure-solace-listener.gif">
+   <a href="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/configure-solace-listener.gif">
       <img
-      src="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/configure-solace-listener.gif"
+      src="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/configure-solace-listener.gif"
          alt="Configuration of Solace listener details"
          width="80%"
       />
@@ -274,16 +271,16 @@ Now that the Solace broker is configured, let's create an integration that consu
 3. Click **Save** to create the event integration.
 
 <div style="text-align: center;">
-   <a href="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/save-solace-integration.gif">
+   <a href="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/save-solace-integration.gif">
       <img
-      src="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/save-solace-integration.gif"
+      src="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/save-solace-integration.gif"
          alt="Completion and saving of the Solace integration artifact"
          width="80%"
       />
    </a>
 </div>
 
-#### Step 4: Add message handler
+### Step 4: Add message handler
 
 1. In the Service Designer view, click **\+ Add Handler**.  
 2. Select **onMessage** from the handler options.  
@@ -293,16 +290,16 @@ Now that the Solace broker is configured, let's create an integration that consu
 6. Click **Save** to add the Handler.
 
 <div style="text-align: center;">
-   <a href="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/add-onmessage-handler.gif">
+   <a href="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/add-onmessage-handler.gif">
       <img
-      src="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/add-onmessage-handler.gif"
+      src="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/add-onmessage-handler.gif"
          alt="How to add an onMessage handler with a defined payload"
          width="80%"
       />
    </a>
 </div>
 
-#### Step 5: Print the type of the event
+### Step 5: Print the type of the event
 
 1. In the flow diagram view, click \+ to add a node.  
 2. Add a Log Info node from the palette.  
@@ -311,16 +308,16 @@ Now that the Solace broker is configured, let's create an integration that consu
 5. Click Save.
 
 <div style="text-align: center;">
-   <a href="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/add-log-info-node.png">
+   <a href="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/add-log-info-node.png">
       <img
-      src="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/add-log-info-node.png"
+      src="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/add-log-info-node.png"
          alt="Addition and configuration of a Log Info node"
          width="80%"
       />
    </a>
 </div>
 
-#### Step 6: Run and test
+### Step 6: Run and test
 
 1. Navigate to the Home view.  
 2. Click the **Run** button to start the integration.  
@@ -329,9 +326,9 @@ Now that the Solace broker is configured, let's create an integration that consu
 5. Observe the log output showing the event types being processed.
 
 <div style="text-align: center;">
-   <a href="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/run-test-integration.gif">
+   <a href="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/run-test-integration.gif">
       <img
-      src="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/run-test-integration.gif"
+      src="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/run-test-integration.gif"
          alt="Integration running and processing test events"
          width="80%"
       />
@@ -348,23 +345,23 @@ Now let's enhance the integration to publish events to a notification queue when
 
 **Business Logic:** If the value of `newStatus` is different from `previousStatus`, we will publish the event to a `fulfillment.orders.notification` queue for downstream processing.
 
-#### Step 1: Create the notification queue
+### Step 1: Create the notification queue
 
 1. In the Solace console, follow the same steps from Part 1, Step 4 to create a queue called `fulfillment.orders.notification`.  
 2. Enable incoming messages.  
 3. Test the queue using the "Try Me\!" page to ensure it's working correctly.
 
 <div style="text-align: center;">
-   <a href="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/create-notification-queue.gif">
+   <a href="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/create-notification-queue.gif">
       <img
-      src="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/create-notification-queue.gif"
+      src="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/create-notification-queue.gif"
          alt="Creation of the notification queue in Solace"
          width="80%"
       />
    </a>
 </div>
 
-#### Step 2: Add logic to check for status change
+### Step 2: Add logic to check for status change
 
 1. In the flow diagram, click **\+** after the log node to add another node.  
 2. Add an If node.  
@@ -372,9 +369,9 @@ Now let's enhance the integration to publish events to a notification queue when
 4. Click **Save**.
 
 <div style="text-align: center;">
-   <a href="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/add-conditional-logic.gif">
+   <a href="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/add-conditional-logic.gif">
       <img
-      src="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/add-conditional-logic.gif"
+      src="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/add-conditional-logic.gif"
          alt="Addition of conditional logic to check for status changes"
          width="80%"
       />
@@ -383,7 +380,7 @@ Now let's enhance the integration to publish events to a notification queue when
 
 This condition checks whether the order status has actually changed.
 
-#### Step 3: Create Solace message producer connection
+### Step 3: Create Solace message producer connection
 
 1. Click the **\+** button inside the If branch in the flow diagram.  
 2. Click **\+ Add Connection**.  
@@ -396,37 +393,37 @@ This condition checks whether the order status has actually changed.
 5. Click **Create**.
 
 <div style="text-align: center;">
-   <a href="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/create-solace-producer.gif">
+   <a href="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/create-solace-producer.gif">
       <img
-      src="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/create-solace-producer.gif"
+      src="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/create-solace-producer.gif"
          alt="Creation and configuration of the Solace Message Producer"
          width="80%"
       />
    </a>
 </div>
 
-#### Step 4: Configure message publishing
+### Step 4: Configure message publishing
 
 1. Expand the connector and click the **Send** button.  
 2. In the Message Field use “**Create Value**” and “**Inputs**” to add the incoming message’s payload to the output message’s payload.
 
 <div style="text-align: center;">
-   <a href="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/map-payload.gif">
+   <a href="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/map-payload.gif">
       <img
-      src="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/map-payload.gif"
+      src="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/map-payload.gif"
          alt="How to map the input payload to the output message"
          width="80%"
       />
    </a>
 </div>
 
-#### Step 5: Run and test
+### Step 5: Run and test
 
 1. Navigate to the Home view.  
 2. Click the **Run** button to start the integration.  
 3. Test using Try Me\! in the Solace Web UI.
 
-##### Test case 1: Status change event
+#### Test case 1: Status change event
 
 Publish this payload to topic: `ecommerce/orders/ORD-12345/status`
 
@@ -454,9 +451,9 @@ Publish this payload to topic: `ecommerce/orders/ORD-12345/status`
 }
 ```
 
-**Expected Result:** The message should be consumed from `fulfillment.orders.status` and then published to `fulfillment.orders.notification` because `previousStatus` (`ORDER_CONFIRMED`) ≠ `newStatus` (`ORDER_SHIPPED`).
+**Expected Result:** The message should be consumed from `fulfillment.orders.status` and then published to `fulfillment.orders.notification` because `previousStatus` (`ORDER_CONFIRMED`) is not equal to `newStatus` (`ORDER_SHIPPED`).
 
-##### Test case 2: No status change event
+#### Test case 2: No status change event
 
 Publish this payload to topic: `ecommerce/orders/ORD-12346/status`
 
@@ -480,18 +477,18 @@ Publish this payload to topic: `ecommerce/orders/ORD-12346/status`
   "statusDetails": {
     "previousStatus": "ORDER_CONFIRMED",
     "newStatus": "ORDER_CONFIRMED",
-    "carrier": "null",
-    "trackingNumber": "null"
+    "carrier": null,
+    "trackingNumber": null
   }
 }
 ```
 
-**Expected Result:** The message should be consumed from `fulfillment.orders.status` but will NOT be published to `fulfillment.orders.notification` because `previousStatus` (`ORDER_CONFIRMED`) \= `newStatus` (`ORDER_CONFIRMED`). The If condition will evaluate to false, and the message producer will not be triggered.
+**Expected Result:** The message should be consumed from `fulfillment.orders.status` but will NOT be published to `fulfillment.orders.notification` because `previousStatus` (`ORDER_CONFIRMED`) equals `newStatus` (`ORDER_CONFIRMED`). The If condition will evaluate to false, and the message producer will not be triggered.
 
 <div style="text-align: center;">
-   <a href="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/final-business-logic-test.gif">
+   <a href="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/final-business-logic-test.gif">
       <img
-      src="{{base_path}}/assets/integration-guides/usecases/solance-event-integration/final-business-logic-test.gif"
+      src="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/final-business-logic-test.gif"
          alt="Final testing of the business logic with status change events"
          width="80%"
       />
