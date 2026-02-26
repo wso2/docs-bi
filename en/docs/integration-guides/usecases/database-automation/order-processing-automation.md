@@ -9,14 +9,14 @@ description: "Use WSO2 Integrator: BI persist database connections to build a sc
 
 An e-commerce system stores customer orders in a MySQL database. A scheduled automation runs periodically, picks up all newly placed orders, and advances them to `PROCESSING` status — simulating the first step in warehouse fulfilment.
 
-This walkthrough shows how WSO2 Integrator: BI's **persist database connections** make it straightforward to build that automation. You will create one connector for the orders database and use the generated client to query and update rows in a scheduled `main()` entry point.
+This walkthrough shows how WSO2 Integrator: BI's **persist database connections** make it straightforward to build that automation. You will create one connector for the orders database and use the generated client to query and update rows in a scheduled main entry point.
 
 ### What this demonstrates
 
 | Capability | Where it appears |
 |---|---|
 | Single DB connector | Orders DB (MySQL) |
-| Automation trigger | `main()` entry point — runs once per schedule invocation |
+| Automation trigger | main entry point — runs once per schedule invocation |
 | Reading rows with a filter | Get orders where `status = 'PLACED'` |
 | Updating a row | Advance each order status to `PROCESSING` |
 | Iteration over results | `foreach` loop over the result set |
