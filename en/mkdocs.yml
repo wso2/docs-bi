@@ -119,6 +119,8 @@ nav:
         - File Integration:
           - Sales Data Synchronization via FTP File Integration: integration-guides/usecases/file-integration/sales-data-sync-with-ftp-file-integration.md
           - Contractor Timesheet Validation: integration-guides/usecases/file-integration/contractor-timesheet-validation.md
+        - Database Integration:
+          - Order Processing Automation: integration-guides/usecases/database-automation/order-processing-automation.md
   - Developer Guides:
       - Create Integrations:
           Overview: developer-guides/create-integrations/overview.md
@@ -305,4 +307,3 @@ extra:
           name: WSO2 on X (Twitter)
     # site_version: Uncomment to specify a version
     base_path: https://wso2.github.io/docs-bi
-    #base_path: http://localhost:8000
