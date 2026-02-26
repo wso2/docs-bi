@@ -1,3 +1,8 @@
+---
+title: "Introduction to VM-based Deployment"
+description: "Detailed instructions on deploying integrations to Virtual Machine (VM) environments."
+---
+
 # Introduction to VM-based Deployment
 
 Integrations developed with BI can be deployed on virtual machines (VMs), offering a flexible and familiar option for organizations operating in traditional IT environments or requiring fine-grained control over their infrastructure.

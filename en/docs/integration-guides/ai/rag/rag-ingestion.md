@@ -1,3 +1,8 @@
+---
+title: "RAG Ingestion"
+description: "Detailed guide on building an ingestion pipeline for Retrieval-Augmented Generation (RAG) applications."
+---
+
 # RAG Ingestion
 
 In this tutorial, you'll build a Retrieval-Augmented Generation (RAG) ingestion pipeline using [WSO2 Integrator: BI](https://wso2.com/integrator/bi/). The pipeline loads content from a file, chunks them into smaller sections, generates embedding and stores those embeddings in a vector knowledge base for efficient retrieval.

@@ -1,3 +1,8 @@
+---
+title: "Develop Automation"
+description: "Walkthrough for creating your first automation integration that runs on a schedule or timer."
+---
+
 # Develop Automation
 
 ## Overview

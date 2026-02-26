@@ -1,3 +1,8 @@
+---
+title: "Introduction to Chat Agents"
+description: "Introduction to creating conversational chat agents that leverage AI for interactive workflows."
+---
+
 # Introduction to Chat Agents
 
 In this tutorial, you'll create an AI-powered math tutor assistant capable of handling a variety of mathematical queries. The agent will be equipped with tools to perform fundamental arithmetic operations and intelligently combine and execute these tools to address user questions. By the end of this tutorial, you'll have built an interactive math assistant that can help users solve problems and provide clear, step-by-step explanations.

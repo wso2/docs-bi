@@ -100,7 +100,13 @@ nav:
         - Message Transformation: integration-guides/integration-as-api/message-transformation.md
         - Message Routing: integration-guides/integration-as-api/message-routing.md
       - File Integration:
-        - File Integration With Directory Service: integration-guides/file-integration/file-integration-with-directory-service.md
+        - integration-guides/file-integration/index.md
+        - File Sources:
+          - Local Files Integration: integration-guides/file-integration/file-sources/local-files-integration.md
+          - FTP Integration: integration-guides/file-integration/file-sources/ftp-integration.md
+          - FTPS Integration: integration-guides/file-integration/file-sources/ftps-integration.md
+          - SFTP Integration: integration-guides/file-integration/file-sources/sftp-integration.md
+        - Troubleshooting: integration-guides/file-integration/troubleshooting.md
       - Event Integration:
         - Change Data Capture (CDC):
           - Fraud Detection System with CDC for Microsoft SQL Server: integration-guides/event-integration/cdc/fraud-detection-system-with-cdc-for-mssql.md
@@ -110,6 +116,9 @@ nav:
           - Overview: integration-guides/usecases/datamapper/overview.md
           - Read a CSV File and Transform It to an XML File: integration-guides/usecases/datamapper/read-csv-file-and-transform-to-xml-file.md
         - TCP Chat Service: integration-guides/usecases/tcp-chat-service/build-a-tcp-chat-service.md
+        - File Integration:
+          - Sales Data Synchronization via FTP File Integration: integration-guides/usecases/file-integration/sales-data-sync-with-ftp-file-integration.md
+          - Contractor Timesheet Validation: integration-guides/usecases/file-integration/contractor-timesheet-validation.md
         - Event Integration: integration-guides/usecases/solace-event-integration/building-a-e-commerce-order-notification-service-with-solace-event-integration.md
   - Developer Guides:
       - Create Integrations:
@@ -238,11 +247,13 @@ plugins:
 extra_css:
     - assets/lib/highlightjs/default.min.css
     - assets/css/theme.css
+    - assets/css/copy-page.css
     - assets/lib/json-formatter/json-formatter.css
 extra_javascript:
     - assets/lib/json-formatter/json-formatter.umd.js
     - assets/lib/highlightjs/highlight.min.js
     - assets/js/theme.js
+    - assets/js/copy-page.js
 extra:
     material:
       jinja2content: true
@@ -260,7 +271,7 @@ extra:
         icon: octicons/rocket-16
         level: 1
       Integration Guides:
-        icon: octicons/shield-check-16
+        icon: octicons/workflow-16
         level: 1
       Developer Guides:
         icon: octicons/browser-16
@@ -272,7 +283,7 @@ extra:
         icon: octicons/graph-16
         level: 1
       References:
-        icon: octicons/hubot-16
+        icon: octicons/book-16
         level: 1
       Release Notes:
         icon: octicons/pencil-16
@@ -280,14 +291,19 @@ extra:
     social:
         - icon: fontawesome/brands/github-alt
           link: https://github.com/wso2
+          name: WSO2 on GitHub
         - icon: fontawesome/brands/twitter
           link: https://twitter.com/wso2
+          name: WSO2 on Twitter
         - icon: fontawesome/brands/linkedin-in
           link: https://www.linkedin.com/company/wso2
+          name: WSO2 on LinkedIn
         - icon: fontawesome/brands/youtube
           link: https://www.youtube.com/user/WSO2TechFlicks
+          name: WSO2 on YouTube
         - icon: fontawesome/brands/x-twitter
           link: https://twitter.com/intent/follow?screen_name=wso2
+          name: WSO2 on X (Twitter)
     # site_version: Uncomment to specify a version
     base_path: https://wso2.github.io/docs-bi
     #base_path: http://localhost:8000

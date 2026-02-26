@@ -1,3 +1,8 @@
+---
+title: "Page Not Found"
+description: "Custom 404 error page for the WSO2 Integrator: BI documentation site."
+---
+
 <!--
  * Copyright (c) 2024, WSO2 LLC. (http://www.wso2.com) All Rights Reserved.
  *

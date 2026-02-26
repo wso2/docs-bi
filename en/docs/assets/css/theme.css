@@ -792,6 +792,11 @@
 */
 
 @media screen and (max-width: 76.1875em) {
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
     .md-nav--primary .md-nav__title[for=__drawer] {
         background-color: var(--md-default-bg-color);
         height: 3.9rem;

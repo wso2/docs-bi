@@ -70,33 +70,33 @@
 
 /* Links  */
 .md-header .md-tabs {
-    position: relative;
-    overflow: visible;
-    height: 48px;
-    z-index: 1;
+  position: relative;
+  overflow: visible;
+  height: 48px;
+  z-index: 1;
 }
 
 [data-md-color-scheme=default] .md-header,
 [data-md-color-scheme=default] .md-tabs  {
-    background-color: var(--md-default-bg-color);
-    color: var(--md-default-fg-color);
+  background-color: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
 }
 
 [data-md-color-scheme=slate] .md-header,
 [data-md-color-scheme=slate] .md-tabs {
-    background-color: var(--md-default-bg-color);
+  background-color: var(--md-default-bg-color);
 }
 
 .md-header .md-tabs .md-tabs__list {
-    position: absolute;
-    left: 0;
-    top: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .md-tabs__link--active,
 .md-tabs__link:focus,
 .md-tabs__link:hover {
-    color: var(--md-primary-fg-color);
+  color: var(--md-primary-fg-color);
 }
 
 .md-tabs__link {
@@ -108,9 +108,9 @@
 
 @media screen and (min-width: 100em) {
   .md-header .md-tabs {
-      position: relative;
-      overflow: visible;
-      height: 53px;
+    position: relative;
+    overflow: visible;
+    height: 53px;
   }
 }
 
@@ -120,7 +120,7 @@
 }
 
 /* Logo */
-.md-header__button.md-logo img, 
+.md-header__button.md-logo img,
 .md-header__button.md-logo svg {
   height: 1.4rem;
   padding: .1rem 0;
@@ -169,7 +169,7 @@
   .md-button.md-button--asgardeo, .md-button.md-button--discord {
     display: none;
   }
-  
+
   .md-button.md-button--asgardeo-mini, .md-button.md-button--discord-mini {
     display: block;
   }
@@ -237,4 +237,21 @@
 
 .md-header__version-select-dropdown.open .dropdown-content li:hover a {
   background-color: var(--md-default-fg-color--lightest);
+}
+
+@media screen and (max-width: 768px) {
+  .md-header__topic {
+    left: 0;
+    top: 0;
+  }
+
+  .md-header__inner {
+    padding: 0 0.5rem;
+  }
+
+  /* Ensure logo and menu integration is smooth */
+  .md-header__button.md-logo img,
+  .md-header__button.md-logo svg {
+    height: 1.2rem;
+  }
 }

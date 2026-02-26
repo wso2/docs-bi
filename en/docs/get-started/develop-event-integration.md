@@ -1,3 +1,8 @@
+---
+title: "Develop Event Integration"
+description: "Instructions for building event-driven integrations that react to messages from systems like Kafka or RabbitMQ."
+---
+
 # Develop Event Integration
 
 ## Overview

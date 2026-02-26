@@ -1,3 +1,8 @@
+---
+title: "Network Level Security"
+description: "Strategies for securing network traffic and communication in your integration environment."
+---
+
 # Network Level Security
 
 ## Establish a failover setup

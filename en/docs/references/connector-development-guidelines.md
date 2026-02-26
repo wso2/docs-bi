@@ -1,3 +1,8 @@
+---
+title: "Connector development guidelines"
+description: "Technical standards and guidelines for developing custom connectors for BI."
+---
+
 # Connector development guidelines
 
 This guide outlines the complete lifecycle for developing Ballerina connectors for BI, from initial conception through general availability. Following these guidelines ensures consistent quality and maintainability across all connector implementations.

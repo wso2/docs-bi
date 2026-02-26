@@ -1,3 +1,8 @@
+---
+title: "AI Data Mapping"
+description: "Leveraging AI for automated and intelligent data mapping suggestions."
+---
+
 # AI Data Mapping
 
 ## What is the data mapper?

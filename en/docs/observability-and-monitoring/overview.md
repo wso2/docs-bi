@@ -1,3 +1,8 @@
+---
+title: "Overview of Observability and Monitoring"
+description: "Overview of observability and monitoring capabilities in WSO2 Integrator: BI."
+---
+
 # Overview of Observability and Monitoring
 
 Observability is a measure of how well the internal states of a system can be understood from its external outputs.

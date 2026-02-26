@@ -1,3 +1,8 @@
+---
+title: "De-centralized Deployment"
+description: "Implementing decentralized deployment strategies for high availability and low latency."
+---
+
 # De-centralized Deployment
 
 The de-centralized deployment offers a straightforward approach, ideal for simpler applications or when direct control over individual deployments is preferred. In this method, BI artifacts are developed and published to a registry (a storage location for deployable components). The deployment process retrieves these artifacts and deploys them to the target environment, ensuring all necessary dependencies and configurations are included.

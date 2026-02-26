@@ -1,3 +1,8 @@
+---
+title: "WSO2 Integrator: BI Artifacts"
+description: "Documentation on the various artifacts and components used in BI integration projects."
+---
+
 # WSO2 Integrator: BI Artifacts
 
 WSO2 Integrator: BI supports a range of artifact types that enable developers to build powerful, event-driven, API-based, and file-based integration solutions. Each artifact type defines how an integration is triggered and how it behaves in various runtime environments.
