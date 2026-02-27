@@ -77,7 +77,7 @@ Sample Event Payload:
 
 In this section, we'll set up the Solace broker infrastructure needed for our e-commerce order notification service. We'll create a Message VPN to isolate our messaging environment, set up a queue to store order status events, and configure a topic subscription to route messages to that queue.
 
-#### What we're setting up:
+### What we're setting up:
 
 * **Message VPN:** `ecommerce-vpn` \- isolated messaging environment for our application (Learn more about message VPNs in the [Message VPNs documentation](https://docs.solace.com/Get-Started/message-vpn.htm))  
 * **Queue:** `fulfillment.orders.status` \- stores incoming order events.  
