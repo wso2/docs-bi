@@ -35,7 +35,7 @@ Before you begin, make sure you have the following:
 
 ### Set up the database
 
-Connect to your MySQL server as a user with admin privileges and run the following scripts in order.
+Connect to your MySQL server and run the following scripts in order.
 
 #### 1. Create the database and user
 
@@ -43,7 +43,7 @@ Connect to your MySQL server as a user with admin privileges and run the followi
 CREATE DATABASE IF NOT EXISTS orders_db;
 
 CREATE USER IF NOT EXISTS 'orders_user'@'localhost' IDENTIFIED BY 'orders_pass';
-GRANT ALL PRIVILEGES ON orders_db.* TO 'orders_user'@'localhost';
+GRANT SELECT, UPDATE ON orders_db.* TO 'orders_user'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
@@ -113,7 +113,7 @@ INSERT INTO orders (order_id, customer_id, product_id, amount, status, placed_at
 
 ```sql
 USE orders_db;
-SELECT order_id, item, status FROM orders;
+SELECT order_id, amount, status FROM orders;
 ```
 
 You should see all four rows with the statuses shown above.
@@ -156,7 +156,7 @@ You should see all four rows with the statuses shown above.
       </a>
 
 ???+ tip "Note"
-    - Make sure the user you are connecting with has the necessary permissions to access the database and its metadata. Insufficient permissions can lead to introspection failures or incomplete metadata retrieval.
+    - Make sure the user you are connecting with has `SELECT` permission on the database (required for schema introspection and querying rows) and `UPDATE` permission (required for advancing order status). Insufficient permissions can lead to introspection failures or incomplete metadata retrieval.
     - When a table is selected during the connection creation, the other tables that have foreign key relationships with the selected table are automatically included in the selection. This ensures that all relevant tables are available for integration development, even if they were not explicitly selected by the user.
     - The generated client exposes the basic CRUD operations for the selected tables as methods. These methods can be used in the automation to interact with the database without writing raw SQL queries.
 
