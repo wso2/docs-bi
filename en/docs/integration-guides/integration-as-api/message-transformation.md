@@ -28,7 +28,7 @@ An HTTP service with a single resource (`toXml`) will be created to accept a JSO
 
 1. In the design view, click the **Add Artifact** button.
 2. Select **HTTP Service** under the **Integration as API** category.
-3. Select the **Design from Scratch** option for the **Service Contract**.
+3. Select the **Design From Scratch** option for the **Service Contract**.
 4. Specify the **Service Base Path** as `/convert`.
 5. Click the **Create** button to generate the new service with the specified configurations.
 
