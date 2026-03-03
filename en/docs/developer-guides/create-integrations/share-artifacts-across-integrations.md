@@ -72,7 +72,15 @@ Once you have created your library project, you can add various types of reusabl
 2. Provide the function name, parameters, and return type.
 3. Check the **Is Public** option to make the function accessible to other integrations.
 
-<a href="{{base_path}}/assets/img/developer-guides/create-integrations/add-a-shared-function.gif"><img src="../../../assets/img/developer-guides/create-integrations/add-a-shared-function.gif" alt="Add a Shared Function" width="80%"></a>
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/img/developer-guides/create-integrations/add-a-shared-function.gif">
+      <img
+      src="{{base_path}}/assets/img/developer-guides/create-integrations/add-a-shared-function.gif"
+         alt="Add a Shared Function"
+         width="80%"
+      />
+   </a>
+</div>
 
 ## Reuse artifacts from a library project
 
