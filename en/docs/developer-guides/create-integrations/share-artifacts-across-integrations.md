@@ -35,7 +35,15 @@ Follow these steps to add a library project to an existing BI workspace:
 4. Select **Library** as the project type.
 5. Click **Add Integration**.
 
-<a href="{{base_path}}/assets/img/developer-guides/create-integrations/add-a-library-project.gif"><img src="../../../assets/img/developer-guides/create-integrations/add-a-library-project.gif" alt="Add a Library" width="80%"></a>
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/img/developer-guides/create-integrations/add-a-library-project.gif">
+      <img
+      src="{{base_path}}/assets/img/developer-guides/create-integrations/add-a-library-project.gif"
+         alt="Add a Library"
+         width="80%"
+      />
+   </a>
+</div>
 
 ## Add sharable artifacts to a library project
 
