@@ -95,7 +95,15 @@ If your library and integration projects are in the same workspace, you can easi
 3. Click **Call Function** and select `isValidOrderItem` under the **Current Workspace** section.
 4. Configure the function parameters as needed.
 
-<a href="{{base_path}}/assets/img/developer-guides/create-integrations/invoke-a-library-function.gif"><img src="../../../assets/img/developer-guides/create-integrations/invoke-a-library-function.gif" alt="Invoke a Library Function" width="80%"></a>
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/img/developer-guides/create-integrations/invoke-a-library-function.gif">
+      <img
+      src="{{base_path}}/assets/img/developer-guides/create-integrations/invoke-a-library-function.gif"
+         alt="Invoke a Library Function"
+         width="80%"
+      />
+   </a>
+</div>
 
 ## Create a standalone library project
 
