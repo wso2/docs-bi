@@ -90,7 +90,15 @@ If you want to create a library project outside of an existing workspace:
 3. Provide the library name and select **Library** as the project type.
 4. Click **Create Integration**.
 
-<a href="{{base_path}}/assets/img/developer-guides/create-integrations/create-a-single-library.gif"><img src="../../../assets/img/developer-guides/create-integrations/create-a-single-library.gif" alt="Create a single library" width="80%"></a>
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/img/developer-guides/create-integrations/create-a-single-library.gif">
+      <img
+      src="{{base_path}}/assets/img/developer-guides/create-integrations/create-a-single-library.gif"
+         alt="Create a single library"
+         width="80%"
+      />
+   </a>
+</div>
 
 Once the library project is created, you can add your reusable artifacts as described in the previous sections. You can then share this library project with other developers or teams by publishing it to the Ballerina Central.
 
