@@ -26,12 +26,11 @@ An HTTP service with a single resource (`toXml`) will be created to accept a JSO
 
 ## Step 2: Create an HTTP service
 
-1. In the design view, click on the **Add Artifact** button.
+1. In the design view, click the **Add Artifact** button.
 2. Select **HTTP Service** under the **Integration as API** category.
-3. Select the **Create and use the default HTTP listener** option from the **Listener** dropdown.
-4. Select **Design from Scratch** option as the **Service Contract**.
-5. Specify the **Service base path** as `/convert`.
-6. Click on the **Save** button to create the new service with the specified configurations.
+3. Select the **Design From Scratch** option for the **Service Contract**.
+4. Specify the **Service Base Path** as `/convert`.
+5. Click the **Create** button to generate the new service with the specified configurations.
 
     <a href="{{base_path}}/assets/img/integration-guides/integration-as-api/message-transformation/create-service.gif">
     <img src="{{base_path}}/assets/img/integration-guides/integration-as-api/message-transformation/create-service.gif" alt="Create Integration" width="70%"></a>
