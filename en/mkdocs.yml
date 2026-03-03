@@ -142,6 +142,7 @@ nav:
       - Protocols and Connectors:
         - Overview of Connectors: developer-guides/protocols-and-connectors/overview-of-connectors.md
         - Supported Protocols: developer-guides/protocols-and-connectors/supported-protocols.md
+        - Build Custom Connectors: developer-guides/protocols-and-connectors/build-custom-connectors.md
       - Tools:
         - Migration Tools:
           - Overview: developer-guides/tools/migration-tools/overview.md
