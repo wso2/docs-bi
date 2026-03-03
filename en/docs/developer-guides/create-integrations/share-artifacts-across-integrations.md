@@ -136,6 +136,14 @@ To publish your library to the Ballerina Central, you need to:
 
 Once you have the above prerequisites in place, you can publish your library by simply clicking the **Publish** button at the top right corner of the library project view. This will open a confirmation popup where you can review the package details and confirm the publication. After publishing, your library will be available on the Ballerina Central for other developers to discover and use in their projects.
 
-<a href="{{base_path}}/assets/img/developer-guides/create-integrations/publish-a-library-to-central.gif"><img src="../../../assets/img/developer-guides/create-integrations/publish-a-library-to-central.gif" alt="Publish to Central Repository" width="80%"></a>
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/img/developer-guides/create-integrations/publish-a-library-to-central.gif">
+      <img
+      src="{{base_path}}/assets/img/developer-guides/create-integrations/publish-a-library-to-central.gif"
+         alt="Publish to Central Repository"
+         width="80%"
+      />
+   </a>
+</div>
 
 By following these guidelines and leveraging library projects, you can build a robust, maintainable integration ecosystem that promotes code reuse and consistency across your organization.
