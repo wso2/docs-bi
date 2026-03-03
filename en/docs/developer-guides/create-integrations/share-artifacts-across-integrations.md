@@ -56,7 +56,15 @@ Once you have created your library project, you can add various types of reusabl
 3. Provide the type name and add the fields as needed. You can also generate the fields from a JSON or XML sample.
 4. To make this type available for other integrations, ensure you mark it as **Accessible by Other Integrations** under the **Advanced Options** section.
 
-<a href="{{base_path}}/assets/img/developer-guides/create-integrations/add-a-shared-type.gif"><img src="../../../assets/img/developer-guides/create-integrations/add-a-shared-type.gif" alt="Add a Shared Type" width="80%"></a>
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/img/developer-guides/create-integrations/add-a-shared-type.gif">
+      <img
+      src="{{base_path}}/assets/img/developer-guides/create-integrations/add-a-shared-type.gif"
+         alt="Add a Shared Type"
+         width="80%"
+      />
+   </a>
+</div>
 
 ### Add a shared function
 
