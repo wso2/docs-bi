@@ -35,9 +35,17 @@ Follow these steps to add a library project to an existing BI workspace:
 4. Select **Library** as the project type.
 5. Click **Add Integration**.
 
-<a href="{{base_path}}/assets/img/developer-guides/create-integrations/add-a-library-project.gif"><img src="../../../assets/img/developer-guides/create-integrations/add-a-library-project.gif" alt="Add a Library" width="80%"></a>
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/img/developer-guides/create-integrations/add-a-library-project.gif">
+      <img
+      src="{{base_path}}/assets/img/developer-guides/create-integrations/add-a-library-project.gif"
+         alt="Add a Library"
+         width="80%"
+      />
+   </a>
+</div>
 
-## Add sharable artifacts to a library project
+## Add shareable artifacts to a library project
 
 Once you have created your library project, you can add various types of reusable artifacts:
 
@@ -48,7 +56,15 @@ Once you have created your library project, you can add various types of reusabl
 3. Provide the type name and add the fields as needed. You can also generate the fields from a JSON or XML sample.
 4. To make this type available for other integrations, ensure you mark it as **Accessible by Other Integrations** under the **Advanced Options** section.
 
-<a href="{{base_path}}/assets/img/developer-guides/create-integrations/add-a-shared-type.gif"><img src="../../../assets/img/developer-guides/create-integrations/add-a-shared-type.gif" alt="Add a Shared Type" width="80%"></a>
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/img/developer-guides/create-integrations/add-a-shared-type.gif">
+      <img
+      src="{{base_path}}/assets/img/developer-guides/create-integrations/add-a-shared-type.gif"
+         alt="Add a Shared Type"
+         width="80%"
+      />
+   </a>
+</div>
 
 ### Add a shared function
 
@@ -56,7 +72,15 @@ Once you have created your library project, you can add various types of reusabl
 2. Provide the function name, parameters, and return type.
 3. Check the **Is Public** option to make the function accessible to other integrations.
 
-<a href="{{base_path}}/assets/img/developer-guides/create-integrations/add-a-shared-function.gif"><img src="../../../assets/img/developer-guides/create-integrations/add-a-shared-function.gif" alt="Add a Shared Function" width="80%"></a>
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/img/developer-guides/create-integrations/add-a-shared-function.gif">
+      <img
+      src="{{base_path}}/assets/img/developer-guides/create-integrations/add-a-shared-function.gif"
+         alt="Add a Shared Function"
+         width="80%"
+      />
+   </a>
+</div>
 
 ## Reuse artifacts from a library project
 
@@ -71,18 +95,34 @@ If your library and integration projects are in the same workspace, you can easi
 3. Click **Call Function** and select `isValidOrderItem` under the **Current Workspace** section.
 4. Configure the function parameters as needed.
 
-<a href="{{base_path}}/assets/img/developer-guides/create-integrations/invoke-a-library-function.gif"><img src="../../../assets/img/developer-guides/create-integrations/invoke-a-library-function.gif" alt="Invoke a Library Function" width="80%"></a>
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/img/developer-guides/create-integrations/invoke-a-library-function.gif">
+      <img
+      src="{{base_path}}/assets/img/developer-guides/create-integrations/invoke-a-library-function.gif"
+         alt="Invoke a Library Function"
+         width="80%"
+      />
+   </a>
+</div>
 
 ## Create a standalone library project
 
-If you want to create a library project outside of an existing workspace:
+If you want to create a library project outside an existing workspace:
 
 1. Open the command palette and select **BI: Open Welcome**.
 2. Click **Create New Integration**.
 3. Provide the library name and select **Library** as the project type.
 4. Click **Create Integration**.
 
-<a href="{{base_path}}/assets/img/developer-guides/create-integrations/create-a-single-library.gif"><img src="../../../assets/img/developer-guides/create-integrations/create-a-single-library.gif" alt="Create a single library" width="80%"></a>
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/img/developer-guides/create-integrations/create-a-single-library.gif">
+      <img
+      src="{{base_path}}/assets/img/developer-guides/create-integrations/create-a-single-library.gif"
+         alt="Create a single library"
+         width="80%"
+      />
+   </a>
+</div>
 
 Once the library project is created, you can add your reusable artifacts as described in the previous sections. You can then share this library project with other developers or teams by publishing it to [Ballerina Central](https://central.ballerina.io/).
 
@@ -90,12 +130,20 @@ Once the library project is created, you can add your reusable artifacts as desc
 
 To publish your library to [Ballerina Central](https://central.ballerina.io/), you need to:
 
-1. Configure the Personal Access Token (PAT) in your settings. This token is used to authenticate your account when publishing packages. Follow [the instructions to obtain and configure your access token](https://ballerina.io/learn/publish-packages-to-ballerina-central/#obtain-an-access-token).
+1. Configure the Personal Access Token (PAT) in your settings. This token authenticates your account when publishing packages. Follow [the instructions to obtain and configure your access token](https://ballerina.io/learn/publish-packages-to-ballerina-central/#obtain-an-access-token).
 
 2. Have a Readme file (`Package.md`) in your library project that provides an overview of the library, its functionality, and usage instructions. This documentation will be displayed on Ballerina Central when users view your package.
 
-Once you have the above prerequisites in place, you can publish your library by simply clicking the **Publish** button at the top right corner of the library project view. This will open a confirmation pop up where you can review the package details and confirm the publication. After publishing, your library will be available on Ballerina Central for other developers to discover and use in their projects.
+Once you have the above prerequisites in place, you can publish your library by clicking the **Publish** button at the top-right corner of the library project view. This opens a confirmation pop-up where you can review the package details and confirm the publication. After publishing, your library is available on Ballerina Central for other developers to discover and use in their projects.
 
-<a href="{{base_path}}/assets/img/developer-guides/create-integrations/publish-a-library-to-central.gif"><img src="../../../assets/img/developer-guides/create-integrations/publish-a-library-to-central.gif" alt="Publish to Central Repository" width="80%"></a>
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/img/developer-guides/create-integrations/publish-a-library-to-central.gif">
+      <img
+      src="{{base_path}}/assets/img/developer-guides/create-integrations/publish-a-library-to-central.gif"
+         alt="Publish to Central Repository"
+         width="80%"
+      />
+   </a>
+</div>
 
 By following these guidelines and leveraging library projects, you can build a robust, maintainable integration ecosystem that promotes code reuse and consistency across your organization.
