@@ -1,4 +1,4 @@
-# Building an E-commerce Order Notification Service with Solace Event Integration
+# Solace Event Integration
 
 <div style="text-align: center;">
    <a href="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/solace-event-integration-architecture.png">
@@ -10,7 +10,7 @@
    </a>
 </div>
 
-In this tutorial, you will learn how to build an event-driven notification service using the Solace Event broker in WSO2 Integrator: BI. You'll create an integration that consumes order status events from a Solace message broker, processes them based on business logic, and publishes notifications to another queue when order statuses change.
+In this tutorial, you will learn how to build an event-driven notification service using the [Solace](https://solace.com/) Event broker in WSO2 Integrator: BI. You'll create an integration that consumes order status events from a Solace message broker, processes them based on business logic, and publishes notifications to another queue when order statuses change.
 
 This tutorial demonstrates how to:
 
@@ -44,7 +44,7 @@ solace/solace-pubsub-standard:latest
 
 The service will work with order status events that follow this structure:
 
-**Topic Pattern:** `ecommerce/orders/{orderId}/status`
+Topic Pattern: `ecommerce/orders/{orderId}/status`
 
 Sample Event Payload:
 
@@ -79,10 +79,10 @@ In this section, we'll set up the Solace broker infrastructure needed for our e-
 
 ### What we're setting up:
 
-* **Message VPN:** `ecommerce-vpn` \- isolated messaging environment for our application (Learn more about message VPNs in the [Message VPNs documentation](https://docs.solace.com/Get-Started/message-vpn.htm))  
-* **Queue:** `fulfillment.orders.status` \- stores incoming order events.  
-* **Topic subscription:** `ecommerce/orders/*/status` \- routes events to the queue  
-* **User credentials:** for secure access to the broker
+* Message VPN: `ecommerce-vpn` \- isolated messaging environment for our application (Learn more about message VPNs in the [Message VPNs documentation](https://docs.solace.com/Get-Started/message-vpn.htm))  
+* Queue: `fulfillment.orders.status` \- stores incoming order events.  
+* Topic subscription: `ecommerce/orders/*/status` \- routes events to the queue  
+* User credentials: for secure access to the broker
 
 Access the Web UI of Solace Software Event Broker, usually available at [http://localhost:8080](http://localhost:8080), and then follow these steps to configure your broker.
 
@@ -144,7 +144,7 @@ Access the Web UI of Solace Software Event Broker, usually available at [http://
 
 ### Step 4: Create queue
 
-1. Navigate to "Queues" in the VPN settings.  
+1. Navigate to **Queues** in the VPN settings.  
 2. Create a new queue named: `fulfillment.orders.status`.  
 3. Confirm that incoming messages are enabled.
 
@@ -161,8 +161,8 @@ Access the Web UI of Solace Software Event Broker, usually available at [http://
 ### Step 5: Add topic subscription
 
 1. Click on the `fulfillment.orders.status` queue.  
-2. Navigate to the "Subscriptions" tab.  
-3. Click the “+ Subscription” and add the following subscription pattern: `ecommerce/orders/*/status`.
+2. Navigate to the **Subscriptions** tab.  
+3. Click the **+ Subscription** and add the following subscription pattern: `ecommerce/orders/*/status`.
 
 <div style="text-align: center;">
    <a href="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/add-topic-subscription.gif">
@@ -176,9 +176,9 @@ Access the Web UI of Solace Software Event Broker, usually available at [http://
 
 ### Step 6: Test with Try Me\!	
 
-The "Try Me\!" tool in the Solace Web UI allows you to publish and consume messages for testing purposes.
+The **Try Me\!** tool in the Solace Web UI allows you to publish and consume messages for testing purposes.
 
-1. Navigate to the "Try Me\!" page in your Solace console.  
+1. Navigate to the **Try Me\!** page in your Solace console.  
 2. In the Establish Connection section, enter the password for the **default** user (Password: `password` \- set in Step 2).  
 3. Click the Connect button.  
 4. Publish the sample event payload (shown above) to the topic: `ecommerce/orders/ORD-12345/status`.  
@@ -249,7 +249,7 @@ Now that the Solace broker is configured, let's create an integration that consu
    4. Queue Name: `fulfillment.orders.status`  
    5. Session Acknowledgment Mode: `AUTO_ACKNOWLEDGE`  
 2. Listener Configurations:  
-   1. Expand the "Advanced Configurations" section  
+   1. Expand the **Advanced Configurations** section  
    2. Listener Name: `solaceListener`  
    3. Authentication Method: Basic Authentication  
    4. Username: `fulfillment-service`  
@@ -322,7 +322,7 @@ Now that the Solace broker is configured, let's create an integration that consu
 1. Navigate to the Home view.  
 2. Click the **Run** button to start the integration.  
 3. Monitor the terminal/console output.  
-4. Use the Solace "Try Me\!" tool to publish test messages of the format shown in the Event Structure section above.  
+4. Use the Solace **Try Me\!** tool to publish test messages of the format shown in the Event Structure section above.  
 5. Observe the log output showing the event types being processed.
 
 <div style="text-align: center;">
@@ -343,13 +343,13 @@ When messages are published to the topic, you should see log entries in the term
 
 Now let's enhance the integration to publish events to a notification queue when order statuses change.
 
-**Business Logic:** If the value of `newStatus` is different from `previousStatus`, we will publish the event to a `fulfillment.orders.notification` queue for downstream processing.
+Business Logic: If the value of `newStatus` is different from `previousStatus`, we will publish the event to a `fulfillment.orders.notification` queue for downstream processing.
 
 ### Step 1: Create the notification queue
 
 1. In the Solace console, follow the same steps from Part 1, Step 4 to create a queue called `fulfillment.orders.notification`.  
 2. Enable incoming messages.  
-3. Test the queue using the "Try Me\!" page to ensure it's working correctly.
+3. Test the queue using the **Try Me\!** page to ensure it's working correctly.
 
 <div style="text-align: center;">
    <a href="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/create-notification-queue.gif">
@@ -405,7 +405,7 @@ This condition checks whether the order status has actually changed.
 ### Step 4: Configure message publishing
 
 1. Expand the connector and click the **Send** button.  
-2. In the Message Field use “**Create Value**” and “**Inputs**” to add the incoming message’s payload to the output message’s payload.
+2. In the Message Field use **Create Value** and **Inputs** to add the incoming message's payload to the output message's payload.
 
 <div style="text-align: center;">
    <a href="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/map-payload.gif">
@@ -451,7 +451,7 @@ Publish this payload to topic: `ecommerce/orders/ORD-12345/status`
 }
 ```
 
-**Expected Result:** The message should be consumed from `fulfillment.orders.status` and then published to `fulfillment.orders.notification` because `previousStatus` (`ORDER_CONFIRMED`) is not equal to `newStatus` (`ORDER_SHIPPED`).
+Expected Result: The message should be consumed from `fulfillment.orders.status` and then published to `fulfillment.orders.notification` because `previousStatus` (`ORDER_CONFIRMED`) is not equal to `newStatus` (`ORDER_SHIPPED`).
 
 #### Test case 2: No status change event
 
@@ -483,7 +483,7 @@ Publish this payload to topic: `ecommerce/orders/ORD-12346/status`
 }
 ```
 
-**Expected Result:** The message should be consumed from `fulfillment.orders.status` but will NOT be published to `fulfillment.orders.notification` because `previousStatus` (`ORDER_CONFIRMED`) equals `newStatus` (`ORDER_CONFIRMED`). The If condition will evaluate to false, and the message producer will not be triggered.
+Expected Result: The message should be consumed from `fulfillment.orders.status` but will NOT be published to `fulfillment.orders.notification` because `previousStatus` (`ORDER_CONFIRMED`) equals `newStatus` (`ORDER_CONFIRMED`). The If condition will evaluate to false, and the message producer will not be triggered.
 
 <div style="text-align: center;">
    <a href="{{base_path}}/assets/integration-guides/usecases/solace-event-integration/final-business-logic-test.gif">
@@ -501,13 +501,13 @@ If you encounter issues while running the integration, check the WSO2 Integrator
 
 The following table lists common errors, their likely causes, and steps to resolve them using WSO2 Integrator: BI, Solace PubSub+ Manager, or Docker.
 
-**Note:** The connectivity and configuration errors listed below are common to both the **Event Consumer** (Listener) and the **Message Producer** components.
+Note: The connectivity and configuration errors listed below are common to both the Event Consumer (Listener) and the Message Producer components.
 
 | Problem | Error Message in Logs | Possible Causes | Solution |
 | :---- | :---- | :---- | :---- |
 | Broker Not Available | `Error creating connection - transport error` | Solace broker is not running. Incorrect broker URL Network connectivity issues Firewall blocking the connection | Verify Solace broker is running: `docker ps` (for Docker installations) Verify the docker command used to run the container and the port mappings. Check broker URL format: `smf://localhost:55554` Test connectivity: try accessing PubSub+ Manager at [http://localhost:8080](http://localhost:8080/) Verify port 55554 is not blocked by firewall |
 | Message VPN Not Allowed | `Error creating connection - internal error (403: Message VPN Not Allowed)` | Message VPN does not exist on the connected broker. VPN name is misspelled or has a typo.  | Verify the VPN `ecommerce-vpn` exists: Navigate to Message VPNs list in PubSub+ Manager Check for typos in VPN name (case-sensitive): ensure it's exactly `ecommerce-vpn` Confirm you're connecting to the correct broker URL: `smf://localhost:55554` |
 | Authentication Failure | `Error creating connection - login failure (401: Unauthorized)` | Invalid Username and/or Password. | Verify Credentials: Ensure you are using the username `fulfillment-service` and password `fulfillment-pass` |
-| Client Username Disabled | `Error creating connection - internal error (403: Client Username Is Shutdown)` | The client username exists but is currently disabled. | Enable User: Go to "Access Control" \-\> "Client Usernames" in Solace Web UI. Find `fulfillment-service` and ensure the "Enable" toggle is set to **On**. |
+| Client Username Disabled | `Error creating connection - internal error (403: Client Username Is Shutdown)` | The client username exists but is currently disabled. | Enable User: Go to **Access Control** \-\> **Client Usernames** in Solace Web UI. Find `fulfillment-service` and ensure the **Enable** toggle is set to **On**. |
 | Queue Does Not Exist | `Error creating consumer - unknown endpoint (503: Unknown Queue)` | Queue actually does not exist in the broker. Queue name is misspelled. Queue exists but in a different VPN.  | Verify if the queue exists in Solace Web UI under the Queues section. Check queue name spelling (case-sensitive): `fulfillment.orders.status` Ensure you're connected to the correct Message VPN (ecommerce-vpn) |
-| Data binding error | `error: Data binding failed:` | The JSON sent via "Try Me\!" does not match the defined event structure in Part 2, Step 4\. | Validate JSON: Compare your test payload strictly against the "Event Structure" defined in the guide. Alternatively, you can relax this requirement by selecting JSON as the databind type in Step 4 and updating the business logic to handle that properly. |
+| Data binding error | `error: Data binding failed:` | The JSON sent via **Try Me\!** does not match the defined event structure in Part 2, Step 4\. | Validate JSON: Compare your test payload strictly against the Event Structure defined in the guide. Alternatively, you can relax this requirement by selecting JSON as the databind type in Step 4 and updating the business logic to handle that properly. |
