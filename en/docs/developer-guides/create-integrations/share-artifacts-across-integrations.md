@@ -19,11 +19,11 @@ Consider creating a library project when you need to:
 
 Let's consider an e-commerce system with three separate integrations:
 
-1. **Order Service**: Handles order creation and validation.
-2. **Payment Service**: Processes payments and refunds.
-3. **Inventory Service**: Manages stock and fulfillment.
+1. Order Service: Handles order creation and validation.
+2. Payment Service: Processes payments and refunds.
+3. Inventory Service: Manages stock and fulfillment.
 
-All three integrations need to work with common data structures like `Order`, `Customer`, `Product`, and `PaymentInfo`. They also share validation logic and common utility functions. Instead of duplicating these artifacts across all three projects, we can create a shared library project called `ecommerce-common` that contains these reusable components.
+All three integrations need to work with common data structures like `Order`, `Customer`, `Product`, and `PaymentInfo`. They also share validation logic and common utility functions. Instead of duplicating these artifacts across all three projects, we can create a shared library project called `ecommerce_common` that contains these reusable components.
 
 ## Add a library project to your workspace
 
@@ -64,7 +64,7 @@ Once you have created your library project with shared artifacts, you can use th
 
 ### Use a library within the same workspace
 
-If your library and integration projects are in the same workspace, you can easily reuse the artifacts. Let's reuse the `Order` type and `isValidOrder` function from the `ecommerce_common` library in the Inventory Service integration:
+If your library and integration projects are in the same workspace, you can easily reuse the artifacts. Let's reuse the `Order` type and `isValidOrderItem` function from the `ecommerce_common` library in the Inventory Service integration:
 
 1. Navigate to the `reserve` resource function of the Inventory Service integration.
 2. Open the node palette to add the function invocation.
@@ -84,17 +84,17 @@ If you want to create a library project outside of an existing workspace:
 
 <a href="{{base_path}}/assets/img/developer-guides/create-integrations/create-a-single-library.gif"><img src="../../../assets/img/developer-guides/create-integrations/create-a-single-library.gif" alt="Create a single library" width="80%"></a>
 
-Once the library project is created, you can add your reusable artifacts as described in the previous sections. You can then share this library project with other developers or teams by publishing it to the Ballerina Central.
+Once the library project is created, you can add your reusable artifacts as described in the previous sections. You can then share this library project with other developers or teams by publishing it to [Ballerina Central](https://central.ballerina.io/).
 
 ## Publish your library
 
-To publish your library to the Ballerina Central, you need to:
+To publish your library to [Ballerina Central](https://central.ballerina.io/), you need to:
 
-1. Configure the Personal Access Token (PAT) in your settings. This token is used to authenticate your account when publishing packages. Follow [these steps](https://ballerina.io/learn/publish-packages-to-ballerina-central/#obtain-an-access-token) to obtain and configure your PAT.
+1. Configure the Personal Access Token (PAT) in your settings. This token is used to authenticate your account when publishing packages. Follow [the instructions to obtain and configure your access token](https://ballerina.io/learn/publish-packages-to-ballerina-central/#obtain-an-access-token).
 
-2. Have a Readme file (`Package.md`) in your library project that provides an overview of the library, its functionality, and usage instructions. This documentation will be displayed on the Ballerina Central when users view your package.
+2. Have a Readme file (`Package.md`) in your library project that provides an overview of the library, its functionality, and usage instructions. This documentation will be displayed on Ballerina Central when users view your package.
 
-Once you have the above prerequisites in place, you can publish your library by simply clicking the **Publish** button at the top right corner of the library project view. This will open a confirmation popup where you can review the package details and confirm the publication. After publishing, your library will be available on the Ballerina Central for other developers to discover and use in their projects.
+Once you have the above prerequisites in place, you can publish your library by simply clicking the **Publish** button at the top right corner of the library project view. This will open a confirmation pop up where you can review the package details and confirm the publication. After publishing, your library will be available on Ballerina Central for other developers to discover and use in their projects.
 
 <a href="{{base_path}}/assets/img/developer-guides/create-integrations/publish-a-library-to-central.gif"><img src="../../../assets/img/developer-guides/create-integrations/publish-a-library-to-central.gif" alt="Publish to Central Repository" width="80%"></a>
 
