@@ -36,7 +36,7 @@ solace/solace-pubsub-standard:latest
 ```
 
 * Access PubSub+ Manager at [http://localhost:8080](http://localhost:8080)  
-* Default credentials: admin/admin  
+* Default credentials: `admin`/`admin`  
 * For detailed setup instructions, see: [Solace Broker container setup](https://docs.solace.com/Software-Broker/SW-Broker-Set-Up/Containers/Set-Up-Container-Image.htm)  
 * Alternatively, if you prefer not to deploy Solace locally, you can use [Solace PubSub+ Cloud (free tier)](https://console.solace.cloud/)
 
@@ -110,7 +110,7 @@ Access the Web UI of Solace Software Event Broker, usually available at [http://
 ### Step 2: Configure default user password
 
 1. Set the default user's password to: `password`.  
-2. Click Create and you will be navigated to the Message VPNs screen.  
+2. Click Create, and you will be navigated to the Message VPNs screen.  
 3. Click the newly created Message VPN, ecommerce-vpn.
 
 <div style="text-align: center;">
@@ -301,7 +301,7 @@ Now that the Solace broker is configured, let's create an integration that consu
 
 ### Step 5: Print the type of the event
 
-1. In the flow diagram view, click \+ to add a node.  
+1. In the flow diagram view, `click +` to add a node.  
 2. Add a Log Info node from the palette.  
 3. Select the Expression mode from the toggle.  
 4. Using the expression helper pane, select `message.payload.eventType`.  
@@ -322,7 +322,7 @@ Now that the Solace broker is configured, let's create an integration that consu
 1. Navigate to the Home view.  
 2. Click the **Run** button to start the integration.  
 3. Monitor the terminal/console output.  
-4. Use the Solace **Try Me\!** tool to publish test messages of the format shown in the Event Structure section above.  
+4. Use the Solace **Try Me\!** tool to publish test messages of the format shown in the Event Structure section above.
 5. Observe the log output showing the event types being processed.
 
 <div style="text-align: center;">
@@ -505,7 +505,7 @@ Note: The connectivity and configuration errors listed below are common to both 
 
 | Problem | Error Message in Logs | Possible Causes | Solution |
 | :---- | :---- | :---- | :---- |
-| Broker Not Available | `Error creating connection - transport error` | Solace broker is not running. Incorrect broker URL Network connectivity issues Firewall blocking the connection | Verify Solace broker is running: `docker ps` (for Docker installations) Verify the docker command used to run the container and the port mappings. Check broker URL format: `smf://localhost:55554` Test connectivity: try accessing PubSub+ Manager at [http://localhost:8080](http://localhost:8080/) Verify port 55554 is not blocked by firewall |
+| Broker Not Available | `Error creating connection - transport error` | Solace broker is not running. Incorrect broker URL Network connectivity issues Firewall blocking the connection | Verify Solace broker is running: `docker ps` (for Docker installations) Verify the docker command used to run the container and the port mappings. Check broker URL format: `smf://localhost:55554` Test connectivity: try accessing PubSub+ Manager at [http://localhost:8080](http://localhost:8080/) Verify port `55554` is not blocked by firewall |
 | Message VPN Not Allowed | `Error creating connection - internal error (403: Message VPN Not Allowed)` | Message VPN does not exist on the connected broker. VPN name is misspelled or has a typo.  | Verify the VPN `ecommerce-vpn` exists: Navigate to Message VPNs list in PubSub+ Manager Check for typos in VPN name (case-sensitive): ensure it's exactly `ecommerce-vpn` Confirm you're connecting to the correct broker URL: `smf://localhost:55554` |
 | Authentication Failure | `Error creating connection - login failure (401: Unauthorized)` | Invalid Username and/or Password. | Verify Credentials: Ensure you are using the username `fulfillment-service` and password `fulfillment-pass` |
 | Client Username Disabled | `Error creating connection - internal error (403: Client Username Is Shutdown)` | The client username exists but is currently disabled. | Enable User: Go to **Access Control** \-\> **Client Usernames** in Solace Web UI. Find `fulfillment-service` and ensure the **Enable** toggle is set to **On**. |
