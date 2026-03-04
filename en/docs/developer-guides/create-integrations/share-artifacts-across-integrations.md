@@ -1,0 +1,149 @@
+# Share Artifacts Across Integrations
+
+As your integration solutions grow, you will often find yourself building multiple integrations that share common functionality. Instead of duplicating code across projects, WSO2 Integrator allows you to create reusable libraries that can be shared across multiple integrations. This approach promotes artifact reuse, maintains consistency, and simplifies maintenance across your integration landscape.
+
+Libraries in WSO2 Integrator are essentially packages that contain reusable artifacts such as types, functions, data mappers, and connectors. These libraries can be shared across multiple integration projects within your environment.
+
+## When to use library projects
+
+Consider creating a library project when you need to:
+
+- Share common types or data models across multiple integrations.
+- Reuse utility functions, validators, or transformers.
+- Standardize error handling or logging mechanisms.
+- Package custom connectors or client implementations.
+- Maintain common configuration or constants across integrations.
+- Share business logic that applies to multiple integration scenarios.
+
+## Example scenario: E-commerce order processing
+
+Let's consider an e-commerce system with three separate integrations:
+
+1. Order Service: Handles order creation and validation.
+2. Payment Service: Processes payments and refunds.
+3. Inventory Service: Manages stock and fulfillment.
+
+All three integrations need to work with common data structures like `Order`, `Customer`, `Product`, and `PaymentInfo`. They also share validation logic and common utility functions. Instead of duplicating these artifacts across all three projects, we can create a shared library project called `ecommerce_common` that contains these reusable components.
+
+## Add a library project to your workspace
+
+Follow these steps to add a library project to an existing BI workspace:
+
+1. Open your workspace.
+2. Click **Add Integration**.
+3. Provide a name for the library.
+4. Select **Library** as the project type.
+5. Click **Add Integration**.
+
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/img/developer-guides/create-integrations/add-a-library-project.gif">
+      <img
+      src="{{base_path}}/assets/img/developer-guides/create-integrations/add-a-library-project.gif"
+         alt="Add a Library"
+         width="80%"
+      />
+   </a>
+</div>
+
+## Add shareable artifacts to a library project
+
+Once you have created your library project, you can add various types of reusable artifacts:
+
+### Add a shared type
+
+1. Navigate to the library.
+2. Click **Add** in the **Types** section to open the type editor.
+3. Provide the type name and add the fields as needed. You can also generate the fields from a JSON or XML sample.
+4. To make this type available for other integrations, ensure you mark it as **Accessible by Other Integrations** under the **Advanced Options** section.
+
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/img/developer-guides/create-integrations/add-a-shared-type.gif">
+      <img
+      src="{{base_path}}/assets/img/developer-guides/create-integrations/add-a-shared-type.gif"
+         alt="Add a Shared Type"
+         width="80%"
+      />
+   </a>
+</div>
+
+### Add a shared function
+
+1. Click **Add** in the **Functions** section.
+2. Provide the function name, parameters, and return type.
+3. Check the **Is Public** option to make the function accessible to other integrations.
+
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/img/developer-guides/create-integrations/add-a-shared-function.gif">
+      <img
+      src="{{base_path}}/assets/img/developer-guides/create-integrations/add-a-shared-function.gif"
+         alt="Add a Shared Function"
+         width="80%"
+      />
+   </a>
+</div>
+
+## Reuse artifacts from a library project
+
+Once you have created your library project with shared artifacts, you can use them in your integration projects:
+
+### Use a library within the same workspace
+
+If your library and integration projects are in the same workspace, you can easily reuse the artifacts. Let's reuse the `Order` type and `isValidOrderItem` function from the `ecommerce_common` library in the Inventory Service integration:
+
+1. Navigate to the `reserve` resource function of the Inventory Service integration.
+2. Open the node palette to add the function invocation.
+3. Click **Call Function** and select `isValidOrderItem` under the **Current Workspace** section.
+4. Configure the function parameters as needed.
+
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/img/developer-guides/create-integrations/invoke-a-library-function.gif">
+      <img
+      src="{{base_path}}/assets/img/developer-guides/create-integrations/invoke-a-library-function.gif"
+         alt="Invoke a Library Function"
+         width="80%"
+      />
+   </a>
+</div>
+
+## Create a standalone library project
+
+If you want to create a library project outside an existing workspace:
+
+1. Open the command palette and select **BI: Open Welcome**.
+2. Click **Create New Integration**.
+3. Provide the library name and select **Library** as the project type.
+4. Click **Create Integration**.
+
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/img/developer-guides/create-integrations/create-a-single-library.gif">
+      <img
+      src="{{base_path}}/assets/img/developer-guides/create-integrations/create-a-single-library.gif"
+         alt="Create a single library"
+         width="80%"
+      />
+   </a>
+</div>
+
+Once the library project is created, you can add your reusable artifacts as described in the previous sections. You can then share this library project with other developers or teams by publishing it to [Ballerina Central](https://central.ballerina.io/).
+
+## Publish your library
+
+To publish your library to [Ballerina Central](https://central.ballerina.io/), you need to:
+
+1. Configure the Personal Access Token (PAT) in your settings. This token authenticates your account when publishing packages. Follow [the instructions to obtain and configure your access token](https://ballerina.io/learn/publish-packages-to-ballerina-central/#obtain-an-access-token).
+
+2. Have a Readme file (`Package.md`) in your library project that provides an overview of the library, its functionality, and usage instructions. This documentation will be displayed on Ballerina Central when users view your package.
+
+Once you have the above prerequisites in place, you can publish your library by clicking the **Publish** button at the top-right corner of the library project view. This opens a confirmation pop-up where you can review the package details and confirm the publication. After publishing, your library is available on Ballerina Central for other developers to discover and use in their projects.
+
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/img/developer-guides/create-integrations/publish-a-library-to-central.gif">
+      <img
+      src="{{base_path}}/assets/img/developer-guides/create-integrations/publish-a-library-to-central.gif"
+         alt="Publish to Central Repository"
+         width="80%"
+      />
+   </a>
+</div>
+
+By following these guidelines and leveraging library projects, you can build a robust, maintainable integration ecosystem that promotes code reuse and consistency across your organization.
