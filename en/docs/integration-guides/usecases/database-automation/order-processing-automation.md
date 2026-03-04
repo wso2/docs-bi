@@ -81,7 +81,7 @@ CREATE TABLE orders (
 );
 ```
 
-The `status` column drives the automation lifecycle: `PLACED` → `PROCESSING` → `SHIPPED` → `DELIVERED`. This automation only handles the `PLACED → PROCESSING` transition.
+The `status` column drives the automation lifecycle: from `PLACED` to `PROCESSING` to `SHIPPED` to `DELIVERED`. This automation only handles the transition from `PLACED` to `PROCESSING`.
 
 #### 3. Insert seed data
 
@@ -120,7 +120,7 @@ You should see all four rows with the statuses shown above.
 
 ---
 
-## Step 1 — Create the MySQL connection for orders database
+## Step 1: Create the MySQL connection for orders database
 
 1. Click **+ Add Artifact**.
 2. Select **Connection** from **Other Artifacts**.
@@ -170,12 +170,12 @@ You should see all four rows with the statuses shown above.
 
 ---
 
-## Step 2 — Build the automation
+## Step 2: Build the automation
 
 1. Click **+ Add Artifact** and select **Automation** from **Automation**.
 2. Click **Create**.
 
-### Step 2.1 — Get the newly placed orders
+### Step 2.1: Get the newly placed orders
 
 1. Add a **Get rows from orders** action node from the **ordersDB** connection. Expand **Advanced Configurations** and set:
 
@@ -197,7 +197,7 @@ You should see all four rows with the statuses shown above.
    />
 </a>
 
-### Step 2.2 — Handle not having orders to process
+### Step 2.2: Handle not having orders to process
 
 1. Add an **If** control node with the condition:
 
@@ -220,7 +220,7 @@ You should see all four rows with the statuses shown above.
    />
 </a>
 
-### Step 2.3 — Loop and update each order
+### Step 2.3: Loop and update each order
 
 Add a **Foreach** control node:
 
@@ -250,12 +250,12 @@ Inside the Foreach block:
    />
 </a>
 
-### Step 2.4 — Log the summary
+### Step 2.4: Log the summary
 
 After the Foreach block, add a **Log Info** statement node with the message:
 
 ```txt
-Done — processing orders
+Done — processed orders
 ```
 
 Under **Advanced Configurations** set the following **Additional Values**:
@@ -267,7 +267,7 @@ Under **Advanced Configurations** set the following **Additional Values**:
 
 ## Running the automation
 
-Click on the run button to run the automation. It will ask you to create the necessary configuration to connect to the database. Click on **Create Config.toml** and add the database password to the associated configuration.
+Click on the **Run** button to run the automation. It will ask you to create the necessary configuration to connect to the database. Click on **Create `Config.toml`** and add the database password to the associated `Config.toml` configuration.
 
 <a href="{{base_path}}/assets/integration-guides/usecases/database-automation/img/run-automation.gif">
    <img src="{{base_path}}/assets/integration-guides/usecases/database-automation/img/run-automation.gif"
@@ -301,12 +301,12 @@ No new orders to process.
 
 ## Seed data reference
 
-| order_id | customer_id | item | amount | status |
+| order_id | customer_id | product_id | amount | status |
 | --- | --- | --- | --- | --- |
-| ORD-001 | CUST-001 | Wireless Headphones | 79.99 | `PLACED` |
-| ORD-002 | CUST-002 | USB-C Hub | 34.50 | `PLACED` |
-| ORD-003 | CUST-003 | Mechanical Keyboard | 129.00 | `PROCESSING` |
-| ORD-004 | CUST-004 | Monitor Stand | 49.99 | `PROCESSING` |
+| ORD-001 | CUST-001 | PROD-001 | 79.99 | `PLACED` |
+| ORD-002 | CUST-002 | PROD-002 | 34.50 | `PLACED` |
+| ORD-003 | CUST-003 | PROD-003 | 129.00 | `PROCESSING` |
+| ORD-004 | CUST-004 | PROD-004 | 49.99 | `PROCESSING` |
 
 ---
 
