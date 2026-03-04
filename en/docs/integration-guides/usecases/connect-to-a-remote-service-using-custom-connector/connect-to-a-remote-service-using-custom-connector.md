@@ -1,7 +1,7 @@
-# Retrieve Stack Overflow Data Via Stack Exchange API
+# Connect to a Remote Service Using Custom Connector
 
 ## Overview
-This walkthrough demonstrates how to consume the Stack Exchange API by importing its OpenAPI specification to create a custom connector within the WSO2 Integrator: BI.
+This walkthrough demonstrates how to consume the <a href="https://api.stackexchange.com/docs" target="_blank">Stack Exchange API</a> by importing its OpenAPI specification to create a custom connector within the WSO2 Integrator: BI.
 
    1. Create a new integration project in Visual Studio Code.
    2. Add an automation artifact to define the integration flow.
@@ -150,4 +150,4 @@ In this final step, you will execute the automation and verify that the integrat
 </div>
 
 ???+ tip "Success"
-      You have now successfully integrated with the Stack Exchange API using a low-code approach. The setup completes by creating both the connection and its connector. The API response is printed to your console, and your automation is ready for further enhancements or deployment.
+      You have now successfully integrated with the Stack Exchange API using a low-code approach. The setup is completed by creating both the connection and its connector. The API response is printed to your console, and your automation is ready for further enhancements or deployment.
