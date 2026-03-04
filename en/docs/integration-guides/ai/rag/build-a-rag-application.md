@@ -1,3 +1,8 @@
+---
+title: "Build a RAG Application"
+description: ""
+---
+
 # Build a RAG Application
 This tutorial guides you through creating a Retrieval-Augmented Generation (RAG) system using WSO2 Integrator: BI. While there are several ways to structure a RAG workflow, we’ll focus on a typical two-phase approach: ingestion and retrieval.
 

@@ -1,3 +1,8 @@
+---
+title: "Design the Integrations"
+description: "Best practices and strategies for designing effective and scalable integration solutions."
+---
+
 # Design the Integrations
 
 WSO2 Integrator: BI provides intuitive tools to design, analyze, and manage integration flows. Whether you're creating new integrations or reviewing existing ones, the visualizer offers a clear and structured view of system behavior to streamline development and maintenance.

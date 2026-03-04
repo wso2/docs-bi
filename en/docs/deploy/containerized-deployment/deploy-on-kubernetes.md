@@ -1,3 +1,8 @@
+---
+title: "Deploy on Kubernetes"
+description: "Guide to deploying and scaling integration services on Kubernetes clusters."
+---
+
 # Deploy on Kubernetes
 
 This guide explains how to deploy an integration in a Kubernetes cluster.

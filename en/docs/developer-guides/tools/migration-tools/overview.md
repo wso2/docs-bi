@@ -1,3 +1,8 @@
+---
+title: "Migration Tools"
+description: "Overview of tools available for migrating legacy integrations to WSO2 Integrator: BI."
+---
+
 # Migration Tools
 
 Migration is the process of transferring integration solutions from one platform to another while preserving functionality and business logic.

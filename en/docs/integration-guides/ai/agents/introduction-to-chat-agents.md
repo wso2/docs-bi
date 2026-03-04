@@ -1,3 +1,8 @@
+---
+title: "Introduction to Chat Agents"
+description: "Introduction to creating conversational chat agents that leverage AI for interactive workflows."
+---
+
 # Introduction to Chat Agents
 
 In this tutorial, you'll create an AI-powered math tutor assistant capable of handling a variety of mathematical queries. The agent will be equipped with tools to perform fundamental arithmetic operations and intelligently combine and execute these tools to address user questions. By the end of this tutorial, you'll have built an interactive math assistant that can help users solve problems and provide clear, step-by-step explanations.
@@ -51,7 +56,7 @@ If you want to use a different model provider, for example to configure **OpenAI
 5. Configure the model provider with the required details.
 
     !!! note
-        Since the API key is sensitive, it's recommended to externalize it by using a configurable value. This helps prevent accidentally committing it to your version control system and ensures it's kept secure without being exposed. To learn more, see [Configurations]({{base_path}}/get-started/key-concepts/#configurations).
+        Since the API key is sensitive, it’s recommended to externalize it by using a configurable value. This helps prevent accidentally committing it to your version control system and ensures it’s kept secure without being exposed. To learn more, see [Configurations]({{base_path}}/deploy/managing-configurations).
       
     - Switch the **API Key** field from **Text** mode to **Expression** mode using the toggle above the field.
     - Click the **API Key** input field to open the **Expression Helper**.

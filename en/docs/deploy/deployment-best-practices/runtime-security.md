@@ -1,3 +1,8 @@
+---
+title: "Runtime Security"
+description: "Implementing security measures at the runtime level for your integration applications."
+---
+
 # Runtime Security
 
 ## Apply security patches regularly

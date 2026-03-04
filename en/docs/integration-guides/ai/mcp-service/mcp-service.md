@@ -1,3 +1,8 @@
+---
+title: "Model Context Protocol (MCP) Service"
+description: "Overview of building and exposing services that comply with the Model Context Protocol."
+---
+
 # Model Context Protocol (MCP) Service
 
 In this tutorial, you'll build a Model Context Protocol (MCP) server using [WSO2 Integrator: BI](https://wso2.com/integrator/bi/). The MCP server exposes tools that AI assistants can discover and invoke to interact with external data sources, services, and workflows.

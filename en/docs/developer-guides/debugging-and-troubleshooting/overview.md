@@ -1,3 +1,8 @@
+---
+title: "Debugging & Troubleshooting"
+description: "Overview of techniques and tools for debugging and troubleshooting integration projects."
+---
+
 # Debugging & Troubleshooting
 
 The Ballerina compiler is especially useful in BI development, where large-scale applications with complex logic are common, as it helps detect both syntax and semantic issues early in the coding process. However, it is difficult for the compiler to detect runtime errors like logical errors because they occur during the program execution after a successful compilation. This is where the dedicated debugging tooling support of Ballerina becomes important.

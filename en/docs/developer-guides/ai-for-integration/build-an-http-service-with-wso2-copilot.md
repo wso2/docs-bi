@@ -1,3 +1,8 @@
+---
+title: "Build an HTTP Service With BI Copilot"
+description: "Building HTTP services faster using AI-powered assistance from BI Copilot."
+---
+
 # Build an HTTP Service With BI Copilot
 
 In this tutorial, you’ll create an HTTP service to add key-value pairs to a Redis database. The integrated AI-assistant will help you generate the integration flow.

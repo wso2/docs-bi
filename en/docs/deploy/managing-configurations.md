@@ -1,3 +1,8 @@
+---
+title: "Managing Configurations"
+description: "Guide to managing environment-specific configurations for your integration deployments."
+---
+
 # Managing Configurations
 
 Configurability in WSO2 Integrator: BI allows users to modify integration behavior using external inputs without changing the source code. It is powered by Ballerina’s built-in support for configurable variables, enabling runtime configuration of module-level values.
