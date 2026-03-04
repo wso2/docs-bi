@@ -1,4 +1,4 @@
-# GraphQL News Broadcasting Service
+# GraphQL news broadcasting service
 
 ## What you'll build
 
@@ -94,7 +94,7 @@ The GraphQL service will define the endpoints and the data structure for broadca
     </a>
     </p>
 
-## Configure Service
+## Configure service
 
 ### Configure the GraphQL service logic
 
@@ -161,7 +161,7 @@ Before defining the service operations, you need to create a data structure that
     </a>
     </p>
 
-## Implement Operations
+## Implement operations
 
 ### Define GraphQL operations and logic
 
@@ -295,9 +295,9 @@ While the mutation structure is designed, you must add a final line of code in t
     </a>
     </p>
 
-## Implement Subscriptions
+## Implement subscriptions
 
-### Implement real-time broadcasting logic with a Service Class
+### Implement real-time broadcasting logic with a service class
 
 To enable real-time broadcasting, you need to create a service class that manages the stream of news items delivered to subscribers.
 
@@ -332,7 +332,7 @@ To enable real-time broadcasting, you need to create a service class that manage
     </a>
     </p>
 
-### Finalize the Service Class in code
+### Finalize the service class in code
 
 After visually creating the service class, you need to add the initialization logic and the iteration logic in the source view to enable the class to serve news items from the storage array.
 
@@ -489,7 +489,7 @@ In this final development step, you will refine the service class methods and co
     </a>
     </p>
 
-## Run and Test
+## Run and test
 
 ### Run and test the service
 
