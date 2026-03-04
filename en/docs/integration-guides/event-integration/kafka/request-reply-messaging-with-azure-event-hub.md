@@ -1,15 +1,15 @@
-# Kafka Request-Reply Pattern with Azure Event Hub
+# Implementing request–reply messaging using Azure Event Hub
 
 In this tutorial, you will learn how to build a simple request-reply messaging pattern using Azure Event Hub with the Kafka event handler and WSO2 Integrator: BI. You'll create two services that communicate bidirectionally through Event Hub topics.
 
-## What You'll Learn
+## What you'll learn
 
 - Configure Azure Event Hub as a Kafka-compatible message broker
 - Create a Request Service that publishes messages and listens for responses
 - Build a Reply Service that consumes requests and sends back responses
 - Implement the request-reply pattern using two Event Hub topics
 
-## Architecture Overview
+## Architecture overview
 
 The system consists of two services communicating through Azure Event Hub:
 
@@ -18,18 +18,18 @@ The system consists of two services communicating through Azure Event Hub:
 
 <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/architecture-diagram.png"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/architecture-diagram.png" alt="Architecture Diagram" width="70%"></a>
 
-### Request-Reply Pattern
+### Request-reply pattern
 
 The Request-Reply pattern is a messaging pattern where a requestor sends a message and expects a correlated response from a replier.
 
-#### How it Works
+#### How it works
 
 1. Requestor sends a message to a REQUEST channel (topic)
 2. Replier consumes the message, processes it, and sends a response
 3. Replier publishes the response to a REPLY channel (topic)
 4. Requestor consumes the response from the reply channel
 
-#### Key Components
+#### Key components
 
 - **Request Channel**: Topic where requests are published (e.g., "requests")
 - **Reply Channel**: Topic where responses are published (e.g., "responses")
@@ -43,13 +43,13 @@ The Request-Reply pattern is a messaging pattern where a requestor sends a messa
 - Scalable (multiple repliers can process requests)
 - Fault tolerant (messages persist in the broker)
 
-#### In this Example
+#### In this example
 
 - **Request Service**: Exposes HTTP endpoint, publishes to "requests", listens on "responses"
 - **Reply Service**: Listens on "requests", processes messages, publishes to "responses"
 - **Broker**: Azure Event Hub (Kafka-compatible)
 
-## What You'll Build
+## What you'll build
 
 By the end of this tutorial, you'll have:
 
@@ -68,7 +68,7 @@ Before starting this tutorial, ensure you have:
     - Publish-subscribe messaging patterns
     - Apache Kafka concepts (topics, producers, consumers)
 
-## Technology Stack
+## Technology stack
 
 | Component | Technology | Purpose |
 |-----------|------------|---------|
@@ -78,7 +78,7 @@ Before starting this tutorial, ensure you have:
 | Security | SASL_SSL | Authentication with connection string |
 | CLI Tool | Azure CLI | Azure resource management |
 
-## Setting Up Azure Event Hub
+## Setting up Azure Event Hub
 
 We'll use the Azure CLI to set up the Event Hub infrastructure. This approach is faster, reproducible, and easier than using the portal.
 
@@ -195,7 +195,7 @@ az account list --output table
 az account set --subscription "Your Subscription Name"
 ```
 
-### Step 3: Create Azure Resources
+### Step 3: Create Azure resources
 
 Run these commands to create all required Azure resources:
 
@@ -207,7 +207,7 @@ NAMESPACE="kafka-eventhub-demo"    # Must be globally unique!
 LOCATION="eastus"                   # Change to your preferred region
 ```
 
-**Step 3.1: Create a resource group**
+#### Step 3.1: Create a resource group
 
 ```bash
 az group create \
@@ -215,7 +215,7 @@ az group create \
   --location $LOCATION
 ```
 
-**Step 3.2: Create Event Hub namespace (Standard tier required for Kafka)**
+#### Step 3.2: Create Event Hub namespace (standard tier required for Kafka)
 
 ```bash
 az eventhubs namespace create \
@@ -225,7 +225,7 @@ az eventhubs namespace create \
   --sku Standard
 ```
 
-**Step 3.3: Create the 'requests' topic (Event Hub)**
+#### Step 3.3: Create the 'requests' topic (Event Hub)
 
 ```bash
 az eventhubs eventhub create \
@@ -235,7 +235,7 @@ az eventhubs eventhub create \
   --partition-count 1
 ```
 
-**Step 3.4: Create the 'responses' topic (Event Hub)**
+#### Step 3.4: Create the 'responses' topic (Event Hub)
 
 ```bash
 az eventhubs eventhub create \
@@ -256,7 +256,7 @@ Expected output after each command:
 }
 ```
 
-### Step 4: Get Connection String
+### Step 4: Get connection string
 
 Retrieve the connection string needed for your WSO2 Integrator: BI services:
 
@@ -272,14 +272,14 @@ az eventhubs namespace authorization-rule keys list \
 
 This outputs the connection string:
 
-```
+```bash
 Endpoint=sb://kafka-eventhub-demo.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=abc123…
 ```
 
 !!! important
     Save this connection string (starting from `Endpoint`, not `sb://`). You'll need it for the Ballerina configuration.
 
-### Step 5: Verify Your Setup
+### Step 5: Verify your setup
 
 Confirm that your Event Hub namespace and topics were created:
 
@@ -293,14 +293,14 @@ az eventhubs eventhub list \
 
 Expected output:
 
-```
+```bash
 Name       Status    PartitionCount
 ---------  --------  ----------------
 requests   Active    1
 responses  Active    1
 ```
 
-### Step 6: Note Your Configuration Values
+### Step 6: Note your configuration values
 
 Based on the resources you created, your configuration values are:
 
@@ -330,7 +330,7 @@ If you prefer a graphical interface, you can create the same resources through t
 5. After deployment, go to the namespace → **Event Hubs** → Create `requests` and `responses`
 6. Go to **Shared access policies** → **RootManageSharedAccessKey** → Copy connection string
 
-## Building the Reply Service
+## Building the reply service
 
 The Reply Service listens for incoming requests and sends back responses. We build this first so it's ready when the Request Service starts.
 
@@ -344,7 +344,7 @@ The Reply Service listens for incoming requests and sends back responses. We bui
 
     <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/1-create-reply-service-project.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/1-create-reply-service-project.gif" alt="Create Reply Service Project" width="70%"></a>
 
-### Step 2: Create the Kafka Producer connection
+### Step 2: Create the Kafka producer connection
 
 The producer sends response messages back to the Request Service.
 
@@ -370,7 +370,7 @@ The producer sends response messages back to the Request Service.
 
     **JAAS Config Format:**
 
-    ```
+    ```plaintext
     org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="<your-connection-string>";
     ```
 
@@ -378,7 +378,7 @@ The producer sends response messages back to the Request Service.
 
     <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/2-create-kafka-producer-connection.png"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/2-create-kafka-producer-connection.png" alt="Create Kafka Producer Connection" width="70%"></a>
 
-### Step 3: Create the Kafka Event Handler
+### Step 3: Create the Kafka event handler
 
 1. Click **+** next to **Entry Points**.
 2. Select **Kafka Event Integration**.
@@ -416,7 +416,7 @@ The producer sends response messages back to the Request Service.
 
    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/3-3-create-kafka-event-handler.png"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/3-3-create-kafka-event-handler.png" alt="Create Kafka Event Handler" width="70%"></a>
 
-### Step 4: Implement the Reply Logic
+### Step 4: Implement the reply logic
 
 In the `onConsumerRecord` flow:
 
@@ -438,7 +438,7 @@ In the `onConsumerRecord` flow:
 
 3. **Log the Request**
     - Click **+** → Search for `log` → Select `printInfo`.
-    - Message: `string `[Reply Service] Received request: ${requestContent}``.
+    - Message: ``string `[Reply Service] Received request: ${requestContent}` ``.
 
     <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/6-log-request.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/6-log-request.gif" alt="Log the Request" width="70%"></a>
 
@@ -446,7 +446,7 @@ In the `onConsumerRecord` flow:
     - Click **+** → Select **Declare variable**.
     - Name: `responseContent`.
     - Type: `string`.
-    - Expression: `string `Response to: "${requestContent}" | Status: OK``.
+    - Expression: ``string `Response to: "${requestContent}" | Status: OK` ``.
 
     <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/7-create-response-variable.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/7-create-response-variable.gif" alt="Create Response Variable" width="70%"></a>
 
@@ -461,11 +461,11 @@ In the `onConsumerRecord` flow:
 
 6. **Log the Response**
     - Click **+** → Select `printInfo`.
-    - Message: `string `[Reply Service] Sent response: ${responseContent}``.
+    - Message: ``string `[Reply Service] Sent response: ${responseContent}` ``.
 
     <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/9-log-response.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/9-log-response.gif" alt="Log Response" width="70%"></a>
 
-## Building the Request Service
+## Building the request service
 
 The Request Service exposes an HTTP endpoint to trigger requests and listens for responses.
 
@@ -475,7 +475,7 @@ Create a new integration named `RequestService` following the same steps as for 
 
 <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/10-create-request-service-project.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/10-create-request-service-project.gif" alt="Create Request Service Project" width="70%"></a>
 
-### Step 2: Create the Kafka Producer connection
+### Step 2: Create the Kafka producer connection
 
 1. Add a Kafka Producer connection named `requestProducer`.
 2. Configure with the same settings as Reply Service:
@@ -483,7 +483,7 @@ Create a new integration named `RequestService` following the same steps as for 
     - Security Protocol: `kafka:PROTOCOL_SASL_SSL`
     - `additionalProperties` with `sasl.mechanism` and `sasl.jaas.config`
 
-### Step 3: Create the HTTP Service
+### Step 3: Create the HTTP service
 
 1. Click **+** next to **Entry Points**.
 2. Select **HTTP Service**.
@@ -500,12 +500,12 @@ Create a new integration named `RequestService` following the same steps as for 
 
     <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/11-2-create-http-service.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/11-2-create-http-service.gif" alt="Create HTTP Service" width="70%"></a>
 
-### Step 4: Implement the Request Logic
+### Step 4: Implement the request logic
 
 In the HTTP `POST /request` resource flow:
 
 1. **Log the Request**
-    - Add `printInfo`: `string `[Request Service] Sending request: ${payload}``.
+    - Add `printInfo`: ``string `[Request Service] Sending request: ${payload}` ``.
 
     <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/12-log-request.png"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/12-log-request.png" alt="Log Request" width="70%"></a>
 
@@ -524,7 +524,7 @@ In the HTTP `POST /request` resource flow:
 
     <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/14-return-response.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/14-return-response.gif" alt="Return Response" width="70%"></a>
 
-### Step 5: Create the Response Listener
+### Step 5: Create the response listener
 
 1. Add a **Kafka Event Integration** entry point.
 2. Configure:
@@ -559,13 +559,13 @@ In the `onConsumerRecord` flow:
    <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/15-4-create-response-listener.gif"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/15-4-create-response-listener.gif" alt="Create Response Listener" width="70%"></a>
 
 3. **Log the Response**
-    - Message: `string `[Request Service] Received response: ${responseContent}``.
+    - Message: ``string `[Request Service] Received response: ${responseContent}` ``.
 
     <a href="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/16-log-received-response.png"><img src="{{base_path}}/assets/img/integration-guides/event-integration/kafka/kafka-request-reply-pattern-with-azure-event-hub/16-log-received-response.png" alt="Log Received Response" width="70%"></a>
 
-## Running the Services
+## Running the services
 
-### Step 1: Start the Reply Service
+### Step 1: Start the reply service
 
 ```bash
 cd ReplyService
@@ -574,14 +574,14 @@ bal run
 
 Expected output:
 
-```
+```plaintext
 Compiling source
         wso2/reply_service:0.1.0
 
 Running executable
 ```
 
-### Step 2: Start the Request Service
+### Step 2: Start the request service
 
 In a new terminal:
 
@@ -592,14 +592,14 @@ bal run
 
 Expected output:
 
-```
+```plaintext
 Compiling source
         wso2/request_service:0.1.0
 
 Running executable
 ```
 
-### Step 3: Send a Test Request
+### Step 3: Send a test request
 
 ```bash
 curl -X POST http://localhost:8080/api/request \
@@ -609,116 +609,47 @@ curl -X POST http://localhost:8080/api/request \
 
 Response:
 
-```
+```plaintext
 Request sent: Hello Azure Event Hub
 ```
 
-### Step 4: Verify the Logs
+### Step 4: Verify the logs
 
 **Request Service logs:**
 
-```
+```plaintext
 [Request Service] Sending request: Hello Azure Event Hub
 [Request Service] Received response: Response to: "Hello Azure Event Hub" | Status: OK
 ```
 
 **Reply Service logs:**
 
-```
+```plaintext
 [Reply Service] Received request: Hello Azure Event Hub
 [Reply Service] Sent response: Response to: "Hello Azure Event Hub" | Status: OK
 ```
 
 ## Troubleshooting
 
-### Connection Timeout / Topic Not Found in Metadata
+### Connection timeout / topic not found in metadata
 
 - Use `additionalProperties`: Azure Event Hub requires SASL configuration via `additionalProperties` with `sasl.mechanism` and `sasl.jaas.config`
 - Verify your namespace name is correct
 - Ensure port 9093 is not blocked by firewall
 - Check the connection string is complete
 
-### Authentication Failed
+### Authentication failed
 
 - Verify the JAAS config format is exactly:
-  ```
+  ```plaintext
   org.apache.kafka.common.security.plain.PlainLoginModule required username="$ConnectionString" password="<connection-string>";
   ```
 - The `$ConnectionString` must be a literal string (not a variable)
 - The password must be your complete connection string starting with `Endpoint=sb://...`
 
-### No Messages Received
+### No messages received
 
 - Ensure both topics exist in Azure
 - Check consumer group IDs are different for each service
 - Verify `offsetReset` is set to `LATEST` for new consumers
 
-## Summary
-
-You have successfully built a request-reply messaging system using:
-
-- Azure Event Hub as a Kafka-compatible message broker
-- Two topics (`requests` and `responses`) for bidirectional communication
-- SASL_SSL authentication with Azure connection strings
-- Event-driven Kafka listeners for consuming messages
-- HTTP endpoint for triggering requests
-
-This pattern is useful for:
-
-- Asynchronous request-response workflows
-- Decoupling services while maintaining communication
-- Building scalable microservices architectures
-
-## Cleanup: Delete Azure Resources
-
-When you're done with this tutorial, delete the Azure resources to avoid ongoing charges.
-
-### Option 1: Delete Using Azure CLI (Recommended)
-
-This single command deletes the resource group and everything in it:
-
-```bash
-# Delete the resource group (includes namespace and all Event Hubs)
-az group delete \
-  --name kafka-eventhub-demo-rg \
-  --yes \
-  --no-wait
-```
-
-The `--no-wait` flag returns immediately while deletion continues in the background.
-
-To verify deletion:
-
-```bash
-# Check if resource group still exists
-az group show --name kafka-eventhub-demo-rg
-```
-
-You should see: `Resource group 'kafka-eventhub-demo-rg' could not be found.`
-
-### Option 2: Delete Using Azure Portal
-
-1. Go to [Azure Portal](https://portal.azure.com)
-2. Search for **Resource groups** in the top search bar
-3. Click on `kafka-eventhub-demo-rg`
-4. Click **Delete resource group**
-5. Type the resource group name to confirm
-6. Click **Delete**
-
-### Cost Information
-
-Azure Event Hub Standard tier costs approximately:
-
-- Base cost: ~$22/month for the namespace
-- Throughput units: Additional charges based on usage
-- Ingress/egress: Small charges for data transfer
-
-Deleting the resource group stops all charges immediately.
-
-## Next Steps
-
-- Add correlation IDs to match requests with responses
-- Implement timeout handling for responses
-- Add multiple reply service instances for load balancing
-- Explore Azure Event Hub's partitioning for scalability
-- Learn about [Azure Event Hub pricing](https://azure.microsoft.com/pricing/details/event-hubs/)
