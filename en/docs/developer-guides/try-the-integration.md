@@ -1,3 +1,8 @@
+---
+title: "Try the Integration"
+description: "Best practices for trying and testing your integrations during the development phase."
+---
+
 # Try the Integration
 
 Once you have completed building your integration with the WSO2 Integrator: BI, you can quickly test it right from the design interface. This section walks you through how to run and try your integration project using the built-in tooling.

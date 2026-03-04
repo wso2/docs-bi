@@ -1,3 +1,8 @@
+---
+title: "Debugging Within the Editor"
+description: "Using the built-in editor tools for interactive debugging of integration flows."
+---
+
 # Debugging Within the Editor
 
 BI provides multiple options to debug integrations, and the most convenient way is to use the `Debug Integration` option located in the top right corner of the editor.

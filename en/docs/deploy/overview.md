@@ -1,3 +1,8 @@
+---
+title: "Overview"
+description: "Introduction to the various deployment strategies and platforms supported by BI."
+---
+
 ## Deployment Options
 
 WSO2 Integrator: BI supports flexible deployment models that can be grouped into two main categories:

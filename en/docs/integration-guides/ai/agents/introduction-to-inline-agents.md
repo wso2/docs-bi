@@ -1,3 +1,8 @@
+---
+title: "Introduction to Inline Agents"
+description: "Learn about inline agents that process data within integration flows using AI reasoning."
+---
+
 # Introduction to Inline Agents
 
 In this tutorial, you'll learn how to connect an AI agent to a GraphQL service, enabling the agent to be invoked directly within a GraphQL resolver. This demonstrates the use of an **inline agent**—a powerful capability in the WSO2 Integrator: BI.

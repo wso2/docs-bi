@@ -1,3 +1,8 @@
+---
+title: "OS level Security"
+description: "Operating system level hardening and security best practices for BI deployments."
+---
+
 # OS level Security
 
 ## Run WSO2 processes with a dedicated user
