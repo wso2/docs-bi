@@ -100,6 +100,9 @@ nav:
         - Service Orchestration: integration-guides/integration-as-api/service-orchestration.md
         - Message Transformation: integration-guides/integration-as-api/message-transformation.md
         - Message Routing: integration-guides/integration-as-api/message-routing.md
+      - Event Integration:
+        - Kafka:
+          - Request-Reply Messaging with Azure Event Hub: integration-guides/event-integration/kafka/request-reply-messaging-with-azure-event-hub.md
       - File Integration:
         - File Integration With Directory Service: integration-guides/file-integration/file-integration-with-directory-service.md
       - Use Cases:
