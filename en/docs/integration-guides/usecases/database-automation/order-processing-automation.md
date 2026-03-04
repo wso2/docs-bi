@@ -9,7 +9,7 @@ description: "Use WSO2 Integrator: BI persist database connections to build a sc
 
 An e-commerce system stores customer orders in a MySQL database. A scheduled automation runs periodically, picks up all newly placed orders, and advances them to `PROCESSING` status — simulating the first step in warehouse fulfillment.
 
-This walkthrough shows how WSO2 Integrator: BI's **persist database connections** make it straightforward to build that automation. You will create one connector for the orders database and use the generated client to query and update rows in a scheduled main entry point.
+This walkthrough shows how WSO2 Integrator: BI's persist database connections make it straightforward to build that automation. You will create one connector for the orders database and use the generated client to query and update rows in a scheduled main entry point.
 
 ### What this demonstrates
 
@@ -29,9 +29,9 @@ This walkthrough shows how WSO2 Integrator: BI's **persist database connections*
 
 Before you begin, make sure you have the following:
 
-- **Visual Studio Code**: Install [Visual Studio Code](https://code.visualstudio.com/) if you don't have it already.
-- **WSO2 Integrator: BI Extension**: Install the WSO2 Integrator: BI extension. Refer to [Install WSO2 Integrator: BI](https://bi.docs.wso2.com/get-started/install-wso2-integrator-bi/) for detailed instructions.
-- **MySQL Server**: A running MySQL instance (version 8.0 or later) accessible on `localhost:3306`.
+- Visual Studio Code: Install [Visual Studio Code](https://code.visualstudio.com/) if you don't have it already.
+- WSO2 Integrator: BI Extension: Install the WSO2 Integrator: BI extension. Refer to [Install WSO2 Integrator: BI](https://bi.docs.wso2.com/get-started/install-wso2-integrator-bi/) for detailed instructions.
+- MySQL Server: A running MySQL instance (version 8.0 or later) accessible on `localhost:3306`.
 
 ### Set up the database
 
@@ -120,7 +120,7 @@ You should see all four rows with the statuses shown above.
 
 ---
 
-## Step 1 — Create the Orders DB connector (MySQL)
+## Step 1 — Create the MySQL connection for orders database
 
 1. Click **+ Add Artifact**.
 2. Select **Connection** from **Other Artifacts**.
@@ -175,7 +175,7 @@ You should see all four rows with the statuses shown above.
 1. Click **+ Add Artifact** and select **Automation** from **Automation**.
 2. Click **Create**.
 
-### Step 2.1 — Get PLACED orders
+### Step 2.1 — Get the newly placed orders
 
 1. Add a **Get rows from orders** action node from the **ordersDB** connection. Expand **Advanced Configurations** and set:
 
@@ -197,7 +197,7 @@ You should see all four rows with the statuses shown above.
    />
 </a>
 
-### Step 2.2 — Handle: no orders to process
+### Step 2.2 — Handle not having orders to process
 
 1. Add an **If** control node with the condition:
 
