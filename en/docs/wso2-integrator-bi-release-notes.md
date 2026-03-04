@@ -1,3 +1,8 @@
+---
+title: "About the Release"
+description: "Latest release notes and updates for WSO2 Integrator: BI, covering new features, improvements, and bug fixes."
+---
+
 # About the Release
 
 # What's new in WSO2 Integrator: BI 1.6.0 release?

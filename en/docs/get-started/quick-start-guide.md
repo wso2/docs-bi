@@ -1,3 +1,8 @@
+---
+title: "Quick Start Guide"
+description: "Step-by-step guide to quickly start building integrations with WSO2 Integrator: BI, covering automation, APIs, and AI agents."
+---
+
 # Quick Start Guide
 
 WSO2 Integrator: BI is a powerful low-code integration platform built on top of the <a href = "https://ballerina.io/">Ballerina programming language</a>. It’s designed to help developers quickly build, deploy, and manage integration solutions with minimal boilerplate and maximum productivity.

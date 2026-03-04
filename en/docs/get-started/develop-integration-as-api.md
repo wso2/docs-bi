@@ -1,3 +1,8 @@
+---
+title: "Develop Integration as API"
+description: "Tutorial on exposing integration logic as a real-time HTTP API using WSO2 Integrator: BI."
+---
+
 # Develop Integration as API
 
 ## Overview

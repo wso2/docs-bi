@@ -1,3 +1,8 @@
+---
+title: "Manage Integrations in Workspaces"
+description: "Managing multiple integration projects and organizing your development workspace."
+---
+
 # Manage Integrations in Workspaces
 
 ## Add an integration to an existing workspace

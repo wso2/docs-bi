@@ -1,3 +1,8 @@
+---
+title: "WSO2 Integrator: BI System requirements"
+description: "Detailed list of system requirements and prerequisites for running BI components."
+---
+
 # WSO2 Integrator: BI System requirements
 
 Prior to installing WSO2 Integrator: BI, make sure that the appropriate prerequisites are fulfilled.

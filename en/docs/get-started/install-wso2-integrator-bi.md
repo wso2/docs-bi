@@ -1,3 +1,8 @@
+---
+title: "Install WSO2 Integrator: BI"
+description: "Instructions for installing WSO2 Integrator: BI on various platforms to begin developing integrations."
+---
+
 # Install WSO2 Integrator: BI
 
 ## Step 1: Install Visual Studio Code

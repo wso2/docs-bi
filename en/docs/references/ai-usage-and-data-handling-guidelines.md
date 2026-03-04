@@ -1,3 +1,8 @@
+---
+title: "AI Usage and Data Handling Guidelines"
+description: "Guidelines for responsible AI usage and secure data handling in your projects."
+---
+
 # AI Usage and Data Handling Guidelines
 
 WSO2 Integrator: BI provides an AI-powered Copilot to enhance developer productivity. This page explains how the Copilot works, how user data is handled, and what best practices organizations should follow when using AI features.  

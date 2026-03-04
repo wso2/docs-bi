@@ -1,3 +1,8 @@
+---
+title: "Capacity Planning for WSO2 Integrator: BI"
+description: "How to plan system capacity and resources for optimal integration performance."
+---
+
 # Capacity Planning for WSO2 Integrator: BI  
 This section provides an overview of the performance characteristics and capacity planning considerations for WSO2 Integrator: BI when deployed in a cloud environment. The performance reports linked below detail the results of various integration scenarios under specific load conditions.
   

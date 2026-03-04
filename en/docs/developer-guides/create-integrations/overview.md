@@ -1,3 +1,8 @@
+---
+title: "Overview"
+description: "Comprehensive overview of the integration development lifecycle in WSO2 Integrator: BI."
+---
+
 # Overview
 
 Integration in WSO2 Integrator: BI is the foundational space for defining, organizing, and managing integration artifacts such as services, data mappings, and connections. 

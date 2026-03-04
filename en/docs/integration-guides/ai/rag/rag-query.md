@@ -1,3 +1,8 @@
+---
+title: "RAG Query"
+description: "Tutorial on querying vector stores and implementing retrieval logic for RAG-based systems."
+---
+
 # RAG Query
 
 In this tutorial, you'll build a simple Retrieval-Augmented Generation (RAG) query flow using [WSO2 Integrator: BI](https://wso2.com/integrator/bi/). You'll create an HTTP service that retrieves relevant information from a previously ingested vector knowledge base and uses a Large Language Model (LLM) to generate a context-aware response.

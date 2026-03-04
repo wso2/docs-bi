@@ -1,3 +1,8 @@
+---
+title: "Deploy to Devant"
+description: "How to deploy your integration projects seamlessly to the Devant platform."
+---
+
 # Deploy to Devant
 
 [Devant](https://console.devant.dev/) is a powerful IPaaS with first-class AI support. Incorporate AI agents into the integrations you build in low-code and pro-code, and move away from siloed systems to intelligent digital experiences with Devant by WSO2—the AI iPaaS that your AI Agents can call 'home'.

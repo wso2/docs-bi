@@ -1,3 +1,8 @@
+---
+title: "Data Mapper Use Cases"
+description: "Overview of the Data Mapper tool for complex data transformations in integration flows."
+---
+
 # Data Mapper Use Cases
 
 The Data Mapper in WSO2 Integrator: BI enables you to visually transform data between formats, such as JSON, XML, and CSV, using an intuitive, low-code interface.  
@@ -32,6 +37,6 @@ Use the Data Mapper when you need to:
 
 ## Related topics
 
-- [Data Mapping Quick Start](../../../developer-guides/data-mapping.md)
+- [Data Mapping Quick Start](../../../developer-guides/data-mapping/manual-data-mapping.md)
 - [Design the Integrations](../../../developer-guides/design-the-integrations.md)
 - [Create a Project](../../../developer-guides/overview.md)
