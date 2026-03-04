@@ -30,9 +30,9 @@ To begin building your integration, you need to create a new project and configu
 
 ## Create a connection before building the automation flow
 
-If you know which external systems your integration will use such as Salesforce, HTTP APIs, or databases you can create the required connections in advance.
+If you know which external systems your integration will use, such as Salesforce, HTTP APIs, or databases, you can create the required connections in advance.
 
-Use this approach when
+Use this approach when:
 
 * You have a clear design before you start.
 * You plan to reuse the same connection across multiple integrations.
@@ -47,7 +47,7 @@ In this guide, you will learn how to create a new HTTP connection, use it within
 1. In the **Design** view of your integration, click the **+ Add Artifact** button.
 2. In the **Add Connection** pane, select the **HTTP** connector.
 3. In the **URL*** field, enter the base service URL (for example, `https://jsonplaceholder.typicode.com`).
-4. Enter a unique **Connection Name** (for example, `httpClient`) and click **Save Connection**.
+4. Enter a unique **Connection Name** (for example, `httpClient`), and click **Save Connection**.
 5. Click **+ Add Artifact** again and select **Automation** to create a new flow.
 6. In the automation diagram, click the **+** icon and select your `httpClient` connection from the **Connections** list.
 7. Select the **Get** operation and enter the resource path (for example, `/posts/1`).
@@ -91,8 +91,8 @@ In this guide, you will learn how to create a new HTTP connection, use it within
 2. In the **Artifacts** pane, select **Automation** to create a new flow.
 3. Click the **+** icon on the flow and select **+ Add Connection** from the **Connections** section.
 4. Select the **HTTP** connector.
-5. In the **URL*** field, enter the base service URL (for example, `https://jsonplaceholder.typicode.com`).
-6. Enter a unique **Connection Name** (for example, `httpClient`) and click **Save Connection**.
+5. In the **URL** field, enter the base service URL (for example, `https://jsonplaceholder.typicode.com`).
+6. Enter a unique **Connection Name** (for example, `httpClient`), and click **Save Connection**.
 7. Click the **+** icon below the Start node and select the **Get** operation from your `httpClient` connection.
 8. In the **Path*** field, enter the resource path (for example, `/posts/1`).
 9. Set the **Target Type** to `string` and click **Save**.
