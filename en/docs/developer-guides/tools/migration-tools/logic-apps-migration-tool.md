@@ -1,3 +1,8 @@
+---
+title: "Azure Logic Apps Migration Tool"
+description: "Automated migration path for moving Azure Logic Apps to WSO2 Integrator: BI."
+---
+
 # Azure Logic Apps Migration Tool
 
 This guide explains how to use the [migrate-logicapps](https://central.ballerina.io/wso2/tool_migrate_logicapps/latest) tool to convert

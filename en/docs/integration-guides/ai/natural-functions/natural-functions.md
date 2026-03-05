@@ -1,3 +1,8 @@
+---
+title: "Natural Functions"
+description: "Exploring Natural Functions (Beta) for intuitive, language-based service invocations."
+---
+
 # Natural Functions
 
 In this tutorial, you will create and use a natural function using the WSO2 Integrator: BI. A natural function allows the logic of the function to be described in natural language and is executed at runtime with a call to a Large Language Model (LLM), with the natural language instructions as the prompt.

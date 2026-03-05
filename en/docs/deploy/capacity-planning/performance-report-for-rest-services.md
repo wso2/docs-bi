@@ -1,3 +1,8 @@
+---
+title: "Performance report for REST services (HTTP and HTTPS)"
+description: "Comprehensive performance benchmark report for RESTful services in BI."
+---
+
 # Performance report for REST services (HTTP and HTTPS)
 
 ## Overview

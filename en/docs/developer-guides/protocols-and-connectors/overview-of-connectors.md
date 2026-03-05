@@ -1,3 +1,8 @@
+---
+title: "Overview of Connectors"
+description: "Understanding the library of connectors available for various services and platforms."
+---
+
 # Overview of Connectors
 
 BI supports a wide range of prebuilt connectors to enable seamless integration across databases, messaging systems, cloud services, SaaS platforms, and networking protocols. These connectors are built using the Ballerina language and allow you to interact with external systems with minimal effort, improving development speed and reducing integration complexity.

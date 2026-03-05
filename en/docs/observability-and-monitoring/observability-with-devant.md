@@ -1,3 +1,8 @@
+---
+title: "Observability with Devant"
+description: "Leveraging the Devant platform for deep observability and performance insights."
+---
+
 # Observability with Devant
 
 Integrations developed with WSO2 Integrator: BI can be deployed to Devant, where built-in observability tools provide deep insights into service behavior and performance. Refer to the [Deploy to Devant](../../deploy/deploy-to-devant) guide for instructions on deploying to Devant.

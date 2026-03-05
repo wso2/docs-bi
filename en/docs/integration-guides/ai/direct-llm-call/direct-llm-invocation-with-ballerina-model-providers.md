@@ -1,3 +1,8 @@
+---
+title: "Direct LLM invocation with Ballerina model providers"
+description: "How to directly invoke LLMs using Ballerina model providers within your integrations."
+---
+
 # Direct LLM invocation with Ballerina model providers
 
 In this tutorial, you will create an integration that makes a direct call to a Large Language Model (LLM) using Ballerina’s model providers. Direct LLM calls are designed for simple, stateless interactions where conversational history is not required, giving you fine-grained control over each request.

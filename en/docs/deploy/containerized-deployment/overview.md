@@ -1,3 +1,8 @@
+---
+title: "Introduction to Containerized Deployment"
+description: "Overview of containerization strategies for modern integration deployment."
+---
+
 # Introduction to Containerized Deployment
 
 Integrations developed with BI can be deployed using modern containerization technologies, such as Docker and Kubernetes, enabling consistent, scalable, and portable application deployments across environments.
