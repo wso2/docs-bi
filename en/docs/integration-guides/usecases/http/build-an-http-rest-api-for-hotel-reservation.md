@@ -16,23 +16,31 @@ The API implements Richardson Maturity Model Level 3, making it self-descriptive
 
 ### API workflow
 
-1. **GET /locations** - Browse available resort locations (entry point)
-2. **GET /locations/{id}/rooms** - Check room availability at a location
-3. **POST /reservations** - Create a new reservation
-4. **PUT /reservations/{id}** - Modify an existing reservation (optional)
-5. **DELETE /reservations/{id}** - Cancel a reservation (optional)
-6. **POST /payments/{id}** - Complete payment and confirm reservation
+1. `GET /locations` - Browse available resort locations (entry point)
+2. `GET /locations/{id}/rooms` - Check room availability at a location
+3. `POST /reservations` - Create a new reservation
+4. `PUT /reservations/{id}` - Modify an existing reservation (optional)
+5. `DELETE /reservations/{id}` - Cancel a reservation (optional)
+6. `POST /payments/{id}` - Complete payment and confirm reservation
 
 Each response includes `_links` that guide users to the next possible actions, making the API self-navigating.
 
-<a href="{{base_path}}/assets/usecases/http-reservation/img/snowpeak_diagram.png"><img src="{{base_path}}/assets/usecases/http-reservation/img/snowpeak_diagram.png" alt="Snowpeak Diagram" width="70%"></a>
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/usecases/http-reservation/img/snowpeak_diagram.png">
+      <img
+         src="{{base_path}}/assets/usecases/http-reservation/img/snowpeak_diagram.png"
+         alt="Snowpeak Diagram"
+         width="70%"
+      />
+   </a>
+</div>
 
 ## Prerequisites
 
 Before you begin, make sure you have the following:
 
-- **Visual Studio Code**: Install [Visual Studio Code](https://code.visualstudio.com/) if you don't have it already.
-- **WSO2 Integrator: BI Extension**: Install the WSO2 Integrator: BI extension. Refer to [Install WSO2 Integrator: BI]({{base_path}}/get-started/install-wso2-integrator-bi/) for detailed instructions.
+- Visual Studio Code: Install [Visual Studio Code](https://code.visualstudio.com/) if you don't have it already.
+- WSO2 Integrator: BI Extension: Install the WSO2 Integrator: BI extension. Refer to [Install WSO2 Integrator: BI]({{base_path}}/get-started/install-wso2-integrator-bi/) for detailed instructions.
 
 ## Step 1: Create a new integration project
 
@@ -44,7 +52,15 @@ WSO2 Integrator: BI extension provides a low-code graphical environment to visua
 4. Select a location for your project directory.
 5. Click **Create Integration** to initialize the workspace.
 
-<a href="{{base_path}}/assets/usecases/http-reservation/img/create_project.gif"><img src="{{base_path}}/assets/usecases/http-reservation/img/create_project.gif" alt="Create Integration Project" width="70%"></a>
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/usecases/http-reservation/img/create_project.gif">
+      <img
+         src="{{base_path}}/assets/usecases/http-reservation/img/create_project.gif"
+         alt="Create Integration Project"
+         width="70%"
+      />
+   </a>
+</div>
 
 ## Step 2: Define data types for the API
 
@@ -55,7 +71,7 @@ In this step, you'll define the structure of data that flows through your API lo
 
 ### Create the data types
 
-**Type: Location**
+Type: Location
 ```json
 {
   "name": "Alps Resort",
@@ -64,7 +80,7 @@ In this step, you'll define the structure of data that flows through your API lo
 }
 ```
 
-**Type: Room**
+Type: Room
 ```json
 {
   "id": "r1000",
@@ -78,7 +94,7 @@ In this step, you'll define the structure of data that flows through your API lo
 }
 ```
 
-**Type: ReservationRequest**
+Type: ReservationRequest
 ```json
 {
   "reserveRooms": [
@@ -89,7 +105,7 @@ In this step, you'll define the structure of data that flows through your API lo
 }
 ```
 
-**Type: ReservationReceipt**
+Type: ReservationReceipt
 ```json
 {
   "id": "re1000",
@@ -101,7 +117,7 @@ In this step, you'll define the structure of data that flows through your API lo
 }
 ```
 
-**Type: Payment**
+Type: Payment
 ```json
 {
   "cardNumber": "1234567890123456",
@@ -110,7 +126,15 @@ In this step, you'll define the structure of data that flows through your API lo
 }
 ```
 
-<a href="{{base_path}}/assets/usecases/http-reservation/img/define_types.gif"><img src="{{base_path}}/assets/usecases/http-reservation/img/define_types.gif" alt="Define Data Types" width="70%"></a>
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/usecases/http-reservation/img/define_types.gif">
+      <img
+         src="{{base_path}}/assets/usecases/http-reservation/img/define_types.gif"
+         alt="Define Data Types"
+         width="70%"
+      />
+   </a>
+</div>
 
 ## Step 3: Create the HTTP service
 
@@ -128,7 +152,15 @@ In this step, you'll create the HTTP service that will host all your REST API en
 
 Your service will be accessible at `http://localhost:8290/hotel`
 
-<a href="{{base_path}}/assets/usecases/http-reservation/img/create_service.gif"><img src="{{base_path}}/assets/usecases/http-reservation/img/create_service.gif" alt="Create HTTP Service" width="70%"></a>
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/usecases/http-reservation/img/create_service.gif">
+      <img
+         src="{{base_path}}/assets/usecases/http-reservation/img/create_service.gif"
+         alt="Create HTTP Service"
+         width="70%"
+      />
+   </a>
+</div>
 
 ## Step 4: Add the locations resource (entry point)
 
@@ -143,7 +175,15 @@ This is the well-known URL, the only URL users need to know to start using your 
 
 3. Click **Save**.
 
-<a href="{{base_path}}/assets/usecases/http-reservation/img/create_resource.gif"><img src="{{base_path}}/assets/usecases/http-reservation/img/create_resource.gif" alt="Create Resource" width="70%"></a>
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/usecases/http-reservation/img/create_resource.gif">
+      <img
+         src="{{base_path}}/assets/usecases/http-reservation/img/create_resource.gif"
+         alt="Create Resource"
+         width="70%"
+      />
+   </a>
+</div>
 
 ## Step 5: Add the reservations resource
 
@@ -159,7 +199,15 @@ This resource creates a new reservation and provides links to edit, cancel, or c
 
 3. Click **Save**.
 
-<a href="{{base_path}}/assets/usecases/http-reservation/img/reservation_request.gif"><img src="{{base_path}}/assets/usecases/http-reservation/img/reservation_request.gif" alt="Reservation Request" width="70%"></a>
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/usecases/http-reservation/img/reservation_request.gif">
+      <img
+         src="{{base_path}}/assets/usecases/http-reservation/img/reservation_request.gif"
+         alt="Reservation Request"
+         width="70%"
+      />
+   </a>
+</div>
 
 ## Step 6: Add edit and cancel reservation resources
 
@@ -177,7 +225,15 @@ These optional resources allow users to modify or cancel reservations before pay
 2. **Return Status**: `204 No Content`
 3. **Error Response**: `http:NotFound` for invalid IDs
 
-<a href="{{base_path}}/assets/usecases/http-reservation/img/edit_cancel_resources.gif"><img src="{{base_path}}/assets/usecases/http-reservation/img/edit_cancel_resources.gif" alt="Edit and Cancel Resources" width="70%"></a>
+<div style="text-align: center;">
+   <a href="{{base_path}}/assets/usecases/http-reservation/img/edit_cancel_resources.gif">
+      <img
+         src="{{base_path}}/assets/usecases/http-reservation/img/edit_cancel_resources.gif"
+         alt="Edit and Cancel Resources"
+         width="70%"
+      />
+   </a>
+</div>
 
 ## Step 7: Run and test the API
 
@@ -186,7 +242,7 @@ These optional resources allow users to modify or cancel reservations before pay
 
 ### Test the complete workflow
 
-**1. Start at the entry point**
+1. Start at the entry point
 
 ```bash
 curl http://localhost:8290/hotel/locations
@@ -205,7 +261,7 @@ Response includes link to rooms:
 }
 ```
 
-**2. Follow the "room" link**
+2. Follow the "room" link
 
 ```bash
 curl "http://localhost:8290/hotel/locations/l1000/rooms?startDate=2025-08-01&endDate=2025-08-03"
@@ -224,7 +280,7 @@ Response includes link to make reservation:
 }
 ```
 
-**3. Follow the "reservation" link**
+3. Follow the "reservation" link
 
 ```bash
 curl -X POST http://localhost:8290/hotel/reservations \
@@ -253,7 +309,7 @@ Response includes links to cancel, edit, or pay:
 }
 ```
 
-**4. Follow the "payment" link to complete**
+4. Follow the "payment" link to complete
 
 ```bash
 curl -X POST http://localhost:8290/hotel/payments/re1000 \
