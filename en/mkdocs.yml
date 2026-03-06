@@ -121,14 +121,14 @@ nav:
           - Contractor Timesheet Validation: integration-guides/usecases/file-integration/contractor-timesheet-validation.md
   - Developer Guides:
       - Create Integrations:
-          Overview: developer-guides/create-integrations/overview.md
-          Create an Integration: developer-guides/create-integrations/create-an-integration.md
-          Manage Integrations in Workspaces: developer-guides/create-integrations/manage-integrations-in-workspaces.md
+        - Overview: developer-guides/create-integrations/overview.md
+        - Create an Integration: developer-guides/create-integrations/create-an-integration.md
+        - Manage Integrations in Workspaces: developer-guides/create-integrations/manage-integrations-in-workspaces.md
       - "WSO2 Integrator: BI Artifacts": developer-guides/wso2-integrator-bi-artifacts.md
       - Design the Integrations: developer-guides/design-the-integrations.md
-      - Data Mapping: 
-          Manual Data Mapping: developer-guides/data-mapping/manual-data-mapping.md
-          AI Data Mapping: developer-guides/data-mapping/ai-data-mapping.md
+      - Data Mapping:
+        - Manual Data Mapping: developer-guides/data-mapping/manual-data-mapping.md
+        - AI Data Mapping: developer-guides/data-mapping/ai-data-mapping.md
       - Try the Integration: developer-guides/try-the-integration.md
       - Testing: developer-guides/test-the-integrations.md
       - Debugging & Troubleshooting:
@@ -194,6 +194,7 @@ nav:
   - References:
       - "Enterprise Integrations Patterns": references/enterprise-integrations-patterns.md
       - "System Requirements": references/system-requirements.md
+      - "Troubleshooting Guide": references/troubleshooting.md
       - "AI Usage & Data Handling Guidelines": references/ai-usage-and-data-handling-guidelines.md
       - "Connector Development Guidelines": references/connector-development-guidelines.md
   - Release Notes:
