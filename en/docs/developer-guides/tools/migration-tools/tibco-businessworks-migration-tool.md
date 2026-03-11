@@ -437,8 +437,54 @@ The migration wizard will create a new Ballerina project with the converted code
 
 The migration wizard will create a new Ballerina project with the converted code, which you can immediately start working with in the BI interface.
 
+## Using the CLI
+
+You can also migrate TIBCO BusinessWorks projects using the Ballerina CLI tool, which is suitable for both single and bulk migrations.
+
+### Prerequisite
+- Ensure Ballerina is installed and the `bal` command is available in your environment.
+
+### Install the Migration Tool
+Pull the migration tool from Ballerina Central:
+```bash
+bal tool pull migrate-tibco
+```
+
+### Command Syntax
+```bash
+bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directory>] [-k|--keep-structure] [-v|--verbose] [-d|--dry-run] [-m|--multi-root] [-g|--org-name <organization-name>] [-p|--project-name <project-name>]
+```
+
+#### Key Parameters
+- `<source-project-directory-or-file>`: Path to the TIBCO BusinessWorks project directory or a standalone process file.
+- `-o, --out <output-directory>`: (Optional) Output directory for the generated Ballerina package.
+- `-k, --keep-structure`: (Optional) Preserve original process structure.
+- `-v, --verbose`: (Optional) Enable verbose output.
+- `-d, --dry-run`: (Optional) Analyze and generate a migration report without creating Ballerina code.
+- `-m, --multi-root`: (Optional) Treat each child directory as a separate TIBCO project and convert all.
+- `-g, --org-name <organization-name>`: (Optional) Organization name for the generated Ballerina package.
+- `-p, --project-name <project-name>`: (Optional) Project name for the generated Ballerina package.
+
+### Examples
+
+**Migrate a TIBCO BusinessWorks project to a specific output directory:**
+```bash
+bal migrate-tibco /path/to/tibco-project -o /path/to/output-dir
+```
+
+**Migrate all TIBCO BusinessWorks projects in a directory (multi-root mode):**
+```bash
+bal migrate-tibco /path/to/projects-directory -o /path/to/output-dir -m
+```
+
+**Analyze all TIBCO BusinessWorks projects without generating code (dry-run):**
+```bash
+bal migrate-tibco /path/to/projects-directory -o /path/to/output-dir -m -d
+```
+
+For more CLI options and usage, see the [official migration tool documentation](https://central.ballerina.io/wso2/tool_migrate_tibco/latest).
+
 ## Limitations
-- Multi-project migration is not currently supported through the VS Code extension UI. For batch migration of multiple TIBCO projects, use the CLI tool [migrate-tibco](https://central.ballerina.io/wso2/tool_migrate_tibco/latest) separately.
 - Tool generates code assuming target compiler version is 2201.12.0 or later.
 
 ### Unhandled activities
