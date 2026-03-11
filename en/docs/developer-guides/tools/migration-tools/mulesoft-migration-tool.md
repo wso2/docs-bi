@@ -231,7 +231,7 @@ You can also migrate MuleSoft projects using the Ballerina CLI tool, which is su
 ### Prerequisite
 - Ensure Ballerina is installed and the `bal` command is available in your environment.
 
-### Install the Migration Tool
+### Install the migration tool
 Pull the migration tool from Ballerina Central:
 ```bash
 bal tool pull migrate-mule
