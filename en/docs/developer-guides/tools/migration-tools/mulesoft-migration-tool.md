@@ -229,7 +229,7 @@ This example demonstrates how to migrate a MuleSoft application that performs da
 You can also migrate MuleSoft projects using the Ballerina CLI tool, which is suitable for both single and bulk migrations.
 
 ### Prerequisite
-- Ensure Ballerina is installed and the `bal` command is available in your environment.
+- Ensure Ballerina is installed, and the `bal` command is available in your environment.
 
 ### Install the migration tool
 Pull the migration tool from Ballerina Central:
