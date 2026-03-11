@@ -6120,6 +6120,47 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#using-the-cli" class="md-nav__link">
+    Using the CLI
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the CLI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisite" class="md-nav__link">
+    Prerequisite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-the-migration-tool" class="md-nav__link">
+    Install the migration tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-syntax" class="md-nav__link">
+    Command syntax
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples_1" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#limitations" class="md-nav__link">
     Limitations
   </a>
@@ -9619,6 +9660,47 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#using-the-cli" class="md-nav__link">
+    Using the CLI
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the CLI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisite" class="md-nav__link">
+    Prerequisite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-the-migration-tool" class="md-nav__link">
+    Install the migration tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-syntax" class="md-nav__link">
+    Command syntax
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples_1" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#limitations" class="md-nav__link">
     Limitations
   </a>
@@ -10103,9 +10185,52 @@
 </ol>
 <h4>Step 3: Review the generated code</h4>
 <p>The migration wizard will create a new Ballerina project with the converted code, which you can immediately start working with in the BI interface.</p>
+<h2 id="using-the-cli">Using the CLI<a class="headerlink" href="#using-the-cli" title="Permanent link">&para;</a></h2>
+<p>You can also migrate TIBCO BusinessWorks projects using the Ballerina CLI tool, which is suitable for both single and bulk migrations.</p>
+<h3 id="prerequisite">Prerequisite<a class="headerlink" href="#prerequisite" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Ensure Ballerina is installed, and the <code>bal</code> command is available in your environment.</li>
+</ul>
+<h3 id="install-the-migration-tool">Install the migration tool<a class="headerlink" href="#install-the-migration-tool" title="Permanent link">&para;</a></h3>
+<p>Pull the migration tool from Ballerina Central:
+<div class="highlight"><pre><span></span><code>bal<span class="w"> </span>tool<span class="w"> </span>pull<span class="w"> </span>migrate-tibco
+</code></pre></div></p>
+<h3 id="command-syntax">Command syntax<a class="headerlink" href="#command-syntax" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>bal<span class="w"> </span>migrate-tibco<span class="w"> </span>&lt;source-project-directory-or-file&gt;<span class="w"> </span><span class="o">[</span>-o<span class="p">|</span>--out<span class="w"> </span>&lt;output-directory&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>-k<span class="p">|</span>--keep-structure<span class="o">]</span><span class="w"> </span><span class="o">[</span>-v<span class="p">|</span>--verbose<span class="o">]</span><span class="w"> </span><span class="o">[</span>-d<span class="p">|</span>--dry-run<span class="o">]</span><span class="w"> </span><span class="o">[</span>-m<span class="p">|</span>--multi-root<span class="o">]</span><span class="w"> </span><span class="o">[</span>-g<span class="p">|</span>--org-name<span class="w"> </span>&lt;organization-name&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>-p<span class="p">|</span>--project-name<span class="w"> </span>&lt;project-name&gt;<span class="o">]</span>
+</code></pre></div>
+
+<h4>Key parameters</h4>
+<ul>
+<li><code>&lt;source-project-directory-or-file&gt;</code>: Path to the TIBCO BusinessWorks project directory or a standalone process file.</li>
+<li><code>-o, --out &lt;output-directory&gt;</code>: (Optional) Output directory for the generated Ballerina package.</li>
+<li><code>-k, --keep-structure</code>: (Optional) Preserve original process structure.</li>
+<li><code>-v, --verbose</code>: (Optional) Enable verbose output.</li>
+<li><code>-d, --dry-run</code>: (Optional) Analyze and generate a migration report without creating Ballerina code.</li>
+<li><code>-m, --multi-root</code>: (Optional) Treat each child directory as a separate TIBCO project and convert all.</li>
+<li><code>-g, --org-name &lt;organization-name&gt;</code>: (Optional) Organization name for the generated Ballerina package.</li>
+<li><code>-p, --project-name &lt;project-name&gt;</code>: (Optional) Project name for the generated Ballerina package.</li>
+</ul>
+<h3 id="examples_1">Examples<a class="headerlink" href="#examples_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Migrate a TIBCO BusinessWorks project to a specific output directory:
+<div class="highlight"><pre><span></span><code>bal<span class="w"> </span>migrate-tibco<span class="w"> </span>/path/to/tibco-project<span class="w"> </span>-o<span class="w"> </span>/path/to/output-dir
+</code></pre></div></p>
+</li>
+<li>
+<p>Migrate all TIBCO BusinessWorks projects in a directory (multi-root mode):
+<div class="highlight"><pre><span></span><code>bal<span class="w"> </span>migrate-tibco<span class="w"> </span>/path/to/projects-directory<span class="w"> </span>-o<span class="w"> </span>/path/to/output-dir<span class="w"> </span>-m
+</code></pre></div></p>
+</li>
+<li>
+<p>Analyze all TIBCO BusinessWorks projects without generating code (dry-run):
+<div class="highlight"><pre><span></span><code>bal<span class="w"> </span>migrate-tibco<span class="w"> </span>/path/to/projects-directory<span class="w"> </span>-o<span class="w"> </span>/path/to/output-dir<span class="w"> </span>-m<span class="w"> </span>-d
+</code></pre></div></p>
+</li>
+</ul>
+<p>For more CLI options and usage, see the <a href="https://central.ballerina.io/wso2/tool_migrate_tibco/latest">official migration tool documentation</a>.</p>
 <h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Multi-project migration is not currently supported through the VS Code extension UI. For batch migration of multiple TIBCO projects, use the CLI tool <a href="https://central.ballerina.io/wso2/tool_migrate_tibco/latest">migrate-tibco</a> separately.</li>
 <li>Tool generates code assuming target compiler version is 2201.12.0 or later.</li>
 </ul>
 <h3 id="unhandled-activities">Unhandled activities<a class="headerlink" href="#unhandled-activities" title="Permanent link">&para;</a></h3>

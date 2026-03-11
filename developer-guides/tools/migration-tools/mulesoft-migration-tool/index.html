@@ -6078,6 +6078,47 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#using-the-cli" class="md-nav__link">
+    Using the CLI
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the CLI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisite" class="md-nav__link">
+    Prerequisite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-the-migration-tool" class="md-nav__link">
+    Install the migration tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-syntax" class="md-nav__link">
+    Command syntax
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#supported-mule-components" class="md-nav__link">
     Supported Mule components
   </a>
@@ -9606,6 +9647,47 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#using-the-cli" class="md-nav__link">
+    Using the CLI
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the CLI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisite" class="md-nav__link">
+    Prerequisite
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-the-migration-tool" class="md-nav__link">
+    Install the migration tool
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-syntax" class="md-nav__link">
+    Command syntax
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#supported-mule-components" class="md-nav__link">
     Supported Mule components
   </a>
@@ -9867,6 +9949,49 @@ public function invokeEndPoint0(Context ctx) returns http:Response|error {
 
 <p>You can view the migration report using the "View Full Report" button in the migration wizard for an overview of the migration.</p>
 <p>This example demonstrates how to migrate a MuleSoft application that performs database operations to Ballerina using the migration tool. The migration tool automatically converts the database configuration and SQL query to the equivalent Ballerina code using the <code>ballerinax/mysql</code> module.</p>
+<h2 id="using-the-cli">Using the CLI<a class="headerlink" href="#using-the-cli" title="Permanent link">&para;</a></h2>
+<p>You can also migrate MuleSoft projects using the Ballerina CLI tool, which is suitable for both single and bulk migrations.</p>
+<h3 id="prerequisite">Prerequisite<a class="headerlink" href="#prerequisite" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Ensure Ballerina is installed, and the <code>bal</code> command is available in your environment.</li>
+</ul>
+<h3 id="install-the-migration-tool">Install the migration tool<a class="headerlink" href="#install-the-migration-tool" title="Permanent link">&para;</a></h3>
+<p>Pull the migration tool from Ballerina Central:
+<div class="highlight"><pre><span></span><code>bal<span class="w"> </span>tool<span class="w"> </span>pull<span class="w"> </span>migrate-mule
+</code></pre></div></p>
+<h3 id="command-syntax">Command syntax<a class="headerlink" href="#command-syntax" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>bal<span class="w"> </span>migrate-mule<span class="w"> </span>&lt;source-project-directory-or-file&gt;<span class="w"> </span><span class="o">[</span>-o<span class="p">|</span>--out<span class="w"> </span>&lt;output-directory&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>-f<span class="p">|</span>--force-version<span class="w"> </span>&lt;<span class="m">3</span><span class="p">|</span><span class="m">4</span>&gt;<span class="o">]</span><span class="w"> </span><span class="o">[</span>-k<span class="p">|</span>--keep-structure<span class="o">]</span><span class="w"> </span><span class="o">[</span>-v<span class="p">|</span>--verbose<span class="o">]</span><span class="w"> </span><span class="o">[</span>-d<span class="p">|</span>--dry-run<span class="o">]</span><span class="w"> </span><span class="o">[</span>-m<span class="p">|</span>--multi-root<span class="o">]</span>
+</code></pre></div>
+
+<h4>Key parameters</h4>
+<ul>
+<li><code>&lt;source-project-directory-or-file&gt;</code>: Path to the MuleSoft project directory or a standalone Mule XML file.</li>
+<li><code>-o, --out &lt;output-directory&gt;</code>: (Optional) Output directory for the generated Ballerina package.</li>
+<li><code>-f, --force-version &lt;3|4&gt;</code>: (Optional) Force Mule version if auto-detection fails.</li>
+<li><code>-k, --keep-structure</code>: (Optional) Preserve original Mule project structure.</li>
+<li><code>-v, --verbose</code>: (Optional) Enable verbose output.</li>
+<li><code>-d, --dry-run</code>: (Optional) Analyze and generate a migration report without creating Ballerina code.</li>
+<li><code>-m, --multi-root</code>: (Optional) Treat each child directory as a separate Mule project and convert all.</li>
+</ul>
+<h3 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Migrate a MuleSoft project to a specific output directory:
+<div class="highlight"><pre><span></span><code>bal<span class="w"> </span>migrate-mule<span class="w"> </span>/path/to/mule-project<span class="w"> </span>-o<span class="w"> </span>/path/to/output-dir
+</code></pre></div></p>
+</li>
+<li>
+<p>Migrate all MuleSoft projects in a directory (multi-root mode):
+<div class="highlight"><pre><span></span><code>bal<span class="w"> </span>migrate-mule<span class="w"> </span>/path/to/projects-directory<span class="w"> </span>-o<span class="w"> </span>/path/to/output-dir<span class="w"> </span>-m
+</code></pre></div></p>
+</li>
+<li>
+<p>Analyze all MuleSoft projects without generating code (dry-run):
+<div class="highlight"><pre><span></span><code>bal<span class="w"> </span>migrate-mule<span class="w"> </span>/path/to/projects-directory<span class="w"> </span>-o<span class="w"> </span>/path/to/output-dir<span class="w"> </span>-m<span class="w"> </span>-d
+</code></pre></div></p>
+</li>
+</ul>
+<p>For more CLI options and usage, see the <a href="https://central.ballerina.io/wso2/tool_migrate_mule/latest">official migration tool documentation</a>.</p>
 <h2 id="supported-mule-components">Supported Mule components<a class="headerlink" href="#supported-mule-components" title="Permanent link">&para;</a></h2>
 <p>The migration tool currently supports a wide range of Mule components for both Mule 3.x and Mule 4.x. For a full list of supported components and their mappings, see:</p>
 <ul>
@@ -9882,7 +10007,6 @@ conversion samples, see:</p>
 </ul>
 <h2 id="limitations">Limitations<a class="headerlink" href="#limitations" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Multi-project migration is not currently supported through the VS Code extension UI. For batch migration of multiple MuleSoft projects, use the CLI tool <a href="https://central.ballerina.io/wso2/tool_migrate_mule/latest">migrate-mule</a> separately.</li>
 <li>Some moderate to advanced MuleSoft features may require manual adjustments after migration.</li>
 </ul>
 <details class="note" open="open"><summary>Disclaimer</summary><p><strong>MuleSoft</strong>: "MuleSoft", Mulesoft's "Anypoint Platform", and "DataWeave" are trademarks of MuleSoft LLC, a Salesforce company. All product, company names and marks mentioned herein are the property of their respective owners and are mentioned for identification purposes only.</p>
