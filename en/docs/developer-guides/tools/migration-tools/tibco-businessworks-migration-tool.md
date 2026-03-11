@@ -450,12 +450,12 @@ Pull the migration tool from Ballerina Central:
 bal tool pull migrate-tibco
 ```
 
-### Command Syntax
+### Command syntax
 ```bash
 bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directory>] [-k|--keep-structure] [-v|--verbose] [-d|--dry-run] [-m|--multi-root] [-g|--org-name <organization-name>] [-p|--project-name <project-name>]
 ```
 
-#### Key Parameters
+#### Key parameters
 - `<source-project-directory-or-file>`: Path to the TIBCO BusinessWorks project directory or a standalone process file.
 - `-o, --out <output-directory>`: (Optional) Output directory for the generated Ballerina package.
 - `-k, --keep-structure`: (Optional) Preserve original process structure.
@@ -467,17 +467,17 @@ bal migrate-tibco <source-project-directory-or-file> [-o|--out <output-directory
 
 ### Examples
 
-**Migrate a TIBCO BusinessWorks project to a specific output directory:**
+- Migrate a TIBCO BusinessWorks project to a specific output directory:
 ```bash
 bal migrate-tibco /path/to/tibco-project -o /path/to/output-dir
 ```
 
-**Migrate all TIBCO BusinessWorks projects in a directory (multi-root mode):**
+- Migrate all TIBCO BusinessWorks projects in a directory (multi-root mode):
 ```bash
 bal migrate-tibco /path/to/projects-directory -o /path/to/output-dir -m
 ```
 
-**Analyze all TIBCO BusinessWorks projects without generating code (dry-run):**
+- Analyze all TIBCO BusinessWorks projects without generating code (dry-run):
 ```bash
 bal migrate-tibco /path/to/projects-directory -o /path/to/output-dir -m -d
 ```

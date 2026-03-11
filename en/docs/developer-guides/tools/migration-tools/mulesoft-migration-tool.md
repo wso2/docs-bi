@@ -237,12 +237,12 @@ Pull the migration tool from Ballerina Central:
 bal tool pull migrate-mule
 ```
 
-### Command Syntax
+### Command syntax
 ```bash
 bal migrate-mule <source-project-directory-or-file> [-o|--out <output-directory>] [-f|--force-version <3|4>] [-k|--keep-structure] [-v|--verbose] [-d|--dry-run] [-m|--multi-root]
 ```
 
-#### Key Parameters
+#### Key parameters
 - `<source-project-directory-or-file>`: Path to the MuleSoft project directory or a standalone Mule XML file.
 - `-o, --out <output-directory>`: (Optional) Output directory for the generated Ballerina package.
 - `-f, --force-version <3|4>`: (Optional) Force Mule version if auto-detection fails.
@@ -253,17 +253,17 @@ bal migrate-mule <source-project-directory-or-file> [-o|--out <output-directory>
 
 ### Examples
 
-**Migrate a MuleSoft project to a specific output directory:**
+- Migrate a MuleSoft project to a specific output directory:
 ```bash
 bal migrate-mule /path/to/mule-project -o /path/to/output-dir
 ```
 
-**Migrate all MuleSoft projects in a directory (multi-root mode):**
+- Migrate all MuleSoft projects in a directory (multi-root mode):
 ```bash
 bal migrate-mule /path/to/projects-directory -o /path/to/output-dir -m
 ```
 
-**Analyze all MuleSoft projects without generating code (dry-run):**
+- Analyze all MuleSoft projects without generating code (dry-run):
 ```bash
 bal migrate-mule /path/to/projects-directory -o /path/to/output-dir -m -d
 ```
