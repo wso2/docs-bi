@@ -442,7 +442,7 @@ The migration wizard will create a new Ballerina project with the converted code
 You can also migrate TIBCO BusinessWorks projects using the Ballerina CLI tool, which is suitable for both single and bulk migrations.
 
 ### Prerequisite
-- Ensure Ballerina is installed and the `bal` command is available in your environment.
+- Ensure Ballerina is installed, and the `bal` command is available in your environment.
 
 ### Install the migration tool
 Pull the migration tool from Ballerina Central:
