@@ -191,6 +191,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://bi.docs.wso2.com/developer-guides/protocols-and-connectors/how-to-use-connectors/</loc>
+         <lastmod>2026-03-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://bi.docs.wso2.com/developer-guides/protocols-and-connectors/overview-of-connectors/</loc>
          <lastmod>2026-03-16</lastmod>
          <changefreq>daily</changefreq>
