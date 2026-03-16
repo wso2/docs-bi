@@ -116,6 +116,8 @@ nav:
         - Data Mapper:
           - Overview: integration-guides/usecases/datamapper/overview.md
           - Read a CSV File and Transform It to an XML File: integration-guides/usecases/datamapper/read-csv-file-and-transform-to-xml-file.md
+        - Integrate with GraphQL:
+          - GraphQL News Broadcasting Service: integration-guides/usecases/graphql-news-broadcasting-service/graphql-news-broadcasting-service.md
         - TCP Chat Service: integration-guides/usecases/tcp-chat-service/build-a-tcp-chat-service.md
         - File Integration:
           - Sales Data Synchronization via FTP File Integration: integration-guides/usecases/file-integration/sales-data-sync-with-ftp-file-integration.md
