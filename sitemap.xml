@@ -411,6 +411,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://bi.docs.wso2.com/integration-guides/usecases/http/build-an-http-rest-api-for-hotel-reservation/</loc>
+         <lastmod>2026-03-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://bi.docs.wso2.com/integration-guides/usecases/integration-service-as-a-managed-api/expose-an-integration-service-as-a-managed-api/</loc>
          <lastmod>2026-03-16</lastmod>
          <changefreq>daily</changefreq>
