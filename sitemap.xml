@@ -146,6 +146,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://bi.docs.wso2.com/developer-guides/create-integrations/share-artifacts-across-integrations/</loc>
+         <lastmod>2026-03-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://bi.docs.wso2.com/developer-guides/data-mapping/ai-data-mapping/</loc>
          <lastmod>2026-03-16</lastmod>
          <changefreq>daily</changefreq>
