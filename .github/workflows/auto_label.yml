@@ -1,0 +1,110 @@
+name: Claude Code • Auto Label Issues
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  auto-label:
+    runs-on: ubuntu-latest
+    name: Auto-label issues for Claude processing
+    steps:        
+      - name: Install GitHub & Claude CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gh
+          npm install -g @anthropic-ai/claude-code
+    
+      - name: Classify issue via Claude API
+        env:
+            ANTHROPIC_API_KEY: ${{ secrets.DOC_FIXING_AGENT_ANTHROPIC_API_KEY }}
+            GITHUB_TOKEN: ${{ secrets.DOC_FIXING_AGENT_GITHUB_TOKEN }}
+            ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+            ISSUE_TITLE=$(gh issue view $ISSUE_NUMBER --json title -q '.title' --repo ${{ github.repository }})
+            ISSUE_BODY=$(gh issue view $ISSUE_NUMBER --json body -q '.body' --repo ${{ github.repository }})
+            
+            echo "Checking if issue has assignee or is in Hacktoberfest project..."
+
+            # Get issue details
+            ISSUE_JSON=$(gh issue view $ISSUE_NUMBER --json assignees --repo ${{ github.repository }})
+
+            # Check if the issue has assignees
+            ASSIGNEES_COUNT=$(echo "$ISSUE_JSON" | jq '.assignees | length')
+            echo "Number of assignees: $ASSIGNEES_COUNT"
+
+            # Check if issue is part of Hacktoberfest project
+            HAS_HACKTOBERFEST_LABEL=$(gh issue view "$ISSUE_NUMBER" --repo ${{ github.repository }} --json labels | jq -r '.labels[].name' | grep -i '^hacktoberfest$' | wc -l)
+
+            if [[ "$ASSIGNEES_COUNT" -gt 0 || "$HAS_HACKTOBERFEST_LABEL" -gt 0 ]]; then
+              echo "Issue has assignee or is part of Hacktoberfest. Skipping AI-Agent/Queued label."
+              exit 0
+            fi
+            echo "Sending issue to Claude for classification..."
+
+            # Build JSON payload safely with jq to escape newlines/quotes
+            PROMPT="You are a GitHub issue classifier for documentation fixes. IMPORTANT: You can fix these specific types of issues:
+
+            1. broken-links - Links that are broken, dead, or pointing to wrong locations
+            2. spelling-mistakes - Spelling errors in documentation text
+            3. grammatical-errors - Grammar mistakes in documentation text  
+            4. formatting-issues - Documentation formatting problems like indentation errors, markdown formatting issues
+            5. suggestions - Documentation suggestions and improvements that include specific references or can be verified against project documentation for accuracy and validity
+
+            CRITICAL RULES:
+            - Read the issue title and body VERY carefully
+            - For suggestions/improvements: Look for specific references, links, or documentation sources provided
+            - Verify any provided references and cross-check against official project documentation
+            - Implement solutions with high accuracy based on verified references
+            - If suggestions include invalid references or contradict existing documentation, they will be labeled as AI-Agent/Cannot-Fix
+            - If the issue is requesting to add completely new documentation sections without clear basis, return 'none'
+            - If the issue is about functionality, code changes, or feature requests, return 'none'
+            - ONLY return a category name if the issue is EXACTLY about fixing one of the 5 specific problems listed above
+            - When in doubt, return 'none'
+
+            Return ONLY the category name (broken-links, spelling-mistakes, grammatical-errors, formatting-issues, suggestions) or 'none'.
+    
+            Title: $ISSUE_TITLE
+            Body: $ISSUE_BODY"
+
+                DATA=$(jq -n \
+                  --arg prompt "$PROMPT" \
+                  --arg title "$ISSUE_TITLE" \
+                  --arg body "$ISSUE_BODY" \
+                  '{
+                model: "claude-sonnet-4-5-20250929",
+                max_tokens: 50,
+                messages: [{role: "user", content: ($prompt + "\n\nTitle: " + $title + "\nBody: " + $body)}]
+                }')
+
+                # Call Claude API with required anthropic-version header and capture HTTP status
+                RESPONSE_FILE=$(mktemp)
+                HTTP_STATUS=$(curl -s -w "%{http_code}" -o "$RESPONSE_FILE" https://api.anthropic.com/v1/messages \
+                -H "Content-Type: application/json" \
+                -H "x-api-key: $ANTHROPIC_API_KEY" \
+                -H "anthropic-version: 2023-06-01" \
+                -d "$DATA")
+
+                RESPONSE_BODY=$(cat "$RESPONSE_FILE")
+                rm -f "$RESPONSE_FILE"
+
+                echo "Claude response status: $HTTP_STATUS"
+                echo "Claude response body: $RESPONSE_BODY"
+
+                # Fail early on non-2xx responses
+                if [[ "$HTTP_STATUS" -lt 200 || "$HTTP_STATUS" -ge 300 ]]; then
+                  echo "Claude API call failed with status $HTTP_STATUS"
+                  exit 1
+                fi
+
+                # Extract category safely; default to empty on parse errors
+                CATEGORY=$(echo "$RESPONSE_BODY" | jq -er '.content[0].text' 2>/dev/null | tr -d '\n' | tr '[:upper:]' '[:lower:]') || CATEGORY=""
+                echo "Claude classified the issue as: $CATEGORY"
+
+                # Add AI-Agent/Queued label if a valid category is returned
+                if [[ "$CATEGORY" != "" && "$CATEGORY" != "null" && "$CATEGORY" != "none" ]]; then
+                echo "Adding AI-Agent/Queued label"
+                gh issue edit $ISSUE_NUMBER --add-label "AI-Agent/Queued" --repo ${{ github.repository }}
+                else
+                echo "No valid category returned or parsing failed. Not adding label."
+                fi

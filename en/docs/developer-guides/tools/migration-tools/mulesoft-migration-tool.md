@@ -224,6 +224,52 @@ You can view the migration report using the "View Full Report" button in the mig
 
 This example demonstrates how to migrate a MuleSoft application that performs database operations to Ballerina using the migration tool. The migration tool automatically converts the database configuration and SQL query to the equivalent Ballerina code using the `ballerinax/mysql` module.
 
+## Using the CLI
+
+You can also migrate MuleSoft projects using the Ballerina CLI tool, which is suitable for both single and bulk migrations.
+
+### Prerequisite
+- Ensure Ballerina is installed, and the `bal` command is available in your environment.
+
+### Install the migration tool
+Pull the migration tool from Ballerina Central:
+```bash
+bal tool pull migrate-mule
+```
+
+### Command syntax
+```bash
+bal migrate-mule <source-project-directory-or-file> [-o|--out <output-directory>] [-f|--force-version <3|4>] [-k|--keep-structure] [-v|--verbose] [-d|--dry-run] [-m|--multi-root]
+```
+
+#### Key parameters
+- `<source-project-directory-or-file>`: Path to the MuleSoft project directory or a standalone Mule XML file.
+- `-o, --out <output-directory>`: (Optional) Output directory for the generated Ballerina package.
+- `-f, --force-version <3|4>`: (Optional) Force Mule version if auto-detection fails.
+- `-k, --keep-structure`: (Optional) Preserve original Mule project structure.
+- `-v, --verbose`: (Optional) Enable verbose output.
+- `-d, --dry-run`: (Optional) Analyze and generate a migration report without creating Ballerina code.
+- `-m, --multi-root`: (Optional) Treat each child directory as a separate Mule project and convert all.
+
+### Examples
+
+- Migrate a MuleSoft project to a specific output directory:
+```bash
+bal migrate-mule /path/to/mule-project -o /path/to/output-dir
+```
+
+- Migrate all MuleSoft projects in a directory (multi-root mode):
+```bash
+bal migrate-mule /path/to/projects-directory -o /path/to/output-dir -m
+```
+
+- Analyze all MuleSoft projects without generating code (dry-run):
+```bash
+bal migrate-mule /path/to/projects-directory -o /path/to/output-dir -m -d
+```
+
+For more CLI options and usage, see the [official migration tool documentation](https://central.ballerina.io/wso2/tool_migrate_mule/latest).
+
 ## Supported Mule components
 
 The migration tool currently supports a wide range of Mule components for both Mule 3.x and Mule 4.x. For a full list of supported components and their mappings, see:
@@ -240,7 +286,6 @@ conversion samples, see:
 - [DataWeave 2.0 Mappings](https://github.com/wso2/integration-bi-migration-assistant/blob/main/mule/docs/dataweave-mappings-v4.md)
 
 ## Limitations
-- Multi-project migration is not currently supported through the VS Code extension UI. For batch migration of multiple MuleSoft projects, use the CLI tool [migrate-mule](https://central.ballerina.io/wso2/tool_migrate_mule/latest) separately.
 - Some moderate to advanced MuleSoft features may require manual adjustments after migration.
 
 ???+ note  "Disclaimer"

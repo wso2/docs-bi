@@ -112,20 +112,26 @@ nav:
           - Fraud Detection System with CDC for Microsoft SQL Server: integration-guides/event-integration/cdc/fraud-detection-system-with-cdc-for-mssql.md
       - Use Cases:
         - Expose an Integration Service as a Managed API: integration-guides/usecases/integration-service-as-a-managed-api/expose-an-integration-service-as-a-managed-api.md
+        - Connect to a Remote Service using Custom Connector: integration-guides/usecases/connect-to-a-remote-service-using-custom-connector/connect-to-a-remote-service-using-custom-connector.md
         - Data Mapper:
           - Overview: integration-guides/usecases/datamapper/overview.md
           - Read a CSV File and Transform It to an XML File: integration-guides/usecases/datamapper/read-csv-file-and-transform-to-xml-file.md
+        - Build an HTTP REST API for Hotel Reservation: integration-guides/usecases/http/build-an-http-rest-api-for-hotel-reservation.md
+
         - TCP Chat Service: integration-guides/usecases/tcp-chat-service/build-a-tcp-chat-service.md
         - File Integration:
           - Sales Data Synchronization via FTP File Integration: integration-guides/usecases/file-integration/sales-data-sync-with-ftp-file-integration.md
           - Contractor Timesheet Validation: integration-guides/usecases/file-integration/contractor-timesheet-validation.md
         - Event Integration:
           - Solace Event Integration: integration-guides/usecases/solace-event-integration/solace-event-integration.md
+        - Database Integration:
+          - Order Processing Automation: integration-guides/usecases/database-automation/order-processing-automation.md
   - Developer Guides:
       - Create Integrations:
           Overview: developer-guides/create-integrations/overview.md
           Create an Integration: developer-guides/create-integrations/create-an-integration.md
           Manage Integrations in Workspaces: developer-guides/create-integrations/manage-integrations-in-workspaces.md
+          Share Artifacts Across Integrations: developer-guides/create-integrations/share-artifacts-across-integrations.md
       - "WSO2 Integrator: BI Artifacts": developer-guides/wso2-integrator-bi-artifacts.md
       - Design the Integrations: developer-guides/design-the-integrations.md
       - Data Mapping: 
@@ -143,7 +149,9 @@ nav:
         - Build an HTTP Service With BI Copilot : developer-guides/ai-for-integration/build-an-http-service-with-wso2-copilot.md
       - Protocols and Connectors:
         - Overview of Connectors: developer-guides/protocols-and-connectors/overview-of-connectors.md
+        - How To Use Connectors: developer-guides/protocols-and-connectors/how-to-use-connectors.md
         - Supported Protocols: developer-guides/protocols-and-connectors/supported-protocols.md
+        - Build Custom Connectors: developer-guides/protocols-and-connectors/build-custom-connectors.md
       - Tools:
         - Migration Tools:
           - Overview: developer-guides/tools/migration-tools/overview.md
