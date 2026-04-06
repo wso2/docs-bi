@@ -2074,7 +2074,7 @@ bal test
       dbHost = "localhost"
       dbPort = 3306
     # Option B: Per-variable (good for secrets)
-    BAL_CONFIG_VAR_APIKEY: ${{ secrets.TEST_API_KEY }}
+    BAL_CONFIG_VAR_APIKEY: {% raw %}${{ secrets.TEST_API_KEY }}{% endraw %}
   run: bal test --code-coverage
 ```
 
