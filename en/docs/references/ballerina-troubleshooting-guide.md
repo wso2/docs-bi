@@ -1,29 +1,30 @@
 # Ballerina Troubleshooting Guide
 
-|                |                                                    |
-| :------------- | :------------------------------------------------- |
-| **Date**       | March 2026                                         |
-| **Version**    | 0.1.0                                              |
-| **Applies To** | Ballerina Swan Lake 2201.4.0 and later             |
-| **Author(s)**  | [@ThisaruGuruge](https://github.com/ThisaruGuruge) |
+| Item           | Description                            |
+| :------------- | :------------------------------------- |
+| **Date**       | March 2026                             |
+| **Version**    | 0.1.0                                  |
+| **Applies To** | Ballerina Swan Lake 2201.4.0 and later |
 
-> **Version note:** Code samples, error hierarchies, and default values in this guide are based on the Ballerina version listed above. They may vary slightly across versions — when in doubt, verify against the specific version the customer is running.
+!!! note
+    Code samples, error hierarchies, and default values in this guide are based on the Ballerina version listed above. They may vary slightly across versions. Verify the specific version in use during troubleshooting.
 
 ---
 
 ## Introduction
 
-This guide helps the developers to troubleshoot Ballerina issues and complete a first response. The goal is to define a repeatable process rather than case-by-case samples — though examples are used throughout. The guide is structured to help you:
+This guide describes how to troubleshoot Ballerina issues and provide an initial response. The goal is to define a repeatable process rather than provide case-by-case samples, though examples are included. Use this guide to:
 
-1. **Collect** the right diagnostic information upfront
-2. **Reproduce** the issue locally in a controlled environment
-3. **Categorize** the issue correctly
-4. **Resolve** it from the customer side when possible
-5. **Escalate** with a well-formed report when a product fix is needed
+1. **Collect** diagnostic information.
+2. **Reproduce** the issue in a controlled environment.
+3. **Categorize** the issue.
+4. **Resolve** the issue when possible.
+5. **Escalate** with a detailed report if a product fix is required.
 
-**Assumed knowledge:** You are comfortable reading stack traces, running CLI commands, and editing configuration files. Ballerina runs on the JVM, so standard JVM debugging tools and instincts apply directly.
+**Prerequisites:** Familiarity with reading stack traces, running CLI commands, and editing configuration files is required. Because Ballerina runs on the JVM, standard JVM debugging tools and practices apply.
 
-> **[Internal]** When escalating a customer issue, always use the `wso2-integration-internal` repository. Do **not** use the public `ballerina-platform` repositories directly for customer issues. See [Section 12 — Escalation Process](#12-escalation-process) for details.
+!!! info "Important"
+    When escalating an issue, use the `wso2-integration-internal` repository. Do not use the public `ballerina-platform` repositories for customer-related issues. For details, see [Section 12 — Escalation Process](#12-escalation-process).
 
 ---
 
@@ -194,21 +195,21 @@ Before doing anything else, gather the following information. Missing even one i
 | **`Ballerina.toml`**    | Root of the project                            | Package org, name, version, and dependency declarations     |
 | **`Dependencies.toml`** | Root of the project                            | Exact resolved dependency versions (the "lock file")        |
 | **Full error output**   | Terminal/log output with `--debug` if needed   | The complete stack trace — not just the last line           |
-| **Steps to reproduce**  | Ask the customer                               | A minimal description of what triggers the issue            |
+| **Steps to reproduce**  | Detailed description                           | A minimal description of what triggers the issue            |
 
 ### 1.2 Strongly Recommended
 
 | Item                                   | How to Get It                                                                 | Why It Matters                                                        |
 | :------------------------------------- | :---------------------------------------------------------------------------- | :-------------------------------------------------------------------- |
-| **Minimal Reproducible Example (MRE)** | Ask the customer to isolate the failing code                                  | Large codebases are hard to debug; MREs expose the root cause quickly |
+| **Minimal reproducible example (MRE)** | Isolate the failing code                                      | Large codebases are difficult to debug; MREs help identify the root cause quickly |
 | **Config.toml** (sanitized)            | Root of the project                                                           | Configuration affects runtime behavior; ensure secrets are removed    |
-| **Deployment environment**             | Ask                                                                           | Docker, K8s, bare-metal, cloud — affects OS, networking, file system  |
+| **Deployment environment**             | Deployment platform                                                           | Platform (Docker, K8s, bare-metal, cloud) affects OS, networking, and the file system |
 | **HTTP trace logs**                    | See [Section 6.1.1 — Enabling HTTP Trace Logs](#611-enabling-http-trace-logs) | Essential for any HTTP/connector issue                                |
 | **Application logs** (DEBUG level)     | See [Section 2.3 — Enabling Debug Logging](#23-enabling-debug-logging)        | More detail than the default INFO level                               |
 
-### 1.3 Top 5 Configuration Mistakes
+### Top 5 common configuration mistakes
 
-Before diving into deeper diagnosis, rule out these common misconfigurations — they account for a large share of support tickets:
+Before beginning a deeper diagnosis, rule out these common misconfigurations:
 
 | #   | Mistake                                       | What Goes Wrong                                                                                                                           | Fix                                                                                                                                      |
 | :-- | :-------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
@@ -248,7 +249,7 @@ bal --version
 
 Ballerina resolves dependencies to the latest compatible version by default; similar to Maven's `RELEASE` ranges. To reproduce exactly what the customer is running:
 
-**Step 1:** Copy the customer's `Dependencies.toml` into your project root.
+**Step 1:** Copy the `Dependencies.toml` file into the project root.
 
 **Step 2:** In `Ballerina.toml`, enable sticky builds to prevent the resolver from upgrading versions:
 
@@ -798,7 +799,7 @@ if result is http:ClientRequestError {
 
 **Common HTTP client error patterns:**
 
-| Error / Symptom                    | Likely Cause                                                  | Diagnosis                                                      | Customer-Side Fix                                      |
+| Error / Symptom                    | Likely Cause                                                  | Diagnosis                                                      | Resolution                                             |
 | :--------------------------------- | :------------------------------------------------------------ | :------------------------------------------------------------- | :----------------------------------------------------- |
 | `Connection refused: host/IP:port` | Target service not running or wrong port                      | Verify the target URL and port                                 | Correct the URL in the `http:Client` init              |
 | `Connection timed out`             | Target is slow, firewall dropping packets, or network latency | Check connectivity with `curl`; enable trace logs              | Increase `timeout` in `http:ClientConfiguration`       |
@@ -1031,7 +1032,7 @@ graphql:ClientError
 └── graphql:ServerError                (deprecated — from old executeWithType() API)
 ```
 
-Note: `graphql:ServerError` is deprecated. If the customer is using `executeWithType()`, they should migrate to `execute()`.
+Note: `graphql:ServerError` is deprecated. If using `executeWithType()`, migrate to `execute()`.
 
 #### 6.3.2 Service-Side: Resolver Errors
 
@@ -1473,7 +1474,8 @@ http:Client apiClient = check new ("http://backend.internal", {
 });
 ```
 
-> **Customer-side fix:** If the customer is hitting `MaximumWaitTimeExceededError`, increasing `maxActiveConnections` or decreasing `waitTime` (to fail fast and surface the real issue) are valid customer-side fixes. Note that increasing the pool size only helps if the **upstream can handle more connections**. If the upstream is the bottleneck, more connections will make it worse.
+!!! tip
+    If a `MaximumWaitTimeExceededError` occurs, increasing `maxActiveConnections` or decreasing `waitTime` (to fail fast) are valid resolutions. Note that increasing the pool size only helps if the **upstream can handle more connections**. If the upstream is the bottleneck, more connections might degrade performance.
 
 ### 7.3 SQL Connection Pool Tuning
 
@@ -1605,7 +1607,8 @@ bal run .
 - Thread dump at the time of the issue: `kill -3 <pid>` (Linux/macOS) or use `jstack <pid>`
 - Strand dump: `kill -SIGTRAP <pid>` (see [Section 5.3 — Strand Dump Tool](#53-strand-dump-tool))
 
-> **GraalVM native images:** If the application is compiled as a GraalVM native image, `JAVA_OPTS` does not apply. See [Section 11.3 — GraalVM Native Image Issues](#113-graalvm-native-image-issues) for native image memory tuning.
+!!! note
+    For GraalVM native images, `JAVA_OPTS` does not apply. For native image memory tuning, see [Section 11.3 — GraalVM Native Image Issues](#113-graalvm-native-image-issues).
 
 ### 7.7 Observability Issues
 
@@ -1618,7 +1621,8 @@ Ballerina has built-in support for distributed tracing, metrics, and logging. Ob
 observabilityIncluded = true
 ```
 
-> **Note:** This is included by default in `Ballerina.toml` files generated by `bal new`. Alternatively, use the `--observability-included` flag: `bal run --observability-included`.
+!!! note
+    Observability is included by default in `Ballerina.toml` files generated by `bal new`. Alternatively, use the `--observability-included` flag: `bal run --observability-included`.
 
 **Step 2 — Enable at runtime** in `Config.toml`:
 
@@ -1692,7 +1696,8 @@ scrape_configs:
 | Traces incomplete / missing spans | Only partial trace visible            | Check that all services in the chain have observability enabled; spans are only generated for instrumented services                                                                                 |
 | High overhead from tracing        | Latency increase in production        | Reduce the sampling rate: set `samplerType = "probabilistic"` and `samplerParam = 0.1` (10% sampling) in `[ballerinax.jaeger]`                                                                      |
 
-> **Datadog integration:** Ballerina traces can be exported to Datadog via the Jaeger exporter if the Datadog agent is configured to accept Jaeger-format traces. Refer to Datadog's documentation for agent configuration.
+!!! tip
+    Ballerina traces can be exported to Datadog via the Jaeger exporter if the Datadog agent is configured to accept Jaeger-format traces. For agent configuration, refer to the Datadog documentation.
 
 ---
 
@@ -2378,16 +2383,15 @@ graalvmBuildOptions = "--no-fallback"   # optional: additional native-image flag
 
 **Memory note:** `JAVA_OPTS` (e.g., `-Xmx`) does **not** apply to native images. Native images manage their own memory. To control native image heap size, use `-R:MaxHeapSize=512m` in `graalvmBuildOptions` or at runtime.
 
-> **Cross-reference:** If investigating a memory issue, see [Section 7.6 — Memory Issues](#76-memory-issues) for JVM-mode memory tuning. Native image memory behavior is fundamentally different from JVM.
+!!! note
+    If investigating a memory issue, see [Section 7.6 — Memory Issues](#76-memory-issues) for JVM-mode memory tuning. Native image memory behavior differs from the JVM.
 
 ### 11.4 Choreo Deployment Issues
 
-[Choreo](https://wso2.com/choreo/) is WSO2's integration platform that natively supports Ballerina. When a customer reports an issue running on Choreo, the first diagnostic question is:
+[Choreo](https://wso2.com/choreo/) is a platform that natively supports Ballerina. When an issue occurs on Choreo, first determine if it reproduces locally.
 
-**Does `bal build && bal run` work locally?**
-
-- **Yes, works locally → likely a Choreo environment issue.** The Ballerina code itself is correct; the issue is in the Choreo build pipeline, configuration injection, or runtime environment. Raise to the Choreo team.
-- **No, fails locally → Ballerina issue.** Use this guide to diagnose and fix the issue before re-deploying to Choreo.
+- **Works locally:** The issue is likely related to the Choreo environment, such as the build pipeline, configuration injection, or runtime environment.
+- **Fails locally:** The issue is related to the Ballerina code or configuration. Use this guide to diagnose and resolve the issue.
 
 **Common Choreo-specific issues:**
 
@@ -2499,7 +2503,8 @@ flowchart TD
 
 ### 12.3 Creating an Issue in wso2-integration-internal
 
-> **[Internal]** All customer issues must be filed in the `wso2-integration-internal` repository. Do NOT create issues in public `ballerina-platform` repositories for customer-reported bugs.
+!!! info "Important"
+    When escalating issues, use the designated internal or partner repository. Do not create issues in public repositories for bugs that contain sensitive information or are specific to customer environments.
 
 **Before creating the issue, ensure you have:**
 
@@ -2715,4 +2720,6 @@ Not all customer issues are bugs — some are feature requests or questions abou
 
 ---
 
-_This document is intended for internal use. For public issue reporting, refer to the appropriate `ballerina-platform` GitHub repository after ensuring no customer-specific information is included._
+---
+
+_This document provides guidance for troubleshooting Ballerina applications. For public issue reporting, refer to the appropriate `ballerina-platform` GitHub repository after ensuring no sensitive information is included._
