@@ -1715,14 +1715,14 @@ cannot resolve module 'ballerina/http'
 
 ```mermaid
 flowchart TD
-    A[Package resolution failed] --> B{Network accessible?}
-    B -->|No| C[8.3 Proxy / Firewall issue]
-    B -->|Yes| D{Is the package\non Ballerina Central?}
-    D -->|No| E[Wrong org/name/version\nCheck spelling on central.ballerina.io]
-    D -->|Yes| F{Is the version\ncompatible?}
-    F -->|No| G[Version conflict\nSee 8.2]
-    F -->|Yes| H[Delete Dependencies.toml\nand rebuild]
-    H -->|Still fails| I[Clear local cache\nlast resort]
+    A["Package resolution failed"] --> B{"Network accessible"}
+    B -->|"No"| C["Proxy or Firewall issue"]
+    B -->|"Yes"| D{"Is the package on Ballerina Central"}
+    D -->|"No"| E["Wrong name or version Check spelling"]
+    D -->|"Yes"| F{"Is the version compatible"}
+    F -->|"No"| G["Version conflict"]
+    F -->|"Yes"| H["Delete Dependencies toml and rebuild"]
+    H -->|"Still fails"| I["Clear local cache last resort"]
 ```
 
 **Resolution steps (in order):**
@@ -2487,17 +2487,17 @@ Before creating an issue, identify which component has the bug:
 
 ```mermaid
 flowchart TD
-    A[Need to escalate] --> B{Stack trace available?}
-    B -->|Yes| C{What is the\nstack trace origin?}
-    B -->|No| D[Collect stack trace first\nEnable DEBUG logging]
+    A["Need to escalate"] --> B{"Stack trace available"}
+    B -->|"Yes"| C{"What is the stack trace origin"}
+    B -->|"No"| D["Collect stack trace first Enable DEBUG logging"]
 
-    C -->|io.ballerina.stdlib.*\nor io.ballerina.lib.*| E[Library bug]
-    C -->|org.wso2.ballerinalang.*\nor io.ballerina.compiler.*| F[Compiler / Runtime bug]
-    C -->|ballerina/http, sql, etc.\nerror prefix in message| G[Library runtime bug]
-    C -->|Customer code frames only| H[Likely usage issue\nCheck docs first]
+    C -->|"Ballerina Library"| E["Library bug"]
+    C -->|"Compiler or Runtime"| F["Compiler or Runtime bug"]
+    C -->|"Library runtime error"| G["Library runtime bug"]
+    C -->|"Customer code only"| H["Likely usage issue Check docs first"]
 
-    E --> I[Tag: library/<module-name>]
-    F --> J[Tag: compiler or runtime]
+    E --> I["Tag library"]
+    F --> J["Tag compiler or runtime"]
     G --> I
 ```
 

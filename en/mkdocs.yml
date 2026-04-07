@@ -228,7 +228,11 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.smartsymbols
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
@@ -262,6 +266,8 @@ extra_javascript:
     - assets/lib/highlightjs/highlight.min.js
     - assets/js/theme.js
     - assets/js/copy-page.js
+    - assets/js/mermaid-init.js
+    - https://unpkg.com/mermaid@10.6.1/dist/mermaid.min.js
 extra:
     material:
       jinja2content: true
