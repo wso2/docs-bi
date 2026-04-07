@@ -1,4 +1,4 @@
-# Ballerina Troubleshooting Guide
+# Ballerina troubleshooting guide
 
 | Item           | Description                            |
 | :------------- | :------------------------------------- |
@@ -19,189 +19,163 @@ This guide describes how to troubleshoot Ballerina issues and provide an initial
 2. **Reproduce** the issue in a controlled environment.
 3. **Categorize** the issue.
 4. **Resolve** the issue when possible.
-5. **Escalate** with a detailed report if a product fix is required.
+5. **Report** the issue if a product fix is required.
 
 **Prerequisites:** Familiarity with reading stack traces, running CLI commands, and editing configuration files is required. Because Ballerina runs on the JVM, standard JVM debugging tools and practices apply.
 
----
+### Required information for diagnosis
 
-## Table of Contents
-
-[Quick Fixes Cheat Sheet](#quick-fixes-cheat-sheet)
-
-**Setup**
-
-1. [First Response: What to Collect](#1-first-response-what-to-collect)
-   - [1.1 Mandatory Information](#11-mandatory-information)
-   - [1.2 Strongly Recommended](#12-strongly-recommended)
-   - [1.3 Top 5 Configuration Mistakes](#13-top-5-configuration-mistakes)
-2. [Setting Up a Reproduction Environment](#2-setting-up-a-reproduction-environment)
-   - [2.1 Matching the Ballerina Version](#21-matching-the-ballerina-version)
-   - [2.2 Matching Library Versions](#22-matching-library-versions)
-   - [2.3 Enabling Debug Logging](#23-enabling-debug-logging)
-   - [2.4 Handling Network and Proxy Issues](#24-handling-network-and-proxy-issues)
-3. [Triage Overview](#3-triage-overview)
-   - [3.1 Issue Category Decision Tree](#31-issue-category-decision-tree)
-   - [3.2 Category Quick Reference](#32-category-quick-reference)
-
-**Compiler and Language**
-
-4. [Compiler and Language Issues](#4-compiler-and-language-issues)
-   - [4.1 Compiler Errors](#41-compiler-errors)
-   - [4.2 Compiler Crashes](#42-compiler-crashes)
-   - [4.3 Compiler Plugin Errors](#43-compiler-plugin-errors)
-   - [4.4 Java-Level Errors During Compilation](#44-java-level-errors-during-compilation)
-
-**Runtime**
-
-5. [Runtime Issues](#5-runtime-issues)
-   - [5.1 Understanding Ballerina Errors and Panics](#51-understanding-ballerina-errors-and-panics)
-     - [5.1.1 Errors vs. Panics](#511-errors-vs-panics)
-     - [5.1.2 Reading Error Messages and Stack Traces](#512-reading-error-messages-and-stack-traces)
-   - [5.2 Ballerina Core Runtime Errors](#52-ballerina-core-runtime-errors)
-   - [5.3 Strand Dump Tool](#53-strand-dump-tool)
-
-**Libraries, Connectors, and Security**
-
-6. [Library and Connector Issues](#6-library-and-connector-issues)
-   - [6.1 HTTP Issues](#61-http-issues)
-     - [6.1.1 Enabling HTTP Trace Logs](#611-enabling-http-trace-logs)
-     - [6.1.2 Enabling HTTP Access Logs](#612-enabling-http-access-logs)
-     - [6.1.3 HTTP Client Errors](#613-http-client-errors)
-     - [6.1.4 HTTP Listener / Service Errors](#614-http-listener--service-errors)
-     - [6.1.5 HTTP Configuration Reference](#615-http-configuration-reference)
-   - [6.2 SQL / Database Issues](#62-sql--database-issues)
-     - [6.2.1 Connection Issues](#621-connection-issues)
-     - [6.2.2 Query Errors](#622-query-errors)
-     - [6.2.3 Transaction Issues](#623-transaction-issues)
-   - [6.3 GraphQL Issues](#63-graphql-issues)
-     - [6.3.1 Error Types](#631-error-types)
-     - [6.3.2 Service-Side: Resolver Errors](#632-service-side-resolver-errors)
-     - [6.3.3 Common GraphQL Issues](#633-common-graphql-issues)
-     - [6.3.4 Compiler Plugin Validations](#634-compiler-plugin-validations)
-   - [6.4 Messaging Connector Issues](#64-messaging-connector-issues)
-     - [6.4.1 Kafka](#641-kafka)
-     - [6.4.2 RabbitMQ](#642-rabbitmq)
-     - [6.4.3 NATS](#643-nats)
-     - [6.4.4 JMS](#644-jms)
-   - [6.5 gRPC Issues](#65-grpc-issues)
-   - [6.6 WebSocket Issues](#66-websocket-issues)
-   - [6.7 General Connector Error Patterns](#67-general-connector-error-patterns)
-   - [6.8 Data Binding Issues (jsondata / xmldata)](#68-data-binding-issues-jsondata--xmldata)
-   - [6.9 Security and Authentication Issues](#69-security-and-authentication-issues)
-     - [6.9.1 TLS/SSL and Certificate Issues](#691-tlsssl-and-certificate-issues)
-     - [6.9.2 OAuth2 / JWT / Token Issues](#692-oauth2--jwt--token-issues)
-
-**Performance and Observability**
-
-7. [Performance and Tuning](#7-performance-and-tuning)
-   - [7.1 Identifying the Type of Performance Issue](#71-identifying-the-type-of-performance-issue)
-   - [7.2 HTTP Connection Pool Tuning](#72-http-connection-pool-tuning)
-   - [7.3 SQL Connection Pool Tuning](#73-sql-connection-pool-tuning)
-   - [7.4 Runtime Thread Pool Tuning](#74-runtime-thread-pool-tuning)
-   - [7.5 Concurrency and Isolation Issues](#75-concurrency-and-isolation-issues)
-   - [7.6 Memory Issues](#76-memory-issues)
-   - [7.7 Observability Issues](#77-observability-issues)
-
-**Packages and Dependencies**
-
-8. [Package and Dependency Issues](#8-package-and-dependency-issues)
-   - [8.1 Package Resolution Failures](#81-package-resolution-failures)
-   - [8.2 Version Conflicts](#82-version-conflicts)
-   - [8.3 Network, Firewall, and Proxy Issues](#83-network-firewall-and-proxy-issues)
-   - [8.4 Offline Builds](#84-offline-builds)
-   - [8.5 Private Packages](#85-private-packages)
-
-**Tooling**
-
-9. [Tooling Issues](#9-tooling-issues)
-   - [9.1 bal CLI Issues](#91-bal-cli-issues)
-   - [9.2 OpenAPI Tool Issues](#92-openapi-tool-issues)
-   - [9.3 gRPC Tool Issues](#93-grpc-tool-issues)
-   - [9.4 Test Framework Issues](#94-test-framework-issues)
-   - [9.5 Persist Tool Issues](#95-persist-tool-issues)
-   - [9.6 Formatter Issues](#96-formatter-issues)
-
-**IDE and Language Server**
-
-10. [IDE and VS Code Issues](#10-ide-and-vs-code-issues)
-    - [10.1 Identifying Language Server Issues](#101-identifying-language-server-issues)
-    - [10.2 Collecting Language Server Logs](#102-collecting-language-server-logs)
-    - [10.3 Common Language Server Problems](#103-common-language-server-problems)
-    - [10.4 Extension Configuration](#104-extension-configuration)
-
-**Deployment**
-
-11. [Deployment Issues](#11-deployment-issues)
-    - [11.1 Docker Deployment Issues](#111-docker-deployment-issues)
-    - [11.2 Kubernetes Deployment Issues](#112-kubernetes-deployment-issues)
-    - [11.3 GraalVM Native Image Issues](#113-graalvm-native-image-issues)
-    - [11.4 Choreo Deployment Issues](#114-choreo-deployment-issues)
-    - [11.5 Configuration in Deployed Environments](#115-configuration-in-deployed-environments)
-
-**Escalation**
-
-12. [Escalation Process](#12-escalation-process)
-    - [12.1 Customer-Side Fixes to Try First](#121-customer-side-fixes-to-try-first)
-    - [12.2 Determining the Right Component](#122-determining-the-right-component)
-    - [12.3 Checking for Existing Fixes](#123-checking-for-existing-fixes)
-    - [12.4 Handling Feature Requests](#124-handling-feature-requests)
-
-**Appendix**
-
-13. [Glossary](#13-glossary)
-14. [References](#14-references)
-
----
-
-## Quick Fixes Cheat Sheet
-
-For experienced troubleshooters — the most common error messages and their one-line fixes.
-
-| Error / Symptom                                            | One-Line Fix                                                                                  |
-| :--------------------------------------------------------- | :-------------------------------------------------------------------------------------------- |
-| `incompatible types: expected 'X', found 'Y'`              | Check the variable type or function return type at the indicated line                         |
-| `undefined symbol 'X'`                                     | Add `import ballerina/X;` or fix the identifier typo                                          |
-| `Oh no, something really went wrong`                       | Compiler crash — collect MRE + stack trace, escalate per [Section 12](#12-escalation-process) |
-| `No suitable driver found for jdbc:...`                    | Add `import ballerinax/mysql.driver as _;` (or appropriate driver)                            |
-| `Connection refused: host/IP:port`                         | Verify the target service is running and the URL/port is correct                              |
-| `{ballerina/http}MaximumWaitTimeExceededError`             | Increase `maxActiveConnections` in `poolConfig` or check if upstream is the bottleneck        |
-| `{ballerina/sql}NoRowsError`                               | Handle `NoRowsError` as a valid case — `queryRow()` matched no rows                           |
-| `{ballerina}TypeCastError`                                 | Replace unsafe `<T>val` with `if val is T { ... }` or `value:ensureType()`                    |
-| `SSL/TLS handshake failure` / `PKIX path building failed`  | Configure `secureSocket` in client config or import the CA cert into the JRE trust store      |
-| `cannot resolve module` / `package not found`              | Delete `Dependencies.toml` and rebuild; check network access to Ballerina Central             |
-| `bal: command not found`                                   | Add `<ballerina_home>/bin` to PATH; re-source shell profile                                   |
-| Config values not loaded / using defaults                  | Ensure `Config.toml` is in the working directory; check `[org.package.module]` key paths      |
-| `OutOfMemoryError`                                         | Increase JVM heap: `export JAVA_OPTS="-Xmx2g"`                                                |
-| Service starts but unreachable externally                  | Change listener host to `"0.0.0.0"` instead of `"localhost"`                                  |
-| `invalid access of mutable storage in 'isolated' function` | Wrap the access in a `lock` block or restructure to avoid shared mutable state                |
-
----
-
-## 1. First Response: What to Collect
-
-Before doing anything else, gather the following information. Missing even one item can significantly delay diagnosis.
-
-### 1.1 Mandatory Information
+Before starting a deep diagnosis, gather the following information. Missing even one item can significantly delay the process.
 
 | Item                    | How to Get It                                  | Why It Matters                                              |
 | :---------------------- | :--------------------------------------------- | :---------------------------------------------------------- |
 | **Ballerina version**   | `bal --version`                                | Bugs are version-specific. Never assume.                    |
 | **OS and architecture** | `uname -a` (Linux/macOS) or `winver` (Windows) | Some issues are OS-specific (file paths, native libs, etc.) |
 | **`Ballerina.toml`**    | Root of the project                            | Package org, name, version, and dependency declarations     |
-| **`Dependencies.toml`** | Root of the project                            | Exact resolved dependency versions (the "lock file")        |
+| **`Dependencies.toml`** | Root of the project                            | Exact resolved dependency versions                          |
 | **Full error output**   | Terminal/log output with `--debug` if needed   | The complete stack trace — not just the last line           |
 | **Steps to reproduce**  | Detailed description                           | A minimal description of what triggers the issue            |
+| **MRE**                 | Isolate the failing code                       | Minimal Reproducible Examples help identify root causes     |
+| **Deployment env**      | Deployment platform                            | Platform (Docker, K8s, etc.) affects behavior               |
 
-### 1.2 Strongly Recommended
+---
 
-| Item                                   | How to Get It                                                                 | Why It Matters                                                        |
-| :------------------------------------- | :---------------------------------------------------------------------------- | :-------------------------------------------------------------------- |
-| **Minimal reproducible example (MRE)** | Isolate the failing code                                      | Large codebases are difficult to debug; MREs help identify the root cause quickly |
-| **Config.toml** (sanitized)            | Root of the project                                                           | Configuration affects runtime behavior; ensure secrets are removed    |
-| **Deployment environment**             | Deployment platform                                                           | Platform (Docker, K8s, bare-metal, cloud) affects OS, networking, and the file system |
-| **HTTP trace logs**                    | See [Section 6.1.1 — Enabling HTTP Trace Logs](#611-enabling-http-trace-logs) | Essential for any HTTP/connector issue                                |
-| **Application logs** (DEBUG level)     | See [Section 2.3 — Enabling Debug Logging](#23-enabling-debug-logging)        | More detail than the default INFO level                               |
+## Table of contents
+
+[Quick Fixes Cheat Sheet](#quick-fixes-cheat-sheet)
+
+1. [Setting up a reproduction environment](#1-setting-up-a-reproduction-environment)
+   - [1.1 Matching the Ballerina version](#11-matching-the-ballerina-version)
+   - [1.2 Matching library versions](#12-matching-library-versions)
+   - [1.3 Enabling debug logging](#13-enabling-debug-logging)
+   - [1.4 Handling network and proxy issues](#14-handling-network-and-proxy-issues)
+2. [Triage overview](#2-triage-overview)
+   - [2.1 Issue category decision tree](#21-issue-category-decision-tree)
+   - [2.2 Category quick reference](#22-category-quick-reference)
+
+**Compiler and Language**
+
+3. [Compiler and language issues](#3-compiler-and-language-issues)
+   - [3.1 Compiler errors](#31-compiler-errors)
+   - [3.2 Compiler crashes](#32-compiler-crashes)
+   - [3.3 Compiler plugin errors](#33-compiler-plugin-errors)
+   - [3.4 Java-level errors during compilation](#34-java-level-errors-during-compilation)
+
+**Runtime**
+
+4. [Runtime issues](#4-runtime-issues)
+   - [4.1 Understanding Ballerina errors and panics](#41-understanding-ballerina-errors-and-panics)
+     - [4.1.1 Errors vs. panics](#411-errors-vs-panics)
+     - [4.1.2 Reading error messages and stack traces](#412-reading-error-messages-and-stack-traces)
+   - [4.2 Ballerina core runtime errors](#42-ballerina-core-runtime-errors)
+   - [4.3 Strand dump tool](#43-strand-dump-tool)
+
+**Libraries, connectors, and security**
+
+5. [Library and connector issues](#5-library-and-connector-issues)
+   - [5.1 HTTP issues](#51-http-issues)
+     - [5.1.1 Enabling HTTP trace logs](#511-enabling-http-trace-logs)
+     - [5.1.2 Enabling HTTP access logs](#512-enabling-http-access-logs)
+     - [5.1.3 HTTP client errors](#513-http-client-errors)
+     - [5.1.4 HTTP listener and service errors](#514-http-listener-and-service-errors)
+     - [5.1.5 HTTP configuration reference](#515-http-configuration-reference)
+   - [5.2 SQL and database issues](#52-sql-and-database-issues)
+     - [5.2.1 Connection issues](#521-connection-issues)
+     - [5.2.2 Query errors](#522-query-errors)
+     - [5.2.3 Transaction issues](#523-transaction-issues)
+   - [5.3 GraphQL issues](#53-graphql-issues)
+     - [5.3.1 Error types](#531-error-types)
+     - [5.3.2 Service-side: resolver errors](#532-service-side-resolver-errors)
+     - [5.3.3 Common GraphQL issues](#533-common-graphql-issues)
+     - [5.3.4 Compiler plugin validations](#534-compiler-plugin-validations)
+   - [5.4 Messaging connector issues](#54-messaging-connector-issues)
+     - [5.4.1 Kafka](#541-kafka)
+     - [5.4.2 RabbitMQ](#542-rabbitmq)
+     - [5.4.3 NATS](#543-nats)
+     - [5.4.4 JMS](#544-jms)
+   - [5.5 gRPC issues](#55-grpc-issues)
+   - [5.6 WebSocket issues](#56-websocket-issues)
+   - [5.7 General connector error patterns](#57-general-connector-error-patterns)
+   - [5.8 Data binding issues (jsondata and xmldata)](#58-data-binding-issues-jsondata-and-xmldata)
+   - [5.9 Security and authentication issues](#59-security-and-authentication-issues)
+     - [5.9.1 TLS/SSL and certificate issues](#591-tlsssl-and-certificate-issues)
+     - [5.9.2 OAuth2, JWT, and token issues](#592-oauth2-jwt-and-token-issues)
+
+**Performance and observability**
+
+6. [Performance and tuning](#6-performance-and-tuning)
+   - [6.1 Identifying the type of performance issue](#61-identifying-the-type-of-performance-issue)
+   - [6.2 HTTP connection pool tuning](#62-http-connection-pool-tuning)
+   - [6.3 SQL connection pool tuning](#63-sql-connection-pool-tuning)
+   - [6.4 Runtime thread pool tuning](#64-runtime-thread-pool-tuning)
+   - [6.5 Concurrency and isolation issues](#65-concurrency-and-isolation-issues)
+   - [6.6 Memory issues](#66-memory-issues)
+   - [6.7 Observability issues](#67-observability-issues)
+
+**Packages and dependencies**
+
+7. [Package and dependency issues](#7-package-and-dependency-issues)
+   - [7.1 Package resolution failures](#71-package-resolution-failures)
+   - [7.2 Version conflicts](#72-version-conflicts)
+   - [7.3 Network, firewall, and proxy issues](#73-network-firewall-and-proxy-issues)
+   - [7.4 Offline builds](#74-offline-builds)
+   - [7.5 Private packages](#75-private-packages)
+
+**Tooling**
+
+8. [Tooling issues](#8-tooling-issues)
+   - [8.1 bal CLI issues](#81-bal-cli-issues)
+   - [8.2 OpenAPI tool issues](#82-openapi-tool-issues)
+   - [8.3 gRPC tool issues](#83-grpc-tool-issues)
+   - [8.4 Test framework issues](#84-test-framework-issues)
+   - [8.5 Persist tool issues](#85-persist-tool-issues)
+   - [8.6 Formatter issues](#86-formatter-issues)
+
+**IDE and language server**
+
+9. [IDE and VS Code issues](#9-ide-and-vs-code-issues)
+    - [9.1 Identifying language server issues](#91-identifying-language-server-issues)
+    - [9.2 Collecting language server logs](#92-collecting-language-server-logs)
+    - [9.3 Common language server problems](#93-common-language-server-problems)
+    - [9.4 Extension configuration](#94-extension-configuration)
+
+**Deployment**
+
+10. [Deployment issues](#10-deployment-issues)
+    - [10.1 Docker deployment issues](#101-docker-deployment-issues)
+    - [10.2 Kubernetes deployment issues](#102-kubernetes-deployment-issues)
+    - [10.3 GraalVM native image issues](#103-graalvm-native-image-issues)
+    - [10.4 Choreo deployment issues](#104-choreo-deployment-issues)
+    - [10.5 Configuration in deployed environments](#105-configuration-in-deployed-environments)
+
+**Appendix**
+
+11. [Glossary](#11-glossary)
+12. [References](#12-references)
+
+---
+
+## Quick fixes cheat sheet
+
+For experienced troubleshooters — the most common error messages and their one-line fixes.
+
+| Error / Symptom                                            | One-Line Fix                                                                                  |
+| :--------------------------------------------------------- | :-------------------------------------------------------------------------------------------- |
+| `incompatible types: expected 'X', found 'Y'`              | Check the variable type or function return type at the indicated line.                        |
+| `undefined symbol 'X'`                                     | Add `import ballerina/X;` or fix the identifier typo.                                          |
+| `Oh no, something really went wrong`                       | Compiler crash — collect MRE + stack trace.                                                   |
+| `No suitable driver found for jdbc:...`                    | Add `import ballerinax/mysql.driver as _;` (or appropriate driver).                            |
+| `Connection refused: host/IP:port`                         | Verify that the target service is running and the URL/port is correct.                        |
+| `{ballerina/http}MaximumWaitTimeExceededError`             | Increase `maxActiveConnections` in `poolConfig` or check if the upstream is the bottleneck.      |
+| `{ballerina/sql}NoRowsError`                               | Handle `NoRowsError` as a valid case — `queryRow()` matched no rows.                           |
+| `{ballerina}TypeCastError`                                 | Replace unsafe `<T>val` with `if val is T { ... }` or `value:ensureType()`.                    |
+| `SSL/TLS handshake failure` / `PKIX path building failed`  | Configure `secureSocket` in the client config or import the CA cert into the JRE trust store.  |
+| `cannot resolve module` / `package not found`              | Delete `Dependencies.toml` and rebuild; check network access to Ballerina Central.             |
+| `bal: command not found`                                   | Add `<ballerina_home>/bin` to PATH; re-source the shell profile.                               |
+| Config values not loaded / using defaults                  | Ensure `Config.toml` is in the working directory; check `[org.package.module]` key paths.      |
+| `OutOfMemoryError`                                         | Increase the JVM heap: `export JAVA_OPTS="-Xmx2g"`.                                            |
+| Service starts but unreachable externally                  | Change the listener host to `"0.0.0.0"` instead of `"localhost"`.                              |
+| `invalid access of mutable storage in 'isolated' function` | Wrap the access in a `lock` block or restructure to avoid shared mutable state.                |
 
 ### Top 5 common configuration mistakes
 
@@ -209,19 +183,19 @@ Before beginning a deeper diagnosis, rule out these common misconfigurations:
 
 | #   | Mistake                                       | What Goes Wrong                                                                                                                           | Fix                                                                                                                                      |
 | :-- | :-------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | Confusing `Ballerina.toml` with `Config.toml` | Build config (package metadata, dependencies) placed in `Config.toml`, or runtime config (configurable values) placed in `Ballerina.toml` | `Ballerina.toml` = build-time package config. `Config.toml` = runtime configurable values.                                               |
-| 2   | Wrong module path in `Config.toml`            | Configurable value not picked up; uses default instead                                                                                    | Keys must match `[org.package.module]` hierarchy. For the default module, use `[org.package]`.                                           |
-| 3   | Missing SQL driver import                     | `No suitable driver found for jdbc:...` or generic init failure                                                                           | Add `import ballerinax/mysql.driver as _;` (or the appropriate driver). See [Section 6.2.1 — Connection Issues](#621-connection-issues). |
-| 4   | `Config.toml` not in the working directory    | Configurable values use defaults silently; no error raised                                                                                | Ensure `Config.toml` is in the directory where `bal run` is executed. In Docker, mount it to `/home/ballerina/`.                         |
-| 5   | TOML syntax errors                            | Parse error on startup, or values silently wrong                                                                                          | Use `=` for key-value pairs (not `:`). Table headers use `[section]`. Strings must be quoted. Validate with a TOML linter.               |
+| 1   | Confusing `Ballerina.toml` with `Config.toml` | Build config (package metadata, dependencies) placed in `Config.toml`, or runtime config (configurable values) placed in `Ballerina.toml`. | `Ballerina.toml` = build-time package config. `Config.toml` = runtime configurable values.                                               |
+| 2   | Wrong module path in `Config.toml`            | Configurable value not picked up; uses default instead.                                                                                    | Keys must match `[org.package.module]` hierarchy. For the default module, use `[org.package]`.                                           |
+| 3   | Missing SQL driver import                     | `No suitable driver found for jdbc:...` or generic init failure.                                                                           | Add `import ballerinax/mysql.driver as _;` (or the appropriate driver). See [Section 5.2.1 — Connection issues](#521-connection-issues). |
+| 4   | `Config.toml` not in the working directory    | Configurable values use defaults silently; no error raised.                                                                                | Ensure `Config.toml` is in the directory where `bal run` is executed. In Docker, mount it to `/home/ballerina/`.                         |
+| 5   | TOML syntax errors                            | Parse error on startup, or values silently wrong.                                                                                          | Use `=` for key-value pairs (not `:`). Table headers use `[section]`. Strings must be quoted. Validate with a TOML linter.               |
 
 ---
 
-## 2. Setting Up a Reproduction Environment
+## 1. Setting up a reproduction environment
 
 Reproducing the issue locally is the single most important step. Do not guess or form conclusions without a reproduction.
 
-### 2.1 Matching the Ballerina Version
+### 1.1 Matching the Ballerina version
 
 Ballerina uses semantic versioning in the format `YYYY.minor.patch` (e.g., `2201.10.2`). Always match the **exact patch version**.
 
@@ -241,7 +215,7 @@ bal --version
 
 > **Tip:** Distributions are stored at `$BALLERINA_HOME/distributions/`. If disk space is a concern, use `bal dist remove <version>` to clean up old distributions.
 
-### 2.2 Matching Library Versions
+### 1.2 Matching library versions
 
 Ballerina resolves dependencies to the latest compatible version by default; similar to Maven's `RELEASE` ranges. To reproduce exactly what the customer is running:
 
@@ -267,7 +241,7 @@ name = "http"
 version = "2.10.2"
 ```
 
-### 2.3 Enabling Debug Logging
+### 1.3 Enabling debug logging
 
 Before running the reproduction, configure logging to give you maximum visibility. Add to `Config.toml` in the project root:
 
@@ -295,7 +269,7 @@ Log output goes to **stderr** in structured format by default in Swan Lake. Redi
 bal run . 2> app.log
 ```
 
-### 2.4 Handling Network and Proxy Issues
+### 1.4 Handling network and proxy issues
 
 If the build fails before you even start (e.g., cannot pull dependencies), check network access to [Ballerina Central](https://central.ballerina.io):
 
@@ -304,15 +278,15 @@ If the build fails before you even start (e.g., cannot pull dependencies), check
 curl -I https://api.central.ballerina.io/2.0/registry/packages
 ```
 
-If a proxy is required, see [Section 8.3 — Network, Firewall, and Proxy Issues](#83-network-firewall-and-proxy-issues) for full proxy configuration including `Settings.toml` setup, required domains, and certificate handling.
+If a proxy is required, see [Section 7.3 — Network, Firewall, and Proxy Issues](#73-network-firewall-and-proxy-issues) for full proxy configuration including `Settings.toml` setup, required domains, and certificate handling.
 
-> For offline builds (no internet access), see [Section 8.4 — Offline Builds](#84-offline-builds).
+> For offline builds (no internet access), see [Section 7.4 — Offline Builds](#74-offline-builds).
 
 ---
 
-## 3. Triage Overview
+## 2. Triage overview
 
-### 3.1 Issue Category Decision Tree
+### 2.1 Issue category decision tree
 
 Use this flowchart to quickly route an issue to the right section of this guide.
 
@@ -320,57 +294,57 @@ Use this flowchart to quickly route an issue to the right section of this guide.
 flowchart TD
     A([Issue Reported]) --> B[Reproduce the issue]
     B --> C{Reproducible?}
-    C -->|No| D[Gather more info\nSee Section 1]
+    C -->|No| D[Gather more info\nSee Introduction]
     D --> B
     C -->|Yes| E{When does the\nerror occur?}
 
-    E -->|During bal build\nor bal run compile step| F[4. Compiler & Language]
+    E -->|During bal build\nor bal run compile step| F[3. Compiler & Language]
     E -->|After program starts,\nduring execution| G{Error origin?}
-    E -->|Slow response,\nhigh memory/CPU| H[7. Performance & Tuning]
-    E -->|Cannot resolve\ndependencies| I[8. Package & Dependency]
-    E -->|During bal tool\ncommand e.g. openapi, grpc| J[9. Tooling]
-    E -->|In VS Code editor\nor Language Server| K[10. IDE / VS Code]
-    E -->|Only in Docker\nor Kubernetes| L[11. Deployment]
+    E -->|Slow response,\nhigh memory/CPU| H[6. Performance & Tuning]
+    E -->|Cannot resolve\ndependencies| I[7. Package & Dependency]
+    E -->|During bal tool\ncommand e.g. openapi, grpc| J[8. Tooling]
+    E -->|In VS Code editor\nor Language Server| K[9. IDE / VS Code]
+    E -->|Only in Docker\nor Kubernetes| L[10. Deployment]
 
     F --> F1{Error type?}
-    F1 -->|Diagnostic\nerror message| F2[4.1 Compiler Error]
-    F1 -->|JVM crash\nstack trace| F3[4.2 Compiler Crash]
-    F1 -->|Plugin-related\nstack trace| F4[4.3 Plugin Error]
+    F1 -->|Diagnostic\nerror message| F2[3.1 Compiler Error]
+    F1 -->|JVM crash\nstack trace| F3[3.2 Compiler Crash]
+    F1 -->|Plugin-related\nstack trace| F4[3.3 Plugin Error]
 
-    G -->|ballerina core\nor nil/type panic| G2[5. Runtime Issues]
-    G -->|HTTP client\nor service| G3[6.1 HTTP]
-    G -->|SQL or database| G4[6.2 SQL]
-    G -->|GraphQL| G5[6.3 GraphQL]
-    G -->|Kafka, RabbitMQ,\nmessaging| G6[6.4 Messaging]
-    G -->|gRPC| G7[6.5 gRPC]
-    G -->|Other connector| G8[6.7 General Connector]
+    G -->|ballerina core\nor nil/type panic| G2[4. Runtime Issues]
+    G -->|HTTP client\nor service| G3[5.1 HTTP]
+    G -->|SQL or database| G4[5.2 SQL]
+    G -->|GraphQL| G5[5.3 GraphQL]
+    G -->|Kafka, RabbitMQ,\nmessaging| G6[5.4 Messaging]
+    G -->|gRPC| G7[5.5 gRPC]
+    G -->|Other connector| G8[5.7 General Connector]
 ```
 
-### 3.2 Category Quick Reference
+### 2.2 Category quick reference
 
 | Category                  | Signature Symptoms                                                  | Guide Section                                        |
 | :------------------------ | :------------------------------------------------------------------ | :--------------------------------------------------- |
-| **Compiler Error**        | `ERROR [file.bal:(line,col)]` diagnostic message                    | [4.1](#41-compiler-errors)                           |
-| **Compiler Crash**        | `"Oh no, something really went wrong"` + JVM stack trace            | [4.2](#42-compiler-crashes)                          |
-| **Runtime Panic**         | `error: {ballerina}...` + Ballerina stack trace at runtime          | [5.1](#51-understanding-ballerina-errors-and-panics) |
-| **HTTP Client Issue**     | `{ballerina/http}Client...Error`                                    | [6.1.3](#613-http-client-errors)                     |
-| **HTTP Service Issue**    | Listener fails to start, or 4xx/5xx returned incorrectly            | [6.1.4](#614-http-listener--service-errors)          |
-| **SQL Issue**             | `{ballerina/sql}DatabaseError` or `NoRowsError`                     | [6.2](#62-sql--database-issues)                      |
-| **GraphQL Issue**         | Resolver errors, schema validation, subscription failures           | [6.3](#63-graphql-issues)                            |
-| **Messaging Issue**       | Connector-specific error, connection refused to broker              | [6.4](#64-messaging-connector-issues)                |
-| **Performance**           | High latency, thread pool exhaustion, OOM                           | [7](#7-performance-and-tuning)                       |
-| **Dependency Resolution** | `cannot resolve module`, `package not found`                        | [8](#8-package-and-dependency-issues)                |
-| **Tooling**               | `bal openapi`, `bal grpc`, `bal test` failure                       | [9](#9-tooling-issues)                               |
-| **IDE / VS Code**         | Errors only in editor, Language Server crashes, IntelliSense broken | [10](#10-ide-and-vs-code-issues)                     |
-| **Deployment**            | Works locally, fails in Docker/K8s                                  | [11](#11-deployment-issues)                          |
+| **Compiler Error**        | `ERROR [file.bal:(line,col)]` diagnostic message                    | [3.1](#31-compiler-errors)                           |
+| **Compiler Crash**        | `"Oh no, something really went wrong"` + JVM stack trace            | [3.2](#32-compiler-crashes)                          |
+| **Runtime Panic**         | `error: {ballerina}...` + Ballerina stack trace at runtime          | [4.1](#41-understanding-ballerina-errors-and-panics) |
+| **HTTP Client Issue**     | `{ballerina/http}Client...Error`                                    | [5.1.3](#513-http-client-errors)                     |
+| **HTTP Service Issue**    | Listener fails to start, or 4xx/5xx returned incorrectly            | [5.1.4](#514-http-listener--service-errors)          |
+| **SQL Issue**             | `{ballerina/sql}DatabaseError` or `NoRowsError`                     | [5.2](#52-sql--database-issues)                      |
+| **GraphQL Issue**         | Resolver errors, schema validation, subscription failures           | [5.3](#53-graphql-issues)                            |
+| **Messaging Issue**       | Connector-specific error, connection refused to broker              | [5.4](#54-messaging-connector-issues)                |
+| **Performance**           | High latency, thread pool exhaustion, OOM                           | [6](#6-performance-and-tuning)                       |
+| **Dependency Resolution** | `cannot resolve module`, `package not found`                        | [7](#7-package-and-dependency-issues)                |
+| **Tooling**               | `bal openapi`, `bal grpc`, `bal test` failure                       | [8](#8-tooling-issues)                               |
+| **IDE / VS Code**         | Errors only in editor, Language Server crashes, IntelliSense broken | [9](#9-ide-and-vs-code-issues)                       |
+| **Deployment**            | Works locally, fails in Docker/K8s                                  | [10](#10-deployment-issues)                          |
 
 ---
 
-## 4. Compiler and Language Issues
+## 3. Compiler and language issues
 
 Compilation issues occur before the program starts. They are almost always deterministic — the same code always produces the same error.
 
-### 4.1 Compiler Errors
+### 3.1 Compiler errors
 
 The most common compilation issue. The compiler emits structured diagnostic messages pointing to the exact file and line.
 
@@ -406,7 +380,7 @@ error: compilation contains errors
 
 > **Note:** Ballerina's `isolated` enforces concurrency safety at compile time rather than runtime. A `lock { ... }` block provides exclusive access to shared mutable state — similar to a `synchronized` block in Java.
 
-### 4.2 Compiler Crashes
+### 3.2 Compiler crashes
 
 A compiler crash is a bug in the compiler, not in the customer's code. It produces a distinct crash message:
 
@@ -439,7 +413,7 @@ Followed by a Java stack trace.
 - There may be **workarounds** (e.g., restructuring the code to avoid the crashing path). Seek expert advice.
 - Always collect: the MRE (minimal code that triggers the crash) + the full stack trace.
 
-### 4.3 Compiler Plugin Errors
+### 3.3 Compiler plugin errors
 
 Compiler plugins are extensions run during compilation, shipped with standard and extended libraries. They can emit their own diagnostic errors (not crashes) that look like regular compiler errors but originate from the plugin.
 
@@ -463,7 +437,7 @@ ERROR [service.bal:(5:1,5:1)] remote methods are not allowed in HTTP service
 | `ballerina/persist` | Validates entity definitions                                                     |
 | `ballerinax/kafka`  | Validates listener configurations                                                |
 
-### 4.4 Java-Level Errors During Compilation
+### 3.4 Java-level errors during compilation
 
 Occasionally, compilation fails with a Java exception rather than a Ballerina diagnostic message. These look like standard Java exceptions in the build output — `ClassCastException`, `ClassNotFoundException`, `NoClassDefFoundError`, `NoSuchMethodError`, etc. — and indicate a bug in the compiler or a compiler plugin, or a dependency version mismatch.
 
@@ -496,21 +470,21 @@ java.lang.NoClassDefFoundError: io/ballerina/stdlib/http/compiler/Constants
 
 1. **Check the stack trace origin.** If it comes from `io.ballerina.stdlib.*` or `io.ballerina.lib.*`, it is a compiler plugin bug. If from `org.wso2.ballerinalang.*` or `io.ballerina.compiler.*`, it is a core compiler bug.
 2. **Check for version mismatches.** `ClassNotFoundException` and `NoClassDefFoundError` often indicate that two packages in the project depend on different (incompatible) versions of the same library. Check `Dependencies.toml` for version conflicts and try deleting it to force a fresh resolution.
-3. **Check for newer releases.** The fix may already be in a newer Ballerina distribution or library version. Check release notes (see [Section 12.4 — Checking for Existing Fixes](#124-checking-for-existing-fixes)).
+3. **Check for newer releases.** The fix may already be in a newer Ballerina distribution or library version. Check release notes.
 4. **Workaround:** If the error is triggered by specific code patterns, try restructuring the code to avoid the crashing path. For example, if a compiler plugin crashes on a certain service definition, try simplifying the service temporarily.
-5. **Escalate** with the full stack trace, `Ballerina.toml`, and `Dependencies.toml`. See [Section 12 — Escalation Process](#12-escalation-process).
+5. **Report the issue** with the full stack trace, `Ballerina.toml`, and `Dependencies.toml`.
 
 ---
 
-## 5. Runtime Issues
+## 4. Runtime issues
 
-Runtime issues occur after compilation succeeds, when the program is running. This section covers **core runtime** errors and panics. For library-specific runtime errors (HTTP, SQL, GraphQL, etc.), see [Section 6 — Library and Connector Issues](#6-library-and-connector-issues).
+Runtime issues occur after compilation succeeds, when the program is running. This section covers **core runtime** errors and panics. For library-specific runtime errors (HTTP, SQL, GraphQL, etc.), see [Section 5 — Library and Connector Issues](#5-library-and-connector-issues).
 
-### 5.1 Understanding Ballerina Errors and Panics
+### 4.1 Understanding Ballerina errors and panics
 
 Ballerina distinguishes between **errors** (handled, part of normal flow) and **panics** (unhandled, terminate the program). Understanding this distinction is critical to reading stack traces.
 
-#### 5.1.1 Errors vs. Panics
+#### 4.1.1 Errors vs. panics
 
 |                         | Error                                                              | Panic                                                                  |
 | :---------------------- | :----------------------------------------------------------------- | :--------------------------------------------------------------------- |
@@ -520,7 +494,7 @@ Ballerina distinguishes between **errors** (handled, part of normal flow) and **
 | **Terminates program?** | No                                                                 | Yes (unless `trap`ped)                                                 |
 | **In stack trace?**     | Stack trace may be attached to the error value                     | Always printed to stderr                                               |
 
-#### 5.1.2 Reading Error Messages and Stack Traces
+#### 4.1.2 Reading error messages and stack traces
 
 **Error format:**
 
@@ -552,7 +526,7 @@ The `{org/module}` prefix tells you which library the error originated from:
 
 **Stack trace note:** Ballerina stack traces may include both Ballerina frames (`at myorg/mypackage:main(main.bal:15)`) and Java frames from the runtime internals. Focus on the Ballerina frames — they tell you what the customer's code was doing.
 
-### 5.2 Ballerina Core Runtime Errors
+### 4.2 Ballerina core runtime errors
 
 These originate from the core Ballerina runtime (`{ballerina}` prefix).
 
@@ -595,9 +569,9 @@ error: {ballerina}TypeCastError {"message":"incompatible types: 'string' cannot 
 | `KeyNotFound`            | Use `map.hasKey(key)` before access, or use optional access (`map[key]` returns `()` for missing keys on `map<T?>`) |
 | `JSONOperationError`     | Check JSON structure before accessing nested keys; use optional access (`json?.key`)                                |
 
-If the panic comes from the **Ballerina runtime itself** (no customer code in the stack trace), this is a product bug — escalate per [Section 12](#12-escalation-process).
+If the panic comes from the **Ballerina runtime itself** (no customer code in the stack trace), this is a product bug.
 
-### 5.3 Strand Dump Tool
+### 4.3 Strand dump tool
 
 For deadlocks, hanging programs, or diagnosing which strands are blocked and why, use the Ballerina strand dump tool.
 
@@ -660,15 +634,15 @@ Strand Group: [ID=1, state=RUNNABLE, strands=2]
 
 ---
 
-## 6. Library and Connector Issues
+## 5. Library and connector issues
 
-This section covers runtime errors from specific Ballerina standard libraries and extended library connectors. For core runtime errors (`{ballerina}` prefix), see [Section 5 — Runtime Issues](#5-runtime-issues).
+This section covers runtime errors from specific Ballerina standard libraries and extended library connectors. For core runtime errors (`{ballerina}` prefix), see [Section 4 — Runtime issues](#4-runtime-issues).
 
-### 6.1 HTTP Issues
+### 5.1 HTTP issues
 
 HTTP is the most common source of runtime issues. This section covers the diagnostic tools and common error patterns.
 
-#### 6.1.1 Enabling HTTP Trace Logs
+#### 5.1.1 Enabling HTTP trace logs
 
 HTTP trace logs capture the complete HTTP request and response. Headers, body, timing. This is the first thing to enable for any HTTP-related issue.
 
@@ -704,7 +678,7 @@ bal run -- -Cballerina.http.traceLogConsole=true
 
 > **Tip:** If you see `downstream` logs but no `upstream` logs, the request is reaching the service but the service is not calling the backend. If you see neither, the service may not be starting.
 
-#### 6.1.2 Enabling HTTP Access Logs
+#### 5.1.2 Enabling HTTP access logs
 
 Access logs record summarized request/response metadata (method, path, status, timing) — similar to Nginx/Apache access logs. Less verbose than trace logs, but useful for tracking error patterns over time.
 
@@ -733,7 +707,7 @@ path = "access.log"   # also write to file (optional — omit to log to console 
 - **Access logs** — lightweight, always-on summary. Good for spotting error rate patterns (e.g., spike in 5xx), slow endpoints, and traffic volume. Safe for production.
 - **Trace logs** — full request/response capture including headers and body. Use for debugging specific issues. **Not recommended for production** due to volume and potential exposure of sensitive data (auth headers, request bodies).
 
-#### 6.1.3 HTTP Client Errors
+#### 5.1.3 HTTP client errors
 
 HTTP client errors occur when the Ballerina code makes an outbound HTTP request.
 
@@ -802,7 +776,7 @@ if result is http:ClientRequestError {
 | `All retry attempts failed`        | Retry policy configured but all attempts failed               | Check why individual attempts fail                             | Check the upstream service or adjust retry policy      |
 | `Maximum wait time exceeded`       | HTTP connection pool exhausted; requests queue up             | Enable DEBUG logs; look for pool exhaustion messages           | Increase `maxActiveConnections` in `poolConfig`        |
 
-#### 6.1.4 HTTP Listener / Service Errors
+#### 5.1.4 HTTP listener and service errors
 
 These occur when Ballerina is running a service (acting as the server).
 
@@ -865,13 +839,13 @@ A `500 Internal Server Error` from a Ballerina service usually means a panic or 
 2. Lines containing `at myorg/...` in the stderr output
 3. DEBUG logs showing the error before the 500 was returned
 
-#### 6.1.5 HTTP Configuration Reference
+#### 5.1.5 HTTP configuration reference
 
 Commonly adjusted HTTP client configuration options:
 
 ```ballerina
 // http:ClientConfiguration key fields
-http:Client cl = check new ("http://api.example.com", {
+http:Client cl = check new ("http://api.internal", {
     timeout: 30,                    // request timeout in seconds (default: 60)
     followRedirects: {              // redirect handling
         enabled: true,
@@ -895,9 +869,9 @@ http:Client cl = check new ("http://api.example.com", {
 });
 ```
 
-### 6.2 SQL / Database Issues
+### 5.2 SQL and database issues
 
-#### 6.2.1 Connection Issues
+#### 5.2.1 Connection issues
 
 The most common SQL issue is failing to connect.
 
@@ -918,7 +892,7 @@ error: {ballerina/sql}DatabaseError Communications link failure: ...
    import ballerinax/postgresql.driver as _; // PostgreSQL
    ```
    Without this import, you may see an error like `No suitable driver found for jdbc:...` or a generic initialization failure.
-4. Check if the connection pool is exhausted (see [Section 7.3 — SQL Connection Pool Tuning](#73-sql-connection-pool-tuning))
+4. Check if the connection pool is exhausted (see [Section 6.3 — SQL Connection Pool Tuning](#63-sql-connection-pool-tuning))
 
 **SQL client initialization:**
 
@@ -937,7 +911,7 @@ mysql:Client dbClient = check new (
 );
 ```
 
-#### 6.2.2 Query Errors
+#### 5.2.2 Query errors
 
 **Error hierarchy:**
 
@@ -979,7 +953,7 @@ if result is sql:NoRowsError {
 | `Connection pool exhausted`     | —                   | All connections in use                    | Increase `maxOpenConnections` or find connection leaks               |
 | `No suitable driver found`      | —                   | Driver not imported                       | Add `import ballerinax/mysql.driver as _;`                           |
 
-#### 6.2.3 Transaction Issues
+#### 5.2.3 Transaction issues
 
 Ballerina supports transactions with the `transaction` block:
 
@@ -999,7 +973,7 @@ transaction {
 - **Implicit rollback:** An error inside the transaction block causes automatic rollback — check the `on fail` clause
 - **Distributed transaction issues:** Ballerina transactions are single-datasource by default; cross-database transactions require explicit coordination
 
-### 6.3 GraphQL Issues
+### 5.3 GraphQL issues
 
 GraphQL in Ballerina runs on top of `ballerina/http`. Both HTTP trace logs and GraphQL-specific diagnostics are useful here.
 
@@ -1127,11 +1101,11 @@ kafka:ConsumerConfiguration consumerConfig = {
 
 | Error / Symptom                     | Likely Cause                                                                                                      | Fix                                                                                                                     |
 | :---------------------------------- | :---------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------- |
-| `Connection refused`                | RabbitMQ not running or wrong host/port (default: 5672)                                                           | Verify host/port; check RabbitMQ management UI                                                                          |
-| `ACCESS_REFUSED`                    | Wrong username/password or missing virtual host permissions                                                       | Check credentials and vhost configuration                                                                               |
-| `NOT_FOUND` on queue/exchange       | Queue or exchange doesn't exist                                                                                   | Declare the queue with `queueDeclare()` before consuming/publishing, or create it via the RabbitMQ management UI        |
-| Messages not delivered              | Wrong routing key or exchange type                                                                                | Verify exchange type and routing key match between producer and consumer                                                |
-| Messages published but not consumed | Exchange/queue binding mismatch — exchange type, routing key, or arguments differ between declaration and binding | Ensure the `queueBind()` call uses the exact same exchange name, routing key, and arguments as the exchange declaration |
+| `Connection refused`                | RabbitMQ not running or wrong host/port (default: 5672)                                                           | Verify the host/port; check the RabbitMQ management UI.                                                                  |
+| `ACCESS_REFUSED`                    | Wrong username/password or missing virtual host permissions                                                       | Check credentials and vhost configuration.                                                                              |
+| `NOT_FOUND` on queue/exchange       | Queue or exchange doesn't exist                                                                                   | Declare the queue with `queueDeclare()` before consuming/publishing, or create it via the RabbitMQ management UI.        |
+| Messages not delivered              | Wrong routing key or exchange type                                                                                | Verify the exchange type and routing key match between the producer and consumer.                                        |
+| Messages published but not consumed | Exchange/queue binding mismatch — exchange type, routing key, or arguments differ between declaration and binding | Ensure the `queueBind()` call uses the exact same exchange name, routing key, and arguments as the exchange declaration. |
 
 > **Important:** In Ballerina's RabbitMQ client, queues must be declared before consuming. Use `channel->queueDeclare({queueName: "my-queue"})` or ensure the queue already exists on the broker. Attempting to consume from a non-existent queue results in a `NOT_FOUND` channel error that closes the channel.
 
@@ -1179,7 +1153,7 @@ kafka:ConsumerConfiguration consumerConfig = {
 
 > **Important:** JMS in Ballerina uses Java interop under the hood. JMS provider JARs must be declared in `Ballerina.toml` under `[[platform.java17.dependency]]` (or the appropriate Java version).
 
-### 6.5 gRPC Issues
+### 6.5 gRPC issues
 
 **Common gRPC error patterns:**
 
@@ -1198,7 +1172,7 @@ bal grpc --input service.proto --output ./generated --mode client
 bal grpc --input service.proto --output ./generated --mode service
 ```
 
-### 6.6 WebSocket Issues
+### 6.6 WebSocket issues
 
 | Symptom                                | Likely Cause                                    | Fix                                                                |
 | :------------------------------------- | :---------------------------------------------- | :----------------------------------------------------------------- |
@@ -1207,7 +1181,7 @@ bal grpc --input service.proto --output ./generated --mode service
 | Messages not received                  | Frame size limit exceeded                       | Check `maxFrameSize` in listener config                            |
 | `101 Switching Protocols` not received | Proxy or load balancer stripping Upgrade header | Configure proxy to allow WebSocket upgrades                        |
 
-### 6.7 General Connector Error Patterns
+### 6.7 General connector error patterns
 
 For any `ballerinax/*` connector (Salesforce, GitHub, ServiceNow, Twilio, etc.), errors typically follow this pattern:
 
@@ -1229,8 +1203,8 @@ flowchart TD
     B -->|Yes - 4xx| C[Authentication or request issue\nCheck API key, permissions, request params]
     B -->|Yes - 5xx| D[Upstream API issue\nCheck API status page; retry later]
     B -->|No| E{Connection error?}
-    E -->|Connection refused\nor timeout| F[Network issue\nSee Section 6.1.3]
-    E -->|Other| G[Enable DEBUG logs\nand HTTP trace logs\nSee Sections 2.3 and 6.1.1]
+    E -->|Connection refused\nor timeout| F[Network issue\nSee Section 5.1.3]
+    E -->|Other| G[Enable DEBUG logs\nand HTTP trace logs\nSee Sections 1.3 and 5.1.1]
 ```
 
 **General connector checklist:**
@@ -1241,7 +1215,7 @@ flowchart TD
 4. Verify the API endpoint URL and version
 5. Check if the connector version supports the API version being used
 
-### 6.8 Data Binding Issues (jsondata / xmldata)
+### 6.8 Data binding issues (jsondata and xmldata)
 
 The `ballerina/data.jsondata` and `ballerina/data.xmldata` modules handle conversion between Ballerina types and JSON/XML. These are used implicitly by HTTP payload binding and explicitly when calling `jsondata:parseString()`, `jsondata:parseAsType()`, etc.
 
@@ -1259,7 +1233,7 @@ The `ballerina/data.jsondata` and `ballerina/data.xmldata` modules handle conver
 
 **Diagnosis approach:**
 
-1. Enable HTTP trace logs ([Section 6.1.1](#611-enabling-http-trace-logs)) to see the actual JSON/XML payload
+1. Enable HTTP trace logs ([Section 5.1.1](#511-enabling-http-trace-logs)) to see the actual JSON/XML payload
 2. Compare the payload structure against the target Ballerina record type — check for field name mismatches, missing fields, and type mismatches
 3. For complex nested types, try binding to `json` or `xml` first to confirm the raw payload is valid, then narrow down to the specific record type
 
@@ -1288,17 +1262,17 @@ User user = check jsondata:parseString(jsonStr, {
 });
 ```
 
-### 6.9 Security and Authentication Issues
+### 6.9 Security and authentication issues
 
 This section covers common authentication, authorization, and TLS/SSL issues in Ballerina services and clients.
 
-#### 6.9.1 TLS/SSL and Certificate Issues
+#### 6.9.1 TLS/SSL and certificate issues
 
 **Common TLS errors:**
 
 | Error / Symptom                                               | Likely Cause                                                     | Fix                                                                                                                                                                                                     |
 | :------------------------------------------------------------ | :--------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `PKIX path building failed`                                   | Server certificate not trusted by the JVM trust store            | Import the CA certificate into the Ballerina JRE trust store (see [Section 8.3 — Network, Firewall, and Proxy Issues](#83-network-firewall-and-proxy-issues)) or configure `secureSocket` on the client |
+| `PKIX path building failed`                                   | Server certificate not trusted by the JVM trust store            | Import the CA certificate into the Ballerina JRE trust store (see [Section 7.3 — Network, Firewall, and Proxy Issues](#73-network-firewall-and-proxy-issues)) or configure `secureSocket` on the client |
 | `SSL/TLS handshake failure`                                   | Certificate mismatch, expired cert, or protocol version mismatch | Check cert validity with `openssl s_client -connect host:port`; verify TLS version compatibility                                                                                                        |
 | `unable to find valid certification path to requested target` | Self-signed certificate or missing intermediate CA               | Add the full certificate chain to the trust store or `secureSocket.cert`                                                                                                                                |
 | Client certificate rejected by server (mTLS)                  | Client cert not configured or not trusted by server              | Configure `secureSocket.key` on the client; ensure the server's trust store includes the client CA                                                                                                      |
@@ -1307,14 +1281,14 @@ This section covers common authentication, authorization, and TLS/SSL issues in 
 
 ```ballerina
 // One-way TLS (client verifies server)
-http:Client secureClient = check new ("https://api.example.com", {
+http:Client secureClient = check new ("https://api.internal", {
     secureSocket: {
         cert: "/path/to/server-cert.pem"   // trust store: server's CA cert
     }
 });
 
 // Mutual TLS (mTLS — both sides verify)
-http:Client mtlsClient = check new ("https://api.example.com", {
+http:Client mtlsClient = check new ("https://api.internal", {
     secureSocket: {
         cert: "/path/to/server-cert.pem",       // trust the server
         key: {
@@ -1346,7 +1320,7 @@ listener http:Listener secureListener = new (9443, {
 
 ```ballerina
 // KeyStore-based configuration (common in enterprise environments)
-http:Client client = check new ("https://api.example.com", {
+http:Client client = check new ("https://api.internal", {
     secureSocket: {
         cert: {
             path: "/path/to/truststore.p12",
@@ -1362,7 +1336,7 @@ http:Client client = check new ("https://api.example.com", {
 
 > **Tip:** When troubleshooting TLS issues, use `openssl s_client -connect host:port -showcerts` to inspect the certificate chain presented by the server. Compare it against what the client is configured to trust.
 
-#### 6.9.2 OAuth2 / JWT / Token Issues
+#### 6.9.2 OAuth2, JWT, and token issues
 
 **Common auth errors:**
 
@@ -1376,9 +1350,9 @@ http:Client client = check new ("https://api.example.com", {
 **OAuth2 client credentials grant (machine-to-machine):**
 
 ```ballerina
-http:Client apiClient = check new ("https://api.example.com", {
+http:Client apiClient = check new ("https://api.internal", {
     auth: {
-        tokenUrl: "https://auth.example.com/oauth2/token",
+        tokenUrl: "https://auth.internal/oauth2/token",
         clientId: "my-client-id",
         clientSecret: "my-client-secret",
         scopes: ["read", "write"]
@@ -1393,11 +1367,11 @@ listener http:Listener secureListener = new (9090, {
     auth: [
         {
             jwtValidatorConfig: {
-                issuer: "https://auth.example.com",
+                issuer: "https://auth.internal",
                 audience: "my-api",
                 signatureConfig: {
                     jwksConfig: {
-                        url: "https://auth.example.com/.well-known/jwks.json"
+                        url: "https://auth.internal/.well-known/jwks.json"
                     }
                 }
             },
@@ -1409,21 +1383,21 @@ listener http:Listener secureListener = new (9090, {
 
 **Diagnosis steps for auth failures:**
 
-1. Enable HTTP trace logs ([Section 6.1.1](#611-enabling-http-trace-logs)) — check if the `Authorization` header is being sent and what value it contains
+1. Enable HTTP trace logs ([Section 5.1.1](#511-enabling-http-trace-logs)) — check if the `Authorization` header is being sent and what value it contains
 2. Decode the JWT token (use `jwt.io` or similar) — check `exp` (expiry), `iss` (issuer), `aud` (audience), and `scope` claims
 3. For OAuth2 client credentials, verify the token endpoint URL is reachable and the credentials are correct — test with `curl`:
    ```bash
-   curl -X POST https://auth.example.com/oauth2/token \
+   curl -X POST https://auth.internal/oauth2/token \
      -d "grant_type=client_credentials&client_id=ID&client_secret=SECRET&scope=read"
    ```
 
 ---
 
-## 7. Performance and Tuning
+## 6. Performance and Tuning
 
 Performance issues are harder to diagnose because they require profiling, not just log reading. Use this section to identify the type of performance issue first.
 
-### 7.1 Identifying the Type of Performance Issue
+### 6.1 Identifying the Type of Performance Issue
 
 ```mermaid
 flowchart TD
@@ -1437,7 +1411,7 @@ flowchart TD
     C -->|Intermittent - spikes| H[Check: GC pauses, thread starvation, connection pool wait]
 ```
 
-### 7.2 HTTP Connection Pool Tuning
+### 6.2 HTTP Connection Pool Tuning
 
 The most common cause of request failures under load is connection pool exhaustion — the pool runs out of available connections and new requests either wait or fail.
 
@@ -1458,7 +1432,7 @@ The most common cause of request failures under load is connection pool exhausti
 **Tuning approach:**
 
 ```ballerina
-http:Client apiClient = check new ("http://backend.example.com", {
+http:Client apiClient = check new ("http://backend.internal", {
     poolConfig: {
         maxActiveConnections: 200,   // tune based on backend capacity
         maxIdleConnections: 50,      // keep fewer idle to save resources
@@ -1471,7 +1445,7 @@ http:Client apiClient = check new ("http://backend.example.com", {
 !!! tip
     If a `MaximumWaitTimeExceededError` occurs, increasing `maxActiveConnections` or decreasing `waitTime` (to fail fast) are valid resolutions. Note that increasing the pool size only helps if the **upstream can handle more connections**. If the upstream is the bottleneck, more connections might degrade performance.
 
-### 7.3 SQL Connection Pool Tuning
+### 6.3 SQL Connection Pool Tuning
 
 **Default SQL connection pool values:**
 
@@ -1504,7 +1478,7 @@ Or per-client via the `connectionPool` field.
 
 ```ballerina
 mysql:Client dbClient = check new (
-    host = "db.example.com", port = 3306,
+    host = "db.internal", port = 3306,
     user = "app", password = "...", database = "mydb",
     connectionPool = {
         maxOpenConnections: 25,          // increase if DB can handle it
@@ -1520,7 +1494,7 @@ mysql:Client dbClient = check new (
 
 > **Important:** Always check the database's `max_connections` setting. Setting `maxOpenConnections` higher than the DB's limit will cause connection errors.
 
-### 7.4 Runtime Thread Pool Tuning
+### 6.4 Runtime Thread Pool Tuning
 
 Ballerina uses a fixed-size thread pool for its scheduler. The default size is `number of CPU cores × 2`.
 
@@ -1535,7 +1509,7 @@ bal run .
 
 **Diagnosing thread starvation:**
 
-1. Take a **strand dump** (`kill -SIGTRAP <PID>`, see [Section 5.3 — Strand Dump Tool](#53-strand-dump-tool)) — if many strands are in `BLOCKED` state waiting on external calls, scheduler workers may be tied up.
+1. Take a **strand dump** (`kill -SIGTRAP <PID>`, see [Section 4.3 — Strand Dump Tool](#43-strand-dump-tool)) — if many strands are in `BLOCKED` state waiting on external calls, scheduler workers may be tied up.
 2. Take a **JVM thread dump** (`jstack <PID>` or `kill -3 <PID>`) — look for Ballerina scheduler threads (named `ballerina-scheduler-*`). If all of them are in `BLOCKED` or `WAITING` state inside a blocking call (e.g., a Java interop call or a synchronous I/O operation), the thread pool is starved.
 3. **Symptoms:** new HTTP requests stop being accepted even though the service is running; latency climbs linearly with concurrent requests; strand dump shows strands in `RUNNABLE` state but no progress.
 
@@ -1543,7 +1517,7 @@ If thread starvation is confirmed, increase `BALLERINA_MAX_POOL_SIZE`. If the bl
 
 > This is distinct from the SQL connection pool (`maxOpenConnections`) and the HTTP connection pool (`maxActiveConnections`) — those control connections to external services, not the Ballerina scheduler's worker threads.
 
-### 7.5 Concurrency and Isolation Issues
+### 6.5 Concurrency and isolation issues
 
 Ballerina's `isolated` feature enforces concurrency safety entirely at **compile time** — there are no data races or shared mutable state issues that can reach runtime undetected in properly `isolated` code.
 
@@ -1575,9 +1549,9 @@ isolated service /api on new http:Listener(9090) {
 **Symptoms that might be misattributed to concurrency:**
 
 - `{ballerina}IllegalStateException` — usually means a client or resource was used after it was closed, not a race condition
-- Unexpected results under load — more likely a connection pool issue (Section 7.2/7.3) or a bug in the logic itself
+- Unexpected results under load — more likely a connection pool issue (Section 6.2/6.3) or a bug in the logic itself
 
-### 7.6 Memory Issues
+### 6.6 Memory issues
 
 Ballerina runs on the JVM, so Java memory tuning applies.
 
@@ -1599,12 +1573,12 @@ bal run .
 
 - JVM heap dump: `JAVA_OPTS="-XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp/" bal run .`
 - Thread dump at the time of the issue: `kill -3 <pid>` (Linux/macOS) or use `jstack <pid>`
-- Strand dump: `kill -SIGTRAP <pid>` (see [Section 5.3 — Strand Dump Tool](#53-strand-dump-tool))
+- Strand dump: `kill -SIGTRAP <pid>` (see [Section 4.3 — Strand Dump Tool](#43-strand-dump-tool))
 
 !!! note
-    For GraalVM native images, `JAVA_OPTS` does not apply. For native image memory tuning, see [Section 11.3 — GraalVM Native Image Issues](#113-graalvm-native-image-issues).
+    For GraalVM native images, `JAVA_OPTS` does not apply. For native image memory tuning, see [Section 10.3 — GraalVM Native Image Issues](#103-graalvm-native-image-issues).
 
-### 7.7 Observability Issues
+### 6.7 Observability issues
 
 Ballerina has built-in support for distributed tracing, metrics, and logging. Observability must be explicitly enabled at both build time and runtime.
 
@@ -1695,9 +1669,9 @@ scrape_configs:
 
 ---
 
-## 8. Package and Dependency Issues
+## 7. Package and dependency issues
 
-### 8.1 Package Resolution Failures
+### 7.1 Package resolution failures
 
 **Symptoms:**
 
@@ -1738,7 +1712,7 @@ rm -rf ~/.ballerina/repositories/central.ballerina.io/caches
 rm -rf ~/.ballerina/repositories/central.ballerina.io/bala/ballerinax/salesforce
 ```
 
-### 8.2 Version Conflicts
+### 7.2 Version conflicts
 
 Ballerina resolves dependencies transitively, like Maven. Version conflicts occur when two different packages depend on incompatible versions of the same library.
 
@@ -1766,7 +1740,7 @@ error: dependency conflict: 'ballerina/http' version '2.9.0' and '2.11.0' are bo
 2. Upgrade to a Ballerina distribution version where the conflict is resolved
 3. Check if the conflicting package has a newer version that resolves its own transitive dependency
 
-### 8.3 Network, Firewall, and Proxy Issues
+### 7.3 Network, firewall, and proxy issues
 
 **Diagnosing connectivity to Ballerina Central:**
 
@@ -1821,7 +1795,7 @@ If the proxy performs TLS inspection, you may see `PKIX path building failed` er
 
 > If multiple Ballerina distributions are installed, repeat this for each distribution's JRE.
 
-### 8.4 Offline Builds
+### 7.4 Offline builds
 
 If the environment has no internet access:
 
@@ -1843,7 +1817,7 @@ sticky = true
 
 **Note:** Offline mode only works if all required packages are already in the local cache (`~/.ballerina/repositories/`). If a package is missing, the build will fail with a clear error.
 
-### 8.5 Private Packages
+### 7.5 Private packages
 
 Publishing and consuming private packages requires additional configuration beyond the defaults.
 
@@ -1897,9 +1871,9 @@ repository = "local"
 
 ---
 
-## 9. Tooling Issues
+## 8. Tooling issues
 
-### 9.1 bal CLI Issues
+### 8.1 bal CLI issues
 
 **Verify the tool and distribution versions:**
 
@@ -1925,7 +1899,7 @@ bal dist update   # updates to the latest distribution patch
 | `bal build` takes unusually long           | Dependency resolution going to network | Use `--offline` or check network latency to Central         |
 | `bal run` exits immediately with no output | Panic at startup                       | Check stderr output; run with debug logging                 |
 
-### 9.2 OpenAPI Tool Issues
+### 8.2 OpenAPI tool issues
 
 The OpenAPI tool generates Ballerina client/service stubs from an OpenAPI (Swagger) specification.
 
@@ -1978,7 +1952,7 @@ bal openapi -i service.bal -o ./generated
 bal openapi -i service.bal --json    # output as JSON instead of YAML
 ```
 
-### 9.3 gRPC Tool Issues
+### 8.3 gRPC tool issues
 
 ```bash
 # Generate client stub
@@ -1999,7 +1973,7 @@ bal grpc --input service.proto --output ./generated --mode both
 | Generated stub compile errors    | Proto file uses features not fully supported | Check for unsupported field types; file a bug      |
 | gRPC server not found at runtime | Wrong host/port in stub                      | Verify endpoint in `grpc:ClientConfiguration`      |
 
-### 9.4 Test Framework Issues
+### 8.4 Test framework issues
 
 ```bash
 bal test                    # run all tests
@@ -2037,7 +2011,7 @@ my-package/
 
 ```bash
 export BAL_CONFIG_DATA='[myorg.mypackage]
-dbHost = "test-db.example.com"
+dbHost = "test-db.internal"
 dbPort = 3306'
 bal test
 ```
@@ -2054,7 +2028,7 @@ bal test
 ```bash
 # Format: BAL_CONFIG_VAR_<VARIABLE_NAME>=<value>
 # Variable names are converted to uppercase
-export BAL_CONFIG_VAR_DBHOST="test-db.example.com"
+export BAL_CONFIG_VAR_DBHOST="test-db.internal"
 export BAL_CONFIG_VAR_DBPORT=3306
 export BAL_CONFIG_VAR_APIKEY="secret-key"
 bal test
@@ -2077,7 +2051,7 @@ bal test
   run: bal test --code-coverage
 ```
 
-### 9.5 Persist Tool Issues
+### 8.5 Persist tool issues
 
 `bal persist` is the Ballerina data persistence tool for generating type-safe database clients from entity definitions.
 
@@ -2139,7 +2113,7 @@ type Department record {|
 - If migration fails, check the generated SQL in the `persist/migrations/` directory and apply it manually.
 - Dropping columns or changing types requires manual migration scripts — the tool does not generate destructive changes automatically.
 
-### 9.6 Formatter Issues
+### 8.6 Formatter issues
 
 ```bash
 bal format                   # format the entire package
@@ -2152,7 +2126,7 @@ bal format --dry-run          # preview changes without writing
 | Symptom                                        | Likely Cause                                             | Fix                                                                                |
 | :--------------------------------------------- | :------------------------------------------------------- | :--------------------------------------------------------------------------------- |
 | `bal format` produces no output and no changes | Code is already formatted, or file/package path is wrong | Verify you are running from the package root or specifying the correct file        |
-| Formatter crashes with a stack trace           | Formatter bug triggered by specific syntax               | Collect the MRE and stack trace; escalate per [Section 12](#12-escalation-process) |
+| Formatter crashes with a stack trace           | Formatter bug triggered by specific syntax               | Collect the MRE and stack trace                                                    |
 | Formatted output differs between versions      | Formatting rules changed between Ballerina distributions | Pin the distribution version across the team with `bal dist use`                   |
 | CI formatting check fails but local passes     | Different Ballerina version in CI vs local               | Ensure CI uses the same distribution version as the development environment        |
 
@@ -2160,9 +2134,9 @@ bal format --dry-run          # preview changes without writing
 
 ---
 
-## 10. IDE and VS Code Issues
+## 9. IDE and VS Code issues
 
-### 10.1 Identifying Language Server Issues
+### 9.1 Identifying language server issues
 
 Language server issues appear **only in the IDE**, not during `bal build`. If the error appears in both, it is a real compiler error, not an IDE issue.
 
@@ -2179,16 +2153,16 @@ Language server issues appear **only in the IDE**, not during `bal build`. If th
 - Both VS Code and `bal build` in the terminal show the same error
 - `bal build` produces the error without VS Code open
 
-### 10.2 Collecting Language Server Logs
+### 9.2 Collecting language server logs
 
-**Step 1:** Open the Output panel: `View → Output` (or `Ctrl+Shift+U` / `Cmd+Shift+U`)
+**Step 1:** Open the **Output** panel: **View** > **Output** (or **Ctrl+Shift+U** / **Cmd+Shift+U**)
 
-**Step 2:** Select the channel from the dropdown:
+**Step 2:** Select the channel from the **dropdown list**:
 
-- **"Ballerina"** — extension-level logs (startup, configuration)
-- **"Ballerina Language Server"** — language server protocol messages and errors
+- **Ballerina** — extension-level logs (startup, configuration)
+- **Ballerina Language Server** — language server protocol messages and errors
 
-**Step 3:** Enable verbose logging in VS Code settings:
+**Step 3:** Enable verbose logging in the VS Code **Settings**:
 
 ```json
 // settings.json (or VS Code Settings UI)
@@ -2200,7 +2174,7 @@ Language server issues appear **only in the IDE**, not during `bal build`. If th
 
 After enabling, restart VS Code and reproduce the issue. Copy all content from the Output panel.
 
-**Step 4:** Check VS Code extension host logs for crashes:
+**Step 4:** Check the VS Code extension host logs for crashes:
 
 - macOS: `~/Library/Application Support/Code/logs/`
 - Linux: `~/.config/Code/logs/`
@@ -2208,7 +2182,7 @@ After enabling, restart VS Code and reproduce the issue. Copy all content from t
 
 Look for `exthost*.log` files.
 
-### 10.3 Common Language Server Problems
+### 9.3 Common language server problems
 
 | Symptom                                              | Likely Cause                                                     | Fix                                                                                                            |
 | :--------------------------------------------------- | :--------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------- |
@@ -2218,15 +2192,15 @@ Look for `exthost*.log` files.
 | Extension asks to "import project" repeatedly        | Missing `Ballerina.toml` in the root                             | Ensure the folder opened in VS Code is the Ballerina package root                                              |
 | Incorrect errors shown after code change             | Stale language server state                                      | Reload window: `Ctrl+Shift+P` → "Developer: Reload Window"                                                     |
 | High CPU from VS Code with Ballerina files open      | Language server rebuilding large project                         | Open only the package root, not a parent folder                                                                |
-| "Module not found" with option to pull               | Module declared in `Ballerina.toml` but not yet resolved locally | Click the "Pull" code action in VS Code, or run `bal build` from the terminal to trigger dependency resolution |
+| "Module not found" with option to pull               | Module declared in `Ballerina.toml` but not yet resolved locally | Select the **Pull** code action in VS Code, or run `bal build` from the terminal to trigger dependency resolution |
 
-### 10.4 Extension Configuration
+### 9.4 Extension configuration
 
 Key VS Code settings for the Ballerina extension:
 
 ```json
 {
-  "ballerina.home": "/usr/lib/ballerina", // path to Ballerina installation
+  "ballerina.home": "/usr/lib/ballerina", // path to the Ballerina installation
   "ballerina.enableDebugLog": false, // verbose extension logs
   "ballerina.enableLanguageServerDebug": false, // verbose LS logs
   "ballerina.allowExperimental": false // experimental LS features
@@ -2240,9 +2214,9 @@ The extension version should match the installed Ballerina distribution. For exa
 
 ---
 
-## 11. Deployment Issues
+## 10. Deployment issues
 
-### 11.1 Docker Deployment Issues
+### 10.1 Docker deployment issues
 
 Ballerina supports Code-to-Cloud (C2C) Docker generation with `cloud = "docker"` in `Ballerina.toml`. The generated Dockerfile uses the `ballerina/jvm-runtime` base image (Debian-based). If the customer uses a custom base image (e.g., Alpine), native library compatibility issues may arise — particularly with DNS resolution and TLS libraries.
 
@@ -2280,7 +2254,7 @@ apiKey = "secret"
 docker run -v /path/to/Config.toml:/home/ballerina/Config.toml myapp:latest
 ```
 
-### 11.2 Kubernetes Deployment Issues
+### 10.2 Kubernetes deployment issues
 
 Use `cloud = "k8s"` in `Ballerina.toml`. Kubernetes artifacts are generated in `target/kubernetes/`.
 
@@ -2342,7 +2316,7 @@ mount_dir = "/home/ballerina/secrets"
 
 > **Reference:** Full `Cloud.toml` specification: https://github.com/ballerina-platform/ballerina-spec/blob/master/c2c/code-to-cloud-spec.md
 
-### 11.3 GraalVM Native Image Issues
+### 10.3 GraalVM native image issues
 
 Ballerina supports building GraalVM native executables for faster startup and lower memory footprint.
 
@@ -2369,18 +2343,18 @@ graalvmBuildOptions = "--no-fallback"   # optional: additional native-image flag
 
 | Error / Symptom                            | Cause                                               | Fix                                                                                          |
 | :----------------------------------------- | :-------------------------------------------------- | :------------------------------------------------------------------------------------------- |
-| `native-image` command not found           | GraalVM not installed or not on PATH                | Install GraalVM and set `GRAALVM_HOME`; run `gu install native-image`                        |
-| Reflection error at runtime                | Class accessed via reflection not registered        | Add a `reflect-config.json` to the project's `resources/META-INF/native-image/` directory    |
-| Build fails with "unsupported feature"     | Library uses a JVM feature not supported by GraalVM | Check if the library has GraalVM support; some `ballerinax` connectors may not be compatible |
-| Native image crashes at runtime            | Runtime behavior differs from JVM mode              | Test with JVM mode first. If JVM mode works, file a GraalVM compatibility issue.             |
-| Build takes very long / runs out of memory | Native image compilation is resource-intensive      | Increase build memory: `graalvmBuildOptions = "-J-Xmx8g"`                                    |
+| `native-image` command not found           | GraalVM not installed or not on PATH                                | Install GraalVM and set `GRAALVM_HOME`; run `gu install native-image`.                       |
+| Reflection error at runtime                | Class accessed via reflection not registered                         | Add a `reflect-config.json` to the project's `resources/META-INF/native-image/` directory.   |
+| Build fails with "unsupported feature"     | Library uses a JVM feature not supported by GraalVM                 | Check if the library has GraalVM support; some `ballerinax` connectors may not be compatible. |
+| Native image crashes at runtime            | Runtime behavior differs from JVM mode                               | Test with JVM mode first. If JVM mode works, file a GraalVM compatibility issue.             |
+| Build takes very long / runs out of memory | Native image compilation is resource-intensive                       | Increase build memory: `graalvmBuildOptions = "-J-Xmx8g"`.                                   |
 
 **Memory note:** `JAVA_OPTS` (e.g., `-Xmx`) does **not** apply to native images. Native images manage their own memory. To control native image heap size, use `-R:MaxHeapSize=512m` in `graalvmBuildOptions` or at runtime.
 
 !!! note
-    If investigating a memory issue, see [Section 7.6 — Memory Issues](#76-memory-issues) for JVM-mode memory tuning. Native image memory behavior differs from the JVM.
+    If investigating a memory issue, see [Section 6.6 — Memory Issues](#66-memory-issues) for JVM-mode memory tuning. Native image memory behavior differs from the JVM.
 
-### 11.4 Choreo Deployment Issues
+### 10.4 Choreo deployment issues
 
 [Choreo](https://wso2.com/choreo/) is a platform that natively supports Ballerina. When an issue occurs on Choreo, first determine if it reproduces locally.
 
@@ -2397,7 +2371,7 @@ graalvmBuildOptions = "--no-fallback"   # optional: additional native-image flag
 | Cannot access logs                  | No visibility into runtime errors                               | Check Choreo's Monitoring and Insights section for available log access. Log availability may vary by Choreo plan and component type — consult Choreo documentation or the Choreo team for the current capabilities. |
 | Environment variables not available | `os:getEnv()` returns empty                                     | Configure environment variables in Choreo's component settings, not in code                                                                                                                                          |
 
-### 11.5 Configuration in Deployed Environments
+### 10.5 Configuration in deployed environments
 
 **Priority order** (highest to lowest):
 
@@ -2406,7 +2380,7 @@ graalvmBuildOptions = "--no-fallback"   # optional: additional native-image flag
 3. Files listed in `BAL_CONFIG_FILES` (colon-separated on Linux/macOS, semicolon on Windows)
 4. `Config.toml` in the working directory
 
-> **`BAL_CONFIG_VAR_` for secrets:** For sensitive values (API keys, passwords), prefer injecting individual configurable values via `BAL_CONFIG_VAR_<VARIABLE_NAME>=<value>` environment variables rather than mounting files. This avoids secrets being written to disk in the container. See [Section 9.4 — Test Framework Issues](#94-test-framework-issues) for supported types and format details.
+> **`BAL_CONFIG_VAR_` for secrets:** For sensitive values (API keys, passwords), prefer injecting individual configurable values via `BAL_CONFIG_VAR_<VARIABLE_NAME>=<value>` environment variables rather than mounting files. This avoids secrets being written to disk in the container. See [Section 8.4 — Test Framework Issues](#84-test-framework-issues) for supported types and format details.
 
 **Kubernetes pattern — separate ConfigMap and Secret:**
 
@@ -2420,7 +2394,7 @@ data:
   config.toml: |
     [myorg.myapp]
     port = 8080
-    dbHost = "postgres.example.com"
+    dbHost = "postgres.internal"
 ---
 # Store secrets separately
 apiVersion: v1
@@ -2454,120 +2428,8 @@ kubectl exec -it <pod-name> -- cat /config/config.toml
 # Add a debug log in the service init that logs the config value
 ```
 
----
 
-## 12. Escalation Process
-
-### 12.1 Customer-Side Fixes to Try First
-
-Before creating a product issue, always check whether the problem can be resolved from the customer's side. The following are common fixes that do **not** require a product change:
-
-| Category                   | Things to Try                                                                                                                                                                                                                              |
-| :------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **HTTP performance**       | Increase `maxActiveConnections`; tune `timeout`; reduce retry count; check if upstream is the bottleneck                                                                                                                                   |
-| **SQL performance**        | Increase `maxOpenConnections`; increase `connectionTimeout`; check for slow queries with the DB's slow query log; reduce `maxConnectionLifeTime` for stale connection issues; enable `leakDetectionThreshold` to find unclosed connections |
-| **Thread pool exhaustion** | Increase `BALLERINA_MAX_POOL_SIZE` if the program uses blocking libraries; check if the default `numCPU × 2` is sufficient                                                                                                                 |
-| **Concurrency**            | Add `isolated` to a service to let the compiler identify unsafe mutable state accesses                                                                                                                                                     |
-| **Memory**                 | Increase JVM heap via `JAVA_OPTS="-Xmx2g"`; check for large in-memory collections or unbounded streams                                                                                                                                     |
-| **Config not loaded**      | Verify `Config.toml` is in the right directory; use `BAL_CONFIG_DATA`; check `BAL_CONFIG_FILES` path                                                                                                                                       |
-| **Dependency version**     | Delete `Dependencies.toml` and rebuild; pin versions in `Ballerina.toml`; use `sticky = true`                                                                                                                                              |
-| **SSL/TLS**                | Configure `secureSocket` in client config; import proxy certificate into the Ballerina JRE trust store                                                                                                                                     |
-| **Timeout**                | Increase `timeout` in `http:ClientConfiguration`; increase `connectionTimeout` in `sql:ConnectionPool`                                                                                                                                     |
-| **Driver not found (SQL)** | Add the driver import: `import ballerinax/mysql.driver as _;`                                                                                                                                                                              |
-
-### 12.2 Determining the Right Component
-
-Before creating an issue, identify which component has the bug:
-
-```mermaid
-flowchart TD
-    A["Need to escalate"] --> B{"Stack trace available"}
-    B -->|"Yes"| C{"What is the stack trace origin"}
-    B -->|"No"| D["Collect stack trace first Enable DEBUG logging"]
-
-    C -->|"Ballerina Library"| E["Library bug"]
-    C -->|"Compiler or Runtime"| F["Compiler or Runtime bug"]
-    C -->|"Library runtime error"| G["Library runtime bug"]
-    C -->|"Customer code only"| H["Likely usage issue Check docs first"]
-
-    E --> I["Tag library"]
-    F --> J["Tag compiler or runtime"]
-    G --> I
-```
-
-
-### 12.3 Checking for Existing Fixes
-
-Before escalating, check whether the issue has already been fixed in a newer release. This can save significant time for both the customer and the product team.
-
-**Step 1 — Check if a newer Ballerina distribution is available:**
-
-```bash
-bal dist list
-```
-
-Compare the customer's version with the latest available patch. For example, if the customer is on `2201.10.0` and `2201.10.2` is available, the fix may already be included.
-
-**Step 2 — Check release notes and CHANGELOGs:**
-
-- **Ballerina distribution releases:** https://ballerina.io/downloads/swan-lake-release-notes/
-- **Individual library CHANGELOGs:** Check the `CHANGELOG.md` file in the relevant GitHub repository (e.g., `ballerina-platform/module-ballerina-http`)
-- **GitHub releases page:** Each repository's Releases tab shows tagged versions with their changes
-
-**Step 3 — Search GitHub issues for known bugs:**
-
-If the release notes don't mention the issue, search the relevant public repositories directly:
-
-```bash
-# Search across the main Ballerina repos (requires GitHub CLI)
-gh search issues "MaximumWaitTimeExceededError" --repo=ballerina-platform/ballerina-lang --repo=ballerina-platform/ballerina-library --repo=ballerina-platform/ballerina-distribution
-
-# Search library issues specifically (all library issues are tracked here)
-gh search issues "connection pool" --repo=ballerina-platform/ballerina-library
-```
-
-**Key repositories to search:**
-
-| Repository                                  | What It Covers                                                                                                        |
-| :------------------------------------------ | :-------------------------------------------------------------------------------------------------------------------- |
-| `ballerina-platform/ballerina-lang`         | Compiler, runtime, language features                                                                                  |
-| `ballerina-platform/ballerina-library`      | **All** standard and extended library issues (HTTP, SQL, GraphQL, etc.) — individual module repos do not track issues |
-| `ballerina-platform/ballerina-distribution` | Distribution packaging, update tool                                                                                   |
-
-> **Tip:** Isolating the failing component (compiler vs. library vs. runtime) from the stack trace or error prefix helps narrow which repo to search. See [Section 12.2 — Determining the Right Component](#122-determining-the-right-component).
-
-**Step 4 — If a fix exists in a newer version:**
-
-- Ask the customer to update to the fixed version:
-  - **Distribution update:** `bal dist pull 2201.x.y`
-  - **Library update only:** Remove `sticky = true` from `Ballerina.toml`, delete `Dependencies.toml`, and rebuild to pull the latest compatible library versions
-- If the customer cannot update immediately, check whether a workaround exists in the release notes or issue discussion
-
-### 12.4 Handling Feature Requests
-
-Not all customer issues are bugs — some are feature requests or questions about missing functionality.
-
-**Before filing a feature request, verify:**
-
-1. **Check the documentation.** The feature might already exist but the customer may not be aware of it:
-   - Ballerina Learn: https://ballerina.io/learn/
-   - By Example: https://ballerina.io/learn/by-example/
-   - API Docs: https://lib.ballerina.io/
-
-2. **Check the relevant specification.** Some features are intentionally excluded due to design decisions or known limitations:
-   - Ballerina Language Spec: https://ballerina.io/spec/lang/master/
-   - HTTP Spec: https://github.com/ballerina-platform/module-ballerina-http/blob/master/docs/spec/spec.md
-   - GraphQL Spec: https://github.com/ballerina-platform/module-ballerina-graphql/blob/master/docs/spec/spec.md
-   - SQL Spec: https://github.com/ballerina-platform/module-ballerina-sql/blob/master/docs/spec/spec.md
-   - gRPC Spec: https://github.com/ballerina-platform/module-ballerina-grpc/blob/master/docs/spec/spec.md
-
-3. **Check existing issues.** Search the relevant GitHub repository's issues for similar requests. If one exists, link to it rather than filing a duplicate.
-
-4. **Assess validity.** If the spec explicitly documents a design decision against the feature, communicate this to the customer with a link to the relevant section. If the feature is genuinely missing and would be valuable, file a feature request using the [product-integrator](https://github.com/wso2/product-integrator) repository with the `enhancement` label.
-
----
-
-## 13. Glossary
+## 11. Glossary
 
 | Term                                   | Definition                                                                                                                                                                                                                    |
 | :------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -2599,9 +2461,9 @@ Not all customer issues are bugs — some are feature requests or questions abou
 
 ---
 
-## 14. References
+## 12. References
 
-### Official Documentation
+### Official documentation
 
 | Resource                       | URL                                                                  |
 | :----------------------------- | :------------------------------------------------------------------- |
@@ -2637,7 +2499,7 @@ Not all customer issues are bugs — some are feature requests or questions abou
 | Code to Cloud Spec      | https://github.com/ballerina-platform/ballerina-spec/blob/master/c2c/code-to-cloud-spec.md   |
 | Persist Spec            | https://github.com/ballerina-platform/ballerina-spec/blob/master/persist/spec.md             |
 
-### GitHub Repositories
+### GitHub repositories
 
 | Repository                                        | Purpose                                                               |
 | :------------------------------------------------ | :-------------------------------------------------------------------- |
@@ -2664,8 +2526,6 @@ Not all customer issues are bugs — some are feature requests or questions abou
 - HTTP library: https://central.ballerina.io/ballerina/http/latest
 - SQL library: https://central.ballerina.io/ballerina/sql/latest
 - GraphQL library: https://central.ballerina.io/ballerina/graphql/latest
-
----
 
 ---
 
