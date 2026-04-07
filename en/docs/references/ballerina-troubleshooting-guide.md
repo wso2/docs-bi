@@ -23,9 +23,6 @@ This guide describes how to troubleshoot Ballerina issues and provide an initial
 
 **Prerequisites:** Familiarity with reading stack traces, running CLI commands, and editing configuration files is required. Because Ballerina runs on the JVM, standard JVM debugging tools and practices apply.
 
-!!! info "Important"
-    When escalating an issue, use the `wso2-integration-internal` repository. Do not use the public `ballerina-platform` repositories for customer-related issues. For details, see [Section 12 — Escalation Process](#12-escalation-process).
-
 ---
 
 ## Table of Contents
@@ -147,9 +144,8 @@ This guide describes how to troubleshoot Ballerina issues and provide an initial
 12. [Escalation Process](#12-escalation-process)
     - [12.1 Customer-Side Fixes to Try First](#121-customer-side-fixes-to-try-first)
     - [12.2 Determining the Right Component](#122-determining-the-right-component)
-    - [12.3 Creating an Issue in wso2-integration-internal](#123-creating-an-issue-in-wso2-integration-internal)
-    - [12.4 Checking for Existing Fixes](#124-checking-for-existing-fixes)
-    - [12.5 Handling Feature Requests](#125-handling-feature-requests)
+    - [12.3 Checking for Existing Fixes](#123-checking-for-existing-fixes)
+    - [12.4 Handling Feature Requests](#124-handling-feature-requests)
 
 **Appendix**
 
@@ -436,8 +432,6 @@ Followed by a Java stack trace.
 | `io.ballerina.stdlib.<name>` or `io.ballerina.lib.<name>` | Library compiler plugin (e.g., `http`, `sql`, `graphql`) — both naming conventions are used across libraries | Ballerina Library repo |
 | `org.wso2.ballerinalang.<...>`                            | Core compiler                                                                                                | Ballerina Lang repo    |
 | `io.ballerina.compiler.<...>`                             | Compiler API                                                                                                 | Ballerina Lang repo    |
-
-> **[Internal]** Do NOT report customer issues to the public repositories directly. Use the `wso2-integration-internal` repository. See [Section 12 — Escalation Process](#12-escalation-process).
 
 **Key facts about compiler crashes:**
 
@@ -1464,7 +1458,7 @@ The most common cause of request failures under load is connection pool exhausti
 **Tuning approach:**
 
 ```ballerina
-http:Client apiClient = check new ("http://backend.internal", {
+http:Client apiClient = check new ("http://backend.example.com", {
     poolConfig: {
         maxActiveConnections: 200,   // tune based on backend capacity
         maxIdleConnections: 50,      // keep fewer idle to save resources
@@ -1510,7 +1504,7 @@ Or per-client via the `connectionPool` field.
 
 ```ballerina
 mysql:Client dbClient = check new (
-    host = "db.internal", port = 3306,
+    host = "db.example.com", port = 3306,
     user = "app", password = "...", database = "mydb",
     connectionPool = {
         maxOpenConnections: 25,          // increase if DB can handle it
@@ -2043,7 +2037,7 @@ my-package/
 
 ```bash
 export BAL_CONFIG_DATA='[myorg.mypackage]
-dbHost = "test-db.internal"
+dbHost = "test-db.example.com"
 dbPort = 3306'
 bal test
 ```
@@ -2060,7 +2054,7 @@ bal test
 ```bash
 # Format: BAL_CONFIG_VAR_<VARIABLE_NAME>=<value>
 # Variable names are converted to uppercase
-export BAL_CONFIG_VAR_DBHOST="test-db.internal"
+export BAL_CONFIG_VAR_DBHOST="test-db.example.com"
 export BAL_CONFIG_VAR_DBPORT=3306
 export BAL_CONFIG_VAR_APIKEY="secret-key"
 bal test
@@ -2426,7 +2420,7 @@ data:
   config.toml: |
     [myorg.myapp]
     port = 8080
-    dbHost = "postgres.internal"
+    dbHost = "postgres.example.com"
 ---
 # Store secrets separately
 apiVersion: v1
@@ -2501,56 +2495,8 @@ flowchart TD
     G --> I
 ```
 
-### 12.3 Creating an Issue in wso2-integration-internal
 
-!!! info "Important"
-    When escalating issues, use the designated internal or partner repository. Do not create issues in public repositories for bugs that contain sensitive information or are specific to customer environments.
-
-**Before creating the issue, ensure you have:**
-
-- [ ] Confirmed the issue is reproducible
-- [ ] Identified the exact Ballerina version
-- [ ] Identified the exact library/module versions (from `Dependencies.toml`)
-- [ ] Confirmed this is not a customer-side configuration issue
-- [ ] Collected the full error message and stack trace
-- [ ] Created a Minimal Reproducible Example (MRE)
-- [ ] Checked if the issue exists in the latest Ballerina patch version
-
-**Issue template:**
-
-> **Title:** `[Component] Short description of the issue`
-> _Example:_ `[ballerina/http] MaximumWaitTimeExceededError under high load`
->
-> **Description:**
-> What is broken, what is the customer impact, and whether a workaround is available.
->
-> **Steps to Reproduce:**
->
-> 1. Step 1
-> 2. Step 2
-> 3. Step 3
->
-> **Component/Product:**
-> Compiler / Runtime / Library (specify module) / Tool (specify) / VS Code Extension
->
-> **Environment Details:**
->
-> | Item              | Value                                |
-> | ----------------- | ------------------------------------ |
-> | Ballerina Version | `2201.x.y`                           |
-> | OS                | Ubuntu 22.04 / macOS 14 / Windows 11 |
-> | Affected Library  | `ballerina/http 2.x.y`               |
-> | Deployment        | Local / Docker / Kubernetes / Choreo |
->
-> **Dependencies.toml:** _(paste content)_
->
-> **Relevant Log Output:** _(paste full error message, stack trace, and relevant log lines)_
->
-> **Related Issues:** _(link to any related issues in wso2-integration-internal or ballerina-platform)_
->
-> **Suggested Labels:** _e.g.: bug, library/http, customer, workaround-available_
-
-### 12.4 Checking for Existing Fixes
+### 12.3 Checking for Existing Fixes
 
 Before escalating, check whether the issue has already been fixed in a newer release. This can save significant time for both the customer and the product team.
 
@@ -2597,7 +2543,7 @@ gh search issues "connection pool" --repo=ballerina-platform/ballerina-library
   - **Library update only:** Remove `sticky = true` from `Ballerina.toml`, delete `Dependencies.toml`, and rebuild to pull the latest compatible library versions
 - If the customer cannot update immediately, check whether a workaround exists in the release notes or issue discussion
 
-### 12.5 Handling Feature Requests
+### 12.4 Handling Feature Requests
 
 Not all customer issues are bugs — some are feature requests or questions about missing functionality.
 
@@ -2617,7 +2563,7 @@ Not all customer issues are bugs — some are feature requests or questions abou
 
 3. **Check existing issues.** Search the relevant GitHub repository's issues for similar requests. If one exists, link to it rather than filing a duplicate.
 
-4. **Assess validity.** If the spec explicitly documents a design decision against the feature, communicate this to the customer with a link to the relevant section. If the feature is genuinely missing and would be valuable, file a feature request using the `wso2-integration-internal` repository with the `enhancement` label.
+4. **Assess validity.** If the spec explicitly documents a design decision against the feature, communicate this to the customer with a link to the relevant section. If the feature is genuinely missing and would be valuable, file a feature request using the [product-integrator](https://github.com/wso2/product-integrator) repository with the `enhancement` label.
 
 ---
 
@@ -2695,6 +2641,7 @@ Not all customer issues are bugs — some are feature requests or questions abou
 
 | Repository                                        | Purpose                                                               |
 | :------------------------------------------------ | :-------------------------------------------------------------------- |
+| `wso2/product-integrator`                         | **Public repository for reporting all product-related issues**        |
 | `ballerina-platform/ballerina-lang`               | Core compiler and runtime                                             |
 | `ballerina-platform/ballerina-library`            | Standard library (umbrella) — **all library issues are tracked here** |
 | `ballerina-platform/module-ballerina-http`        | HTTP library (source code, CHANGELOGs, specs)                         |
@@ -2722,4 +2669,4 @@ Not all customer issues are bugs — some are feature requests or questions abou
 
 ---
 
-_This document provides guidance for troubleshooting Ballerina applications. For public issue reporting, refer to the appropriate `ballerina-platform` GitHub repository after ensuring no sensitive information is included._
+_This document provides guidance for troubleshooting Ballerina applications. For public issue reporting, refer to the [product-integrator](https://github.com/wso2/product-integrator) repository after ensuring no sensitive information is included._
