@@ -94,6 +94,7 @@ nav:
           - Introduction to Inline Agents: integration-guides/ai/agents/introduction-to-inline-agents.md
           - Integrating Agents with MCP Servers: integration-guides/ai/agents/integrating-agents-with-mcp-servers.md
           - Integrating Agents with External Endpoints: integration-guides/ai/agents/integrating-agents-with-external-endpoints.md
+          - Managing Agent Identity and Access Control: integration-guides/ai/agents/managing-agent-identity-and-access-control.md
         - MCP Service: integration-guides/ai/mcp-service/mcp-service.md
       - Integration As API:
         - Service Orchestration: integration-guides/integration-as-api/service-orchestration.md
