@@ -122,6 +122,8 @@ nav:
         - File Integration:
           - Sales Data Synchronization via FTP File Integration: integration-guides/usecases/file-integration/sales-data-sync-with-ftp-file-integration.md
           - Contractor Timesheet Validation: integration-guides/usecases/file-integration/contractor-timesheet-validation.md
+        - Event Integration:
+          - Solace Event Integration: integration-guides/usecases/solace-event-integration/solace-event-integration.md
         - Database Integration:
           - Order Processing Automation: integration-guides/usecases/database-automation/order-processing-automation.md
   - Developer Guides:
