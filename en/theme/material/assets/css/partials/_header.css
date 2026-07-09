@@ -77,7 +77,7 @@
 }
 
 [data-md-color-scheme=default] .md-header,
-[data-md-color-scheme=default] .md-tabs  {
+[data-md-color-scheme=default] .md-tabs {
   background-color: var(--md-default-bg-color);
   color: var(--md-default-fg-color);
 }
@@ -120,10 +120,15 @@
 }
 
 /* Logo */
+.md-header__button.md-logo {
+  margin-left: 1.0rem;
+  margin-right: 0.5rem;
+}
+
 .md-header__button.md-logo img,
 .md-header__button.md-logo svg {
-  height: 1.4rem;
-  padding: .1rem 0;
+  height: 1.6rem;
+  padding: 0;
 }
 
 /* Theme Toggle */
@@ -166,17 +171,22 @@
 }
 
 @media screen and (max-width: 90.1875em) {
-  .md-button.md-button--asgardeo, .md-button.md-button--discord {
+
+  .md-button.md-button--asgardeo,
+  .md-button.md-button--discord {
     display: none;
   }
 
-  .md-button.md-button--asgardeo-mini, .md-button.md-button--discord-mini {
+  .md-button.md-button--asgardeo-mini,
+  .md-button.md-button--discord-mini {
     display: block;
   }
 }
 
 @media screen and (min-width: 90.1875em) {
-  .md-icon.md-button--asgardeo-mini, .md-icon.md-button--discord-mini {
+
+  .md-icon.md-button--asgardeo-mini,
+  .md-icon.md-button--discord-mini {
     display: none;
   }
 }
