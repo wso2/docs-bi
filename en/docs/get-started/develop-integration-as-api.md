@@ -69,7 +69,7 @@ Set `/zvdz/mi-qsg/v1.0` as **Path**, `epResult` as **Result**, and `string` as *
       <img src="{{base_path}}/assets/img/get-started/develop-integration-as-api/add-client.gif" alt="Create New Connection" width="70%"></a>
 
 10. Click ➕ button again and select **Return** from the node panel.  
-11. Select the `epResponse` variable as the **Expression** from the dropdown and click **Save**. This step will return the response from the `HelloWorld` API endpoint.      
+11. Select the `epResult` variable as the **Expression** from the dropdown and click **Save**. This step will return the response from the `HelloWorld` API endpoint.      
 
       <a href="{{base_path}}/assets/img/get-started/develop-integration-as-api/add-return.gif">
       <img src="{{base_path}}/assets/img/get-started/develop-integration-as-api/add-return.gif" alt="Invoke Endpoint" width="70%"></a>
